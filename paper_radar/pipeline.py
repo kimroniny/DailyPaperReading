@@ -10,6 +10,7 @@ from typing import Any, Callable, Iterable
 
 from paper_radar.classify import classify_paper, select_digest
 from paper_radar.format_digest import format_digest
+from paper_radar.format_slack import format_slack
 from paper_radar.memory import append_memory, filter_unseen, load_seen_ids
 from paper_radar.models import Paper
 from paper_radar.sources.arxiv import fetch_arxiv
@@ -98,6 +99,7 @@ def run_daily(
         "unseen": len(unseen),
         "selected": digest_papers,
         "digest": format_digest(digest_papers, days=days),
+        "slack": format_slack(digest_papers, days=days),
         "errors": errors,
     }
 
@@ -210,6 +212,11 @@ def run_venues(
             top,
             days=0,
             title=f"顶会顶刊扫描 {year_from}–{year_to}（相关摘录）",
+        ),
+        "slack": format_slack(
+            top,
+            heading=f"*顶会顶刊补扫 · {year_from}–{year_to} · 精选 {len(top)} 篇*",
+            days=None,
         ),
         "errors": errors,
     }

@@ -27,7 +27,7 @@ Dedup against an append-only memory file:
 
 ```bash
 python3 -m paper_radar daily --days 7 --memory memories.md --write-memory \
-  --digest-out digest.md --json-out digest.json
+  --digest-out digest.md --slack-out slack.txt --json-out digest.json
 ```
 
 Memory line format: `YYYY-MM-DD | source | id | venue | title`

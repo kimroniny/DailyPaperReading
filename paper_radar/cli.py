@@ -13,6 +13,7 @@ from paper_radar.pipeline import papers_to_json, parse_years, run_daily, run_ven
 def _add_shared(p: argparse.ArgumentParser) -> None:
     p.add_argument("--json-out", type=Path, default=None, help="Write selected papers as JSON")
     p.add_argument("--digest-out", type=Path, default=None, help="Write markdown digest")
+    p.add_argument("--slack-out", type=Path, default=None, help="Write Slack mrkdwn digest")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -104,7 +105,11 @@ def main(argv: list[str] | None = None) -> int:
         for err in result["errors"]:
             sys.stderr.write(f"  {err}\n")
 
-    meta = {k: v for k, v in result.items() if k not in {"selected", "digest", "all_relevant"}}
+    meta = {
+        k: v
+        for k, v in result.items()
+        if k not in {"selected", "digest", "slack", "all_relevant"}
+    }
     sys.stderr.write(json.dumps(meta, ensure_ascii=False) + "\n")
 
     if args.json_out:
@@ -114,4 +119,6 @@ def main(argv: list[str] | None = None) -> int:
         )
     if args.digest_out:
         args.digest_out.write_text(digest, encoding="utf-8")
+    if getattr(args, "slack_out", None):
+        args.slack_out.write_text(result.get("slack") or "", encoding="utf-8")
     return 0

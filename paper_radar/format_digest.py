@@ -5,6 +5,7 @@ from __future__ import annotations
 from collections import defaultdict
 from datetime import date
 
+from paper_radar.format_slack import one_liner
 from paper_radar.models import Paper
 
 SECTION = {
@@ -44,13 +45,9 @@ def format_digest(
             lines.append(f"{n}. **{paper.title}**")
             lines.append(f"   - {venue} · `{paper.paper_id}`")
             lines.append(f"   - {paper.url}")
-            if paper.comment:
-                lines.append(f"   - {paper.comment}")
-            elif paper.summary:
-                snippet = paper.summary.strip().replace("\n", " ")
-                if len(snippet) > 220:
-                    snippet = snippet[:217] + "..."
-                lines.append(f"   - {snippet}")
+            blurb = one_liner(paper, limit=160)
+            if blurb:
+                lines.append(f"   - {blurb}")
             lines.append("")
             n += 1
 
