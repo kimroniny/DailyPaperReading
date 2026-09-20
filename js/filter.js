@@ -6,10 +6,12 @@ function matchesQuery(paper, query) {
   const q = normalize(query);
   if (!q) return true;
   const haystack = [
+    paper.id,
     paper.title,
     paper.venue,
     paper.abstract,
     ...(paper.authors || []),
+    ...(paper.aliases || []),
   ]
     .map(normalize)
     .join(" ");

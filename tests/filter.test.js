@@ -67,6 +67,25 @@ describe("filterPapers", () => {
       []
     );
   });
+
+  it("matches paper id and aliases", () => {
+    const withAlias = [
+      {
+        id: "resnet",
+        title: "Deep Residual Learning for Image Recognition",
+        authors: ["Kaiming He"],
+        year: 2016,
+        venue: "CVPR",
+        abstract: "残差连接让深层卷积网络更易训练。",
+        topics: ["CV"],
+        aliases: ["ResNet"],
+      },
+    ];
+    assert.deepEqual(
+      filterPapers(withAlias, { query: "resnet", topic: "all", year: "all" }).map((p) => p.id),
+      ["resnet"]
+    );
+  });
 });
 
 describe("sortPapers", () => {

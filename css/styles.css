@@ -12,8 +12,8 @@
   --sage: #3d5a46;
   --chip: #f4ead6;
   --shadow: 0 16px 36px rgba(68, 44, 18, 0.12);
-  --serif: "Fraunces", "Source Serif 4", "Songti SC", "Noto Serif SC", serif;
-  --sans: "Outfit", "IBM Plex Sans", "PingFang SC", "Noto Sans SC", sans-serif;
+  --serif: "Fraunces", "Noto Serif SC", "Songti SC", serif;
+  --sans: "Outfit", "Noto Sans SC", "PingFang SC", sans-serif;
 }
 
 * {
