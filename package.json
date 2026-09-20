@@ -1,0 +1,9 @@
+{
+  "name": "daily-paper-reading",
+  "private": true,
+  "description": "每日读论文：用卡片展示论文",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "start": "python3 -m http.server 4173"
+  }
+}
