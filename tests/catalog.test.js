@@ -4,6 +4,7 @@ const {
   mergeDayFiles,
   mergeSameDayPapers,
   groupPapersByDate,
+  pickVisibleDay,
   upsertManifest,
   cardFromRadar,
   onlyDataPaths,
@@ -58,6 +59,22 @@ describe("groupPapersByDate", () => {
       groups.map((g) => g.date),
       ["2026-09-20", "2026-09-21"]
     );
+  });
+});
+
+describe("pickVisibleDay", () => {
+  const days = [
+    { date: "2026-09-21", papers: [{ id: "a" }] },
+    { date: "2026-09-20", papers: [{ id: "b" }] },
+  ];
+
+  it("keeps the selected day when it still has papers", () => {
+    assert.equal(pickVisibleDay(days, "2026-09-20").date, "2026-09-20");
+  });
+
+  it("falls back to the first listed day", () => {
+    assert.equal(pickVisibleDay(days, "2026-08-01").date, "2026-09-21");
+    assert.equal(pickVisibleDay([], "2026-09-21"), null);
   });
 });
 

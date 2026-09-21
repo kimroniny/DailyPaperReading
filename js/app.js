@@ -1,6 +1,6 @@
 (function () {
   const { filterPapers, sortPapers, uniqueTopics, uniqueYears } = window.PaperFilter;
-  const { mergeDayFiles, groupPapersByDate } = window.PaperCatalog;
+  const { mergeDayFiles, groupPapersByDate, pickVisibleDay } = window.PaperCatalog;
   let papers = [];
 
   const state = {
@@ -8,6 +8,7 @@
     topic: "all",
     year: "all",
     sortBy: "date-desc",
+    selectedDate: "",
   };
 
   const els = {
@@ -15,6 +16,7 @@
     sort: document.querySelector("#sort"),
     year: document.querySelector("#year"),
     topics: document.querySelector("#topics"),
+    dates: document.querySelector("#dates"),
     count: document.querySelector("#count"),
     grid: document.querySelector("#grid"),
     empty: document.querySelector("#empty"),
@@ -93,73 +95,102 @@
     els.year.value = current || state.year;
   }
 
-  function card(paper) {
-    const article = document.createElement("article");
-    article.className = "card";
-    article.tabIndex = 0;
-    article.dataset.id = paper.id;
-    article.setAttribute("role", "button");
-    article.setAttribute("aria-label", `查看 ${paper.title} 的摘要`);
-
-    const meta = document.createElement("p");
-    meta.className = "card-meta";
-    meta.textContent = `${paper.venue} · ${paper.year}`;
-
-    const title = document.createElement("h2");
-    title.className = "card-title";
-    title.textContent = paper.title;
-
-    const authors = document.createElement("p");
-    authors.className = "card-authors";
-    authors.textContent = (paper.authors || []).join(" · ");
-
-    const excerpt = document.createElement("p");
-    excerpt.className = "card-excerpt";
-    excerpt.textContent = paper.abstract;
-
-    const tags = document.createElement("ul");
-    tags.className = "card-tags";
-    (paper.topics || []).forEach((topic) => {
-      const li = document.createElement("li");
-      li.textContent = topic;
-      tags.appendChild(li);
-    });
-
-    const more = document.createElement("p");
-    more.className = "card-more";
-    more.textContent = "阅读摘要";
-
-    article.append(meta, title, authors, excerpt, tags, more);
-    return article;
+  function shortDate(date) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date || "");
+    if (!match) return "未标注";
+    return `${match[2]}-${match[3]}`;
   }
 
-  function daySection(day) {
-    const section = document.createElement("section");
-    section.className = "day-section";
-    section.id = day.date ? `day-${day.date}` : "day-unknown";
+  function row(paper) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "row";
+    button.dataset.id = paper.id;
 
-    const heading = document.createElement("h2");
-    heading.className = "day-heading";
-    heading.textContent = `${formatAddedOn(day.date)} · ${day.papers.length} 篇`;
+    const copy = document.createElement("span");
+    const title = document.createElement("span");
+    title.className = "row-title";
+    title.textContent = paper.title;
+    const meta = document.createElement("span");
+    meta.className = "row-meta";
+    meta.textContent = `${paper.venue} · ${paper.year}`;
+    copy.append(title, meta);
 
-    const grid = document.createElement("div");
-    grid.className = "grid";
-    grid.append(...day.papers.map(card));
+    const topic = document.createElement("span");
+    topic.className = "row-topic";
+    topic.textContent = (paper.topics || [])[0] || "";
 
-    section.append(heading, grid);
-    return section;
+    button.append(copy, topic);
+    return button;
+  }
+
+  function renderDates(days, active) {
+    const scrollTop = els.dates.scrollTop;
+    els.dates.replaceChildren();
+    days.forEach((day) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "date-link" + (day.date === active ? " is-active" : "");
+      button.dataset.date = day.date;
+      button.setAttribute("aria-pressed", day.date === active ? "true" : "false");
+      const label = document.createElement("span");
+      label.textContent = shortDate(day.date);
+      const count = document.createElement("span");
+      count.textContent = String(day.papers.length);
+      button.append(label, count);
+      els.dates.appendChild(button);
+    });
+    els.dates.scrollTop = scrollTop;
+  }
+
+  function renderDay(days, day) {
+    if (!day) {
+      els.grid.replaceChildren();
+      return;
+    }
+    const index = days.findIndex((item) => item.date === day.date);
+    const head = document.createElement("div");
+    head.className = "day-head";
+
+    const title = document.createElement("h2");
+    title.className = "day-title";
+    title.textContent = `${formatAddedOn(day.date)} · ${day.papers.length} 篇`;
+
+    const nav = document.createElement("div");
+    nav.className = "day-nav";
+    const newer = document.createElement("button");
+    newer.type = "button";
+    newer.dataset.shift = "-1";
+    newer.textContent = "更新";
+    newer.disabled = index <= 0;
+    const older = document.createElement("button");
+    older.type = "button";
+    older.dataset.shift = "1";
+    older.textContent = "更早";
+    older.disabled = index < 0 || index >= days.length - 1;
+    nav.append(newer, older);
+    head.append(title, nav);
+
+    const list = document.createElement("div");
+    list.className = "paper-list";
+    list.append(...day.papers.map(row));
+    els.grid.replaceChildren(head, list);
   }
 
   function renderGrid() {
     const days = visibleDays();
-    const list = days.flatMap((day) => day.papers);
+    const total = days.reduce((sum, day) => sum + day.papers.length, 0);
     const filtering = state.query || state.topic !== "all" || state.year !== "all";
+    const day = pickVisibleDay(days, state.selectedDate);
+    state.selectedDate = day ? day.date : "";
     els.count.textContent = filtering
-      ? `显示 ${list.length} / ${papers.length} 篇 · ${days.length} 天`
-      : `共 ${papers.length} 篇 · ${days.length} 天`;
+      ? `显示 ${total} / ${papers.length} 篇`
+      : `共 ${papers.length} 篇`;
     els.clear.hidden = !filtering;
-    els.empty.hidden = list.length > 0;
-    els.grid.replaceChildren(...days.map(daySection));
+    els.empty.hidden = total > 0;
+    els.dates.hidden = total === 0;
+    renderDates(days, state.selectedDate);
+    renderDay(days, day);
   }
 
   function openPaper(id) {
@@ -223,17 +254,25 @@
     renderGrid();
   });
 
-  els.grid.addEventListener("click", (event) => {
-    const cardEl = event.target.closest(".card");
-    if (cardEl) openPaper(cardEl.dataset.id);
+  els.dates.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-date]");
+    if (!button) return;
+    state.selectedDate = button.dataset.date;
+    renderGrid();
   });
 
-  els.grid.addEventListener("keydown", (event) => {
-    if (event.key !== "Enter" && event.key !== " ") return;
-    const cardEl = event.target.closest(".card");
-    if (!cardEl) return;
-    event.preventDefault();
-    openPaper(cardEl.dataset.id);
+  els.grid.addEventListener("click", (event) => {
+    const shift = event.target.closest("[data-shift]");
+    if (shift) {
+      const days = visibleDays();
+      const index = days.findIndex((day) => day.date === state.selectedDate);
+      const next = days[index + Number(shift.dataset.shift)];
+      if (next) state.selectedDate = next.date;
+      renderGrid();
+      return;
+    }
+    const rowEl = event.target.closest(".row");
+    if (rowEl) openPaper(rowEl.dataset.id);
   });
 
   async function loadCatalog() {
