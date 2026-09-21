@@ -9,16 +9,9 @@
 
 ## 日报怎么进站点
 
-Cursor 自动化应绑 **GitHub 仓库** `kimroniny/DailyPaperReading`。提示词是原版论文雷达规则的调整稿：来源、配额、venue 加权仍按雷达；投递改为写当天 JSON 并开 PR。完整正文见 [AUTOMATION.md](AUTOMATION.md)。
+Cursor 自动化应绑 **GitHub 仓库** `kimroniny/DailyPaperReading`。提示词见 [AUTOMATION.md](AUTOMATION.md)：按雷达规则自行检索 arXiv / IACR / 会议与期刊列表，写成当天 JSON，开只改 `data/` 的 PR。不要发 Slack。
 
-仓库若有 `paper_radar`，可先生成候选再按提示词过滤：
-
-```bash
-python3 -m paper_radar daily --days 7 --max 12 --json-out digest.json
-node scripts/write-daily.js digest.json
-```
-
-没有该模块时，按 `AUTOMATION.md` 自行检索 arXiv / IACR / 会议与期刊列表。只改 `data/` 后开 PR 到 `main`。GitHub Action `Automerge daily papers` 会把**只动** `data/manifest.json` 和 `data/YYYY-MM-DD.json` 的 PR 自动 squash 进 `main`；随后 `Deploy GitHub Pages` 发布。
+GitHub Action `Automerge daily papers` 会把**只动** `data/manifest.json` 和 `data/YYYY-MM-DD.json` 的 PR 自动 squash 进 `main`；随后 `Deploy GitHub Pages` 发布。
 
 仓库 **Settings → General → Pull Requests** 打开 **Allow auto-merge**（若 GitHub 要求）。不要给 `main` 加「必须人工审批」，否则机器人合并不了。
 
