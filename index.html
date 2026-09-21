@@ -20,7 +20,7 @@
         <p class="eyebrow">Daily Paper Reading</p>
         <h1>每日读论文</h1>
         <p class="lede">
-          只收软件 / 区块链安全论文，宁缺毋滥。A 是链上与协议安全；C 是用 LLM / agent 做漏洞检测、修复、fuzz、审计；C-chain 是对象为合约或链的 C。按题目、作者或摘要检索。
+          只收软件 / 区块链安全论文，宁缺毋滥。A 是链上与协议安全；C 是用 LLM / agent 做漏洞检测、修复、fuzz、审计；C-chain 是对象为合约或链的 C。按收录日期浏览，可用题目、作者或摘要检索。
         </p>
       </header>
 
@@ -37,6 +37,8 @@
           <label class="field">
             <span>排序</span>
             <select id="sort">
+              <option value="date-desc">日期从新到旧</option>
+              <option value="date-asc">日期从旧到新</option>
               <option value="year-desc">年份从新到旧</option>
               <option value="year-asc">年份从旧到新</option>
               <option value="title">按标题</option>
@@ -51,7 +53,7 @@
         <button id="clear" class="ghost" type="button" hidden>清除筛选</button>
       </div>
 
-      <main id="grid" class="grid" aria-live="polite"></main>
+      <main id="grid" class="feed" aria-live="polite"></main>
       <div id="empty" class="empty" hidden>
         <h2>没有找到匹配的论文</h2>
         <p>换一个关键词，或清除主题、年份后再试。</p>
