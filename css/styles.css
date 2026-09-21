@@ -208,6 +208,8 @@ select:focus,
 .abstract-toggle {
   margin-top: 10px;
 }
+
+.meta-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
