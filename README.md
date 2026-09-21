@@ -5,7 +5,7 @@
 - GitHub：https://github.com/kimroniny/DailyPaperReading
 - 在线阅读：https://kimroniny.github.io/DailyPaperReading/
 
-推到 `main` 后，GitHub Actions 会发布静态页。第一次部署若未生效，到仓库 **Settings → Pages**，Source 选 **GitHub Actions**。
+推到 `main` 后，GitHub Actions 会发布静态页。若站点 404，打开 [Settings → Pages](https://github.com/kimroniny/DailyPaperReading/settings/pages)，Source 选 **GitHub Actions**，再到 [Actions](https://github.com/kimroniny/DailyPaperReading/actions) 里把失败的 `Deploy GitHub Pages` 点 **Re-run jobs**。
 
 ## 本地打开
 
