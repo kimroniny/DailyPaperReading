@@ -10,6 +10,7 @@ function matchesQuery(paper, query) {
     paper.title,
     paper.venue,
     paper.abstract,
+    paper.abstractEn,
     ...(paper.authors || []),
     ...(paper.aliases || []),
   ]
@@ -18,11 +19,12 @@ function matchesQuery(paper, query) {
   return haystack.includes(q);
 }
 
-function filterPapers(papers, { query = "", topic = "all", year = "all" } = {}) {
+function filterPapers(papers, { query = "", topic = "all", year = "all", venue = "all" } = {}) {
   return papers.filter((paper) => {
     if (!matchesQuery(paper, query)) return false;
     if (topic && topic !== "all" && !(paper.topics || []).includes(topic)) return false;
     if (year && year !== "all" && String(paper.year) !== String(year)) return false;
+    if (venue && venue !== "all" && paper.venue !== venue) return false;
     return true;
   });
 }
@@ -53,7 +55,16 @@ function uniqueYears(papers) {
   return [...new Set(papers.map((paper) => paper.year))].sort((a, b) => b - a);
 }
 
-const PaperFilter = { filterPapers, sortPapers, uniqueTopics, uniqueYears };
+function uniqueVenues(papers) {
+  const counts = new Map();
+  for (const paper of papers || []) {
+    const venue = paper.venue || "未标注";
+    counts.set(venue, (counts.get(venue) || 0) + 1);
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+const PaperFilter = { filterPapers, sortPapers, uniqueTopics, uniqueYears, uniqueVenues };
 
 if (typeof module === "object" && module.exports) {
   module.exports = PaperFilter;

@@ -1,12 +1,13 @@
 (function () {
-  const { filterPapers, sortPapers, uniqueTopics, uniqueYears } = window.PaperFilter;
-  const { mergeDayFiles, groupPapersByDate, pickVisibleDay } = window.PaperCatalog;
+  const { filterPapers, sortPapers, uniqueTopics, uniqueYears, uniqueVenues } = window.PaperFilter;
+  const { mergeDayFiles, groupPapersByDate, groupDaysByMonth, pickVisibleDay } = window.PaperCatalog;
   let papers = [];
 
   const state = {
     query: "",
     topic: "all",
     year: "all",
+    venue: "all",
     sortBy: "date-desc",
     selectedDate: "",
   };
@@ -15,6 +16,7 @@
     search: document.querySelector("#search"),
     sort: document.querySelector("#sort"),
     year: document.querySelector("#year"),
+    venue: document.querySelector("#venue"),
     topics: document.querySelector("#topics"),
     dates: document.querySelector("#dates"),
     count: document.querySelector("#count"),
@@ -31,6 +33,7 @@
       query: state.query,
       topic: state.topic,
       year: state.year,
+      venue: state.venue,
     });
   }
 
@@ -53,6 +56,12 @@
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date || "");
     if (!match) return "未标注日期";
     return `${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
+  }
+
+  function formatMonth(month) {
+    const match = /^(\d{4})-(\d{2})$/.exec(month || "");
+    if (!match) return "未标注";
+    return `${match[1]}年${Number(match[2])}月`;
   }
 
   const TOPIC_LABELS = {
@@ -95,6 +104,22 @@
     els.year.value = current || state.year;
   }
 
+  function renderVenues() {
+    const current = state.venue;
+    els.venue.replaceChildren();
+    const all = document.createElement("option");
+    all.value = "all";
+    all.textContent = "全部会议/期刊";
+    els.venue.appendChild(all);
+    uniqueVenues(papers).forEach(([venue, count]) => {
+      const option = document.createElement("option");
+      option.value = venue;
+      option.textContent = `${venue} · ${count}`;
+      els.venue.appendChild(option);
+    });
+    els.venue.value = current || "all";
+  }
+
   function shortDate(date) {
     const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date || "");
     if (!match) return "未标注";
@@ -125,22 +150,40 @@
   }
 
   function renderDates(days, active) {
-    const scrollTop = els.dates.scrollTop;
+    const activeMonth = String(active || "").slice(0, 7);
+    const months = groupDaysByMonth(days);
     els.dates.replaceChildren();
-    days.forEach((day) => {
+    months.forEach((month) => {
+      const count = month.days.reduce((sum, day) => sum + day.papers.length, 0);
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "date-link" + (day.date === active ? " is-active" : "");
-      button.dataset.date = day.date;
-      button.setAttribute("aria-pressed", day.date === active ? "true" : "false");
+      button.className = "date-link" + (month.month === activeMonth ? " is-active" : "");
+      button.dataset.month = month.month;
+      button.setAttribute("aria-pressed", month.month === activeMonth ? "true" : "false");
       const label = document.createElement("span");
-      label.textContent = shortDate(day.date);
-      const count = document.createElement("span");
-      count.textContent = String(day.papers.length);
-      button.append(label, count);
+      label.textContent = formatMonth(month.month);
+      const total = document.createElement("span");
+      total.textContent = String(count);
+      button.append(label, total);
       els.dates.appendChild(button);
     });
-    els.dates.scrollTop = scrollTop;
+  }
+
+  function dayStrip(days, active) {
+    const month = String(active || "").slice(0, 7);
+    const strip = document.createElement("div");
+    strip.className = "day-strip";
+    days
+      .filter((day) => String(day.date).slice(0, 7) === month)
+      .forEach((day) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "day-chip" + (day.date === active ? " is-active" : "");
+        button.dataset.date = day.date;
+        button.textContent = `${shortDate(day.date)} · ${day.papers.length}`;
+        strip.appendChild(button);
+      });
+    return strip;
   }
 
   function renderDay(days, day) {
@@ -174,13 +217,13 @@
     const list = document.createElement("div");
     list.className = "paper-list";
     list.append(...day.papers.map(row));
-    els.grid.replaceChildren(head, list);
+    els.grid.replaceChildren(head, dayStrip(days, day.date), list);
   }
 
   function renderGrid() {
     const days = visibleDays();
     const total = days.reduce((sum, day) => sum + day.papers.length, 0);
-    const filtering = state.query || state.topic !== "all" || state.year !== "all";
+    const filtering = state.query || state.topic !== "all" || state.year !== "all" || state.venue !== "all";
     const day = pickVisibleDay(days, state.selectedDate);
     state.selectedDate = day ? day.date : "";
     els.count.textContent = filtering
@@ -197,22 +240,63 @@
     const paper = papers.find((item) => item.id === id);
     if (!paper) return;
 
-    const links = [];
-    if (paper.url) {
-      links.push(`<a href="${paper.url}" target="_blank" rel="noopener noreferrer">原文</a>`);
-    }
-    if (paper.pdf) {
-      links.push(`<a href="${paper.pdf}" target="_blank" rel="noopener noreferrer">PDF</a>`);
-    }
+    const meta = document.createElement("p");
+    meta.className = "dialog-meta";
+    meta.textContent = `${paper.venue} · ${paper.year}`;
 
-    els.dialogBody.innerHTML = `
-      <p class="dialog-meta">${paper.venue} · ${paper.year}</p>
-      <h2 id="dialog-title">${paper.title}</h2>
-      <p class="dialog-authors">${(paper.authors || []).join(" · ")}</p>
-      <p class="dialog-abstract">${paper.abstract}</p>
-      <ul class="card-tags">${(paper.topics || []).map((topic) => `<li>${topic}</li>`).join("")}</ul>
-      <p class="dialog-links">${links.join("<span>·</span>")}</p>
-    `;
+    const title = document.createElement("h2");
+    title.id = "dialog-title";
+    title.textContent = paper.title;
+
+    const authors = document.createElement("p");
+    authors.className = "dialog-authors";
+    authors.textContent = (paper.authors || []).join(" · ");
+
+    const label = document.createElement("p");
+    label.className = "abstract-label";
+    const body = document.createElement("p");
+    body.className = "dialog-abstract";
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "ghost abstract-toggle";
+
+    const english = paper.abstractEn || "";
+    const chinese = paper.abstract || "";
+    let showChinese = !english;
+    function paintAbstract() {
+      const useChinese = showChinese || !english;
+      body.textContent = useChinese ? chinese : english;
+      label.textContent = useChinese ? "中文摘要" : "原文摘要";
+      toggle.hidden = !english || !chinese;
+      toggle.textContent = useChinese ? "显示原文" : "显示中文";
+    }
+    toggle.addEventListener("click", () => {
+      showChinese = !showChinese;
+      paintAbstract();
+    });
+    paintAbstract();
+
+    const tags = document.createElement("ul");
+    tags.className = "card-tags";
+    (paper.topics || []).forEach((topic) => {
+      const li = document.createElement("li");
+      li.textContent = topic;
+      tags.appendChild(li);
+    });
+
+    const links = document.createElement("p");
+    links.className = "dialog-links";
+    [paper.url && ["原文", paper.url], paper.pdf && ["PDF", paper.pdf]].filter(Boolean).forEach(([text, href], index) => {
+      if (index) links.appendChild(document.createTextNode(" · "));
+      const anchor = document.createElement("a");
+      anchor.href = href;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.textContent = text;
+      links.appendChild(anchor);
+    });
+
+    els.dialogBody.replaceChildren(meta, title, authors, label, body, toggle, tags, links);
     els.dialog.showModal();
     els.dialogClose.focus();
   }
@@ -236,6 +320,11 @@
     renderGrid();
   });
 
+  els.venue.addEventListener("change", (event) => {
+    state.venue = event.target.value;
+    renderGrid();
+  });
+
   els.topics.addEventListener("click", (event) => {
     const button = event.target.closest("[data-topic]");
     if (!button) return;
@@ -248,20 +337,30 @@
     state.query = "";
     state.topic = "all";
     state.year = "all";
+    state.venue = "all";
     els.search.value = "";
     els.year.value = "all";
+    els.venue.value = "all";
     renderTopics();
     renderGrid();
   });
 
   els.dates.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-date]");
-    if (!button) return;
-    state.selectedDate = button.dataset.date;
+    const monthButton = event.target.closest("[data-month]");
+    if (!monthButton) return;
+    const month = monthButton.dataset.month;
+    const days = visibleDays().filter((day) => String(day.date).slice(0, 7) === month);
+    if (days[0]) state.selectedDate = days[0].date;
     renderGrid();
   });
 
   els.grid.addEventListener("click", (event) => {
+    const dateButton = event.target.closest("[data-date]");
+    if (dateButton) {
+      state.selectedDate = dateButton.dataset.date;
+      renderGrid();
+      return;
+    }
     const shift = event.target.closest("[data-shift]");
     if (shift) {
       const days = visibleDays();
@@ -299,6 +398,7 @@
     .then((list) => {
       papers = list;
       renderYears();
+      renderVenues();
       renderTopics();
       renderGrid();
     })

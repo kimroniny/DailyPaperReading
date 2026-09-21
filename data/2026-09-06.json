@@ -12,7 +12,7 @@
       ],
       "year": 2026,
       "venue": "ASE 2026",
-      "abstract": "《Code Transformation Rule Synthesis using LLMs: Potential and Limits》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "由于其黑箱性质，法学硕士的可解释性有限且缺乏确定性。它们的使用成本也会上升，特别是在大型代码库上执行重复性任务时。为了缓解这个问题，我们针对转换规则的三种特定领域语言（即 Comby、GritQL 和 Ast-Grep）进行了一项新颖的实证研究。我们在六个不同的数据集上评估了三个 LLM（GPT-5.4、GPT-oss-120B 和 Llama3.1-8B），涵盖四个软件演化任务：API 误用纠正、程序修复、API 迁移和语言版本迁移。我们的结果提供了证据，表明转换规则综合超越了强大的前沿模型的概念验证。GPT-5.4 始终保持较高的规则适用率，并在大多数基准测试中生成最接近真实情况的转换。较小且开放的 GPT-oss-120B 和 Llama3.1-8B 模型对于更简单的局部更改仍然有效，但难以应对复杂的迁移场景。我们还通过使用元变量以及通过许多数据集的第一个四分位数中的高重用分数观察到不可忽略的普遍性。最后，与反统一算法相比，LLM 在正确性方面优于反统一算法，但在规则适用性方面表现不佳。总的来说，我们的结果表明法学硕士在生成合理、正确、可推广和可重用的规则方面具有巨大潜力。",
       "topics": [
         "C"
       ],
@@ -21,7 +21,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.03592",
-      "pdf": "https://arxiv.org/pdf/2609.03592"
+      "pdf": "https://arxiv.org/pdf/2609.03592",
+      "abstractEn": "Due to their black-box nature, LLMs suffer from limited explain- ability and a lack of determinism. Their usage cost can also rise, particularly with repetitive tasks on large codebases. To mitigate this, we conduct a novel empirical study targeting three domain- specific languages for transformation rules, namely Comby, GritQL, and Ast-Grep. We evaluate three LLMs (GPT-5.4, GPT-oss-120B, and Llama3.1-8B) on six diverse datasets covering four software- evolution tasks: API misuse correction, program repair, API migra- tion, and language version migration. Our results provide evidence that transformation rule synthesis moves beyond proof-of-concept with strong frontier models. GPT-5.4 achieves consistently high rule applicability rates and produces transformations closest to the ground truth across most benchmarks. Smaller and open-weight GPT-oss-120B and Llama3.1-8B models remain effective for simpler, localized changes but struggle with complex migration scenarios. We also observe non-negligible generalizability through the usage of meta-variables and through a high reuse score in the first quartile of many datasets. Finally, when compared to the anti-unification algorithm, LLMs outperform it in correctness, but underperform in rule applicability. Overall, our results show great potential for LLMs to generate sound, correct, generalizable, and reusable rules."
     },
     {
       "id": "2608.29841",
@@ -35,7 +36,7 @@
       ],
       "year": 2026,
       "venue": "EMNLP 2026",
-      "abstract": "《SkillForge: Compositional Skill Synthesis with Verification-in-the-Loop for Generating Formally Verified Dafny Programs》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "从自然语言生成经过正式验证的程序仍然具有挑战性：现有方法要么在验证失败时一次性生成代码而无需追索，要么依赖于非确定性和不透明的开放式代理推理。我们引入了 SKILLFORGE，这是一个框架，它将正式的代码合成分解为原子的、可重用的技能库，每个技能都针对特定的子任务，如规范推断、主体合成、不变生成、错误诊断或有针对性的修复，并由提示模板、工具绑定和可判定的成功标准定义。验证驱动的工具会协调这些技能：它将候选者提交给 Dafny 验证者，将故障诊断为结构化类别，确定性地路由到适当的修复技能，并进行迭代，直到证明形式正确性或耗尽预算。在自然语言到 Dafny 规范对的策划基准上，SKILLFORGE 的性能显着优于最先进的代理方法（包括 ReAct 式代理、基于 MCTS 的修复和 RL 引导验证）和传统的迭代基线，同时需要更少的令牌和更低的延迟。消融研究证实，每项技能都有可衡量的贡献，并且该工具与大多数在第一次尝试时得到验证的程序迅速融合。",
       "topics": [
         "C-chain"
       ],
@@ -44,7 +45,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2608.29841",
-      "pdf": "https://arxiv.org/pdf/2608.29841"
+      "pdf": "https://arxiv.org/pdf/2608.29841",
+      "abstractEn": "Generating formally verified programs from natural language remains challenging: existing approaches either produce code in a single pass without recourse when verification fails, or rely on open-ended agentic reasoning that is non-deterministic and opaque. We introduce SKILLFORGE, a framework that decomposes formal code synthesis into a library of atomic, reusable skills, each targeting a specific subtask such as specification inference, body synthesis, invariant generation, error diagnosis, or targeted repair, and defined by a prompt template, tool binding, and decidable success criterion. A verification-driven harness orchestrates these skills: it submits candidates to the Dafny verifier, diagnoses failures into structured categories, deterministically routes to the appropriate repair skill, and iterates until formal correctness is proved or a budget is exhausted. On a curated benchmark of natural language to Dafny specification pairs, SKILLFORGE substantially outperforms both state-of-the-art agentic approaches (including ReAct-style agents, MCTS-based repair, and RL-guided verification) and traditional iterative baselines, while requiring fewer tokens and lower latency. Ablation studies confirm that every skill contributes measurably, and the harness converges rapidly with the majority of programs verified on the first attempt."
     },
     {
       "id": "2609.00227",
@@ -54,7 +56,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Don't Let the Model Write the YAML: Deterministic, Minimal-Diff GitOps Remediation from LLM-Proposed Field Changes》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "法学硕士代理人越来越多地诊断事件并提出补救措施。在 GitOps 工作流程中，应用修复意味着编辑版本控制的配置文件，而显而易见的实现是让模型编写编辑后的文件或差异，这是从业者首先要做的。在真实的 Kubernetes 清单上评估该选择后，我们发现没有任何文本生成策略对于无人值守的自动化来说是安全的。统一差异是不安全的：在严格的修补下几乎没有任何应用，但这是一个工件，因为宽容工具（GNU 补丁）应用了 96％，但默默地错误应用了大约七分之一（14-20％）而没有错误信号。全文件重写取决于功能：小模型会损坏文件，而前沿模型通常是正确的但不确定（它会默默地删除一个字段或在某些运行中编辑邻居）并且必须重新生成整个文件，每次编辑的成本为 O（文件大小）。我们提出了一种替代方案，将语义决策（哪个资源、字段和值）与编辑文件的语法行为分开。代理仅发出结构化的字段更改意图；确定性管道索引通过（种类，名称）体现，通过 YAML 解析器的节点位置标记定位目标标量的确切字符范围，并仅替换原始文本中的该范围。由于文件永远不会重新序列化，因此构造差异最小，保留格式和注释，并且编辑是正确的且独立于模型的确定性，生成成本为 O(1)。其贡献是将 LLM 提出的意图与 GitOps 的确定性、故障关闭应用程序合同配对。我们在 KubeAstra (Apache-2.0) 中实现它并发布基准测试。我们的主张仅限于忠实应用已知的变更；更改是否正确由人工公关审查。",
       "topics": [
         "C"
       ],
@@ -63,7 +65,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.00227",
-      "pdf": "https://arxiv.org/pdf/2609.00227"
+      "pdf": "https://arxiv.org/pdf/2609.00227",
+      "abstractEn": "LLM agents increasingly diagnose incidents and propose remediations. In a GitOps workflow, applying a fix means editing a version-controlled config file, and the obvious implementation, having the model author the edited file or a diff, is what practitioners reach for first. Evaluating that choice on real Kubernetes manifests, we find no text-generation strategy is safe for unattended automation. Unified diffs are unsafe: under strict patching almost none apply, but that is an artifact, since a tolerant tool (GNU patch) applies 96%, yet silently misapplies about 1 in 7 (14-20%) with no error signal. Full-file rewrite is capability-dependent: a small model corrupts the file, while a frontier model is usually correct but non-deterministic (it silently drops a field or edits a neighbor on some runs) and must regenerate the whole file, costing O(file size) per edit. We present an alternative that separates the semantic decision (which resource, field, and value) from the syntactic act of editing the file. The agent emits only a structured field-change intent; a deterministic pipeline indexes manifests by (kind, name), locates the target scalar's exact character span via the YAML parser's node position marks, and replaces only that span in the raw text. Because the file is never re-serialized, the diff is minimal by construction, formatting and comments are preserved, and the edit is correct and deterministic independent of the model, at O(1) generation cost. The contribution is the pairing of an LLM-proposed intent with a deterministic, fail-closed application contract for GitOps. We implement it in KubeAstra (Apache-2.0) and release the benchmark. Our claim is scoped to faithful application of a known change; whether the change is right is left to human PR review."
     }
   ]
 }

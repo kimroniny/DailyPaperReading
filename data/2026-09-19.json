@@ -12,7 +12,7 @@
       ],
       "year": 2026,
       "venue": "TOSEM",
-      "abstract": "《Guiding AI to Fix Its Own Flaws: An Empirical Study on LLM-Driven Secure Code Generation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型已成为强大的编程工具。然而，他们经常忽视基本的安全实践，从而生成存在漏洞的代码。尽管存在这种风险，现有工作在引导法学硕士实现安全代码生成方面提供的指导有限，并且缺乏对法学硕士如何有效修复易受攻击代码的系统分析。在这项工作中，我们研究了如何指导法学硕士预防和修复代码漏洞。具体来说，我们检查自行生成的漏洞提示是否有助于模型避免不安全的代码，并评估不同的反馈级别如何影响漏洞修复。我们的研究考虑了跨多个尺度的专有和开放权重模型，并使用涵盖不同漏洞类型的既定基准。我们的结果表明，自行生成的漏洞提示可以有效减少不安全代码，其有效性在很大程度上取决于相关性和精确性。我们进一步发现更多的指令提示，解释它如何在任务中出现并指定如何避免它，更有效地防止易受攻击的代码。对于事后漏洞修复，原始检测工具反馈提高了所有模型的安全性，而详细的、可操作的解释则为三个基准测试中的两个提供了进一步的收益，特别是对于具有更强指令跟踪能力的模型。然而，这种解释的反馈并不总是优于包含触发多个弱点的现实世界任务的基准的原始反馈。",
       "topics": [
         "C"
       ],
@@ -20,7 +20,8 @@
         "LLM",
         "C"
       ],
-      "url": "https://doi.org/10.1145/3848030"
+      "url": "https://doi.org/10.1145/3848030",
+      "abstractEn": "Large Language Models have become powerful tools for programming. However, they often overlook essential security practices, producing code with vulnerabilities. Despite this risk, existing work offers limited guidance on steering LLMs toward secure code generation and lacks systematic analysis of how effectively LLMs repair vulnerable code. In this work, we investigate how LLMs can be guided to prevent and repair code vulnerabilities. Specifically, we examine whether self-generated vulnerability hints help models avoid insecure code, and evaluate how different feedback levels influence vulnerability repair . Our study considers proprietary and open-weight models across multiple scales and uses established benchmarks covering diverse vulnerability types. Our results show that self-generated vulnerability hints meaningfully reduce insecure code, with effectiveness depending strongly on relevance and preciseness. We further find that more directive hints, which explain how it could arise in the task and specify how to avoid it, more effectively prevent vulnerable code. For post-hoc vulnerability repair, raw detection-tool feedback improves security across all models, while detailed, actionable explanations provide further gains on two of the three benchmarks, especially for models with stronger instruction-following capabilities. Yet, this explained feedback does not consistently outperform the raw feedback for the benchmark containing real-world tasks triggering multiple weaknesses."
     },
     {
       "id": "2609.19587",
@@ -33,7 +34,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "为了防止编码代理偏离轨道，生产系统现在使用阻塞监视器来审查每个建议的操作，该监视器可以在运行之前拒绝它（Claude Code 中的自动模式，OpenAI Codex 中的 Guardian）。先前对此类监视器的评估主要衡量对意外伤害或来自不可信来源的即时注入（旨在劫持代理）的鲁棒性。 Less understood is how they hold up when the agent they monitor is persistently misaligned. To understand this risk, we task an adversarial agent with evading production blocking monitors and causing catastrophic harm, e.g.通过渗透其自身的重量。我们发现，当接受高级攻击策略指导时，敌对代理可以通过几种不同的机制取得成功，例如代理生成的针对监视器的提示注入、多代理攻击和恶意压缩。特别是，我们发现在 79% 的试验中，代理可以对自动模式和监护人使用注入攻击来运行任意 bash 命令。我们还发现，可以通过设计更改（例如增强工具覆盖范围、转录格式和代理监控阶段）来极大地改进自动模式。即使有了这些改进，以可接受的成本防止多上下文攻击仍然是一个悬而未决的问题。通过详细介绍我们的红队方法并强调新的攻击向量，我们的目标是帮助防御者评估他们针对持续恶意编码代理的可能性的缓解措施。代码可在 https://github.com/safety-research/red-teaming-auto-mode 获取。",
       "topics": [
         "C"
       ],
@@ -42,7 +43,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.19587",
-      "pdf": "https://arxiv.org/pdf/2609.19587"
+      "pdf": "https://arxiv.org/pdf/2609.19587",
+      "abstractEn": "To keep coding agents from going off the rails, production systems now review each proposed action with a blocking monitor that can reject it before it runs (Auto Mode in Claude Code, Guardian in OpenAI's Codex). Prior evaluations of such monitors largely measure robustness to accidental harm or prompt injections from untrusted sources looking to hijack the agent. Less understood is how they hold up when the agent they monitor is persistently misaligned. To understand this risk, we task an adversarial agent with evading production blocking monitors and causing catastrophic harm, e.g. by exfiltrating its own weights. We find that when instructed with high-level attack strategies, adversarial agents can succeed through several distinct mechanisms, such as agent-generated prompt injection against the monitor, multi-agent attacks, and malicious compaction. In particular we find that in 79% of trials, the agent can use an injection attack against Auto Mode and Guardian to run arbitrary bash commands. We also find that it is possible to greatly improve Auto Mode through design changes like enhancements to tool coverage, transcript formatting and an agentic monitor stage. Even with these improvements, preventing multi-context attacks at an acceptable cost remains an open problem. By detailing our red-teaming methodology and highlighting new attack vectors, we aim to help defenders evaluate their mitigations against the possibility of persistent malign coding agents. Code is available at https://github.com/safety-research/red-teaming-auto-mode."
     },
     {
       "id": "2609.18217",
@@ -53,7 +55,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "模型上下文协议 (MCP) 使 LLM 能够调用外部工具，但每次工具交互都会通过多个输入通道（工具描述、工具结果、采样消息）将模型暴露给攻击者控制的文本，这些输入通道共享单个上下文窗口，而无需权限分离。在本文中，我们提出了一个框架，用于根据通过不同渠道发送的各种有效负载帧来衡量任意 LLM 的信任配置文件。根据此评估，我们设计了跨通道碎片攻击，将看似良性的有效负载分布在两个或三个通道上；没有单独的通道进行完整的注入，但法学硕士将片段编译为凭证泄露。我们评估了 12 个前沿模型、三个生产客户端和 6 个有效负载的攻击，总计超过 15,000 次试验。我们的评估表明，跨通道攻击是一个尚未探索的攻击面：完全抵抗单通道注入（0％合规性）的模型在双通道碎片下高达 100％ 地泄露敏感数据（例如，GPT-4o、Llama 70B、Composer 2、Haiku 4.5）。我们进一步演示了价值一致的利用，其中工具的既定目的需要攻击者瞄准的数据，以及通过 VS Code 的 MCP 实现注入持久指令的采样系统提示覆盖。最后，我们评估了针对七个第三方 MCP 安全工具和三个基于提示的防御的攻击。所有工具都未能检测到碎片化的有效负载，并且事实证明即时防御是特定于模型的而不是通用的。",
       "topics": [
         "C"
       ],
@@ -62,7 +64,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.18217",
-      "pdf": "https://arxiv.org/pdf/2609.18217"
+      "pdf": "https://arxiv.org/pdf/2609.18217",
+      "abstractEn": "The Model Context Protocol (MCP) enables LLMs to invoke external tools, but every tool interaction exposes the model to attacker-controlled text through multiple input channels (tool descriptions, tool results, sampling messages) that share a single context window without privilege separation. In this paper, we present a framework to measure the trust profile of an arbitrary LLM based on a variety of payload framings sent through different channels. Following this assessment, we devise cross-channel fragmentation attacks that distribute seemingly benign payloads across two or three channels; no individual channel carries a complete injection, yet the LLM compiles the fragments into credential exfiltration. We evaluated our attacks across 12 frontier models, three production clients, and six payloads, totalling over 15,000 trials. Our evaluation reveals that cross-channel attacks are an unexplored attack surface: models that fully resist single-channel injection (0% compliance) exfiltrate sensitive data at up to 100% under two-channel fragmentation (e.g., GPT-4o, Llama 70B, Composer 2, Haiku 4.5). We further demonstrate value-aligned exploitation, where a tool's stated purpose requires the data the attacker targets, and a sampling system prompt override that injects persistent instructions via VS Code's MCP implementation. Finally, we evaluated our attacks against seven third-party MCP security tools and three prompt-based defenses. All tools failed to detect fragmented payloads, and prompt defenses proved model-specific rather than universal."
     },
     {
       "id": "2609.14119",
@@ -72,7 +75,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "模型上下文协议（MCP）已成为大型语言模型应用程序访问外部工具的通用接口，其公共注册中心现在分布着数千个社区构建的服务器，而成熟的软件包生态系统积累的审查基础设施却很少。本文报告了该生态系统的普查。我们收集了完整的公共 MCP 注册表（21,643 台服务器、72,606 条版本记录、2026 年 8 月快照），获取了 14,353 台服务器的源代码，并应用了基于模式的扫描器，涵盖了八类威胁目录，我们根据 414 个手工标记的结果来衡量其准确性。观察到的流行率主要是未经身份验证的网络暴露（扫描服务器的 9.57%）；通过测量精度对每个类别进行校正后，观察到的高严重性患病率从 11.14% 降至大约 7.6%。核心发现涉及不稳定而不是任何单一的弱点：51.1％的多版本服务器更改了它们在版本之间宣传的内容，40.6％的服务器默默地这样做，4.2％的服务器将其远程端点重定向到不同的主机，同时保留其注册表身份，这种协议的更改永远不会出现在已安装的客户端上。无声漂移与高严重性发现的几率高出近三倍相关（OR = 2.96，95% CI [2.56，3.42]）。流行度仅提供较弱的保护（OR = 每对数星数 0.78），因此星数不能很好地代表安全性。我们针对注册表设计、客户端固定和扫描仪分类提出具体建议，并发布匿名工件。",
       "topics": [
         "C"
       ],
@@ -80,7 +83,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.14119",
-      "pdf": "https://arxiv.org/pdf/2609.14119"
+      "pdf": "https://arxiv.org/pdf/2609.14119",
+      "abstractEn": "The Model Context Protocol (MCP) has become the common interface through which large language model applications reach external tools, and its public registry now distributes thousands of community-built servers with little of the vetting infrastructure that mature package ecosystems have accumulated. This paper reports a census of that ecosystem. We harvested the full public MCP registry (21,643 servers, 72,606 version records, August 2026 snapshot), fetched source code for 14,353 servers, and applied a pattern-based scanner covering an eight-class threat catalogue whose accuracy we measured against 414 hand-labeled findings. Observed prevalence is dominated by unauthenticated network exposure (9.57% of scanned servers); after correcting each class by its measured precision, 11.14% observed high-severity prevalence reduces to roughly 7.6%. The central finding concerns instability rather than any single weakness: 51.1% of multi-version servers changed what they advertise between versions, 40.6% did so silently, and 4.2% redirected their remote endpoint to a different host while keeping their registry identity, a change the protocol never surfaces to installed clients. Silent drift is associated with nearly threefold higher odds of a high-severity finding (OR = 2.96, 95% CI [2.56, 3.42]). Popularity offers only weak protection (OR = 0.78 per unit of log stars), so star counts are a poor proxy for safety. We derive concrete recommendations for registry design, client-side pinning, and scanner triage, and release an anonymized artifact."
     },
     {
       "id": "2609.18674",
@@ -95,7 +99,7 @@
       ],
       "year": 2026,
       "venue": "CAMLIS 2026",
-      "abstract": "《CaMeLoT: CaMeL orchestrated with Temporal logic for static verification and liveness》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "基于 LLM 的代理生成并执行多步骤计划，这些计划调用可以访问私有数据或执行命令的外部工具。在此设置中，安全性是计划创建的整个执行的属性，而不仅仅是任何单个步骤。该计划本身是一个关键的工件，它捕获工具调用、控制流和数据依赖性。我们推出了 CaMeLoT，它是 CaMeL 的补充，CaMeL 是针对使用工具的 LLM 代理中的即时注入的现有防御措施。 CaMeLoT 通过添加一个静态验证层来扩展 CaMeL，该验证层在调用任何工具之前检查代理的计划。CaMeLoT 将生成的计划转换为有限状态转换系统，用工具调用、出处和污点信息对其进行标记，并使用 nuXmv 模型检查器根据 CTL 中表达的时间策略对其进行检查。由于验证发生在执行之前，因此不使用 LLM 调用或工具调用即可拒绝不安全的计划，从而节省运行时可能产生的令牌，以及取消更改或拆除临时沙箱的需要。当验证失败时，模型检查器返回一个反例，以反馈给代理修复计划。我们根据从 AgentDojo 基准、SOC 工作流程和提示提取实验派生的策略来评估 CaMeLoT，表明它在执行之前验证了广泛的时间属性，同时保留了 CaMeL 的运行时可检查覆盖范围。",
       "topics": [
         "C"
       ],
@@ -104,7 +108,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.18674",
-      "pdf": "https://arxiv.org/pdf/2609.18674"
+      "pdf": "https://arxiv.org/pdf/2609.18674",
+      "abstractEn": "LLM-based agents generate and execute multi-step plans that invoke external tools which can access private data or execute commands. In this setting, security is a property of the entire execution that a plan creates, not just any single step. The plan itself is a critical artefact that captures the tool calls, control flow, and data dependencies. We present CaMeLoT, a complement to CaMeL, an existing defence against prompt injection in tool-using LLM agents. CaMeLoT extends CaMeL by adding a static verification layer that checks an agent's plan before any tool is invoked. CaMeLoT translates a generated plan into a finite-state transition system, labels it with tool calls, provenance and taint information, and checks it against temporal policies expressed in CTL using the nuXmv model checker. Because verification happens before execution, unsafe plans are rejected without using LLM calls or tool calls, saving tokens that runtime could have cost, as well as the need to unwind changes or teardown temporary sandboxes. When a verification fails, the model checker returns a counterexample to give feedback to the agent to repair the plan. We evaluate CaMeLoT on policies derived from the AgentDojo benchmark, SOC workflows, and prompt-extraction experiments, showing that it verifies a broad class of temporal properties before execution while preserving CaMeL's runtime-checkable coverage."
     },
     {
       "id": "2609.18298",
@@ -116,7 +121,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《A Study of the Reliability of Agentic AI-Generated Programs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "基于 Agentic-AI 的软件开发有望更快地完成软件、提高程序员效率和更可靠的代码。问题是如何客观地验证这些说法？在这个项目中，我们试图通过三种实践来回答这个问题。首先，我们应用了典型的最佳实践代理人工智能工作流程进行软件开发。其次，我们的目标程序是十个众所周知的、具有发布质量的人工编写的 Linux 实用程序，以便我们可以将人工智能生成的代码与具体的事实进行比较。第三，我们的可靠性衡量基于广泛使用的测试技术，即模糊随机测试。对于此测试，我们使用了经典的黑盒、分代测试和使用 AFL++ 的更现代的覆盖引导（灰盒、突变）测试。我们发现，人工智能生成的实用程序版本通常与这些程序的最新人类生成版本一样可靠，而且往往更可靠。虽然人工智能生成的版本确实存在一些故障，但它们比标准存储库中的代码要少见。有趣的是，人工智能生成的代码不太可能出现内存错误（例如缓冲区溢出）等故障，但更有可能出现无限循环等挂起。此外，我们还验证了使用代理人工智能生成强大且可靠的软件需要仔细的实践和人工监督。代码的质量很大程度上取决于所使用的提示和技能，以及指导流程的人员如何响应。我们还证明，使用代理人工智能工作流程进行软件开发（及其提示和技能）可以成为代码规范，从而实现软件的经济高效的可持续性。",
       "topics": [
         "C"
       ],
@@ -125,7 +130,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.18298",
-      "pdf": "https://arxiv.org/pdf/2609.18298"
+      "pdf": "https://arxiv.org/pdf/2609.18298",
+      "abstractEn": "Agentic-AI based software development offers the promise of faster completion of the software, greater programmer efficiency, and more reliable code. The question is how can we verify these claims in an objective way? In this project, we attempted to answer this question based on three practices. First, we applied a typical best-practices agentic AI workflow for software development. Second, our target programs were ten well-known, release-quality human-written Linux utility programs so that we could compare the AI-generated code against a concrete ground truth. Third, we based our measure of reliability on a widely used testing technique, fuzz random testing. For this testing, we used both classic black box, generational testing and more modern coverage guided (gray box, mutational) testing using AFL++. We found that the AI-generated versions of the utility programs were typically as reliable - often more reliable - than the latest human-generated versions of these programs. While the AI-generated versions did have some failures, they were less common than the code from the standard repositories. Interestingly, the AI-generated code was less likely to have failures such as memory errors (such as buffer overflows) but more likely to have hangs such as infinite loops. In addition, we verified that generating robust and reliable software using agentic AI requires careful practice and human supervision. The quality of the code is highly dependent on the prompts and skills used, and how the human directing the process responds. We also demonstrated that using agentic AI workflow for software development (with its prompts and skills) can become a specification of the code that leads to cost-effective sustainability of the software."
     },
     {
       "id": "2609.20614",
@@ -138,7 +144,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Inference-Engine Fingerprinting Attacks are Practical: Exploring Model-Driven Environmental Discovery, Exploitation, and Escape》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "前沿人工智能模型正在迅速获得利用复杂软件中的漏洞的能力。这种风险并不是理论上的，OpenAI 和 Anthropic 的前沿模型最近执行的沙箱逃逸就证明了这一点。关于如何对推理堆栈组件进行沙箱的讨论通常集中于推理引擎本身以外的组件（例如网络代理或代码执行环境）。然而，推理引擎对于错位模型来说是一个有吸引力的目标。例如，如果模型仅通过生成特制的输出令牌即可触发该引擎中的漏洞，则该模型可以在引擎中启动多步骤、裸机漏洞利用链，而无需依赖推理堆栈其他组件中的漏洞，也无需外部提供的恶意制作的输入令牌的帮助。在本文中，我们展示了未对齐的模型可以执行推理引擎指纹识别来确定执行模型的特定引擎（例如 vLLM、SGLang）。一旦对引擎进行了指纹识别，该模型就可以利用特定于引擎的漏洞，仅使用精心选择的输出令牌来控制引擎。我们提供了五个流行引擎中模型指纹的具体示例，并演示了现实的代理工具如何允许模型利用这些指纹来识别本地引擎。我们还描述了一个概念验证的裸机漏洞利用链，该漏洞链源自带指纹（随后受到损害）的推理引擎。最后，我们讨论了可以改变推理引擎以使指纹攻击变得更加困难的几种方法。",
       "topics": [
         "C"
       ],
@@ -146,7 +152,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.20614",
-      "pdf": "https://arxiv.org/pdf/2609.20614"
+      "pdf": "https://arxiv.org/pdf/2609.20614",
+      "abstractEn": "Frontier AI models are rapidly gaining the ability to exploit vulnerabilities in complex pieces of software. The risk is not theoretical, as evidenced by recent sandbox escapes performed by frontier models at OpenAI and Anthropic. Discussions of how to sandbox inference stack components often focus on components other than the inference engine itself (e.g., network proxies or code execution environments). However, the inference engine is an attractive target for a misaligned model. For example, if a model can trigger exploits in that engine merely by generating specially-crafted output tokens, the model can initiate a multi-step, to-the-bare-metal exploit chain in the engine, without relying on vulnerabilities in other components of the inference stack, and without assistance from externally-provided, maliciously-crafted input tokens. In this paper, we show that a misaligned model can perform inference engine fingerprinting to determine the specific engine (e.g., vLLM, SGLang) which executes the model. Once the engine has been fingerprinted, the model can leverage engine-specific exploits to take control of the engine using only carefully-selected output tokens. We provide concrete examples of model fingerprints in five popular engines, and demonstrate how realistic agentic harnesses allow a model to leverage those fingerprints to identify the local engine. We also describe a proof-of-concept, to-the-bare-metal exploit chain that originates from a fingerprinted (and subsequently compromised) inference engine. We conclude by discussing several ways that inference engines could be changed to make fingerprinting attacks more difficult."
     },
     {
       "id": "2609.15887",
@@ -156,7 +163,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《The Model Proposes, the Code Disposes: A Pre-Registered Ablation of a Verifier-and-Acceptance Stage in an LLM-Orchestrated Offensive-Security Agent》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "我们评估验证者和接受阶段（其判决由确定性代码强制执行的模型验证者）是否会改变 LLM 驱动的进攻性安全代理的报告内容。我们报告了一项 15 次运行的探索性试点、一项预先注册的 20 次运行确认性消融，以及一项预先注册的 2 x 2 析因研究，其中针对两个故意脆弱的实验室目标进行了 40 次运行。在验证性研究中，取消阶段消除了预报告抑制（每次运行的中位数为 2 与 0 个结果；精确的单边 p = 0.00003），并降低了模型盲法运输精度（中位数为 0.471 与 0.353；p = 0.0087）。针对冻结但不完整的真实列表的回忆没有显着差异（两侧 p = 0.158；未建立等价性）。析因研究将抑制归因于模型验证者（Holm 调整 p = 0.004）；单独的确定性接受规则不会抑制误报，并且未检测到交互作用（p = 0.72）。完整的设计保留了 93.8% 的模型判定的真实候选者，但未满足其预先注册的非劣效性标准，因为单侧 95% 下限为 0.875，低于 0.90 下限。在验证性和析因研究中，装有仪器的金丝雀在 60 次运行中的 60 次中记录了零接触，并单独披露了偶然的外部接触。对保留的盲数据包的独立人工裁决正在等待中，因此精度和灵敏度终点是支持性的，而不是最终的证据。还披露了六项审计跟踪失败，其中包括评估工具中的一项。结果支持一个狭隘的结论：验证者改变系统发布的内容，而确定性代码提供执行和可审计性；它们没有确立相对于其他药物的优越性或超出实验室目标的概括。",
       "topics": [
         "C"
       ],
@@ -166,7 +173,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.15887",
-      "pdf": "https://arxiv.org/pdf/2609.15887"
+      "pdf": "https://arxiv.org/pdf/2609.15887",
+      "abstractEn": "We evaluate whether a verifier-and-acceptance stage - a model verifier whose verdicts are enforced by deterministic code - changes what an LLM-driven offensive-security agent reports. We report a 15-run exploratory pilot, a pre-registered 20-run confirmatory ablation, and a pre-registered 2 x 2 factorial study with 40 runs across two deliberately vulnerable lab targets. In the confirmatory study, removing the stage eliminated pre-report suppression (median 2 versus 0 findings per run; exact one-sided p = 0.00003) and reduced model-blinded shipped precision (median 0.471 versus 0.353; p = 0.0087). Recall against a frozen but incomplete ground-truth list did not differ significantly (two-sided p = 0.158; equivalence was not established). The factorial study attributed suppression to the model verifier (Holm-adjusted p = 0.004); deterministic acceptance rules alone suppressed no false positives, and no interaction was detected (p = 0.72). The full design retained 93.8% of model-adjudicated true candidates but did not meet its pre-registered non-inferiority criterion because the lower one-sided 95% bound was 0.875, below the 0.90 floor. Across the confirmatory and factorial studies, an instrumented canary recorded zero contacts in 60 of 60 runs, with incidental external contacts disclosed separately. Independent human adjudication of the retained blind packets is pending, so precision and sensitivity endpoints are supporting rather than final evidence. Six audit-trail failures, including one in the evaluation tooling, are also disclosed. The results support a narrow conclusion: the verifier changes what the system ships, while deterministic code supplies enforcement and auditability; they do not establish superiority to other agents or generalization beyond lab targets."
     },
     {
       "id": "2026-2060",
@@ -180,7 +188,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《DelegProof: A Machine-Checked Security Analysis of EIP-7702 Delegation》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "自 Pectra 升级以来，EIP-7702 就在以太坊上运行，它允许外部拥有的账户将其执行委托给具有单个签名的任意合约代码。后果是可以衡量的：63% 的观察到的委托指向恶意合约，已确认损失 236 万美元，生态系统指南已经就跨链重放和抢先运行初始化发出了警告。缺少的是对该问题的正式说明：7702 委托生命周期没有正式处理，并且所有建议的缓解措施都没有经过机器验证。据我们所知，我们提出了 DelegProof，这是对由 ERC-4337 EntryPoint 管道组成的 EIP-7702 授权语义的第一个符号形式分析。我们的 Tamarin 模型通过重现四种记录的攻击类别进行校准，并产生十种机器检查的攻击模式，其中包括广告临时委托包的无声失败、重新委托期间的存储混乱，以及涉及依赖合约签名检查的 ERC-1271 替代攻击，以及确实存在的安全不变量。形式化建议的缓解措施表明，禁止 chainId-0 授权可以消除跨链重放，帐户绑定初始化门可恢复 init 授权，而未绑定门仍可被绕过，命名空间存储槽使存储混淆类在结构上无法表达。所有模型和证明均可在 https://anonymous.4open.science/r/delegproof-artifact-F7FE/ 上获取。",
       "topics": [
         "A"
       ],
@@ -189,7 +197,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/2060",
-      "pdf": "https://eprint.iacr.org/2026/2060.pdf"
+      "pdf": "https://eprint.iacr.org/2026/2060.pdf",
+      "abstractEn": "EIP-7702, live on Ethereum since the Pectra upgrade, lets externally owned accounts delegate their execution to arbitrary contract code with a single signature. The consequences are measurable: 63% of observed delegations point to malicious contracts, with $2.36M in confirmed losses, and ecosystem guidance already warns about cross-chain replay and front-run initialization. What is missing is a formal account of the problem: the 7702 delegation lifecycle has no formal treatment, and none of the recommended mitigations has been machine-verified. We present DelegProof, to our knowledge the first symbolic formal analysis of EIP-7702 authorization semantics composed with the ERC-4337 EntryPoint pipeline. Our Tamarin models are calibrated by reproducing four documented attack classes, and yield ten machine-checked attack patterns—among them the silent failure of the advertised temporary-delegation bundle, storage confusion across re-delegation, and an ERC-1271 substitution attack that reaches into the signature checks of relying contracts—together with the security invariants that do hold. Formalizing the recommended mitigations shows that banning chainId-0 authorizations eliminates cross-chain replay, that an account-bound initialization gate restores init authorization while an unbound gate is provably still bypassable, and that namespaced storage slots make the storage-confusion class structurally inexpressible. All models and proofs are available at https://anonymous.4open.science/r/delegproof-artifact-F7FE/."
     },
     {
       "id": "2609.17647",
@@ -201,7 +210,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《CARE: A Responsibility-Oriented Architecture for Domain-Scoped Resolution in Modular and Upgradeable Smart Contracts》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "模块化和可升级的智能合约系统支持可替换的执行逻辑，但模块化调度本身并不能定义哪些组件拥有架构职责，例如协调、解析、共享状态、可重用服务和观察。本文提出了 CARE，一种面向责任的架构，它使这些所有权边界变得明确，并引入了域范围的能力解析，将执行协调与选择执行目标的权限分开。 CARE 通过正式的架构模型进行定义，该模型衍生出五个结构属性。其行为语义在 TLA+ 中进一步编码，并使用 TLC 针对七个架构不变量进行评估。在最终验证运行之前，使用中间 TLC 结果来完善架构模型。针对 EIP-2535 和仅路由基线的受控实证评估表明，CARE 在评估的工作负载中引入了大约固定的 7.7k-gas 运行时路由溢价，而本地化功能替换仍然接近仅路由控制，并且比评估的 EIP-2535 重新配置路径便宜得多。对抗性测试进一步表征了与委托执行和重入相关的授权控制和残余风险。这些结果将 CARE 定位为明确责任所有权和本地化演进的架构模型，而不是现有智能合约可升级机制的通用替代品",
       "topics": [
         "A"
       ],
@@ -211,7 +220,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.17647",
-      "pdf": "https://arxiv.org/pdf/2609.17647"
+      "pdf": "https://arxiv.org/pdf/2609.17647",
+      "abstractEn": "Modular and upgradeable smart-contract systems enable replaceable execution logic, but modular dispatch alone does not define which components own architectural responsibilities such as coordination, resolution, shared state, reusable services, and observation. This paper presents CARE, a responsibility-oriented architecture that makes these ownership boundaries explicit and introduces domain-scoped capability resolution, separating execution coordination from the authority that selects an execution target. CARE is defined through a formal architectural model from which five structural properties are derived. Its behavioral semantics are further encoded in TLA+ and evaluated with TLC against seven architectural invariants. Intermediate TLC results were used to refine the architectural model before the final validation run. A controlled empirical evaluation against EIP-2535 and a routing only baseline shows that CARE introduces an approximately fixed 7.7k-gas runtime routing premium in the evaluated workloads, while localized capability replacement remains close to the routing-only control and substantially less expensive than the evaluated EIP-2535 reconfiguration path. Adversarial tests further characterize authorization controls and residual risks associated with delegated execution and reentrancy. These results position CARE as an architectural model for explicit responsibility ownership and localized evolution rather than as a universal replacement for existing smart-contract upgradeability mechanisms"
     },
     {
       "id": "2026-2067",
@@ -223,7 +233,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Maltese: Succinct Polynomial Commitment from Lattices》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "简洁多项式承诺方案是简洁非交互式知识论证（SNARK）的关键构建块。现有的基于简洁格的多项式承诺方案采用“分裂折叠”策略，利用同态将大小为 $N$ 的多项式的证明大小压缩为 $O(\\text{polylog} N)$。先前的工作要么 (1) 产生超对数验证器工作（例如 $O(\\sqrt{N})$），(2) 产生具体大的证明大小和验证器工作（例如数百 MB），或 (3) 依赖于非标准格假设。我们提出了一种新的简洁多项式承诺方案 Maltese，该方案在基于格的​​ Ajtai 哈希函数的 Merkle 树承诺上运行。我们采用折叠策略并提出新的基于和检查的缩减来管理折叠回合中树承诺的规范增长。 Maltese 在标准 Module-SIS 假设下是安全的，并为大小为 $N=2^{30}$ 的多线性多项式生成 $335$KB 的开证明；证明比先前具有多对数验证器复杂性的工作小约 300\\times$，但比先前具有更大验证器复杂性或更强的结构化假设的工作大 2$-$6\\times$。",
       "topics": [
         "A"
       ],
@@ -232,7 +242,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/2067",
-      "pdf": "https://eprint.iacr.org/2026/2067.pdf"
+      "pdf": "https://eprint.iacr.org/2026/2067.pdf",
+      "abstractEn": "Succinct polynomial commitment schemes are a key building block in succinct non-interactive arguments of knowledge (SNARKs). Existing succinct lattice-based polynomial commitment schemes take a &#34;split-and-fold&#34; strategy making use of homomorphism to compress proof size to $O(\\text{polylog} N)$ for polynomials of size $N$. Prior works either (1) incur superlogarithmic verifier work (e.g., $O(\\sqrt{N})$), (2) incur concretely large proof sizes and verifier work (e.g., hundreds of MB), or (3) rely on non-standard lattice assumptions. We proprose a new succinct polynomial commitment scheme Maltese that operates over a Merkle tree commitment of the lattice-based Ajtai hash function. We employ a folding strategy and propose new sum-check-based reductions for managing norm growth of the tree commitment over folding rounds. Maltese is secure under the standard Module-SIS assumption and produces opening proofs of $335$KB for multilinear polynomials of size $N=2^{30}$; proofs are around $300\\times$ smaller than prior work with polylogarithmic verifier complexity but between $2$-$6\\times$ larger than prior work with larger verifier complexity or stronger structured assumptions."
     },
     {
       "id": "2026-2051",
@@ -242,7 +253,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《PyuQuMuQu: Attacks on MQ-Based Linkable Ring Signatures and a New 5-Pass Construction》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "可链接环签名（LRS）允许成员代表一个团体匿名签名，同时确保同一签名者的任何两个签名都是可公开链接的，这是电子投票和加密货币的主要组成部分。多元二次 (MQ) 方程的随机系统是最保守的后量子假设之一，但文献中只有两种基于 MQ 的 LRS：第一个是由 Omar、Padhye 和 Dey 提出的，第二个是由 Namdeo、Mishra 和 Srivastava 提出的。这两种方案都是根据 Sakumoto 风格的识别协议构建的，其签名的可靠性已得到很好的证实，但在环设置中从未被重新检查过。我们提出了一种 sumset 攻击，让不了解 MQ 解决方案的签名者普遍伪造两种协议中的接受签名。同样，我们表明 Monteiro、Goya 和 Terada 的四挑战 MQ 协议（在 Namdeo、Mishra 和 Srivastava 中转录）的健全性错误为 $3/4$，而不是声称的 $1/2$，而且这个界限很紧。它的自然修复确实达到了 $1/2$，但只是 $3$-特殊声音，因此他们的 LRS 所依赖的两个转录本提取论点无论如何都不成立。然后，我们构建 PyuQuMuQu，这是一个基于 $5$ 通行证的合理后量子 MQ 的 LRS，具有 $d$ 维向量第一挑战和加法分裂第二挑战，对于具有 $N \\leq q^d-1$ 成员的环，其稳健性误差为 $\\frac{1}{2} + \\frac{N}{2(q^d-1)}$。我们在涉及随机 MQ 映射的明确陈述的假设下证明了随机预言模型的匿名性、可链接性和不可诽谤性。 PyuQuMuQu 的戒指签名大小为 355 美元，会员为 4 美元，安全位为 128 美元。",
       "topics": [
         "A"
       ],
@@ -251,7 +262,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/2051",
-      "pdf": "https://eprint.iacr.org/2026/2051.pdf"
+      "pdf": "https://eprint.iacr.org/2026/2051.pdf",
+      "abstractEn": "Linkable ring signatures (LRS) let a member sign on behalf of a group anonymously while ensuring that any two signatures by the same signer are publicly linkable, a major component in e-voting and cryptocurrencies. Random systems of multivariate quadratic (MQ) equations are one of the most conservative post-quantum assumptions, yet there are only two MQ-based LRS's in the literature: the first is due to Omar, Padhye, and Dey, and the second by Namdeo, Mishra, and Srivastava. Both of these schemes are built from Sakumoto-style identification protocols whose soundness for signatures is well-established, but in the ring setting was never re-examined. We present a sumset attack that lets a signer with no knowledge of an MQ solution universally forge accepting signatures in both protocols. In the same vein, we show that the four-challenge MQ protocol of Monteiro, Goya, and Terada (as transcribed in Namdeo, Mishra, and Srivastava) has soundness error $3/4$ instead of the claimed $1/2$, and this bound is tight. Its natural repair does achieve $1/2$, but is only $3$-special sound, so the two-transcript extraction argument upon which their LRS relies upon does not hold regardless. We then build PyuQuMuQu, a plausibly post-quantum MQ-based LRS from a $5$-pass proof with a $d$-dimensional vector first challenge and an additively split second challenge, whose soundness error is $\\frac{1}{2} + \\frac{N}{2(q^d-1)}$ for a ring with $N \\leq q^d-1$ members. We demonstrate anonymity, linkability, and non-slanderability in the random-oracle model under explicitly stated assumptions involving random MQ maps. PyuQuMuQu attains $355$ kB signature sizes for a ring with $4$ members $128$ bits of security."
     }
   ]
 }

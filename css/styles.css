@@ -163,7 +163,51 @@ select:focus,
   color: #fff8ec;
 }
 
-.meta-row {
+.venue-field {
+  flex: none;
+}
+
+.venue-field select {
+  width: 210px;
+  height: 34px;
+  border-radius: 999px;
+}
+
+.day-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 2px 0 14px;
+}
+
+.day-chip {
+  border: 1px solid var(--card-edge);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  height: 30px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.day-chip.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff8ec;
+}
+
+.abstract-label {
+  margin: 18px 0 6px;
+  color: var(--wax);
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+.abstract-toggle {
+  margin-top: 10px;
+}
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -228,7 +272,7 @@ select:focus,
 
 .reader {
   display: grid;
-  grid-template-columns: 148px minmax(0, 1fr);
+  grid-template-columns: 168px minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }

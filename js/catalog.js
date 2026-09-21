@@ -28,6 +28,17 @@ function groupPapersByDate(papers, direction = "desc") {
   return dates.map((date) => ({ date, papers: buckets.get(date) }));
 }
 
+function groupDaysByMonth(days) {
+  const months = [];
+  for (const day of days || []) {
+    const month = String(day.date || "").slice(0, 7);
+    const last = months[months.length - 1];
+    if (!last || last.month !== month) months.push({ month, days: [day] });
+    else last.days.push(day);
+  }
+  return months;
+}
+
 function pickVisibleDay(days, selectedDate) {
   if (!days || !days.length) return null;
   return days.find((day) => day.date === selectedDate) || days[0];
@@ -69,6 +80,7 @@ const PaperCatalog = {
   mergeDayFiles,
   mergeSameDayPapers,
   groupPapersByDate,
+  groupDaysByMonth,
   pickVisibleDay,
   upsertManifest,
   cardFromRadar,

@@ -13,7 +13,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《ARQ: Agentic CodeQL Query Refinement for C/C++ Vulnerability Detection》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "静态分析器已广泛用于 C/C++ 程序中的漏洞检测。基于查询的静态分析器（例如 CodeQL）在检测查询中对易受攻击的代码模式进行编码，并将其与源代码进行匹配。然而，现有的查询仍然存在误报（FP，错误地将良性代码标记为易受攻击的代码）和漏报（FN，缺少真正的漏洞）的问题。我们提出了 ARQ，这是一个代理框架，可以使用来自合成 C/C++ 程序的基于执行的证据自动优化 C/C++ CodeQL 查询。我们的主要见解是，只要综合程序的执行与查询的结论不一致，就会暴露查询的弱点。如果程序确实存在漏洞，但查询保持沉默，则该查询存在 FN 弱点；如果程序是安全的，但无论如何都会触发查询，则它有 FP 弱点。然后，ARQ 运行基于 LLM 的细化循环，使用这些分歧作为基本事实来修复查询。与以前的查询精炼方法不同，ARQ 不需要标记数据集、不需要提交历史记录，也不需要特定于漏洞的模板。我们通过使用三个商业 LLM（GPT-5.4、Claude-Sonnet-4.6 和 Gemini-3.5-flash）改进 12 个官方 CodeQL 查询来证明 ARQ 的有效性。我们在 Juliet v1.3 和 FormAI v2 数据集上比较了 ARQ 改进的查询和原始 CodeQL 查询，结果表明，ARQ 改进的查询检测到的真阳性明显更多，高达 119.8%，整个过程的精度至少为 98.0%。 ARQ 成功修复了官方 CodeQL 查询存储库中提出的三个未解决的 GitHub 问题，这些问题一直保持开放状态长达 \\textit{27 个月}。改进的查询还暴露了现实世界库 libpng 和 zlib 中两个以前未发现的错误。",
       "topics": [
         "C"
       ],
@@ -24,7 +24,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.20637",
-      "pdf": "https://arxiv.org/pdf/2608.20637"
+      "pdf": "https://arxiv.org/pdf/2608.20637",
+      "abstractEn": "Static analyzers have been widely adopted for vulnerability detection in C/C++ programs. Query-based static analyzers (e.g., CodeQL) encode vulnerable code patterns in detection queries and match them against source code. However, existing queries still suffer from false positives (FPs, incorrectly flagging benign code as vulnerable) and false negatives (FNs, missing real vulnerabilities). We present ARQ, an agentic framework that automatically refines C/C++ CodeQL queries using execution-grounded evidence from synthesized C/C++ programs. Our key insight is that a synthesized program exposes a query's weakness whenever its execution disagrees with the query's verdict. If the program is genuinely vulnerable but the query stays silent, the query has an FN weakness; if the program is safe but the query fires anyway, it has an FP weakness. ARQ then runs an LLM-based refinement loop that repairs the query using these disagreements as ground truth. Unlike previous query refining methods, ARQ requires no labeled datasets, no commit history, and no vulnerability-specific templates. We demonstrate the effectiveness of ARQ by refining 12 official CodeQL queries using three commercial LLMs (GPT-5.4, Claude-Sonnet-4.6, and Gemini-3.5-flash). We compare both ARQ-refined and original CodeQL queries on the Juliet v1.3 and FormAI v2 datasets and show that ARQ-refined queries detect substantially more true positives, by up to 119.8\\%, with a Precision of at least 98.0\\% throughout. ARQ successfully fixed three unresolved GitHub issues raised in the official CodeQL query repository that had remained open for as long as \\textit{27 months}. The refined queries also exposed two previously undiscovered bugs in the real-world libraries libpng and zlib."
     },
     {
       "id": "2608.17671",
@@ -41,7 +42,7 @@
       ],
       "year": 2026,
       "venue": "ASE 2026",
-      "abstract": "《Benchmarking Automated Security Patch Backporting: How Far Are We?》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "自动安全补丁反向移植对于缓解 N 天漏洞至关重要。最近的工具报告在各自的数据集上的成功率超过 80%。然而，这些评估通常仅限于同质环境，例如一个存储库或特定项目版本。因此，目前尚不清楚这些工具在其最初目标场景之外的推广效果如何。我们提出了 Porting Benchmark，这是一个包含 1,234 个安全补丁反向移植案例的精选数据集，涵盖跨版本、跨分支和跨存储库场景，并配有通用评估框架。使用这个基准，我们评估了五种工具，涵盖项目分析、LLM 提示和一致设置下的 LLM 代理。我们的结果表明，一致的评估改变了明显的性能格局：PortGPT 和 TSBPort 在复制数据集上仍然相对较强，而 FixMorph 和 Mystique 在通用协议下大幅下降。结构复杂的补丁的性能急剧下降：最佳提交级别成功率从 Type-I 补丁的 85.2% 下降到 Type-IV 的 24.0%。我们确定了四个根本原因类别（缺少目标 API 意识、跨版本语义不匹配、非本地依赖关系传播失败以及补丁构建或本地化失败），并得出下一代工具设计的具体方向。在具有经过验证的测试用例和构建的 POC 的 45 个动态验证子集上，我们进一步观察到基于参考的基准分数并未完全捕获现实世界的修复：精确匹配严重低估了更困难的目标适应，而可执行验证则揭示了静态参考协议遗漏的目标中的残余集成失败。可执行反馈细化为最困难的可执行案例提供了有限但可衡量的恢复。",
       "topics": [
         "C"
       ],
@@ -49,7 +50,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.17671",
-      "pdf": "https://arxiv.org/pdf/2608.17671"
+      "pdf": "https://arxiv.org/pdf/2608.17671",
+      "abstractEn": "Automated security patch backporting is critical for mitigating N-day vulnerabilities. Recent tools report success rates above 80% on their respective datasets. However, these evaluations are often confined to homogeneous environments, such as one repository or specific project versions. Consequently, it remains unclear how well these tools generalize beyond their originally targeted scenarios. We present Porting Benchmark, a curated dataset of 1,234 security patch backporting cases spanning cross-version, cross-branch, and cross-repository scenarios, paired with a common evaluation framework. Using this benchmark, we evaluate five tools spanning program analysis, LLM prompting, and LLM agents under aligned settings. Our results show that aligned evaluation changes the apparent performance landscape: PortGPT and TSBPort remain comparatively strong on the Replication Dataset, while FixMorph and Mystique degrade substantially under the common protocol. Performance degrades sharply on structurally complex patches: the best commit-level success rate falls from 85.2% on Type-I patches to 24.0% on Type-IV. We identify four root-cause categories (missing target API awareness, cross-version semantic mismatch, non-local dependency propagation failure, and patch construction or localization failure) and derive concrete directions for next-generation tool design. On a 45-case dynamically validated subset with verified test cases and constructed POCs, we further observe that reference-based benchmark scores do not fully capture real-world remediation: exact match sharply under-credits harder target adaptations, while executable validation reveals residual integration failures in the target that static reference agreement misses. Executable-feedback refinement provides limited but measurable recovery on the hardest executable cases."
     },
     {
       "id": "2608.16187",
@@ -59,7 +61,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Securing AI-Generated Code: A Just-in-Time Vulnerability Detection and Remediation Pipeline》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "人工智能辅助开发工具以极高的速度生成易受攻击的代码，但很少有自动化机制能够以开发速度检测、丰富、修复和验证安全问题，特别是那些在现实世界威胁环境中进行修复的机制。本文提出了一种自动安全评估管道，该管道根据 LLMSecEval 提示生成 Python 代码，使用 CodeQL 和 Bandit 与独立的代码验证器 LLM 并行扫描漏洞，使用 MITRE ATT&CK 技术、CWE 观察示例和 Python 最佳实践指南丰富代码验证器发现结果，通过代码生成 LLM 生成修复程序，并使用 CodeQL 和 Bandit 重新扫描以验证结果。评估了两种管道配置：管道 1 (P1)，仅使用丰富的代码验证器结果；管道 2 (P2)，它还接收初始 CodeQL 和 Bandit 结果。这两种配置都在四个 Claude 模型上运行：Opus 4.8、Sonnet 4.6、Sonnet 5 和 Haiku 4.5，针对涵盖 9 个 CWE 类别的 26 个 LLMSecEval 提示生成了 80 次运行。 P1 减少了所有四个模型的静态分析结果，范围从 -9% (Opus 4.8) 到 -54% (Sonnet 5)。 P2 进一步加深了这些降低，范围从 -29% (Opus 4.8) 到 -69% (Haiku 4.5)，每个模型的 P2 都优于 P1。所有配置的判决一致性平均约为 81% 模态一致性，其中 P2 比 P1 稍微稳定一些。修复措施在 15-22% 的案例中引入了新漏洞：大约 70% 涉及一个新发现，P2 减少了四种模型中三种的流失率，Sonnet 5 是唯一的例外。值得注意的是，最好的代码生成 LLM (Opus 4.8) 并不是最好的流程执行者，因为 Sonnet 4.6 在 P2 修复后产生了最低的残留结果和最高的通过率，这表明流程有效性和初稿安全性是不同的属性。",
       "topics": [
         "C"
       ],
@@ -68,7 +70,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.16187",
-      "pdf": "https://arxiv.org/pdf/2608.16187"
+      "pdf": "https://arxiv.org/pdf/2608.16187",
+      "abstractEn": "AI-assisted development tools generate vulnerable code at significant rates, yet few automated mechanisms exist to detect, enrich, fix, and verify security issues at development velocity, particularly ones that ground remediation in real-world threat context. This paper presents an automated security evaluation pipeline that generates Python code from LLMSecEval prompts, scans for vulnerabilities using CodeQL and Bandit in parallel with an independent Code Validator LLM, enriches the Code Validator findings with MITRE ATT&CK techniques, CWE Observed Examples, and Python best practice guidelines, generates fixes via the Code Generation LLM, and re-scans with CodeQL and Bandit to verify outcomes. Two pipeline configurations were evaluated: Pipeline 1 (P1), using enriched Code Validator findings only, and Pipeline 2 (P2), where it additionally receives the initial CodeQL and Bandit findings. Both configurations were run across four Claude models: Opus 4.8, Sonnet 4.6, Sonnet 5, and Haiku 4.5, producing 80 runs against 26 LLMSecEval prompts covering 9 CWE categories. P1 reduced static analyzer findings across all four models, ranging from -9% (Opus 4.8) to -54% (Sonnet 5). P2 deepened these reductions further, ranging from -29% (Opus 4.8) to -69% (Haiku 4.5), with P2 outperforming P1 for every model. Verdict consistency averaged approximately 81% modal agreement across all configurations, with P2 marginally more stable than P1. Remediation introduced new vulnerabilities in 15-22% of cases: roughly 70% involved a single new finding, and P2 reduced churn for three of four models, with Sonnet 5 as the sole exception. Notably, the best Code Generation LLM (Opus 4.8) was not the best pipeline performer, as Sonnet 4.6 produced the lowest residual findings and highest pass rate after P2 remediation, suggesting that pipeline effectiveness and first-draft security are distinct properties."
     },
     {
       "id": "2608.16970",
@@ -78,7 +81,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Probing the Prefill: Detecting Code Vulnerabilities via Latent Activations》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "基于LLM的代码生成现在已嵌入到关键任务管道中，但针对易受攻击的输出的防御仍然是事后的——静态分析器、微调分类器或LLM判断屏幕完成的代码，忽略生成模型自身的内部状态。我们测试一个更窄的、可直接测量的问题：当法学硕士将一段 C/C++ 代码作为上下文读取时，其隐藏的激活是否已经携带了有关该代码的漏洞状态的信号？我们从三个模型系列的四个 LLM（Granite-4.1-8B、Qwen3.5-9B、Qwen3.6-27B、Gemma-4-12B）中提取最后的预填充令牌激活，并在这些激活上训练 MLP 探针。我们在四个函数级 C/C++ 基准测试（Devign、Big-Vul、Draper VDISC、PrimeVul）上评估它们。我们的探针使用 13.4--16.0M 参数探针实现了 41.7% 的平均 F1 - 小于基本模型大小的 0.2%。在 Devign 上，最好的探针 (Qwen3.5-9B, 68.8\\% F1) 与已发布的微调分类器 SOTA (67.9\\%) 相匹配，尽管只读取冻结的通用 LLM 的激活；在更难、更不平衡的基准（Big-Vul、Draper VDISC、PrimeVul）上，探针大幅落后于 SOTA。这是早期证据，表明编码 LLM 自己对任意代码的表示可以提供有关该代码的漏洞状态的信息，从而激励进一步开展轻量级、模型本机漏洞筛选工作。",
       "topics": [
         "C-chain"
       ],
@@ -86,7 +89,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2608.16970",
-      "pdf": "https://arxiv.org/pdf/2608.16970"
+      "pdf": "https://arxiv.org/pdf/2608.16970",
+      "abstractEn": "LLM-based code generation is now embedded in mission-critical pipelines, but defenses against vulnerable output remain post-hoc -- static analyzers, fine-tuned classifiers, or an LLM judge that screen completed code, ignoring the generating model's own internal state. We test a narrower, directly measurable question: when an LLM reads a piece of C/C++ code as context, do its hidden activations already carry a signal about that code's vulnerability status? We extract last prefill token activations from four LLMs (Granite-4.1-8B, Qwen3.5-9B, Qwen3.6-27B, Gemma-4-12B) across three model families and train MLP probes on these activations. We evaluate them on four function-level C/C++ benchmarks (Devign, Big-Vul, Draper VDISC, PrimeVul). Our probes achieve 41.7\\% average F1 using 13.4--16.0M-parameter probes -- under 0.2\\% of base-model size. On Devign, the best probe (Qwen3.5-9B, 68.8\\% F1) matches the published fine-tuned-classifier SOTA (67.9\\%) despite reading only a frozen, general-purpose LLM's activations; on the harder, more imbalanced benchmarks (Big-Vul, Draper VDISC, PrimeVul) probes trail SOTA substantially. This is early evidence that a coding LLM's own representation of arbitrary code is informative about that code's vulnerability status, motivating further work toward lightweight, model-native vulnerability screening."
     },
     {
       "id": "2608.19430",
@@ -101,7 +105,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《HARP: Hierarchical Adaptive Ranking with Preference-Adaptive Fusion for Query-Based CVE Prioritization》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "漏洞优先级本质上是依赖于偏好的，因为相同的 CVE 在不同的操作偏好场景下可以接收不同的修复优先级。现有的评分系统和排名方法通常假设固定的标准。在实践中，组织已经在偏好场景下运作，但这种偏好通常是隐式的，很难表达为书面提示指令，而分类查询通常不会对其进行编码。当前情况下过去经过验证的分类案例更容易获得。我们在这种情况下研究基于查询的 CVE 优先级，并提出 HARP，这是一种基于图的多视图框架，可以对来自自然语言查询的候选者以及来自当前偏好场景的历史标记示例的支持库进行排名，而不需要该场景的明确文本摘要。 HARP 从漏洞知识图中检索证据，通过策略条件的全局、企业和用户视图对候选者进行评分，并根据采样支持拟合视图融合权重。跨三个偏好场景和多个骨干法学硕士的实验表明，HARP 优于多个基线，这表明了我们方法的有效性。",
       "topics": [
         "C"
       ],
@@ -110,7 +114,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.19430",
-      "pdf": "https://arxiv.org/pdf/2608.19430"
+      "pdf": "https://arxiv.org/pdf/2608.19430",
+      "abstractEn": "Vulnerability prioritization is inherently preference dependent, since the same CVE can receive different remediation priority under different operational preference scenarios. Existing scoring systems and ranking methods typically assume a fixed criterion. In practice, organizations already operate under a preference scenario, but this preference is often implicit and difficult to express as a written prompt instruction, while triage queries usually do not encode it. Past validated triage cases under the current scenario are more readily available. We study query-based CVE prioritization in this setting and propose HARP, a graph-grounded multi-view framework that ranks candidates from a natural-language query together with a support bank of historical labeled examples from the current preference scenario, without requiring an explicit textual summary of that scenario. HARP retrieves evidence from a vulnerability knowledge graph, scores candidates with policy-conditioned global, enterprise, and user views, and fits view-fusion weights from sampled supports. Experiments across three preference scenarios and multiple backbone LLMs show that HARP outperforms multiple baselines, expressing our method's effectiveness."
     },
     {
       "id": "2608.19680",
@@ -127,7 +132,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Frequency-Aware Continual Learning for Smart Contract Vulnerability Detection with Large Language Models》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "使用大型语言模型 (LLM) 的智能合约漏洞检测面临着三个因果关联的挑战。首先，新的漏洞类别需要参数有效的适应，因为完全的再训练对于顺序到达的任务是禁止的。其次，在共享主干上训练每个任务适配器会导致灾难性地忘记以前学到的漏洞。第三，由于任务身份在推理时未知，因此必须将由此产生的多个适配器合并为单个模型。每个挑战都直接源自其前一个挑战的解决方案，因此集成框架至关重要。我们提出了一个三阶段管道，其中每个阶段解决一个挑战并进入下一个阶段。自适应阶段使用频率感知低阶自适应（FA-LoRA），它在具有每个频率重要性门的傅里叶域中执行自适应，仅需要 0.4% 的可训练参数，同时优于标准 LoRA 和 QLoRA。持续学习阶段应用遗忘感知重放 (FAR)，它使用这些频率门通过损失动态来估计每个样本的遗忘风险，并优先考虑易受攻击的知识进行排练，从而在连续任务中实现 0.8022 的平均 Micro-F1。部署阶段采用锚点保护渐进合并（APPM），它利用 FAR 训练产生的不对称泛化来识别最强泛化适配器作为锚点，并通过锚点保护加权合并和频域门竞争将所有适配器合并到单个模型中。 APPM 实现了 0.8085 的 Micro-F1，与独立的每任务上限的 2.7% 之内，合并成本为 156 毫秒，并且没有额外的运行时内存。 DIVE 上的实验证实该框架有效解决了不断发展的区块链生态系统的所有三个挑战。",
       "topics": [
         "C-chain"
       ],
@@ -137,7 +142,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2608.19680",
-      "pdf": "https://arxiv.org/pdf/2608.19680"
+      "pdf": "https://arxiv.org/pdf/2608.19680",
+      "abstractEn": "Smart contract vulnerability detection with Large Language Models (LLMs) faces three causally linked challenges. First, new vulnerability categories demand parameter-efficient adaptation, since full retraining is prohibitive for sequentially arriving tasks. Second, training per-task adapters on a shared backbone causes catastrophic forgetting of previously learned vulnerabilities. Third, the resulting multiplicity of adapters must be consolidated into a single model, since task identity is unknown at inference time. Each challenge arises directly from the solution to its predecessor, making an integrated framework essential. We propose a three-stage pipeline in which each stage addresses one challenge and feeds into the next. The adaptation stage uses Frequency-Aware Low-Rank Adaptation (FA-LoRA), which performs adaptation in the Fourier domain with per-frequency importance gates, requiring only 0.4% trainable parameters while outperforming standard LoRA and QLoRA. The continual learning stage applies Forget-Aware Replay (FAR), which uses these frequency gates to estimate per-sample forgetting risk via loss dynamics and prioritizes vulnerable knowledge for rehearsal, achieving an average Micro-F1 of 0.8022 across sequential tasks. The deployment stage employs Anchor-Protected Progressive Merging (APPM), which exploits the asymmetric generalization produced by FAR training to identify the strongest-generalizing adapter as an anchor and consolidates all adapters into a single model via anchor-protected weighted merging with frequency-domain gate competition. APPM achieves a Micro-F1 of 0.8085, within 2.7% of the independent per-task upper bound, at a merge cost of 156 ms and no additional runtime memory. Experiments on DIVE confirm the framework effectively addresses all three challenges for evolving blockchain ecosystems."
     },
     {
       "id": "2608.17220",
@@ -154,7 +160,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《PACE: Policy-Attested Contract Execution for Safe AI Agents in Decentralized Finance》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "自主 AI 代理正在成为去中心化金融 (DeFi) 操作（例如互换、借贷操作和收益管理）的接口。由于这些代理依赖大型语言模型 (LLM) 来规划交易，因此它们继承了 LLM 对提示注入的敏感性，并且缺乏将验证者的批准与最终在链上提交的确切交易绑定的机制。我们提出了 PACE（策略证明合约执行），这是一种交易级授权框架，介于基于 LLM 的代理和链上执行之间。PACE 引入了类型化的事务意图、确定性策略验证器和签名的策略决策记录 (PDR)，这些策略决策记录以加密方式将批准的意图、策略和模拟报告绑定到确切的执行字节，并具有重播和过期保护。 Solidity 智能账户在链上强制执行 PDR 签名，测量的开销为 29,826-31,822 个 Gas。我们根据涵盖四个攻击类别的 40 项任务以及良性实用程序（2,800 次试验，10 个种子）的 6 个基线对 PACE 进行评估。在我们的确定性沙箱中，PACE 在良性任务上实现了 0.00 的不安全执行率和 0.00 的误报率，而无防护基线的结果为 0.80。消融研究将宽松的政策设置 (+57.5 pp) 和接触合同许可名单 (+12.5 pp) 确定为主要的安全组成部分。为了测试相同的确定性底线是否适用于真实模型输出，该工件还提供了对整个任务套件重复运行的三模型实时 LLM 评估。归档 RPC 部署包含主网分叉工具，但仅在生成相应工件时才会报告分叉结果。这些辅助研究独立于确定性基准，并且永远不能替代确定性基准。我们将我们的主张定义为可重复基准内的逻辑级安全性，而不是部署就绪的 DeFi 安全性。",
       "topics": [
         "A"
       ],
@@ -164,7 +170,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.17220",
-      "pdf": "https://arxiv.org/pdf/2608.17220"
+      "pdf": "https://arxiv.org/pdf/2608.17220",
+      "abstractEn": "Autonomous AI agents are emerging as interfaces for decentralized finance (DeFi) actions such as swaps, lending operations, and yield management. Because these agents rely on large language models (LLMs) to plan transactions, they inherit the LLM's susceptibility to prompt injection and lack of mechanisms to bind a verifier's approval to the exact transaction ultimately submitted on-chain. We present PACE (Policy-Attested Contract Execution), a transaction-level authorization framework that interposes between an LLM-based agent and on-chain execution. PACE introduces typed transaction intents, a deterministic policy verifier, and signed Policy Decision Records (PDRs) that cryptographically bind the approved intent, policy, and simulation report to the exact execution bytes, with replay and expiration protection. A Solidity smart account enforces PDR signatures on-chain with a measured overhead of 29,826-31,822 gas. We evaluate PACE against six baselines on 40 tasks spanning four attack categories plus benign utility (2,800 trials, 10 seeds). In our deterministic sandbox, PACE achieves a 0.00 unsafe execution rate and 0.00 false-positive rate on benign tasks, compared to 0.80 for the unguarded baseline. Ablation studies identify permissive policy settings (+57.5 pp) and the touched-contract allowlist (+12.5 pp) as the dominant safety components. To test whether the same deterministic floor holds for real model outputs, the artifact additionally provides a three-model live-LLM evaluation over the full task suite with repeated runs. A mainnet-fork harness is included for archive-RPC deployments, but fork results are reported only when the corresponding artifacts are generated. These auxiliary studies are separate from, and never substitute for, the deterministic benchmark. We frame our claims as logic-level safety within a reproducible benchmark rather than deployment-ready DeFi security."
     },
     {
       "id": "2608.17738",
@@ -177,7 +184,7 @@
       ],
       "year": 2026,
       "venue": "ASE 2026",
-      "abstract": "协议/链上工作《SpecTrum: Specification-Guided Differential Fuzzing for Ethereum Consensus Clients》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "以太坊的共识安全依赖于就每个状态转换达成一致的独立共识客户端实现。当它们由于实现错误而出现分歧时，网络可能会分叉，最终结果可能会停滞，并且可能会受到严重攻击。为了防止这种共识分歧，以太坊提供了一个Python参考实现（consensus-spec），它充当规范，以及一个手工制作的官方测试套件（spectests）。然而，作为一个可执行的实现，以太坊的规范通过运行时行为隐式地定义了有效性。因此，它缺乏系统的方法来确保所有有效性条件都得到彻底评估。我们提出了 SpecTrum，一个分三个阶段解决这个问题的框架。首先，我们介绍 Consensus-SpecTec，这是以太坊共识算法的机械化规范，它使有效性条件明确为 if-premises。其次，我们定义前提覆盖率，这是一个衡量在频谱测试中哪些 if-premise 被评估为 true 和 false 的指标。第三，我们开发了一个基于规范的测试生成器，它提取未被 Spectest 评估为 false 的前提约束，并生成输入来评估它们。将 SpecTrum 应用于 5 个主要的以太坊共识客户端，我们识别出 27 个跨客户端分歧案例，其中 22 个如果没有插入我们的机械化前提就无法找到。所有 27 个案例均在前叉版本中重现，将机械化规格扩展到新前叉需要与规格差异成比例的适度努力。",
       "topics": [
         "A"
       ],
@@ -188,7 +195,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.17738",
-      "pdf": "https://arxiv.org/pdf/2608.17738"
+      "pdf": "https://arxiv.org/pdf/2608.17738",
+      "abstractEn": "Ethereum's consensus safety relies on independent consensus client implementations agreeing on every state transition. When they diverge due to implementation errors, the network can fork, finality can stall, and severe attacks are possible. To prevent such consensus divergences, Ethereum provides a Python reference implementation (consensus-spec), which acts as a specification, and a hand-crafted official test suite (spectests). However, as an executable implementation, Ethereum's specification defines validity implicitly through runtime behavior. As a result, it lacks a systematic way to ensure that all validity conditions are thoroughly evaluated. We present SpecTrum, a framework that addresses this problem in three stages. First, we introduce Consensus-SpecTec, a mechanized specification of the Ethereum consensus algorithm, which makes validity conditions explicit as if-premises. Second, we define premise coverage, a metric that measures which if-premises are evaluated to true and false across spectests. Third, we develop a specification-based test generator that extracts constraints on premises not evaluated to false by spectests and generates inputs to evaluate them. Applying SpecTrum to five major Ethereum consensus clients, we identify 27 cross-client divergence cases, 22 of which cannot be found without the premises inserted in our mechanization. All 27 cases reproduce across fork versions, and extending the mechanized specification to a new fork takes modest effort proportional to the specification difference."
     },
     {
       "id": "2026-1757",
@@ -196,7 +204,7 @@
       "authors": [],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Enabling Threshold Custody for the Lightning Network with Nested Threshold Multi-Signatures》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "比特币闪电网络保护数亿美元的安全，但通道端点依赖于易受攻击的单个在线密钥。尽管门限签名通常用于保护链上比特币，但闪电通道尚未进行实际部署。这是因为对闪电方进行阈值化需要在已建立的两方 MuSig2 协议中嵌套阈值签名方案，而不改变其随机数交换或消息流。在这项工作中，我们通过形式化嵌套阈值多重签名来解决这一限制，这是一种新的加密原语，用于对多重签名协议内的一个参与者进行阈值化。作为该原语的一个实例，我们提出了 Iceberg，这是嵌套阈值 MuSig2 签名的第一个构造。 Iceberg 使闪电通道的一侧能够作为 $t$-of-$n$ 阈值组运行，同时向交易对手显示为标准 MuSig2 参与者。因此，阈值托管可以单方面部署在当今的闪电网络上，而不需要对比特币、闪电协议或通道交易对手进行任何修改。我们证明了 Iceberg 的安全性，将原型集成到生产闪电节点中，并对其性能进行了基准测试。我们的测量表明，对闪电通道进行阈值化只会产生适度的开销，因为容忍一个损坏成员的阈值组可以维持未修改端点超过 93\\%$ 的支付吞吐量。",
       "topics": [
         "A"
       ],
@@ -204,7 +212,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1757",
-      "pdf": "https://eprint.iacr.org/2026/1757.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1757.pdf",
+      "abstractEn": "The Bitcoin Lightning Network secures hundreds of millions of dollars, yet channel endpoints rely on vulnerable single online keys. Although threshold signatures are routinely used to protect on-chain Bitcoin, no practical deployment has been possible for Lightning channels. This is because thresholdizing a Lightning party requires nesting a threshold signature scheme inside of an established two-party MuSig2 protocol without altering its nonce exchange or message flow. In this work, we resolve this limitation by formalizing nested threshold multi-signatures, a new cryptographic primitive for thresholdizing one participant inside a multi-signature protocol. As an instance of this primitive, we present Iceberg, the first construction for nested threshold MuSig2 signatures. Iceberg enables one side of a Lightning channel to operate as a $t$-of-$n$ threshold group while appearing to the counterparty as a standard MuSig2 participant. As a result, threshold custody can be deployed unilaterally on today's Lightning Network without requiring any modifications to Bitcoin, the Lightning protocol, or channel counterparties. We prove the security of Iceberg, integrate a prototype into a production Lightning node, and benchmark its performance. Our measurements show that thresholdizing a Lightning channel incurs only modest overhead, since a threshold group tolerating one corrupted member sustains over $93\\%$ of the payment throughput of an unmodified endpoint."
     },
     {
       "id": "2608.17532",
@@ -219,7 +228,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《SoK: Cross-Chain Transaction Identification and Matching》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "跨链桥、即时加密货币交易和集中式跨账本平台在日益多链的生态系统中移动资产。然而，这些系统却屡屡成为高价值攻击的目标和跨链洗钱的渠道。跨链交易比单链交易更难分析：没有一个账本记录整个跨链传输，其证据分散在源链、目标链和链下系统中，并且该证据的可用性和可靠性在不同系统中差异很大。在本文中，我们提出了跨链交易识别和匹配的知识系统化（SoK）。首先，我们将存取款识别方法分为四种方法，将交易匹配方法分为三种机制：确定性标识符匹配、字段约束启发式和模型辅助匹配。我们发现它们的适用性和报告的性能主要取决于底层系统公开的证据，并且我们进一步研究了匹配对如何支持下游攻击检测和资金追踪。其次，我们评估现有数据集和工件的可用性，发现可用的数据集和工件不足一半，并提炼出三种工件故障模式。最后，我们概述了可审计、可重复和可操作的跨链分析的四个开放挑战。",
       "topics": [
         "A"
       ],
@@ -229,7 +238,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.17532",
-      "pdf": "https://arxiv.org/pdf/2608.17532"
+      "pdf": "https://arxiv.org/pdf/2608.17532",
+      "abstractEn": "Cross-chain bridges, instant cryptocurrency exchanges, and centralized cross-ledger platforms move assets across an increasingly multi-chain ecosystem. However, these systems have repeatedly become targets of high-value attacks and channels for cross-chain money laundering. Cross-chain transactions are substantially harder to analyze than single-chain transactions: no single ledger records an entire cross-chain transfer, its evidence is scattered across the source chain, the destination chain, and off-chain systems, and the availability and reliability of that evidence vary widely across systems. In this paper, we present a systematization of knowledge (SoK) on cross-chain transaction identification and matching. First, we classify deposit and withdrawal identification methods into four approaches and transaction matching methods into three mechanisms: deterministic identifier matching, field-constraint heuristics, and model-assisted matching. We find that their applicability and reported performance are shaped mainly by the evidence the underlying system exposes, and we further examine how matched pairs support downstream attack detection and fund tracing. Second, we assess the availability of existing datasets and artifacts, finding that fewer than half remain obtainable, and distill three artifact failure modes. Finally, we outline four open challenges toward auditable, reproducible, and actionable cross-chain analysis."
     },
     {
       "id": "2026-1773",
@@ -261,7 +271,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Large Language Models at the Intersection of Software Engineering and Software Security》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 正在从代码完成转向存储库规模的代理，用于检索上下文、编辑文件、执行工具以及参与安全敏感的工作流程。然而，这些系统的证据仍然分为以功能任务完成为中心的软件工程评估和以漏洞检测、安全生成或面向漏洞利用的验证为中心的软件安全评估。这项以证据为中心的结构化调查综合了截至 2026 年 5 月 31 日的代表性工作，涉及软件工程任务、软件安全任务、适应机制、工件粒度和评估设计。除了任务分类之外，我们还引入了一个保证框架，该框架将功能正确性、安全性、操作可靠性、证据来源和代理权限分开。审查表明，执行反馈和存储库访问可以显着提高工程任务的完成度，但它们本身并不能建立安全性；相反，静态分析标签或漏洞分类分数很少能确定可部署的正确性。我们识别反复出现的有效性威胁——薄弱的测试预言、重复和暂时泄露的数据、不断变化的代理工具、仅代理的安全检查以及少报的预算和人为干预——并得出用于交叉研究比较的最低报告协议。由此产生的研究议程优先考虑联合安全和功能基准、存储库规模的威胁模型、校准的人类监督、纵向可维护性证据和可重复的代理评估。中心结论是，模型能力应该被判断为由适合任务的证据支持的保证案例，而不是单个基准分数。",
       "topics": [
         "C"
       ],
@@ -269,7 +279,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.21107",
-      "pdf": "https://arxiv.org/pdf/2608.21107"
+      "pdf": "https://arxiv.org/pdf/2608.21107",
+      "abstractEn": "Large Language Models (LLMs) are moving from code completion toward repository-scale agents that retrieve context, edit files, execute tools, and participate in security-sensitive workflows. The evidence for these systems, however, remains divided between software engineering evaluations centered on functional task completion and software security evaluations centered on vulnerability detection, secure generation, or exploit-oriented validation. This evidence-centered structured survey synthesizes representative work available through May 31, 2026 across software engineering tasks, software security tasks, adaptation mechanisms, artifact granularity, and evaluation design. In addition to a task taxonomy, we introduce an assurance framework that separates functional correctness, security, operational reliability, evidence provenance, and agent authority. The review shows that execution feedback and repository access can substantially improve engineering task completion, but do not by themselves establish security; conversely, static-analysis labels or vulnerability-classification scores rarely establish deployable correctness. We identify recurring validity threats--weak test oracles, duplicated and temporally leaked data, changing agent harnesses, proxy-only security checks, and under-reported budgets and human intervention--and derive a minimum reporting protocol for cross-study comparison. The resulting research agenda prioritizes jointly secure-and-functional benchmarks, repository-scale threat models, calibrated human oversight, longitudinal maintainability evidence, and reproducible agent evaluation. The central conclusion is that model capability should be judged as an assurance case supported by task-appropriate evidence, rather than by a single benchmark score."
     },
     {
       "id": "2608.20963",
@@ -279,7 +290,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Vibe Coding and Web Application Security: A Twin-Prompt Study》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型越来越多地根据自然语言提示生成完整的 Web 应用程序，这就提出了明确请求安全最佳实践是否可以改善结果的问题。我们研究了六个功能不同的 Web 应用程序，每个应用程序都以两个相同的提示变体生成，除了附加的安全要求部分：基线 (A) 和安全感知 (B) 变体。所有 12 个程序均由相同的代理编码助手和相同的模型版本在单个非迭代生成轮中生成，然后使用静态、依赖、动态和手动技术进行分析，从 85 个候选程序中得出 75 个已确认的结果。安全意识变体在每个应用程序中产生的确认结果较少（24 比 51），并且不包含严重或严重问题；最严重的发现只能通过手动测试发现。由于语料库很小并且每个变体都生成一次，因此我们报告描述性观察结果而不是统计确定的效果，并将这项工作定位为初步研究，其管道正在扩展到多个模型并重复运行。",
       "topics": [
         "C"
       ],
@@ -287,7 +298,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.20963",
-      "pdf": "https://arxiv.org/pdf/2608.20963"
+      "pdf": "https://arxiv.org/pdf/2608.20963",
+      "abstractEn": "Large language models increasingly generate complete web applications from natural-language prompts, raising the question of whether explicitly requesting security best practice improves the result. We study six functionally distinct web applications, each generated in two prompt variants that are identical except for an appended security-requirements section: a baseline (A) and a security-aware (B) variant. All twelve programs were produced by the same agentic coding assistant and the same model version in a single, non-iterative generation round, and were then analyzed with static, dependency, dynamic and manual techniques, yielding 75 confirmed findings out of 85 candidates. The security-aware variant produced fewer confirmed findings in every application (24 versus 51) and contained no Critical or High issues; the most severe finding was detected only by manual testing. Because the corpus is small and each variant was generated once, we report descriptive observations rather than statistically established effects, and position the work as a preliminary study whose pipeline is being scaled to multiple models and repeated runs."
     },
     {
       "id": "2608.17275",
@@ -303,7 +315,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《When Agents Act on Web3: An Attack-Surface Survey of MCP, Skills, and Tool Calling》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "AI 代理越来越多地采取行动，而不仅仅是阅读：在模型上下文协议 (MCP) 生态系统中，修改外部状态的已部署工具的比例已从工具使用的 27% 上升到 65%。当代理通过 MCP、技能和工具调用在公共区块链上行使这种权限时，攻击的后果将由区块链执行层而不是传统的软件假设来控制。这项调查认为，该层的四个属性（不可逆性、签名权限、连​​续自治和序列级组成）从本质上改变了威胁模型，将通用代理安全性的可恢复故障转变为长期的、不可逆转的损失。我们将零散的 MCP 安全文献组织成攻击面分类法，然后贡献一个 Web3 风险映射矩阵，将每个攻击类别与其放大的影响、负责任的放大器、代表性缓解措施和剩余差距联系起来。我们综合了防御措施，包括新兴的基于区块链的机制，发现它们有所改善，但还不够：经过测量的保护措施阻止的攻击不到 30%，模型级安全性拒绝的攻击不到 3%。最后，我们根据相邻的调查来定位工作，并从矩阵的开放单元中得出研究议程。",
       "topics": [
         "A"
       ],
@@ -312,7 +324,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.17275",
-      "pdf": "https://arxiv.org/pdf/2608.17275"
+      "pdf": "https://arxiv.org/pdf/2608.17275",
+      "abstractEn": "AI agents increasingly act rather than merely read: across the Model Context Protocol (MCP) ecosystem, the share of deployed tools that modify external state has risen from 27% to 65% of tool use. When agents exercise this authority on public blockchains through MCP, skills, and tool calling, the consequences of an attack are governed by the blockchain execution layer rather than by conventional software assumptions. This survey argues that four properties of that layer (irreversibility, signing authority, continuous autonomy, and sequence-level composition) qualitatively change the threat model, turning the recoverable failures of generic agent security into a standing, irreversible loss. We organize the fragmented MCP-security literature into an attack-surface taxonomy, then contribute a Web3 risk-mapping matrix that ties each attack class to its amplified impact, the responsible amplifiers, a representative mitigation, and the residual gap. We synthesize defenses, including emerging blockchain-based mechanisms, and find them improving but insufficient: measured protections stop fewer than 30% of attacks, and model-level safety refuses fewer than 3%. We close by positioning the work against adjacent surveys and deriving a research agenda from the matrix's open cells."
     },
     {
       "id": "2608.18359",
@@ -323,7 +336,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《0xPass: A Secure Protocol for Universal Cross-Chain Accounts》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "通用账户允许用户通过单一界面跨异构区块链生态系统管理资产并执行操作，但它们带来了涉及身份验证、授权、交易签名、密钥托管、恢复和去中心化的安全和信任挑战。本文提出了 0xPass，一种通用跨链账户的模块化协议架构。 0xPass 将请求编排、事务解决和事务签名分离到可互操作的层中。用户批准的请求绑定到经过身份验证的身份并跨层授权，而阈值签名可防止任何单个交易节点持有完整的签名密钥。该设计还支持受限授权委托、交易策略、帐户恢复、分布式密钥管理以及独立运行的子网络之间的可审计通信。我们描述了从集中运营的服务到许可网络并最终到具有第三方模块、抵押支持的加入和轮换密钥管理委员会的无许可网络的分阶段部署路径。由此产生的架构提供了一个实用的框架，用于扩展跨链账户功能，同时逐步减少中心化信任并保留用户对交易授权的控制。",
       "topics": [
         "A"
       ],
@@ -332,7 +345,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.18359",
-      "pdf": "https://arxiv.org/pdf/2608.18359"
+      "pdf": "https://arxiv.org/pdf/2608.18359",
+      "abstractEn": "Universal accounts allow users to manage assets and execute operations across heterogeneous blockchain ecosystems through a single interface, but they introduce security and trust challenges involving authentication, authorization, transaction signing, key custody, recovery, and decentralization. This paper presents 0xPass, a modular protocol architecture for universal cross-chain accounts. 0xPass separates request orchestration, transaction solving, and transaction signing into interoperable layers. User-approved requests are bound to authenticated identities and authorized across layers, while threshold signatures prevent any single transaction node from holding a complete signing key. The design also supports constrained authorization delegation, transaction policies, account recovery, distributed key management, and auditable communication among independently operated sub-networks. We describe a staged deployment path from a centrally operated service to a permissioned network and ultimately to a permissionless network with third-party modules, collateral-backed onboarding, and rotating key-management committees. The resulting architecture provides a practical framework for extending cross-chain account functionality while progressively reducing centralized trust and preserving user control over transaction authorization."
     },
     {
       "id": "2608.17355",
@@ -349,7 +363,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《FlowShield: cryptocurrency anti-money laundering with transaction semantics parsing and fund flow tracking》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "加密货币反洗钱 (Crypto AML) 日益受到复杂的洗钱行为的挑战，这些行为通过不同的语义和跨多个区块链快速分割被盗资产。现有的加密 AML 方法通常简化交易语义、依赖于以拓扑为中心的信号或输出隔离的检测标签。在本文中，我们提出了 \\textsc{FlowShield}，一个用于交易级洗钱检测和面向调查人员的报告生成的加密 AML 框架。 \\textsc{FlowShield} 首先从可观察的关系中恢复行为级语义，使洗钱意图变得明确。为了追踪价值来源和重新分配，\\textsc{FlowShield} 从三个互补的角度重建资金流子图。然后，它采用文本-结构融合机制，实现大语言模型（LLM）编码的语义和具有图卷积网络（GCN）编码结构的流文本之间的相互作用。除了单纯的检测之外，\\textsc{FlowShield} 还生成可读的可疑活动报告 (SAR)，为调查人员提供简洁的摘要和可解释的危险信号。为了解决多链检测中的数据稀缺问题，我们构建并开源了第一个公共多链洗钱数据集 \\textit{BybitML}。我们在 \\textit{BybitML} 和两个公共洗钱数据集上评估 \\textsc{FlowShield}，实验结果表明 \\textsc{FlowShield} 实现了最佳的整体性能，平均 F1 分数为 98.0\\%。进一步的行为和 SAR 分析表明 \\textsc{FlowShield} 可以揭示不同的洗钱策略并生成可读的报告以调查复杂的多跳资金流。",
       "topics": [
         "A"
       ],
@@ -358,7 +372,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.17355",
-      "pdf": "https://arxiv.org/pdf/2608.17355"
+      "pdf": "https://arxiv.org/pdf/2608.17355",
+      "abstractEn": "Cryptocurrency anti-money laundering (Crypto AML) is increasingly challenged by sophisticated laundering behaviors that rapidly fragment stolen assets through diverse semantics and across multiple blockchains. Existing Crypto AML methods often simplify transaction semantics, rely on topology-centric signals, or output isolated detection labels. In this paper, we present \\textsc{FlowShield}, a Crypto AML framework for transaction-level laundering detection and investigator-facing report generation. \\textsc{FlowShield} first recovers behavior-level semantics from observable relations, making laundering intents explicit. To trace value provenance and redistribution, \\textsc{FlowShield} reconstructs fund-flow subgraphs from three complementary perspectives. It then employs a text--structure fusion mechanism, enabling the interplay between large language model (LLM)-encoded semantics and flow texts with graph convolutional network (GCN)-encoded structure. Beyond mere detection, \\textsc{FlowShield} further generates readable suspicious activity reports (SARs), offering investigators concise summaries and explainable red flags. To address the data scarcity in multi-chain detection, we construct and open-source \\textit{BybitML}, the first public multi-chain laundering dataset. We evaluate \\textsc{FlowShield} on \\textit{BybitML} and two public laundering datasets and experimental results demonstrate that \\textsc{FlowShield} achieves the best overall performance, with an average F1 score of 98.0\\%. Further behavior and SAR analyses demonstrate that \\textsc{FlowShield} can reveal diverse laundering strategies and produce readable reports for investigating complex multi-hop fund flows."
     },
     {
       "id": "2026-1728",
@@ -370,7 +385,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《A Controlled Case Study of Design Trade-offs in DeFi Lending Protocols》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "去中心化借贷协议将信贷市场编码为智能合约，其设计选择会影响天然气成本、资本效率、清算行为和风险分配。我们在匹配的以太坊分叉测试中对 Aave V3、SparkLend、Compound III 和 Morpho Blue 与 wstETH 抵押品、USDC 债务和一种固定链状态进行比较。这些测试衡量调用路径 Gas、年化利率、三十天债务增长、最大借贷能力和清算结果。值得注意的是，观察到的 Gas 成本和费率的顺序特定于该测试工件，并且可能在不同的抵押资产或利用制度下发生变化。在此环境下，Morpho Blue 具有最低的测量交互调用路径 Gas 和最高的借贷能力，同时将风险选择转移到孤立的无许可市场。此外，Morpho Blue 的评估使用已部署的市场进行利率测量，但使用构建的市场进行清算测试。 Aave V3 和 SparkLend 提供了更广泛的池化市场抽象以及更高的测量调用路径 Gas。复合 III 简化了每个市场围绕一项基础资产的借贷；其低天然气吸收步骤被单独的购买抵押品清算路径所抵消。我们提供基于 Foundry 的以太坊分叉测试套件，用于重现这些测量结果并比较贷款设计权衡。",
       "topics": [
         "A"
       ],
@@ -379,7 +394,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1728",
-      "pdf": "https://eprint.iacr.org/2026/1728.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1728.pdf",
+      "abstractEn": "Decentralized lending protocols encode credit markets as smart contracts whose design choices affect gas cost, capital efficiency, liquidation behavior, and risk allocation. We compare Aave V3, SparkLend, Compound III, and Morpho Blue in matched Ethereum fork tests with wstETH collateral, USDC debt, and one fixed chain state. The tests measure call-path gas, annualized rates, thirty-day debt growth, maximum borrow capacity, and liquidation outcomes. It is important to note that the observed orderings for gas costs and rates are specific to this test artifact and could change under different collateral assets or utilization regimes. Within this setting, Morpho Blue has the lowest measured interaction call-path gas and highest borrow capacity, while shifting risk selection to isolated permissionless markets. Furthermore, Morpho Blue's evaluation uses a deployed market for rate measurements but a constructed market for liquidation testing. Aave V3 and SparkLend provide broader pooled-market abstractions with higher measured call-path gas. Compound III simplifies borrowing around one base asset per market; its low-gas absorb step is offset by a separate buy collateral liquidation path. We provide a Foundry-based Ethereum-fork test suite for reproducing these measurements and comparing lending-design trade-offs."
     },
     {
       "id": "2608.20966",
@@ -390,7 +406,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Structured but Fragile: On the Limits of LLMs in Cybersecurity Decision-Making》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 越来越多地用于网络安全工作流程，但仍不清楚它们是否可以执行结构化安全推理或仅依赖于肤浅的线索和先验知识。我们在防御选择的背景下研究这个问题，而攻击图源自现实世界的威胁场景，包括勒索软件、供应链妥协、云滥用、Kubernetes 攻击、POS 恶意软件和 ICS/OT 入侵。考虑到预算限制，法学硕士必须选择安全控制措施，以最大限度地减少攻击者的成功。我们将他们的策略相互比较，并与用作结构化推理规范参考的博弈论优化基线进行比较。我们的结果表明法学硕士表现出有条件的能力。当提供明确的攻击图结构时，它们通常会产生接近优化基线的连贯策略。然而，他们的能力很脆弱。随着图的复杂性，LLM 的行为变得越来越脆弱，并且对框架高度敏感。微小的即时变化可以极大地改变排名，仅仅将糟糕的策略重新标记为“最佳”就可以显着提高其评估。我们进一步观察到正式风险和法学硕士判断之间的非单调关系：最接近最优的策略不一定被法学硕士评估者排名最高。为了进一步探究推理能力，我们要求法学硕士为相同的优化问题生成求解器。虽然生成的实现恢复了正确的高级公式，但与专用求解器相比，它们的扩展性很差。总的来说，我们的研究结果表明，法学硕士可以在受控表示下近似结构化网络安全推理，但不能稳健地应用它。这对于人工智能辅助安全决策支持系统的设计和评估具有重要意义。",
       "topics": [
         "C"
       ],
@@ -399,7 +415,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.20966",
-      "pdf": "https://arxiv.org/pdf/2608.20966"
+      "pdf": "https://arxiv.org/pdf/2608.20966",
+      "abstractEn": "Large language models (LLMs) are increasingly used in cybersecurity workflows, yet it remains unclear whether they can perform structured security reasoning or merely rely on superficial cues and prior knowledge. We study this question in the context of defence selection over attack graphs derived from real-world threat scenarios, including ransomware, supply-chain compromise, cloud abuse, Kubernetes attacks, POS malware, and ICS/OT intrusion. Given a budget constraint, LLMs must select security controls to minimise attacker success. We compare their strategies against each other and against a game-theoretic optimization baseline used as a normative reference for structured reasoning. Our results show that LLMs exhibit conditional competence. When explicit attack-graph structure is provided, they often produce coherent strategies close to the optimization baseline. However, their capabilities are fragile. LLM behaviour becomes increasingly fragile with graph complexity and is highly sensitive to framing. Small prompt changes can substantially alter rankings, and merely relabeling a poor strategy as ``optimal'' dramatically improves its evaluation. We further observe a non-monotonic relationship between formal risk and LLM judgement: strategies closest to the optimum are not necessarily ranked highest by LLM evaluators. To further probe reasoning ability, we ask LLMs to generate solvers for the same optimization problem. While the generated implementations recover the correct high-level formulation, they scale poorly compared to a purpose-built solver. Overall, our findings show that LLMs can approximate structured cybersecurity reasoning under controlled representations, but do not apply it robustly. This has important implications for the design and evaluation of AI-assisted security decision-support systems."
     },
     {
       "id": "2608.19938",
@@ -410,7 +427,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《From Noise to Signal: Improving Security Log Anomaly Detection Using LLMs with Endpoint-Specific Logs》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "现有的异常行为日志检测方法（例如 Wazuh）主要依赖于预定义的检测规则，而统计异常检测方法（例如 OpenSearch）则识别与先前观察到的行为模式的偏差。最近的研究调查了法学硕士用于日志异常检测，因为它们具有解释语义和上下文信息的能力。然而，基于 LLM 的方法可能会受到快速构建、嘈杂的日志数据以及对可能缺乏端点特定身份验证行为的通用数据集的依赖的影响。为了解决这些限制，本研究开发了一个基于指令的标准化法学硕士分类框架，用于检测异常身份验证行为，包括边缘案例。开发了一个受控网络安全测试平台，用于生成特定于端点的身份验证数据，生成包含正常、边缘和异常行为场景的精选数据集。使用通用的真实严重性框架，针对基于 Wazuh 规则的检测和 OpenSearch 异常检测对三种指令调整的 LLM（Meta Llama 3.1 8B Instruct、Qwen 2.5 7B Instruct 和 GPT-OSS 20B）进行了评估。Meta Llama 3.1 8B Instruct 实现了最强的整体端到端检测性能，准确率为 89.3%，召回率为 88.2%，F1 得分为 91.8%，漏报率为 11.8%。相比之下，Wazuh 的准确率达到 52.0%，漏报率为 68.6%，而 OpenSearch 的准确率达到 49.3%，漏报率为 74.5%。 Meta Llama 还检测到了 80% 的边缘异常场景，而 Wazuh 为 20%，OpenSearch 为 15%。 Qwen 的整体检测性能低于 Meta Llama，但平均推理延迟最低，结构化响应有效性为 100%。当产生有效响应时，GPT-OSS 表现出强大的分类性能。",
       "topics": [
         "C-chain"
       ],
@@ -419,7 +436,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2608.19938",
-      "pdf": "https://arxiv.org/pdf/2608.19938"
+      "pdf": "https://arxiv.org/pdf/2608.19938",
+      "abstractEn": "Existing approaches to anomalous behaviour log detection, such as Wazuh rely primarily on predefined detection rules, while statistical anomaly detection approaches such as OpenSearch identify deviations from previously observed behavioural patterns. Recent research has investigated LLMs for log anomaly detection because of their ability to interpret semantic and contextual information. However, LLM-based approaches can be affected by prompt construction, noisy log data, and reliance on generic datasets that may lack endpoint-specific authentication behaviours. To address these limitations, this study develops a standardised instruction-based LLM classification framework for detecting anomalous authentication behaviours, including borderline cases. A controlled cybersecurity testbed was developed to generate endpoint-specific authentication data, producing a curated dataset comprising normal, borderline, and anomalous behavioural scenarios. Three instruction-tuned LLMs, Meta Llama 3.1 8B Instruct, Qwen 2.5 7B Instruct, and GPT-OSS 20B, were evaluated against Wazuh rule-based detection and OpenSearch Anomaly Detection using a common ground-truth severity framework. Meta Llama 3.1 8B Instruct achieved the strongest overall end-to-end detection performance, with an accuracy of 89.3%, recall of 88.2%, F1-score of 91.8%, and false negative rate of 11.8%. In comparison, Wazuh achieved an accuracy of 52.0% and false negative rate of 68.6%, while OpenSearch achieved an accuracy of 49.3% and false negative rate of 74.5%. Meta Llama also detected 80% of the borderline anomalous scenarios, compared with 20% for Wazuh and 15% for OpenSearch. Qwen achieved lower overall detection performance than Meta Llama but recorded the lowest average inference latency and 100% structured-response validity. GPT-OSS demonstrated strong classification performance when valid responses were produced."
     },
     {
       "id": "2608.18613",
@@ -435,7 +453,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《CTIFoundry: An Agent-Native Corpus Scaffold for Cyber Threat Intelligence》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "网络威胁情报 (CTI) 越来越多地被 LLM 代理使用，而不是由人类分析师使用，这些代理在查询时进行多步骤调查。这种转变的利用方面已经迅速成熟（规划循环、工具协议、上下文管理），但语料库方面还没有：威胁报告和漏洞数据库仍然被打包用于检索增强生成，作为嵌入索引后面的不透明块。我们认为，这种基质（而不是模型能力）是代理 CTI 研究的瓶颈，并提出了 CTIFoundry，一种代理原生语料库支架。在构建时，CTIFoundry 实现了 CTI 语料库的潜在结构：四个权威知识库（CVE、CWE、CAPEC、ATT&CK）上的确定性本体图，其官方交叉引用变成类型化、可遍历的边；一个基于跨度的报告层，其规范的、别名解析的跨供应商实体索引出处携带块；以及混合密集+词汇检索表面。在查询时，该结构通过安装在库存开源代理工具上的七个类型化工具和三个程序技能来公开。在公共 CTIConnect 基准测试中，仅交换动作表面可将相同装备的代理在四个模型、两个提供商面板上的整体 F1 提升 +0.19 至 +0.28：CTIFoundry 上的小型模型超过了平面基板上的旗舰模型，并且增益不是通过搜索工作获得的，因为在两个 Claude 模型上，支架代理在大约一半的工具调用中更加准确。消融归因于它：类型化结构占据更大的份额，程序技能将结构转化为纪律，两者构成超相加，因为技能只与存在的结构绑定。",
       "topics": [
         "C"
       ],
@@ -445,7 +463,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.18613",
-      "pdf": "https://arxiv.org/pdf/2608.18613"
+      "pdf": "https://arxiv.org/pdf/2608.18613",
+      "abstractEn": "Cyber threat intelligence (CTI) is increasingly consumed not by human analysts but by LLM agents that compose multi-step investigations at query time. The harness side of this shift has matured rapidly (planning loops, tool protocols, context management), but the corpus side has not: threat reports and vulnerability databases are still packaged for retrieval-augmented generation, as opaque chunks behind an embedding index. We argue that this substrate, not model capability, is the bottleneck on agentic CTI investigation, and present CTIFoundry, an agent-native corpus scaffold. At build time, CTIFoundry materializes the latent structure of a CTI corpus: a deterministic ontology graph over four authoritative knowledge bases (CVE, CWE, CAPEC, ATT&CK) whose official cross-references become typed, traversable edges; a span-grounded report layer whose canonical, alias-resolved cross-vendor entities index provenance-carrying chunks; and hybrid dense+lexical retrieval surfaces. At query time this structure is exposed through seven typed tools and three procedural skills mounted on a stock open-source agent harness. On the public CTIConnect benchmark, swapping only the action surface lifts the identically-harnessed agent by +0.19 to +0.28 overall F1 across a four-model, two-provider panel: a small model on CTIFoundry surpasses a flagship on the flat substrate, and the gain is not bought with search effort, since on both Claude models the scaffolded agent is more accurate at roughly half the tool calls. An ablation attributes it: typed structure carries the larger share, procedural skills convert structure into discipline, and the two compose super-additively, because skills bind only to structure that exists."
     },
     {
       "id": "2608.17018",
@@ -459,7 +478,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《ORCA: Observability-Grounded Program Repair for Microservice Incidents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "微服务故障通常通过操作遥测来诊断。然而，自动程序修复系统通常从问题报告、本地化代码上下文或失败的测试开始。这种不匹配在基于遥测的诊断和补丁生成之间留下了差距。我们提出了 ORCA，一个基于可观察性的微服务事件 APR 管道。 ORCA 首先将配对故障和参考遥测数据中的差异提炼为故障签名，然后使用该签名来识别候选代码和部署配置位置。修复图代理和探索代理从这些位置生成统一差异补丁候选。ORCA 使用基于遥测的补丁验证器评估生成的补丁，该验证器可区分补丁有效性、语法和语义正确性、测试预言完整性和遥测重播。在 575 个案例基准上，ORCA 在成本效益方面优于所有评估的基准。结果表明，操作遥测可以从诊断证据转化为可操作的修复上下文：配对遥测支持面向修复的本地化，而修复图代理将本地化代码和配置证据转换为法学硕士的受限补丁生成上下文。然后，基于遥测的验证会暴露仅问题或仅测试评估可能会错过的修复结果。",
       "topics": [
         "C"
       ],
@@ -468,7 +487,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.17018",
-      "pdf": "https://arxiv.org/pdf/2608.17018"
+      "pdf": "https://arxiv.org/pdf/2608.17018",
+      "abstractEn": "Microservice failures are often diagnosed from operational telemetry. However, automated program repair systems usually start from issue reports, localized code context, or failing tests. This mismatch leaves a gap between telemetry-based diagnosis and patch generation. We present ORCA, an observability-grounded APR pipeline for microservice incidents. ORCA first distills the differences in paired failure and reference telemetry into a fault signature, then uses the signature to identify candidate code and deployment-configuration locations. Repair graph agents and an Exploration agent generate unified-diff patch candidates from these locations. ORCA evaluates generated patches with a Telemetry-Grounded Patch Verifier that separates patch validity, syntactic and semantic correctness, test-oracle integrity, and telemetry replay. On a 575-case benchmark, ORCA outperforms all evaluated baselines in terms of cost-effectiveness. Results show that operational telemetry can be transformed from diagnostic evidence into actionable repair context: paired telemetry supports repair-oriented localization, while repair graph agents convert localized code and configuration evidence into constrained patch-generation context for the LLM. Telemetry-grounded verification then exposes repair outcomes that issue- or test-only evaluation would miss."
     },
     {
       "id": "2608.18588",
@@ -491,7 +511,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《AppEval: A Unified Benchmark for LLM-Based Mobile Application Repair in ArkTS, Swift, and Kotlin》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "存储库级 LLM 代理通常在其测试在构建主机上运行的项目上进行评估。目前尚不清楚他们的修复是否能够在移动构建-安装-启动-测试边界中幸存下来，在该边界中，缺少 SDK、离线设备或预断言崩溃可能会被误认为是程序故障。我们推出了 AppEval，这是一个基准和本机工具链评估框架，用于跨 HarmonyOS/ArkTS、iOS/Swift 和 Android/Kotlin 的移动应用程序修复。每个任务将隐藏行为测试与参考生产修复分开，并且仅当相同的已安装应用程序目标在有缺陷的修订上达到断言失败并在修复后通过时才被接受；基础设施故障仍然是一个明显的结果。通用模式将此契约映射到每个平台的构建系统、运行时和测试运行器。审核后的 Android 分区包含来自 24 个独立可构建存储库的 200 个已接受的检测任务。在这些任务中，五个代理在 22.00% 到 90.50% 之间实现了 Pass@1，在相同的动态预言下，相差 68.50 个百分点。这些结果表明，移动修复性能在很大程度上取决于评估的代理，同时证明了为什么运行时感知的接受对于有意义的比较是必要的。本文的定量研究结果是针对 Android 的；在得出跨平台概括性结论之前，需要经过审核的 iOS 和 HarmonyOS 结果。",
       "topics": [
         "C"
       ],
@@ -501,7 +521,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.18588",
-      "pdf": "https://arxiv.org/pdf/2608.18588"
+      "pdf": "https://arxiv.org/pdf/2608.18588",
+      "abstractEn": "Repository-level LLM agents are typically evaluated on projects whose tests run on the build host. It remains unclear whether their repairs survive the mobile build-install-launch-test boundary, where a missing SDK, offline device, or pre-assertion crash can be mistaken for a program failure. We present AppEval, a benchmark and native-toolchain evaluation framework for mobile application repair across HarmonyOS/ArkTS, iOS/Swift, and Android/Kotlin. Each task separates a hidden behavior test from the reference production fix and is accepted only when the same installed-app target reaches an assertion failure on the defective revision and passes after the fix; infrastructure failures remain a distinct outcome. A common schema maps this contract to each platform's build system, runtime, and test runner. The audited Android partition contains 200 accepted instrumentation tasks from 24 independently buildable repositories. On these tasks, five agents achieve Pass@1 between 22.00% and 90.50%, a 68.50-percentage-point spread under the same dynamic oracle. These results show that mobile repair performance depends strongly on the evaluated agent while demonstrating why runtime-aware acceptance is necessary for meaningful comparison. The quantitative findings in this paper are Android-specific; audited iOS and HarmonyOS results are required before drawing cross-platform generalization conclusions."
     },
     {
       "id": "2026-1776",
@@ -509,7 +530,7 @@
       "authors": [],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Cofactor-torsion attacks on hinted scalar multiplications in SNARK circuits》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "当输出 Q 由证明者暗示并且仅在电路中验证而不是重新计算时，在 SNARK 内证明椭圆曲线标量乘法 [k]P= Q ∈ E(Fp) 的成本要低得多。 Eagen、El Housni、Masson 和 Piellard (Latincrypt 2025) 最近的标量乘法技术通过标量的短晶格约简（分数）分解和单个群恒等式证明了暗示 Q，并产生了已知最快的电路内标量乘法。我们观察到，整个家族的健全性依赖于隐含的素数阶假设：在整个群 E(Fp) 上检查证明恒等式，并且只有当 E(Fp) 具有微不足道的辅因子时，它才会迫使 Q 进入素数阶子群。在辅因子曲线上，认证不健全。我们针对这些暗示的小工具给出了两种具体的伪造类别：任意标量攻击，对于由语句固定的目标标量，调整分解，以便从恒等式中取消一个小的有理扭转点；以及选择标量攻击，该攻击使输出侧系数对一个小辅因子素数取模，然后求解标量。两者都使小工具接受 Q′ = [k]P + T 作为非零扭转点 T，就好像它是 [k]P 一样。我们根据子标量范围界限来量化可达到的扭转，并验证对广泛部署的曲线（例如 BLS12-381、BN254 和 BW6-761）的攻击。直接的解决方法是检查 Q 是否位于子组中，但代价高昂。我们提出了一种更便宜的方法，它通过暗示的原像绑定暗示的输出，并且具有足以对抗每种攻击模型的最小常数。",
       "topics": [
         "A"
       ],
@@ -517,7 +538,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1776",
-      "pdf": "https://eprint.iacr.org/2026/1776.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1776.pdf",
+      "abstractEn": "Proving an elliptic curve scalar multiplication [k]P= Q ∈ E(Fp) inside a SNARK is much cheaper when the output Q is hinted by the prover and only verified in-circuit, rather than recomputed. The recent scalar multiplication techniques of Eagen, El Housni, Masson and Piellard (Latincrypt 2025) certify a hinted Q with a short lattice reduction (fraction) decomposition of the scalar and a single group identity, and yield the fastest known in-circuit scalar multiplications. We observe that the soundness of this whole family rests on an implicit prime-order hypothesis: the certifying identity is checked over the full group E(Fp), and only when E(Fp) has trivial cofactor does it force Q into the prime-order subgroup. On cofactor curves the certification is unsound. We give two concrete forgery classes against these hinted gadgets: an any-scalar attack that, for a target scalar fixed by the statement, adapts the decomposition so a small rational torsion point cancels from the identity; and a chosen-scalar attack that vanishes the output-side coefficients modulo a small cofactor prime and solves for the scalar afterwards. Both make the gadget accept Q′ = [k]P + T for a non-zero torsion point T as if it were [k]P. We quantify the reachable torsion in terms of the sub-scalar range bound and validate the attacks on widely deployed curves such as BLS12-381, BN254 and BW6-761. The straightforward fix is to check that Q lies in the subgroup but is expensive. We propose a cheaper one that binds the hinted output through a hinted preimage, with the minimal such constant that suffices against each attack model."
     },
     {
       "id": "2026-1762",
@@ -532,7 +554,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Pilaf: Fully Tight Two-Round Threshold Signatures with Adaptive Corruptions》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "阈值签名部署在对手可能运行许多并发签名会话并自适应地破坏签名者的设置中。两轮计划使这一点变得尤为微妙。他们的第一轮消息独立于签名消息，并且可以离线预处理，因此后来的损坏必须揭示与先前记录中已发布的承诺一致的随机性。现有的自适应结构通过增加回合、依赖代数或知识假设，或者通过猜测腐败模式、决定性会议或最终成绩单来支付非紧损失来解决这种紧张局势。我们构建了 $\\mathsf{TPilaf}$，这是第一个两轮阈值签名方案，它将部分非交互式签名与针对自适应损坏的完全严格证明相结合。该方案是无配对的，并且根据随机预言模型中的 $\\mathsf{MDDH}$ 假设构建在素数阶群中。它的第一轮消息可以离线生成，任何阈值的签名者都可以将他们的第二轮份额聚合成一个可公开验证的签名。该证明结合了两种成分。首先，我们引入具有可定向开放的线性同态双模式承诺。这使得模拟器可以对后来的 Fiat-Shamir 挑战所施加的总体目标做出已经固定的承诺。其次，我们使用具有后验补全的轮廓式零和掩蔽。因此，腐败开口和签名响应是从精确的条件法中采样的，而对手已经可见的值仍然被缓存。这些工具共同实现了延迟分支决策论证。还原会等到对手自己的查询确定最后触摸的坐标，仅完成潜在状态，然后绑定伪造的隐藏分支。最终界限在用户数量、阈值、会话或损坏模式方面没有组合损失，并且仅包含定理中出现的显式不良事件和假设项。",
       "topics": [
         "A"
       ],
@@ -541,7 +563,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1762",
-      "pdf": "https://eprint.iacr.org/2026/1762.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1762.pdf",
+      "abstractEn": "Threshold signatures are deployed in settings where an adversary may run many concurrent signing sessions and corrupt signers adaptively. Two-round schemes make this especially delicate. Their first-round messages are independent of the signed message and can be preprocessed offline, so a later corruption must reveal randomness that is consistent with commitments already published in prior transcripts. Existing adaptive constructions address this tension by adding rounds, relying on algebraic or knowledge assumptions, or paying non-tight losses from guessing the corruption pattern, the decisive session, or the final transcript. We construct $\\mathsf{TPilaf}$, the first two-round threshold signature scheme that combines partially non-interactive signing with a fully tight proof against adaptive corruptions. The scheme is pairing-free and is built in prime-order groups from the $\\mathsf{MDDH}$ assumption in the random-oracle model. Its first-round messages can be generated offline, and any threshold set of signers can aggregate their second-round shares into a single publicly verifiable signature. The proof combines two ingredients. First, we introduce a linearly homomorphic dual-mode commitment with targetable opening. This lets the simulator open an already fixed commitment to the aggregate target imposed by a later Fiat-Shamir challenge. Second, we use profile-wise zero-sum masking with posterior completion. Corruption openings and signing responses are therefore sampled from the exact conditional law while values already visible to the adversary remain cached. Together, these tools enable a delayed branch-decision argument. The reduction waits until the adversary's own queries determine the last touched coordinate, completes only latent state, and then binds the forged hidden branch. The final bound has no combinatorial loss in the number of users, threshold, sessions, or corruption patterns, and contains only the explicit bad-event and assumption terms appearing in the theorem."
     }
   ]
 }

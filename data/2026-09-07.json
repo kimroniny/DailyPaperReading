@@ -11,7 +11,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《An Empirical Analysis of CodeQL False Positives and Query Refinements for Java Vulnerabilities》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "静态应用程序安全测试 (SAST) 工具可帮助开发人员在部署之前发现漏洞，但误报会造成大量的分类工作。我们研究 Java 安全分析中的 CodeQL 误报是否形成重复出现的、可解释的模式，可以通过改进分析来减少这些模式。我们在 110 个项目的 167 个 CVE 实例上运行 CodeQL 的 Java 安全查询套件，重点关注误报率最高的 10 个查询。我们手动审查 500 个采样的误报路径和位置，并构建源级分类法。这五个类别是错过路径约束或清理（36.6%）、良性执行上下文（29.4%）、缺少信任边界建模（27.6%）、不精确并发建模（5%）和不精确接收器建模（1.4%）。在这些发现的指导下，我们实施了 CodeQL 改进，在查询级别检测和过滤重复出现的误报模式。这些改进消除了 81.8% 的已审核误报。在完整的选定查询数据集中，他们删除了 15.8% 的报告路径和位置，同时保留了 8 个真阳性中的 7 个。这表明，尽管固定的改进通常取决于项目特定的环境，但分析中可以减少许多误报。为了解决这种泛化差距，我们评估代理编码工具是否可以使细化模式适应新项目。将我们的模式作为模板，这两个工具成功完成了 56% 和 62% 的任务，查询编译通过率高于 90%。如果没有这一指导，两者的成功率都只有 28%，而编译率则降至 30-36%。这些结果支持面向细化的 SAST 工作流程，其中在 CodeQL 查询中对重复出现的误报进行建模，并自动适应不同的项目上下文，从而减少重复分类。",
       "topics": [
         "C"
       ],
@@ -19,7 +19,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.04535",
-      "pdf": "https://arxiv.org/pdf/2609.04535"
+      "pdf": "https://arxiv.org/pdf/2609.04535",
+      "abstractEn": "Static application security testing (SAST) tools help developers find vulnerabilities before deployment, but false positives create substantial triage effort. We study whether CodeQL false positives in Java security analysis form recurring, explainable patterns that can be reduced by refining the analysis. We run CodeQL's Java security query suite on 167 CVE instances from 110 projects, focusing on the ten queries with the highest false positive rates. We manually review 500 sampled false positive paths and locations and construct a source-level taxonomy. The five categories are Missed Path Constraint or Sanitization (36.6%), Benign Execution Context (29.4%), Missing Trust Boundary Modeling (27.6%), Imprecise Concurrency Modeling (5%), and Imprecise Sink Modeling (1.4%). Guided by these findings, we implement CodeQL refinements that detect and filter recurring false positive patterns at the query level. The refinements remove 81.8% of reviewed false positives. Across the full selected-query dataset, they remove 15.8% of reported paths and locations while retaining 7 of 8 true positives. This shows that many false positives can be reduced in the analysis, although fixed refinements often depend on project-specific context. To address this generalization gap, we evaluate whether agentic coding tools can adapt refinement patterns to new projects. Given our patterns as templates, the two tools succeed on 56% and 62% of tasks, with query compile-pass rates above 90%. Without this guidance, both succeed on only 28%, while compile rates fall to 30-36%. These results support a refinement-oriented SAST workflow in which recurring false positives are modeled in CodeQL queries and automatically adapted to different project contexts, reducing repeated triage."
     },
     {
       "id": "2609.05335",
@@ -35,7 +36,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《The History Is the Detector: Executing CVE Patch History, End-to-End》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "公共漏洞数据库收集有关已知软件缺陷的丰富信息，包括其弱点类型、受影响的组件和相关补丁。修复提交提供了消除这些缺陷的确切代码更改。虽然这些记录说明了原始代码不安全的原因，但它们的记录主要用于人工检查，而不是自动重用。因此，在没有已知建议的情况下，相同的不安全条件可能仍然存在于代码中的其他地方，从而导致许多检测知识未被使用。我们提出了 BUGSTONE-E2E，这是一个将漏洞历史记录转换为可执行检测规则并验证其发现的框架。首先，BUGSTONE-E2E 从经过验证的修复提交、捕获扫描锚点、修复语义和 CVE 来源中挖掘可重用规则，并按 CWE 和语言组织它们。其次，检测遵循漏斗形管道：早期阶段使用轻量级分析处理大量候选者，而后期阶段将功能日益强大且昂贵的模型应用于不断缩小的目标集。具体来说，BUGSTONE-E2E 首先使用 Tree-sitter 枚举与规则锚点匹配的调用站点，然后使用轻量级启发式方法删除良性站点，无需 LLM 调用。接下来，法学硕士代理人将按照规则检查剩余的候选人。在此检查之后，系统重新分类幸存的候选者并构建运行时验证，然后生成通过两侧差异测试验证的范围检查补丁。 BUGSTONE-E2E 使用 2022 年至 2026 年期间的 19,325 个高严重性 CVE，识别了 2,710 个修复提交，并构建了跨 56 个 CWE 系列的 1,033 条检测规则，打包为 172 项技能。当应用于 14 个程序时，它生成了 644 个结果的运行时证据。这些结果表明，CVE 历史记录可以转化为可执行的工作流程，将过去的漏洞转化为可重复的检测和修复。",
       "topics": [
         "C"
       ],
@@ -43,7 +44,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.05335",
-      "pdf": "https://arxiv.org/pdf/2609.05335"
+      "pdf": "https://arxiv.org/pdf/2609.05335",
+      "abstractEn": "Public vulnerability databases collect rich information about known software flaws, including their weakness types, affected components, and related patches. Fixing commits provide the exact code changes that removed these flaws. While these records capture why the original code was unsafe, they are documented mainly for human inspection rather than automated reuse. Consequently, the same unsafe conditions may still exist elsewhere in code without a known advisory, leaving much of this detection knowledge unused. We present BUGSTONE-E2E, a framework that transforms vulnerability history into executable detection rules and validates their findings. First, BUGSTONE-E2E mines reusable rules from verified fixing commits, capturing scan anchors, fix semantics, and CVE provenance and organizing them by CWE and language. Second, detection follows a funnel-shaped pipeline: early stages process a large pool of candidates using lightweight analysis, while later stages apply increasingly capable and expensive models to a shrinking set of targets. Specifically, BUGSTONE-E2E first enumerates call sites matching rule anchors using Tree-sitter, then removes benign sites using lightweight heuristics without LLM calls. Next, LLM-based agents inspect the remaining candidates guided by the rule. Following this inspection, the system re-triages surviving candidates and builds runtime verifications, then generates scope-checked patches validated via two-sided differential tests. Using 19,325 high-severity CVEs from 2022 to 2026, BUGSTONE-E2E identifies 2,710 fixing commits and constructs 1,033 detection rules across 56 CWE families, packaged into 172 skills. When applied across 14 programs, it produced runtime evidence for 644 findings. These results demonstrate that CVE history can be turned into an executable workflow, transforming past vulnerabilities into reproducible detection and repair."
     },
     {
       "id": "2609.05370",
@@ -55,7 +57,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《When LLM Decompilers Recompile More and Preserve Less》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "反编译从编译的机器代码中恢复高级源代码，并作为漏洞检测和恶意软件分析等安全任务的基础。像 Ghidra 和 Hex-Rays 这样的传统反编译器会将它们无法解析的任何内容公开为可见占位符，并且经常会发出无法编译或执行的伪代码；基于 LLM 的反编译器生成干净、惯用的 C，现在几乎完全通过可重编译性和可重执行性来判断：输出是否构建并通过其附带的输入/输出测试。我们表明，这些指标可能会奖励错误的路径：一个函数可能会重新编译并通过每个已发布的测试，但在其他合法输入上会出现分歧，并且公开的漏洞可能会从重新编译的代码中消失，而没有明显的崩溃痕迹。现有套件不会捕获这两种故障。为了解决这一差距，我们提出了 Decompile-Diverge，这是一种不依赖于固定或手工测试的行为比较预言机：它为每个函数合成一个驱动程序，从参考中生成一个模糊语料库，并在相同的输入上重新运​​行反编译代码以检测函数行为的变化。在已建立的 LLM 反编译语料库上的 9 个配置的 8 个系统中，通过每次发布测试的候选者仍然与我们输入语料库中的原始版本存在差异：总体为 4.9%，单个系统高达 13%。在 300 个真实的 GitHub 库函数和 287 个基于 CVE 的函数上，可重编译性和行为一致性可能会分崩离析：最强的细化 LLM 将 Ghidra 的构建率从 75% 提升到 90%，而其匹配率从 74% 下降到 62%；对于已披露的漏洞，多达十分之一在其输出中显示崩溃缺失。源代码级分析将这种差异追溯到引入的字段、类型、被调用者和守卫，这些字段、类型、被调用者和守卫取代了传统工具留下的可见未知数。",
       "topics": [
         "C"
       ],
@@ -64,7 +66,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.05370",
-      "pdf": "https://arxiv.org/pdf/2609.05370"
+      "pdf": "https://arxiv.org/pdf/2609.05370",
+      "abstractEn": "Decompilation recovers high-level source from compiled machine code and serves as a foundation for security tasks such as vulnerability detection and malware analysis. Traditional decompilers like Ghidra and Hex-Rays expose whatever they cannot resolve as visible placeholders and often emit pseudocode that will not compile or execute; LLM-based decompilers produce clean, idiomatic C and are now judged almost entirely by recompilability and re-executability: whether the output builds and passes its shipped input/output tests. We show that these metrics can reward the wrong path: a function may recompile and pass every shipped test yet diverge on other legitimate inputs, and a disclosed vulnerability may disappear from the recompiled code with no visible trace of the crash. Neither failure is caught by existing suites. To address this gap, we propose Decompile-Diverge, a behavioral comparison oracle not relying on fixed or hand-crafted tests: for each function it synthesizes a driver, grows a fuzzing corpus from the reference, and reruns the decompiled code on the same inputs to detect changes in the function's behavior. Across eight systems in nine configurations on established LLM decompilation corpora, candidates that pass every shipped test still diverge from the original on our input corpus: 4.9% overall, and as many as 13% for a single system. On 300 real GitHub library functions and 287 CVE-grounded functions, recompilability and behavioral agreement can come apart: the strongest refinement LLM lifts Ghidra's build rate from 75% to 90%, while its Matched rate falls from 74% to 62%; on disclosed vulnerabilities, up to one tenth exhibit Crash Absence in its output. Source-level analysis traces this divergence to introduced fields, types, callees, and guards that replace the visible unknowns traditional tools leave behind."
     },
     {
       "id": "2609.04219",
@@ -77,7 +80,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Large Language Models for Fuzz Testing in Microservices: A Systematic Literature Review》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "微服务系统 (MSS) 越来越依赖异构 API，其组合输入空间和状态依赖关系对传统模糊测试提出了挑战。与此同时，最近引入了大型语言模型 (LLM)，通过对规范、输入和运行时反馈进行语义推理来增强模糊测试。本文对 LLM 辅助的微服务模糊测试进行了系统文献综述 (SLR)，以综合 LLM 的应用、评估方式以及仍然存在的挑战。根据既定的 SLR 指南，我们分析了 2024 年至 2026 年间发表的 20 项初步研究。结果表明，LLM 主要用作黑盒模糊测试中的语义输入生成器，越来越多地转向基于代理和检索增强的架构，改进了有效输入的生成，并适度增加了覆盖范围和漏洞检测。然而，评估仍然是异构的，基准标准化有限，成本报告稀缺，并且偏向单一服务实验，凸显了与现实世界多服务系统的差距。本综述提供了 LLM 角色和集成的分类、评估实践的综合视图以及开放挑战与研究方向的映射，支持微服务中 LLM 驱动的模糊测试的设计和部署。",
       "topics": [
         "C"
       ],
@@ -86,7 +89,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.04219",
-      "pdf": "https://arxiv.org/pdf/2609.04219"
+      "pdf": "https://arxiv.org/pdf/2609.04219",
+      "abstractEn": "Microservice systems (MSS) increasingly rely on heterogeneous APIs whose combinatorial input space and stateful dependencies challenge traditional fuzz testing. Meanwhile, Large Language Models (LLMs) have recently been introduced to enhance fuzzing with semantic reasoning over specifications, inputs, and runtime feedback. This paper presents a systematic literature review (SLR) of LLM-assisted fuzz testing for microservices to synthesise how LLMs are applied, evaluated, and what challenges remain. Following established SLR guidelines, we analyze 20 primary studies published between 2024 and 2026. Results show LLMs are mainly used as semantic input generators in black-box fuzzing, with a growing shift towards agent-based and retrieval-augmented architectures, improving valid input generation and modestly increasing coverage and vulnerability detection. However, evaluation remains heterogeneous, with limited benchmark standardization, scarce cost reporting, and a bias toward single-service experiments, highlighting a gap with real-world multi-service systems. This review provides a taxonomy of LLM roles and integrations, a consolidated view of evaluation practices, and a mapping of open challenges to research directions, supporting the design and deployment of LLM-driven fuzzing in microservices."
     },
     {
       "id": "2609.01931",
@@ -98,7 +102,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Agent Flight Recorder: Tamper-Evident Audit Trails with On-Chain Anchoring for Long-Horizon Tool-Using Agents》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "长视野代理执行数千个操作，导致连续失败而不是孤立的错误。当编码代理删除生产数据库或即时注入在代理之间传播时，该事件会引发因果关系、权威性和不可否认的第三方验证的问题。代理飞行记录器将每个代理操作捕获为结构化、规范序列化的事件，绑定从意图到执行再到来源的八个语义字段。哈希链和 Merkle 批处理提供篡改证据和紧凑包含证明。对于没有一方的基础设施符合中立立场的跨组织纠纷，纪元根的定期链上锚定允许任何具有公开有效负载和 Merkle 证明的验证者独立检查记录，而无需预先同意可信中介。链上占用空间很小：每个锚点存储一个 32 字节的纪元根和一个后向指针，并且没有事件内容触及链。我们在合成代理工作负载上通过五种累积消融配置来评估系统。整个系统增加了大约 48 微秒的平均每个事件延迟和每个事件 512 字节。 L2 锚定成本为 100 个事件周期中每 10 万个事件 2.30 美元。完整的完整性堆栈可 100% 检测编辑、删除、重新排序和分叉篡改，且误报率为零。结构化取证查询在护栏和委托查找上达到 1.0 的精度，而非结构化文本搜索的精度分别为 0.013 和 0.077。",
       "topics": [
         "A"
       ],
@@ -107,7 +111,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.01931",
-      "pdf": "https://arxiv.org/pdf/2609.01931"
+      "pdf": "https://arxiv.org/pdf/2609.01931",
+      "abstractEn": "Long-horizon agents execute thousands of actions, resulting in sequential failures rather than isolated errors. When a coding agent deletes a production database or a prompt injection spreads across agents, the incident raises questions of causality, authority, and non-repudiable third-party verification. The Agent Flight Recorder captures each agent action as a structured, canonically serialized event binding eight semantic fields from intent through execution to provenance. Hash chaining and Merkle batching provide tamper evidence and compact inclusion proofs. For cross-organizational disputes where no party's infrastructure qualifies as neutral ground, periodic on-chain anchoring of epoch roots lets any verifier with the disclosed payload and Merkle proof check the record independently, without pre-agreeing on a trusted intermediary. The on-chain footprint is minimal: each anchor stores a 32-byte epoch root and a back-pointer, and no event content touches the chain. We evaluate the system across five cumulative ablation configurations on synthetic agent workloads. The full system adds ~48 microseconds median per-event latency and 512 bytes per event. L2 anchoring costs $2.30 per 100K events at 100-event epochs. The full integrity stack detects edit, delete, reorder, and fork tampering at 100% with zero false positives. Structured forensic queries achieve 1.0 precision on guardrail and delegation lookups where unstructured text search yields 0.013 and 0.077 respectively."
     },
     {
       "id": "2026-1889",
@@ -115,7 +120,7 @@
       "authors": [],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《A General Approach to Adaptor Signatures》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "适配器签名已成为一种强大的最小合约机制，用于在区块链上进行公平交换，从而实现高效且保护隐私的原子交换和有条件支付。然而，现有的适配器方案仅限于狭窄的 NP 关系类别（例如，离散对数秘密）和特定的签名方案，在结构和应用方面限制了它们的范围。这项工作通过提出一个支持任意 NP 关系和广泛的签名方案的新框架来解决这一差距，显着地将适配器签名的范围扩展到先前的工作之外，并拓宽了适配器签名构造的设计空间。我们的框架还产生与当今的区块链系统兼容的适配器签名。更具体地说，我们为适配器签名设计了两个通用编译器。首先，我们展示了如何借助$2$同态加密有效地将适配器签名从结构化语言（例如离散日志关系）提升到通用NP语言，从而产生适用于标准签名方案和通用NP语言的适配器。其次，我们开发了一个编译器，可以使用电路私有全同态加密将任何具有潜意识通道的签名方案转换为通用 NP 语言的适配器签名方案。具有潜意识通道的签名可以在签名随机性中对见证人进行编码，并包括随机性可恢复方案（如 Schnorr、ECDSA、CL、BBS）以及确定性签名方案（如 BLS 和 RSA）的加盐版本。这两种结构都实现了一种称为声明真相隐私的新颖属性，它保证买家对底层声明一无所知，甚至不知道其真相，除非协议成功完成。",
       "topics": [
         "A"
       ],
@@ -123,7 +128,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1889",
-      "pdf": "https://eprint.iacr.org/2026/1889.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1889.pdf",
+      "abstractEn": "Adaptor signatures have emerged as a powerful contract-minimal mechanism for fair exchange on blockchains, enabling efficient and privacy-preserving atomic swaps and conditional payments. However, existing adaptor schemes are limited to narrow classes of NP relations (e.g., discrete logarithm secrets) and specific signature schemes, limiting their scope both in terms of constructions and applications. This work addresses this gap by presenting a new framework that supports arbitrary NP relations and a broad range of signature schemes, significantly extending the reach of adaptor signatures beyond prior works and broadening the design space for adaptor signature constructions. Our framework also yields adaptor signatures that are compatible with today's blockchain systems. More specifically, we devise two general compilers for adaptor signatures. First, we show how to efficiently lift adaptor signatures from structured languages (such as discrete log relations) to general NP languages with the help of degree-$2$ homomorphic encryption, resulting in adaptors for standard signature schemes and general NP languages. Secondly, we develop a compiler that transforms any signature scheme with a subliminal channel into an adaptor signature scheme for general NP languages using circuit-private fully homomorphic encryption. Signatures with subliminal channels enable the encoding of witnesses in the signing randomness, and include randomness-recoverable schemes like Schnorr, ECDSA, CL, BBS, as well as salted versions of deterministic signatures schemes like BLS and RSA. Both constructions achieve a novel property called statement truth privacy, which guarantees that a buyer learns nothing about the underlying statement, not even its truth, unless the protocol successfully completes."
     },
     {
       "id": "2026-1886",
@@ -134,7 +140,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Symplex: Improved Pairing-Based zkSNARK using Partial Fraction Techniques》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "我们提出了 Symplex，一种用于 R1CS 的基于配对的 zkSNARK，它保留了 Groth16 的语法：一个 $2G_1{+}1G_2$ 证明，以及一个具有三个配对和一个公共输入多标量乘法 (MSM) 的验证器，同时{\\它严格降低了证明者成本}。对于约束计数 $n$、线数 $m$、公共输入计数 $\\ell$ 和 $\\kappa=\\min\\{n,m+1\\}$，Symplex 的证明器使用四个大小为 $n$ 的 FFT，而不是我们的陪集拉格朗日 Groth16 比较器的六个，并且其较大的 $G_1$-MSM 的宽度为 $m+n-\\ell+4$，而不是基于自适应的 Groth16 宽度$2\\kappa+m+n-\\ell+3$。匹配的 Groth16 证明者从 R1CS 实例导出三个长度 $n$ 向量，在系数和评估形式之间转换每个向量，并使用大小 $n$ 陪集拉格朗日列提交商，总共产生六个 FFT。其通常的单项式商列少了一个 CRS 元素，但需要最终的逆 FFT。相反，Symplex 使用 Jutla、Nema、Roy (EuroCrypt 2026) 的部分分数技术，允许在设置期间将输出线选择器多项式预先计算到每线 CRS 束中。因此，在证明时只有左线和右线向量需要基于 FFT 的处理。验证者不变（三个配对，一个公共输入 MSM）。在与 Groth16 共享稀疏 R1CS、FFT 和配对代码的 Symplex 的 BLS12-381 原型上，链接 SHA-256 十次的 Circom 电路可提供 $1.84\\times$ 的证明者加速，并且两种方案的在线验证速度为 $\\approx\\,\\mathrm{ms}$。 Lean~4 中对一致代数提取论证、完美完备性和完美零知识进行了机器检查。 Polymath（Lipmaa，CRYPTO 2024）和 PARI（Dellepere、Mishra 和 Shirzad，USENIX Security 2026）使用平方 R1CS 算术来缩小证明。 Polymath 证明了 AGMOS 模型的可靠性，而 PARI 并未在所述构造中提供零知识。Symplex 保留了 Groth16 的证明形式和标准 R1CS 算术，并在标准通用群模型中被证明是知识健全的。",
       "topics": [
         "A"
       ],
@@ -144,7 +150,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1886",
-      "pdf": "https://eprint.iacr.org/2026/1886.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1886.pdf",
+      "abstractEn": "We present Symplex, a pairing-based zkSNARK for R1CS that preserves the syntax of Groth16: a $2G_1{+}1G_2$ proof, and a verifier with three pairings and one public-input multi-scalar multiplication (MSM), while {\\it strictly reducing prover cost}. For constraint count $n$, wire count $m$, public-input count $\\ell$, and $\\kappa=\\min\\{n,m+1\\}$, Symplex's prover uses four FFTs of size $n$ rather than the six of our coset-Lagrange Groth16 comparator, and its larger $G_1$-MSM has width $m+n-\\ell+4$ rather than the adaptively based Groth16 width $2\\kappa+m+n-\\ell+3$. The matched Groth16 prover derives three length-$n$ vectors from the R1CS instance, converts each between coefficient and evaluation form, and commits the quotient with a size-$n$ coset-Lagrange column, resulting in six FFTs in total. Its usual monomial quotient column has one fewer CRS element but requires a final inverse FFT. Symplex instead uses the partial-fraction techniques of Jutla, Nema, Roy (EuroCrypt 2026) allowing the output-wire selector polynomials to be precomputed into the per-wire CRS bundles during setup. So, only the left- and right-wire vectors require FFT-based processing at proving time. The verifier is unchanged (three pairings, one public-input MSM). On a BLS12-381 prototype of Symplex that shares sparse R1CS, FFT, and pairing code with Groth16, a Circom circuit chaining SHA-256 ten times gives a $1.84\\times$ prover speedup with online verification at $\\approx 2.6\\,\\mathrm{ms}$ for both schemes. The uniform algebraic extraction argument, perfect completeness, and perfect zero-knowledge are machine-checked in Lean~4. Polymath (Lipmaa, CRYPTO 2024) and PARI (Dellepere, Mishra, and Shirzad, USENIX Security 2026) shrink the proof using a squared R1CS arithmetization. Polymath proves soundness in the AGMOS model, and PARI does not provide zero-knowledge in the stated construction. Symplex keeps Groth16's proof shape and standard R1CS arithmetization, and is proved knowledge-sound in the standard Generic Group Model."
     },
     {
       "id": "2026-1888",
@@ -158,7 +165,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《BMuSig2: Schnorr-Compatible Blind Multi-Signatures》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "盲签名和多重签名是众所周知的原语，但结合了这两种原语的盲多重签名 (BMS) 最近才被 Karantaidou 等人 (CCS'24) 正式化。 BMS 方案允许用户从一组签名者那里获取公共隐藏消息的紧凑签名，这样即使签名者串通，他们也无法获悉该消息或将最终签名链接到任何特定交互。在本文中，我们介绍了 BMuSig2，这是一种 2 轮并发安全盲多重签名方案，其签名和验证与标准 Schnorr 签名相匹配。这种设计使使用 Schnorr 签名的系统能够采用 BMuSig2 作为直接替代品，只需要对发布阶段进行更改，同时保持验证不变。 BMuSig2 基于 MuSig2 多重签名 (CRYPTO’21) 构建，并集成了最近的盲签名方案 (CRYPTO’24) 中的技术，该方案利用非交互式零知识 (NIZK) 参数和公钥加密 (PKE) 来实现并发安全性。我们依靠MuSig2的不可伪造性以及底层NIZK和PKE组件的安全性，正式证明了BMuSig2的安全性。我们还提供了概念验证实施来证明其实际效率。",
       "topics": [
         "A"
       ],
@@ -167,7 +174,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1888",
-      "pdf": "https://eprint.iacr.org/2026/1888.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1888.pdf",
+      "abstractEn": "Blind signatures and multi‑signatures are well‑known primitives, but blind multi‑signatures (BMS), which combine both these primitives, were only recently formalized by Karantaidou et al (CCS'24). A BMS scheme allows a user to obtain a compact signature on a common hidden message from a group of signers such that even if the signers collude, they cannot learn the message or link the final signature to any particular interaction. In this paper, we introduce BMuSig2, a 2-round concurrently secure blind multi-signature scheme whose signatures and verification match standard Schnorr signatures. This design enables systems using Schnorr signatures to adopt BMuSig2 as a drop-in replacement, requiring changes only to the issuance phase, while leaving verification unchanged. BMuSig2 builds on MuSig2 multi-signatures (CRYPTO’21) and integrates techniques from a recent blind signature scheme (CRYPTO’24) that leverages non-interactive zero-knowledge (NIZK) arguments and public-key encryption (PKE) to achieve concurrent security. We formally prove the security of BMuSig2 by relying on the unforgeability of MuSig2 and the security of the underlying NIZK and PKE components. We also provide a proof-of-concept implementation to demonstrate its practical efficiency."
     }
   ]
 }

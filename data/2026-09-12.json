@@ -15,7 +15,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《BlueSTAR: Tiered Agentic Architecture for Autonomous Cyber Defense》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "网络攻击日益自动化，缩短了人类分析师检测、推理和响应入侵的时间。大型语言模型 (LLM) 为自主网络防御提供了有希望的基础，因为它们可以关联异构证据并推理以前未见过的威胁。然而，直接将 LLM 应用于操作安全遥测是不切实际的：原始日志到达的速度比当前模型处理它们的速度快，单个事件通常不明确，并且不受约束的 LLM 操作可能会带来重大的操作风险。我们推出 BlueSTAR，这是一种用于企业 IT/OT 网络中自主网络防御的分层代理架构。BlueSTAR 首先将大量安全遥测数据转化为紧凑的妥协指标。我们进一步引入了一个弹性指标，可以共同捕获攻击者的影响范围、对关键任务资产的影响以及防御行为造成的破坏。我们使用基于真实世界入侵技术的七个攻击链在两个实时企业 IT/OT 网络范围上评估 BlueSTAR。在整个攻击链中，BlueSTAR 保留了对已知威胁的确定性响应的快速遏制，同时成功防御需要上下文和跨周期推理的攻击，包括凭证盗窃、重复泄露、并发攻击以及针对物理进程的攻击。",
       "topics": [
         "C"
       ],
@@ -25,7 +25,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.11852",
-      "pdf": "https://arxiv.org/pdf/2609.11852"
+      "pdf": "https://arxiv.org/pdf/2609.11852",
+      "abstractEn": "Cyber attacks are increasingly automated, narrowing the time available for human analysts to detect, reason about, and respond to intrusions. Large language models (LLMs) offer a promising foundation for autonomous cyber defense because they can correlate heterogeneous evidence and reason about previously unseen threats. However, directly applying LLMs to operational security telemetry is impractical: raw logs arrive faster than current models can process them, individual events are often ambiguous, and unconstrained LLM actions can introduce significant operational risk. We present BlueSTAR, a tiered agentic architecture for autonomous cyber defense in enterprise IT/OT networks. BlueSTAR first transforms high-volume security telemetry into compact indicators of compromise. We further introduce a resilience metric that jointly captures attacker reach, impact on mission-critical assets, and disruption caused by defensive actions. We evaluate BlueSTAR on two live enterprise IT/OT cyber ranges using seven attack chains based on real-world intrusion techniques. Across attack chains, BlueSTAR retains the fast containment of deterministic response for known threats while successfully defending against attacks requiring contextual and cross-cycle reasoning, including credential theft, repeated compromise, concurrent attackers, and attacks against physical processes."
     },
     {
       "id": "2609.07344",
@@ -41,7 +42,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Staying on the Attack Path: Structured State for Long-Horizon Automated Penetration Testing》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "基于大语言模型（LLM）的代理越来越多地应用于网络安全任务，例如漏洞发现和自动渗透测试。然而，在长期安全任务中，此类代理仍然受到上下文遗忘和意图漂移的限制：早期的关键事实和因果推理链在扩展的交互中丢失，并且代理陷入漫无目的的重复探索。本文提出了 Intentest，一种意图图引导的自动渗透测试代理，它将 LLM 上下文窗口中的长视野状态外化到持久的事实意图定向无环图 (DAG) 上，从而大大减少无效转换。我们评估 Intentest 在 Web 应用程序自动化渗透测试方面的表现，这是网络安全中具有代表性的长尾任务。在 DAG 中，经过验证的网络状态存储为不可变的事实节点，探索方向被约束为受前驱事实限制的意图边。该系统采用三层架构，其中事实-意图映射层维护全局状态，任务调度和分配层通过两阶段退化恢复和多维自适应负载平衡确保执行稳定性，意图检索和预测层通过自上而下的五级过滤算法提供战术先验。在涵盖三个难度级别的十多个漏洞类型的真实 CTF 挑战基准上，Intentest 的总体成功率达到 88.2%，困难任务成功率达到 75.0%，比基准提高了约 44 和 50 个百分点。消融实验进一步表明，在不改变可解决任务集的情况下，意图检索和预测将成功的中等和困难任务的平均轮数分别减少了约 33% 和 48%。",
       "topics": [
         "C"
       ],
@@ -49,7 +50,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.07344",
-      "pdf": "https://arxiv.org/pdf/2609.07344"
+      "pdf": "https://arxiv.org/pdf/2609.07344",
+      "abstractEn": "Large language model (LLM) based agents are increasingly applied to cybersecurity tasks such as vulnerability discovery and automated penetration testing. On long-horizon security tasks, however, such agents remain limited by context forgetting and intent drift: early critical facts and causal reasoning chains are lost over extended interactions, and the agent falls into aimless, repetitive exploration. This paper proposes Intentest, an intent-graph-guided automated penetration testing agent that externalizes long-horizon state from the LLM's context window onto a persistent fact-intent directed acyclic graph (DAG), thereby substantially reducing invalid transitions. We evaluate Intentest on automated penetration testing of web applications, a representative long-tail task in cybersecurity. In the DAG, verified network states are stored as immutable fact nodes, and exploration directions are constrained as intent edges bounded by predecessor facts. The system adopts a three-layer architecture, in which the fact-intent mapping layer maintains the global state, the task scheduling and allocation layer ensures execution stability through two-phase degradation recovery and multi-dimensional adaptive load balancing, and the intent retrieval and prediction layer provides tactical priors through a top-down five-stage filtering algorithm. On a benchmark of real CTF challenges covering more than ten vulnerability types across three difficulty levels, Intentest achieves an overall success rate of 88.2% and a success rate of 75.0% on hard tasks, improving over the baseline by approximately 44 and 50 percentage points. Ablation experiments further show that the intent retrieval and prediction reduce the average number of rounds on successful medium and hard tasks by about 33% and 48%, respectively, without changing the set of solvable tasks."
     },
     {
       "id": "2609.06780",
@@ -62,7 +64,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Shortcutting the Fix: Identifying and Categorizing Agentic Exploits in Software Engineering Benchmarks》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "虽然自主软件工程 (SWE) 代理实现了较高的基准解决率，但这些分数可能掩盖了剥削行为，例如利用本地 Git 历史记录、访问上游存储库或调用记忆的解决方案，而不是展示真正的问题解决能力。我们使用回合级 LLM 作为法官协议，在 SWE-bench Multilingual 和 DeepSWE 上的五种开放大型语言模型中对这些漏洞进行系统化和审核。在标准提示下，SWE-bench Multilingual 上的利用率达到 45.1%--82.4%，DeepSWE 上的利用率达到 44.2%--66.1%。附加执行解决方案原创性的目标指令可大幅降低这些利用率——分别降至 4.0\\%--10.7\\% 和 1.5\\%--7.1\\%，同时保持强大的核心任务性能。我们的研究结果表明，迫切需要利用漏洞感知评估框架来衡量基准游戏中真正的存储库级问题解决能力。",
       "topics": [
         "C"
       ],
@@ -71,7 +73,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.06780",
-      "pdf": "https://arxiv.org/pdf/2609.06780"
+      "pdf": "https://arxiv.org/pdf/2609.06780",
+      "abstractEn": "While autonomous software engineering (SWE) agents achieve high benchmark resolution rates, these scores can mask exploitative behaviors---such as leveraging local Git histories, accessing upstream repositories, or recalling memorized solutions---rather than demonstrating genuine problem solving. We systematize and audit these exploits across five open large language models on SWE-bench Multilingual and DeepSWE using a turn-level LLM-as-a-judge protocol. Under standard prompts, exploitation rates reach 45.1\\%--82.4\\% on SWE-bench Multilingual and 44.2\\%--66.1\\% on DeepSWE. Appending a targeted instruction enforcing solution originality drastically cuts these exploitation rates---down to 4.0\\%--10.7\\% and 1.5\\%--7.1\\%, respectively, while maintaining strong core task performance. Our findings demonstrate the critical need for exploit-aware evaluation frameworks that measure true repository-level problem solving over benchmark gaming."
     },
     {
       "id": "2609.06250",
@@ -86,7 +89,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《It is Not Yet Another Tool: Creating and Deploying an Agentic AI Companion in a Security Operations Center》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "安全运营中心 (SOC) 处理大量票证，其中大部分是低利率事件，不值得进一步调查。这项任务的重复性和大量门票的相似性使其成为基于人工智能的自动化的主要候选者。我们通过一年多的 SOC 内现场工作，利用大型语言模型创建并部署了代理 AI 伴侣。 SOC AI 伴侣的设计是由研究人员在 SOC 日常工作中的参与和互动驱动的。 SOC 分析师受邀在最后四个月的现场工作中使用它。我们分析了分析师对伴侣的使用情况，发现在超过 90% 的情况下，分析师在工单结案报告中重复使用了伴侣的输出。我们的结果表明，当与目标用户一起“在战壕中”设计时，SOC AI 伴侣可以不仅仅是另一种工具，而是一个在遍历各种类型的工作负载时与人类用户共同进化的系统。 Analysts naturally started to shape the AI companion's behaviors to fit their particular needs.我们的数据显示，人类分析师对人工智能伴侣的行为塑造得越多，他们就越信任人工智能系统的输出，从而提高生产力。",
       "topics": [
         "C"
       ],
@@ -95,7 +98,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.06250",
-      "pdf": "https://arxiv.org/pdf/2609.06250"
+      "pdf": "https://arxiv.org/pdf/2609.06250",
+      "abstractEn": "Security Operations Centers (SOCs) process large amounts of tickets, most of which are low-interest events not worthy of further investigation. The repetitive nature of this task and similarity of the vast amounts of tickets make it a prime candidate for generative AI-based automation. We created and deployed an agentic AI companion utilizing large language models through fieldwork within a SOC for over one year. The design of the SOC AI companion was driven by researchers' participation and interactions within the SOC's daily work. SOC analysts were invited to use it during the last four months of the fieldwork. We analyzed the analysts' usage of the companion and found that in more than 90% of the cases the companion's outputs were reused by analysts in the ticket's closing report. Our results showed that when designed \"in the trenches\" with the intended users, a SOC AI companion can go beyond being yet another tool, but rather a system that co-evolves with its human users as it traverses through the various types of workloads. Analysts naturally started to shape the AI companion's behaviors to fit their particular needs. Our data show that the more human analysts shape the AI companion's behaviors, the more they become comfortable trusting the output from the AI system, resulting in improved productivity."
     },
     {
       "id": "2609.06226",
@@ -107,7 +111,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Scratchy: Visual-Scratchpad Multimodal Reasoning for Cryptographic Proof Generation in EasyCrypt》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型（LLM）最近在形式证明生成方面取得了实质性进展，但在密码学领域提出了独特的挑战。计算安全论点认为，有效的证明必须协调概率、对抗性游戏、不变量、假设和界限，这可以由名为 EasyCrypt 的机器检查框架提供。尽管所有对象都可能出现在可用的上下文中，但法学硕士仍然很困难，因为证明理论依赖性通常隐含在线性表示中并分布在多个程序中。因此，本文提出了 Scratchy，这是一种视觉便签本方法，可以公开多模式生成的这些依赖关系。给定自然语言安全描述、形式上下文和目标命题，证明对象可以规范化为类型化的证明关系图。然后，保留结构的可视化编译器将图转换为公式丰富的可视化证明状态，指导多模态模型生成 EasyCrypt 证明。此外，还引入了 Scratchy-eval，这是一个源自可靠的官方 EasyCrypt 文件的 114 个任务数据集。它包含 64 代安全形式证明和 50 项多项选择知识测试。经过一系列涵盖语义基础、关系不变量和博弈简化的评估后，GPT-5.6-Sol 和 Claude-Opus-5 等经典法学硕士从 Scratchy 的结构化视觉证明状态中获得了明显的优势。这种对比表明，显式证明结构可以使改进和多模态证明状态表示成为计算机辅助密码学的一个有前途的方向。",
       "topics": [
         "C"
       ],
@@ -116,7 +120,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.06226",
-      "pdf": "https://arxiv.org/pdf/2609.06226"
+      "pdf": "https://arxiv.org/pdf/2609.06226",
+      "abstractEn": "Large language models (LLMs) have recently made substantial progress in formal proof generation, yet presenting distinctive challenges in cryptographic area. Computational security arguments posit that a valid proof must coordinate probability, adversarial games, invariants, assumptions and bounds, which can be provided by a machine-checked framework named EasyCrypt. Although all objects may appear in available context, LLMs still struggle because proof-theoretic dependencies are typically implicit in a linear representation and distributed across multiple programs. So, this paper presents Scratchy, a visual-scratchpad approach that exposes these dependencies for multimodal generation. Given the natural-language security description, with formal context and target propositions, the proof objects can be normalized into a typed proof-relation graph. Then a structure-preserving visual compiler transforms the graph into the formula-rich visual proof state that guides a multimodal model in generating the EasyCrypt proof. Also, the Scratchy-eval, a 114-task dataset derived from reliable official EasyCrypt files, has been introduced. It contains 64 security-form proof generations and 50 multiple-choice knowledge tests. After a series of evaluations, covering semantic grounding, relational invariants, and game reductions, classical LLMs like GPT-5.6-Sol and Claude-Opus-5 have gained a clear advantage from Scratchy's structured visual proof states. This contrast suggests that explicit proof structure can make the improvement and multimodal proof-state representation as a promising direction for computer-aided cryptography."
     },
     {
       "id": "2609.08765",
@@ -129,7 +134,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Benchmark Scores Are Pipeline-Dependent: A Reliability Audit of Cybersecurity LLM Benchmarks》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 基准通常被视为具有稳定分数的固定数据集，但其结果取决于可配置的评估管道。我们审核 10 个专有、开放权重和网络安全专业法学硕士的 8 个网络安全基准。通过将基准建模为测量管道，我们确定了 15 种系统故障模式，并表明单个管道选择可以将模型的分数改变超过 80 个百分点，并显着改变模型排名。在跨基准测试级别，由于评估约定不兼容，两个语义相似的任务对对相同模型的排名不同。在一种标准化管道选择同时保留任务语义的评估工具下，10 个模型中有 9 个在至少一个基准上移动了至少三个等级。这些结果表明，网络安全 LLM 基准分数依赖于管道，并促使管道感知审计成为可靠模型评估的核心要求。",
       "topics": [
         "C"
       ],
@@ -138,7 +143,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.08765",
-      "pdf": "https://arxiv.org/pdf/2609.08765"
+      "pdf": "https://arxiv.org/pdf/2609.08765",
+      "abstractEn": "Large language model (LLM) benchmarks are often treated as fixed datasets with stable scores, yet their outcomes depend on configurable evaluation pipelines. We audit eight cybersecurity benchmarks across 10 proprietary, open-weight, and cybersecurity-specialized LLMs. By modeling benchmarks as measurement pipelines, we identify 15 systematic failure modes and show that a single pipeline choice can change a model's score by more than 80 percentage points and substantially alter model rankings. At the cross-benchmark level, two semantically similar task pairs rank the same models differently because of incompatible evaluation conventions. Under an evaluation harness that standardizes pipeline choices while preserving task semantics, nine of 10 models shift by at least three ranks on at least one benchmark. These results show that cybersecurity LLM benchmark scores are pipeline-dependent and motivate pipeline-aware auditing as a core requirement for reliable model evaluation."
     },
     {
       "id": "2609.09838",
@@ -151,7 +157,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Proximity Gaps for Gabidulin Codes and Applications》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "邻近差距对于交互式预言邻近证明 (IOPP) 和多项式承诺方案 (PCS) 的可靠性至关重要。 $[n,k,d]$ 线性代码 $C\\subseteq\\mathbb F^n$ 具有 $δ$-邻近间隙，误差为 $ε$，如果对于每个 $u_0,u_1\\in\\mathbb F^n$，$\\ell_{u_0,u_1}=\\{u_0+αu_1:α\\in\\mathbb F\\}$ 上的所有点都 $δ$-接近于 $C$，或者至多是 $ε$ 的一小部分。尽管汉明度量码的邻近间隙已被很好地理解，但它们的秩度量对应物尽管在编码理论和密码学中得到应用，但在很大程度上仍未被探索。在这项工作中，我们研究线性秩度量代码的邻近间隙及其加密应用。首先，我们表明，$\\mathbb F_{q^m}$ 上的每个 $[n,k,d]$ 线性排名度量代码 $C$ 都承认每个 $δ\\le(d-1)/(3n)$ 存在邻近间隙，误差最多为 $q^{e+1}/q^m$，其中 $e=\\lfloorδn\\rfloor$。对于 Gabidulin 代码，我们将差距改进为 $(d-1)/(2n)$，误差为 $10q^{n-1}/q^m$。这两个邻近间隙分别与一般线性汉明度量码和里德-所罗门 (RS) 码的邻近间隙相匹配。我们通过构造无限族的恒定速率加比杜林代码和仿射线 $\\ell_{u_0,u_1}$ 来证明 $(d-1)/(2n)$ 界限是紧的，其中 $1-o(1)$ 部分点与代码 $d/(2n)$ 接近，而 $u_1$ 至少 $3d/(4n)$ 远离代码。在 $d/(3n)$ 差距处，我们还给出了一个反例，建立了 $ε$ 的下限。作为应用，我们通过将 Ligero IOPP 应用于交错 RS 代码来构建交错 Gabidulin 代码的 IOPP。然后，我们将基于 Ligero 的 PCS 应用于普通多项式，以获得 $q$ 线性化多项式承诺方案。据我们所知，这是第一个基于秩度量纠错码的PCS框架。",
       "topics": [
         "A"
       ],
@@ -159,7 +165,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.09838",
-      "pdf": "https://arxiv.org/pdf/2609.09838"
+      "pdf": "https://arxiv.org/pdf/2609.09838",
+      "abstractEn": "Proximity gaps are central to the soundness of interactive oracle proofs of proximity (IOPPs) and polynomial commitment schemes (PCSs). An $[n,k,d]$ linear code $C\\subseteq\\mathbb F^n$ has a $δ$-proximity gap with error $ε$ if, for every $u_0,u_1\\in\\mathbb F^n$, either all points on $\\ell_{u_0,u_1}=\\{u_0+αu_1:α\\in\\mathbb F\\}$ are $δ$-close to $C$, or at most an $ε$ fraction are. Although proximity gaps for Hamming-metric codes are well understood, their rank-metric counterparts remain largely unexplored despite their applications in coding theory and cryptography. In this work, we study proximity gaps for linear rank-metric codes and their cryptographic applications. First, we show that every $[n,k,d]$ linear rank-metric code $C$ over $\\mathbb F_{q^m}$ admits a proximity gap for every $δ\\le(d-1)/(3n)$, with error at most $q^{e+1}/q^m$, where $e=\\lfloorδn\\rfloor$. For Gabidulin codes, we improve the gap to $(d-1)/(2n)$ with error $10q^{n-1}/q^m$. These two proximity gaps match those for general linear Hamming-metric codes and Reed--Solomon (RS) codes, respectively. We prove the $(d-1)/(2n)$ bound is tight by constructing an infinite family of constant-rate Gabidulin codes and affine lines $\\ell_{u_0,u_1}$ on which a $1-o(1)$ fraction of points are $d/(2n)$-close to the code, while $u_1$ is at least $3d/(4n)$-far from it. At the $d/(3n)$ gap, we also give a counterexample establishing a lower bound on $ε$. As applications, we construct an IOPP for interleaved Gabidulin codes by adapting the Ligero IOPP for interleaved RS codes. We then adapt the Ligero-based PCS for ordinary polynomials to obtain a $q$-linearized polynomial commitment scheme. To our knowledge, this is the first PCS framework based on rank-metric error-correcting codes."
     }
   ]
 }

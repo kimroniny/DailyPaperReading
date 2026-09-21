@@ -10,7 +10,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《LLMVul: A Vulnerability-Labeled Dataset of LLM-Generated C/C++ Functions from Real Production Repositories》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 越来越多地用于生成和协助软件开发，但现有的漏洞数据集主要集中在人类编写的代码或受控提示环境上。这限制了研究 LLM 生成的代码中出现的实际软件项目中的安全漏洞的能力。我们提出了 LLMVul，这是一个从实际生产存储库中挖掘的 LLM 生成的 C/C++ 函数的漏洞标记数据集。我们使用提交元数据和人工智能相关作者证据等来源信号，从 GitHub 挖掘 4 年（2022 年 11 月 13 日至 2026 年 9 月 3 日）的人工智能辅助开发活动。经过过滤和重复数据删除后，LLMVul 包含来自 226 个存储库的 21,430 个独特的 C/C++ 函数，以及存储库、提交、函数、出处和 AI 工具元数据。我们使用互补的静态分析和基于模式的技术的集合来建立漏洞标签，并将常见弱点枚举（CWE）类别分配给已确认的易受攻击的功能。为了评估标签的可靠性，我们还进行独立的手动注释，并使用 Cohen 的 kappa ($k=0.79$) 衡量评估者间的一致性。LLMVul 包含 1,540 个集成漏洞函数，涵盖 17 个独特的 CWE 类别，与现有的面向漏洞的 LLM 代码基准相比，提供了更多真实世界的 LLM 生成的易受攻击的 C/C++ 函数。通过保留代码级漏洞标签和生成/来源元数据，LLMVul 能够对漏洞检测、LLM 生成代码的安全评估以及人工智能辅助软件开发中的漏洞模式进行可重复研究。 LLMVul 数据集可在 https://doi.org/10.5281/zenodo.22668216 上公开获取。",
       "topics": [
         "C"
       ],
@@ -21,7 +21,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.10945",
-      "pdf": "https://arxiv.org/pdf/2609.10945"
+      "pdf": "https://arxiv.org/pdf/2609.10945",
+      "abstractEn": "Large language models (LLMs) are increasingly used to generate and assist with software development, yet existing vulnerability datasets largely focus on human-written code or controlled prompting environments. This limits the ability to study security weaknesses in LLM-generated code as it appears in real-world software projects. We present LLMVul, a vulnerability-labeled dataset of LLM-generated C/C++ functions mined from real production repositories. We mine AI-assisted development activity from GitHub over a 4 year period, from November 13, 2022 to September 3, 2026, using provenance signals such as commit metadata and AI-related authorship evidence. After filtering and deduplication, LLMVul contains 21,430 unique C/C++ functions from 226 repositories, together with repository, commit, function, provenance, and AI-tool metadata. We establish vulnerability labels using an ensemble of complementary static-analysis and pattern-based techniques and assign Common Weakness Enumeration (CWE) categories to confirmed vulnerable functions. To assess labeling reliability, we additionally conduct independent manual annotation and measure inter-rater agreement using Cohen's kappa ($k=0.79$). LLMVul contains 1,540 ensemble-vulnerable functions spanning 17 unique CWE categories, providing substantially more real-world LLM-generated vulnerable C/C++ functions than existing vulnerability-oriented LLM code benchmarks. By preserving both code-level vulnerability labels and generation/provenance metadata, LLMVul enables reproducible research on vulnerability detection, security evaluation of LLM-generated code, and analysis of vulnerability patterns in AI-assisted software development. The LLMVul dataset is publicly available at https://doi.org/10.5281/zenodo.22668216."
     },
     {
       "id": "2609.10762",
@@ -33,7 +34,7 @@
       ],
       "year": 2026,
       "venue": "CASCON 2026",
-      "abstract": "《Beyond Static Guarantees: Measuring the Static-Pass Dynamic-Fail Gap in Security-Sensitive and LLM-Generated Python Code》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大语言模型 (LLM) 的进步推动了对可扩展方法的探索，以评估生成的安全敏感软件的安全性。静态分析作为一种可扩展、可重复且廉价的安全门被广泛采用，但无法直接观察运行时漏洞利用行为。依赖于对抗性输入、执行上下文或漏洞利用链的漏洞可能会逃避静态检查，同时在实践中保持可利用性，但通过静态分析通常被视为安全行为的证据。本文介绍了静态通过动态失败 (SPDF) 现象和结合静态扫描、LLM 驱动的常见弱点枚举 (CWE) 推理以及隔离 Docker 容器中的自主漏洞利用验证的三阶段代理管道。我们评估了来自 SecurityEval、RedCode 和 Cyber​​Native 数据集的 1,355 个 Python 样本。在复合 Bandit-Semgrep 门下未产生任何结果的 654 个样本中，LLM 检测阶段在 235 个文件中识别出 394 个候选漏洞。动态验证在 95 个文件中确认或部分确认了可利用性，产生了 14.53% 的包容性管道率（大约为 7 个静态干净样本中的 1 个）。该比率表示管道识别出候选漏洞并获得支持可利用性的运行时证据的 Bandit-Semgrep-clean 样本的比例。结果因数据集而异：在候选文件-CWE 对中，RedCode 的确认可利用性为 33.7%，Cyber​​Native 为 28.6%，SecurityEval 为 5.4%。 Bandit 和 Semgrep 都没有标记几个经常确认的类别，包括 CWE-338 和 CWE-916。这些发现表明，静态分析的成功和运行时安全性是软件保证的层次结构，而不是可互换的措施，并且有可能重塑人工智能生成和安全敏感代码的评估方式。",
       "topics": [
         "C"
       ],
@@ -42,7 +43,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.10762",
-      "pdf": "https://arxiv.org/pdf/2609.10762"
+      "pdf": "https://arxiv.org/pdf/2609.10762",
+      "abstractEn": "Advances in large language models (LLMs) fuel the quest for scalable methods to assess the security of generated and security-sensitive software. Static analysis is widely adopted as a scalable, reproducible, and inexpensive security gate, but cannot directly observe runtime exploit behaviour. Vulnerabilities dependent on adversarial inputs, execution context, or exploit chaining may evade static checks while remaining exploitable in practice, yet passing static analysis is often treated as evidence of secure behaviour. This paper introduces the Static-Pass Dynamic-Fail (SPDF) phenomenon and a three-stage agentic pipeline combining static scanning, LLM-driven Common Weakness Enumeration (CWE) reasoning, and autonomous exploit verification in isolated Docker containers. We evaluate 1,355 Python samples from SecurityEval, RedCode, and CyberNative datasets. Of the 654 samples producing no findings under the composite Bandit-Semgrep gate, the LLM detection stage identified 394 candidate vulnerabilities across 235 files. Dynamic verification confirmed or partially confirmed exploitability in 95 files, yielding an inclusive pipeline rate of 14.53% (roughly 1 in 7 statically clean samples). This rate represents the proportion of Bandit-Semgrep-clean samples for which the pipeline identified a candidate vulnerability and obtained runtime evidence supporting exploitability. Outcomes varied by dataset: among candidate file--CWE pairs, confirmed exploitability was 33.7% for RedCode, 28.6% for CyberNative, and 5.4% for SecurityEval. Several frequently confirmed classes, including CWE-338 and CWE-916, were flagged by neither Bandit nor Semgrep. These findings indicate that static-analysis success and runtime security are hierarchical layers of software assurance rather than interchangeable measures, and have the potential to reshape how AI-generated and security-sensitive code is evaluated."
     },
     {
       "id": "2609.08093",
@@ -55,7 +57,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《LLM-Based Penetration Testing in the Presence of Honeypots》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 代理越来越多地用于攻击性网络安全任务，例如自动漏洞发现、侦察和渗透测试。这种新功能还威胁到防御者最有价值的工具之一：欺骗。传统的蜜罐依靠真实性和模糊性来引诱人类或脚本驱动的攻击者泄露战术、技术和程序 (TTP)，但 LLM 驱动的攻击者可以推理异构工件并使用蜜罐怀疑来指导目标选择决策。我们对 LLM 攻击代理的蜜罐感知预算分配进行了系统研究。我们将攻击者的问题形式化为预算决策过程：代理与潜在目标交互，在侦察和利用期间消耗LLM执行预算，并且必须在出现蜜罐怀疑时决定是（继续利用）还是（跳过）。我们的研究结果表明，通过所提出的检测器引导策略，LLM 代理攻击者可以有效地将预算分配给主机池中的受损主机，这凸显了在受控混合主机测试台中动态分配预算的重要性。虽然防御超出了我们目前的范围，但我们讨论了对未来的对抗性弹性和自适应蜜罐设计的影响。",
       "topics": [
         "C"
       ],
@@ -64,7 +66,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.08093",
-      "pdf": "https://arxiv.org/pdf/2609.08093"
+      "pdf": "https://arxiv.org/pdf/2609.08093",
+      "abstractEn": "Large language model (LLM) agents are increasingly employed for offensive cybersecurity tasks such as automated vulnerability discovery, reconnaissance, and penetration testing. This new capability also threatens one of the defender's most valuable tools: deception. Traditional honeypots rely on realism and obscurity to lure human or script-driven attackers into revealing tactics, techniques, and procedures (TTPs), but LLM-driven attackers can reason about heterogeneous artifacts and use the honeypot suspicion to guide target-selection decisions. We present a systematic study of honeypot-aware budget allocation for LLM attack agents. We formalize the attacker's problem as a budgeted decision process: an agent interacts with potential targets, consuming LLM execution budget during reconnaissance and exploitation, and must decide whether to (continue exploitation) or (skip) when honeypot suspicion arises. Our findings show that with the proposed detector-guided policy, LLM agent attackers can effectively allocate budget to compromise hosts in a host pool, highlighting the importance of dynamically allocating budget in a controlled mixed-host testbed. While defenses are beyond our present scope, we discuss implications for future adversarially resilient and adaptive honeypot design."
     },
     {
       "id": "2609.11504",
@@ -77,7 +80,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《DeFiFlowBench: Benchmarking and Improving Safe Executability in Natural-Language DeFi Workflow Synthesis》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "结构上有效的 DeFi 工作流程仍然可以授权昂贵的交易。我们介绍 DeFiFlowBench，这是一个由 207 个团队编写的自然语言 DeFi 工作流程合成提示的基准。它测量图形覆盖率、配置完整性和声明的安全谓词，然后在本地 EVM 上测试支持的交易配置。在固定的 5% 价格影响上限下，直接、受限和少次提示会产生每个配置 14-19 次不安全的保留执行。由报价得出的滑点界限并不能阻止订单本身对价格的影响。我们提出了 Koan-Safe，它结合了仅提示的意图解析器、可替换的生成器以及具有默认安全参数的结构修复。在 75 个保留的工作流程提示中，其混合变体在静态安全代理上的得分为 0.67，而最佳基线的得分为 0.33。 Koan-Safe 在保存的基准输出上没有记录不安全的执行。当禁用强制执行时，匹配候选消融会产生 14-17 次不安全处决。其他测试暴露了默认注入的限制：宽松的现有阈值仍然可以授权不安全的交易。单独评估的政策上限在 36 例诊断网格上解决了这一失败。这些结果支持明确的贸易保护和基于执行的评估，同时区分声明的安全性和一般保证。",
       "topics": [
         "A"
       ],
@@ -87,7 +90,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.11504",
-      "pdf": "https://arxiv.org/pdf/2609.11504"
+      "pdf": "https://arxiv.org/pdf/2609.11504",
+      "abstractEn": "A structurally valid DeFi workflow can still authorize a costly trade. We introduce DeFiFlowBench, a benchmark of 207 team-authored prompts for natural-language DeFi workflow synthesis. It measures graph coverage, configuration completeness, and declared safety predicates, then tests supported trade configurations on a local EVM. Direct, constrained, and few-shot prompting produce 14-19 unsafe held-out executions per configuration under a fixed 5% price-impact cap. A slippage bound derived from a quote does not prevent the price impact of the order itself. We propose Koan-Safe, which combines a prompt-only intent parser, a replaceable generator, and structural repair with default safety parameters. On 75 held-out workflow prompts, its hybrid variant scores 0.67 on the static safety proxy, compared with 0.33 for the best baseline. Koan-Safe records no unsafe executions on the saved benchmark outputs. A matched-candidate ablation produces 14-17 unsafe executions when enforcement is disabled. Additional tests expose the limits of default injection: permissive existing thresholds can still authorize unsafe trades. A separately evaluated policy cap addresses this failure on a 36-case diagnostic grid. These results support explicit trade protections and execution-based evaluation, while distinguishing declared safety from a general guarantee."
     },
     {
       "id": "2609.11535",
@@ -102,7 +106,7 @@
       ],
       "year": 2026,
       "venue": "CCS 2026",
-      "abstract": "协议/链上工作《On Identifying Sound Conditions for Frontrunning Resistance》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "区块链通过智能合约实现去中心化应用程序——通过共识执行的交互式程序。然而，区块链交易排序固有的异步性质引入了一类被称为抢先交易攻击的漏洞，这些漏洞已在以太坊等主要区块链中造成数百万美元的损失。抢先交易的出现是因为用户通过交易与智能合约进行交互，这些交易由称为矿工的指定节点添加到区块链中。矿工可以利用他们重新排序、延迟或插入交易的能力来获得相对于诚实用户的优势，从而有效地领先于他们。然而，迄今为止，该领域对于抵御此类攻击的合约意味着什么还缺乏严格的定义。更糟糕的是，我们表明现有的动态检测方法根本上是不够的：在一项包含 287 项智能合约审计的大规模研究中，领先的智能合约审计师发现的 393 个报告漏洞中，有 55% 超出了最先进的检测标准的范围。为了解决这一差距，我们提出了智能合约抢先交易漏洞的第一个正式定义。我们的定义抓住了一个关键的见解：对抢先交易的抵制不仅仅是合约的固有属性，而是关键取决于诚实的用户如何与其交互。基于这一观察，我们开发了一种用于合成安全交互条件的合理算法，以及应用于经过审计的现实世界合约的原型实现——揭示了两个以太坊合约中之前未发现的漏洞。",
       "topics": [
         "A"
       ],
@@ -110,7 +114,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.11535",
-      "pdf": "https://arxiv.org/pdf/2609.11535"
+      "pdf": "https://arxiv.org/pdf/2609.11535",
+      "abstractEn": "Blockchains enable decentralized applications through smart contracts---interactive programs executed through consensus. However, the inherently asynchronous nature of blockchain transaction ordering introduces a class of vulnerabilities known as frontrunning attacks, which have caused millions of dollars in losses in major blockchains, such as Ethereum. Frontrunning attacks arise because users interact with smart contracts through transactions, which are added to the blockchain by designated nodes called miners. Miners can exploit their ability to reorder, delay, or insert transactions to gain an advantage over honest users, effectively frontrunning them. Yet, to date, the field lacks a rigorous definition of what it even means for a contract to resist such attacks. Worse, we show that existing dynamic detection approaches are fundamentally inadequate: in a large-scale study comprising 287 smart contract audits, 55% of the 393 reported vulnerabilities identified by leading smart contract auditors fall outside the scope of state-of-the-art detection criteria. To address this gap, we propose the first formal definition of frontrunning vulnerability for smart contracts. Our definition captures a key insight: resistance to frontrunning is not an intrinsic property of a contract alone, but depends critically on how honest users interact with it. Grounded in this observation, we develop a sound algorithm for synthesizing secure interaction conditions, alongside a prototype implementation that we apply to audited real-world contracts---revealing previously undiscovered vulnerabilities in two Ethereum contracts."
     },
     {
       "id": "2609.11413",
@@ -125,7 +130,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Heterogeneous Cross-Chain Transaction Tracing for Solana Bridges via Candidate-Set Selective Decision》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "Solana 是一个快速增长的高吞吐量区块链平台，吸引了大量的流动性和用户活动。然而，这种扩张也引起了非法行为者的注意，他们经常利用跨链桥将非法资金转移到 Solana 上，以混淆交易沿袭。与 EVM 兼容平台不同，Solana 具有独特的执行动态，并且缺乏标准事件日志，从而造成严重的语义差距，阻碍现有跟踪方法可靠地关联跨账本交易。在本文中，我们形式化了四种 Solana 绑定的跨链交易模式，并提出了一种称为 SolTracer 的基于候选集选择性决策的跟踪方法。 SolTracer 将不同的执行语义映射到统一的事件空间，并采用候选集选择性决策来可靠地关联目标事务，同时在不存在有效目标时放弃。大量实验表明，SolTracer 在三个代表性场景中的性能优于最先进的 (SOTA) 方法：封闭世界关联、开放世界关联和跨源链泛化。特别是，在具有 50% TA 比率的具有挑战性的开放世界环境下，SolTracer 将 F1 分数比最强的 SOTA 基线提高了 20.16%。利用 SolTracer，我们对现实世界的跨链传输进行实证分析，以研究生态系统动态。我们的分析探讨了桥接机制之间明显的计数值差异、跨资产转移的普遍性以及链上结算和探索者可见性之间的脱钩。",
       "topics": [
         "A"
       ],
@@ -134,7 +139,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.11413",
-      "pdf": "https://arxiv.org/pdf/2609.11413"
+      "pdf": "https://arxiv.org/pdf/2609.11413",
+      "abstractEn": "Solana is a rapidly growing high-throughput blockchain platform that has attracted substantial liquidity and user activity. However, this expansion has also drawn the attention of illicit actors, who frequently leverage cross-chain bridges to route illicit funds onto Solana to obfuscate transaction lineage. Unlike EVM-compatible platforms, Solana features distinct execution dynamics and lacks standard event logs, creating severe semantic gaps that prevent existing tracing methods from reliably correlating cross-ledger transactions. In this paper, we formalize four types of Solana-bound cross-chain transaction modes and propose a candidate-set selective decision-based tracing method called SolTracer. SolTracer maps disparate execution semantics into a unified event space and employs candidate-set selective decision-making to reliably associate target transactions while abstaining when valid targets are absent. Extensive experiments demonstrate that SolTracer outperforms state-of-the-art (SOTA) methods across three representative scenarios: closed-world association, open-world association, and cross-source-chain generalization. In particular, under the challenging open-world setting with a 50% TA ratio, SolTracer improves the F1 score by 20.16% over the strongest SOTA baseline. Utilizing SolTracer, we conduct an empirical analysis on real-world cross-chain transfers to investigate ecosystem dynamics. Our analysis explores the stark count-value divergence across bridge mechanisms, the prevalence of cross-asset shifts, and the decoupling between on-chain settlement and explorer visibility."
     },
     {
       "id": "2609.11008",
@@ -149,7 +155,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《DeFiFusion: Combining Transaction Events with Smart Contracts to Detect Price Manipulation Attacks》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "去中心化金融（DeFi）已成为一种快速增长的基于区块链的金融服务，其中市场交易动态和底层智能合约逻辑错综复杂地交织在一起。这种自主相互作用在消除中心化中介机构的同时，显着扩大了 DeFi 协议对价格操纵攻击 (PMA) 的脆弱性，这些攻击已经造成了灾难性的财务损失。尽管它们很重要，但现有的检测范例仍存在根本性的局限性。以交易为中心的方法缺乏对合约执行语义的认识，使得它们在合法的市场波动下容易出现误报，而静态合约分析则忽略了真实的交易行为，并经常报告在实践中无法利用的漏洞。我们推出了 DeFiFusion，这是一种双模式 PMA 检测框架，它通过在统一管道内对交易事件和智能合约语义进行联合建模来缩小这一差距。我们的核心洞察是，PMA 的恶意行为仅产生于交易行为与其利用的合约逻辑之间的交互；这两种信号都不足以孤立地发挥作用。因此，我们推导了价格操纵感知事件编码，用于提取适合操纵模式的细粒度时间和经济特征。我们进一步引入基于 LLM 的合约语义提取，以提供先前行为方法所缺乏的执行逻辑上下文。为了融合这些模态，我们提出了一种具有 T5 风格相对位置编码的双模态投影融合变压器，捕获了将 PMA 与良性市场活动区分开来的循环多级执行结构。大量实验表明，DeFiFusion 始终实现最先进的检测性能，有效召回 225 个 PMA 案例中的 222 个，同时保持 96.10% 的精度。",
       "topics": [
         "A"
       ],
@@ -160,7 +166,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.11008",
-      "pdf": "https://arxiv.org/pdf/2609.11008"
+      "pdf": "https://arxiv.org/pdf/2609.11008",
+      "abstractEn": "Decentralized Finance (DeFi) has emerged as a rapidly growing blockchain-based financial service, where market transaction dynamics and underlying smart contract logic are intricately intertwined. This autonomous interplay, while eliminating centralized intermediaries, significantly expands the vulnerability surface of DeFi protocols to Price Manipulation Attacks (PMAs), which have already inflicted catastrophic financial losses. Despite their gravity, existing detection paradigms suffer from fundamental limitations. Transaction-centric methods lack awareness of contract execution semantics, making them prone to false positives under legitimate market volatility, while static contract analyses ignore real transaction behaviors and frequently report vulnerabilities that are infeasible to exploit in practice. We present DeFiFusion, a dual-modal PMA detection framework that closes this gap by jointly modeling transaction events and smart contract semantics within a unified pipeline. Our core insight is that PMA maliciousness emerges only from the interaction between transaction behaviors and the contract logic they exploit; neither signal suffices in isolation. Accordingly, we derive price-manipulation-aware event encoding for extracting fine-grained temporal and economic features tailored to manipulation patterns. We further introduce LLM-based contract semantic extraction to supply the execution-logic context that prior behavioral methods lack. To fuse these modalities, we propose a Dual-Modal Projection-Fusion Transformer with T5-style relative positional encoding, capturing the cyclic multi-stage execution structures that distinguish PMAs from benign market activity. Extensive experiments demonstrate that DeFiFusion consistently achieves state-of-the-art detection performance, effectively recalling 222 of the 225 PMA cases while maintaining a precision of 96.10%."
     },
     {
       "id": "2609.11757",
@@ -172,7 +179,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Signing the Transaction but Not the Decision: Whisper Attacks and a Binding Defense for AP2》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "软件代理开始代表个人购物和付款。 AP2 等代理支付协议会为已完成的购买生成加密有效的签名，但不会限制导致这些签名的决策。因此，普通的产品描述文本可以引导购物代理形成通过每个协议检查但不再匹配用户请求的购物车。在本文中，我们展示了该漏洞可实现三种相关的攻击。在第一次攻击中，代理被引导获取另一个用户的支付凭证。在第二个例子中，它组装了一个加密有效的购物车，其内容与向用户显示的内容不匹配。在第三种情况下，有关库存或产品谱系的单一事实声明会将代理从显示的较便宜的商品转移到较昂贵的商品，而最终的购物车仍与列表完全一致。在使用 AP2 样本代理默认指定的 Gemini Flash-Lite 模型进行的实验中，这三种攻击的成功率分别为 90%、56% 和 73.3%。同样的漏洞出现在 17 个 Google 模型、三个不相关的代理框架、两个跨供应商锚点以及 Google 自己的消费者助理中。为了解决这种攻击媒介，我们引入了 A-VIP（AP2 验证意图保护），这是一种协议层防御，它将签名的意图视为能力授予，而不是判断商家的描述。防御方将每个凭证查找绑定到请求它的会话，并将每个购物车行绑定到所看到的列表，同时标记未经授权的支出。前两次攻击留下了这些绑定以零误报阻止的结构痕迹。第三次攻击没有留下任何痕迹，因此 A-VIP 会显示未经授权的支出以供用户确认。最后，我们发布了 A-VIP 代码、机器检查的不变量和 AP2-WhisperBench，这是一套包含 1,544 个评估场景的套件。",
       "topics": [
         "C"
       ],
@@ -180,7 +187,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.11757",
-      "pdf": "https://arxiv.org/pdf/2609.11757"
+      "pdf": "https://arxiv.org/pdf/2609.11757",
+      "abstractEn": "Software agents are beginning to shop and pay on a person's behalf. Agent payment protocols such as AP2 produce cryptographically valid signatures for completed purchases, yet do not constrain the decisions that lead to them. Consequently, ordinary product-description text can steer a shopping agent into forming a cart that passes every protocol check but no longer matches the user's request. In this paper, we show that this vulnerability enables three related attacks. In the first attack, the agent is steered into fetching another user's payment credentials. In the second, it assembles a cryptographically valid cart whose contents do not match what the user was shown. In the third, a single factual claim about stock or product lineage moves the agent from the cheaper displayed item to a more expensive one, while the resulting cart remains fully consistent with the listing. In experiments using the Gemini Flash-Lite models that AP2's sample agents specify by default, the three attacks succeeded at rates of 90%, 56%, and 73.3%, respectively. The same vulnerability appears across seventeen Google models, three unrelated agent frameworks, two cross-vendor anchors, and Google's own consumer assistant. To address this attack vector, we introduce A-VIP (AP2 Verified-Intent Protection), a protocol-layer defense that treats the signed intent as a capability grant rather than judging the merchant's description. The defense binds every credential lookup to the session that requested it and every cart line to the listing seen, while flagging unauthorized spending. The first two attacks leave structural traces that these bindings block with zero false positives. The third attack leaves no trace, so A-VIP surfaces unauthorized spending for user confirmation. Finally, we release the A-VIP code, machine-checked invariants, and AP2-WhisperBench, a suite of 1,544 evaluation scenarios."
     },
     {
       "id": "2609.11251",
@@ -192,7 +200,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《You've Got a BUD in Me: Authenticated Reads from Per-Block Write Logs》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "区块链通常通过维护跨越整个状态的结构来支付经过身份验证的读取费用。我们展示了验证器如何通过验证每个块的写入来支持历史成员资格和排除证明。块更新摘要（BUD）提交一个写日志，其前驱指针链接每个键的连续修改。 SuperBUD 总结窗口上的最后写入；指数层次结构将长的不变间隔变成短的证明。摘要计数在层次结构范围内的间隙中呈对数，超出该范围的每个顶级窗口有一个附加摘要。我们证明了针对对抗性证明者和最多 f 个拜占庭验证者的稳健性，以及通过部署后修改锚定的查询的完整性，假设存档、证明和委员会证据可用。在状态大小增加 50 倍的情况下，测量的基本 BUD 路径增加了 1.24 倍，而内存中和缓存限制的磁盘支持的 Merkle Patricia 尝试则增加了 3.1 倍和 69.5 倍。在合成跟踪上，两次摘要读取层有效负载保持在 800 字节以下，并且热哈希路径验证在 p99 处最多需要 146 微秒。",
       "topics": [
         "A"
       ],
@@ -200,7 +208,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.11251",
-      "pdf": "https://arxiv.org/pdf/2609.11251"
+      "pdf": "https://arxiv.org/pdf/2609.11251",
+      "abstractEn": "Blockchains usually pay for authenticated reads by maintaining a structure that spans the entire state. We show how validators can support historical membership and exclusion proofs by authenticating each block's writes instead. A Block Update Digest (BUD) commits a write log whose predecessor pointers link successive modifications of each key. A SuperBUD summarizes last writes over a window; an exponential hierarchy turns long unchanged intervals into short proofs. The digest count is logarithmic in the gap within the hierarchy's range, with one additional digest per top-level window beyond it. We prove soundness against adversarial provers and up to f Byzantine validators, and completeness for queries anchored by a post-deployment modification, assuming archive, attestation, and committee evidence is available. Across a 50x increase in state size, the measured base-BUD path rises by 1.24x, compared with 3.1x and 69.5x for in-memory and cache-bounded disk-backed Merkle Patricia tries. On the synthetic trace, two-digest read-layer payloads stay below 800 bytes, and warm hash-path verification takes at most 146 microseconds at p99."
     },
     {
       "id": "2609.09742",
@@ -216,7 +225,7 @@
       ],
       "year": 2026,
       "venue": "EuroSys 2027",
-      "abstract": "协议/链上工作《Breaking Fault Lines: Unifying TEE-Assisted BFT Consensus in Partially Trusted Worlds》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "本文重新审视了通用部分 TEE 模型下的 TEE 辅助 BFT，其中副本的任意子集在 TEE 内执行，而其余副本在没有硬件信任保证的情况下运行。我们表明，异构信任改变了群体形成和容错的结构。特别是，我们得出了严格的弹性界限 f < max {n/3, m/2}，其中 n 是副本总数，m 是启用 TEE 的副本数量。结果揭示了一个尖锐的阈值现象：TEE 只有超过部署的三分之二才能提高容错能力。在此特征的指导下，我们引入了两个协议原则：(1) 安全地组合纯 TEE 和混合仲裁的双仲裁结构，以及 (2) TEE-leader 快速路径，利用硬件强制的非歧义来减少共识和视图更改延迟。 We realize these ideas in Raftel, which is, to our knowledge, the first HotStuff-style BFT protocol designed explicitly for arbitrary partial-TEE deployments, and in chained-Raftel, a pipelined variant that further accelerates mixed-trust execution.我们在 Intel SGX 上实现这两种协议，并在 LAN 和 WAN 环境中对其进行评估。我们的结果表明，Raftel 在 WAN 设置中实现了高达 625 TPS，延迟低于 670 毫秒，吞吐量比 HotStuff 高出高达 308 TPS，同时接近完全 TEE 辅助协议的性能。",
       "topics": [
         "A"
       ],
@@ -225,7 +234,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.09742",
-      "pdf": "https://arxiv.org/pdf/2609.09742"
+      "pdf": "https://arxiv.org/pdf/2609.09742",
+      "abstractEn": "This paper revisits TEE-assisted BFT under a universal partial-TEE model, where an arbitrary subset of replicas execute inside TEEs while the remaining replicas operate without hardware trust guarantees. We show that heterogeneous trust changes the structure of quorum formation and fault tolerance. In particular, we derive a tight resilience bound f < max {n/3, m/2}, where n is the total number of replicas and m is the number of TEE-enabled replicas. The result reveals a sharp threshold phenomenon: TEEs improve fault tolerance only once they exceed two-thirds of the deployment. Guided by this characterization, we introduce two protocol principles: (1) a dual-quorum construction that safely combines TEE-only and mixed quorums, and (2) a TEE-leader fast path that leverages hardware-enforced non-equivocation to reduce both consensus and view-change latency. We realize these ideas in Raftel, which is, to our knowledge, the first HotStuff-style BFT protocol designed explicitly for arbitrary partial-TEE deployments, and in chained-Raftel, a pipelined variant that further accelerates mixed-trust execution. We implement both protocols atop Intel SGX and evaluate them in LAN and WAN environments. Our results show that Raftel achieves up to 625 TPS with sub-670 ms latency in WAN settings, outperforming HotStuff by up to 308 TPS in throughput while approaching the performance of fully TEE-assisted protocols."
     }
   ]
 }
