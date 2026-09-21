@@ -108,7 +108,7 @@ arXiv 无 venue：A 类高相关可推；C / C-chain 方法清楚也可推，`ve
 
 ## 写入仓库（必做）
 
-今天的日期用 UTC 的 `YYYY-MM-DD`。有新论文时写成 `data/YYYY-MM-DD.json`，并把该日期插到 `data/manifest.json` 的 `dates` 数组最前面（已存在则移到最前，不要重复）。若已用 `paper_radar` 生成并过滤过 `digest.json`，可用 `node scripts/write-daily.js digest.json`；否则直接按下面格式写文件。
+今天的日期用 UTC 的 `YYYY-MM-DD`。有新论文时写成 `data/YYYY-MM-DD.json`，并把该日期插到 `data/manifest.json` 的 `dates` 数组最前面（已存在则移到最前，不要重复）。**不要删、不要清空其他日期的 `data/*.json`，不要把 `manifest.dates` 收成只剩今天。** 当天文件若已有论文：只追加本轮新 `id`，保留文件里已有卡片（`node scripts/write-daily.js` 会按 id 合并；手写时同样合并，禁止整文件覆盖成只有本轮结果）。站点上的旧卡片是历史目录，不是可以扔掉的 demo。若已用 `paper_radar` 生成并过滤过 `digest.json`，可用 `node scripts/write-daily.js digest.json`；否则直接按下面格式写文件。
 
 当天文件格式：
 ```json

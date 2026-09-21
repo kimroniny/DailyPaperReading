@@ -12,7 +12,7 @@ Filters (宁缺毋滥):
 - **C-chain** — C whose object is a chain / contract / zk system
 - Drop non-LLM traditional security even from top venues; drop jailbreaks / LLM-privacy / generic APR
 
-论文按天存放：`data/YYYY-MM-DD.json`，清单在 `data/manifest.json`。前端启动时读清单，再加载每一天的文件，按 `id` 去重（新的一天优先）。
+论文按天存放：`data/YYYY-MM-DD.json`，清单在 `data/manifest.json`。前端启动时读清单，再加载每一天的文件，按 `id` 去重（新的一天优先）。历史日期会一直留在清单里；同一天重复写入按 `id` 合并，不会把已有卡片整文件盖掉。
 
 ## 日报怎么进站点
 

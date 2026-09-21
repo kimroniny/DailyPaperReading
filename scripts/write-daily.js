@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require("fs");
 const path = require("path");
-const { cardFromRadar, upsertManifest } = require("../js/catalog.js");
+const { cardFromRadar, mergeSameDayPapers, upsertManifest } = require("../js/catalog.js");
 
 function today() {
   return new Date().toISOString().slice(0, 10);
@@ -22,11 +22,13 @@ function main(argv) {
   const date = dateFlag >= 0 ? argv[dateFlag + 1] : today();
   const raw = readJson(src, []);
   const list = Array.isArray(raw) ? raw : raw.papers || raw.selected || [];
-  const papers = list.map(cardFromRadar).filter((paper) => paper.id && paper.title);
+  const incoming = list.map(cardFromRadar).filter((paper) => paper.id && paper.title);
   const root = path.join(__dirname, "..");
   const dataDir = path.join(root, "data");
   fs.mkdirSync(dataDir, { recursive: true });
   const dayFile = path.join(dataDir, `${date}.json`);
+  const existing = readJson(dayFile, { papers: [] });
+  const papers = mergeSameDayPapers(incoming, existing.papers);
   fs.writeFileSync(dayFile, JSON.stringify({ date, papers }, null, 2) + "\n");
   const manifestPath = path.join(dataDir, "manifest.json");
   const manifest = upsertManifest(readJson(manifestPath, { dates: [] }), date);
