@@ -34,13 +34,19 @@
     );
   }
 
+  const TOPIC_LABELS = {
+    A: "A · 链上/协议",
+    C: "C · LLM 安全分析",
+    "C-chain": "C-chain · 合约 + LLM",
+  };
+
   function chip(label, value, selected) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "chip" + (selected ? " is-active" : "");
     button.dataset.topic = value;
     button.setAttribute("aria-pressed", selected ? "true" : "false");
-    button.textContent = label;
+    button.textContent = TOPIC_LABELS[label] || label;
     return button;
   }
 

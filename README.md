@@ -1,6 +1,6 @@
 # DailyPaperReading
 
-用卡片浏览论文：检索题目 / 作者 / 摘要，按主题和年份筛选，点开卡片阅读提要。
+用卡片浏览 **A / C / C-chain** 软件与区块链安全论文（宁缺毋滥）：检索题目 / 作者 / 摘要，按类别和年份筛选。
 
 - GitHub：https://github.com/kimroniny/DailyPaperReading
 - 在线阅读：https://kimroniny.github.io/DailyPaperReading/
