@@ -1,0 +1,266 @@
+{
+  "date": "2026-09-21",
+  "papers": [
+    {
+      "id": "2609.10780",
+      "title": "Big Enough to Break Out: Tracking the Rising Capability of LLM Penetration-Testing Agents",
+      "authors": [
+        "Victoria Lovelace",
+        "Cameron Berryman",
+        "Yuhan You",
+        "Daniel Graham"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "对比两套基于 PentestGPT 的渗透智能体：带人在环的开源权重系统，和更自主的 Claude 系统。自主系统能打通全部公开靶机；卡住时往往不是忘了先前发现，而是没把证据收成可执行的利用假设。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PentestGPT",
+        "渗透测试"
+      ],
+      "url": "https://arxiv.org/abs/2609.10780",
+      "pdf": "https://arxiv.org/pdf/2609.10780"
+    },
+    {
+      "id": "2605.21779",
+      "title": "FuzzingBrain V2: A Multi-Agent LLM System for Automated Vulnerability Discovery and Reproduction",
+      "authors": [
+        "Ze Sheng",
+        "Zhicheng Chen",
+        "Qingxiao Xu",
+        "Jeff Huang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "多代理 LLM 接在 OSS-Fuzz 上，只报告能被 fuzzer 复现的漏洞。AIxCC 决赛 C/C++ 集检出 90%，并在真实开源项目里发现多枚已确认修复的零日。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "fuzzing",
+        "OSS-Fuzz"
+      ],
+      "url": "https://arxiv.org/abs/2605.21779",
+      "pdf": "https://arxiv.org/pdf/2605.21779"
+    },
+    {
+      "id": "2607.08949",
+      "title": "SeedSmith: LLM-Driven Seed Synthesis for Directed Fuzzing",
+      "authors": [
+        "Junmin Zhu",
+        "Siyu Liu",
+        "Wenbo Guo",
+        "Tiffany Bao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "定向 fuzz 常因间接调用分析不全、崩溃前置条件难满足而打不中。SeedSmith 用智能体从 sink 出发走代码、补调用、写满足前置条件的种子，下游 fuzzer 不用改就能更快触发崩溃。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "fuzzing",
+        "定向模糊测试"
+      ],
+      "url": "https://arxiv.org/abs/2607.08949",
+      "pdf": "https://arxiv.org/pdf/2607.08949"
+    },
+    {
+      "id": "2608.06641",
+      "title": "From Documentation to Zero-day Vulnerabilities: LLM-Driven Fuzzing of JavaScript Engines in PDF Readers",
+      "authors": [
+        "Suyue Guo",
+        "Christopher Kruegel",
+        "Giovanni Vigna"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "用 LLM 从 PDF 阅读器的 JavaScript API 手册推断调用关系，再生成有约束的 API 序列去 fuzz。在 Acrobat、Foxit 等阅读器上覆盖率更高，并披露多枚可导致信息泄漏或任意代码执行的零日。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PDF",
+        "fuzzing"
+      ],
+      "url": "https://arxiv.org/abs/2608.06641",
+      "pdf": "https://arxiv.org/pdf/2608.06641"
+    },
+    {
+      "id": "tse-2025-numscout",
+      "title": "NumScout: Unveiling Numerical Defects in Smart Contracts Using LLM-Pruning Symbolic Execution",
+      "authors": [
+        "Jiachi Chen",
+        "Zhenzhe Shao",
+        "Shuo Yang",
+        "Zibin Zheng"
+      ],
+      "year": 2025,
+      "venue": "TSE",
+      "abstract": "从审计报告归纳五类合约数值缺陷，用符号执行结合源码与字节码定位比较/转账关键路径。LLM 先裁掉与数值无关的函数，再进符号执行，在真实合约上检出大量缺陷。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "NumScout",
+        "智能合约"
+      ],
+      "url": "https://doi.org/10.1109/tse.2025.3555622"
+    },
+    {
+      "id": "2603.26270",
+      "title": "Knowdit: Agentic Smart Contract Vulnerability Detection with Auditing Knowledge Summarization",
+      "authors": [
+        "Ziqiao Kong",
+        "Wanxu Xia",
+        "Chong Wang",
+        "Shaohua Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "从历史人工审计报告抽出可复用的 DeFi 语义与漏洞模式，做成知识图谱。多代理循环生成规格、写 PoC、执行并复盘。在 Code4rena 项目上高危全中，并在真实项目里挖到此前未知的问题。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "Knowdit",
+        "DeFi"
+      ],
+      "url": "https://arxiv.org/abs/2603.26270",
+      "pdf": "https://arxiv.org/pdf/2603.26270"
+    },
+    {
+      "id": "2602.03271",
+      "title": "LogicScan: An LLM-driven Framework for Detecting Business Logic Vulnerabilities in Smart Contracts",
+      "authors": [
+        "Jiaqi Gao",
+        "Zijian Zhang",
+        "Yuqiang Sun",
+        "Yi Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "业务逻辑漏洞绑在协议不变量上，静态分析够不着、纯 LLM 又容易幻。LogicScan 从成熟链上协议挖掘不变量，写成可校验规格，再对照目标合约做对比审计，压低误报。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "LogicScan",
+        "业务逻辑"
+      ],
+      "url": "https://arxiv.org/abs/2602.03271",
+      "pdf": "https://arxiv.org/pdf/2602.03271"
+    },
+    {
+      "id": "2512.06846",
+      "title": "CKG-LLM: LLM-Assisted Detection of Smart Contract Access Control Vulnerabilities Based on Knowledge Graphs",
+      "authors": [
+        "Xiaoqi Li",
+        "Hailu Kuang",
+        "Wenkai Li",
+        "Zongwei Li"
+      ],
+      "year": 2025,
+      "venue": "arXiv",
+      "abstract": "把合约做成知识图谱，让 LLM 把自然语言里的访问控制模式翻成图查询，自动定位违规代码元素。在访问控制类漏洞上比传统中间表示分析更准。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "CKG-LLM",
+        "访问控制"
+      ],
+      "url": "https://arxiv.org/abs/2512.06846",
+      "pdf": "https://arxiv.org/pdf/2512.06846"
+    },
+    {
+      "id": "2026-1877",
+      "title": "Otter: A Provably MEV-Resilient Automated Market Maker via Surplus Redistribution",
+      "authors": [
+        "Elaine Shi",
+        "Mengqian Zhang",
+        "Hao Chung",
+        "Yuhao Li"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "给自动做市商设计可证明的 MEV 弹性：把交易剩余按规则再分配，让抢跑/夹心不再有稳定好处，从机制上压协议层可提取价值。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MEV",
+        "AMM",
+        "Otter"
+      ],
+      "url": "https://eprint.iacr.org/2026/1877",
+      "pdf": "https://eprint.iacr.org/2026/1877.pdf"
+    },
+    {
+      "id": "2026-1827",
+      "title": "AVXPoS: Reducing Consensus Verification Cost in the Ethereum Proof-of-Stake Client",
+      "authors": [
+        "Ganqin Liu",
+        "Hao Cheng",
+        "Georgios Fotiadis",
+        "Chen Qian"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "针对以太坊 PoS 客户端的共识验证开销，用 AVX 一类向量化路径把验证算轻，让节点在不改协议语义的前提下更快确认信标链状态。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Ethereum",
+        "PoS",
+        "AVXPoS"
+      ],
+      "url": "https://eprint.iacr.org/2026/1827",
+      "pdf": "https://eprint.iacr.org/2026/1827.pdf"
+    },
+    {
+      "id": "2026-1760",
+      "title": "Midpoint Reset: A Full-Round Poseidon Collision from an Adaptively Chosen MDS Matrix",
+      "authors": [
+        "Sunghyeon Jo"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "在自适应选择 MDS 矩阵的设定下，给出 Poseidon 全轮碰撞。Poseidon 广泛用于 zk 电路，这类攻击直接关系到链上证明系统的哈希假设。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Poseidon",
+        "zk"
+      ],
+      "url": "https://eprint.iacr.org/2026/1760",
+      "pdf": "https://eprint.iacr.org/2026/1760.pdf"
+    },
+    {
+      "id": "ndss-2026-bunnyfinder",
+      "title": "BunnyFinder: Finding Incentive Flaws for Ethereum Consensus",
+      "authors": [
+        "Rujia Li",
+        "Mingfei Zhang",
+        "Xueqian Lu",
+        "Sisi Duan"
+      ],
+      "year": 2026,
+      "venue": "NDSS",
+      "abstract": "系统搜索以太坊共识里的激励缺陷：验证者/提议者在奖励与惩罚下是否能靠偏离协议获利。属于协议层安全，不依赖 LLM。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Ethereum",
+        "共识",
+        "BunnyFinder"
+      ],
+      "url": "https://doi.org/10.14722/ndss.2026.230281"
+    }
+  ]
+}

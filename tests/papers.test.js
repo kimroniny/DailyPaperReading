@@ -1,6 +1,8 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
-const { PAPERS } = require("../js/papers.js");
+const fs = require("fs");
+const path = require("path");
+const { mergeDayFiles } = require("../js/catalog.js");
 
 const ALLOWED = new Set(["A", "C", "C-chain"]);
 const PLACEHOLDERS = [
@@ -10,11 +12,21 @@ const PLACEHOLDERS = [
   "BERT: Pre-training of Deep Bidirectional Transformers",
 ];
 
-describe("PAPERS catalog", () => {
+function loadPapers() {
+  const root = path.join(__dirname, "..", "data");
+  const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
+  const days = (manifest.dates || []).map((date) =>
+    JSON.parse(fs.readFileSync(path.join(root, `${date}.json`), "utf8"))
+  );
+  return mergeDayFiles(days);
+}
+
+describe("daily JSON catalog", () => {
   it("only includes A / C / C-chain security papers", () => {
-    assert.ok(PAPERS.length >= 8);
+    const papers = loadPapers();
+    assert.ok(papers.length >= 8);
     const cats = new Set();
-    for (const paper of PAPERS) {
+    for (const paper of papers) {
       const topics = paper.topics || [];
       assert.ok(
         topics.some((topic) => ALLOWED.has(topic)),
@@ -26,7 +38,7 @@ describe("PAPERS catalog", () => {
   });
 
   it("does not keep the ML placeholder titles", () => {
-    const titles = new Set(PAPERS.map((paper) => paper.title));
+    const titles = new Set(loadPapers().map((paper) => paper.title));
     for (const title of PLACEHOLDERS) {
       assert.equal(titles.has(title), false, title);
     }

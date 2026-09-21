@@ -1,21 +1,32 @@
 # DailyPaperReading
 
-用卡片浏览 **A / C / C-chain** 软件与区块链安全论文（宁缺毋滥）：检索题目 / 作者 / 摘要，按类别和年份筛选。
+用卡片浏览 **A / C / C-chain** 软件与区块链安全论文（宁缺毋滥）。
 
 - GitHub：https://github.com/kimroniny/DailyPaperReading
 - 在线阅读：https://kimroniny.github.io/DailyPaperReading/
 
-推到 `main` 后，GitHub Actions 会发布静态页。若站点 404，打开 [Settings → Pages](https://github.com/kimroniny/DailyPaperReading/settings/pages)，Source 选 **GitHub Actions**，再到 [Actions](https://github.com/kimroniny/DailyPaperReading/actions) 里把失败的 `Deploy GitHub Pages` 点 **Re-run jobs**。
+论文按天存放：`data/YYYY-MM-DD.json`，清单在 `data/manifest.json`。前端启动时读清单，再加载每一天的文件，按 `id` 去重（新的一天优先）。
+
+## 日报怎么进站点
+
+Cursor 自动化应绑 **GitHub 仓库** `kimroniny/DailyPaperReading`，每天：
+
+```bash
+python3 -m paper_radar daily --days 7 --max 12 --json-out digest.json
+node scripts/write-daily.js digest.json
+```
+
+只改 `data/` 后开 PR 到 `main`。GitHub Action `Automerge daily papers` 会把**只动** `data/manifest.json` 和 `data/YYYY-MM-DD.json` 的 PR 自动 squash 进 `main`；随后 `Deploy GitHub Pages` 发布。
+
+仓库 **Settings → General → Pull Requests** 打开 **Allow auto-merge**（若 GitHub 要求）。不要给 `main` 加「必须人工审批」，否则机器人合并不了。
 
 ## 本地打开
-
-直接打开 `index.html`，或在仓库根目录启动静态服务：
 
 ```bash
 npm start
 ```
 
-浏览器访问 `http://localhost:4173`。
+浏览器访问 `http://localhost:4173`（不要直接用 `file://`，否则读不到 JSON）。
 
 ## 测试
 

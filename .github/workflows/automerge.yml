@@ -1,0 +1,41 @@
+name: Automerge daily papers
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  merge:
+    if: github.event.pull_request.base.ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge data-only PRs into main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          files="$(gh pr diff "$PR" --repo "$GITHUB_REPOSITORY" --name-only)"
+          echo "$files"
+          if [ -z "$files" ]; then
+            echo "no files"
+            exit 0
+          fi
+          ok=1
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            if ! echo "$file" | grep -Eq '^data/(manifest\.json|[0-9]{4}-[0-9]{2}-[0-9]{2}\.json)$'; then
+              echo "not a daily-data PR: $file"
+              ok=0
+            fi
+          done <<< "$files"
+          if [ "$ok" -ne 1 ]; then
+            echo "skip automerge"
+            exit 0
+          fi
+          gh pr ready "$PR" --repo "$GITHUB_REPOSITORY" || true
+          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash --delete-branch
