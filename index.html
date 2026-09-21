@@ -24,28 +24,33 @@
         </p>
       </header>
 
-      <section class="toolbar" aria-label="筛选">
-        <div class="controls">
-          <label class="field">
-            <span>检索</span>
-            <input id="search" type="search" placeholder="搜索题目、作者、会议或摘要" autocomplete="off" />
-          </label>
-          <label class="field">
-            <span>年份</span>
-            <select id="year"></select>
-          </label>
-          <label class="field">
-            <span>排序</span>
-            <select id="sort">
-              <option value="date-desc">日期从新到旧</option>
-              <option value="date-asc">日期从旧到新</option>
-              <option value="year-desc">年份从新到旧</option>
-              <option value="year-asc">年份从旧到新</option>
-              <option value="title">按标题</option>
-            </select>
-          </label>
+      <section class="toolbar" aria-label="检索">
+        <label class="search-field">
+          <span class="sr-only">检索</span>
+          <input id="search" type="search" placeholder="搜索题目、作者、会议或摘要" autocomplete="off" />
+        </label>
+        <div class="toolbar-row">
+          <div id="topics" class="chips" aria-label="主题"></div>
+          <details class="filters">
+            <summary>筛选</summary>
+            <div class="filter-panel">
+              <label class="field">
+                <span>年份</span>
+                <select id="year"></select>
+              </label>
+              <label class="field">
+                <span>排序</span>
+                <select id="sort">
+                  <option value="date-desc">日期从新到旧</option>
+                  <option value="date-asc">日期从旧到新</option>
+                  <option value="year-desc">年份从新到旧</option>
+                  <option value="year-asc">年份从旧到新</option>
+                  <option value="title">按标题</option>
+                </select>
+              </label>
+            </div>
+          </details>
         </div>
-        <div id="topics" class="chips" aria-label="主题"></div>
       </section>
 
       <div class="meta-row">
@@ -53,7 +58,10 @@
         <button id="clear" class="ghost" type="button" hidden>清除筛选</button>
       </div>
 
-      <main id="grid" class="feed" aria-live="polite"></main>
+      <div class="reader">
+        <nav id="dates" class="date-rail" aria-label="收录日期"></nav>
+        <main id="grid" class="day-view" aria-live="polite"></main>
+      </div>
       <div id="empty" class="empty" hidden>
         <h2>没有找到匹配的论文</h2>
         <p>换一个关键词，或清除主题、年份后再试。</p>
