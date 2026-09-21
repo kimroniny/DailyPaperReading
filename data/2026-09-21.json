@@ -2,6 +2,104 @@
   "date": "2026-09-21",
   "papers": [
     {
+      "id": "10.1145-3797896",
+      "title": "Separate Bombs from Firecrackers: Intention-guided Vulnerability Assessment via LLM",
+      "authors": [
+        "Hao Shen",
+        "Ming Hu",
+        "Xiaofei Xie",
+        "Jiaye Li",
+        "Mingsong Chen"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstract": "用静态分析加 LLM 从漏洞代码抽取攻击意图，再以强化学习 prompt-tuning 做无需人工描述的漏洞严重度评估，对象是传统软件源码。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "VulStamp",
+        "漏洞评级",
+        "LLM",
+        "TOSEM"
+      ],
+      "url": "https://doi.org/10.1145/3797896",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3797896"
+    },
+    {
+      "id": "10.1145-3795692",
+      "title": "No More Hidden Pitfalls? Exposing Smart Contract Bad Practices with LLM-Powered Hybrid Analysis",
+      "authors": [
+        "Xiaoqi Li",
+        "Zongwei Li",
+        "Wenkai Li",
+        "Yuqing Zhang",
+        "Xin Wang"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstract": "提出 SCALM：用 LLM 做函数级切片与多层语义推理，检测以太坊智能合约不良实践，对象是 Solidity。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "SCALM",
+        "智能合约",
+        "不良实践",
+        "TOSEM"
+      ],
+      "url": "https://doi.org/10.1145/3795692",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3795692"
+    },
+    {
+      "id": "10.1145-3840386",
+      "title": "A Unified Framework for Function-Level Vulnerability Detection and Explanation in Smart Contracts",
+      "authors": [
+        "Ngoc Minh Nguyen",
+        "Le Minh Nguyen"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstract": "用层次交叉注意力子图网络在函数级定位智能合约漏洞，再用 LLM 生成类型、根因与修复说明。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "HCA-SGNN",
+        "合约漏洞",
+        "LLM解释",
+        "TOSEM"
+      ],
+      "url": "https://doi.org/10.1145/3840386",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3840386"
+    },
+    {
+      "id": "2609.18391",
+      "title": "From Component Snapshots to Lifecycle Traces: Agent-Based Software Composition Analysis",
+      "authors": [
+        "Chaofan Li",
+        "Zhengduo Xue",
+        "Chengxiang Li",
+        "Yutao Hu",
+        "Yueming Wu",
+        "Deqing Zou"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "用 agent 贯穿代码到运行时各阶段重建组件生命周期轨迹，评估 Java/JS/Python 供应链漏洞暴露。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SCA-Agent",
+        "供应链",
+        "SCA",
+        "Java"
+      ],
+      "url": "https://arxiv.org/abs/2609.18391",
+      "pdf": "https://arxiv.org/pdf/2609.18391"
+    },
+    {
       "id": "2609.21020",
       "title": "(Don't) Trust, but (Don't) Verify: Developers' Attention to Security in AI-Generated Code",
       "authors": [
