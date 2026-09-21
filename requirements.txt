@@ -1,0 +1,2 @@
+# Optional: USENIX contents-PDF parsing
+pypdf>=5.0
