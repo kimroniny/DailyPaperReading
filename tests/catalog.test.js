@@ -2,6 +2,7 @@ const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
 const {
   mergeDayFiles,
+  mergeSameDayPapers,
   upsertManifest,
   cardFromRadar,
   onlyDataPaths,
@@ -25,6 +26,19 @@ describe("mergeDayFiles", () => {
     assert.deepEqual(
       papers.map((p) => p.id + ":" + p.title),
       ["a:new", "b:other"]
+    );
+  });
+});
+
+describe("mergeSameDayPapers", () => {
+  it("keeps papers already in the day file when a later write lists new ids", () => {
+    const papers = mergeSameDayPapers(
+      [{ id: "new", title: "today" }],
+      [{ id: "seed", title: "history" }, { id: "new", title: "older copy" }]
+    );
+    assert.deepEqual(
+      papers.map((p) => p.id + ":" + p.title),
+      ["new:today", "seed:history"]
     );
   });
 });

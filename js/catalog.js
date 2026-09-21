@@ -11,6 +11,10 @@ function mergeDayFiles(days) {
   return papers;
 }
 
+function mergeSameDayPapers(incoming, existing) {
+  return mergeDayFiles([{ papers: incoming }, { papers: existing }]);
+}
+
 function upsertManifest(manifest, date) {
   const dates = [date, ...((manifest && manifest.dates) || []).filter((item) => item !== date)];
   return { dates };
@@ -43,7 +47,7 @@ function onlyDataPaths(paths) {
   return paths.every((path) => /^data\/(manifest\.json|\d{4}-\d{2}-\d{2}\.json)$/.test(path));
 }
 
-const PaperCatalog = { mergeDayFiles, upsertManifest, cardFromRadar, onlyDataPaths };
+const PaperCatalog = { mergeDayFiles, mergeSameDayPapers, upsertManifest, cardFromRadar, onlyDataPaths };
 
 if (typeof module === "object" && module.exports) {
   module.exports = PaperCatalog;
