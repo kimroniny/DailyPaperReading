@@ -1,0 +1,180 @@
+{
+  "date": "2026-09-01",
+  "papers": [
+    {
+      "id": "2608.29808",
+      "title": "POLYFLOW: A Neuro-Symbolic Framework for Static Cross-Language Information Flow Analysis",
+      "authors": [
+        "Haoran Yang",
+        "Zhixuan Zhong",
+        "Jiawei Guo",
+        "Haipeng Cai"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《POLYFLOW: A Neuro-Symbolic Framework for Static Cross-Language Information Flow Analysis》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "POLYFLOW",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.29808",
+      "pdf": "https://arxiv.org/pdf/2608.29808"
+    },
+    {
+      "id": "2608.29716",
+      "title": "Agent-Driven Verification of Memory Safety for liblzma Decoder Components with VST",
+      "authors": [
+        "Prokhor Shlyakhtun",
+        "Alexander Gryzlov",
+        "Vladimir Kukharenko",
+        "Vasilii Nesterov",
+        "Nikolai Vasiliev",
+        "Kirill Ziborov",
+        "Eugene Zolotarev",
+        "Alex Pokras"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Agent-Driven Verification of Memory Safety for liblzma Decoder Components with VST》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "agent",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.29716",
+      "pdf": "https://arxiv.org/pdf/2608.29716"
+    },
+    {
+      "id": "2608.30025",
+      "title": "Interpreting and Steering for Safe and Correct Code Generation",
+      "authors": [
+        "Hao Yan",
+        "Ziyu Yao"
+      ],
+      "year": 2026,
+      "venue": "EMNLP 2026",
+      "abstract": "《Interpreting and Steering for Safe and Correct Code Generation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.30025",
+      "pdf": "https://arxiv.org/pdf/2608.30025"
+    },
+    {
+      "id": "2608.30686",
+      "title": "Beyond the Payload: How User Invocation Shapes Coding Agent Vulnerability to Repository Poisoning",
+      "authors": [
+        "Fukang Zhu",
+        "Binbin Zhao",
+        "Ruixiao Lin",
+        "Ping He",
+        "Tianyu Du",
+        "Shouling Ji"
+      ],
+      "year": 2026,
+      "venue": "EMNLP 2026",
+      "abstract": "《Beyond the Payload: How User Invocation Shapes Coding Agent Vulnerability to Repository Poisoning》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.30686",
+      "pdf": "https://arxiv.org/pdf/2608.30686"
+    },
+    {
+      "id": "2608.29290",
+      "title": "Database-Augmented RAG for Automated Repair of REST API Misuses",
+      "authors": [
+        "Shoei Inoue",
+        "Norihiro Yoshida",
+        "Erina Makihara",
+        "Shiyu Yang",
+        "Katsuro Inoue"
+      ],
+      "year": 2026,
+      "venue": "QRS 2026",
+      "abstract": "《Database-Augmented RAG for Automated Repair of REST API Misuses》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.29290",
+      "pdf": "https://arxiv.org/pdf/2608.29290"
+    },
+    {
+      "id": "2608.30519",
+      "title": "Authority-Inference Separation in Agentic Finance: First-Line Control, Blockchain Enforcement, and Replayable Assurance",
+      "authors": [
+        "Hui Gong",
+        "Michail Samawi",
+        "Francesca Medda"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Authority-Inference Separation in Agentic Finance: First-Line Control, Blockchain Enforcement, and Replayable Assurance》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "agent",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.30519",
+      "pdf": "https://arxiv.org/pdf/2608.30519"
+    },
+    {
+      "id": "2608.30648",
+      "title": "Lie to Me: Finding Bugs in ZK DSL Toolchains with Adversarial Witness Injection",
+      "authors": [
+        "Sebastian Watzinger",
+        "Christoph Hochrainer",
+        "Valentin Wüstholz",
+        "Maria Christakis"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Lie to Me: Finding Bugs in ZK DSL Toolchains with Adversarial Witness Injection》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zk",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.30648",
+      "pdf": "https://arxiv.org/pdf/2608.30648"
+    },
+    {
+      "id": "2608.29134",
+      "title": "Mechanizing Typed Regulatory Actions for Security Tokens: Semantics, Falsification, and Bounded EVM Evidence",
+      "authors": [
+        "Jinwook Kim"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Mechanizing Typed Regulatory Actions for Security Tokens: Semantics, Falsification, and Bounded EVM Evidence》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.29134",
+      "pdf": "https://arxiv.org/pdf/2608.29134"
+    }
+  ]
+}

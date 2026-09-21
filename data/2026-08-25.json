@@ -1,0 +1,251 @@
+{
+  "date": "2026-08-25",
+  "papers": [
+    {
+      "id": "2608.22652",
+      "title": "Evaluating Inference-Time Defenses Against Package Hallucination in LLM-Generated Code",
+      "authors": [
+        "Alberick Euraste Djire",
+        "Iyiola E. Olatunji",
+        "Melissa Tessa",
+        "Earl T. Barr",
+        "Jacques Klein",
+        "Tegawendé F. Bissyandé"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstract": "《Evaluating Inference-Time Defenses Against Package Hallucination in LLM-Generated Code》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.22652",
+      "pdf": "https://arxiv.org/pdf/2608.22652"
+    },
+    {
+      "id": "2608.22275",
+      "title": "CodeMechanic: Bug-Property-Guided Program Mitigation",
+      "authors": [
+        "Han Zheng",
+        "Rafaila Galanopoulou",
+        "Ilia Shumailov",
+        "Tianqi Fan",
+        "Aiden Hall",
+        "Dominik Maier",
+        "Mathias Payer"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《CodeMechanic: Bug-Property-Guided Program Mitigation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CodeMechanic",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.22275",
+      "pdf": "https://arxiv.org/pdf/2608.22275"
+    },
+    {
+      "id": "2608.23181",
+      "title": "CyberFactory: Scaling Cyber Security Capabilities with Instances from the Wild",
+      "authors": [
+        "Jian Yang",
+        "Haau-Sing Li",
+        "Shawn Guo",
+        "Zixi Zhao",
+        "Yibo Tan",
+        "Jiajun Wu",
+        "Aishan Liu",
+        "Zhoujun Li",
+        "Xianglong Liu",
+        "Tianyu Zheng",
+        "Bryan Dai",
+        "Chengran Yang",
+        "Weifeng Lv"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《CyberFactory: Scaling Cyber Security Capabilities with Instances from the Wild》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CyberFactory",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.23181",
+      "pdf": "https://arxiv.org/pdf/2608.23181"
+    },
+    {
+      "id": "2608.22889",
+      "title": "Verification-Guided Specification Synthesis with Large Language Models for Intrusion Detection Rules",
+      "authors": [
+        "Kohei Yamamoto",
+        "Marie Katsurai"
+      ],
+      "year": 2026,
+      "venue": "CIKM 2026",
+      "abstract": "《Verification-Guided Specification Synthesis with Large Language Models for Intrusion Detection Rules》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.22889",
+      "pdf": "https://arxiv.org/pdf/2608.22889"
+    },
+    {
+      "id": "2608.23550",
+      "title": "When \"Do Not\" Is Not Deny: Security Rules in CLAUDE.md vs Built-In Controls",
+      "authors": [
+        "Ting Yan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《When \"Do Not\" Is Not Deny: Security Rules in CLAUDE.md vs Built-In Controls》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.23550",
+      "pdf": "https://arxiv.org/pdf/2608.23550"
+    },
+    {
+      "id": "2608.17659",
+      "title": "MobileWorldSafety: Benchmarking GUI Agent Safety Against Environmental Injection Attacks in Android Apps",
+      "authors": [
+        "Sujin Chen",
+        "Lijun Li",
+        "Tianyi Du",
+        "Jing Shao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《MobileWorldSafety: Benchmarking GUI Agent Safety Against Environmental Injection Attacks in Android Apps》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "MobileWorldSafety",
+        "agent",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.17659",
+      "pdf": "https://arxiv.org/pdf/2608.17659"
+    },
+    {
+      "id": "2608.22345",
+      "title": "Mitigating Error Propagation in Chain-of-Thought: A Tree-of-Thought Framework for Smart Contract Repair",
+      "authors": [
+        "Jingping Zhu",
+        "Hongping Wang",
+        "Xiaoqi Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Mitigating Error Propagation in Chain-of-Thought: A Tree-of-Thought Framework for Smart Contract Repair》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.22345",
+      "pdf": "https://arxiv.org/pdf/2608.22345"
+    },
+    {
+      "id": "2608.22987",
+      "title": "The Anonymity Gap: Understanding Real Privacy in Shielded UTXO-based Protocols for DeFi",
+      "authors": [
+        "Hanze Guo",
+        "Stefanos Chaliasos",
+        "Yebo Feng",
+        "Jiahua Xu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《The Anonymity Gap: Understanding Real Privacy in Shielded UTXO-based Protocols for DeFi》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DeFi",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.22987",
+      "pdf": "https://arxiv.org/pdf/2608.22987"
+    },
+    {
+      "id": "2608.21935",
+      "title": "Systematization of Knowledge: Formal Verification of Consensus Protocols",
+      "authors": [
+        "Nikita Bondarev",
+        "Kirill Ziborov",
+        "Yury Yanovich"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Systematization of Knowledge: Formal Verification of Consensus Protocols》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.21935",
+      "pdf": "https://arxiv.org/pdf/2608.21935"
+    },
+    {
+      "id": "2026-1725",
+      "title": "Proof-of-Uniqueness: Sybil-Resistant Privacy-Preserving Decentralized Identity through Threshold-OPRF and zk-SNARK Registry",
+      "authors": [
+        "Adam Vozda",
+        "Martin Peresini",
+        "Juraj Mariani",
+        "Ivan Homoliak"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Proof-of-Uniqueness: Sybil-Resistant Privacy-Preserving Decentralized Identity through Threshold-OPRF and zk-SNARK Registry》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Proof-of-Uniqueness",
+        "zk",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1725",
+      "pdf": "https://eprint.iacr.org/2026/1725.pdf"
+    },
+    {
+      "id": "2608.22645",
+      "title": "Obscura-PQ: Post-Quantum Privacy-Preserving Protocol for the Algorand Blockchain Using Lattice-Based Linkable Ring Signatures",
+      "authors": [
+        "Navid Azimi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Obscura-PQ: Post-Quantum Privacy-Preserving Protocol for the Algorand Blockchain Using Lattice-Based Linkable Ring Signatures》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Obscura-PQ",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.22645",
+      "pdf": "https://arxiv.org/pdf/2608.22645"
+    }
+  ]
+}

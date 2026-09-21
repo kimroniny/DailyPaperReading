@@ -1,0 +1,188 @@
+{
+  "date": "2026-08-31",
+  "papers": [
+    {
+      "id": "2608.28021",
+      "title": "Compared to What? A Human-Anchored Security Benchmark for LLM-Generated Infrastructure-as-Code",
+      "authors": [
+        "Animesh Shaw"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Compared to What? A Human-Anchored Security Benchmark for LLM-Generated Infrastructure-as-Code》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.28021",
+      "pdf": "https://arxiv.org/pdf/2608.28021"
+    },
+    {
+      "id": "2608.27994",
+      "title": "Moirae: A Multimodal Agent Collaborative Framework for Dynamic Android Malware Detection",
+      "authors": [
+        "Xueying Zeng",
+        "Youquan Xian",
+        "Yanze Li",
+        "Bowen Hu",
+        "Ziqi Shan",
+        "Xu Luo",
+        "Danping Yang",
+        "Peng Liu",
+        "Lei Cui",
+        "Bo Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Moirae: A Multimodal Agent Collaborative Framework for Dynamic Android Malware Detection》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Moirae",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.27994",
+      "pdf": "https://arxiv.org/pdf/2608.27994"
+    },
+    {
+      "id": "2608.27928",
+      "title": "GraftyVul: Synthesising Insecure Programs Through Real-World Vulnerability Grafting",
+      "authors": [
+        "Omri Ram",
+        "Mitchell Horner",
+        "Ron Van der Meyden",
+        "Alsharif Abuadbba",
+        "Hammond Pearce"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《GraftyVul: Synthesising Insecure Programs Through Real-World Vulnerability Grafting》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "GraftyVul",
+        "漏洞",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.27928",
+      "pdf": "https://arxiv.org/pdf/2608.27928"
+    },
+    {
+      "id": "2608.27889",
+      "title": "Decoupling is a Necessity: Transformation-Agnostic Decompiled Code Recovery under Optimization and Obfuscation",
+      "authors": [
+        "Zhiping Zhou",
+        "Xiaohong Li",
+        "Ruitao Feng",
+        "Yao Zhang",
+        "Yuekang Li",
+        "Wenbu Feng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Decoupling is a Necessity: Transformation-Agnostic Decompiled Code Recovery under Optimization and Obfuscation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.27889",
+      "pdf": "https://arxiv.org/pdf/2608.27889"
+    },
+    {
+      "id": "2608.27981",
+      "title": "CHISEL-ing Back Source Code with AI-enabled Iterative Recovery",
+      "authors": [
+        "Varun Kohli",
+        "N Raghava",
+        "Biplab Sikdar",
+        "Dinil Mon Divakaran"
+      ],
+      "year": 2026,
+      "venue": "CCS SURE 2026",
+      "abstract": "《CHISEL-ing Back Source Code with AI-enabled Iterative Recovery》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.27981",
+      "pdf": "https://arxiv.org/pdf/2608.27981"
+    },
+    {
+      "id": "2608.28490",
+      "title": "LLM-Based Agents for Software and Systems Security: Approaches, Applications, and Assessment",
+      "authors": [
+        "Jingjing Nie",
+        "Jiawei Guo",
+        "Krishna Meda",
+        "Haipeng Cai"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《LLM-Based Agents for Software and Systems Security: Approaches, Applications, and Assessment》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.28490",
+      "pdf": "https://arxiv.org/pdf/2608.28490"
+    },
+    {
+      "id": "2608.28400",
+      "title": "When Verified Source Becomes Attack Input: Defending Smart Contracts Against LLM-Based Vulnerability Scanning",
+      "authors": [
+        "Mingyuan Huang",
+        "Zimo Ji",
+        "Yifan Mo",
+        "Shuai Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《When Verified Source Becomes Attack Input: Defending Smart Contracts Against LLM-Based Vulnerability Scanning》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "漏洞",
+        "LLM",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.28400",
+      "pdf": "https://arxiv.org/pdf/2608.28400"
+    },
+    {
+      "id": "2608.28529",
+      "title": "Relaxed Sender Anonymity for CBDC Interbank Settlement: A Zero-Knowledge Approach on Permissioned EVM",
+      "authors": [
+        "Pietro Tiberi",
+        "Gabriele Marcelli",
+        "Vitangelo Lasorella"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Relaxed Sender Anonymity for CBDC Interbank Settlement: A Zero-Knowledge Approach on Permissioned EVM》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.28529",
+      "pdf": "https://arxiv.org/pdf/2608.28529"
+    }
+  ]
+}

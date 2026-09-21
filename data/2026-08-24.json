@@ -1,0 +1,547 @@
+{
+  "date": "2026-08-24",
+  "papers": [
+    {
+      "id": "2608.20637",
+      "title": "ARQ: Agentic CodeQL Query Refinement for C/C++ Vulnerability Detection",
+      "authors": [
+        "Chunyi Wang",
+        "Yunfei Ke",
+        "Junfeng Yang",
+        "Yun-Yun Tsai",
+        "Penghui Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《ARQ: Agentic CodeQL Query Refinement for C/C++ Vulnerability Detection》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "ARQ",
+        "漏洞",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.20637",
+      "pdf": "https://arxiv.org/pdf/2608.20637"
+    },
+    {
+      "id": "2608.17671",
+      "title": "Benchmarking Automated Security Patch Backporting: How Far Are We?",
+      "authors": [
+        "Jincheng Yang",
+        "Yulong Fu",
+        "Chengwei Liu",
+        "Lyuye Zhang",
+        "Fangyuan Zhang",
+        "Bingyang Ren",
+        "Yang Liu",
+        "Hui Li"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstract": "《Benchmarking Automated Security Patch Backporting: How Far Are We?》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.17671",
+      "pdf": "https://arxiv.org/pdf/2608.17671"
+    },
+    {
+      "id": "2608.16187",
+      "title": "Securing AI-Generated Code: A Just-in-Time Vulnerability Detection and Remediation Pipeline",
+      "authors": [
+        "Mikhail Surikov"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Securing AI-Generated Code: A Just-in-Time Vulnerability Detection and Remediation Pipeline》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.16187",
+      "pdf": "https://arxiv.org/pdf/2608.16187"
+    },
+    {
+      "id": "2608.16970",
+      "title": "Probing the Prefill: Detecting Code Vulnerabilities via Latent Activations",
+      "authors": [
+        "Alizishaan Khatri"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Probing the Prefill: Detecting Code Vulnerabilities via Latent Activations》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.16970",
+      "pdf": "https://arxiv.org/pdf/2608.16970"
+    },
+    {
+      "id": "2608.19430",
+      "title": "HARP: Hierarchical Adaptive Ranking with Preference-Adaptive Fusion for Query-Based CVE Prioritization",
+      "authors": [
+        "Haochen Liu",
+        "Zhengzhang Chen",
+        "Haoyu Wang",
+        "Yanchi Liu",
+        "Jundong Li",
+        "Haifeng Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《HARP: Hierarchical Adaptive Ranking with Preference-Adaptive Fusion for Query-Based CVE Prioritization》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "HARP",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.19430",
+      "pdf": "https://arxiv.org/pdf/2608.19430"
+    },
+    {
+      "id": "2608.19680",
+      "title": "Frequency-Aware Continual Learning for Smart Contract Vulnerability Detection with Large Language Models",
+      "authors": [
+        "Tenghui Huang",
+        "Jiawen Kang",
+        "Dongning Liu",
+        "Changyan Yi",
+        "Chengjun Cai",
+        "Anjia Yang",
+        "Li Li",
+        "Dong In Kim"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Frequency-Aware Continual Learning for Smart Contract Vulnerability Detection with Large Language Models》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "漏洞",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.19680",
+      "pdf": "https://arxiv.org/pdf/2608.19680"
+    },
+    {
+      "id": "2608.17220",
+      "title": "PACE: Policy-Attested Contract Execution for Safe AI Agents in Decentralized Finance",
+      "authors": [
+        "Rabimba Karanjai",
+        "Yang Lu",
+        "Richard Williamson",
+        "Hemanth Hm",
+        "Prakhar Mehrotra",
+        "Lei Xu",
+        "Weidong",
+        "Shi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《PACE: Policy-Attested Contract Execution for Safe AI Agents in Decentralized Finance》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "PACE",
+        "agent",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.17220",
+      "pdf": "https://arxiv.org/pdf/2608.17220"
+    },
+    {
+      "id": "2608.17738",
+      "title": "SpecTrum: Specification-Guided Differential Fuzzing for Ethereum Consensus Clients",
+      "authors": [
+        "Seokhun Jeong",
+        "Gyeongmin Dan",
+        "Sukyoung Ryu",
+        "Sungjae Hwang"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstract": "协议/链上工作《SpecTrum: Specification-Guided Differential Fuzzing for Ethereum Consensus Clients》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "SpecTrum",
+        "fuzzing",
+        "共识",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.17738",
+      "pdf": "https://arxiv.org/pdf/2608.17738"
+    },
+    {
+      "id": "2026-1757",
+      "title": "Enabling Threshold Custody for the Lightning Network with Nested Threshold Multi-Signatures",
+      "authors": [],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Enabling Threshold Custody for the Lightning Network with Nested Threshold Multi-Signatures》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1757",
+      "pdf": "https://eprint.iacr.org/2026/1757.pdf"
+    },
+    {
+      "id": "2608.17532",
+      "title": "SoK: Cross-Chain Transaction Identification and Matching",
+      "authors": [
+        "Hang Zheng",
+        "Qishuang Fu",
+        "Joseph Liu",
+        "Qin Wang",
+        "Weiqing Wang",
+        "Tsz Hon Yuen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《SoK: Cross-Chain Transaction Identification and Matching》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "SoK",
+        "跨链",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.17532",
+      "pdf": "https://arxiv.org/pdf/2608.17532"
+    },
+    {
+      "id": "2026-1773",
+      "title": "Enforcing Winner-Only Disclosure: Verifiable Tally Hiding for Weighted DAO Governance",
+      "authors": [
+        "Jiayu Li",
+        "Gongli Li"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Enforcing Winner-Only Disclosure: Verifiable Tally Hiding for Weighted DAO Governance》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1773",
+      "pdf": "https://eprint.iacr.org/2026/1773.pdf"
+    },
+    {
+      "id": "2608.21107",
+      "title": "Large Language Models at the Intersection of Software Engineering and Software Security",
+      "authors": [
+        "Wei Lin",
+        "Tao Zhou",
+        "Zhaofei Xie",
+        "Changgui Hong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Large Language Models at the Intersection of Software Engineering and Software Security》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.21107",
+      "pdf": "https://arxiv.org/pdf/2608.21107"
+    },
+    {
+      "id": "2608.20963",
+      "title": "Vibe Coding and Web Application Security: A Twin-Prompt Study",
+      "authors": [
+        "Darko Andročec"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Vibe Coding and Web Application Security: A Twin-Prompt Study》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.20963",
+      "pdf": "https://arxiv.org/pdf/2608.20963"
+    },
+    {
+      "id": "2608.17275",
+      "title": "When Agents Act on Web3: An Attack-Surface Survey of MCP, Skills, and Tool Calling",
+      "authors": [
+        "Rabimba Karanjai",
+        "Yang Lu",
+        "Nour Diallo",
+        "Wujie Xiong",
+        "Lei Xu",
+        "Weidong",
+        "Shi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《When Agents Act on Web3: An Attack-Surface Survey of MCP, Skills, and Tool Calling》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "agent",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.17275",
+      "pdf": "https://arxiv.org/pdf/2608.17275"
+    },
+    {
+      "id": "2608.18359",
+      "title": "0xPass: A Secure Protocol for Universal Cross-Chain Accounts",
+      "authors": [
+        "Keon Kim",
+        "Krish Chelikavada"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《0xPass: A Secure Protocol for Universal Cross-Chain Accounts》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.18359",
+      "pdf": "https://arxiv.org/pdf/2608.18359"
+    },
+    {
+      "id": "2608.17355",
+      "title": "FlowShield: cryptocurrency anti-money laundering with transaction semantics parsing and fund flow tracking",
+      "authors": [
+        "Qishuang Fu",
+        "Andreas Deppeler",
+        "Joseph K. Liu",
+        "Yixin Liu",
+        "Shirui Pan",
+        "Qin Wang",
+        "Weiqing Wang",
+        "Tsz Hon Yuen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《FlowShield: cryptocurrency anti-money laundering with transaction semantics parsing and fund flow tracking》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "FlowShield",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.17355",
+      "pdf": "https://arxiv.org/pdf/2608.17355"
+    },
+    {
+      "id": "2026-1728",
+      "title": "A Controlled Case Study of Design Trade-offs in DeFi Lending Protocols",
+      "authors": [
+        "Jan Findra",
+        "Zdenek Lapes",
+        "Ivan Homoliak"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《A Controlled Case Study of Design Trade-offs in DeFi Lending Protocols》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DeFi",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1728",
+      "pdf": "https://eprint.iacr.org/2026/1728.pdf"
+    },
+    {
+      "id": "2608.20966",
+      "title": "Structured but Fragile: On the Limits of LLMs in Cybersecurity Decision-Making",
+      "authors": [
+        "Pasquale Malacaria",
+        "Yunxiao Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Structured but Fragile: On the Limits of LLMs in Cybersecurity Decision-Making》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.20966",
+      "pdf": "https://arxiv.org/pdf/2608.20966"
+    },
+    {
+      "id": "2608.19938",
+      "title": "From Noise to Signal: Improving Security Log Anomaly Detection Using LLMs with Endpoint-Specific Logs",
+      "authors": [
+        "Christopher Henshaw",
+        "Gour Karmakar"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《From Noise to Signal: Improving Security Log Anomaly Detection Using LLMs with Endpoint-Specific Logs》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "LLM",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.19938",
+      "pdf": "https://arxiv.org/pdf/2608.19938"
+    },
+    {
+      "id": "2608.18613",
+      "title": "CTIFoundry: An Agent-Native Corpus Scaffold for Cyber Threat Intelligence",
+      "authors": [
+        "Yutong Cheng",
+        "Changze Li",
+        "Qian Cui",
+        "Wei Ding",
+        "Lingzhi Wang",
+        "Yan Chen",
+        "Peng Gao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《CTIFoundry: An Agent-Native Corpus Scaffold for Cyber Threat Intelligence》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CTIFoundry",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.18613",
+      "pdf": "https://arxiv.org/pdf/2608.18613"
+    },
+    {
+      "id": "2608.17018",
+      "title": "ORCA: Observability-Grounded Program Repair for Microservice Incidents",
+      "authors": [
+        "Yuanchen Gao",
+        "Yifang Tian",
+        "Yiran Li",
+        "Charles Zhang",
+        "Hans-Arno Jacobsen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《ORCA: Observability-Grounded Program Repair for Microservice Incidents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "ORCA",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.17018",
+      "pdf": "https://arxiv.org/pdf/2608.17018"
+    },
+    {
+      "id": "2608.18588",
+      "title": "AppEval: A Unified Benchmark for LLM-Based Mobile Application Repair in ArkTS, Swift, and Kotlin",
+      "authors": [
+        "Bang Xie",
+        "Hao Liu",
+        "Zhenyu Shi",
+        "Yonghao Zhang",
+        "Senjian Zhang",
+        "Zhiyuan Peng",
+        "Xin Yin",
+        "Chenhao Ying",
+        "Yuan Luo",
+        "Wei Chen",
+        "Haiming Jin",
+        "Shaocong Long",
+        "Xu Liu",
+        "Zhe Peng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《AppEval: A Unified Benchmark for LLM-Based Mobile Application Repair in ArkTS, Swift, and Kotlin》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "AppEval",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.18588",
+      "pdf": "https://arxiv.org/pdf/2608.18588"
+    },
+    {
+      "id": "2026-1776",
+      "title": "Cofactor-torsion attacks on hinted scalar multiplications in SNARK circuits",
+      "authors": [],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Cofactor-torsion attacks on hinted scalar multiplications in SNARK circuits》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1776",
+      "pdf": "https://eprint.iacr.org/2026/1776.pdf"
+    },
+    {
+      "id": "2026-1762",
+      "title": "Pilaf: Fully Tight Two-Round Threshold Signatures with Adaptive Corruptions",
+      "authors": [
+        "Chen Qian",
+        "Xingyu Zhao",
+        "Hao Cheng",
+        "Zengpeng Li",
+        "Puwen Wei",
+        "Quan Yuan"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Pilaf: Fully Tight Two-Round Threshold Signatures with Adaptive Corruptions》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Pilaf",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1762",
+      "pdf": "https://eprint.iacr.org/2026/1762.pdf"
+    }
+  ]
+}

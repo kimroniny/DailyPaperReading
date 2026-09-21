@@ -1,0 +1,165 @@
+{
+  "date": "2026-09-12",
+  "papers": [
+    {
+      "id": "2609.11852",
+      "title": "BlueSTAR: Tiered Agentic Architecture for Autonomous Cyber Defense",
+      "authors": [
+        "Simona Boboila",
+        "Xavier Cadet",
+        "Edward Koh",
+        "Daniel Balasubramanian",
+        "Dirk Van Bruggen",
+        "Peter Chin",
+        "Alina Oprea"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《BlueSTAR: Tiered Agentic Architecture for Autonomous Cyber Defense》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "BlueSTAR",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.11852",
+      "pdf": "https://arxiv.org/pdf/2609.11852"
+    },
+    {
+      "id": "2609.07344",
+      "title": "Staying on the Attack Path: Structured State for Long-Horizon Automated Penetration Testing",
+      "authors": [
+        "Weizhe Wang",
+        "Yitong Zhang",
+        "Yao Zhang",
+        "Xiaoqiang Di",
+        "Zhigang Li",
+        "Bin Wu",
+        "Guangquan Xu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Staying on the Attack Path: Structured State for Long-Horizon Automated Penetration Testing》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.07344",
+      "pdf": "https://arxiv.org/pdf/2609.07344"
+    },
+    {
+      "id": "2609.06780",
+      "title": "Shortcutting the Fix: Identifying and Categorizing Agentic Exploits in Software Engineering Benchmarks",
+      "authors": [
+        "Nikolai Ludwig",
+        "Wasi Uddin Ahmad",
+        "Somshubra Majumdar",
+        "Boris Ginsburg"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Shortcutting the Fix: Identifying and Categorizing Agentic Exploits in Software Engineering Benchmarks》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.06780",
+      "pdf": "https://arxiv.org/pdf/2609.06780"
+    },
+    {
+      "id": "2609.06250",
+      "title": "It is Not Yet Another Tool: Creating and Deploying an Agentic AI Companion in a Security Operations Center",
+      "authors": [
+        "Kritan Banstola",
+        "Faayed Al Faisal",
+        "Duy Dao",
+        "Ryan Irving",
+        "Daniel Lende",
+        "Xinming Ou"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《It is Not Yet Another Tool: Creating and Deploying an Agentic AI Companion in a Security Operations Center》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.06250",
+      "pdf": "https://arxiv.org/pdf/2609.06250"
+    },
+    {
+      "id": "2609.06226",
+      "title": "Scratchy: Visual-Scratchpad Multimodal Reasoning for Cryptographic Proof Generation in EasyCrypt",
+      "authors": [
+        "Yupeng Ren",
+        "Zhaoxuan Li",
+        "Rui Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Scratchy: Visual-Scratchpad Multimodal Reasoning for Cryptographic Proof Generation in EasyCrypt》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Scratchy",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.06226",
+      "pdf": "https://arxiv.org/pdf/2609.06226"
+    },
+    {
+      "id": "2609.08765",
+      "title": "Benchmark Scores Are Pipeline-Dependent: A Reliability Audit of Cybersecurity LLM Benchmarks",
+      "authors": [
+        "Aymene Berriche",
+        "Cathrine Shalby",
+        "Mohannad Alhanahnah",
+        "Yazan Boshmaf"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Benchmark Scores Are Pipeline-Dependent: A Reliability Audit of Cybersecurity LLM Benchmarks》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.08765",
+      "pdf": "https://arxiv.org/pdf/2609.08765"
+    },
+    {
+      "id": "2609.09838",
+      "title": "Proximity Gaps for Gabidulin Codes and Applications",
+      "authors": [
+        "Songsong Li",
+        "Chaoping Xing",
+        "Chen Yuan",
+        "Ruiqi Zhu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Proximity Gaps for Gabidulin Codes and Applications》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.09838",
+      "pdf": "https://arxiv.org/pdf/2609.09838"
+    }
+  ]
+}

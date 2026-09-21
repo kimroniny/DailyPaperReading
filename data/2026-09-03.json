@@ -1,0 +1,268 @@
+{
+  "date": "2026-09-03",
+  "papers": [
+    {
+      "id": "2609.02647",
+      "title": "PrimSynth: An Agentic Approach to Discover, Validate, and Synthesize Exploit Primitives for Linux Kernel Vulnerabilities",
+      "authors": [
+        "Pengfei Wang",
+        "Anying Chen",
+        "Danjun Liu",
+        "Xu Zhou",
+        "Wei Xie"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《PrimSynth: An Agentic Approach to Discover, Validate, and Synthesize Exploit Primitives for Linux Kernel Vulnerabilities》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PrimSynth",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.02647",
+      "pdf": "https://arxiv.org/pdf/2609.02647"
+    },
+    {
+      "id": "2609.02774",
+      "title": "CodePoisonRAG: Knowledge Poisoning Attacks on Retrieval-Augmented Code Generation",
+      "authors": [
+        "Varun Gadey",
+        "Ziad Marey",
+        "Alexandra Dmitrienko"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《CodePoisonRAG: Knowledge Poisoning Attacks on Retrieval-Augmented Code Generation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CodePoisonRAG",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.02774",
+      "pdf": "https://arxiv.org/pdf/2609.02774"
+    },
+    {
+      "id": "2609.01023",
+      "title": "AKRASIA: Stealthy Backdoor Attack on Reasoning-based Code LLMs",
+      "authors": [
+        "Chua Jin Chou",
+        "Sarang Nambiar",
+        "Murali Srinivasan",
+        "Ezekiel Soremekun"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《AKRASIA: Stealthy Backdoor Attack on Reasoning-based Code LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "AKRASIA",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.01023",
+      "pdf": "https://arxiv.org/pdf/2609.01023"
+    },
+    {
+      "id": "2609.01758",
+      "title": "Towards Behavior Tree-Guided Vulnerability Detection with Lightweight LLMs",
+      "authors": [
+        "Enna Basic",
+        "Alberto Giaretta"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Towards Behavior Tree-Guided Vulnerability Detection with Lightweight LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.01758",
+      "pdf": "https://arxiv.org/pdf/2609.01758"
+    },
+    {
+      "id": "2608.30441",
+      "title": "ECLIPSE: Self-Evolving Stealthy Prompt Injection Attack against Long-Horizon Agentic Systems",
+      "authors": [
+        "Shiqian Zhao",
+        "Yangfan Zhou",
+        "Xinfeng Li",
+        "Runyi Hu",
+        "Yechao Zhang",
+        "Yi Xie",
+        "Tianwei Zhang",
+        "Luu Anh Tuan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《ECLIPSE: Self-Evolving Stealthy Prompt Injection Attack against Long-Horizon Agentic Systems》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "ECLIPSE",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.30441",
+      "pdf": "https://arxiv.org/pdf/2608.30441"
+    },
+    {
+      "id": "2609.02532",
+      "title": "SpiderSapien: Client-Centric Web Crawler and Security Scanner",
+      "authors": [
+        "Eric Olsson",
+        "Benjamin Eriksson",
+        "Adam Doupé",
+        "Andrei Sabelfeld"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《SpiderSapien: Client-Centric Web Crawler and Security Scanner》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SpiderSapien",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.02532",
+      "pdf": "https://arxiv.org/pdf/2609.02532"
+    },
+    {
+      "id": "2609.00430",
+      "title": "Don't Trust the Code, Check Its Effects: Runtime Refinement for Regenerated Systems Code Under an Adversarial Generator",
+      "authors": [
+        "Jinhao Hu",
+        "Ashvin Goel",
+        "Laurent Bindschaedler"
+      ],
+      "year": 2026,
+      "venue": "PACMI 2026 @ SOSP",
+      "abstract": "《Don't Trust the Code, Check Its Effects: Runtime Refinement for Regenerated Systems Code Under an Adversarial Generator》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.00430",
+      "pdf": "https://arxiv.org/pdf/2609.00430"
+    },
+    {
+      "id": "2608.30803",
+      "title": "Schwarz: Solver-Aware Agentic Program Verification",
+      "authors": [
+        "Jingyu Ke",
+        "Ling-I Wu",
+        "Guoqiang Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Schwarz: Solver-Aware Agentic Program Verification》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Schwarz",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.30803",
+      "pdf": "https://arxiv.org/pdf/2608.30803"
+    },
+    {
+      "id": "2608.28880",
+      "title": "FlowCheck: Helping End-Users Specify and Verify Intent in Vibe-Coded Web Apps",
+      "authors": [
+        "Reya Vir",
+        "Lydia Chilton",
+        "Zhuo Zhang",
+        "Eugene Wu"
+      ],
+      "year": 2026,
+      "venue": "LMPL 2026",
+      "abstract": "《FlowCheck: Helping End-Users Specify and Verify Intent in Vibe-Coded Web Apps》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "FlowCheck",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.28880",
+      "pdf": "https://arxiv.org/pdf/2608.28880"
+    },
+    {
+      "id": "2609.02624",
+      "title": "Automated Vulnerability Injection in Smart Contracts Using Large Language Models",
+      "authors": [
+        "Luca Migliaccio",
+        "Roberto Natella",
+        "Naghmeh Ivaki",
+        "Nuno Laranjeiro",
+        "Marco Vieira"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Automated Vulnerability Injection in Smart Contracts Using Large Language Models》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "漏洞",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2609.02624",
+      "pdf": "https://arxiv.org/pdf/2609.02624"
+    },
+    {
+      "id": "2026-1852",
+      "title": "Jacobian Diagnostics for Under-Constrained Zero-Knowledge Circuits",
+      "authors": [
+        "Vijay Singh"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Jacobian Diagnostics for Under-Constrained Zero-Knowledge Circuits》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1852",
+      "pdf": "https://eprint.iacr.org/2026/1852.pdf"
+    },
+    {
+      "id": "2026-1857",
+      "title": "LatticeBlindFold: A Lattice-Based Analogue of NovaBlindFold",
+      "authors": [
+        "Luca Dall&#39;Ava"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《LatticeBlindFold: A Lattice-Based Analogue of NovaBlindFold》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "LatticeBlindFold",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1857",
+      "pdf": "https://eprint.iacr.org/2026/1857.pdf"
+    }
+  ]
+}

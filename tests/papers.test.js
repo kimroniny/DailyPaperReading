@@ -75,4 +75,16 @@ describe("daily JSON catalog", () => {
     }
     assert.ok(loadPapers().length >= seed.length + radar.length);
   });
+
+  it("imports historical radar memory days into the catalog", () => {
+    const root = path.join(__dirname, "..", "data");
+    const manifest = JSON.parse(fs.readFileSync(path.join(root, "manifest.json"), "utf8"));
+    assert.ok(manifest.dates.includes("2026-08-24"));
+    assert.ok(manifest.dates.includes("2026-09-19"));
+    const ids = new Set(loadPapers().map((paper) => paper.id));
+    for (const id of ["2608.20637", "2026-1757", "2609.17817", "10.1145-3848030"]) {
+      assert.ok(ids.has(id), `missing memory paper ${id}`);
+    }
+    assert.ok(loadPapers().length >= 250);
+  });
 });

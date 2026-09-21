@@ -1,0 +1,280 @@
+{
+  "date": "2026-09-17",
+  "papers": [
+    {
+      "id": "2609.18862",
+      "title": "CASHEWS: Source Preprocessor for LLM-based Malicious Package Detection",
+      "authors": [
+        "Jean-Charles Noirot Ferrand",
+        "David Adei",
+        "Anders Møller",
+        "Alexandros Kapravelos"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《CASHEWS: Source Preprocessor for LLM-based Malicious Package Detection》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CASHEWS",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.18862",
+      "pdf": "https://arxiv.org/pdf/2609.18862"
+    },
+    {
+      "id": "2609.18457",
+      "title": "AIJon: Automated Generation of Annotations for Fuzzing",
+      "authors": [
+        "Jayakrishna Menon Vadayath",
+        "Hulin Wang",
+        "Moritz Schloegel",
+        "Jie Hu",
+        "Wil Gibbs",
+        "Tiffany Bao",
+        "Adam Doupé",
+        "Ruoyu \"Fish\" Wang",
+        "Yan Shoshitaishvili"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《AIJon: Automated Generation of Annotations for Fuzzing》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "AIJon",
+        "fuzzing",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.18457",
+      "pdf": "https://arxiv.org/pdf/2609.18457"
+    },
+    {
+      "id": "2609.17993",
+      "title": "Experimental Settings in LLM-Based Program Repair: A Study of Inputs, Tool Access, Feedback, and Validation",
+      "authors": [
+        "Xushu Dai",
+        "Yicheng Cai",
+        "Nanqing Luo",
+        "Pei-Yu Tseng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Experimental Settings in LLM-Based Program Repair: A Study of Inputs, Tool Access, Feedback, and Validation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.17993",
+      "pdf": "https://arxiv.org/pdf/2609.17993"
+    },
+    {
+      "id": "2609.19140",
+      "title": "AgentLSD: Evaluating AI Security Agents Under Adversarial Task Contamination",
+      "authors": [
+        "Matteo Golinelli",
+        "Idilio Drago",
+        "Matteo Boffa",
+        "Francesco Bergadano",
+        "Bruno Crispo"
+      ],
+      "year": 2026,
+      "venue": "AISec 2026 @ CCS",
+      "abstract": "《AgentLSD: Evaluating AI Security Agents Under Adversarial Task Contamination》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "AgentLSD",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.19140",
+      "pdf": "https://arxiv.org/pdf/2609.19140"
+    },
+    {
+      "id": "2609.18120",
+      "title": "PentestChain: A Cost-Aware, MCP-Orchestrated Framework for Automated Penetration Testing with Free-Tier LLMs",
+      "authors": [
+        "Rushabh Vipulkumar Patel",
+        "Dipo Dunsin",
+        "Mohammed Almaiah",
+        "Mohamed Chahine Ghanem"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《PentestChain: A Cost-Aware, MCP-Orchestrated Framework for Automated Penetration Testing with Free-Tier LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PentestChain",
+        "渗透测试",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.18120",
+      "pdf": "https://arxiv.org/pdf/2609.18120"
+    },
+    {
+      "id": "2609.18158",
+      "title": "Bridging the Opacity: Evidence-Backed Cross-Chain Transaction Correspondence Reconstruction Across Heterogeneous Blockchains",
+      "authors": [
+        "Dan Lin",
+        "Huan Xiao",
+        "Ziwei Li",
+        "Xiapu Luo",
+        "Jiachi Chen",
+        "Jiajing Wu",
+        "Zibin Zheng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Bridging the Opacity: Evidence-Backed Cross-Chain Transaction Correspondence Reconstruction Across Heterogeneous Blockchains》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.18158",
+      "pdf": "https://arxiv.org/pdf/2609.18158"
+    },
+    {
+      "id": "2609.17902",
+      "title": "Ghost-Filled Orders: Detecting and Testing Atomicity Violations in Non-Custodial Prediction Markets",
+      "authors": [
+        "Zhiyang Chen",
+        "Fan Long",
+        "Zhendong Su"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Ghost-Filled Orders: Detecting and Testing Atomicity Violations in Non-Custodial Prediction Markets》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.17902",
+      "pdf": "https://arxiv.org/pdf/2609.17902"
+    },
+    {
+      "id": "2026-2038",
+      "title": "Seven Bindings: A Machine-Checked Map of the Assumptions Behind Lightning's BOLT 12",
+      "authors": [
+        "Rong Qian",
+        "Mengrun Chen",
+        "Yu Cheng",
+        "Yuchang Zhang",
+        "Zengli Guo"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Seven Bindings: A Machine-Checked Map of the Assumptions Behind Lightning's BOLT 12》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2038",
+      "pdf": "https://eprint.iacr.org/2026/2038.pdf"
+    },
+    {
+      "id": "2026-2037",
+      "title": "Silent Payments, Formally: Security, Scanning Costs, and Blind Collaborative Payments",
+      "authors": [
+        "Rong Qian",
+        "Yu Cheng",
+        "Mengrun Chen",
+        "Yuchang Zhang",
+        "Zengli Guo"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Silent Payments, Formally: Security, Scanning Costs, and Blind Collaborative Payments》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2037",
+      "pdf": "https://eprint.iacr.org/2026/2037.pdf"
+    },
+    {
+      "id": "2026-2053",
+      "title": "Weighted Batch Threshold Encryption with Efficient DKG",
+      "authors": [
+        "Alexander Frolov",
+        "Aditi Partap",
+        "Max Resnick",
+        "Ertem Nusret Tas"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Weighted Batch Threshold Encryption with Efficient DKG》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2053",
+      "pdf": "https://eprint.iacr.org/2026/2053.pdf"
+    },
+    {
+      "id": "2026-2031",
+      "title": "Mind Small Integers in MDS Matrix: Collision Attacks on Round-Reduced Reinforced Concrete",
+      "authors": [
+        "Jiamin Cui",
+        "Fukang Liu",
+        "Jianqiang Ni",
+        "Willi Meier"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Mind Small Integers in MDS Matrix: Collision Attacks on Round-Reduced Reinforced Concrete》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2031",
+      "pdf": "https://eprint.iacr.org/2026/2031.pdf"
+    },
+    {
+      "id": "2026-2054",
+      "title": "Lemur+: Compact Post-Quantum Synchronized Multi-Signatures and Multi-Hop Aggregation",
+      "authors": [
+        "Yini Lin",
+        "Hongxiao Wang",
+        "Muhammed F. Esgin",
+        "Amin Sakzad",
+        "Ron Steinfeld"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Lemur+: Compact Post-Quantum Synchronized Multi-Signatures and Multi-Hop Aggregation》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Lemur+",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2054",
+      "pdf": "https://eprint.iacr.org/2026/2054.pdf"
+    }
+  ]
+}

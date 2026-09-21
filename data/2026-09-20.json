@@ -261,6 +261,148 @@
         "BunnyFinder"
       ],
       "url": "https://doi.org/10.14722/ndss.2026.230281"
+    },
+    {
+      "id": "2609.17817",
+      "title": "Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks",
+      "authors": [
+        "Franziska Roesner",
+        "Tadayoshi Kohno"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.17817",
+      "pdf": "https://arxiv.org/pdf/2609.17817"
+    },
+    {
+      "id": "2609.16694",
+      "title": "Toward Secure AI-Powered Penetration Testing Agents: Security Threats, Guardrails, and Architectural Perspectives",
+      "authors": [
+        "Rahul Dev T Y",
+        "Hiran V Nath"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Toward Secure AI-Powered Penetration Testing Agents: Security Threats, Guardrails, and Architectural Perspectives》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.16694",
+      "pdf": "https://arxiv.org/pdf/2609.16694"
+    },
+    {
+      "id": "2609.17274",
+      "title": "After the Party: Growth, Governance, and Security Scanning in the OpenClaw Agent Skill Ecosystem",
+      "authors": [
+        "Yunpeng Xiong",
+        "Ting Zhang"
+      ],
+      "year": 2026,
+      "venue": "APSEC 2026",
+      "abstract": "《After the Party: Growth, Governance, and Security Scanning in the OpenClaw Agent Skill Ecosystem》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.17274",
+      "pdf": "https://arxiv.org/pdf/2609.17274"
+    },
+    {
+      "id": "2609.19844",
+      "title": "Trust, but Validate the Instrument: Auditing AI-Generated RTL Verification Plans on Authored Security-Regression Proxies",
+      "authors": [
+        "Hang Xiao",
+        "Chuhong Xu",
+        "Kainan Zhou",
+        "Gangzhen Qian",
+        "Lu Yi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Trust, but Validate the Instrument: Auditing AI-Generated RTL Verification Plans on Authored Security-Regression Proxies》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.19844",
+      "pdf": "https://arxiv.org/pdf/2609.19844"
+    },
+    {
+      "id": "2609.19353",
+      "title": "Scaling Zero Knowledge UNSAT Verification via Normalized Chaining",
+      "authors": [
+        "Ashwin Karthikeyan",
+        "Ethan Kharitonov",
+        "Kuldeep S. Meel",
+        "Anwar Hithnawi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Scaling Zero Knowledge UNSAT Verification via Normalized Chaining》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.19353",
+      "pdf": "https://arxiv.org/pdf/2609.19353"
+    },
+    {
+      "id": "2026-2068",
+      "title": "Distributed SNARGs Resilient to Corrupt Verifiers",
+      "authors": [
+        "Elette Boyle",
+        "Lalita Devadas"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Distributed SNARGs Resilient to Corrupt Verifiers》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2068",
+      "pdf": "https://eprint.iacr.org/2026/2068.pdf"
+    },
+    {
+      "id": "2026-2044",
+      "title": "On Sparkle+ and its Security Claims",
+      "authors": [
+        "Andrea Gangemi",
+        "Massimiliano Sala",
+        "Lorenzo Viganò"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《On Sparkle+ and its Security Claims》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2044",
+      "pdf": "https://eprint.iacr.org/2026/2044.pdf"
     }
   ]
 }

@@ -1,0 +1,140 @@
+{
+  "date": "2026-09-08",
+  "papers": [
+    {
+      "id": "2609.04909",
+      "title": "Better Understanding, Better Fixes? A Study of Hallucination in LLM-based Automated Program Repair",
+      "authors": [
+        "Xuemeng Cai",
+        "Jiakun Liu",
+        "Linhan Yang",
+        "Wei Ma",
+        "Lingxiao Jiang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Better Understanding, Better Fixes? A Study of Hallucination in LLM-based Automated Program Repair》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.04909",
+      "pdf": "https://arxiv.org/pdf/2609.04909"
+    },
+    {
+      "id": "2609.04483",
+      "title": "Integrating Crash Report Mining and LLMs for Bug Localization and Repair: An Industrial Report",
+      "authors": [
+        "Marcos Medeiros",
+        "Uirá Kulesza",
+        "Christoph Treude",
+        "Daniel Lucena",
+        "Rafael Gomes",
+        "Roberta Coelho",
+        "Eiji Adachi",
+        "Rodrigo Bonifacio"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Integrating Crash Report Mining and LLMs for Bug Localization and Repair: An Industrial Report》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.04483",
+      "pdf": "https://arxiv.org/pdf/2609.04483"
+    },
+    {
+      "id": "2609.04820",
+      "title": "Cost-Aware Hierarchical Multi-Agent Ransomware Detection and Family Attribution",
+      "authors": [
+        "Mubashar Iqbal",
+        "Asifullah Khan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Cost-Aware Hierarchical Multi-Agent Ransomware Detection and Family Attribution》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.04820",
+      "pdf": "https://arxiv.org/pdf/2609.04820"
+    },
+    {
+      "id": "2609.05269",
+      "title": "CONTINUITY: Security-Context Contracts for Composable LLM Agent Controls",
+      "authors": [
+        "Chris Zheng",
+        "Geng Yang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《CONTINUITY: Security-Context Contracts for Composable LLM Agent Controls》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CONTINUITY",
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.05269",
+      "pdf": "https://arxiv.org/pdf/2609.05269"
+    },
+    {
+      "id": "2026-1892",
+      "title": "Dynasaurs: Efficient Universal Dynamic zkSNARKs from Sparse Linear Arguments",
+      "authors": [
+        "Martí Batista",
+        "Álvaro Montes",
+        "Nikitas Paslis",
+        "Carla Ràfols"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Dynasaurs: Efficient Universal Dynamic zkSNARKs from Sparse Linear Arguments》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Dynasaurs",
+        "zk",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1892",
+      "pdf": "https://eprint.iacr.org/2026/1892.pdf"
+    },
+    {
+      "id": "2026-1890",
+      "title": "Rogue: Updatable Matrix Lookup Arguments and Applications to Verifiable Databases",
+      "authors": [
+        "Christodoulos Pappas",
+        "Zhuo Cai",
+        "Dimitrios Papadopoulos"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Rogue: Updatable Matrix Lookup Arguments and Applications to Verifiable Databases》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Rogue",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1890",
+      "pdf": "https://eprint.iacr.org/2026/1890.pdf"
+    }
+  ]
+}

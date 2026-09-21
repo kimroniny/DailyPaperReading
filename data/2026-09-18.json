@@ -1,0 +1,229 @@
+{
+  "date": "2026-09-18",
+  "papers": [
+    {
+      "id": "2609.19722",
+      "title": "ALIBI: Adversarial Legitimacy Injection in Binary Input against LLM Malware Analyzers",
+      "authors": [
+        "Hyeongjun Choi",
+        "Wonyoung Jung",
+        "Haehoon Seo",
+        "Sungyup Nam"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《ALIBI: Adversarial Legitimacy Injection in Binary Input against LLM Malware Analyzers》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "ALIBI",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.19722",
+      "pdf": "https://arxiv.org/pdf/2609.19722"
+    },
+    {
+      "id": "2609.19391",
+      "title": "MAGS: Multi-agent Auto-formalization Guarantees Safety for Agentic Outputs",
+      "authors": [
+        "Albert Wu",
+        "Nicholas Roberts",
+        "Tzu-Heng Huang",
+        "Haoran Lin",
+        "Gil Friedman",
+        "Sungjun Cho",
+        "Gabriel Orlanski",
+        "Frederic Sala"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《MAGS: Multi-agent Auto-formalization Guarantees Safety for Agentic Outputs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MAGS",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.19391",
+      "pdf": "https://arxiv.org/pdf/2609.19391"
+    },
+    {
+      "id": "2609.18658",
+      "title": "A Security Risk Assessment Framework for AI-Powered Development Tools",
+      "authors": [
+        "Salem AlJanah"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《A Security Risk Assessment Framework for AI-Powered Development Tools》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.18658",
+      "pdf": "https://arxiv.org/pdf/2609.18658"
+    },
+    {
+      "id": "2609.18512",
+      "title": "PatchyBFT: Automating Diversification of Fault-Tolerant Systems using LLMs",
+      "authors": [
+        "Arne Vogel",
+        "Christian Berger",
+        "Rüdiger Kapitza"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《PatchyBFT: Automating Diversification of Fault-Tolerant Systems using LLMs》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "PatchyBFT",
+        "LLM",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2609.18512",
+      "pdf": "https://arxiv.org/pdf/2609.18512"
+    },
+    {
+      "id": "2609.20069",
+      "title": "Competition, Collusion, and Corruption: The Spectrum of MEV Attacks on DAG-Based BFT Consensus Protocols",
+      "authors": [
+        "Iliya Mirzaei",
+        "Heer Patel",
+        "Chenyuan Wu",
+        "Mohammad Javad Amiri"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Competition, Collusion, and Corruption: The Spectrum of MEV Attacks on DAG-Based BFT Consensus Protocols》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MEV",
+        "共识",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.20069",
+      "pdf": "https://arxiv.org/pdf/2609.20069"
+    },
+    {
+      "id": "2609.20010",
+      "title": "XIR: A Framework for Interoperability across Cross-Chain Protocols Based on a Verifiable Intermediate Representation",
+      "authors": [
+        "Yushen Li",
+        "Linpeng Jia",
+        "Jiaying Feng",
+        "Ziliang Liao",
+        "Yi Sun"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《XIR: A Framework for Interoperability across Cross-Chain Protocols Based on a Verifiable Intermediate Representation》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "XIR",
+        "跨链",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.20010",
+      "pdf": "https://arxiv.org/pdf/2609.20010"
+    },
+    {
+      "id": "2609.18344",
+      "title": "Detecting Logic Vulnerabilities Across the Contract and Device Layers of Blockchain-Enabled IoT With Multi-Agent Heterogeneous Graph Attention",
+      "authors": [
+        "Minfeng Qi",
+        "Jialin Li",
+        "Tianqing Zhu",
+        "Lefeng Zhang",
+        "Zhe Sun"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Detecting Logic Vulnerabilities Across the Contract and Device Layers of Blockchain-Enabled IoT With Multi-Agent Heterogeneous Graph Attention》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "agent",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2609.18344",
+      "pdf": "https://arxiv.org/pdf/2609.18344"
+    },
+    {
+      "id": "2609.18778",
+      "title": "Vigil: Accountable Liveness against Selective Silence",
+      "authors": [
+        "Jiawei Cheng",
+        "Huiping Sun",
+        "Rui Zhou",
+        "Jinjue Zhou",
+        "Zhong Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Vigil: Accountable Liveness against Selective Silence》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Vigil",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.18778",
+      "pdf": "https://arxiv.org/pdf/2609.18778"
+    },
+    {
+      "id": "2609.18811",
+      "title": "Differential Trust: Dynamic Multi-Authority Anonymous Credentials with Epoch-Weighted Updates",
+      "authors": [
+        "Chen Li",
+        "Jianting Ning",
+        "Xiulong Liu",
+        "Yulin Liu"
+      ],
+      "year": 2026,
+      "venue": "USENIX Security 2026",
+      "abstract": "协议/链上工作《Differential Trust: Dynamic Multi-Authority Anonymous Credentials with Epoch-Weighted Updates》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.18811",
+      "pdf": "https://arxiv.org/pdf/2609.18811"
+    },
+    {
+      "id": "2026-2056",
+      "title": "Reed-Solomon Codes Beyond Johnson: Efficient Decoding and Smaller Cryptographic Proofs",
+      "authors": [
+        "Quang Dao",
+        "Scott Duke Kominers",
+        "Justin Thaler"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Reed-Solomon Codes Beyond Johnson: Efficient Decoding and Smaller Cryptographic Proofs》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2056",
+      "pdf": "https://eprint.iacr.org/2026/2056.pdf"
+    }
+  ]
+}

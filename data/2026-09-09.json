@@ -1,0 +1,231 @@
+{
+  "date": "2026-09-09",
+  "papers": [
+    {
+      "id": "2609.09087",
+      "title": "PrivEscalate: Measuring and Augmenting the Threat of LLM-Automated Linux Privilege Escalation",
+      "authors": [
+        "Yixuan Liu",
+        "Zilong Zhen",
+        "Yin Wu",
+        "Yi Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《PrivEscalate: Measuring and Augmenting the Threat of LLM-Automated Linux Privilege Escalation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PrivEscalate",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.09087",
+      "pdf": "https://arxiv.org/pdf/2609.09087"
+    },
+    {
+      "id": "2609.06229",
+      "title": "SWE-Test: Benchmarking LLM Vulnerability Discovery via Input Prediction",
+      "authors": [
+        "Yuanxiang Shi",
+        "Jiayi Lin",
+        "Xuanyong Lin",
+        "Liangcai Su",
+        "Yeheng Duan",
+        "Wei Wang",
+        "Qi Han",
+        "Bing Zhao",
+        "Wei Hu",
+        "Xander Xu",
+        "Chenxiong Qian"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《SWE-Test: Benchmarking LLM Vulnerability Discovery via Input Prediction》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SWE-Test",
+        "漏洞",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.06229",
+      "pdf": "https://arxiv.org/pdf/2609.06229"
+    },
+    {
+      "id": "2609.08040",
+      "title": "VEX-Bench: Benchmarking LLM Agents for Assessing Exploitability of Software Supply Chain Vulnerabilities",
+      "authors": [
+        "Jiahao Shi",
+        "Edward Tsien",
+        "Yifeng Di",
+        "Hongjiao Zhang",
+        "Yuan Tang",
+        "Ronit Dey",
+        "Ilona Shishov",
+        "Gal Netanel",
+        "Zvi Grinberg",
+        "Vladimir Belousov",
+        "Bat-Zion Rotman",
+        "Ilan Pinto",
+        "Tianyi Zhang"
+      ],
+      "year": 2026,
+      "venue": "EMNLP 2026",
+      "abstract": "《VEX-Bench: Benchmarking LLM Agents for Assessing Exploitability of Software Supply Chain Vulnerabilities》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "VEX-Bench",
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.08040",
+      "pdf": "https://arxiv.org/pdf/2609.08040"
+    },
+    {
+      "id": "2609.08681",
+      "title": "Beyond Fixed Fault Models: Comparing LLM-Based and Rule-Based Fault Injection in OpenStack",
+      "authors": [
+        "Giuseppe De Rosa",
+        "Pietro Liguori",
+        "Domenico Cotroneo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Beyond Fixed Fault Models: Comparing LLM-Based and Rule-Based Fault Injection in OpenStack》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.08681",
+      "pdf": "https://arxiv.org/pdf/2609.08681"
+    },
+    {
+      "id": "2609.08371",
+      "title": "Authority Is Not a String: A Capability-Scoped Harness for Prompt-Injection-Resistant Coding Agents",
+      "authors": [
+        "Dimitrios Stamatios Bouras",
+        "Yihan Dai",
+        "Sergey Mechtaev"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Authority Is Not a String: A Capability-Scoped Harness for Prompt-Injection-Resistant Coding Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.08371",
+      "pdf": "https://arxiv.org/pdf/2609.08371"
+    },
+    {
+      "id": "2609.07360",
+      "title": "Scanning the Harness: An Empirical Study of Supply-Chain Defects in AI Coding-Agent Configurations",
+      "authors": [
+        "Benjamin Kapner",
+        "Carmel Soceanu",
+        "Alicia Petrunin",
+        "Hofni Gartner"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Scanning the Harness: An Empirical Study of Supply-Chain Defects in AI Coding-Agent Configurations》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.07360",
+      "pdf": "https://arxiv.org/pdf/2609.07360"
+    },
+    {
+      "id": "2609.06149",
+      "title": "SCRIPTIOC-BENCH: A Benchmark for Recognizing Actionable Threat Intelligence from Script-Based Malware using LLMs",
+      "authors": [
+        "Hanna Kim",
+        "Jian Cui",
+        "Minkyoo Song",
+        "Hwanjo Heo",
+        "Seungwon Shin",
+        "Kimin Lee",
+        "Xiaojing Liao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《SCRIPTIOC-BENCH: A Benchmark for Recognizing Actionable Threat Intelligence from Script-Based Malware using LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SCRIPTIOC-BENCH",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.06149",
+      "pdf": "https://arxiv.org/pdf/2609.06149"
+    },
+    {
+      "id": "2609.07865",
+      "title": "EventSpec: Defining and Detecting Event-Semantic Issues in Blockchain Ecosystems",
+      "authors": [
+        "Yixuan Liu",
+        "Yuxin Dong",
+        "Ye Liu",
+        "Yin Wu",
+        "Chengxuan Zhang",
+        "Xiapu Luo",
+        "Yi Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《EventSpec: Defining and Detecting Event-Semantic Issues in Blockchain Ecosystems》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "EventSpec",
+        "DeFi",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.07865",
+      "pdf": "https://arxiv.org/pdf/2609.07865"
+    },
+    {
+      "id": "2609.07963",
+      "title": "Guppy: Efficient Light Clients via Recursive Zero-Knowledge Proofs",
+      "authors": [
+        "George Danezis",
+        "Deepak Maram",
+        "Arnab Roy",
+        "Alberto Sonnino",
+        "Karl Wust"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Guppy: Efficient Light Clients via Recursive Zero-Knowledge Proofs》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Guppy",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.07963",
+      "pdf": "https://arxiv.org/pdf/2609.07963"
+    }
+  ]
+}
