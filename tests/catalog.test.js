@@ -4,6 +4,7 @@ const {
   mergeDayFiles,
   mergeSameDayPapers,
   groupPapersByDate,
+  groupDaysByMonth,
   pickVisibleDay,
   upsertManifest,
   cardFromRadar,
@@ -58,6 +59,20 @@ describe("groupPapersByDate", () => {
     assert.deepEqual(
       groups.map((g) => g.date),
       ["2026-09-20", "2026-09-21"]
+    );
+  });
+});
+
+describe("groupDaysByMonth", () => {
+  it("folds consecutive days into months", () => {
+    const months = groupDaysByMonth([
+      { date: "2026-09-21" },
+      { date: "2026-09-20" },
+      { date: "2026-08-31" },
+    ]);
+    assert.deepEqual(
+      months.map((month) => month.month + ":" + month.days.length),
+      ["2026-09:2", "2026-08:1"]
     );
   });
 });

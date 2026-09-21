@@ -16,7 +16,7 @@
       ],
       "year": 2026,
       "venue": "ISSTA 2026",
-      "abstract": "《From Static to Dynamic: Benchmarking Real-World Code Review with MCR-Bench》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "在现实的软件开发中，代码审查通常涉及开发人员和审查人员之间的迭代交互，以提高软件质量，从而使该过程成本高昂且耗时。尽管最近的工作探索了用于自动代码审查的大型语言模型（LLM），但大多数方法将代码审查过度简化为单轮静态决策任务，这无法捕捉现实审查场景中固有的多轮交互性质和复杂的问题解决过程。为了弥补这一差距，我们推出了 MCR-Bench，这是第一个缺陷状态感知基准，专为实际的多轮代码审查而设计。MCR-Bench涵盖了五种常用的编程语言，由2,269个真实的多轮代码审查任务组成，每个任务都带有细粒度的缺陷信息和跨轮状态标签的注释。 MCR-Bench 中的每个任务都配备了细粒度的缺陷元数据（例如描述、类型、严重性）以及动态状态注释，捕获缺陷在整个多轮过程中的完整演化轨迹。我们通过主流法学硕士在 MCR-Bench 上进行的广泛实验获得了一些发现。（1）整体能力有限：实验表明，主流LLM在缺陷检测和缺陷生命周期状态跟踪方面整体性能有限，随着交互轮数的增加，性能明显下降； (2) 缺陷敏感表现：法学硕士的表现在不同的缺陷类型和严重程度之间存在很大差异，语义复杂或低显着性的缺陷更容易被遗漏； (3) 潜在的故障机制：我们深入的错误分析剖析了误报和漏报的不同驱动因素，揭示了诸如跨轮时间错位和长期记忆不足等关键弱点。",
       "topics": [
         "C"
       ],
@@ -24,7 +24,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.27442",
-      "pdf": "https://arxiv.org/pdf/2608.27442"
+      "pdf": "https://arxiv.org/pdf/2608.27442",
+      "abstractEn": "In real-world software development, code review typically involves iterative interactions between developers and reviewers to improve software quality, making the process costly and time-consuming. Although recent work explores large language models (LLMs) for automated code review, most approaches oversimplify code review into a single-round, static decision task, which fails to capture the multi-round interactive nature and the complex problem-solving processes inherent in realistic review scenarios. To bridge this gap, we introduce MCR-Bench, the first defect state-aware benchmark designed for realistic multi-round code review. MCR-Bench covers five commonly-used programming languages and consists of 2,269 real-world multi-round code review tasks, each of which is annotated with fine-grained defect information and cross-round state labels. Each task in MCR-Bench is equipped with fine-grained defect metadata (e.g., description, type, severity) alongside dynamic state annotations, capturing the complete evolutionary trajectory of a defect throughout the multi-round process. We obtain several findings through extensive experiments on MCR-Bench with mainstream LLMs. (1) Limited overall capability: experiments reveal that mainstream LLMs exhibit limited overall performance in defect detection and defect lifecycle state tracking, with performance degrading significantly as the number of interaction rounds increases; (2) Defect-sensitive performance: LLMs' performance varies substantially across different defect types and severity levels, with semantically complex or low-salience defects being significantly more likely to be missed; (3) Underlying Failure Mechanisms: our in-depth error analysis dissects the distinct drivers of false positives and false negatives, revealing critical weaknesses such as cross-round temporal misalignment and inadequate long-range memory."
     },
     {
       "id": "2608.27234",
@@ -35,7 +36,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《SPA: Securing Persistent LLM Agents Across Queries with Plan-First Information-Flow Control》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 代理越来越多地对不受信任的网页、文档、工具和持久状态进行操作，同时对安全敏感资源行使权限。现有的防御措施通常保护规划或单个工具交互，但持久代理面临更广泛的威胁：攻击者控制的数据可以改变控制流、输入安全敏感的工具参数或危及后续查询。我们提出了 SPA，一种计划优先的架构，可确保计划、执行和跨查询状态重用。SPA 在每个查询中调用一次规划器，以声明性域特定语言生成完整的可执行计划，然后应用双格信息流控制来跟踪显式数据流和控制依赖性之间的机密性和完整性。为了支持持久性而不向规划器重新暴露不受信任的有效负载，SPA 将执行结果存储为标记的工件，并在以后的规划期间仅显示语义元数据。我们在 AgentDojo 和 AgentDojo-MQ 上评估 SPA，这是我们用于测量安全状态重用和延迟攻击的多查询扩展。在“tool_knowledge”攻击下，具有信息流控制的 SPA 将 AgentDojo 上的攻击成功率降至零，将 AgentDojo-MQ 上的攻击成功率降至 0.2%。我们的结果表明，计划优先执行与标签保留持久性相结合可以大大增强持久性 LLM 代理，同时揭示严格完整性执行引入的重要安全性与实用性权衡。",
       "topics": [
         "C"
       ],
@@ -46,7 +47,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.27234",
-      "pdf": "https://arxiv.org/pdf/2608.27234"
+      "pdf": "https://arxiv.org/pdf/2608.27234",
+      "abstractEn": "Large language model (LLM) agents increasingly operate over untrusted webpages, documents, tools, and persistent states while exercising authority over security-sensitive resources. Existing defenses typically protect either planning or individual tool interactions, but persistent agents face a broader threat: attacker-controlled data can alter control flow, enter security-sensitive tool arguments, or compromise later queries. We present SPA, a plan-first architecture that secures planning, execution, and cross-query state reuse. SPA invokes the planner once per query to generate a complete executable plan in a declarative domain-specific language, then applies dual-lattice information-flow control to track confidentiality and integrity across explicit data flows and control dependencies. To support persistence without re-exposing untrusted payloads to the planner, SPA stores execution results as labeled artifacts and reveals only semantic metadata during later planning. We evaluate SPA on AgentDojo and AgentDojo-MQ, which is our multi-query extension for measuring secure state reuse and delayed attacks. Under the 'tool_knowledge' attack, SPA with information-flow control reduces attack success to zero on AgentDojo and 0.2% on AgentDojo-MQ. Our results show that plan-first execution combined with label-preserving persistence can substantially strengthen persistent LLM agents, while revealing an important security-utility tradeoff introduced by strict integrity enforcement."
     },
     {
       "id": "2608.27146",
@@ -63,7 +65,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "工具增强的 LLM 代理必须依赖不受信任的运行时观察来完成开放式任务；然而，当工具输出不再仅仅提供数据而是开始指定具体操作时，它们实际上变成了“命令”，可以驱动现实世界的副作用超出用户的意图。我们认为这种风险是由于将行动诱导与执行授权混为一谈而产生的。为了解决这种区别，我们提出 SARA，它将动作诱导和执行授权视为不同的运行时角色，并将动作来源与执行权限分开。在观察方面，上下文隔离的操作探针公开了操作诱导语义，并持续记录跨步骤的操作起源作为审查信号；在执行方面，实际的工具调用仅根据用户目标和授权成功执行的审计证据进行授权，同时满足目标、执行链和参数级支持。为了保持多步骤执行之间的这种分离，SARA 应用无历史记录提升来防止历史重现，将操作来源洗白为执行权限。在 AgentDojo 和 AgentDyn 中，SARA 将四个主要评估设置的 ASR 限制为不超过 \\(0.63\\%\\)，同时保持竞争性任务实用性，并持续降低其他 Agent 主干上的 ASR。",
       "topics": [
         "C"
       ],
@@ -73,7 +75,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.27146",
-      "pdf": "https://arxiv.org/pdf/2608.27146"
+      "pdf": "https://arxiv.org/pdf/2608.27146",
+      "abstractEn": "Tool-augmented LLM agents must rely on untrusted runtime Observations to complete open-ended tasks; however, when tool outputs no longer merely provide data but begin to specify concrete actions, they effectively become ``commands'' that can drive real-world side effects beyond user intent. We argue that this risk arises from conflating action induction with execution authorization. To address this distinction, we propose SARA, which treats action induction and execution authorization as distinct runtime roles and separates action provenance from execution authority. On the Observation side, a context-isolated Action Probe exposes action-inducing semantics and persistently records action-origin provenance across steps as a review signal; on the execution side, actual tool calls are authorized only against the user objective and audited evidence from authorized successful executions, while satisfying goal, execution-chain, and argument-level support. To preserve this separation across multi-step execution, SARA applies No-History-Promotion to prevent historical recurrence from laundering action origins into execution authority. Across AgentDojo and AgentDyn, SARA limits ASR to no more than \\(0.63\\%\\) across four primary evaluation settings while maintaining competitive task utility, and consistently reduces ASR across additional Agent backbones."
     },
     {
       "id": "2608.27092",
@@ -84,7 +87,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "使用工具的 LLM 代理在持有秘密的情况下读取攻击者控制的 Web 内容，面临间接提示注入：该内容可能使其泄露秘密。在安全的合成实验室（金丝雀秘密、模拟工具、匹配的干净与中毒指标）中，我们报告了框架差距：在六个模型中，十个公开注入类被拒绝（gpt-4o 0%），但将相同的泄漏重新框架为强制完整性签名、配置字段或类似的“可信”主机驱动 gpt-4o 0% 到 100%。这种攻击很便宜，其成本分为三级：解释已知机制很简单（3 个措辞时为 96%），交换已知有效模板内的字段也很便宜（高达 60%），而围绕新机制创作新页面很困难（0/130）——可重用资产是模板，而不是机制。消融显示该机制是指令/数据混淆，而不是失败对齐：删除机密性策略使基础攻击为 0%，而重构仅从 31.9% 变为 38.1%。缩小差距的是有效载荷盲检查：目的地允许列表（当目的地关闭时为 0%）和能力隔离规划器/读取器分割（0%）。广泛的“任何形式”政策条款也将其关闭在行动模型（至 0%），但很脆弱（放弃包罗万象的政策，将其重新开放至 48.8%）。已发布的微调防御（SecAlign，CCS 2025）不会在工具代理上关闭它（32.5％，阳性对照验证），通道分离也不会关闭它（38.8％）；输出标准化保护会输给保留编码（ROT13，100%）。稳健性来自于限制目的地或隔离能力，而不是来自识别攻击的行为模型。",
       "topics": [
         "C"
       ],
@@ -93,7 +96,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.27092",
-      "pdf": "https://arxiv.org/pdf/2608.27092"
+      "pdf": "https://arxiv.org/pdf/2608.27092",
+      "abstractEn": "A tool-using LLM agent that reads attacker-controlled web content while holding a secret faces indirect prompt injection: the content may make it exfiltrate the secret. In a safe synthetic lab (canary secret, mock tools, matched clean-vs-poisoned metric) we report the framing gap: across six models, ten overt injection classes are refused (gpt-4o 0%), but reframing the identical leak as a mandatory integrity signature, config field, or look-alike \"trusted\" host drives gpt-4o 0% to 100%. The attack is cheap, and its cost is three-level: paraphrasing a known mechanism is trivial (96% at 3 wordings), swapping the field inside a known-effective template is also cheap (up to 60%), while authoring a fresh page around a new mechanism is hard (0/130) -- the reusable asset is the template, not the mechanism. An ablation shows the mechanism is instruction/data confusion, not defeated alignment: removing the confidentiality policy leaves base attacks at 0% and moves reframing only 31.9% to 38.1%. What closes the gap is payload-blind checks: a destination allow-list (0%, when destinations are closed) and a capability-isolating planner/reader split (0%). A broad \"in any form\" policy clause also closes it at the acting model (to 0%) but is brittle (dropping the catch-all reopens it to 48.8%). A published fine-tuning defense (SecAlign, CCS 2025) does not close it on a tool agent (32.5%, positive-control-validated), nor does channel separation (38.8%); an output-normalizing guard loses to a held-out encoding (ROT13, 100%). Robustness comes from constraining the destination or isolating the capability, not from the acting model recognizing the attack."
     },
     {
       "id": "2608.27141",
@@ -116,7 +120,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Safety Does Not Compose: Non-Decaying Loop State for Autonomous LLM Agents》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "大型语言模型代理越来越多地部署为自治循环。从一个人类目标开始，这样的系统会反复发现工作、计划、执行工具调用、验证结果并在许多无人值守的迭代中保持状态。然而，广泛使用的代理防护措施是在单个轨迹上定义的，并且当下一个轨迹开始时，它们的安全状态会重新初始化。我们表明这是组合的失败而不是实现细节。我们的核心结果是分离：针对证据在多次迭代中分散的攻击，每个轨迹范围的监视器的真阳性率等于其假阳性率，无论它的表现力如何，因为它所需的证据永远不会出现在它看到的窗口中，而保留交叉迭代状态的监视器将两者完美分开。我们进一步表明，携带几何衰减风险评分的明显修复是不够的，因为耐心的对手必须等待的冷静期是一个常数，不会随着地平线 $N$ 的增长而增长。然后，我们提出了 LoopHarness，它可以在循环级别恢复持久的、不会衰减的安全状态。在调解提交和仲裁器检测层 $δ_M$ 下，它通过 $B+m-1+m/δ_M$（$N$ 中的常量）限制未经授权的不可逆操作的预期数量，其中 $B+m-1$ 项由无模型规则决定，因此可以在完全共谋的验证者中幸存下来。我们针对本机 Agent-SafetyBench 任务提供了完整的评估协议，其中包含配对的干净和攻击事件、外部状态攻击套件，其决定性证据仅存在于迭代、每个模块消融和自适应白盒红队中。",
       "topics": [
         "C-chain"
       ],
@@ -126,7 +130,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2608.27141",
-      "pdf": "https://arxiv.org/pdf/2608.27141"
+      "pdf": "https://arxiv.org/pdf/2608.27141",
+      "abstractEn": "Large language model agents are increasingly deployed as autonomous loops. Starting from one human goal, such a system repeatedly discovers work, plans, executes tool calls, verifies outcomes and persists state across many unattended iterations. The agent safeguards in wide use, however, are defined over a single trajectory, and their safety state is re-initialized when the next trajectory begins. We show that this is a failure of composition rather than an implementation detail. Our central result is a separation: against an attack whose evidence is fragmented across several iterations, every trajectory-scoped monitor has a true-positive rate equal to its false-positive rate, however expressive it is, because the evidence it would need never appears in the window it sees, whereas a monitor retaining cross-iteration state separates the two perfectly. We further show that the obvious repair of carrying a geometrically decaying risk score is insufficient, because the cooling-off period a patient adversary must wait is a constant that does not grow with the horizon $N$. We then present LoopHarness, which restores a persistent, non-decaying safety state at the loop level. Under mediated commits and an arbiter detection floor $δ_M$, it bounds the expected number of unauthorized irreversible actions by $B+m-1+m/δ_M$, a constant in $N$, of which the $B+m-1$ term is decided by a model-free rule and therefore survives a fully colluding verifier. We give a complete evaluation protocol on native Agent-SafetyBench tasks with paired clean and attacked episodes, an outer-state attack suite whose decisive evidence exists only across iterations, per-module ablations, and an adaptive white-box red team."
     },
     {
       "id": "2026-1820",
@@ -140,7 +145,7 @@
       ],
       "year": 2026,
       "venue": "CCS 2026",
-      "abstract": "协议/链上工作《Practical Silent Threshold Signatures and Silent Threshold Encryption for Dynamic Committees》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "静默阈值签名 (STS) 和加密 (STE) 无需交互式分布式密钥生成即可实现阈值加密，从而允许一组 $N$ 方以非交互方式生成联合公共签名验证密钥或加密密钥。然而，现代分布式系统（例如以太坊）依靠规模为 $n \\ll N$ 的小型动态变化委员会来提高效率，而现有的静默阈值方案要么无法支持这种动态设置，要么遭受严重的可扩展性问题。据我们所知，动态委员会唯一的先前 STS 构建 Dyna-hinTS 需要每轮 $O(N\\log N)$ 的聚合时间，将成本与全局系统规模而不是小型活跃委员会紧密耦合。此外，尚未提出针对动态委员会的 STE 方案。在这项工作中，我们为动态委员会提出了实用的静默门限签名和加密方案，降低了聚合成本，使其仅取决于委员会的大小 $n$。对于签名，我们重新设计了 Dyna-hinTS 框架，用线性配对检查和代表委员会的新多项式承诺替换其 Plonk 式 SNARK，从而产生 $O(n\\log^2n)$ 的聚合时间。我们还引入了第一个具有匹配效率的动态委员会静默阈值加密方案。我们进一步显着优化了先前 STS 和 STE 方案常见的静默设置阶段，将各方的一次性设置（即生成设置数据，称为“提示”）成本从 $O(N^2)$ 降低到 $O(N)$。我们在 Rust 中实现了我们的方案，结果证明了大规模的实用性。对于使用 $N = 2^{20}$ 和 $n = 2^{10}$ 参数化的系统，每方提示生成需要 197 秒，签名聚合需要 0.153 秒，比 Dyna-hinTS 提高了 $>1900\\times$。与此同时，我们的聚合签名大小、验证密钥大小和验证时间（可以访问纪元委员会表示）保持不变。",
       "topics": [
         "A"
       ],
@@ -148,7 +153,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1820",
-      "pdf": "https://eprint.iacr.org/2026/1820.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1820.pdf",
+      "abstractEn": "Silent threshold signatures (STS) and encryption (STE) enable threshold cryptography without interactive distributed key generation, allowing a group of $N$ parties to non-interactively generate a joint public signature verification key or an encryption key. However, modern distributed systems (such as Ethereum) rely on small, dynamically changing committees of size $n \\ll N$ for efficiency, and existing silent threshold schemes either fail to support this dynamic setting or suffer from severe scalability issues. To the best of our knowledge, the only prior STS construction for dynamic committees, Dyna-hinTS, requires an aggregation time of $O(N\\log N)$ per epoch, tightly coupling the cost to the global system size rather than the small active committee. Furthermore, no STE scheme for dynamic committees has been proposed yet. In this work, we present practical silent threshold signature and encryption schemes for dynamic committees, reducing the aggregation cost so that it depends only on the committee size $n$. For signatures, we redesign the Dyna-hinTS framework by replacing its Plonk-style SNARKs with linear pairing checks and a new polynomial commitment for representing the committee, yielding an aggregation time of $O(n\\log^2n)$. We also introduce the first silent threshold encryption scheme for dynamic committees with matching efficiency. We further significantly optimize the silent setup phase common to prior STS and STE schemes, reducing each party’s one-time setup (i.e., generating the setup data, referred to as a &#34;hint&#34;) cost from $O(N^2)$ to $O(N)$. We implement our schemes in Rust, and the results demonstrate practicality at scale. For a system parameterized with $N = 2^{20}$ and $n = 2^{10}$, the per-party hint generation takes 197 seconds, and signature aggregation takes 0.153 seconds, achieving a $&gt;1900\\times$ improvement over Dyna-hinTS. At the same time, our aggregated signature size, verification key size, and verification time (with access to the epoch committee representation) remain constant."
     },
     {
       "id": "2608.25206",
@@ -160,7 +166,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Authenticated Data Structures for Dynamic Workloads》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "我们引入了 Huffman-Merkle Tree (HMT)，这是一种用于动态工作负载的经过身份验证的数据结构 (ADS)，其中项目的访问频率可能有所不同，并且访问频率可能会随时间而变化。 ADS 允许通过对大型可变状态的短期承诺来证明项目成员身份，其应用程序包括可验证存储、互联网透明服务和区块链。无论是在理论上还是在实践中，在不断变化的接入频率下优化 ADS 性能之前都没有得到充分解决。 HMT 通过两种互补机制解决动态变化的访问偏差。第一个是基于霍夫曼编码的默克尔树布局，具有新颖的扩展来支持不断变化的访问频率。第二个是弹性分层机制，它将项目划分到不同的树上，例如热层和冷层，并在它们之间进行自适应迁移。这种方法的关键见解是将经常访问的项目放置在更靠近根的位置，同时将不经常访问的项目分配给逐渐更大、更深的树。这降低了总体频率加权访问成本。我们的方案旨在扩展到跨越数百万个项目的千兆字节数据。为了有效地处理动态性，批量应用布局更新，使用最小计数草图跟踪访问频率，并且系统在探索多个层迁移策略时采用层升级缓存。我们实施 HMT 并将其与以太坊的 Merkle Patricia Trie (MPT) ADS 及其提议的替代品统一二叉树 (UBT) 在现实世界数据上进行比较。我们的评估考虑两个指标：每次更新的哈希量和访问加权成员证明大小。后者捕获项目访问成本和频率。我们发现，最好的 HMT 策略使用的平均哈希操作分别比 MPT 和 UBT 少约 2.4 倍和 0.34 倍，并且证明的长度缩短了 0.18 倍和 0.55 倍。",
       "topics": [
         "A"
       ],
@@ -168,7 +174,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.25206",
-      "pdf": "https://arxiv.org/pdf/2608.25206"
+      "pdf": "https://arxiv.org/pdf/2608.25206",
+      "abstractEn": "We introduce the Huffman-Merkle Tree (HMT), an authenticated data structure (ADS) for dynamic workloads where items may differ in access frequencies, and access frequencies can change over time. An ADS allows proving item membership against a short commitment to a large mutable state, with applications including verifiable storage, Internet transparency services, and blockchains. Optimizing ADS performance under continuously changing access frequencies has not been fully addressed before, neither in theory nor in practice. HMT addresses dynamically changing access skew through two complementary mechanisms. The first is a Huffman-coding-based Merkle-tree layout, with a novel extension to support evolving access frequencies. The second is an elastic tiering regime that partitions items across separate trees, such as hot and cold tiers, with adaptive migration between them. The key insight in this approach is to place frequently accessed items closer to the root, while assigning less frequently accessed items to progressively larger and deeper trees. This reduces the overall frequency-weighted access cost. Our scheme is designed to scale to gigabytes of data spanning millions of items. To handle dynamism efficiently, layout updates are applied in batches, access frequencies are tracked using a count-min sketch, and the system employs a tier-promotion cache while exploring multiple tier-migration policies. We implement HMT and compare it on real-world data with Ethereum's Merkle Patricia Trie (MPT) ADS and its proposed replacement, the Unified Binary Tree (UBT). Our evaluation considers two metrics: the amount of hashing per update and access-weighted membership-proof size. The latter captures both item access cost and frequency. We find that the best HMT policy uses about 2.4x and 0.34x less average hash operations than MPT and UBT respectively, and has 0.18x and 0.55x shorter proofs."
     }
   ]
 }

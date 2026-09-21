@@ -13,7 +13,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Towards LLM-Enhanced Android Taint Analysis》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "污点分析是检测 Android 应用程序中敏感数据泄漏的基本技术。然而，由于准确建模 Android 框架的复杂性，传统静态工具（例如 FlowDroid）仍然面临着众所周知的挑战。在本文中，我们研究了现成的大型语言模型 (LLM) 是否可以有效地推理 Android 应用程序中的污点流。我们的初步方法依赖于代理交互策略，使法学硕士能够迭代地探索代码并推理数据流。我们对 FlowDroid 的 DroidBench 基准进行了初步评估，我们的方法优于基线：Gemini-3 Flash 的 F1 分数为 0.96，而 FlowDroid 的 F1 分数为 0.55。特别是，我们观察到具有挑战性的类别的改进，例如组件间通信（0.95 vs. 0.17）、隐式流（0.94 vs. 0.00）和反射（1.00 vs. 0.50），而 FlowDroid 通常在这些方面表现不佳。在一小部分实际应用程序中，基于 LLM 的方法还可以识别 FlowDroid 未报告的其他潜在数据泄漏。这些初步结果表明，LLM 推理可以有效地补充传统的静态污点分析，从而推动未来对混合 LLM 增强污点分析流程的研究。",
       "topics": [
         "C"
       ],
@@ -22,7 +22,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.24269",
-      "pdf": "https://arxiv.org/pdf/2608.24269"
+      "pdf": "https://arxiv.org/pdf/2608.24269",
+      "abstractEn": "Taint analysis is a fundamental technique for detecting sensitive data leaks in Android apps. However, traditional static tools, such as FlowDroid, still face well-known challenges due to the complexity of accurately modeling the Android framework. In this paper, we investigate whether off-the-shelf Large Language Models (LLMs) can effectively reason about taint flows in Android apps. Our preliminary approach relies on an agentic interaction strategy, enabling the LLM to iteratively explore code and reason about data flows. We conduct an initial evaluation on the DroidBench benchmark against FlowDroid, where our approach outperforms the baseline: Gemini-3 Flash achieves an F1-score of 0.96, compared to 0.55 for FlowDroid. In particular, we observe improvements in challenging categories such as inter-component communication (0.95 vs. 0.17), implicit flows (0.94 vs. 0.00), and reflection (1.00 vs. 0.50), where FlowDroid typically struggles. On a small set of real-world apps, the LLM-based approach also identifies additional potential data leaks not reported by FlowDroid. These preliminary findings suggest that LLM reasoning may effectively complement traditional static taint analysis, motivating future research on hybrid LLM-enhanced taint analysis pipelines."
     },
     {
       "id": "2608.22089",
@@ -42,7 +43,7 @@
       ],
       "year": 2026,
       "venue": "Software: evolution and process (02 June 2026)",
-      "abstract": "《On Predicting Vulnerability Severity Using In-Context Learning: An Industrial Case Study》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "现代软件系统需要更早、更可扩展的漏洞严重性评估，以减少高影响安全缺陷的暴露。安全分析师通常会分配 CVSS 分数，但这种手动分类不会随着已披露漏洞的增长而扩展，并且通常依赖于引发保密问题的云 LLM 服务。本文介绍了一个工业案例研究，涉及使用本地可部署的开源 LLM 的上下文学习直接从易受攻击的 C/C++ 代码片段预测 CVSS v3.1 分数。我们将专有数据与 Big-Vul 数据集进行比较，显示出充分一致的 CVSS 分布，以证明 Big-Vul 在构建基于提示的测试平台时可以作为工业数据的代理。然后，我们改变上下文配置和模型参数，使用均方误差 (MSE) 和可行性指标评估 CodeLlama2-7B、CodeLlama2-13B、Mistral-7B、gpt-oss 和 GPT4o-mini。我们的结果表明，中等规模的开源代码模型，特别是 CodeLlama2-7B，在轻量级、输出约束提示的指导下，可以接近 CVSS 回归的最佳云性能，为工业环境中的严重性分类提供实用、保护隐私的构建块。",
       "topics": [
         "C"
       ],
@@ -51,7 +52,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.22089",
-      "pdf": "https://arxiv.org/pdf/2608.22089"
+      "pdf": "https://arxiv.org/pdf/2608.22089",
+      "abstractEn": "Modern software systems require earlier and more scalable vulnerability severity assessment to reduce exposure to high-impact security flaws. Security analysts typically assign CVSS scores, but this manual triage does not scale with the growth of disclosed vulnerabilities and often depends on cloud LLM services that raise confidentiality concerns. This paper presents an industrial case study on predicting CVSS v3.1 scores directly from vulnerable C/C++ snippets using in-context learning with locally deployable, open-source LLMs. We compare proprietary data with the Big-Vul dataset, showing sufficiently aligned CVSS distributions to justify Big-Vul as a proxy for industrial data when constructing prompt-based testbeds. We then vary in-context configurations and model parameters, evaluating CodeLlama2-7B, CodeLlama2-13B, Mistral-7B, gpt-oss, and GPT4o-mini using mean squared error (MSE) and feasibility metrics. Our results show that medium-sized open-source code models, particularly CodeLlama2-7B, can approximate the best cloud performance for CVSS regression when guided by lightweight, output-constraining prompts, offering a practical, privacy-preserving building block for severity triage in industrial settings."
     },
     {
       "id": "2608.24498",
@@ -65,7 +67,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《SeriCrypt: An LLM-Driven Context-Aware Serialization Framework for Cryptographic Protocols》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "构建语法正确且加密有效的消息序列对于协议状态机学习、一致性测试和模糊测试至关重要。与明文协议不同，密码协议涉及复杂的跨消息状态依赖性和密码计算约束。现有的自动化方法主要针对基于文本或明文协议，而加密消息构造主要是手动的。我们推出了 SeriCrypt，这是一个用于加密协议的 LLM 驱动的上下文感知序列化框架。它采用大型语言模型将非结构化协议规范中的字段约束、状态依赖性和密码计算规则提取为统一的结构化中间表示，其形式上以密码协议领域特定语言 (CDSL) 为特征。与协议无关的执行引擎解析 CDSL 声明、自动执行字段值解析、加密原语调用和字节流序列化。作为协议安全测试的案例研究，我们使用该框架构建针对规范定义的安全约束的违规消息并支持协议模糊测试，并在 TLS 1.2/1.3、IKEv1/v2、SSH 和 TLCP 的主流实现上对其进行评估。 SeriCrypt 生成的消息序列被所有评估的实现接受，并在每个场景中完成握手。安全约束测试发现了五处规范违规问题，并且在相同的时间预算下，模糊测试比主流模糊测试器达到了更深的协议状态，代码覆盖率更高，展示了该框架对于密码协议安全测试的实用价值。",
       "topics": [
         "C-chain"
       ],
@@ -75,7 +77,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2608.24498",
-      "pdf": "https://arxiv.org/pdf/2608.24498"
+      "pdf": "https://arxiv.org/pdf/2608.24498",
+      "abstractEn": "Constructing syntactically correct and cryptographically valid message sequences is essential for protocol state machine learning, conformance testing, and fuzzing. Unlike plaintext protocols, cryptographic protocols involve complex cross-message state dependencies and cryptographic computation constraints. Existing automated approaches predominantly target text-based or plaintext protocols, leaving cryptographic message construction largely manual. We present SeriCrypt, an LLM-driven, context-aware serialization framework for cryptographic protocols. It employs a large language model to extract field constraints, state dependencies, and cryptographic computation rules from unstructured protocol specifications into a unified structured intermediate representation, formally characterized by a domain-specific language for cryptographic protocols (CDSL). A protocol-agnostic execution engine parses CDSL declarations, automating field value resolution, cryptographic primitive invocation, and byte-stream serialization. As case studies in protocol security testing, we use the framework to construct violation messages targeting specification-defined security constraints and to support protocol fuzzing, evaluating it on mainstream implementations of TLS 1.2/1.3, IKEv1/v2, SSH, and TLCP. SeriCrypt generated message sequences accepted by all evaluated implementations and completed handshakes in every scenario. Security constraint testing revealed five specification violations, and fuzzing reached deeper protocol states with higher code coverage than mainstream fuzzers under the same time budget, demonstrating the framework's practical value for cryptographic protocol security testing."
     },
     {
       "id": "2608.24857",
@@ -88,7 +91,7 @@
       ],
       "year": 2026,
       "venue": "CASCON 2026",
-      "abstract": "《Prompt Structure Redistributes, Not Reduces: An Empirical Analysis of Security-Weaknesses in LLM-Generated Python Code》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 越来越多地根据自然语言提示生成代码，使提示工程成为塑造生成软件安全性的关键机制。结构化和面向安全的提示被广泛用于鼓励更安全的代码，但它们的影响超出了检测到的弱点是否存在或不存在的范围。使用 424 个安全敏感的 Python 任务，我们在五个提示变体下使用 GPT-4o 和 LLaMA 3.1-8B 生成解决方案，逐步添加结构和安全指导，并使用 Bandit 和 CodeQL 沿着两个轴对其进行评估：生成合规性和安全漏洞普遍性、严重性和 CWE 分布。结构化提示大大减少了拒绝（例如，GPT-4o 无效输出从 424 个中的 338 个下降到 37-52 个），从而实现了大规模分析，但面向安全的改进并不能始终如一地降低总体弱点流行率。对于 GPT-4o，更强的提示主要是重新分配风险：高严重性发现下降（20.8% 至 13.6%），而低严重性发现上升（32% 至 43.5%）； LLaMA 显示出较弱、不太一致的变化。我们还观察到安全驱动的语义漂移，其中更严格的提示会默默地删除或重写明确请求的不安全结构。总体而言，提示结构提高了合规性，但在法学硕士辅助开发中并不能可靠地替代强大的安全控制。",
       "topics": [
         "C"
       ],
@@ -97,7 +100,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.24857",
-      "pdf": "https://arxiv.org/pdf/2608.24857"
+      "pdf": "https://arxiv.org/pdf/2608.24857",
+      "abstractEn": "Large Language Models (LLMs) increasingly generate code from natural-language prompts, making prompt engineering a key mechanism for shaping the security of generated software. Structured and security-oriented prompts are widely used to encourage safer code, yet their effects extend beyond whether detected weaknesses are simply present or absent. Using 424 security-sensitive Python tasks, we generate solutions with GPT-4o and LLaMA 3.1-8B under five prompt variants that progressively add structural and security guidance, and evaluate them with Bandit and CodeQL along two axes: generation compliance and security weakness prevalence, severity, and CWE distributions. Structured prompting substantially reduces refusals (e.g., GPT-4o invalid outputs drop from 338 of 424 to 37-52), enabling large-scale analysis, but security-oriented refinements do not consistently reduce overall weakness prevalence. For GPT-4o, stronger prompts primarily redistribute risk: high-severity findings fall (20.8% to 13.6%) while low-severity findings rise (32% to 43.5%); LLaMA shows weaker, less consistent shifts. We also observe security-driven semantic drift, where stricter prompts silently remove or rewrite explicitly requested unsafe constructs. Overall, prompt structure improves compliance but is an unreliable substitute for robust security controls in LLM-assisted development."
     },
     {
       "id": "2608.22812",
@@ -111,7 +115,7 @@
       ],
       "year": 2026,
       "venue": "ICNP 2026",
-      "abstract": "《The Surprising Effectiveness of LLMs in BGP Security: Mining An Unprecedented Amount of Incidents and Boosting Anomaly Detection》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "边界网关协议 (BGP) 安全对于互联网基础设施至关重要，但由于公开事件数据集的稀缺（仅包含 18 个记录案例），路由异常检测的进展受到限制。我们观察到公共运营商邮件列表（例如 NANOG 和 AusNOG）包含大量但大部分尚未开发的现实世界路由异常报告。为了利用这个来源，我们开发了一个 LLM 辅助的提取管道，可以从历史讨论线程中识别 244 个候选事件。经过专家验证，我们策划了一个包含 232 个已确认路由异常事件的验证基准，使其比现有数据集大 11.89 倍。使用这个基准，我们表明现有的路由异常检测系统对于各种现实世界事件的泛化能力很差。同时，我们发现一些没有特定于路由的自适应的通用LLM可以识别路由异常的子集，但它们的性能因模型而异，并且仍然不足以进行可靠的路由异常检测。受这一观察的启发，我们设计了 ROUTELLM，这是一种基于 LLM 的路由异常检测器，集成了 BGP 语义感知标记化、路由域自适应和时间感知路由证据检索。实验结果表明，ROUTELLM 的事件级准确率达到 87.13%，消息级准确率达到 94.65%，分别比最强基线高出 55.30% 和 68.50%。我们开源了经过验证的路由异常基准、微调模型和实现代码，以支持未来 BGP 安全性的研究。",
       "topics": [
         "C"
       ],
@@ -120,7 +124,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.22812",
-      "pdf": "https://arxiv.org/pdf/2608.22812"
+      "pdf": "https://arxiv.org/pdf/2608.22812",
+      "abstractEn": "Border Gateway Protocol (BGP) security is critical to Internet infrastructure, yet progress in routing anomaly detection has been limited by the scarcity of publicly available incident datasets, which contain only 18 recorded cases. We observe that public operator mailing lists, e.g., NANOG and AusNOG, contain abundant yet largely untapped reports of real-world routing anomalies. To leverage this source, we develop an LLM-assisted extraction pipeline that identifies 244 candidate incidents from historical discussion threads. After expert validation, we curate a verified benchmark containing 232 confirmed routing anomaly events, making it 11.89X larger than existing dataset. Using this benchmark, we show that existing routing anomaly detection systems generalize poorly to diverse real-world incidents. At the same time, we find that some general-purpose LLMs without routing-specific adaptation can identify a subset of routing anomalies, but their performance varies across models and remains insufficient for reliable routing anomaly detection. Motivated by this observation, we design ROUTELLM, an LLM-based routing anomaly detector that integrates BGP-semantic-aware tokenization, routing-domain adaptation, and time-aware routing evidence retrieval. Experimental results show that ROUTELLM achieves 87.13% event-level accuracy and 94.65% message-level accuracy, outperforming the strongest baselines by 55.30% and 68.50%, respectively. We open-source the verified routing anomaly benchmark, fine-tuned model, and implementation code to support future research on BGP security."
     },
     {
       "id": "2608.23897",
@@ -131,7 +136,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Names Can Hurt: Spotting Slopsquatting Risks Caused by Package Name Hallucinations in Local Coding LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "当代码生成语言模型伪造 Python 包名称时，在 PyPI 上预先注册该名称的对手可以将该幻觉转换为供应链妥协。这一事件被称为“slopsquatting”。我们提出了一个两层检测器来解决这个问题。第一层执行确定性 PyPI 存在性检查。第二个是随机森林分类器，它基于从包名称及其 PyPI 元数据派生的 10 个特征进行训练。导入名称协调器将两者联系起来，解决诸如“import cv2”与“pip install opencv-python”之类的情况，而无需安全绕过。该检测器嵌入在 LangGraph 状态机中，该状态机会在温度升高时重试，并在重复失败时路由到更强大的后备模型。在 300 个精心策划的提示中，该管道在 76% 的运行中生成了无幻觉的代码。主节点用尽了 28.7% 的重试预算；模型内重试恢复了大约四分之一，跨模型回退则恢复了剩余的 16.5%。观察到四项发现。首先，一半被标记的幻觉是已经在 PyPI 上注册的包，作为知名项目的低质量相似物，被分类器而不是确定性层捕获（例如 pil、faiss、tabula、haystack）。其次，幻觉率几乎与即时对抗性成线性关系，从常规编码的 0% 到 10% 到 slopsquat 诱饵的 40% 到 73%。第三，较弱的初选在没有帮助的情况下拒绝了 10 个直接诱饵中的 6 个，这表明最近的指令调整提供了基线防御。第四，当主设备和后备设备共用一个型号系列时，大约 84% 的主设备故障会在后备设备上重复出现，从而促进跨系列配对。一项用户研究 (n = 24) 报告显示，平均满意度为 5 人中的 4.4 人，以及 24 人中表示采用意图的 21 人。",
       "topics": [
         "C"
       ],
@@ -140,7 +145,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.23897",
-      "pdf": "https://arxiv.org/pdf/2608.23897"
+      "pdf": "https://arxiv.org/pdf/2608.23897",
+      "abstractEn": "When a code generating language model fabricates a Python package name, an adversary who has pre-registered that name on PyPI can convert that hallucination into a supply chain compromise. This event has been termed as 'slopsquatting'. We propose a two layer detector to counter this issue. The first layer performs a deterministic PyPI existence check. The second is a Random Forest classifier trained on ten features derived from the package name and its PyPI metadata. An import name reconciler bridges the two, resolving cases such as 'import cv2' versus 'pip install opencv-python' without a security bypass. The detector is embedded in a LangGraph state machine that retries at escalating temperatures and, on repeated failure, routes to a stronger fallback model. Across 300 curated prompts, the pipeline produces hallucination free code on 76% of runs. The primary exhausts its retry budget on 28.7%; intra model retries recover roughly a quarter of those, and cross model fallback recovers a further 16.5% of the remainder. Four findings have been observed. First, half of the flagged hallucinations are packages already registered on PyPI, as low quality lookalikes of well known projects, caught by the classifier rather than the deterministic layer (e.g., pil, faiss, tabula, haystack). Second, hallucination rate scales almost linearly with prompt adversariality, from 0 to 10% on routine coding to 40 to 73% on slopsquat baits. Third, the weaker primary refused 6 of 10 direct baits unaided, suggesting recent instruction tuning provides a baseline defense. Fourth, when primary and fallback share a model family, approximately 84% of primary failures recur on the fallback, motivating cross family pairing. A user study (n = 24) reports mean satisfaction 4.4 out of 5 and 21 of 24 stated adoption intent."
     },
     {
       "id": "2026-1778",
@@ -150,7 +156,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《HOVER: Higher-Order Vanishing Endomorphism Recovery》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "Hemmert 和 Wiemers 在 CRYPTO 2026 上提出的高阶消失 (HOV) 区分了 Goppa 代码，最近已扩展到 McEliece 密钥恢复。我们引入了 HOV 的新变体，HOVER（高阶消失同态恢复），它用更快的线性代数步骤取代了 HOV 昂贵的低秩方向搜索阶段。我们的攻击基于这样的观察：公共 HOV 内核的第一对立方程（一阶偏导数的系数矩阵）定义了一个收缩张量； HOVER 计算保留该张量所有关系的系数自同态。在干净的情况下，标量扩展的 HOV 核正好由 $m$ 隐藏的 Frobenius 方向跨越，这个公共代数是 $\\mathbb{F}_{2^m}$，并且场生成器的特征空间正是这些方向，已经由 Frobenius 排序。我们给出了基不变的构造、其可能的矩阵代数输出的结构分类，以及返回 $\\bot$ 而不是未经认证的输出的显式接受条件。在我们的端到端公开实验中，我们恢复了五个技术创新研究所 (TII) McEliece 挑战的密钥，其中包括 TII-252，其标签最初代表 $2^{252}$ 暴力枚举模型。然而，我们的分析并不表明 HOVER 会威胁到目前形式的 Classic McEliece 参数。最后，我们注意到 HOVER 的主要密码分析捷径是通过大型语言模型发现的，强调了人工智能密码分析的强大潜力。",
       "topics": [
         "A"
       ],
@@ -159,7 +165,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1778",
-      "pdf": "https://eprint.iacr.org/2026/1778.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1778.pdf",
+      "abstractEn": "Higher-Order Vanishing (HOV), introduced by Hemmert and Wiemers at CRYPTO 2026, distinguishes Goppa codes and was recently extended to McEliece key recovery. We introduce a new variant of HOV, HOVER (Higher-Order Vanishing Endomorphism Recovery), that replaces the costly low-rank direction-search phase of HOV with a much faster linear algebra step. Our attack is based on the observation that the first catalecticants---the coefficient matrices of first partial derivatives---of the public HOV kernel define a contraction tensor; HOVER computes the coefficient endomorphisms that preserve all relations of this tensor. In the clean case, in which the scalar-extended HOV kernel is spanned by exactly the $m$ hidden Frobenius directions, this public algebra is $\\mathbb{F}_{2^m}$, and the eigenspaces of a field generator are exactly those directions, already ordered by Frobenius. We give a basis-invariant construction, a structural classification of its possible matrix-algebra outputs, and explicit acceptance conditions that return $\\bot$ rather than an uncertified output. During our end-to-end public-only experiments, we recovered keys for five Technology Innovation Institute (TII) McEliece challenges, including TII-252, whose label originally represented a $2^{252}$ brute-force enumeration model. However, our analysis does not indicate HOVER would threaten Classic McEliece parameters in its present form. Lastly, we note that HOVER's main cryptanalytic shortcut was discovered with a large language model, underscoring the strong potential of AI cryptanalysis."
     },
     {
       "id": "2608.21101",
@@ -178,7 +185,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《ClawSentry: A Progressive Multi-Tier Security Monitor for Safeguarding Autonomous LLM Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "随着大型语言模型 (LLM) 代理从对话转向执行代码、读取本地文件和编排外部工具，被恶意第三方技能劫持的单个代理可能会导致数据泄露、权限升级或级联危害。我们认为主体风险是渐进的：它可以进入主体控制循环的四个位置——技能准入、调用时意图、执行时效果和行动后结果——而被拒绝的危险目标可以通过表面形式、工具或转弯重新出现；现有的防护措施通常只针对一个生命周期边界或一次调用。在此威胁模型的指导下，我们推出了 ClawSentry，这是一个用于代理运行时的开源、与框架无关的安全监管网关。在执行技能包之前，首次使用技能包审核 (FSPR) 会在确定性证据基础下对其进行审核，将未解决的案例升级为有界只读代理审核（轨迹 A）。在运行时，一个三层渐进式决策引擎——确定性的 L1 层、规则锚定的 L2 语义审查器和只读的 L3 证据寻求代理——仅对残余歧义进行上下文审查，而会话级反绕过机制识别工具切换和改写重试（位点 B--C）；行动后路径将高度严重的证据非追溯性地提供给以后的审查（轨迹D）。代理线束协议 (AHP) 抽象在 Codex、Claude Code、Kimi CLI 和 Gemini CLI 中应用一项策略，而无需修改代理内部结构。在 Codex/GPT-5.4 的 SkillInject 上，上下文 ASR 从 39.55% 下降到 2.61%，而上下文 TSR 仅从 83.78% 上升到 83.05%。在完整技能安全基准上的五个工作代理中，ClawSentry 将未受保护的 ASR 从 33.5--49.7% 限制为 9.09--15.03%，清洁技能的总 TSR 保持在 98.7%。",
       "topics": [
         "C"
       ],
@@ -189,7 +196,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.21101",
-      "pdf": "https://arxiv.org/pdf/2608.21101"
+      "pdf": "https://arxiv.org/pdf/2608.21101",
+      "abstractEn": "As large language model (LLM) agents move from conversation to executing code, reading local files, and orchestrating external tools, a single agent hijacked by a malicious third-party skill can cause data exfiltration, privilege escalation, or cascading compromise. We argue that agentic risk is progressive: it can enter at four loci of the agent control loop--skill admission, invocation-time intent, execution-time effect, and post-action consequence--while a denied dangerous objective can reappear across surface forms, tools, or turns; existing safeguards are typically local to one lifecycle boundary or one call. Guided by this threat model, we present ClawSentry, an open-source, framework-agnostic security supervision gateway for agent runtimes. Before a skill package is ever executed, First-use Skill Package Review (FSPR) audits it under a deterministic evidence floor, escalating unresolved cases to bounded read-only agentic review (locus A). At runtime, a three-tier progressive decision engine--a deterministic L1 layer, a rule-anchored L2 semantic reviewer, and a read-only L3 evidence-seeking agent--spends contextual review only on the residual ambiguity, while a session-level anti-bypass mechanism recognizes tool-switching and rephrased retries (loci B--C); a post-action path feeds high-severity evidence non-retroactively into later review (locus D). An Agent Harness Protocol (AHP) abstraction applies one policy across Codex, Claude Code, Kimi CLI, and Gemini CLI without modifying agent internals. On SkillInject with Codex/GPT-5.4, contextual ASR falls from 39.55% to 2.61% while contextual TSR moves only from 83.78% to 83.05%. Across five Work Agents on the full SkillsSafety benchmark, ClawSentry confines ASR to 9.09--15.03% from 33.5--49.7% unprotected, and aggregate TSR on clean skills remains 98.7%."
     },
     {
       "id": "2608.22868",
@@ -201,7 +209,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《AgentFlow: A Flow-Centric Policy Language and Framework for Securing LLM Agent Systems》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "LLM 代理越来越多地读取不受信任的内容、调用外部工具、访问私有数据并将工作委托给其他代理。危害通常不是由单个不安全操作引起的，而是由敏感数据在一系列看似合理的步骤中的流动引起的。我们提出了 AgentFlow，一种以流为中心的策略语言和运行时执行模型，用于指定数据在代理系统中的传输位置。策略是在标记的运行时边缘上定义的，并限制哪些工具可以接收敏感字段，哪些接收器可以接收发布的数据，以及哪些权限可以跨越委托边界。该语言支持流和路径规则、任务范围的功能、受控发布和有状态污点语义。运行时参考监视器协调代理操作，基于有界 SMT 的验证器检查结构化策略片段的安全属性。我们在多个代理基准上评估 AgentFlow。在我们的原型中，七个安全属性在 0.5 秒内得到验证，并且验证器捕获我们研究中的所有种子不安全策略变体。在四个套件中的 949 个 AgentDojo 注入案例中，AgentFlow 将确认的危害从 33.0\\% 减少到 0.0\\%，同时将聚合效用从 46.7\\% 提高到 63.3\\%。在 200 个案例的 AgentDyn Dailylife 基准上，它将确认的妥协从 73.5\\% 减少到 0.0\\%，同时保持接近基线的实用性（44.5\\% 到 43.5\\%）。对 ASB、I​​njecAgent、BIPIA、AgentHarm 和 MCPTox 重放的广度检查表明，配置的策略会阻止基准指定的策略可见的攻击流；在 ASB 的直接提示注入工具中，攻击成功率为 0/1{,}200。这些结果是初步的，适用于建模的策略可见代理行为和评估基准。",
       "topics": [
         "C-chain"
       ],
@@ -212,7 +220,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2608.22868",
-      "pdf": "https://arxiv.org/pdf/2608.22868"
+      "pdf": "https://arxiv.org/pdf/2608.22868",
+      "abstractEn": "LLM agents increasingly read untrusted content, invoke external tools, access private data, and delegate work to other agents. Harm often arises not from a single unsafe action but from the flow of sensitive data across a sequence of otherwise plausible steps. We present AgentFlow, a flow-centric policy language and runtime enforcement model for specifying where data may travel in agent systems. Policies are defined over labeled runtime edges and constrain which tools may receive sensitive fields, which sinks may receive released data, and what authority may cross delegation boundaries. The language supports flow and path rules, task-scoped capabilities, controlled release, and stateful taint semantics. A runtime reference monitor mediates agent actions, and a bounded SMT-based verifier checks safety properties for a structured policy fragment. We evaluate AgentFlow on multiple agent benchmarks. In our prototype, seven safety properties verify in under 0.5 seconds each, and the verifier catches all seeded unsafe policy variants in our study. On 949 AgentDojo injected cases across four suites, AgentFlow reduces confirmed compromise from 33.0\\% to 0.0\\% while improving aggregate utility from 46.7\\% to 63.3\\%. On a 200-case AgentDyn Dailylife benchmark, it reduces confirmed compromise from 73.5\\% to 0.0\\% while preserving near-baseline utility (44.5\\% to 43.5\\%). Breadth checks across ASB, InjecAgent, BIPIA, AgentHarm, and MCPTox replays suggest that the configured policies block the benchmark-specified policy-visible attacker flows; in ASB's direct-prompt-injection harness, attack success is 0/1{,}200. These results are preliminary and scoped to the modeled policy-visible agent behaviors and evaluated benchmarks."
     },
     {
       "id": "2608.23763",
@@ -225,7 +234,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《TrustShiftProbe: Characterizing, Benchmarking, and Defending Staged Trust Attacks on MCP Servers》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "模型上下文协议 (MCP) 已成为连接大型语言模型代理与外部工具后端的标准层。 This openness introduces a severe server-side threat we term TrustShift: a compromised MCP server behaves benignly during an initial conditioning phase, building operational reliance and suppressing agent skepticism, before switching to an adversarial payload once an interaction threshold is reached. The evasion is temporal, not syntactic: benign at deploy time, the server's defection is invisible to predeployment static analysis, which sees only the honest phase.Switched payloads range from overt structural violations to schema-valid manipulations, the latter preserving outer protocol compliance to evade runtime middleware filters.至关重要的是，TrustShift 起源于服务器控制的工具通道，而不是用户提示（与间接提示注入不同）或传输（与中间人不同）：对手是受信任的服务器端点本身。我们引入了 TrustShiftProbe，这是一个评估和防御框架，有四个贡献：（1）代理服务器生命周期的状态时间威胁模型，作为良性调节阶段，然后在信任范围内进行对抗性背叛； (2) 与语言无关的攻击引擎，将每个变体实例化为跨四个生产域的受感染 MCP 服务器； (3) SHIELD，MCP 传输边界的多层、零预言机运行时防御，可根据干净信任窗口期间学习到的行为基线审核服务器有效负载； (4) 九种 TrustShift 变体的分类，涵盖三种执行机制（结构违规、语义损坏、范围扩展）和三种对抗目标（破坏、渗透及其组合）。在前沿专有和开放权重模型中，TrustShift 攻击的平均攻击成功率为 69.5%，而 SHIELD 将其降低至 42.7%。",
       "topics": [
         "C-chain"
       ],
@@ -234,7 +243,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2608.23763",
-      "pdf": "https://arxiv.org/pdf/2608.23763"
+      "pdf": "https://arxiv.org/pdf/2608.23763",
+      "abstractEn": "The Model Context Protocol (MCP) has emerged as the standard layer connecting Large Language Model agents to external tool backends. This openness introduces a severe server-side threat we term TrustShift: a compromised MCP server behaves benignly during an initial conditioning phase, building operational reliance and suppressing agent skepticism, before switching to an adversarial payload once an interaction threshold is reached. The evasion is temporal, not syntactic: benign at deploy time, the server's defection is invisible to predeployment static analysis, which sees only the honest phase. Switched payloads range from overt structural violations to schema-valid manipulations, the latter preserving outer protocol compliance to evade runtime middleware filters. Crucially, TrustShift originates in the server-controlled tool channel, not user prompts (unlike indirect prompt injection) or the transport (unlike man-in-the-middle): the adversary is the trusted server endpoint itself. We introduce TrustShiftProbe, an evaluation and defense framework with four contributions: (1) a stateful temporal threat model of the agent-server lifecycle as a benign conditioning phase followed by an adversarial defection at a trust horizon; (2) a language-agnostic attack engine that instantiates each variant as a compromised MCP server across four production domains; (3) SHIELD, a multi-tier, zero-oracle runtime defense at the MCP transport boundary that audits server payloads against behavioral baselines learned during clean trust windows; and (4) a taxonomy of nine TrustShift variants spanning three execution mechanisms (structural violation, semantic corruption, scope expansion) and three adversarial objectives (disruption, exfiltration, and their combination). Across frontier proprietary and open-weight models, TrustShift attacks achieve a 69.5% mean attack success rate that SHIELD mitigates to 42.7%."
     },
     {
       "id": "2608.22276",
@@ -247,7 +257,7 @@
       ],
       "year": 2026,
       "venue": "ICPP 2026",
-      "abstract": "协议/链上工作《Scalable Exact Path Selection via Structure-Aware Search for Virtual Payment Channels》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "Virtual Payment Channels (VPCs) enable efficient off-chain transactions in Payment Channel Networks (PCNs), but their performance depends on selecting high-quality underlying paths.现有方法要么依赖于简化的指标，要么会产生高昂的计算成本。我们研究了广义单调度量下的 VPC 路径选择，并提出了一种基于四叉树搜索的结构感知精确求解器。 By exploiting monotonicity and distance plateau properties, our method prunes large regions of the capacity-constrained search space while preserving optimality, significantly reducing the number of shortest-path computations.我们进一步用综合经济成本和安全风险的综合指标实例化该框架，从而实现跨应用场景的灵活权衡。对合成图和现实世界闪电网络拓扑（最多 12,552 个节点）的实验表明，与之前的工作相比，速度提高了 2--5 个数量级，并且延迟始终低于 100 毫秒。",
       "topics": [
         "A"
       ],
@@ -255,7 +265,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.22276",
-      "pdf": "https://arxiv.org/pdf/2608.22276"
+      "pdf": "https://arxiv.org/pdf/2608.22276",
+      "abstractEn": "Virtual Payment Channels (VPCs) enable efficient off-chain transactions in Payment Channel Networks (PCNs), but their performance depends on selecting high-quality underlying paths. Existing approaches either rely on simplified metrics or incur high computational cost. We study VPC path selection under generalized monotone metrics and propose a structure-aware exact solver based on quadtree search. By exploiting monotonicity and distance plateau properties, our method prunes large regions of the capacity-constrained search space while preserving optimality, significantly reducing the number of shortest-path computations. We further instantiate the framework with a composite metric that integrates economic cost and security risk, enabling flexible trade-offs across application scenarios. Experiments on synthetic graphs and real-world Lightning Network topologies (up to 12,552 nodes) show 2--5 orders of magnitude speedup over prior work, with consistent sub-100ms latency."
     },
     {
       "id": "2608.22525",
@@ -267,7 +278,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《On SSI-based Private Decentralized Bidding》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "私人投标是参与者提交密封投标的过程，确保其内容在投标窗口期间对其他投标人隐藏。这在竞争环境中至关重要，以确保对所有提案进行公平和独立的评估。虽然（公共）区块链可以实现去中心化投标，并且其透明度提供了公共可验证性等优势，但在没有可信第三方（TTP）的情况下，目前的方法很难验证投标人是否符合资格。我们提出了一个利用自主主权身份 (SSI) 的框架，通过使用现已建立的 SSI 框架来验证投标的资格和真实性来解决这些问题。为了让参与者证明他们满足要求，同时对投标保密，我们的模型使用可验证凭证 (VC) 和零知识证明 (ZKP) 等加密原语。",
       "topics": [
         "A"
       ],
@@ -275,7 +286,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.22525",
-      "pdf": "https://arxiv.org/pdf/2608.22525"
+      "pdf": "https://arxiv.org/pdf/2608.22525",
+      "abstractEn": "Private bidding is a process in which participants submit sealed bids, ensuring that their content remains hidden from other bidders during the bidding window. This is essential in competitive environments to ensure a fair and independent evaluation of all proposals. While (public) blockchain enables decentralized bidding and its transparency offers advantages such as public verifiability, without a Trusted Third Party (TTP), current methods struggle to verify whether a bidder is eligible. We propose a framework that leverages Self-Sovereign Identity (SSI) to address these issues by certifying the bid's eligibility and authenticity using the now-established SSI framework. To allow participants to prove they meet the requirements while keeping their bids secret, our model uses Verifiable Credentials (VCs) and cryptographic primitives such as Zero-Knowledge Proofs (ZKPs)."
     }
   ]
 }

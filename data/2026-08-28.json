@@ -13,7 +13,7 @@
       ],
       "year": 2026,
       "venue": "ISSRE 2026",
-      "abstract": "《KubeCap: A Framework for Capability Minimization in Kubernetes via Static Analysis and LLM-Assisted Rule Inference》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "作为使用最广泛的容器编排平台，Kubernetes 允许开发人员通过清单文件管理 Linux 功能，从而提供灵活的权限配置。然而，开发人员在实践中依赖默认设置或粗粒度的安全上下文，违反了最小权限原则，扩大了容器化工作负载的攻击面。现有的研究要么检测 Kubernetes 清单中的漏洞模式，要么推断独立 Linux 程序所需的功能，但它们并没有直接解决 Kubernetes 中的功能最小化问题。为了弥补这一差距，我们首先对三个开源数据集进行了实证研究，发现 74.67% 的项目缺乏能力配置。受我们观察的启发，我们提出了 KubeCap，一个 Kubernetes 能力最小化的框架。 KubeCap 将部署规范转换为确定性清单，定位容器入口点，执行可达性引导的系统调用分析，并利用 LLM 辅助规则规范从 Linux 内核代码导出系统调用-参数-功能关系。根据这些结果，KubeCap 推断每个工作负载所需的最小功能集，并自动生成修复的清单。对 10 个具有代表性的基于 Go 的 Kubernetes 项目进行评估，平均能力缩减率为 54.97%，在保持实用分析成本的同时，优于快速类型分析和类层次结构分析基线。这些结果证明了 KubeCap 在 Kubernetes 中强制执行最小特权方面的有效性。",
       "topics": [
         "C"
       ],
@@ -23,7 +23,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.26699",
-      "pdf": "https://arxiv.org/pdf/2608.26699"
+      "pdf": "https://arxiv.org/pdf/2608.26699",
+      "abstractEn": "As the most widely used container orchestration platform, Kubernetes provides flexible privilege configuration by allowing developers to manage Linux capabilities via manifest files. However, developers rely on default settings or coarse-grained security contexts in practice, violating the principle of least privilege and enlarging the attack surface of containerized workloads. Existing studies either detect vulnerable patterns in Kubernetes manifests or infer required capabilities for standalone Linux programs, but they do not directly address capability minimization in Kubernetes. To bridge this gap, we first conduct an empirical study on three open-source datasets, revealing that 74.67% of projects lack capability configurations. Motivated by our observations, we propose KubeCap, a framework for Kubernetes capability minimization. KubeCap translates deployment specifications into deterministic manifests, locates container entrypoints, performs reachability-guided system call analysis, and leverages LLM-assisted rule specification to derive syscall--parameter--capability relations from Linux kernel code. Based on these results, KubeCap infers the minimal capability set required by each workload and automatically generates repaired manifests. Evaluation on 10 representative Go-based Kubernetes projects shows an average capability reduction rate of 54.97%, outperforming rapid type analysis and class hierarchy analysis baselines while maintaining practical analysis cost. These results demonstrate KubeCap's effectiveness in enforcing least privilege in Kubernetes."
     },
     {
       "id": "2608.25730",
@@ -39,7 +40,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《From Verdict to Diagnosis: Attributable Security Review of Pull Requests》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "自动代码审查器越来越多地用作拉取请求 (PR) 的大门，但评估会衡量它们是否阻止恶意更改。阻止可能是由不相关的问题触发的，而不是由导致 PR 不安全的漏洞触发的；修复报告的问题可以使目标缺陷可被利用。我们将这种差异称为“判决与诊断”(VD) 差距。我们推出了 MalPR-Bench，这是一个基于机制的基准，包含 44 个存储库和 8 个语言系列中的 89 个恶意 PR 和 50 个配对良性对照。每个恶意案例都有一个预先提交的标题，指定目标漏洞、接受的机制描述、所需的存储库证据以及不予认可的偏离目标的发现。审查针对判决正确性、目标漏洞识别和证据验证分别进行评分；一个可归因块需要全部三个。我们引入 PRGuard，这是一个可归因的 PR 安全审查者，它构建候选漏洞并使用确定性、非执行工具和有界检索根据存储库证据验证其前提。在 31 个共同覆盖的恶意 PR 中，PRGuard 和 CodeRabbit 产生了类似的阻止总数（22/31 vs.24/31），但 PRGuard 识别出 22 个目标漏洞，而 CodeRabbit 识别出 16 个目标漏洞，相差 1.38 倍。在 14 个缺勤类型的案例中，均为块 9，而 PRGuard 识别出 9 个目标，而不是 3 个。当所需证据位于所触及的文件内时，CodeRabbit 识别出 16/24 个目标，而当验证需要文件外部的证据时，CodeRabbit 识别出 0/7 个目标。最后，PRGuard 发现了五个项目中 12 个之前未公开的、概念验证支持的漏洞。 PRGuard/DeepSeek 和 CodeRabbit 都阻止 10/12 发现 PR，但分别产生 10/12 和 4/12 归因块。因此，仅做出裁决的评估可能会大大夸大自动审查的安全价值。",
       "topics": [
         "A"
       ],
@@ -47,7 +48,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.25730",
-      "pdf": "https://arxiv.org/pdf/2608.25730"
+      "pdf": "https://arxiv.org/pdf/2608.25730",
+      "abstractEn": "Automated code reviewers are increasingly used as gates on pull requests (PRs), yet evaluations measure whether they block a malicious change. A block may be triggered by an unrelated issue rather than the vulnerability that makes the PR unsafe; fixing the reported issue can leave the target defect exploitable. We call this discrepancy the Verdict-Diagnosis (VD) gap. We present MalPR-Bench, a mechanism-grounded benchmark of 89 malicious PRs and 50 paired benign controls across 44 repositories and eight language families. Each malicious case has a pre-committed rubric specifying the target vulnerability, accepted mechanism descriptions, required repository evidence, and off-target findings receiving no credit. Reviews are scored separately for verdict correctness, target-vulnerability identification, and evidence validation; an attributable block requires all three. We introduce PRGuard, an attributable PR security reviewer that constructs candidate vulnerabilities and validates their premises against repository evidence using deterministic, non-executing tools and bounded retrieval. Across 31 common-coverage held-out malicious PRs, PRGuard and CodeRabbit produce similar blocking totals (22/31 vs. 24/31), but PRGuard identifies 22 target vulnerabilities versus 16 for CodeRabbit, a 1.38x difference. On 14 absence-type cases, both block 9, while PRGuard identifies 9 targets versus 3. CodeRabbit identifies 16/24 targets when required evidence lies within touched files and 0/7 when validation requires evidence outside them. Finally, PRGuard uncovers twelve previously undisclosed, proof-of-concept-backed vulnerabilities across five projects. PRGuard/DeepSeek and CodeRabbit both block 10/12 discovery PRs, but produce 10/12 and 4/12 attributable blocks, respectively. Thus, verdict-only evaluation can substantially overstate the security value of automated review."
     },
     {
       "id": "2608.26588",
@@ -60,7 +62,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Unsaid, Unsafe? Implicit Security Obligations in LLM-Based RTL Code Generation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 生成寄存器传输级 (RTL) 代码，并快速提高功能正确性。然而，LLM 生成的代码的安全性主要针对软件进行了研究，在部署后仍然可以修补缺陷。一旦流片到硅片上，不安全的 RTL 就无法提供此类补救措施。我们构建了 SECRTL-GEN，这是一种基于真实 SoC IP 的多语言资源访问安全基准：五个 CWE 系列和四个 HDL（Verilog、SystemVerilog、VHDL 和 Python）的 392 个任务，每个都有黑盒功能和安全测试平台。功能规范有意省略安全义务，这与实践中经常将义务排除在功能文档之外的方式相匹配。对五个前沿法学硕士的实证研究显示出巨大的差距：在普通提示下，他们在大约 73-79% 的情况下通过了功能测试，但只有 14-35% 的安全测试，而且更强的功能模型并不更安全。添加 CWE 知识可以提高安全性，而独立的自我思考帮助较小，并且两种面向安全的提示都会降低功能通过率，这表明瓶颈在于规范中缺少弱点意识，而不是无法编写防御性 RTL。我们提出了 RTL-Obliger，一个推断这些隐含义务的神经符号框架。法学硕士从说明书中提取功能语义图；然后，符号引擎将其与 CWE 模式本体进行匹配，以揭示缓解证据差距和信号级义务；法学硕士最终根据这些义务在保留功能的两阶段生成中修改了 RTL。在五种模型和四种语言中，RTL-Obliger 将平均全通率从 49.6-51.4% (SecV/RESCUE) 提高到 61.6%，安全性和功能率比这些安全生成基准更高。",
       "topics": [
         "C"
       ],
@@ -69,7 +71,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.26588",
-      "pdf": "https://arxiv.org/pdf/2608.26588"
+      "pdf": "https://arxiv.org/pdf/2608.26588",
+      "abstractEn": "Large Language Models (LLMs) generate register-transfer-level (RTL) code with rapidly improving functional correctness. Security of LLM-generated code, however, has been studied mainly for software, where flaws can still be patched after deployment. Insecure RTL offers no such remedy once taped out into silicon. We construct SECRTL-GEN, a multi-language resource-access security benchmark grounded in real SoC IP: 392 tasks over five CWE families and four HDLs (Verilog, SystemVerilog, VHDL, and Python), each with black-box functional and security testbenches. Functional specifications intentionally omit security obligations, matching how obligations are often kept out of functional docs in practice. An empirical study of five frontier LLMs shows a sharp gap: under vanilla prompts they pass functional tests in about 73-79% of cases but security tests in only 14-35%, and stronger functional models are not safer. Adding CWE knowledge raises security, while unaided self-thinking helps less and both security-oriented prompts cut functional pass rates, showing that the bottleneck is missing weakness awareness in the specification, not an inability to write defensive RTL. We present RTL-Obliger, a neuro-symbolic framework that infers these implicit obligations. An LLM extracts a functional-semantic graph from the specification; a symbolic engine then matches it against a CWE pattern ontology to surface mitigation-evidence gaps and signal-level obligations; the LLM finally revises RTL under those obligations in a functionality-preserving two-stage generation. Across five models and four languages, RTL-Obliger raises mean all-pass from 49.6-51.4% (SecV/RESCUE) to 61.6%, with higher security and functional rates than these secure-generation baselines."
     },
     {
       "id": "2608.26882",
@@ -87,7 +90,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《PLCBench: Can Autonomous LLM Agents Turn PLC Access into Sustained Physical Impact?》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "工业控制系统 (ICS) 依靠可编程逻辑控制器 (PLC) 将网络计算与物理控制连接起来。使用工具的大型语言模型 (LLM) 代理代表了一种新兴的攻击威胁：自主代理能否将网络可达的 PLC 转换为持续的不利物理影响？然而，现有的评估侧重于数字任务或 PLC 测试的各个阶段。因此，在 ICS 中，停止于软件开发、可接受的写入或工具访问的评估可能会错误地描述物理风险。据我们所知，我们推出了 PLCBENCH，这是第一个真正的 PLC 硬件在环 (HIL) 框架，用于表征这种网络到物理的功能及其边界。它结合了供应商本地交互、商业 PLC 执行、闭环降阶过程模拟和独立结果验证。确定性评估器将固定规则应用于运行器、通信、PLC 对象和过程记录，以分配六个隐藏的诊断标志，区分可用的 PLC 交互、过程链接操作和持续的物理影响。我们在四个与四个闭环工作负载交叉的商用 PLC 上实例化 PLCBENCH。在五个 LLM 系列和 240 个真实 PLC 情节中，75 个情节 (31.3%) 维持了各自的物理目标。阶段性结果显示，98 个情节在有效的本机读取之前停止，而 62 个情节达到了与进程相关的写入，但没有维持最终目标。值得注意的是，更丰富的过程观察与过程相关写入后的条件目标实现率从 44.2% 增加到 64.0% 相关。这些测量可定位已配置的 PLC 流程部署中的故障，并确定未来防御评估的干预点。为了支持再现性，我们通过随附的工件发布了可安全公开的 PLCBENCH 代码和纯软件再现管道。",
       "topics": [
         "C"
       ],
@@ -98,7 +101,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.26882",
-      "pdf": "https://arxiv.org/pdf/2608.26882"
+      "pdf": "https://arxiv.org/pdf/2608.26882",
+      "abstractEn": "Industrial control systems (ICSs) rely on programmable logic controllers (PLCs) to connect networked computation with physical control. Tool-using large language model (LLM) agents represent an emerging attack threat: can an autonomous agent convert a network-reachable PLC into sustained adverse physical impact? However, existing evaluations focus on digital tasks or individual stages of PLC testing. In ICSs, evaluations that stop at software exploitation, an accepted write, or tool access may therefore mischaracterize physical risk. We present PLCBENCH, to our knowledge, the first real-PLC hardware-in-the-loop (HIL) framework for characterizing this cyber-to-physical capability and its boundaries. It combines vendor-native interaction, commercial PLC execution, closed-loop reduced-order process simulation, and independent outcome verification. A deterministic evaluator applies fixed rules to runner, communication, PLC-object, and process records to assign six hidden diagnostic flags, distinguishing usable PLC interaction, process-linked manipulation, and sustained physical impact. We instantiate PLCBENCH on four commercial PLCs crossed with four closed-loop workloads. Across five LLM families and 240 real-PLC episodes, 75 episodes (31.3%) sustain their respective physical objectives. Stagewise results show that 98 episodes stop before a valid native read, whereas 62 reach a process-linked write but do not sustain the final objective. Notably, richer process observation is associated with an increase in conditional objective attainment after a process-linked write from 44.2% to 64.0%. These measurements localize failure in configured PLC-process deployments and identify intervention points for future defense evaluation. To support reproducibility, we release the safely disclosable PLCBENCH code and a software-only reproduction pipeline through the accompanying artifact."
     },
     {
       "id": "2608.27299",
@@ -116,7 +120,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《When Context Gets Root: Privilege Escalation in LLM Harnesses》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "指令层次结构是一种模型端防御，它根据指令的来源为指令分配不同级别的特权。这些级别限制了哪些内容可以指导模型行为。然而，在代理执行期间，代理利用每个模型调用的构造上下文。这种结构可以将低级内容提升到更高的指令级别，并授予其更大的面向模型的权限。我们引入指令权限升级。在这种攻击中，攻击者诱导代理将低级恶意内容提升到更高的指令级别。然后，提升的内容会导致代理执行在原始级别不会遵循的指令。我们通过使用多代理机制来评估这种威胁，以通过 6 个编码代理工具实现 13 个攻击目标。这些目标涵盖机密性、完整性、可用性和远程代码执行。通过不受限制的行动执行，攻击可在所有 6 个安全带上实现全部 13 个目标。在自动权限审查下，攻击在提供此模式的所有三个工具上实现了所有 13 个目标。我们使用工具提供的持久目标和计划任务进一步重现该漏洞。这些结果证明了指令特权升级的普遍性。",
       "topics": [
         "C"
       ],
@@ -125,7 +129,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.27299",
-      "pdf": "https://arxiv.org/pdf/2608.27299"
+      "pdf": "https://arxiv.org/pdf/2608.27299",
+      "abstractEn": "Instruction hierarchy is a model-side defense that assigns instructions different levels of privilege according to their sources. These levels constrain which content may direct model behavior. During agent execution, however, agent harnesses construct context for each model invocation. This construction can elevate low-level content to a higher instruction level and grant it greater model-facing privilege. We introduce instruction privilege escalation. In this attack, an attacker induces an agent to elevate low-level malicious content to a higher instruction level. The elevated content then causes the agent to execute instructions it would not follow at their original level. We evaluate this threat by using multi-agent mechanisms to achieve 13 attack objectives across six coding-agent harnesses. These objectives span confidentiality, integrity, availability, and remote code execution. With unrestricted action execution, the attacks achieve all 13 objectives on all six harnesses. Under automatic permission review, the attacks achieve all 13 objectives on all three harnesses that provide this mode. We further reproduce the vulnerability using harness-provided persistent goals and scheduled tasks. These results demonstrate the generality of instruction privilege escalation."
     },
     {
       "id": "2608.26858",
@@ -138,7 +143,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Information Flow Control in Off-Chain Components》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "本文为具有链下组件的区块链架构开发了一种智能合约语言模型。链下组件是在区块链节点网络之外的指定位置执行的智能合约片段，但与链上合约状态保持同步。它们对链上状态的变化做出反应，但也可能通知链上组件有关世界上发生的事件，例如股票价格、天气数据等，甚至充当不同区块链之间的桥梁。这为开发人员提供了更大的灵活性，但也可能导致新的漏洞。作为一个具体的例子，我们使用该模型来研究使用静态信息流控制技术确保链上和链下组件之间数据的完整性和保密性的问题。即使没有循环构造，这也会失败，因为链下组件充当单独的线程并且可以编码阻塞构造，例如通过递归方法调用。我们以讨论补救这种情况的可能方法来结束本文。",
       "topics": [
         "A"
       ],
@@ -146,7 +151,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.26858",
-      "pdf": "https://arxiv.org/pdf/2608.26858"
+      "pdf": "https://arxiv.org/pdf/2608.26858",
+      "abstractEn": "This paper develops a model of a smart-contract language for a blockchain architecture with off-chain components. Off-chain components are pieces of smart contracts that execute at designated locations outside of the network of blockchain nodes, but remain synchronised with the on-chain contract state. They react to changes to the on-chain state, but may also notify the on-chain component about events in the world, e.g. stock prices, weather data etc., or even act as a bridge between different blockchains. This affords greater flexibility for the developer, but may also enable new vulnerabilities. As a concrete example, we use the model to study the problem of ensuring integrity and secrecy of data between the on-chain and off-chain components, using static information flow control techniques. This fails, even in the absence of a loop construct, because off-chain components act as separate threads and can encode a blocking construct e.g. through recursive method calls. We end the paper with a discussion of possible ways to remedy this situation."
     },
     {
       "id": "2608.26380",
@@ -160,7 +166,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Improving the Robustness of the XRP Ledger Network via Edge Augmentation Strategies》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "XRP 账本允许其网络参与者在网络内选择一组受信任的对等点（即唯一节点列表（UNL））并与他们进行通信，以就哪些交易应包含在下一个账本状态中达成共识。然而，其共识协议要求参与者的 UNL 之间存在显着的重叠，并且每个 UNL 内的节点之间的一致性阈值很高（例如 80%）。因此，攻击者可以通过瞄准构成网络连接主干的节点并将可以相互通信的受信任参与者的数量减少到低于所需阈值来破坏此类网络中的共识过程。在本文中，我们评估了提高 XRP Ledger 现有拓扑稳健性的策略（通过我们对仲裁和网络稳健性的正式定义来衡量），并将它们与之前工作中的第二种策略进行比较。我们提出的策略是一种添加/增强方法，其中根据不同的结构添加新的边。第二种策略是重新布线或边缘替换方法，其中保留边缘总数，但重新排列它们。对于每种策略，我们考虑两种不同的情况：一种是所有节点都参与边缘构建或重新布线过程，另一种是只有一部分节点参与。我们的研究结果表明，当在默认的 XRP Ledger 拓扑上使用增强策略时，稳健性会得到显着提高，并且表明，即使添加的边数很少（例如，每个节点三个边），某些增强策略也能实现等于或超过重新布线策略的稳健性指标。此外，我们还表明，根据 Jaccard 相似性测量，基于随机 K-out 的增强策略比重新布线保持了与原始网络更高的拓扑相似性。",
       "topics": [
         "A"
       ],
@@ -168,7 +174,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2608.26380",
-      "pdf": "https://arxiv.org/pdf/2608.26380"
+      "pdf": "https://arxiv.org/pdf/2608.26380",
+      "abstractEn": "The XRP Ledger allows its network participants to select a set of trusted peers within the network (i.e., the Unique Node List (UNL)) and communicate with them to reach consensus on which transactions should be included in the next ledger state. However, its consensus protocol requires significant overlap among participants' UNLs, along with a high agreement threshold among the nodes within each UNL (e.g., 80\\%). Consequently, an attacker could disrupt the consensus process in such a network by targeting the nodes that form the network's connectivity backbone and reducing the number of trusted participants that can communicate with one another below the required threshold. In this paper, we evaluate strategies to improve the robustness of the XRP Ledger's existing topology, as measured by our formal definitions of quorum and network robustness, and compare them to a second strategy from prior work. The strategy we present is an addition/augmentation approach, in which new edges are added based on different constructions. The second strategy is a rewiring or edge-replacement approach, in which the overall number of edges is preserved but they are rearranged. For each strategy, we consider two different cases: one in which all nodes participate in the edge construction or rewiring process, and another in which only a subset of nodes participates. Our findings demonstrate substantial improvements in robustness when augmentation strategies are used over the default XRP Ledger topology and show that some augmentation strategies achieve robustness metrics equal to or exceeding the rewiring strategy, even when the number of edges added is small (e.g., three edges per node). Additionally, we show that the random K-out-based augmentation strategy maintains higher topological similarity to the original network than rewiring, as measured by Jaccard similarity."
     }
   ]
 }

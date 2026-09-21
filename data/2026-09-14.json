@@ -10,7 +10,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Scan the Skill, Govern the Action: Composing Registry Verdicts with Runtime Consequence Control》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "代理技能注册表会筛选他们发布的内容。 OpenClaw 的安全团队报告称，其扫描仪最多可重叠 10.4% 的综合阳性结果，并且 81.9% 的标记技能仅由一台扫描仪即可捕获。我们认为这是给定的，并建议悬而未决的问题不是哪个扫描仪是正确的，而是哪个扫描仪被问到了。每个技能都会回答一种形式的“这个技能是恶意的吗？”，这就是它的构建目的。 “该操作员现在允许在此处执行此操作吗？”不是它旨在表达的一种。我们报告了 66,192 个公共 ClawHub 技能版本的三项测量结果。首先，来自 135 家不同出版商的 705 项技能，每台扫描仪和注册机构的法官都打扫干净，但仍指示 CIS Control 2.7 和 NIST SP 800-53 CM-11 禁止的操作。经过 100 次手工审核，我们的检测器精度达到 92%，没有发现任何恶意标记。 705 份中，一位出版商贡献了 506 份，因此我们报告了分布情况和计数。这可以从公共工件中重现。其次，在遵循真实技能文档的情况下，实时代理在沙箱中执行的 144 条命令中，34.7% 的命令没有包含在该文档中。第三，超过 53 项已清除的技能记录了没有干净记录的行动，特工达到了 23 项中的一项，大门停止了所有 23 项。安全带和每条记录的命令都被释放。我们为这一差距提供了一种设计：决策路径中没有模型的确定性解析器，提供每个（资源、类别）信任分类账，其升级阈值源自运营商规定的风险承受能力。十次干净的批准不能排除在 95% 置信度下 25.9% 的真实失败率。我们对一系列运营商策略中的门中断进行定价，而不是引用一个误报率，因为摩擦是策略的属性，而不是门的属性。我们发布了 64 例混淆基准；我们的解决了52%。",
       "topics": [
         "C-chain"
       ],
@@ -18,7 +18,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2609.12001",
-      "pdf": "https://arxiv.org/pdf/2609.12001"
+      "pdf": "https://arxiv.org/pdf/2609.12001",
+      "abstractEn": "Agent skill registries screen what they publish. OpenClaw's security team reported that its scanners overlap on at most 10.4% of combined positives, and 81.9% of flagged skills are caught by one scanner alone. We take that as given, and suggest the open question is not which scanner is right but which is being asked. Each answers a form of \"is this skill malicious?\", which is what it was built for. \"Is this action permitted here, by this operator, right now?\" is not one it is designed to express. We report three measurements over 66,192 public ClawHub skill versions. First, 705 skills across 135 distinct publishers that every scanner and the registry's judge rate clean nonetheless instruct an action prohibited by CIS Control 2.7 and NIST SP 800-53 CM-11. A hand audit of 100 puts our detector at 92% precision and found no marker of malicious intent. One publisher contributes 506 of the 705, so we report the distribution with the count. This is reproducible from public artifacts. Second, of 144 commands a live agent executed in a sandbox while following real skill documentation, 34.7% carried a consequence class absent from that document. Third, over 53 cleared skills documenting an action no clean record earns, the agent reached for one in 23 and the gate stopped all 23. The harness and every recorded command are released. We offer one design for that gap: a deterministic resolver with no model in the decision path, feeding a per-(resource, class) trust ledger whose promotion thresholds derive from the operator's stated risk tolerance. Ten clean approvals cannot exclude a true failure rate of 25.9% at 95% confidence. We price the gate's interruptions across a spectrum of operator policies rather than quote one false-positive rate, since friction is a property of the policy, not the gate. We release a 64-case obfuscation benchmark; ours resolves 52%."
     },
     {
       "id": "2609.10123",
@@ -30,7 +31,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《If It's Not Buggy, Don't Fix It: On the Dynamics of Iterative Bug-fixing with LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 在软件开发中已变得无处不在，在代码审查期间越来越多地使用基于 LLM 的自动化程序修复工具。在本报告中，我们探索了法学硕士作为错误修复者的迭代盲目使用。在多个模型和修复环境中，我们发现法学硕士一致声称可以在完全无错误的程序中检测到错误，而有错误的程序的修复率低于正确程序的损坏率。我们还探索了这个迭代过程的长期动态，并发现这经常达到一个伪错误修复周期，其中相同的更改被无限地添加和删除。最后，通过机械探测，我们揭示了控制编辑倾向的转向向量的存在，这表明法学硕士有“错误代码”的内部表示，并且这种表示是被错误激活以诱导伪错误修复的东西。这些结果提供了对完全自主错误修复系统的动态以及在模糊目标下停止条件的洞察。",
       "topics": [
         "C"
       ],
@@ -39,7 +40,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.10123",
-      "pdf": "https://arxiv.org/pdf/2609.10123"
+      "pdf": "https://arxiv.org/pdf/2609.10123",
+      "abstractEn": "Large language models (LLMs) have become ubiquitous in software development, with LLM-based automated program repair tools increasingly used during code review. In this report, we explore the iterative blind use of LLMs as bug-fixers. Across multiple models and repair environments, we find that LLMs consistently claim to detect bugs in entirely bug-free programs while the rate of repair of buggy programs is less than that of the damage to correct programs. We also explore the long-term dynamics of this iterative process, and find that this frequently reaches a pseudo-bug-fixing cycle where the same changes are added and removed again ad infinitum. Lastly, via mechanistic probing, we unveil the existence of a steering vector which controls the editing propensity, suggesting that LLMs have an internal representation of ``buggy code\", and that this representation is what is falsely activated to induce pseudo-bug fixing. These results provide insight towards the dynamics of fully autonomous bug-fixing systems, as well as stopping conditions under ambiguous goals."
     },
     {
       "id": "2609.09315",
@@ -52,7 +54,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《How effective are traditional test criteria at detecting bugs in large language models generated code?》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "测试充分性标准广泛用于评估和指导软件测试。尽管先前的研究已经使用人工编写的程序、错误和测试广泛地检查了这些标准，但越来越多地采用大型语言模型 (LLM) 进行代码生成，这引发了关于它们在检测 LLM 引起的错误方面的有效性的重要问题。为了调查这一点，我们进行了一项涉及 5 个法学硕士和 4 个基准测试的实证研究，模拟自动生成代码和测试的端到端工作流程。我们收集了 6,000 多个错误程序实例，并评估了 3 个广泛使用的充分性标准的有效性和效率：语句覆盖率、分支覆盖率和突变测试。我们的研究结果揭示了几个关键的见解。首先，法学硕士引入的大多数错误相对来说是微不足道的。其次，使用传统的基于覆盖或基于突变的标准都很难触发具有挑战性的故障。第三，实际的故障检测率仍然极低，通常接近于零，因为测试预言机无法捕获由生成的测试前缀触发的错误行为，从而暴露了自动化测试生成的关键限制。第四，提示感知预言机可以改进故障检测，但其整体有效性仍然有限，这凸显了用户需要手动推理测试断言。我们进一步观察到，突变测试在触发和检测故障方面仅略微优于传统的覆盖标准，这引发了关于在这种情况下其显着较高的应用成本是否合理的问题。",
       "topics": [
         "C"
       ],
@@ -60,7 +62,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.09315",
-      "pdf": "https://arxiv.org/pdf/2609.09315"
+      "pdf": "https://arxiv.org/pdf/2609.09315",
+      "abstractEn": "Test adequacy criteria are widely used to evaluate and guide software testing. Although prior research has extensively examined these criteria using human-written programs, faults, and tests, the increasing adoption of Large Language Models (LLMs) for code generation raises important questions about their effectiveness in detecting LLM-induced faults. To investigate this, we conduct an empirical study involving 5 LLMs and 4 benchmarks, simulating end-to-end workflows in which both code and tests are automatically generated. We collect 6,000+ faulty program instances and evaluate the effectiveness and efficiency of 3 widely used adequacy criteria: statement coverage, branch coverage, and mutation testing. Our findings reveal several key insights. First, most faults introduced by LLMs are relatively trivial to catch. Second, the challenging faults are difficult to trigger using either traditional coverage-based or mutation-based criteria. Third, actual fault detection rates remain extremely low, often near zero, because test oracles fail to capture faulty behavior triggered by the generated test prefixes, exposing a critical limitation of automated test generation. Fourth, prompt-aware oracles can improve fault detection, but their overall effectiveness remains limited, highlighting the need for users to manually reason about test assertions. We further observe that mutation testing only marginally outperforms traditional coverage criteria in both triggering and detecting faults, raising questions about whether its significantly higher application cost is justified in this context."
     },
     {
       "id": "2609.07365",
@@ -70,7 +73,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Trust the Spec, Not the Code - A Specification-First, AI-Assisted Case Study in Online Banking》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "正式规范承诺早期错误检测、明确的不变量和设计的正确性，但其符号成本使其脱离了主流实践。我们认为人工智能消除了大部分成本：用 \\LaTeX 编写的富含轻量级数学的自然语言可以作为一种中间规范语言，足够精确来推理和证明，而大型语言模型 (LLM) 会检查它是否存在歧义，起草证明并生成实现。规范成为作者编写、审查、证明和完善的工件；代码变成可再生的输出。本文是之前一项研究的后续，该研究建立了组织知识增长模拟的学科~\\cite{predecessor2026}。在这里，我们在不同的领域（网上银行资金转账服务）复制了该规则并进行了扩展。这两个领域共享一个脊柱：守恒不变量（先前研究中的知识，这里是金钱），这表明该方法可以跨领域推广。我们贡献：（i）该方法的第二个独立案例研究； (ii) 对更丰富的问题​​的方法进行压力测试——\\emph{预定/循环}传输——其生成的代码大幅增长，而不变量及其证明却没有； (iii) 不变量的 \\emph{AI 提出的运行时覆盖模型}（“从未违反覆盖的 $\\neq$”）； (iv) Z 形式化，包括成对的成功/失败操作模式和在所有可达配置的归纳集上证明的不变量，以及人工智能提出 Z 接口本身的实验。我们明确了该方法的限制：证明和运行时检查存在于规范级别，并且不能确定生成的代码改进了规范——该步骤被委托给人工智能。这是一个案例研究，而不是对照实验。",
       "topics": [
         "C"
       ],
@@ -78,7 +81,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.07365",
-      "pdf": "https://arxiv.org/pdf/2609.07365"
+      "pdf": "https://arxiv.org/pdf/2609.07365",
+      "abstractEn": "Formal specification promises early error detection, explicit invariants, and correctness by design, yet its notational cost has kept it out of mainstream practice. We argue that AI removes much of that cost: natural language enriched with lightweight mathematics, written in \\LaTeX, can serve as an intermediate specification language that is precise enough to reason over and prove, while a large language model (LLM) reviews it for ambiguity, drafts proofs, and generates the implementation. The specification becomes the artifact one authors, reviews, proves, and refines; the code becomes regenerable output. This paper is a follow-on to a prior study that established the discipline on an organizational-knowledge-growth simulation~\\cite{predecessor2026}. Here we replicate the discipline in a different domain---an online-banking fund-transfer service---and extend it. The two domains share one spine: a conservation invariant (knowledge in the prior study, money here), which suggests the approach generalizes across domains. We contribute: (i) a second, independent case study of the method; (ii) a stress-test of the method on a richer problem---\\emph{scheduled/recurring} transfers---whose generated code grows substantially while the invariant and its proof do not; (iii) an \\emph{AI-proposed runtime coverage model} for invariants (``never violated $\\neq$ covered''); and (iv) a Z formalization, including paired success/failure operation schemas and an invariant proved over the inductive set of all reachable configurations, together with an experiment in which the AI proposes the Z interfaces itself. We are explicit about the method's limits: the proofs and runtime checks live at the specification level and do not establish that the generated code refines the specification---that step is delegated to the AI. This is a case study, not a controlled experiment."
     },
     {
       "id": "2609.13004",
@@ -91,7 +95,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《IntentFuzz: A Protocol-Aware Fuzzer for Automated Invariant Violation Detection in Intent-Based Cross-Chain Bridges》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "跨链桥在区块链之间转移价值。基于意图的桥梁是一种变体，其中求解器实现用户声明的结果，然后链下结算层根据存款来协调填充。现有的智能合约模糊器和静态分析器仅标记已知的错误代码模式或需要特定于协议的手写断言。这项工作正式提出了一种分类法，将不变违规、合约必须在本地强制执行的安全属性与合法委托给链外结算层的结算暴露分开，并提出了 IntentFuzz：一种协议感知的模糊器，可以直接从未注释的 Solidity 源中恢复桥的意图结构和存款/填充函数角色，然后使用基于 LLM 的回退来合成多步模糊序列，以帮助构建调用参数。IntentFuzz 恢复 9/9 基准协议中正确的意图结构，并以 100% 的召回率和 82% 的组合精度对存款和填充函数进行分类；在 77 个手动标记合约的语料库中，它达到了 79.5% 的桥分类精度和 97.2% 的召回率，在已确认的桥中，结构选择的精度和召回率达到 88.6%，而沉积和填充分类的召回率均达到 100%。在 23 个植入错误突变体上，IntentFuzz 实现了 100% 的召回率和 100% 的精确度，执行 273 个模板（每个模板的中位数为 14 毫秒，共 507 个事务）。在 24 个实际部署中，它确认了仅启发式输入生成下的 17 个真正的不变违规，在启用 LLM 辅助层后上升到 22 个，跨越 8 个易受攻击的 GitHub 存储库，每个存储库都可以针对公共部署的字节码进行重现。",
       "topics": [
         "A"
       ],
@@ -102,7 +106,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.13004",
-      "pdf": "https://arxiv.org/pdf/2609.13004"
+      "pdf": "https://arxiv.org/pdf/2609.13004",
+      "abstractEn": "Cross-chain bridges move value between blockchains. Intent-based bridges are a variant where a solver fulfills a user's declared outcome and an off-chain settlement layer later reconciles the fill against the deposit. Existing smart-contract fuzzers and static analyzers only flag known-bad code patterns or require protocol-specific hand-written assertions. This work formalizes a taxonomy separating invariant violations, safety properties a contract must enforce locally, from settlement exposures legitimately delegated to the off-chain settlement layer, and proposes IntentFuzz: a protocol-aware fuzzer that recovers a bridge's intent structure and deposit/fill function roles directly from unannotated Solidity source, then synthesizes multi-step fuzz sequences using an LLM-based fallback to help build call arguments. IntentFuzz recovers the correct intent structure in 9/9 benchmark protocols and classifies deposit and fill functions with 100% recall and 82% combined precision; across a corpus of 77 manually labeled contracts, it reaches 79.5% bridge-classification precision and 97.2% recall, and among confirmed bridges, struct selection reaches 88.6% precision and recall while deposit and fill classification each reach 100% recall. On 23 planted-bug mutants, IntentFuzz attains 100% recall and 100% precision, executing 273 templates (507 transactions in a median of 14ms per template). Across 24 real-world deployments, it confirms 17 genuine invariant violations under heuristic-only input generation, rising to 22 with its LLM-assisted tier enabled, spanning eight vulnerable GitHub repositories, each finding reproducible against public, deployed bytecode."
     },
     {
       "id": "2609.12450",
@@ -114,7 +119,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《PDoS: A Profitable Denial-of-Service Attack against Proof-of-Work Blockchain Liveness》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "工作量证明（PoW）区块链的安全性和活跃性从根本上取决于矿工的经济理性。现有的激励驱动的拒绝服务攻击（例如 BDoS）可以阻止理性矿工参与，但需要攻击者不断承担大量经济损失，因此难以在高价值网络中维持。与此同时，之前基于渗透的扣留攻击旨在获取收入，而不是直接破坏链的活跃性。我们提出了 PDoS，这是一种将块头信号威慑与寄生收入提取相结合的混合攻击。PDoS 会破坏区块链的活跃性，同时利用受害者池的份额奖励机制来补贴攻击成本，从而降低诱导理性矿工关闭所需的对抗性算力阈值。我们进一步展示了一个违反直觉的结果：在高费用或高 MEV 环境中，较高的区块价值会增加攻击者的寄生收入，并将攻击推向盈亏平衡点，进入自我维持甚至盈利的状态，从而降低 PoW 系统的安全性。据我们所知，PDoS 是第一个证明破坏 PoW 区块链活跃性可以在经济上自我维持甚至有利可图的攻击。",
       "topics": [
         "A"
       ],
@@ -123,7 +128,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.12450",
-      "pdf": "https://arxiv.org/pdf/2609.12450"
+      "pdf": "https://arxiv.org/pdf/2609.12450",
+      "abstractEn": "The security and liveness of Proof-of-Work (PoW) blockchains fundamentally depend on the economic rationality of miners. Existing incentive-driven denial-of-service attacks, such as BDoS, can deter rational miners from participating, but require the attacker to continuously absorb substantial economic losses and are therefore difficult to sustain in high-value networks. Meanwhile, prior infiltration-based withholding attacks are designed to extract revenue rather than to directly disrupt chain liveness. We present PDoS, a hybrid attack that combines block header signal deterrence with parasitic revenue extraction. PDoS disrupts blockchain liveness while exploiting the victim pool's share-reward mechanism to subsidize the attack cost, thereby lowering the adversarial hash-power threshold required to induce rational miners to shut down. We further show a counterintuitive result: in high-fee or high-MEV environments, higher block value can make PoW systems less secure by increasing the attacker's parasitic revenue and pushing the attack across the break-even point into a self-sustaining, or even profitable, regime. To the best of our knowledge, PDoS is the first attack to demonstrate that disrupting PoW blockchain liveness can be economically self-sustaining and even profitable."
     },
     {
       "id": "2609.12315",
@@ -135,7 +141,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Function Name Is All You Need to Detect Blockchain Application Attacks》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "针对去中心化应用程序 (dApp) 中业务逻辑错误的区块链应用程序攻击越来越受到开发人员和用户的关注，并造成了重大的财务损失。现有的攻击检测器要么依靠手工制定的规则进行检测，要么需要难以获取的智能合约源代码来分析攻击交易。这使得它们很脆弱并且在实践中不适用。在本文中，我们认为函数名称序列足以捕获交易的高级语义，因此可用于检测区块链应用程序攻击。我们对 424 个真实世界攻击事件的交易进行实证研究表明，98.46% 的调用轨迹可以解析为函数名称，而只有 74.78% 的调用轨迹具有可用的源代码。基于这一观察，我们提出了 TxLucent（发音为“半透明”），这是一个自动化框架，通过从交易调用跟踪中提取应用程序语义来检测区块链应用程序攻击。 TxLucent 将调用跟踪映射到函数名称序列，并使用转换器从此类序列中学习语义。因此，TxLucent 可以在不依赖手工编码模式或源代码的情况下检测攻击。我们的结果显示，TxLucent 对 424 个已知事件和 14,611 笔攻击交易实现了 1.56% 的误报率，对以太坊区块链上超过 5 亿笔交易的良性交易估计实现了 0.0017% 的误​​报率。最后，TxLucent 平均需要 24.90 毫秒来分析一笔交易，从而支持对流行区块链的实时攻击检测。",
       "topics": [
         "A"
       ],
@@ -143,7 +149,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.12315",
-      "pdf": "https://arxiv.org/pdf/2609.12315"
+      "pdf": "https://arxiv.org/pdf/2609.12315",
+      "abstractEn": "Blockchain application attacks, targeting business logic bugs in decentralized applications (dApps), have been an increasing concern to their developers and users, causing significant financial loss. Existing attack detectors either rely on handcrafted rules for detection, or need difficult-to-obtain smart contract source code to analyze attack transactions. This makes them brittle and inapplicable in practice. In this paper, we argue that function name sequences suffice to capture the high-level semantics of a transaction, and hence can be used to detect blockchain application attacks. Our empirical study on transactions from 424 real-world attack incidents shows that 98.46% of call traces can be resolved to function names, whereas only 74.78% invoke contracts with available source code. Based on this observation, we propose TxLucent (pronounced \"translucent\"), an automated framework to detect blockchain application attacks by extracting application semantics from transaction call traces. TxLucent maps call traces to function name sequences and uses a transformer to learn semantics from such sequences. Consequently, TxLucent can detect attacks without relying on hand-coded patterns or source code. Our results show that TxLucent achieves a 1.56% false negative rate on 424 known incidents with 14,611 attack transactions, and an estimated 0.0017% false positive rate for benign transactions from over 500 million transactions on the Ethereum blockchain. Finally, TxLucent takes an average of 24.90 milliseconds to analyze a transaction, thus supporting real-time attack detection on popular blockchains."
     },
     {
       "id": "2026-2001",
@@ -157,7 +164,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《The Price of Time: Deterrence as the Third Pillar of Payment Channel Security》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "安全性和活跃性是支付通道安全的两大经典支柱。这两种仅占用信道资源的攻击（例如干扰）的价格都是零。我们提出第三个支柱，威慑：伤害是有可证明的代价的。我们给出了占用共享状态资源的理论。在持有成本框架内，我们描述了锁定解析通道的占用定价。占用者责任的时间依赖性对于任何威慑都是必要的：当今与时间无关的定价承认无限的恶意破坏，损害成本比高于 10^7。线性时间比例责任实现了严格的利率。它的两个面孔，与截止日期成比例的预付费用和与持有比例成比例的罚金，在收取诚实流量方面完全不同。我们的主要定理描绘了四个需求的景观：对共谋汇的威慑、仅限惩罚的诚实、零中介锁定和路径隐私。其中三个是共同无法实现的，其余的每一个组合都可以通过匹配构造来实现；吞洋葱费给出了第二个执行实例。单渠道执行的特点是：当且仅当脚本公开时间时，仅惩罚定价才可单方面执行。证明是三种情况的穷举，它解释了为什么 BIP65 之前的比特币无法支持去信任的占用定价。我们的旗舰融合债券结构如今在比特币上运行，没有契约、预言机或矿工假设；它以零净成本实现准时诚实支付，将老虎机堵塞威慑力提高了八个数量级。对于多跳支付，我们证明了转发三难困境，解决了闪电工程社区的 2020 年猜想，并且我们量化了隐私的价格，包括发送者路径长度上的新 O(1/n) 极值侧通道。",
       "topics": [
         "A"
       ],
@@ -165,7 +172,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/2001",
-      "pdf": "https://eprint.iacr.org/2026/2001.pdf"
+      "pdf": "https://eprint.iacr.org/2026/2001.pdf",
+      "abstractEn": "Safety and liveness are the two classical pillars of payment channel security. Both price attacks that merely occupy channel resources, such as jamming, at zero. We propose a third pillar, deterrence: harm carries a provable price. We give its theory for occupied shared-state resources. Within a holding-cost framework, we characterize occupation pricing for lock-resolve channels. Time-dependence in the occupier's liability is necessary for any deterrence: today's time-independent pricing admits unbounded griefing, with damage-to-cost ratios above 10^7. Linear time-proportional liability achieves the tight rate. Its two faces, deadline-proportional upfront fees and hold-proportional penalty bonds, differ exactly in what they charge honest traffic. Our main theorem maps the landscape of four desiderata: deterrence against colluding sinks, penalty-only honesty, zero intermediary lockup, and path privacy. Three of them are jointly unachievable, and every remaining combination is achieved by a matching construction; onion-message fee-swallowing gives a second enforcement instance. Single-channel enforcement is characterized exactly: penalty-only pricing is unilaterally enforceable if and only if scripts expose time. The proof is a three-case exhaustion, and it explains why pre-BIP65 Bitcoin could not support trustless occupation pricing. Our flagship fused-bond construction runs on Bitcoin today, with no covenants, oracles, or miner assumptions; it improves slot-jamming deterrence by eight orders of magnitude at zero net cost to punctual honest payments. For multi-hop payments we prove the forwarding trilemma, settling a 2020 conjecture of the Lightning engineering community, and we quantify the price of privacy, including a new O(1/n) extreme-value side channel on the sender's path length."
     },
     {
       "id": "2026-1987",
@@ -204,7 +212,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Akita: A High-Performance Lattice-Based Polynomial Commitment Scheme》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "基于格的多项式承诺方案 (PCS) 承诺后量子 SNARK 具有椭圆曲线提供的两个属性，而基于哈希的方案（当今部署的后量子默认值）却没有：具体的小证明和承诺时间与承诺多项式中非零条目的数量而不是其长度成正比。第二个属性对于 Twist and Shout (CRYPTO 2026) 至关重要，它是已知最快的内存检查参数，也是 Jolt 零知识虚拟机 (zkVM) 的核心组件：它们的证明者致力于几乎完全为零的巨大多项式。然而，尽管最近出现了一系列的工作，现有的基于格的 PCS 最多实现了部署所需的三个属性中的两个：小证明大小、快速验证以及来自 Module-SIS 等标准假设的健全性。我们推出了 Akita，一种基于网格的 PCS，它实现了这三个目标。我们通过一种新的设置卸载技术改进了我们的直接前身 Hachi (ePrint 2026) 的平方根时间验证器：提前提交公共设置矩阵，并且验证器处理它们的工作被推迟并根据这些承诺进行证明。对于任何固定的 $K\\ge2$，这将验证时间减少到 $\\widetilde O_{K,\\lambda}(N^{1/K})$，同时保留 $\\widetilde O_{K,\\lambda}(\\log N)$ 证明大小、$\\widetilde O_{K,\\lambda}(N)$ 证明时间以及标准 Module-SIS 的安全性。我们还优化从根部到尾部的每个折叠，并迭代折叠直至完成。这包括优化的数字范围检查、关系特定的环尺寸和子环挑战、嵌入字段评估和检查环关系的补充方法、压缩到每个 128 美元字节的承诺，以及针对更严格的 Module-SIS 参数的精确欧几里德范数检查。除了核心协议之外，Akita 还提供了 zkVM 中部署所需的功能：批量打开单独提交的多项式、低通信分布式证明以及用于在可配置成本目标下选择安全参数的离线规划器。我们在 Rust 中实现 Akita，并将其与现有的基于格和基于哈希的 PCS 进行基准测试。在这些基准测试中，Akita 仅生成 61$–72$ KB 的证明，当两种方案都校准到相同的晶格安全目标时，与 Greyhound 的证明相匹配，同时验证速度加快 19.2\\times$ 到 $89.7\\times$。Akita 的证明器使用最少的内存：除了存储多项式本身之外，其内存开销还随多项式大小呈次线性增长。我们还将 Akita 集成到 Jolt 中。对于我们评估的每个程序大小，Jolt-with-Akita 比 Jolt-with-Dory 实现了 $1.3\\times$ 到 $2.2\\times$ 证明者加速和 $2.2\\times$ 到 $7.4\\times$ 验证器加速，同时生成类似的证明大小，每个证明低于 $100$ KB。",
       "topics": [
         "A"
       ],
@@ -213,7 +221,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1983",
-      "pdf": "https://eprint.iacr.org/2026/1983.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1983.pdf",
+      "abstractEn": "Lattice-based polynomial commitment schemes (PCSs) promise post-quantum SNARKs with two properties that elliptic curves provide and hash-based schemes, today's deployed post-quantum default, do not: concretely small proofs and commitment time proportional to the number of nonzero entries in the committed polynomial rather than its length. The second property is essential to Twist and Shout (CRYPTO 2026), the fastest known memory-checking arguments and a core component of the Jolt zero-knowledge virtual machine (zkVM): their prover commits to enormous polynomials that are almost entirely zero. Yet despite a wave of recent work, existing lattice-based PCSs achieve at most two of the three properties that deployment demands: small proof size, fast verification, and soundness from standard assumptions such as Module-SIS. We present Akita, a lattice-based PCS that achieves all three. We improve on the square-root-time verifier of Hachi (ePrint 2026), our direct predecessor, through a new setup offloading technique: the public setup matrices are committed ahead of time, and the verifier's work in processing them is deferred and proved against these commitments. For any fixed $K\\ge2$, this reduces verification time to $\\widetilde O_{K,\\lambda}(N^{1/K})$ while preserving $\\widetilde O_{K,\\lambda}(\\log N)$ proof size, $\\widetilde O_{K,\\lambda}(N)$ prover time, and security from standard Module-SIS. We also optimize every fold from root to tail and iterate the fold to completion. This includes an optimized digit range check, relation-specific ring dimensions and subring challenges, complementary methods for embedding field evaluations and checking ring relations, commitments compressed to $128$ bytes each, and exact Euclidean norm checks for tighter Module-SIS parameters. Beyond the core protocol, Akita provides the capabilities needed for deployment in a zkVM: batched openings of separately committed polynomials, low-communication distributed proving, and an offline planner for selecting secure parameters under configurable cost objectives. We implement Akita in Rust and benchmark it against existing lattice-based and hash-based PCSs. Across these benchmarks, Akita produces proofs of only $61$–$72$ KB, matching Greyhound's when both schemes are calibrated to the same lattice-security target, while verifying $19.2\\times$ to $89.7\\times$ faster. Akita's prover uses the least memory: beyond storing the polynomial itself, its memory overhead grows sublinearly in the polynomial size. We also integrate Akita into Jolt. For every program size we evaluate, Jolt-with-Akita achieves a $1.3\\times$ to $2.2\\times$ prover speedup and $2.2\\times$ to $7.4\\times$ verifier speedup over Jolt-with-Dory, while producing comparable proof sizes, with every proof below $100$ KB."
     }
   ]
 }

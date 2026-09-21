@@ -13,7 +13,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《PrimSynth: An Agentic Approach to Discover, Validate, and Synthesize Exploit Primitives for Linux Kernel Vulnerabilities》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "Linux内核漏洞对于下游系统至关重要。尽管对自动化内核利用进行了广泛的研究，但一个根本的挑战仍然是抽象利用策略和具体技术操作之间的概念差距。为了填补这一空白，本文引入了一种系统特征，该特征将六类漏洞利用原语从逻辑能力到可验证效果形式化。然后，提出了一种扩展的利用策略表示，它将原始升级策略与管理对象约束、时间排序、环境先决条件和验证约束的原始路径代码合成规则结合起来。在此基础上，本文提出了 \\textsc{PrimSynth}，这是一个多代理框架，它通过协调代理封装这些表示，以发现、验证和合成 Linux 内核中内存损坏漏洞的利用原语。这些代理在迭代闭环中运行，直到找到有效的原语，利用验证信号作为可利用状态转换到基础原语综合决策的证据。还提出了一种基于漏洞导向执行和可重新启动验证环境的提取和验证原语的自动化方法。\\textsc{PrimSynth} 在涵盖 5 种漏洞类型的 16 个真实 Linux 内核 CVE 上进行了评估。实验结果表明，PrimSynth实现了可靠的图元提取，保持了100%的图元匹配率。对于原始合成，PrimSynth 成功合成了多原始开发链，当公共 PoC 可用时，策略合成率 (SSR) 为 82.4%；在没有原始假设指导的情况下，SSR 为 61.3%。",
       "topics": [
         "C"
       ],
@@ -23,7 +23,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.02647",
-      "pdf": "https://arxiv.org/pdf/2609.02647"
+      "pdf": "https://arxiv.org/pdf/2609.02647",
+      "abstractEn": "Linux kernel vulnerabilities are critical to downstream systems. Despite extensive research on automated kernel exploitation, a fundamental challenge remains the conceptual gap between abstract exploit strategies and concrete technical operations. To fill this gap, this paper introduces a systematic characterization that formalizes six classes of exploit primitives from logical capability to validatable effect. Then, an extended exploit strategy representation is proposed, which couples primitive upgrading strategies with primitive path code synthesis rules governing object constraints, temporal sequencing, environment prerequisites, and validation constraints. Building upon this foundation, this paper presents \\textsc{PrimSynth}, a multi-agent framework that encapsulates these representations through coordinated agents to discover, validate, and synthesize exploit primitives for memory corruption vulnerabilities in the Linux kernel. These agents operate in an iterative closed loop until valid primitives are found, leveraging validation signals as evidence of exploitable state transitions to ground primitive synthesis decisions. An automated method for extracting and validating primitives is also proposed based on vulnerability-directed execution and a rebootable validation environment. \\textsc{PrimSynth} is evaluated on 16 real-world Linux kernel CVEs spanning 5 vulnerability types. Experimental results show that PrimSynth achieves reliable primitive extraction, maintaining a 100% primitive match rate. For primitive synthesis, PrimSynth successfully synthesizes multi-primitive exploitation chains with 82.4% strategy synthesis rate (SSR) when the public PoC is available and a 61.3% SSR without the guidance of primitive hypotheses."
     },
     {
       "id": "2609.02774",
@@ -35,7 +36,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《CodePoisonRAG: Knowledge Poisoning Attacks on Retrieval-Augmented Code Generation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "检索增强代码生成 (RACG) 通过检索外部代码工件、文档和补丁并将其合并到生成上下文中，改进了基于 LLM 的软件开发。这种对外部知识的依赖引入了一个关键的信任边界：有毒的工件可以影响生成的代码而不修改底层的 LLM。先前的工作表明，选择现有的易受攻击的示例可以提高 RACG 输出的总体漏洞率，但黑盒攻击者是否可以构建单个任务匹配的工件来传播攻击者选择的弱点仍是未知数。我们引入了 CodePoisonRAG，这是一个有针对性的上游知识中毒框架，可将良性固定代码条目转换为中毒工件。其攻击链结合了 CWE 特定的漏洞注入（嵌入选定的源到接收器流程，同时保持任务对齐）和语义错误标签（添加虚假安全声明而不修复脆弱行为）。攻击者无法访问受害者部署的知识库、检索器、重新排序器、生成器、提示或防御机制，并且每个预期的编程任务最多注入一个工件。我们构建了 85 个中毒工件，涵盖 Java 和 C 的 10 个 CWE 类，总语料库中毒率为 0.7%。在三个生成器中，所有 85 个工件都出现在相应查询的前 3 个结果中，CodePoisonRAG 的攻击成功率在 0.80 到 0.93 之间。针对将特定于漏洞的安全知识注入到生成上下文中的 CodeGuarder，该攻击的成功率保持在 0.40 到 0.71 之间。这些结果表明，RACG 中毒不仅限于现有漏洞的偶然传播，还包括攻击者选择的弱点的有针对性的构建和传播。",
       "topics": [
         "C"
       ],
@@ -44,7 +45,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.02774",
-      "pdf": "https://arxiv.org/pdf/2609.02774"
+      "pdf": "https://arxiv.org/pdf/2609.02774",
+      "abstractEn": "Retrieval-Augmented Code Generation (RACG) improves LLM-based software development by retrieving external code artifacts, documentation, and patches, and incorporating them into the generation context. This reliance on external knowledge introduces a critical trust boundary: poisoned artifacts can influence generated code without modifying the underlying LLM. Prior work shows that selecting existing vulnerable examples can increase the general vulnerability rate of RACG outputs, but leaves open whether a black-box attacker can construct a single task-matched artifact that propagates an attacker-selected weakness. We introduce CodePoisonRAG, a targeted upstream knowledge-poisoning framework that transforms benign fixed-code entries into poisoned artifacts. Its attack chain combines CWE-specific Vulnerability Injection, which embeds a selected source-to-sink flow while retaining task alignment, with Semantic Mislabeling, which adds false safety claims without repairing the vulnerable behavior. The attacker has no access to the victim's deployed knowledge base, retriever, re-ranker, generator, prompt, or defense mechanism and injects at most one artifact per anticipated programming task. We construct 85 poisoned artifacts covering ten CWE classes across Java and C, yielding an aggregate corpus-poisoning ratio of 0.7%. Across three generators, all 85 artifacts appear among the Top-3 results for their corresponding queries, and CodePoisonRAG achieves attack success rates between 0.80 and 0.93. Against CodeGuarder, which injects vulnerability-specific security knowledge into the generation context, the attack retains success rates between 0.40 and 0.71. These results show that RACG poisoning extends beyond the incidental propagation of existing vulnerabilities to the targeted construction and propagation of attacker-selected weaknesses."
     },
     {
       "id": "2609.01023",
@@ -57,7 +59,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《AKRASIA: Stealthy Backdoor Attack on Reasoning-based Code LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "我们推出了 AKRASIA，这是一种针对基于推理的 Code LLM 的隐秘推理时间后门攻击。 AKRASIA 的目标是在推理法学硕士中实现后门目标（例如恶意代码执行），同时逃避自动防御和人工检查。为了实现这一目标，AKRASIA 探测受害者 LLM 以构建代码级后门触发器。然后，它采用上下文学习进行后门学习，并对不忠行为进行建模以隐藏后门触发器，并生成合理的推理。我们使用四个后门目标、六 (6) 个推理 LLM、三个编码任务/数据集和三种防御方法来评估 AKRASIA。AKRASIA 对 SOTA LLM 的平均攻击成功率高达 99.34%，平均准确率高达 97.23%。 AKRASIA 规避了 SOTA 防御，在大多数 (14/18) 防御设置中保留了高达 98.82% 的平均 ASR。它可以逃避人工检查，在高达 80% 的设置中成功隐藏后门触发器和推理步骤。我们的研究结果激发了保护法学硕士免受推理后门侵害的需要。",
       "topics": [
         "C"
       ],
@@ -67,7 +69,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.01023",
-      "pdf": "https://arxiv.org/pdf/2609.01023"
+      "pdf": "https://arxiv.org/pdf/2609.01023",
+      "abstractEn": "We present AKRASIA, a stealthy, inference-time backdoor attack against reasoning-based Code LLMs. AKRASIA aims to achieve a backdoor target (e.g., malicious code execution) in reasoning LLMs while evading automated defenses and human inspection. To achieve this, AKRASIA probes the victim LLM to construct a code-level backdoor trigger. It then employs in-context learning for backdoor learning, and model unfaithfulness to conceal the backdoor trigger, and generate plausible reasoning. We evaluate AKRASIA using four backdoor targets six (6) reasoning LLMs, three coding tasks/datasets and three defense methods. AKRASIA has up to 99.34% average attack success rate on SOTA LLMs and mantains up to 97.23% average accuracy. AKRASIA evades the SOTA defense, retaining up to 98.82% average ASR in most (14/18) defense settings. It evades human inspection, successfully hiding the backdoor trigger and reasoning steps in up to 80% of settings. Our findings motivate the need to defend LLMs against reasoning backdoors."
     },
     {
       "id": "2609.01758",
@@ -78,7 +81,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Towards Behavior Tree-Guided Vulnerability Detection with Lightweight LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型 (LLM) 越来越多地用于软件漏洞检测，但其性能取决于源代码在输入中的表示方式。大多数提示方法都使用原始形式的源代码，而一些作品则建议使用结构化表示。抽象语法树 (AST) 是最流行的方法之一，但 AST 的冗长增加了相对于源代码的输入大小，使其难以适应某些 LLM 上下文窗口。本文研究了行为树 (BT) 作为基于 LLM 的漏洞检测的替代中间表示。BT 比 AST 更紧凑地编码控制流、条件和可执行操作，因此当令牌计数受到限制时，BT 成为自然的候选者。首先，我们提出了一个预处理阶段，将 Java 源代码解析为 AST，然后将其转换为 BT 表示。然后，我们使用三种输入表示形式：原始源代码、AST 和 BT，比较 Juliet Java 测试套件中 460 个 Java 样本的漏洞检测性能。所有实验均使用单个量化本地 LLM，Mistral Small 3.2 24B (Q4_K_M)。我们的结果表明，使用 BT 表示可以提高短代码样本的召回率，同时原始源代码可以实现更高的精度。在较长的样本上，BT 比原始表示提高了整体性能并适合上下文窗口，而许多 AST 超出了上下文限制。这些发现表明，BT 可以通过量化的、可本地部署的 LLM 为漏洞检测提供紧凑且有用的结构化表示。",
       "topics": [
         "C"
       ],
@@ -88,7 +91,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.01758",
-      "pdf": "https://arxiv.org/pdf/2609.01758"
+      "pdf": "https://arxiv.org/pdf/2609.01758",
+      "abstractEn": "Large Language Models (LLMs) are increasingly used for software vulnerability detection, but their performance depends on how source code is represented in the input. Most prompting approaches use source code in its original form, while some works propose the use of structured representations. Abstract Syntax Trees (ASTs) are one of the most popular approaches, but AST verbosity increases input size relative to source code, making them hard to fit within some LLMs context windows. This paper investigates Behavior Trees (BTs) as an alternative intermediate representation for LLM-based vulnerability detection. BTs encode control flow, conditions, and executable actions more compactly than ASTs, making them a natural candidate when token count is a constraint. First, we propose a preprocessing stage that parses Java source code into ASTs and then converts them into BT representations. We then compare vulnerability detection performance across 460 Java samples from the Juliet Java test suite, using three input representations: raw source code, AST, and BT. All experiments use a single quantized local LLM, Mistral Small 3.2 24B (Q4_K_M). Our results show that using BT representations improves recall on short code samples, while raw source code achieves higher precision. On longer samples, BTs improve overall performance over the original representation and fit within the context window, whereas many ASTs exceed the context limit. These findings suggest that BTs can provide a compact and useful structured representation for vulnerability detection with quantized, locally deployable LLMs."
     },
     {
       "id": "2608.30441",
@@ -105,7 +109,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《ECLIPSE: Self-Evolving Stealthy Prompt Injection Attack against Long-Horizon Agentic Systems》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "最近，大型语言模型 (LLM) 代理，例如 Codex、Claude Code 和 OpenClaw，已经能够通过重复的工具调用来规划和执行长期任务。此功能还为快速注入创造了新的机会。现有的攻击要么将恶意目标置于一条显式指令中，使其易于检测，要么将意图分布在多个执行阶段，从而使成功完成变得不可靠。在这项工作中，我们提出了 ECLIPSE，一种用于长视野代理系统的自我进化和隐形提示注入框架。 ECLIPSE 通过两个组件将直接用户提示注入与间接工具端注入结合起来。一方面，Stealthy Attack Trajectory Synthesis 使用沙箱生成并迭代验证候选工具链，然后将经过验证的链呈现为自然的一次性提示，作为直接指令。然后，工具链引导通过静态工作流编码 (SWE) 和动态轨迹校正 (DTC) 将此计划传输到目标环境，静态工作流编码将状态转换线索嵌入到目标工具描述中，动态轨迹校正 (DTC) 在执行偏离计划链时提供纠正信号。为了实现系统评估，我们进一步引入了 LASE-Bench，这是一个长期代理安全基准，包含 120 个恶意任务和 198 个独特工具； 96.7% 的任务至少调用五次工具。实验结果表明，ECLIPSE非常有效：在无防御的情况下，其攻击成功率高达96.7%，在普通安全过滤器下，攻击成功率高达69.2%，在防御环境下，超过最强基线27.5%。针对代表性防御的评估进一步表明，现有的保障措施并不能可靠地对其进行防御，这就需要更有效的防御。",
       "topics": [
         "C"
       ],
@@ -115,7 +119,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.30441",
-      "pdf": "https://arxiv.org/pdf/2608.30441"
+      "pdf": "https://arxiv.org/pdf/2608.30441",
+      "abstractEn": "Recently, large language model (LLM) agents, such as Codex, Claude Code, and OpenClaw, have become capable of planning and executing long-horizon tasks through repeated tool calls. This capability also creates new opportunities for prompt injection. Existing attacks either place the malicious objective in one explicit instruction, making it easy to detect, or distribute the intent across multiple execution stages, making successful completion unreliable. In this work, we propose ECLIPSE, a self-evolving and stealthy prompt-injection framework for long-horizon agentic systems. ECLIPSE combines direct user-prompt injection with indirect tool-side injection through two components. On the one hand, Stealthy Attack Trajectory Synthesis uses a sandbox to generate and iteratively verify candidate tool chains, then renders a verified chain as a natural one-shot prompt to serve as the direct instruction. Then, Tool-Chain Steering transfers this plan to the target environment through Static Workflow Encoding (SWE), which embeds state-transition cues in target-tool descriptions, and Dynamic Trajectory Correction (DTC), which supplies corrective signals when execution deviates from the planned chain. To enable systematic evaluation, we further introduce LASE-Bench, a long-horizon agent-safety benchmark with 120 malicious tasks and 198 unique tools; 96.7% of its tasks make at least five tool calls. The experimental results show that ECLIPSE is highly effective: it achieves up to 96.7% attack success without defense and 69.2% under the common safety filter, exceeding the strongest baseline by 27.5% in the defended setting. Evaluations against representative defenses further show that existing safeguards do not reliably defend it, which raises the need for more effective defenses."
     },
     {
       "id": "2609.02532",
@@ -128,7 +133,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《SpiderSapien: Client-Centric Web Crawler and Security Scanner》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "黑盒Web应用程序爬取和扫描对于Web应用程序的安全测试起着重要作用。然而，最先进的扫描仪无法解决现代 Web 应用程序的关键特征：客户端的极端动态性和交互性。本文将沉浸式交互视为扫描仪深入探索现代 Web 应用程序的关键要素。我们提出了 SpiderSapien，一个以客户端为中心的爬虫和安全扫描器。 SpiderSapien 结合了来自网络应用程序的高级、面向用户的反馈渠道的独特组合，以在黑盒爬行循环中实现沉浸式交互。这些反馈渠道包括检测可交互元素和合理排序 UI 交互的新颖方法，以及正交使用法学硕士来解决表单。在此过程中，我们演示了如何可靠地发现和测试现代 Web 应用程序的深层状态。此外，我们的模块化方法和有用的抽象层可以作为未来扫描仪的构建块。对我们方法的评估表明，与之前的工作相比，代码覆盖率和漏洞检测都有显着改进。与任何其他扫描器相比，我们的方法将应用程序的平均代码覆盖率提高了至少 46%，或者与所有其他扫描器的联合相比提高了 16%。我们在 7 个 Web 应用程序中发现了 XSS 漏洞，而任何其他扫描程序最多在 2 个应用程序中发现了 XSS 漏洞。",
       "topics": [
         "C"
       ],
@@ -137,7 +142,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.02532",
-      "pdf": "https://arxiv.org/pdf/2609.02532"
+      "pdf": "https://arxiv.org/pdf/2609.02532",
+      "abstractEn": "Black-box web application crawling and scanning play an important role for security testing of web applications. Yet state-of-the-art scanners fall short of addressing key characteristics of a modern web application: its extreme dynamism and interactivity on the client side. This paper identifies immersive interaction as a key ingredient for scanners to deeply explore modern web applications. We propose SpiderSapien, a client-centric crawler and security scanner. SpiderSapien incorporates a unique combination of high-level, user-facing feedback channels from the web application to achieve immersive interaction in a black-box crawling loop. These feedback channels include both novel methods to detect interactable elements and sensibly order UI interactions, and orthogonally using an LLM to solve forms. In doing so, we demonstrate how to reliably discover and test deep states of modern web applications. Furthermore, our modular approach and useful abstraction layer can serve as a building block for future scanners. The evaluation of our approach shows substantial improvements in both code coverage and vulnerability detection over previous work. Our approach increased average code coverage across applications by at least 46% over any other scanner, or 16% when compared to the union of all other scanners. We find XSS vulnerabilities in 7 web applications, while any other scanner finds XSS in up to 2 applications."
     },
     {
       "id": "2609.00430",
@@ -149,7 +155,7 @@
       ],
       "year": 2026,
       "venue": "PACMI 2026 @ SOSP",
-      "abstract": "《Don't Trust the Code, Check Its Effects: Runtime Refinement for Regenerated Systems Code Under an Adversarial Generator》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "最近的工作使用大型语言模型从规范生成系统代码，将规范视为持久的工件，并将实现视为一次性的。重新生成实现将其专门针对每个工作负载和设备。然而，这项工作存在于一个宽容的环境中：组件的外部可见效果、其写入和设备命令是可恢复的，并且生成器是诚实的，因此通过重新执行解除信任。我们的目标是无情的设置：效果不可逆转的系统代码，由可能具有对抗性的生成器生成。在那里，重新执行无法在事后检查效果，并且当其假设检查时，证明会默默地失败。我们的立场是，在这里操作的唯一安全方法是拒绝生成的代码执行操作的权限。生成的代码仅进行计划，而固定的可信中介拥有每一个效果，并且仅在规范生成它时才执行一个效果。因为保证存在于中介器中，而不是代码中，所以它在再生后仍然存在。我们将其实例化为再生设备驱动程序的参考监视器，并表征媒体可性包络、效果词汇的六个条件：易读性、规范输入可观察性、相关性、完整性、结果可枚举性和显式持久性。他们决定何时可以进行此类调解。",
       "topics": [
         "C"
       ],
@@ -157,7 +163,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.00430",
-      "pdf": "https://arxiv.org/pdf/2609.00430"
+      "pdf": "https://arxiv.org/pdf/2609.00430",
+      "abstractEn": "Recent work uses large language models to generate systems code from specifications, treating the specification as the durable artifact and the implementation as disposable. Regenerating the implementation specializes it to each workload and device. However, that work lives in a forgiving setting: a component's externally visible effects, its writes and device commands, are recoverable, and the generator is honest, so trust is discharged by re-execution. We target the unforgiving setting: systems code whose effects are irreversible, produced by a generator that may be adversarial. There, re-execution cannot check an effect after the fact, and a proof fails silently when its assumptions do. We take the position that the only safe way to operate here is to deny the generated code the authority to act. The generated code only plans, while a fixed trusted mediator owns every effect and performs one only when the specification would have produced it. Because the guarantee lives in the mediator, not the code, it survives regeneration. We instantiate this as a reference monitor for regenerated device drivers, and characterize the mediability envelope, six conditions on the effect vocabulary: legibility, spec-input observability, correlatability, completeness, outcome enumerability, and explicit durability. They decide when such mediation is possible."
     },
     {
       "id": "2608.30803",
@@ -169,7 +176,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Schwarz: Solver-Aware Agentic Program Verification》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "代理验证系统通常可以生成看起来合理的源级规范，但仅仅合理还不够：验证者仍必须将这些规范转化为求解器可以证明的 SMT 义务。当此步骤失败时，当前的 LLM 驱动循环通常仅暴露粗略验证器错误、超时或未知的求解器结果。该模型无法判断规范是否错误、辅助引理是否缺失、证明上下文包含不相关的事实，或者义务是否需要不同的理论观点。本文介绍了 Schwarz，这是一种代理验证工具，可以使 SMT 支持的故障证明本地化、可检查和可修复。Schwarz 将失败的验证转化为义务局部修复任务：程序点快照在边界处公开已检查的事实，局部引理让代理提出缺失的证明步骤，理论感知的求解器策略引导代理对数字、量化、内存和浮点义务进行求解器友好的公式。我们为 C 和 Rust/Verus 实现了 Schwarz，并在 1,475 个任务上对其进行了评估。在最新代理验证工具的 475 个基准测试中，Schwarz 解决了 95.2% 的任务。在 SV-COMP 2026 ReachSafety 赛道的 1,000 项任务（平均 1,427 LOC）中，Schwarz 解决了 91.5% 的任务，而 CPAchecker 解决了 60.1%。消融以及与纯代理基线的比较表明，求解器感知修复是有效且可扩展的。",
       "topics": [
         "C"
       ],
@@ -179,7 +186,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.30803",
-      "pdf": "https://arxiv.org/pdf/2608.30803"
+      "pdf": "https://arxiv.org/pdf/2608.30803",
+      "abstractEn": "Agentic verification systems can often generate source-level specifications that look plausible, but plausibility is not enough: the verifier must still turn those specifications into SMT obligations that the solver can prove. When this step fails, current LLM-driven loops usually expose only a coarse verifier error, timeout, or unknown solver result. The model cannot tell whether the specification is wrong, a helper lemma is missing, the proof context contains irrelevant facts, or the obligation needs a different theory view. This paper presents Schwarz, an agentic verification harness that makes SMT-backed proof failure local, checkable, and repairable. Schwarz turns failed verification into obligation-local repair tasks: program-point snapshots expose checked facts at a boundary, local lemmas let the agent propose missing proof steps, and theory-aware solver policies guide the agent toward solver-friendly formulations for numeric, quantified, memory, and floating-point obligations. We implement Schwarz for C and Rust/Verus and evaluate it on 1,475 tasks. On 475 benchmarks from recent agentic verification tools, Schwarz solves 95.2% of the tasks. On 1,000 tasks from the SV-COMP 2026 ReachSafety track, averaging 1,427 LOC, Schwarz solves 91.5% of the tasks, compared with 60.1% for CPAchecker. Ablations and comparison with a pure-agent baseline show that solver-aware repair is effective and scalable."
     },
     {
       "id": "2608.28880",
@@ -192,7 +200,7 @@
       ],
       "year": 2026,
       "venue": "LMPL 2026",
-      "abstract": "《FlowCheck: Helping End-Users Specify and Verify Intent in Vibe-Coded Web Apps》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "Vibe 编码的应用程序通常包含无声的行为故障，其中即使用户可见的信息未流向预期的状态或输出，界面仍显示功能正常。我们引入了 FlowCheck，一种约束语言，用于直接通过应用程序界面指定这些用户可见的信息流，其中约束也可以在不阅读代码的情况下显示和检查，并且结构足够用于可靠的 LLM 生成。 FlowCheck 将约束转换为确定性 CodeQL 分析，我们在通过 Claude Code 生成的四个应用程序中对其进行评估，并与三个编码模型进行比较作为错误查找基线。我们发现 FlowCheck 正确翻译并标记了所有 30 个注入的约束违规，没有误报。相比之下，前沿模型（Claude Opus 4.7、DeepSeek V3 和 Gemini Pro）在提示查找同一代码中的错误时显示出明显较低的准确度，没有一个模型达到完全准确度。这种方法让 vivi 编码人员根据他们理解的界面来陈述意图，并根据他们不理解的代码确定性地检查它。",
       "topics": [
         "C"
       ],
@@ -201,7 +209,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.28880",
-      "pdf": "https://arxiv.org/pdf/2608.28880"
+      "pdf": "https://arxiv.org/pdf/2608.28880",
+      "abstractEn": "Vibe-coded applications often contain silent behavioral failures in which the interface appears functional even though user-visible information does not flow to the expected state or output. We introduce FlowCheck, a constraint language to specify these user-visible information flows directly through the application interface, where constraints can also be displayed and inspected without reading code, and are structured enough for reliable LLM generation. FlowCheck translates the constraints into deterministic CodeQL analyses, and we evaluate it across four applications generated via Claude Code, and compare with three coding models as bug-finding baselines. We find that FlowCheck correctly translates and flags all 30 of our injected constraint violations with no false positives. In contrast, frontier models (Claude Opus 4.7, DeepSeek V3, and Gemini Pro) showed significantly lower accuracy when prompted to find bugs in the same code, with none achieving full accuracy. This approach lets vibe coders state intent in terms of the interface they understand, and checks it deterministically against the code they do not."
     },
     {
       "id": "2609.02624",
@@ -215,7 +224,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Automated Vulnerability Injection in Smart Contracts Using Large Language Models》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "评估智能合约的漏洞检测工具需要具有已知事实真相的数据集，但此类数据集很少且难以手动构建。我们提出了一种使用大型语言模型 (LLM) 自动将漏洞注入 Solidity 智能合约的方法，并在针对 OpenSCV 的 49 个漏洞类型的案例研究中进行了演示。注入的合约通过多步骤管道进行验证，检查编译、执行、业务逻辑以及是否存在预期漏洞。将 LLM 应用于 SmartBugs 的现实世界合约中，可以生成近 1,000 个候选变体；经过重复数据删除和验证后，涵盖 25 个漏洞类型的 32 个已确认的漏洞合约得以幸存（存活率为 16.58%）。幸存的合约集中于结构更简单的目标和具有本地化语法模式的漏洞类型。我们报告了实际挑战，包括法学硕士的非确定性和保留合同语义的困难。然后，我们使用经过验证的合同来评估三个静态分析器，揭示互补和不完整的覆盖范围。结果表明，基于 LLM 的漏洞注入是可行的，但暴露了可扩展性和多样性方面的关键限制。",
       "topics": [
         "C-chain"
       ],
@@ -225,7 +234,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2609.02624",
-      "pdf": "https://arxiv.org/pdf/2609.02624"
+      "pdf": "https://arxiv.org/pdf/2609.02624",
+      "abstractEn": "Assessing vulnerability detection tools for smart contracts requires datasets with known ground truth, yet such datasets are scarce and difficult to build by hand. We propose an approach that uses Large Language Models (LLMs) to automatically inject vulnerabilities into Solidity smart contracts, and demonstrate it in a case study targeting 49 vulnerability types from OpenSCV. Injected contracts are validated through a multi-step pipeline checking compilation, execution, business logic, and the presence of the intended vulnerability. Applied to real-world contracts from SmartBugs, LLMs generate nearly 1,000 candidate variants; after deduplication and validation, 32 confirmed vulnerable contracts spanning 25 vulnerability types survive (a 16.58% survival rate). Surviving contracts concentrate in structurally simpler targets and vulnerability types with localized syntactic patterns. We report practical challenges including LLMs' non-determinism and the difficulty of preserving contract semantics. We then use the validated contracts to assess three static analyzers, revealing complementary and incomplete coverage profiles. Results show that LLM-based vulnerability injection is feasible, while exposing key limitations in scalability and diversity."
     },
     {
       "id": "2026-1852",
@@ -235,7 +245,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Jacobian Diagnostics for Under-Constrained Zero-Knowledge Circuits》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "欠约束的算术电路是零知识应用程序中反复出现的健全性失败的根源：在修复公开声明后，恶意证明者可能能够以多种方式分配与安全相关的线路，同时仍然满足电路的要求。现有工具通过基于求解器的检查、直接多项式求解、抽象解释或模糊测试来解决这个唯一性问题。我们研究基于精确雅可比线性代数的补充代数诊断。该方法区分了三个经常被混淆的概念：采样见证的一阶刚性、对不可约分量的有限代数依赖以及电路域的唯一性。在令人满意的分配中，用固定语句坐标的行增强的约束雅可比行列式的内核是相应纤维方案的 Zariski 切线空间，因此该内核中目标坐标的运动证明了该见证点处的无限小自由度。在合适的可分离性假设下，相关的微分表示也恢复了分量方面的代数依赖性，而经过认证的三角微积分则为局部刚性目标提供了多重性界限。精确的稀疏实现在初步测量中处理 $6$k--$60$k 约束范围内的 \\texttt{gnark} R1CS 实例，并且可检查的度预算（$m<\\log_2 p$ 二次约束）在小工具规模上释放可分离性假设。主要限制是见证局部性：电路在诚实见证人看来可能是僵化的，而在证明者可到达的简并分支上则变得约束不足。在测量的 $2{,}396$ 约束 \\texttt{gnark}~0.14.0 标量乘法小工具中，诚实的证人没有暴露任何自由目标线，而退化的敌对证人则暴露了 5 条目标线。因此，我们将雅可比分析定位为可扩展的候选检测器和定位工具，与对抗性见证生成和基于求解器或基于证书的确认相结合。",
       "topics": [
         "A"
       ],
@@ -243,7 +253,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1852",
-      "pdf": "https://eprint.iacr.org/2026/1852.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1852.pdf",
+      "abstractEn": "Under-constrained arithmetic circuits are a recurring source of soundness failures in zero-knowledge applications: after fixing the public statement, a malicious prover may be able to assign a security-relevant wire in more than one way while still satisfying the circuit. Existing tools attack this uniqueness question with solver-based checking, direct polynomial solving, abstract interpretation, or fuzzing. We study a complementary algebraic diagnostic based on exact Jacobian linear algebra. The method separates three notions that are often conflated: first-order rigidity at a sampled witness, finite algebraic dependence on an irreducible component, and uniqueness over the circuit field. At a satisfying assignment, the kernel of the constraint Jacobian augmented with rows fixing the statement coordinates is the Zariski tangent space of the corresponding fibre scheme, so motion of a target coordinate in this kernel certifies infinitesimal freedom at that witness. Under suitable separability hypotheses, the associated differential representation also recovers component-wise algebraic dependence, while a certified triangular degree calculus provides multiplicity bounds for locally rigid targets. An exact sparse implementation handles \\texttt{gnark} R1CS instances in the $6$k--$60$k-constraint range in preliminary measurements, and a checkable degree budget ($m&lt;\\log_2 p$ quadratic constraints) discharges the separability hypothesis at gadget scale. The principal limitation is witness locality: a circuit may appear rigid at an honest witness while becoming under-constrained on a prover-reachable degenerate branch. In a measured $2{,}396$-constraint \\texttt{gnark}~0.14.0 scalar-multiplication gadget, an honest witness exposed no free target wires while a degenerate adversarial witness exposed five. We therefore position Jacobian analysis as a scalable candidate detector and localisation tool, to be combined with adversarial witness generation and solver- or certificate-based confirmation."
     },
     {
       "id": "2026-1857",

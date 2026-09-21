@@ -5,6 +5,7 @@ const {
   sortPapers,
   uniqueTopics,
   uniqueYears,
+  uniqueVenues,
 } = require("../js/filter.js");
 
 const papers = [
@@ -68,6 +69,13 @@ describe("filterPapers", () => {
     );
   });
 
+  it("filters by venue", () => {
+    assert.deepEqual(
+      filterPapers(papers, { query: "", topic: "all", year: "all", venue: "CVPR" }).map((p) => p.id),
+      ["b"]
+    );
+  });
+
   it("matches paper id and aliases", () => {
     const withAlias = [
       {
@@ -109,5 +117,13 @@ describe("uniqueTopics and uniqueYears", () => {
   it("returns sorted unique topics and years", () => {
     assert.deepEqual(uniqueTopics(papers), ["CV", "NLP", "架构"]);
     assert.deepEqual(uniqueYears(papers), [2019, 2017, 2016]);
+  });
+
+  it("lists venues by frequency", () => {
+    assert.deepEqual(uniqueVenues(papers), [
+      ["CVPR", 1],
+      ["NAACL", 1],
+      ["NeurIPS", 1],
+    ]);
   });
 });

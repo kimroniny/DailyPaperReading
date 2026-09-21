@@ -15,7 +15,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《What Guides the Agent? Adjudicating Unauthorized Behavior via Localizing Behavior-Guiding Instructions》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "与外部资源集成的LLM智能体获得了复杂的任务能力，但统一的自然语言上下文通道使其容易受到注入攻击：不可信的外部数据可能在LLM推理过程中被动态解析为行为指导指令，从而颠覆智能体的决策。现有的防御措施侧重于输入/输出级别的恶意内容的静态检测或隔离，仍然不足以检测模型推理过程中出现的此类动态诱因。我们提出了 Attnlocate，一个用于细粒度本地化上下文跨度的运行时框架，它真正影响工具调用决策，即行为指导指令。Attnlocate 将此定位问题视为对象检测任务，旨在检测注意矩阵内的行为指导指令引起的独特激活痕迹。具体来说，我们设计了一种多头、多层注意力聚合方案来构建适合对象检测的标记级特征空间。然后，部署配备无锚检测头的一维 U-Net 来检测这些跨度。最后，根据检测到的行为引导跨度的来源提供者的权限，Attnlocate 动态裁决恶意调用尝试。我们评估了来自五个 LLM 系列的十种代理配置的 Attnlocate，涵盖涉及间接提示注入和工具中毒的场景。 Attnlocate 的平均 IoU 为 0.743，平均 AUROC 为 0.956，真阳性率为 0.934，假阳性率为 0.067。它还可以在看不见的模型之间有效转移，并支持当局政策调整而无需再培训。",
       "topics": [
         "C"
       ],
@@ -24,7 +24,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.24022",
-      "pdf": "https://arxiv.org/pdf/2608.24022"
+      "pdf": "https://arxiv.org/pdf/2608.24022",
+      "abstractEn": "LLM agents integrated with external resources gain complex task capabilities, yet the unified natural-language context channel makes them vulnerable to injection attacks: untrusted external data may be dynamically parsed as behavior-guiding instructions during LLM inference, thereby subverting the agent's decision. Existing defenses focus on static detection or isolation of malicious content at the input/output level, remains insufficient for detecting such dynamic inducements that arise during model reasoning. We propose Attnlocate, a runtime framework for fine-grained localization of context spans that genuinely influence tool-calling decisions, i.e., behavior-guiding instructions. Attnlocate casts this localization problem as an object detection task, aiming to detect the distinctive activation traces induced by behavior-guiding instructions within the attention matrix. Specifically, we design a multi-head, multi-layer attention aggregation scheme to construct a token-level feature space tailored for object detection. Then, a 1-D U-Net equipped with an anchor-free detection head is deployed to detect these spans. Finally, based on the authority of the provider from which the detected behavior-guiding spans originate, Attnlocate dynamically adjudicates malicious invocation attempts. We evaluate Attnlocate across ten agent configurations from five LLM families, covering scenarios involving indirect prompt injection and tool poisoning. Attnlocate achieves a mean IoU of 0.743, an average AUROC of 0.956, and a 0.934 true-positive rate at 0.067 false-positive rate. It also transfers effectively across unseen models and supports authority policy adaptation without retraining."
     },
     {
       "id": "2608.23858",
@@ -37,7 +38,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Beyond the Mandate: A Systematic Security Analysis of the Agent Payments Protocol (AP2)》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "Google 推出的代理付款协议 (AP2) 使大型语言模型 (LLM) 驱动的购物代理能够代表用户授权和执行付款。其签署的结帐和付款授权可保护签名后交易数据的完整性。在授权之前形成事务的代理交互和外部输入仍处于保护之外，包括代理到代理协议 (A2A) 消息和模型上下文协议 (MCP) 工具调用。之前的工作发现了 AP2 v0.1 中的重放和提示注入攻击。 AP2 v0.2 解决了其中一些问题，但增加了需要重新分析的功能和部署假设。我们根据 AP2 v0.2 的角色、交易生命周期、部署架构和信任边界对 AP2 v0.2 进行系统的安全分析。我们将生命周期分为五个阶段并确定了五种部署架构。使用 MAESTRO（多代理环境、安全、威胁、风险、结果），我们对四个威胁参与者、十一个攻击面、十八个对手能力和六个攻击者目标进行建模。生成的目录包含跨越 5 个攻击系列的 48 个威胁。我们使用人工智能漏洞评分系统 (AIVSS) 对这些威胁进行评分，识别出至少在一种架构中达到高级别的八个威胁。由于没有完整的公共 AP2 部署，我们构建了一个涵盖所有五种架构的测试台，并开发了五个涵盖所有八种高风险威胁及其缓解措施的概念验证演示。我们还开发了一种部署感知扫描器，可将适用的威胁映射到静态、跨角色一致性和对抗性检查。我们的分析表明，仅有效的授权签名并不能确保代理介导的交易在其预授权上下文被操纵时反映用户的意图。",
       "topics": [
         "C"
       ],
@@ -46,7 +47,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2608.23858",
-      "pdf": "https://arxiv.org/pdf/2608.23858"
+      "pdf": "https://arxiv.org/pdf/2608.23858",
+      "abstractEn": "The Agent Payments Protocol (AP2), introduced by Google, enables large language model (LLM)-driven shopping agents to authorize and execute payments on behalf of users. Its signed Checkout and Payment Mandates protect the integrity of transaction data after signing. Agent interactions and external inputs that shape a transaction before authorization remain outside that protection, including Agent-to-Agent Protocol (A2A) messages and Model Context Protocol (MCP) tool calls. Prior work identified replay and prompt-injection attacks in AP2 v0.1. AP2 v0.2 addresses some of these issues but adds capabilities and deployment assumptions that require renewed analysis. We present a systematic security analysis of AP2 v0.2 based on its roles, transaction lifecycle, deployment architectures, and trust boundaries. We divide the lifecycle into five phases and identify five deployment architectures. Using MAESTRO (Multi-Agent Environment, Security, Threat, Risk, Outcome), we model four threat actors, eleven attack surfaces, eighteen adversary capabilities, and six attacker goals. The resulting catalog contains 48 threats spanning five attack families. We score these threats with the Artificial Intelligence Vulnerability Scoring System (AIVSS), identifying eight that reach the High band in at least one architecture. Because no complete public AP2 deployment was available, we build a testbed spanning all five architectures and develop five proof-of-concept demonstrations covering all eight High-risk threats and their mitigations. We also develop a deployment-aware scanner that maps applicable threats to static, cross-role consistency, and adversarial checks. Our analysis shows that valid mandate signatures alone do not ensure that an agent-mediated transaction reflects the user's intent when its pre-authorization context is manipulated."
     },
     {
       "id": "2026-1826",
@@ -58,7 +60,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Threshold Encryption with Internally Motivated Corruptions》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "近年来，阈值加密引起了人们的广泛关注，特别是由于它在区块链加密内存池中的潜在用途。标准安全模型允许对手静态地（即，在游戏开始时固定）或自适应地（即，根据密钥和密文，通过一对一的预言机）来破坏各方。在这项工作中，我们观察到这些模型都没有捕捉到一方根据秘密信息决定腐败的情况。例如，在具有随机轮换委员会的加密内存池应用程序中，对手可能会建立一个智能合约，向透露其解密份额的各方支付费用，而各方则根据他们是否是下一个委员会的成员来决定是否索要它。此类腐败行为不是预先确定的，但它们也不是仅由外部对手根据公共信息选择的。我们开始对这种内部动机的腐败和部分解密进行正式研究。我们引入了一个安全框架，其中各方的腐败行为可能取决于其当地的秘密状态。也就是说，在腐败时，对手可以提交一个动机函数，并且该动机函数输出 $1$（在其秘密信息上）的所有各方都被破坏。允许类似的内部动机行为来发布部分解密。然后，我们在这种更强的安全概念下研究阈值加密。特别是，我们表明： - 负面结果：我们表明，对于某些类别的动机函数和查询数量，没有阈值加密方案可以满足安全性。我们还展示了针对已通过标准腐败证明安全的计划的内部动机腐败的具体实际攻击。- 积极的结果：我们根据随机预言模型中的（双线性）Diffie-Hellman 假设给出了两类有效的构造。当对挑战密文的部分解密是出于内部动机时，第一个是安全的。第二个还允许内部动机的腐败。",
       "topics": [
         "A"
       ],
@@ -66,7 +68,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1826",
-      "pdf": "https://eprint.iacr.org/2026/1826.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1826.pdf",
+      "abstractEn": "In recent years, threshold encryption has gained a lot of interest, particularly due to its potential use in encrypted mempools in blockchains. Standard security models allow the adversary to corrupt parties either statically (i.e., fixed at the onset of the game) or adaptively (i.e., via an oracle one-by-one, depending on keys and ciphertexts). In this work, we observe that neither of these models captures the case in which a party decides to become corrupted based on secret information. For instance, in an encrypted mempool application with randomly rotating committees, an adversary may set up a smart contract that pays parties who reveal their decryption share, and parties decide whether to claim it based on, say, whether they are on the next committee. Such corruptions are not fixed in advance, but they are also not chosen solely by an external adversary based on public information. We initiate the formal study of such internally motivated corruptions and partial decryptions. We introduce a security framework in which each party's corruption behavior may depend on its local secret state. That is, on a corruption, the adversary can submit a motivation function and all parties for which this motivation function outputs $1$ (on their secret information) are corrupted. A similar internally motivated behavior is allowed for releasing partial decryptions. We then study threshold encryption under this stronger notion of security. In particular, we show: - Negative Results: We show that for certain classes of motivation functions and number of queries, no threshold encryption scheme can satisfy security. We also show a concrete practical attack with internally motivated corruptions against a scheme that has been proven secure with standard corruptions. - Positive Results: We give two efficient classes of constructions from the (Bilinear) Diffie-Hellman assumptions in the random oracle model. The first is secure when partial decryptions on the challenge ciphertext are internally motivated. The second additionally allows internally motivated corruptions."
     }
   ]
 }

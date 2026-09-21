@@ -12,7 +12,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《ALIBI: Adversarial Legitimacy Injection in Binary Input against LLM Malware Analyzers》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "大型语言模型正在被集成到恶意软件分类工作流程中，作为总结静态证据并生成面向分析师的判决的推理组件。本文表明，相同的推理能力引入了新的攻击面。我们提出了 ALIBI，这是一种针对基于 LLM 的前沿恶意软件分析器的语义掩护攻击。 ALIBI 在编译的二进制文件中添加了一个小的、未执行的只读部分，其中包含连贯但虚假的安全产品叙述，而不改变导入或可执行行为。它不是向模型发出直接指令，而是将可疑证据重新构建为良性端点安全工具的预期行为。在包含 50 个恶意样本的冻结 PE 集上，有效负载在 Gemini 2.5 Pro 上将 35 个基线恶意样本中的 30 个翻转为良性，而 GPT-5.5 Pro 和 Claude Opus 4.7 会导致严重程度大幅降级，并且即使保留判决标签，置信度也会显着降低。攻击转移到 ELF 二进制文件，Gemini 翻转了 40 个中的 16 个。验证引导的防御提示将良性判决大致减半，但 42.9% 的恶意样本仍然达到良性。因此，LLM 恶意软件分析器需要来源检查，将经过验证的事实与攻击者控制的声明分开，而不是叙述性信任。",
       "topics": [
         "C"
       ],
@@ -22,7 +22,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.19722",
-      "pdf": "https://arxiv.org/pdf/2609.19722"
+      "pdf": "https://arxiv.org/pdf/2609.19722",
+      "abstractEn": "Large language models are being integrated into malware triage workflows as reasoning components that summarize static evidence and produce analyst-facing verdicts. This paper shows that the same reasoning capability introduces a new attack surface. We present ALIBI, a semantic cover story attack against frontier LLM-based malware analyzers. ALIBI adds a small, non-executed read-only section to a compiled binary, containing a coherent but false security product narrative, without altering imports or executable behavior. Instead of issuing direct instructions to the model, it reframes suspicious evidence as expected behavior of a benign endpoint security tool. On a frozen PE set of 50 malicious samples, the payload flips 30 of the 35 baseline-malicious samples to benign on Gemini 2.5 Pro, while GPT-5.5 Pro and Claude Opus 4.7 produce substantial severity downgrades with significant confidence reductions even when verdict labels are preserved. The attack transfers to ELF binaries, where Gemini flips 16 of 40. A verification-guided defense prompt roughly halves the benign verdicts, but 42.9 percent of malicious samples still reach benign. LLM malware analyzers therefore require provenance checks that separate verified facts from attacker-controlled claims, not narrative trust."
     },
     {
       "id": "2609.19391",
@@ -39,7 +40,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《MAGS: Multi-agent Auto-formalization Guarantees Safety for Agentic Outputs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "LLM 编码代理现在生成的复杂程序的规模使得彻底的人工审查变得越来越困难，从而增加了安全和保障失败的风险。常见的方法，包括模糊测试、静态分析和 LLM 作为验证者，可以检测到许多故障，但很难覆盖所有可能的边缘情况。形式验证通过为指定属性提供机器可检查的保证来解决这个问题，但传统上需要大量的手动规范和证明工程。我们引入了一个统一的多代理框架 MAGS，它生成具有正式安全保证的可执行程序，使用 Dafny 作为验证感知的中间表示，可以机械地检查安全属性。 MAGS 形式化并冻结人工审核的 API 和安全要求，将生成的代码转换为 Dafny，使用验证者反馈修复违规行为，并将经过验证的程序编译回可执行代码。我们在 100 个 CUDA 内核、100 个终端脚本和 20 个机械臂任务上评估 MAGS。在所有 220 个示例中，它在生成程序时取得了 100% 的成功率，并针对冻结的规范提供了重要的安全保证。独立的安全性和功能评估进一步显示了所有三个领域的强大性能，同时揭示了自动形式化语义未完全捕获目标行为时的失败。",
       "topics": [
         "C"
       ],
@@ -49,7 +50,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.19391",
-      "pdf": "https://arxiv.org/pdf/2609.19391"
+      "pdf": "https://arxiv.org/pdf/2609.19391",
+      "abstractEn": "LLM coding agents now generate complex programs at a scale that makes thorough human review increasingly difficult, raising the risk of safety and security failures. Common approaches, including fuzz testing, static analysis, and LLM-as-a-Verifier, can detect many failures but struggle to cover all possible edge cases. Formal verification addresses this by providing machine-checkable guarantees over specified properties, but traditionally demands substantial manual specification and proof engineering. We introduce a unified multi-agent framework, MAGS, that generates executable programs with formal safety guarantees, using Dafny as a verification-aware intermediate representation where safety properties can be mechanically checked. MAGS formalizes and freezes human-audited APIs and safety requirements, translates generated code into Dafny, repairs violations using verifier feedback, and compiles verified programs back into executable code. We evaluate MAGS on 100 CUDA kernels, 100 terminal scripts, and 20 robotic-arm tasks. Across all 220 examples, it achieves a 100% success rate in producing programs with non-trivial safety guarantees against frozen specifications. Independent safety and functional evaluations further show strong performance across all three domains, while revealing failures when the auto-formalized semantics do not fully capture the target behavior."
     },
     {
       "id": "2609.18658",
@@ -59,7 +61,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《A Security Risk Assessment Framework for AI-Powered Development Tools》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "人工智能驱动的开发工具现在广泛用于生成代码并协助开发人员完成日常编程任务。尽管现有的工作已经识别了人工智能生成的代码中的漏洞，但面向安全的工作通常侧重于漏洞检测而不是风险评估。为了弥补这一差距，本文提出了一种安全风险评估框架（SRF）来评估人工智能生成代码的安全风险。 SRF 结合了威胁建模、安全分析和基于漏洞严重性的定量风险评估方法。该框架应用于一组与安全相关的编程任务，其中使用 Bandit 和 Semgrep 分析由多个人工智能驱动的开发工具生成的代码。结果表明，人工智能生成的代码可能会在所有评估的工具中引入安全漏洞。他们还表明，风险级别因任务类型而异，因为输入处理和文件处理任务显示出较高的风险，而较简单的任务仍然是低风险。工具之间存在差异，但小于任务类别之间的差异。总体而言，SRF 能够对人工智能生成的代码进行可重复的评估，并提供评估其安全影响的实用框架。",
       "topics": [
         "A"
       ],
@@ -67,7 +69,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.18658",
-      "pdf": "https://arxiv.org/pdf/2609.18658"
+      "pdf": "https://arxiv.org/pdf/2609.18658",
+      "abstractEn": "AI-powered development tools are now widely used to generate code and assist developers with routine programming tasks. Although existing work has identified vulnerabilities in AI-generated code, security-oriented work is often focused on vulnerability detection rather than risk assessment. To address this gap, this paper presents a Security Risk Assessment Framework (SRF) to evaluate the security risks of AI-generated code. SRF combines threat modeling, security analysis, and a quantitative risk evaluation approach based on vulnerability criticality. The framework is applied to a set of security-relevant programming tasks, where code generated by multiple AI-powered development tools is analyzed using Bandit and Semgrep. The results show that AI-generated code can introduce security vulnerabilities across all evaluated tools. They also show that risk levels vary by task type, as input processing and file handling tasks showed higher risk, while simpler tasks remained low-risk. Differences between tools exist but are smaller than differences across task categories. Overall, SRF enables reproducible evaluation of AI-generated code and provides a practical framework for assessing its security implications."
     },
     {
       "id": "2609.18512",
@@ -79,7 +82,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《PatchyBFT: Automating Diversification of Fault-Tolerant Systems using LLMs》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "如果副本有一个共同的缺陷，同时影响的副本数量超过了可容忍的阈值，那么容错协议就会失败。因此，理想情况下，副本应该独立失败，这可以通过多样化来实现。然而，在实践中，相同的协议实现通常由所有副本共享，这并不奇怪，因为提供多种不同的实现是困难且高度费力的。这带来了重大风险，因为共享协议实现由于其复杂性而成为常见错误的主要候选者。通过 PatchyBFT，我们演示了如何在给定参考实现的情况下，利用大型语言模型（LLM）自动且可扩展地生成代码，这些代码可以编译、通过测试，并且在语义/二进制方面存在显着差异，可以替换参考实现中的代码，从而显着降低多样化成本。我们通过多样化三种实现：PBFT、HotStuff 和 Raft，展示了使用 LLM 实现复制协议实现多样化的可行性，展示了如何实现高达 65% 的代码库的多样化。",
       "topics": [
         "C-chain"
       ],
@@ -89,7 +92,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2609.18512",
-      "pdf": "https://arxiv.org/pdf/2609.18512"
+      "pdf": "https://arxiv.org/pdf/2609.18512",
+      "abstractEn": "Fault-tolerant agreement protocols fail if replicas share a common flaw that simultaneously affects more replicas than the tolerable threshold. Therefore replicas should ideally fail independently, which can be achieved through diversification. However, in practice, often the same protocol implementation is shared by all replicas which is not surprising given that the provision of multiple diverse implementations is difficult and highly laborious. This poses a major risk, as a shared protocol implementation is a prime candidate for common bugs due to its complexity. With PatchyBFT, we demonstrate how, given a reference implementation, Large Language Models (LLMs) can be utilised for the automated and scalable generation of code that compiles, passes tests, and crucially differs semantically/binary-wise, that can re- place code in the reference implementation, thereby significantly reducing diversification costs. We demonstrate the feasibility of diversification of replication protocol implementations using LLMs by diversifying three implementations: PBFT, HotStuff, and Raft, showing how up to 65% of the codebase can be diversified."
     },
     {
       "id": "2609.20069",
@@ -102,7 +106,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Competition, Collusion, and Corruption: The Spectrum of MEV Attacks on DAG-Based BFT Consensus Protocols》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "尽管节点出现恶意故障，拜占庭容错（BFT）协议仍能保证安全性和活跃性。然而，它们并不能防止交易顺序的对抗性操纵，即提议者分配的顺序与客户提交交易的顺序不同。利用这种自由裁量权来获取利润被称为最大可提取价值（MEV），并且在基于 DAG 的 BFT 协议中得到强化，其中每个副本同时提出区块，而不是每轮通过单个指定的提议者路由交易。针对基于 DAG 的 BFT 协议的 MEV 攻击激增，导致结果变得难以驾驭：攻击是在不同的协议上、在不同的指标下单独报告的，这使得人们不清楚两种攻击是否有根本的不同，或者仅仅是在描述方式上有所不同。本文通过提出基于 DAG 的 BFT 协议的 MEV 攻击空间来弥补这一差距，该攻击空间围绕四个系列进行组织：对手、协议、目标和部署。对于每个系列，我们确定了影响攻击影响的维度。攻击空间中的每个点在每个维度上固定一个值，从而代表一种独特的潜在 MEV 攻击，然后可以在特定的基于 DAG 的 BFT 协议上实例化。我们进行了一组实验，每个实验在协议允许的情况下隔离一个维度，以凭经验测量其对针对六种基于 DAG 的 BFT 生产协议的 MEV 攻击成功率的影响。我们的实验评估表明，我们评估的每个协议都容易受到该领域至少一部分 MEV 攻击的影响，并且攻击的成功主要取决于协议本身的设计，而不是攻击者的努力。",
       "topics": [
         "A"
       ],
@@ -112,7 +116,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.20069",
-      "pdf": "https://arxiv.org/pdf/2609.20069"
+      "pdf": "https://arxiv.org/pdf/2609.20069",
+      "abstractEn": "Byzantine Fault-Tolerant (BFT) protocols guarantee safety and liveness despite the malicious failure of nodes. However, they do not prevent adversarial manipulation of transaction order, where the order a proposer assigns diverges from the order in which clients submitted their transactions. Exploiting this discretion for profit is known as maximal extractable value (MEV), and it is intensified in DAG-based BFT protocols, where every replica proposes blocks concurrently rather than routing transactions through a single designated proposer each round. The proliferation of MEV attacks on DAG-based BFT protocols has made the resulting landscape difficult to navigate: attacks are reported individually, on different protocols, and under different metrics, making it unclear whether two attacks differ fundamentally or merely in how they are described. This paper closes that gap by presenting an attack space for MEV on DAG-based BFT protocols, organized around four families: the adversary, the protocol, the target, and the deployment. For each family, we identify the dimensions that shape an attack's impact. Each point in the attack space fixes one value per dimension, thereby representing a distinct, potential MEV attack, which can then be instantiated on a specific DAG-based BFT protocol. We perform a set of experiments, each isolating a single dimension where the protocol permits it, to empirically measure its effect on the success rate of MEV attacks against six production DAG-based BFT protocols. Our experimental evaluation reveals that every protocol we evaluate is vulnerable to at least a subset of the MEV attacks in this space, and that which attacks succeed is mostly dictated by the protocol's own design rather than by attacker effort."
     },
     {
       "id": "2609.20010",
@@ -126,7 +131,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《XIR: A Framework for Interoperability across Cross-Chain Protocols Based on a Verifiable Intermediate Representation》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "跨链协议使应用程序能够跨区块链交换消息。在点对点配置下，通信依赖于源区块链和目标区块链之间的直接连接，这限制了区块链的可达性并需要额外的配置来连接更多区块链。为了量化这个问题，本文分析了 2025 年 1 月至 10 月期间从 6 个协议（Axelar、CCIP、Hyperlane、LayerZero、Relay 和 Wormhole）收集的约 2500 万条主网跨链交易事件。生成的图表涵盖了 286 个活跃区块链和 11,935 个直接连接的有序区块链对。这些连接提供 14.64% 的直接可达性，而完全直接连接需要 81,510 个点对点配置。我们提出了 XIR，一个基于可验证中间表示的跨链协议互操作性框架。这种表示将应用程序消息绑定到经过身份验证的跨链协议传递的有序记录，从而跨协议边界保留消息身份和验证历史记录。 XIR 网关和 XIR 适配器使用此表示形式将现有连接组成相同协议和跨协议多跳路径。我们实现了集成 Hyperlane 和 LayerZero 的 XIR 原型，并在本地和公共测试网环境中对其进行评估。理论分析和评估表明，通过正确配置的跨链协议连接，XIR 避免了 67,018 个额外的点对点配置，相当于服务相同可达对的点对点配置基线所需总数的 84.88%，并将所有有序区块链对的可达性从 14.64% 提高到 96.86%。",
       "topics": [
         "A"
       ],
@@ -136,7 +141,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.20010",
-      "pdf": "https://arxiv.org/pdf/2609.20010"
+      "pdf": "https://arxiv.org/pdf/2609.20010",
+      "abstractEn": "Cross-chain protocols enable applications to exchange messages across blockchains. Under point-to-point configurations, communication depends on a direct connection between the source and destination blockchains, limiting blockchain reachability and requiring additional configurations to connect more blockchains. To quantify this problem, this paper analyzes approximately 25 million mainnet cross-chain transaction events collected from six protocols (Axelar, CCIP, Hyperlane, LayerZero, Relay, and Wormhole) between January and October 2025. The resulting graph covers 286 active blockchains and 11,935 directly connected ordered blockchain pairs. These connections provide a direct reachability of 14.64%, while full direct connectivity would require 81,510 point-to-point configurations. We present XIR, a framework for interoperability across cross-chain protocols based on a verifiable intermediate representation. This representation binds an application message to an ordered record of authenticated cross-chain protocol deliveries, preserving message identity and verification history across protocol boundaries. XIR Gateways and XIR Adapters use this representation to compose existing connections into same-protocol and cross-protocol multi-hop paths. We implement an XIR prototype integrating Hyperlane and LayerZero and evaluate it in local and public-testnet environments. Theoretical analysis and evaluation show that, with correctly configured cross-chain protocol connections, XIR avoids 67,018 additional point-to-point configurations, equivalent to 84.88% of the total required by a point-to-point configuration baseline serving the same reachable pairs, and increases reachability from 14.64% to 96.86% of all ordered blockchain pairs."
     },
     {
       "id": "2609.18344",
@@ -150,7 +156,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Detecting Logic Vulnerabilities Across the Contract and Device Layers of Blockchain-Enabled IoT With Multi-Agent Heterogeneous Graph Attention》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "abstract": "支持区块链的物联网 (IoT) 系统将智能合约与嵌入式设备集成，以支持去中心化设备管理和访问控制。因此，它们的安全性共同取决于链上合约和链下设备固件的逻辑。任一层中的逻辑缺陷都可能违反相同的系统不变量，例如未经授权的访问、不正确的状态更改或不受保护的特权操作。现有方法依赖于合约分析、固件分析和基于图形的漏洞检测。然而，这些方法通常专注于单层或工件，并且通常依赖于预定义的漏洞模式、仿真保真度或模糊安全相关组件角色的同类表示。它们还缺乏支持不同安全任务同时仍可部署在资源有限的网关上的统一架构。为了解决这些限制，我们将 MA-HGAT 扩展为跨层多代理异构图注意框架，该框架使用统一的四角色、九关系模式对合同、固件工件、设备队列和事务流进行建模。角色对齐的代理通过交叉注意力交换异构证据，而图、链路和节点级头支持多个检测任务，并且基于角色的网关-云分区可实现轻量级边缘推理。因此，MA-HGAT 提供了一个统一且可部署的框架，用于检测支持区块链的物联网系统的合约层和设备层的逻辑漏洞。",
       "topics": [
         "C-chain"
       ],
@@ -159,7 +165,8 @@
         "C-chain"
       ],
       "url": "https://arxiv.org/abs/2609.18344",
-      "pdf": "https://arxiv.org/pdf/2609.18344"
+      "pdf": "https://arxiv.org/pdf/2609.18344",
+      "abstractEn": "Blockchain-enabled Internet of Things (IoT) systems integrate smart contracts with embedded devices to support decentralized device management and access control. Their security therefore depends jointly on the logic of on-chain contracts and off-chain device firmware. Logic flaws in either layer can violate the same system invariants, such as unauthorized access, improper state changes, or unguarded privileged operations. Existing approaches rely on contract analysis, firmware analysis, and graph-based vulnerability detection. However, these methods typically focus on a single layer or artifact and often depend on predefined vulnerability patterns, emulation fidelity, or homogeneous representations that obscure security-relevant component roles. They also lack a unified architecture that supports different security tasks while remaining deployable on resource-constrained gateways. To address these limitations, we extend MA-HGAT into a cross-layer multi-agent heterogeneous graph attention framework that models contracts, firmware artifacts, device fleets, and transaction streams with a unified four-role, nine-relation schema. Role-aligned agents exchange heterogeneous evidence through cross-attention, while graph-, link-, and node-level heads support multiple detection tasks and a role-based gateway--cloud partition enables lightweight edge inference. MA-HGAT thus provides a unified and deployable framework for detecting logic vulnerabilities across the contract and device layers of blockchain-enabled IoT systems."
     },
     {
       "id": "2609.18778",
@@ -173,7 +180,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Vigil: Accountable Liveness against Selective Silence》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "BFT 对安全违规行为的责任众所周知，最近的工作将全球活跃度违规行为归咎于该行为； \\emph{接收者选择性}沉默仍未解决。选择性沉默的对手会隐瞒来自某些诚实节点的消息，同时对其他节点表现得正确。它可以阻碍共识，但却可以逃避所有现有机制。我们启动了一项针对选择性沉默的问责制的系统研究。消极的是，对最多 $f$ 诚实节点保持沉默的单独攻击者与诚实节点无法区分，从而在 \\emph{沉默识别阈值} 上产生通用下界 $K_{\\mathrm{SI}} \\ge f{+}1$ ；此外，在沉默引起的违规之后任何无反馈的修复都会花费$ θ（n ^ 3）$。积极的是，Tendermint 变体 \\textsc{Vigil} 通过位图交叉证明、基于核心的成员资格和挑战-响应审核，将这些边界与攻击自适应转发相匹配。It pays $O(n)$ authenticators per node when no selective silence occurs (plus $Θ(n^2)$ bitmap metadata bits per node), relays in proportion to the attack's width (sub-threshold silence can force up to $n^3/27$ relays per view, a cost we price exactly), and majority-accuses any node silent toward more than a tunable resilience $τ_A$ of honest peers ($K_{\\mathrm{SI}} = τ_A{+}1$，最优为 $τ_A = f$)。我们还对剩余的亚阈值破坏面进行精确定价，并将识别扩展到 $x$ 部分同步。在三区域 WAN 上进行的真实网络实验，以及与每个封闭形式保持完全相等的模拟器，确认了每个阈值和成本：在 $2\\%$ 损失下，$f{+}1$ 指控条错误地指控 $91.2\\%$ 的诚实节点，而我们的多数条指控 $0.002\\%$。",
       "topics": [
         "A"
       ],
@@ -182,7 +189,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.18778",
-      "pdf": "https://arxiv.org/pdf/2609.18778"
+      "pdf": "https://arxiv.org/pdf/2609.18778",
+      "abstractEn": "BFT accountability is well understood for safety violations, and recent work attributes global liveness violations; \\emph{recipient-selective} silence remains unresolved. A selectively silent adversary withholds messages from some honest nodes while behaving correctly toward others. It can stall consensus yet evade every existing mechanism. We initiate a systematic study of accountability against selective silence. Negatively, a lone attacker silent toward at most $f$ honest nodes is indistinguishable from an honest node, yielding a universal lower bound $K_{\\mathrm{SI}} \\ge f{+}1$ on the \\emph{silence identification threshold}; moreover, any feedback-free repair after a silence-induced violation costs $Θ(n^3)$. Positively, \\textsc{Vigil}, a Tendermint variant, matches these bounds with attack-adaptive forwarding, via bitmap cross-attestation, core-based membership, and challenge--response auditing. It pays $O(n)$ authenticators per node when no selective silence occurs (plus $Θ(n^2)$ bitmap metadata bits per node), relays in proportion to the attack's width (sub-threshold silence can force up to $n^3/27$ relays per view, a cost we price exactly), and majority-accuses any node silent toward more than a tunable resilience $τ_A$ of honest peers ($K_{\\mathrm{SI}} = τ_A{+}1$, optimal at $τ_A = f$). We also price the residual sub-threshold griefing surface exactly and extend identification to $x$-partial synchrony. Real-network experiments on a three-region WAN, together with a simulator held to exact equality with every closed form, confirm each threshold and cost: at $2\\%$ loss, an $f{+}1$ accusation bar falsely accuses $91.2\\%$ of honest nodes, while our majority bar accuses $0.002\\%$."
     },
     {
       "id": "2609.18811",
@@ -195,7 +203,7 @@
       ],
       "year": 2026,
       "venue": "USENIX Security 2026",
-      "abstract": "协议/链上工作《Differential Trust: Dynamic Multi-Authority Anonymous Credentials with Epoch-Weighted Updates》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "Anonymous credentials (ACs) are fundamental to privacy-preserving authentication, allowing users to prove possession of attributes without revealing their identities. State-of-the-art ACs distribute credential issuance across multiple authorities, typically employing techniques such as Shamir's secret sharing or aggregate signatures. While this approach enhances system robustness and eliminates a single point of failure, it treats all authorities equally in the credential issuance phase.这种统一的待遇忽视了不同权威机构的不同程度的可信度或持有的股份。这种限制在现代去中心化系统（例如权益证明网络）中变得尤其成问题，其中节点之间固有的信任差异无法在凭证发行过程中得到利用。为了解决这个限制，我们提出了基于时代权重的多权威匿名凭证（MA-ACEW）的概念，这是第一个考虑凭证发行中权威权重分布的多权威匿名凭证（MA-AC）模型。至关重要的是，当权限权重分布在不同时期发生变化时，MA-ACEW 可以实现高效的凭证更新。MA-ACEW 的核心是我们新颖的 Epoch-Bound Pointcheval-Sanders Signature (EB-PS) 原语，它将签名绑定到特定的时间纪元。这种时间绑定既可以在纪元内进行基于权重的凭证颁发，又可以在纪元之间进行高效的非交互式凭证更新。我们形式化了 EB-PS 的 EUF-eCMA 不可伪造性要求，并证明我们的构造在新颖的 STB-GPS 假设下满足它。然后我们证明我们的 MA-ACEW 结构实现了不可伪造性、匿名性和盲目性。最后，我们提出了证明 EB-PS 和 MA-ACEW 效率的基准。值得注意的是，呈现由 128 个部分凭证聚合而成的凭证平均只需要 10.68 毫秒。",
       "topics": [
         "A"
       ],
@@ -203,7 +211,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.18811",
-      "pdf": "https://arxiv.org/pdf/2609.18811"
+      "pdf": "https://arxiv.org/pdf/2609.18811",
+      "abstractEn": "Anonymous credentials (ACs) are fundamental to privacy-preserving authentication, allowing users to prove possession of attributes without revealing their identities. State-of-the-art ACs distribute credential issuance across multiple authorities, typically employing techniques such as Shamir's secret sharing or aggregate signatures. While this approach enhances system robustness and eliminates a single point of failure, it treats all authorities equally in the credential issuance phase. This uniform treatment disregards the varying levels of trustworthiness or stake held by different authorities. Such a limitation has become particularly problematic in modern decentralized systems like Proof-of-Stake networks, where the inherent trust differentiation among nodes cannot be leveraged in the credential issuance process. To address this limitation, we propose the notion of Multi-Authority Anonymous Credentials with Epoch-Based Weights (MA-ACEW), the first Multi-Authority Anonymous Credential (MA-AC) model that considers authorities' weight distribution in credential issuance. Crucially, MA-ACEW enables efficient credential updates when authority weight distributions change across epochs. The core of MA-ACEW is our novel Epoch-Bound Pointcheval-Sanders Signature (EB-PS) primitive, which binds signatures to specific time epochs. This temporal binding enables both weight-based credential issuance within epochs and efficient non-interactive credential updates across epochs. We formalize the EUF-eCMA unforgeability requirement for EB-PS and prove our construction satisfies it under a novel STB-GPS assumption. We then prove that our MA-ACEW construction achieves unforgeability, anonymity, and blindness. Finally, we present benchmarks demonstrating the efficiency of EB-PS and MA-ACEW. Remarkably, presenting a credential aggregated from 128 partial ones takes only 10.68 ms on average."
     },
     {
       "id": "2026-2056",
@@ -215,7 +224,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Reed-Solomon Codes Beyond Johnson: Efficient Decoding and Smaller Cryptographic Proofs》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "列表解码里德-所罗门码是编码理论中的一个核心问题，它与相互相关协议（MCA）一起支撑着许多简洁密码学证明的可靠性。在这项工作中，我们给出了 Reed–Solomon 列表解码和 MCA 的精确定量界限，提供了在加密大字段上保持高效的确定性解码算法，并专门化了我们的界限，以减少已实现的证明系统中的证明大小。我们的界限适用于任意规定的评估领域；除了约翰逊之外，它们还需要足够大的场特性。改进 Brakensiek、Chen、Putterman、Zhang 和 Cheng 的隐含导数方法，我们获得严格低于 Johnson 界限 $\\sqrt{\\rho}$ 的显式一致阈值 $a_1(\\rho)$，仅使用一阶导数，而不需要在接收到的单词中对其进行评估。一致 $a_1(\\rho)+\\eta_1$，其中 $\\eta_1>0$，我们更清晰的插值和候选计数给出列表大小 $O_\\rho(n/\\eta_1^2)$ 和 MCA 错误 $O_\\rho(n^2/(q\\eta_1^4))$，长度为 $n$ 的代码超过 $\\mathbb{F}_q$。更高的导数给出了容量的明确定量界限，统一了所有速率，锐化了郑未发表的手稿和 Jeronimo 的工作中先前的 MCA 结果，与我们的工作同时进行。在固定速率下，对于高于 Johnson 的协议差距 $\\eta_0>0$，我们改进了 Ben-Sasson 等人的 MCA 误差界限。 (BCHKS) 从 $O_\\rho(n/(q\\eta_0^5))$ 到 $O_\\rho(n/(q\\eta_0^3))$，在每个特征中。我们的解码器使用协议约束来恢复关闭消息，而无需枚举初始字段值。通过快速显式场算术，在固定速率和高于相应阈值的固定正一致性裕度下，确定性解码在每个特征中都需要 $\\widetilde O(n\\log q)$ 位操作，高于 Johnson，并且在足够大的特征中，需要高于我们的一阶曲线 $\\widetilde O(n\\log q)$。在足够大的特性的相同要求下，在与容量的每个固定正间隙处，解码在 $n$ 和 $\\log q$ 中保持多项式。我们的一阶导数界限首次减少了现有证明系统实现中超出约翰逊半径的可证明里德-所罗门邻近间隙界限的证明大小。在安全目标不变的情况下，我们为 ProveKit 护照证明节省了 79.4 KB (11.1%)，为 ZisK 压缩最终证明节省了 13.2 KB (4.63%)，为 LambdaVM CPU 子证明节省了 59.8 KB (4.85%)。我们已经在 ArkLib（一个用于验证密码学证明的精益库）中正式验证了列表解码和 MCA 边界以及具体参数证书，并证明了列表解码器的简化版本的正确性。",
       "topics": [
         "A"
       ],
@@ -223,7 +232,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/2056",
-      "pdf": "https://eprint.iacr.org/2026/2056.pdf"
+      "pdf": "https://eprint.iacr.org/2026/2056.pdf",
+      "abstractEn": "List decoding Reed–Solomon codes is a central problem in coding theory and, together with mutual correlated agreement (MCA), underpins the soundness of many succinct cryptographic proofs. In this work, we give precise quantitative bounds on Reed–Solomon list decoding and MCA up to capacity, provide deterministic decoding algorithms that remain efficient over cryptographically large fields, and specialize our bounds to reduce proof sizes in implemented proof systems. Our bounds apply to arbitrary prescribed evaluation domains; beyond Johnson, they require sufficiently large field characteristic. Refining the hidden-derivative method of Brakensiek, Chen, Putterman, Zhang, and Zheng, we obtain an explicit agreement threshold $a_1(\\rho)$ strictly below the Johnson bound $\\sqrt{\\rho}$, using only the first derivative, without requiring its evaluations in the received word. At agreement $a_1(\\rho)+\\eta_1$, where $\\eta_1&gt;0$, our sharper interpolation and candidate counts give list size $O_\\rho(n/\\eta_1^2)$ and MCA error $O_\\rho(n^2/(q\\eta_1^4))$ for codes of length $n$ over $\\mathbb{F}_q$. Higher derivatives give explicit quantitative bounds up to capacity, uniformly over all rates, sharpening prior MCA results in Zheng's unpublished manuscript and Jeronimo's work, concurrent with ours. At fixed rate, for agreement gap $\\eta_0&gt;0$ above Johnson, we improve the MCA error bound of Ben-Sasson et al. (BCHKS) from $O_\\rho(n/(q\\eta_0^5))$ to $O_\\rho(n/(q\\eta_0^3))$, in every characteristic. Our decoders use agreement constraints to recover close messages without enumerating initial field values. With fast explicit field arithmetic, at fixed rate and a fixed positive agreement margin above the respective threshold, deterministic decoding takes $\\widetilde O(n\\log q)$ bit operations above Johnson in every characteristic and $\\widetilde O(n^2\\log q)$ above our first-order curve in sufficiently large characteristic. Decoding remains polynomial in $n$ and $\\log q$ at every fixed positive gap from capacity, under the same requirement of sufficiently large characteristic. Our first-derivative bounds give the first proof-size reductions in existing proof-system implementations from provable Reed–Solomon proximity-gap bounds beyond the Johnson radius. At unchanged security targets, we save 79.4 KB (11.1%) for ProveKit passport proofs, 13.2 KB (4.63%) for ZisK compressed final proofs, and 59.8 KB (4.85%) for LambdaVM CPU subproofs. We have formally verified the list-decoding and MCA bounds and concrete parameter certificates in ArkLib, a Lean library for verified cryptographic proofs, and proved correctness of a simplified version of our list-decoder."
     }
   ]
 }

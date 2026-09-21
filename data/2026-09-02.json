@@ -12,7 +12,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《The Data Problem in Software Vulnerability Analysis: Artifacts, Quality, and Consumption》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "基于学习和法学硕士的软件漏洞分析的可信度取决于其训练和评估所依据的数据，但这些数据很少被作为一流对象进行检查。我们通过以数据集为中心的分类法来调查漏洞分析背后的数据，该分类法区分工件是什么（代码、元数据、补丁、测试/PoC、推理、跟踪）、它有多好（现实性、标签证据、规模、多样性、泄漏、可用性）以及它的用途。从涵盖 2016 年至 2026 年的 1522 篇论文的系统组装语料库以及早期的基础工作中，我们对一组 111 篇锚论文进行了分层编码，以逐字跨度支持每个肯定的评分标准值，并且我们报告每个属性的研究程度以及数据集的研究程度。结果追踪证据阶梯：可执行工件是唯一的主要类型，其中 24 个数据集中有 15 个都是真实世界分级的，并且带有接受独立检查的标签，而代码样本数据集（自动标记语料库和锚集中最大的类别）是最不现实的：41 个数据集中有 20 个从真实项目或 CVE 中提取漏洞，但只有 3 个将样本保留在代码部署的单元中，并且只有 2 个同时执行这两种操作 - 尽管这些是粗略的组件测试，只有一个代码样本数据集满足代码本更严格的全上下文真实世界等级。其中，在其适用的 90 个数据集中，有 49 个没有解决泄漏问题，超过四分之一的数据集没有提及可用性，推理数据最近才到达，并且主要是模型生成的，主要跟踪语料库仍然仅限于三个数据集，这是经过语料库范围的屏幕和对它出现的每个候选者进行全文检查后的总数，进一步的数据集在基准和工具之后第二次释放跟踪。",
       "topics": [
         "C"
       ],
@@ -21,7 +21,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.01503",
-      "pdf": "https://arxiv.org/pdf/2609.01503"
+      "pdf": "https://arxiv.org/pdf/2609.01503",
+      "abstractEn": "Learning- and LLM-based software vulnerability analysis is only as trustworthy as the data it is trained and evaluated on, yet that data is rarely examined as a first-class object. We investigate the data behind vulnerability analysis through a dataset-centric taxonomy that separates what an artifact is (code, metadata, patches, tests/PoCs, reasoning, traces), how good it is (realism, label evidence, scale, diversity, leakage, availability), and what it is used for. From a systematically assembled corpus of 1522 papers covering 2016-2026 plus foundational earlier work we deep-code a tiered set of 111 anchor papers, backing every affirmative rubric-graded value with a verbatim span, and we report, per attribute, both how much it has been studied and how well datasets achieve it. The results trace an evidence ladder: executable artifacts are the only major type where 15 of the 24 datasets are both graded real-world and carry labels that received an independent check, while code-sample datasets-the largest category in both the auto-tagged corpus and the anchor set-are the least realistic: 20 of the 41 draw their vulnerabilities from authentic projects or CVEs, but only 3 keep the sample at the unit the code is deployed in, and only 2 do both-though these are coarse component tests, and just one code-sample dataset meets the codebook's stricter full-context real-world grade. Among these, leakage goes unaddressed by 49 of the 90 datasets where it applies, more than a quarter say nothing about availability, reasoning data has arrived only recently and is mostly model-generated, and primary trace corpora remain limited to three datasets, the total after a corpus-wide screen and a full-text check of every candidate it surfaced, with further datasets releasing traces secondarily behind benchmarks and harnesses."
     },
     {
       "id": "2609.01187",
@@ -38,7 +39,7 @@
       ],
       "year": 2026,
       "venue": "EMNLP 2026",
-      "abstract": "《Athena: Vulnerability-Affected Library Identification via Knowledge Graph Completion》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "广泛使用的库中的单个漏洞可能会级联数百万个相关应用程序，但超过一半的漏洞数据库条目包含缺失或不正确的受影响库信息。现有的自动化方法忽略了漏洞数据库的关系结构，将识别视为孤立的文本检索问题。在本文中，我们提出了 Athena，这是第一个基于图的方法，用于识别受漏洞影响的库。 Athena 将漏洞数据库建模为知识图，并将识别问题重新表述为知识图补全 (KGC)。它包括三个关键模块：建模模块，构建集成CVE、库、CWE弱点类型、CPE产品和软件生态系统的安全知识图谱；一个完成模块，它应用模块化 KGC 主干来通过链接预测来预测给定 CVE 的缺失受影响库；重新排序模块检索 KGC 候选人，并使用经过知识图嵌入增强的微调 LLM 重新评分，共同利用结构和文本信息。我们在 VulLib 上的实验表明，Athena 的性能显着优于四个最先进的基线，平均性能提高了 32%。 F1 超过最佳基线（即 VulLibGen）。值得注意的是，我们的 KGC 主干仅具有 110M 参数，已经超越了 VulLibGen 在 7B 参数下的最佳配置，证明了基于图的建模的有效性；然后，重新排名模块会提供进一步的实质性收益，在所有评估的 LLM 主干中始终优于最佳基线。",
       "topics": [
         "C"
       ],
@@ -48,7 +49,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.01187",
-      "pdf": "https://arxiv.org/pdf/2609.01187"
+      "pdf": "https://arxiv.org/pdf/2609.01187",
+      "abstractEn": "A single vulnerability in a widely used library can cascade through millions of dependent applications, yet more than half of vulnerability database entries contain missing or incorrect affected-library information. Existing automated approaches neglect the relational structure of vulnerability databases, treating identification as an isolated text retrieval problem. In this paper, we propose Athena, the first graph-based approach for vulnerability affected library identification. Athena models vulnerability databases as a knowledge graph and reformulates the identification problem as knowledge graph completion (KGC). It comprises three key modules: a Modeling module that constructs a security knowledge graph integrating CVEs, libraries, CWE weakness types, CPE products, and software ecosystems; a Completion module that applies a modular KGC backbone to predict missing affected libraries for a given CVE via link prediction; and a Re-ranking module that retrieves KGC candidates and rescores them using a fine-tuned LLM augmented with knowledge graph embeddings, jointly leveraging structural and textual information. Our experiments on VulLib demonstrate that Athena significantly outperforms four state-of-the-art baselines, achieving a 32% improvement in Avg. F1 over the best baseline (i.e., VulLibGen). Notably, our KGC backbone with only 110M parameters already surpasses VulLibGen's best configuration at 7B parameters, demonstrating the effectiveness of graph-based modeling; the re-ranking module then provides substantial further gains, consistently outperforming the best baseline across all evaluated LLM backbones."
     },
     {
       "id": "2609.01185",
@@ -61,7 +63,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Reveree: Diagnosing LLM Reverse-Engineering Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "逆向工程 (RE) 对于恶意软件分析和漏洞发现等安全任务至关重要，大型语言模型 (LLM) 代理越来越能够自主执行该任务。夺旗 (CTF) RE 挑战已成为衡量此能力的标准代理，但评估取决于一个标准：代理是否夺取旗帜。该解决率既不能揭示代理在 RE 过程中的何处失败，也不能揭示成功是否反映了二进制分析或公共解决方案的召回。在本文中，我们提出了 Reveee，这是一个诊断框架，可以对 LLM RE 代理的轨迹进行三个级别的评分：解决率、通过八阶段 RE 模式的里程碑进度以及其操作的行为概况。理解阶段由对结果不知情的法学硕士法官进行评分，并与人类专家进行验证；所有其他阶段都经过确定性验证。使用 Revee，我们针对 88 个 picoCTF 和 NYU-CTF 挑战评估了 9 个前沿模型和 4 个提示策略。我们发现基本模型主导着绩效，而提示策略是次要的、依赖于模型的效果。令人惊讶的是，更大、更新或更昂贵的型号并不可靠。我们还发现，失败集中在 RE 过程的理解阶段，而额外的预算、坚持或推理努力几乎无法挽救其中的失败，这表明是能力限制而不是资源限制。关于记忆，虽然模型仅从挑战描述中再现 picoCTF 标志，但 NYU-CTF 显示出最小的可测量召回率，并且大多数解决方案在表面扰动中幸存下来，这表明真正的分析与记忆共存。我们向社区发布了 Revee。",
       "topics": [
         "C"
       ],
@@ -72,7 +74,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.01185",
-      "pdf": "https://arxiv.org/pdf/2609.01185"
+      "pdf": "https://arxiv.org/pdf/2609.01185",
+      "abstractEn": "Reverse engineering (RE) is critical to security tasks such as malware analysis and vulnerability discovery, and large language model (LLM) agents are increasingly able to perform it autonomously. Capture-the-flag (CTF) RE challenges have become the standard proxy for measuring this capability, but evaluation rests on a single criterion: whether the agent captures the flag. This solve rate reveals neither where in the RE process an agent fails nor whether a success reflects analysis of the binary or recall of a public solution. In this paper, we propose Reveree, a diagnostic framework that scores an LLM RE agent's trajectory at three tiers: solve rate, milestone progress through an eight-stage RE schema, and a behavioral profile of its actions. Comprehension stages are scored by an outcome-blinded LLM judge validated against a human expert; all other stages are verified deterministically. Using Reveree, we evaluate nine frontier models and four prompting strategies on 88 picoCTF and NYU-CTF challenges. We find that the base model dominates performance, whereas prompting strategy is a secondary, model-dependent effect. Surprisingly, larger, newer, or costlier models are not reliably stronger. We also find that failures concentrate at the comprehension stages of the RE process, and that extra budget, persistence, or reasoning effort rescues few of them, pointing to a competence limit rather than a resource limit. Regarding memorization, while models reproduce picoCTF flags from challenge descriptions alone, NYU-CTF shows minimal measurable recall, and most solves survive surface perturbation, indicating that genuine analysis coexists with memorization. We release Reveree to the community."
     },
     {
       "id": "2609.00362",
@@ -86,7 +89,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Revisiting Feedback-Driven LLM Code Repair: A Replication and Exploratory Java Extension》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "自从大型语言模型 (LLM) 出现以来，从业者越来越多地利用它们来支持他们的软件工程任务，包括自动代码修复，并显示出有希望的结果。然而，对可重复性和普遍性的担忧在很大程度上仍未得到探索。为了进一步评估这些问题和相关影响，我们部分重现并进行了 FeedbackEval 基准的探索性 Java 扩展 [1]，该扩展评估了 LLM 如何利用不同的反馈类型进行 Python 代码修复。首先，我们使用 GPT-4o 和 Claude 3.5 Sonnet 部分复制了对 394 个修复任务的原始研究，复制并观察了原始工作中报告的主要定性趋势。其次，我们通过从 50 个 Java 任务构建 100 个错误修复实例并评估反馈有效性来进行探索性 Java 扩展。我们的结果表明，Python 之前的结论可能对基准构建、反馈表示和工具生态系统敏感，从而激发了更多受控的多语言基准。具体来说，虽然测试反馈仍然是我们的 Python 复制中最强的反馈类型，但在我们的 Java 扩展中却没有观察到相同的排名，因为简单的测试反馈和基于 JUnit 的测试反馈没有显着差异。我们假设反馈信息和工具生态系统的差异（例如测试框架的冗长程度）可能部分解释了这种差异。最后，较轻的提示可降低成本，而修复效果不会产生显着差异。总的来说，我们的研究结果证实了部分受控复制下的主要趋势，并强调了基于法学硕士的修复系统需要更严格的多语言评估和仔细的反馈设计。",
       "topics": [
         "C"
       ],
@@ -95,7 +98,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.00362",
-      "pdf": "https://arxiv.org/pdf/2609.00362"
+      "pdf": "https://arxiv.org/pdf/2609.00362",
+      "abstractEn": "Since the advent of Large Language Models (LLMs), practitioners have increasingly leveraged them to support their software engineering tasks, including automated code repair, showing promising results. Yet, concerns regarding reproducibility and generalizability remain largely unexplored. To further evaluate these concerns and associated impacts, we partially reproduce and conduct an exploratory Java extension of the FeedbackEval benchmark [1], which evaluates how LLMs leverage different feedback types for Python code repair. First, we partially replicate the original study on 394 repair tasks using GPT-4o and Claude 3.5 Sonnet, reproducing and observing the main qualitative trends reported in the original work. Second, we conduct an exploratory Java extension by constructing 100 erroneous repair instances from 50 Java tasks and evaluating feedback effectiveness. Our results show that previous conclusions from Python may be sensitive to benchmark construction, feedback representation, and tooling ecosystem, motivating more controlled multilingual benchmarks. Specifically, while test feedback remains the strongest feedback type in our Python replication, the same ranking is not observed in our Java extension, as simple and JUnit-based test feedback do not differ significantly. We hypothesize that differences in feedback informativeness and tooling ecosystems, such as the verbosity of test frameworks, may partly explain such a difference. Finally, lighter prompts reduce cost without significant differences in repair effectiveness. Overall, our findings confirm key trends under a partially controlled replication and highlight the need for more rigorous multilingual evaluation and careful feedback design in LLMbased repair systems."
     },
     {
       "id": "2609.01222",
@@ -109,7 +113,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《What's in Your Agent's Context? Context Privilege Escalation Attacks against AI Agent Harness》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "现实世界中备受瞩目的人工智能代理工具通常依赖于供应商专有或不透明的设计来进行上下文组装，从而导致对组装上下文的来源和底层逻辑知之甚少，而由此产生的安全风险在很大程度上未被探索。在本文中，我们首次对现实世界人工智能代理线束中的上下文组装设计进行系统分析。我们研究并揭示了代理工具如何设计来收集和组装来自不同来源的上下文，并确定由这些设计产生的一组实用攻击向量。我们的分析揭示了现实世界利用的上下文组装中的两类新颖的攻击：（1）消息角色上下文权限升级（M-CPE），当来自低特权上下文的攻击者控制的内容被合并到更高特权的消息角色中时，就会发生这种情况。 (2) 跨范围上下文权限升级 (X-CPE)，当攻击者控制的内容持续超出其引入的上下文时，就会发生这种情况。我们对针对 12 个真实世界代理工具（包括 Claude Code 和 Codex）的 CPE 攻击进行了系统安全分析。由此产生的后果包括完全代理妥协、远程代码执行、拒绝服务以及被操纵的工具或技能调用等。",
       "topics": [
         "C"
       ],
@@ -118,7 +122,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.01222",
-      "pdf": "https://arxiv.org/pdf/2609.01222"
+      "pdf": "https://arxiv.org/pdf/2609.01222",
+      "abstractEn": "Real-world, high-profile AI agent harnesses often rely on vendor-proprietary or opaque designs for context assembly, leaving the sources and underlying logic of assembled context poorly understood and the resulting security risks largely unexplored. In this paper, we present the first systematic analysis of context assembly designs in real-world AI agent harnesses. We study and uncover how an agent harness is designed to collect and assemble context from diverse sources, and identify a set of practical attack vectors arising from these designs. Our analysis brings to light two novel categories of attacks in the context assembly of real-world harnesses: (1) MessageRole Context Privilege Escalation (M-CPE), which occurs when attacker-controlled content originating from a low-privileged context is incorporated into a higher-privileged message role. (2) Cross-Scope Context Privilege Escalation (X-CPE), which occurs when attacker-controlled content persists beyond the context in which it was introduced. We performed a systemic security analysis of the CPE attacks against 12 real-world agent harnesses, including Claude Code and Codex. The resulting consequences include full agent compromise, remote code execution, denial of service, and manipulated tool or skill invocations, etc."
     },
     {
       "id": "2609.00837",
@@ -132,7 +137,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Breaking Cycles for Scalable Fair Ordering in Blockchain Systems》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "在区块链系统中，交易顺序直接决定财务结果：不公平的排序导致抢先交易和三明治攻击，这些攻击已从以太坊用户身上榨取了超过 6.86 亿美元。当前的公平排序协议聚合来自副本的成对接收顺序证据。然而，在竞争或对抗性操纵下，孔多塞循环迫使它们进入全局强连通分量（SCC）凝聚，导致延迟、粗批次和扩展失败。我们提出了 FlashOrder，这是一种确定性公平排序引擎，可以在循环歧义在批次中传播之前对其进行本地化。FlashOrder 将成对偏好嵌入到一维规范位置中，使用分区超图对附近的事务进行聚类，并执行分层的集群间和集群内序列化，用局部排序和聚合取代批量范围的 SCC 压缩。在基于 libhotstuff 的原型上针对 Themis (CCS '23) 和 Rashnu (VLDB '24) 进行评估，FlashOrder 的吞吐量比 Themis 高出 10.5$\\times$，比 Rashnu 高出 4.8$\\times$，且延迟差距随着网络规模的扩大而扩大。在受控对抗模拟中，它减少了 88.7% 的最大排名位移，并且在 Condorcet 攻击下，它平均比 Themis 和 Rashnu 维持了 12.0$\\times$ 和 9.7$\\times$ 高的吞吐量。这些结果表明，本地化循环模糊性可以在显着提高吞吐量的情况下产生更强的公平性。",
       "topics": [
         "A"
       ],
@@ -140,7 +145,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.00837",
-      "pdf": "https://arxiv.org/pdf/2609.00837"
+      "pdf": "https://arxiv.org/pdf/2609.00837",
+      "abstractEn": "In blockchain systems, transaction order directly determines financial outcomes: unfair ordering enables front-running and sandwich attacks that have extracted over \\$686M from Ethereum users. Current fair-ordering protocols aggregate pairwise receive-order evidence from replicas. Under contention or adversarial manipulation, however, Condorcet cycles force them into global strongly connected component (SCC) condensation, causing delays, coarse batches, and scaling failures. We present FlashOrder, a deterministic fair-ordering engine that localizes cyclic ambiguity before it propagates across the batch. FlashOrder embeds pairwise preferences into one-dimensional canonical positions, clusters nearby transactions with a partition hypergraph, and performs hierarchical inter- and intra-cluster serialization, replacing batch-wide SCC condensation with localized sorting and aggregation. Evaluated against Themis (CCS '23) and Rashnu (VLDB '24) on a libhotstuff-based prototype, FlashOrder achieves up to 10.5$\\times$ higher throughput than Themis and 4.8$\\times$ higher than Rashnu, with the latency gap widening as network scales. In controlled adversarial simulation, it reduces maximum rank displacement by 88.7\\%, and under Condorcet attacks it sustains 12.0$\\times$ and 9.7$\\times$ higher throughput than Themis and Rashnu on average. These results show that localizing cyclic ambiguity yields stronger fairness at substantially higher throughput."
     },
     {
       "id": "2609.01186",
@@ -151,7 +157,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Smart Contracts Claimed Vulnerable by the CVE Database, with Labels and Source Locations》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "常见漏洞和暴露 (CVE) 数据库对硬件和软件中的漏洞声明进行了分类，其中包括与区块链程序（又称智能合约）相关的漏洞声明。我们推出了 CVE-Smart-Contracts，这是截至 2026 年 7 月的有关以太坊智能合约的 CVE 记录的精选数据集。该数据集包含易受攻击的工件（源代码和运行时字节码）、根据三个分类法的标签以及功能级位置。 CVE 记录的检索、额外证据的收集、记录和工件之间对应关系的验证、标签分配和漏洞定位都是自动化的，剩下 15% 需要手动分析。该数据集并未验证原始的漏洞声明，但将一些明显错误的记录标记为“已驳斥”。为了再现性，保留所有外部输入，以便重新运行管道会产生相同的输出。该数据集包含 491 条与已部署合同相关的记录，26 条涉及项目（主要是图书馆），45 条没有经过验证的工件，以及 6 条声明被驳回的记录。该数据集支持实证安全研究，特别是代码分析和修复技术的评估。",
       "topics": [
         "A"
       ],
@@ -160,7 +166,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.01186",
-      "pdf": "https://arxiv.org/pdf/2609.01186"
+      "pdf": "https://arxiv.org/pdf/2609.01186",
+      "abstractEn": "The Common Vulnerabilities and Exposures (CVE) database catalogs vulnerability claims in hard- and software, among them those pertaining to blockchain programs a.k.a. smart contracts. We present CVE-Smart-Contracts, a curated dataset of CVE records up to July 2026 referring to Ethereum smart contracts. The dataset contains the vulnerable artifacts (source code and runtime bytecode), labels according to three taxonomies, and function-level locations. The retrieval of CVE records, collection of additional evidence, validation of the correspondence between records and artifacts, label assignment, and vulnerability localization are automated, leaving 15% to manual analysis. The dataset does not validate the original vulnerability claims, but marks a few records obviously wrong as `refuted'. For the sake of reproducibility, all external inputs are retained, so that rerunning the pipelines results in the same outputs. The dataset comprises 491 records linked to deployed contracts, 26 referring to projects (mostly libraries), 45 without validated artifacts, and six records with refuted claims. The dataset supports empirical security research, in particular the evaluation of code analysis and repair techniques."
     },
     {
       "id": "2026-1838",
@@ -170,7 +177,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《How to prove more false statements: Fiat–Shamir limitations on (generated) R1CS》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "Fiat--Shamir（FS）转换是一种将交互式协议转换为非交互式协议的技术。 FS 在理想化模型中是安全的，例如随机预言模型 (ROM)（如果交互协议满足称为状态恢复健全性的条件）。众所周知，有些协议的 FS 转换在 ROM 中是安全的，但在用任何具体的哈希函数实例化时却是不安全的。从历史上看，这些协议是人为设计的（例如，它们的设计使得它们的 FS 转换不健全）。Khovratovich、Rothblum 和 Soukhanov (CRYPTO 2025) 表明，基于 Goldwasser、Kalai 和 Rothblum 协议 (JACM 2015) 的一类自然（且实际部署的）协议在与 FS 和任何具体哈希函数一起编译时也是不健全的。我们将攻击扩展到不同类别的协议：那些实例是通过运行程序生成的协议。此设置涵盖了现代证明系统中的具体趋势，其中要证明的计算由程序（通常是对抗性生成的）描述，然后该程序被编译或自动转换为目标关系的实例，例如 1 级约束满足（R1CS）。我们证明，当转换过程“足够具有表现力”时，控制程序代码的对手可以破坏非交互式证明系统的健全性。这些攻击泛化到一类广泛的协议：作弊证明者可以在声明绑定之前准备接受记录的任何协议。我们展示了 R1CS 的 Spartan (CRYPTO 2020) 和 Aurora (EUROCRYPT 2019) 证明系统的变体属于此类。作为对攻击的补充，我们形式化了一种缓解措施：从生成的语句而不是生成它的程序中导出第一个 Fiat--Shamir 挑战，这可以证明将编译协议的健全性降低到非生成关系的底层协议的健全性。",
       "topics": [
         "A"
       ],
@@ -178,7 +185,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1838",
-      "pdf": "https://eprint.iacr.org/2026/1838.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1838.pdf",
+      "abstractEn": "The Fiat--Shamir (FS) transformation is a technique that converts interactive protocols into non-interactive ones. FS is secure in idealized models such as the random oracle model (ROM) (if the interactive protocol satisfies a condition known as state-restoration soundness). It is known that there are protocols whose FS transformation is secure in the ROM, yet insecure when instantiated with any concrete hash function. Historically, these protocols were contrived (as in, they were designed so their FS transformation would be unsound). Khovratovich, Rothblum and Soukhanov (CRYPTO 2025) showed that a class of natural (and practically deployed) protocols based on a protocol of Goldwasser, Kalai and Rothblum (JACM 2015) was also unsound when compiled with FS and any concrete hash function. We extend the attack to a different class of protocols: those whose instances are generated by running a program. This setting covers concrete trends in modern proof systems, in which the computation to be proven is described by a program (often adversarialy generated) which is then either compiled or autonomously converted into an instance of target relation such as rank-1 constraint satisfaction (R1CS). We show that, when the conversion process is &#34;expressive enough&#34;, an adversary controlling the program code can break soundness of the non-interactive proof system. The attacks generalize to a wide class of protocols: any protocol in which a cheating prover can prepare an accepting transcript before the statement is bound. We show that variants of the Spartan (CRYPTO 2020) and Aurora (EUROCRYPT 2019) proof systems for R1CS fall in this class. Complementing the attacks, we formalize a mitigation: deriving the first Fiat--Shamir challenge from the generated statement, rather than from the program that generates it, provably reduces the soundness of the compiled protocol to that of the underlying protocol for the non-generated relation."
     },
     {
       "id": "2026-1839",
@@ -192,7 +200,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Quasar: A Field-Agnostic Polynomial Commitment Scheme with Polylogarithmic Verification from Quasi-Abelian Codes》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "多项式承诺方案 (PCS) 是现代 zkSNARK 的基本构建模块，并且通常主导其具体证明者和验证者成本。我们引入了 $\\mathsf{Quasar}$，这是一种用于多线性多项式的场不可知 PCS，它通过代码切换（Ron-Zewi 和 Rothblum，JACM 2024）将准阿贝尔（QA）代码与 BaseFold（Zeilberger 等人，CRYPTO 2024）相结合。对于长度为 $N$ 和安全参数 $\\lambda$ 的多项式，$\\mathsf{Quasar}$ 实现了具体的快速 $O(N\\log N)$ 承诺、$O(N)$ 评估时间以及 $O(\\lambda\\log^2 N)$ 证明大小和验证者时间。我们的出发点是 Li 等人最近的一项工作。(CRYPTO 2026)，这表明 QA 代码具有快速编码和强大的具体距离。这为通过 Brakedown 范例从 QA 代码构建高效的 PCS 打开了大门（Golovnev 等人，CRYPTO 2023）。然而，称为QAPCS的直接实例化继承了平方根证明大小和验证者时间，当$N$大到$2^{25}$时，实际效率达不到要求。我们通过证明 QA 代码本质上是可切换的来克服这一关键限制。与利用生成矩阵或奇偶校验矩阵的代数结构的现有代码转换参数相比，我们研究了 QA 编码算法并提出了一种高效的面向编码的参数。因此，$\\mathsf{Quasar}$ 同时享受 QAPCS 的快速证明和 BaseFold 的多对数验证。我们在 127 位梅森素数域上实现 $\\mathsf{Quasar}$，速率为 $1/2$，安全性为 100 位。在 32 线程 CPU 设置下，$\\mathsf{Quasar}$ 比 BaseFold 的承诺和评估速度分别加快了 $13.6\\times$--$20.6\\times$ 和 $5.2\\times$--$63.8\\times$。它的承诺速度比 Brakedown 快 $2.2\\times$--$6.0\\times$，承诺速度比 BrakingBase 快 $2.1\\times$--$4.0\\times$，评估速度比 BrakingBase 快 $17.4\\times$--$237.6\\times$，同时提供比两者更小的证明和更快的验证。与 QAPCS 相比，它的验证速度提高了 4.3 美元，证明的规模缩小了 2.9 美元。此外，我们观察到 QA 编码自然地暴露了大规模并行性，从而实现了其他代码系列无法直接使用的 GPU 加速策略。从 $2^{12}$ 到 $2^{25}$ 的消息长度，GPU 编码器比 32 线程 CPU 实现快 $32.9\\times$--$148.3\\times$。在多项式大小 $2^{20}$--$2^{29}$ 上，GPU 加速的承诺相对于其 32 线程 CPU 实现进一步实现了 $3.4\\times$--$16.7\\times$ 加速。",
       "topics": [
         "A"
       ],
@@ -201,7 +209,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1839",
-      "pdf": "https://eprint.iacr.org/2026/1839.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1839.pdf",
+      "abstractEn": "Polynomial commitment schemes (PCSs) are fundamental building blocks of modern zkSNARKs and often dominate their concrete prover and verifier costs. We introduce $\\mathsf{Quasar}$, a field-agnostic PCS for multilinear polynomials that combines Quasi-Abelian (QA) codes with BaseFold (Zeilberger et al., CRYPTO 2024) through code switching (Ron-Zewi and Rothblum, JACM 2024). For a polynomial of length $N$ and security parameter $\\lambda$, $\\mathsf{Quasar}$ achieves concretely fast $O(N\\log N)$ commitment, $O(N)$ evaluation time, and $O(\\lambda\\log^2 N)$ proof size and verifier time. Our starting point is a recent work of Li et al. (CRYPTO 2026), which shows that QA codes have fast encoding and strong concrete distance. This opens the door to building efficient PCSs from QA codes via Brakedown's paradigm (Golovnev et al., CRYPTO 2023). However, a direct instantiation, called QAPCS, inherits square-root proof size and verifier time, falling short of practical efficiency when $N$ is as large as $2^{25}$. We overcome this crucial limitation by showing that QA codes are essentially code-switchable. In contrast to existing code-switching arguments that utilize algebraic structures of either generator matrices or parity-check matrices, we look into QA encoding algorithms and propose an efficient encoding-oriented argument. Consequently, $\\mathsf{Quasar}$ simultaneously enjoys fast proving from QAPCS, and polylogarithmic verification of BaseFold. We implement $\\mathsf{Quasar}$ over the 127-bit Mersenne prime field with rate $1/2$ and 100-bit security. Under the 32-thread CPU setting, $\\mathsf{Quasar}$ accelerates commitment and evaluation over BaseFold by $13.6\\times$--$20.6\\times$ and $5.2\\times$--$63.8\\times$, respectively. It is also $2.2\\times$--$6.0\\times$ faster in commitment than Brakedown and $2.1\\times$--$4.0\\times$ faster in commitment and $17.4\\times$--$237.6\\times$ faster in evaluation than BrakingBase, while providing smaller proofs and faster verification than both. Compared with QAPCS, it achieves up to $4.3\\times$ faster verification and $2.9\\times$ smaller proofs. Moreover, we observe that QA encoding naturally exposes massive parallelism, enabling a GPU acceleration strategy that is not directly available to the other code families. Across message lengths from $2^{12}$ to $2^{25}$, the GPU encoder is $32.9\\times$--$148.3\\times$ faster than the 32-thread CPU implementation. Over polynomial sizes $2^{20}$--$2^{29}$, the commitment with GPU acceleration further achieve a $3.4\\times$--$16.7\\times$ speedup relative to its 32-thread CPU implementation."
     },
     {
       "id": "2026-1842",
@@ -214,7 +223,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Arion: Arithmetization-Oriented Hashing for Zero-Knowledge Proof Systems》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "我们提出了面向算术化（AO）的哈希函数 Arion，遵循基于排列的设计方法。我们首先定义有限域 F_p 上的排列 Arion-π，其中 (p > 2) 是素数。 Arion-π 的设计基于最近引入的广义三角多项式系统，这是一种新颖的代数框架，用于使用有限域上的多项式构建密码排列。使用这种排列，我们以两种模式定义哈希函数 Arion：完善的 Sponge 结构和前馈截断模式 (Trunc)。安全参数集是为零知识证明应用中常用的素数域指定的，包括 BLS12-381 和 BN254 椭圆曲线的标量域。我们对 Arion 进行了广泛的安全分析，特别强调代数技术，包括基于插值和多项式系统求解 (PoSSo) 的技术，例如 Gröbner 基计算和结果，这些技术与在素数域上定义的密码原语特别相关。据我们所知，Arion 是第一个其安全性分析明确基于基本理想的代数不变量（商环维数）的哈希函数。特别是，我们明确确定了与哈希模式引起的 CICO 问题相关的商环的维数。此外，我们对 CICO-t 问题的分析适用于任何 t ≥ 1，并且涵盖海绵结构和前馈结构。我们评估了 Arion 在多个算术框架（R1CS、Plonk 和 AIR）中的效率，并将其与著名的 AO 哈希函数（包括 Poseidon、Poseidon2、Anemoi、Griffin 和 Rescue）进行比较。我们的结果表明，Arion 通常是 Plonk 设置中性能最佳的设计，并且在 RoneCS 和 AIR 中仍然具有很强的竞争力，通常排名第二。就原生性能而言，Arion 是唯一一个基于高阶功率图的构建，其性能可与 Poseidon/Poseidon2 相媲美。这使得它对于零知识证明效率和本机评估成本都是重要考虑因素的应用程序来说是一个有吸引力的选择。",
       "topics": [
         "A"
       ],
@@ -223,7 +232,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/1842",
-      "pdf": "https://eprint.iacr.org/2026/1842.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1842.pdf",
+      "abstractEn": "We propose the arithmetization-oriented (AO) hash function Arion, following a permutation-based design approach. We first define the permutation Arion-π over the finite field F_p, where (p &gt; 2) is prime. The design of Arion-π is based on the recently introduced generalized triangular polynomial system, a novel algebraic framework for constructing cryptographic permutations using polynomials over finite fields. Using this permutation, we define the hash function Arion in two modes: the well-established Sponge construction and a feed-forward truncation mode (Trunc). Secure parameter sets are specified for prime fields commonly used in zero-knowledge proof applications, including the scalar fields of the BLS12-381 and BN254 elliptic curves. We provide an extensive security analysis of Arion, with particular emphasis on algebraic techniques — including interpolation and polynomial system solving (PoSSo) based techniques, such as Gröbner basis computations, and resultants — which are especially relevant for cryptographic primitives defined over prime fields. To the best of our knowledge, Arion is the first hash function whose security analysis is explicitly based on the algebraic invariant of the underlying ideal - the quotient ring dimension. In particular, we explicitly determine the dimension of the quotient ring associated with the CICO problem induced by the hashing modes. Furthermore, our analysis of the CICO-t problem applies to any t ≥ 1 and covers both the Sponge and feed-forward constructions. We evaluate the efficiency of Arion across several arithmetization frameworks — R1CS, Plonk, and AIR — and compare it with prominent AO hash functions, including Poseidon, Poseidon2, Anemoi, Griffin, and Rescue. Our results show that Arion is frequently the best-performing design in the Plonk setting and remains highly competitive, often ranking second, in both RoneCS and AIR. In terms of native performance, Arion is the only construction based on high-degree power maps that achieves performance comparable to Poseidon/Poseidon2. This makes it an attractive choice for applications where both zero-knowledge proving efficiency and native evaluation costs are important considerations."
     }
   ]
 }

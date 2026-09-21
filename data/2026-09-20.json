@@ -12,7 +12,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "对比两套基于 PentestGPT 的渗透智能体：带人在环的开源权重系统，和更自主的 Claude 系统。自主系统能打通全部公开靶机；卡住时往往不是忘了先前发现，而是没把证据收成可执行的利用假设。",
+      "abstract": "大型语言模型（LLM）代理越来越多地应用于渗透测试，但我们仍然对它们能做什么或它们如何失败知之甚少。我们比较了两个基于 PentestGPT 的系统：运行开放权重 Kimi K2.5 的传统人机循环系统和运行 Claude Opus 4.8 的较新自治系统。自治系统跨越三个公共目标，解决了所有三个目标，包括遗留系统从未完成的两个目标。遗留结果是两者中更令人惊讶的。即使在遗留系统无法解决的机器上，它也能完成大约一半的子任务，同时在没有提供商护栏的普通大学 GPU 上运行。我们可以描述趋势，但无法解释它，因为模型、工具、自主性和内存架构都会一起变化。它的方向仍然指向下一个问题：当这些代理承担更复杂的任务时，什么会限制它们？通常的答案是长视野记忆，即在长攻击链期间无法访问早期发现。我们通过向两个系统添加覆盖内存层来对其进行测试，但结果都没有改善。在我们可以回顾的遗留停滞运行中，限制因素似乎是计划和承诺，而不是丢失的记忆：特工持有前进路线的证据，但从未将其转化为具体的利用假设，这可能表明进攻能力将随着特工的计划能力而不是更好的记忆而提高。追踪此能力的相同子任务评分可供防守者使用，他们可以在其上升时对其进行测量，而不是等待在现场迎接它。",
       "topics": [
         "C"
       ],
@@ -21,7 +21,8 @@
         "渗透测试"
       ],
       "url": "https://arxiv.org/abs/2609.10780",
-      "pdf": "https://arxiv.org/pdf/2609.10780"
+      "pdf": "https://arxiv.org/pdf/2609.10780",
+      "abstractEn": "Large language model (LLM) agents are increasingly applied to penetration testing, but we still know little about what they can do or how they fail. We compare two PentestGPT-based systems: a legacy human-in-the-loop system running the open-weight Kimi K2.5, and a newer autonomous system running Claude Opus 4.8. Across three public targets, the autonomous system solves all three, including the two the legacy system never finishes. The legacy result is the more surprising of the two. Even on the machines the legacy system fails to solve, it completes about half the subtasks, while running on ordinary university GPUs with no provider guardrails. We can describe the trend but not explain it, since model, harness, autonomy, and memory architecture all change together. Its direction still points to the next question: what will limit these agents as they take on more complex tasks? The usual answer is long-horizon memory, the loss of access to earlier findings during long attack chains. We test it by adding a coverage-memory layer to both systems, and neither improves outcomes. In the legacy stalled runs we could review, the limiting factor appeared to be planning and commitment rather than lost memory: agents held the evidence for a route forward and never turned it into a concrete exploitation hypothesis, which may suggest that offensive capability will advance with agents' ability to plan rather than with better memory. The same subtask scoring that tracks this capability is available to defenders, who can measure it as it rises instead of waiting to meet it in the field."
     },
     {
       "id": "2605.21779",
@@ -34,7 +35,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "多代理 LLM 接在 OSS-Fuzz 上，只报告能被 fuzzer 复现的漏洞。AIxCC 决赛 C/C++ 集检出 90%，并在真实开源项目里发现多枚已确认修复的零日。",
+      "abstract": "软件漏洞构成严重的安全威胁，到 2025 年报告的 CVE 接近 50,000 个。虽然大型语言模型 (LLM) 显示出自动漏洞检测的前景，但仍然存在三个关键挑战。首先，法学硕士生成的漏洞报告误报率很高，并且缺乏可重复的验证。其次，现有的基于 LLM 的方法使用次优粒度来进行漏洞定位：当上下文变得广泛时，功能级分析会忽略错误，而行级分析则缺乏足够的上下文。第三，现有方法难以推理具有复杂跨功能依赖性和触发条件的漏洞。我们推出了 FuzzingBrain V2，这是一个多代理系统，通过四个关键贡献来解决这些差距：（1）基于 Google OSS-Fuzz 构建的全自动漏洞分析，确保所有报告的漏洞都是模糊器可重现的； (2) Suspicious Point，一种新颖的基于控制流的抽象，用于以最佳粒度精确定位漏洞； （3）逻辑驱动的分层函数分析，采用双层模糊测试增强资源约束下的函数覆盖率； (4)基于MCP的静态和动态分析工具，具有增强复杂漏洞推理的上下文工程。在 AIxCC 2025 决赛 C/C++ 数据集上，FuzzingBrain V2 实现了 90% 的检测率（40 个漏洞中的 36 个）。在实际部署中，FuzzingBrain V2 在 12 个开源项目中发现了 29 个零日漏洞，所有这些漏洞均由维护人员确认并修复，并分配了 2 个 CVE ID。",
       "topics": [
         "C"
       ],
@@ -43,7 +44,8 @@
         "OSS-Fuzz"
       ],
       "url": "https://arxiv.org/abs/2605.21779",
-      "pdf": "https://arxiv.org/pdf/2605.21779"
+      "pdf": "https://arxiv.org/pdf/2605.21779",
+      "abstractEn": "Software vulnerabilities pose critical security threats, with nearly 50,000 CVEs reported in 2025. While Large Language Models (LLMs) show promise for automated vulnerability detection, three key challenges remain. First, LLM-generated vulnerability reports suffer from high false positive rates and lack reproducible verification. Second, existing LLM-based approaches use suboptimal granularities for vulnerability localization: function-level analysis overlooks bugs when context becomes extensive, while line-level analysis lacks sufficient context. Third, existing approaches have difficulty reasoning about vulnerabilities with complex cross-function dependencies and triggering conditions. We present FuzzingBrain V2, a multi-agent system that addresses these gaps through four key contributions: (1) fully automated vulnerability analysis built on Google's OSS-Fuzz, ensuring all reported vulnerabilities are fuzzer-reproducible; (2) Suspicious Point, a novel control-flow-based abstraction for precise vulnerability localization at the optimal granularity; (3) logic-driven hierarchical function analysis with dual-layer fuzzing enhancing function coverage under resource constraints; (4) MCP-based static and dynamic analysis tools with context engineering enhancing complex vulnerability reasoning. On the AIxCC 2025 Final Competition C/C++ dataset, FuzzingBrain V2 achieved 90% detection rate (36 of 40 vulnerabilities). In real-world deployment, FuzzingBrain V2 discovered 29 zero-day vulnerabilities across 12 open-source projects, all confirmed and fixed by maintainers, with 2 assigned CVE IDs."
     },
     {
       "id": "2607.08949",
@@ -56,7 +58,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "定向 fuzz 常因间接调用分析不全、崩溃前置条件难满足而打不中。SeedSmith 用智能体从 sink 出发走代码、补调用、写满足前置条件的种子，下游 fuzzer 不用改就能更快触发崩溃。",
+      "abstract": "定向模糊测试将模糊测试器引向用户定义的接收器函数来识别漏洞，但即使经过长时间的活动，它也经常无法触发崩溃。我们发现了阻止定向模糊器暴露崩溃的两个挑战：间接调用的不完整静态分析，这使得基于距离的指导无法看到可达路径，以及缺乏对崩溃先决条件的语义指导，而盲突变无法在实际时间预算内满足这些条件。一个自然的干预点是初始种子语料库：编码正确的控制流路径并满足关键崩溃先决条件的种子将模糊测试从盲目探索转变为局部细化。现有的种子生成方法无法解决这两个问题：基于语法和格式驱动的方法产生结构上有效的输入，没有接收器意识，而基于 LLM 的方法要么缺乏接收器目标，要么通过一次性提示继承静态分析限制。我们提出了 SeedSmith，这是一个代理 LLM 管道，它复制了安全分析师的工作流程：从接收器开始，它迭代地探索代码库，解决间接调用，识别崩溃前提条件，并综合满足它们的具体输入。由于 SeedSmith 作为种子生成前端运行，因此其种子与模糊器无关，并且无需修改即可改进任何下游基于突变的模糊器。在 Magma 上，使用 SeedSmith 种子的模糊器比默认种子实现了几何平均崩溃时间加速 11.51 倍 (AFL++) 到 14.66 倍 (AFLGo)。在 ARVO 上，SeedSmith 使模糊器能够触发 16 个以前无法触及的错误，涵盖 10 个具有不同输入格式的项目。",
       "topics": [
         "C"
       ],
@@ -65,7 +67,8 @@
         "定向模糊测试"
       ],
       "url": "https://arxiv.org/abs/2607.08949",
-      "pdf": "https://arxiv.org/pdf/2607.08949"
+      "pdf": "https://arxiv.org/pdf/2607.08949",
+      "abstractEn": "Directed fuzzing steers fuzzers toward user-defined sink functions to identify vulnerabilities, but it frequently fails to trigger crashes even after long campaigns. We identify two challenges that prevent directed fuzzers from exposing crashes: incomplete static analysis of indirect calls, which leaves reachable paths invisible to distance-based guidance, and lack of semantic guidance for crash preconditions, which blind mutation cannot satisfy within practical time budgets. A natural intervention point is the initial seed corpus: seeds that encode the right control-flow path and satisfy key crash preconditions shift fuzzing from blind exploration to local refinement. Existing seed generation approaches address neither: grammar-based and format-driven methods produce structurally valid inputs with no sink awareness, while LLM-based methods either lack sink targeting or inherit static analysis limitations through one-shot prompting. We present SeedSmith, an agentic LLM pipeline that replicates a security analyst's workflow: starting from a sink, it iteratively explores the codebase, resolves indirect calls, identifies crash preconditions, and synthesizes concrete inputs that satisfy them. Because SeedSmith operates as a seed generation front-end, its seeds are fuzzer-agnostic and improve any downstream mutation-based fuzzer without modification. On Magma, fuzzers using SeedSmith seeds achieve geometric mean crash-time speedups of 11.51 times (AFL++) to 14.66 times (AFLGo) over default seeds. On ARVO, SeedSmith enables fuzzers to trigger 16 previously unreachable bugs spanning 10 projects with diverse input formats."
     },
     {
       "id": "2608.06641",
@@ -77,7 +80,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "用 LLM 从 PDF 阅读器的 JavaScript API 手册推断调用关系，再生成有约束的 API 序列去 fuzz。在 Acrobat、Foxit 等阅读器上覆盖率更高，并披露多枚可导致信息泄漏或任意代码执行的零日。",
+      "abstract": "现有的 PDF 阅读器模糊器依赖于仅涉及单个 API 调用的简单测试用例，导致覆盖范围有限，并且可能会遗漏需要 API 调用序列的漏洞。为了解决这些限制，我们提出了 PDFuzzer，这是一种新颖的 PDF 引擎模糊器，可以自动生成复杂且有意义的 API 调用序列。 PDFuzzer 首先使用大型语言模型 (LLM) 构建上下文无关语法，并根据从 JavaScript API 手册和执行跟踪中提取的规范来推断各个 API 调用之间的关系。基于语法和关系，PDFuzzer 采用约束求解器来生成用于模糊测试的具体 API 调用序列。我们的实验表明，PDFuzzer 在三种主流 PDF 阅读器（Adobe Acrobat Reader、Foxit PDF Reader 和 PDF-XChange Editor）上的性能显着优于最先进的 PDF 模糊器（TypeOracle、Favocado 和 Cooper）和基于 LLM 的模糊器（Fuzz4All、naive LLM）。 PDFuzzer 的覆盖率比现有工具高出 48%，并识别出这些阅读器中的 31 个零日漏洞，从信息泄漏到任意代码执行。我们的消融研究验证了每个组件的必要性，包括法学硕士，它在所有管道阶段都实现了高精度（93-98%）。我们通过协调的漏洞披露流程向供应商披露了所有漏洞，并获得了错误奖励。",
       "topics": [
         "C"
       ],
@@ -86,7 +89,8 @@
         "fuzzing"
       ],
       "url": "https://arxiv.org/abs/2608.06641",
-      "pdf": "https://arxiv.org/pdf/2608.06641"
+      "pdf": "https://arxiv.org/pdf/2608.06641",
+      "abstractEn": "Existing fuzzers for PDF readers rely on simple test cases that involve only individual API calls, leading to limited coverage and potentially missing vulnerabilities that require sequences of API calls. To address these limitations, we propose PDFuzzer, a novel PDF engine fuzzer that automatically generates complex and meaningful API call sequences. PDFuzzer first uses a Large Language Model (LLM) to construct context-free grammars and infer the relationships between individual API calls from specifications extracted from JavaScript API manuals and execution traces. Based on the grammars and relationships, PDFuzzer employs a constraint solver to generate concrete API call sequences for fuzzing. Our experiments show that PDFuzzer significantly outperforms state-of-the-art PDF fuzzers (TypeOracle, Favocado, and Cooper) and LLM-based fuzzers (Fuzz4All, naive LLM) on three mainstream PDF readers: Adobe Acrobat Reader, Foxit PDF Reader, and PDF-XChange Editor. PDFuzzer achieves up to 48% higher coverage than existing tools and identifies 31 zero-day vulnerabilities in these readers, from information leakage to arbitrary code execution. Our ablation study validates the necessity of each component, including LLMs, which achieve high accuracy across all pipeline stages (93-98%). We disclosed all vulnerabilities to the vendors via a coordinated vulnerability disclosure process and received bug bounties."
     },
     {
       "id": "tse-2025-numscout",
@@ -120,7 +124,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "从历史人工审计报告抽出可复用的 DeFi 语义与漏洞模式，做成知识图谱。多代理循环生成规格、写 PoC、执行并复盘。在 Code4rena 项目上高危全中，并在真实项目里挖到此前未知的问题。",
+      "abstract": "智能合约管理着数十亿美元的去中心化金融（DeFi），但自动漏洞检测仍然具有挑战性，因为许多漏洞与特定于项目的业务逻辑紧密耦合。我们观察到，不同 DeFi 商业模式中反复出现的漏洞往往共享相同的底层经济机制，我们将其称为 DeFi 语义，并且捕获这些共享的抽象可以实现更系统的审计。基于这一见解，我们提出了 Knowdit，这是一种用于智能合约漏洞检测的知识驱动的代理工作流程。Knowdit 首先根据历史人类审计报告构建审计知识图，将细粒度的 DeFi 语义与重复出现的漏洞模式联系起来。给定一个新项目，多代理管道通过由共享存储库索引驱动的规范生成、概念验证 (PoC) 综合、PoC 执行和查找反射的迭代循环来利用这些知识。我们在 11 个最近的 Code4rena 项目上评估了 Knowdit，其中包含 84 个真实漏洞。 Knowdit 检测到了所有 21 个高严重性漏洞和 90% 的中等严重性漏洞，没有误报，完全覆盖了 8 个项目，显着优于所有基线。应用于七个实际项目中，Knowdit 进一步发现了 9 个高严重性和 36 个中严重性先前未知的漏洞，确保了数百万美元的流动性并证明了其出色的性能。",
       "topics": [
         "C-chain"
       ],
@@ -129,7 +133,8 @@
         "DeFi"
       ],
       "url": "https://arxiv.org/abs/2603.26270",
-      "pdf": "https://arxiv.org/pdf/2603.26270"
+      "pdf": "https://arxiv.org/pdf/2603.26270",
+      "abstractEn": "Smart contracts govern billions of dollars in decentralized finance (DeFi), yet automated vulnerability detection remains challenging because many vulnerabilities are tightly coupled with project-specific business logic. We observe that recurring vulnerabilities across diverse DeFi business models often share the same underlying economic mechanisms, which we term DeFi semantics, and that capturing these shared abstractions can enable more systematic auditing. Building on this insight, we propose Knowdit, a knowledge-driven, agentic workflow for smart contract vulnerability detection. Knowdit first constructs an auditing knowledge graph from historical human audit reports, linking fine-grained DeFi semantics with recurring vulnerability patterns. Given a new project, a multi-agent pipeline leverages this knowledge through an iterative loop of specification generation, Proof-of-Concept (PoC) synthesis, PoC execution, and finding reflection, driven by a shared repository index. We evaluate Knowdit on 11 recent Code4rena projects with 84 ground-truth vulnerabilities. Knowdit detects all 21 high-severity and 90% of medium-severity vulnerabilities without false positives, fully covering eight projects, significantly outperforming all baselines. Applied to seven real-world projects, Knowdit further discovers 9 high- and 36 medium-severity previously unknown vulnerabilities, securing millions in liquidity and proving its outstanding performance."
     },
     {
       "id": "2602.03271",
@@ -142,7 +147,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "业务逻辑漏洞绑在协议不变量上，静态分析够不着、纯 LLM 又容易幻。LogicScan 从成熟链上协议挖掘不变量，写成可校验规格，再对照目标合约做对比审计，压低误报。",
+      "abstract": "业务逻辑漏洞已成为最具破坏性但最不为人所知的智能合约漏洞类别之一。与重入或算术错误等传统错误不同，这些漏洞是由于业务不变量缺失或执行不正确而引起的，并且与协议语义紧密耦合。现有的静态分析技术很难捕获如此高级的逻辑，而最近基于大型语言模型的方法常常由于幻觉和有限的验证而导致输出不稳定和准确性低。在本文中，我们提出了 LogicScan，这是一种自动对比审计框架，用于检测智能合约中的业务逻辑漏洞。 LogicScan 背后的关键见解是成熟、广泛部署的链上协议隐式编码经过良好测试和共识驱动的业务不变式。 LogicScan从大规模链上合约中系统地挖掘这些不变量，并将其重新用作审计目标合约的参考约束。为了实现这一目标，LogicScan 引入了业务规范语言 (BSL)，将不同的实现模式标准化为结构化、可验证的逻辑表示。它还将噪声感知逻辑聚合与对比审计相结合，以识别缺失或执行不力的不变量，同时减少 LLM 引起的误报。我们在三个真实数据集上评估 LogicScan，包括 DeFiHacks、Web3Bugs 和一组排名前 200 的审计合约。结果显示，LogicScan 的 F1 得分为 85.2%，显着优于最先进的工具，同时在生产级合同上保持较低的误报率。其他实验表明，LogicScan 在不同的法学硕士之间保持一致的性能并且具有成本效益，并且其误报抑制机制大大提高了鲁棒性。",
       "topics": [
         "C-chain"
       ],
@@ -151,7 +156,8 @@
         "业务逻辑"
       ],
       "url": "https://arxiv.org/abs/2602.03271",
-      "pdf": "https://arxiv.org/pdf/2602.03271"
+      "pdf": "https://arxiv.org/pdf/2602.03271",
+      "abstractEn": "Business logic vulnerabilities have become one of the most damaging yet least understood classes of smart contract vulnerabilities. Unlike traditional bugs such as reentrancy or arithmetic errors, these vulnerabilities arise from missing or incorrectly enforced business invariants and are tightly coupled with protocol semantics. Existing static analysis techniques struggle to capture such high-level logic, while recent large language model based approaches often suffer from unstable outputs and low accuracy due to hallucination and limited verification. In this paper, we propose LogicScan, an automated contrastive auditing framework for detecting business logic vulnerabilities in smart contracts. The key insight behind LogicScan is that mature, widely deployed on-chain protocols implicitly encode well-tested and consensus-driven business invariants. LogicScan systematically mines these invariants from large-scale on-chain contracts and reuses them as reference constraints to audit target contracts. To achieve this, LogicScan introduces a Business Specification Language (BSL) to normalize diverse implementation patterns into structured, verifiable logic representations. It further combines noise-aware logic aggregation with contrastive auditing to identify missing or weakly enforced invariants while mitigating LLM-induced false positives. We evaluate LogicScan on three real-world datasets, including DeFiHacks, Web3Bugs, and a set of top-200 audited contracts. The results show that LogicScan achieves an F1 score of 85.2%, significantly outperforming state-of-the-art tools while maintaining a low false-positive rate on production-grade contracts. Additional experiments demonstrate that LogicScan maintains consistent performance across different LLMs and is cost-effective, and that its false-positive suppression mechanisms substantially improve robustness."
     },
     {
       "id": "2512.06846",
@@ -164,7 +170,7 @@
       ],
       "year": 2025,
       "venue": "arXiv",
-      "abstract": "把合约做成知识图谱，让 LLM 把自然语言里的访问控制模式翻成图查询，自动定位违规代码元素。在访问控制类漏洞上比传统中间表示分析更准。",
+      "abstract": "传统的智能合约分析方法通常依赖于中间表示，例如抽象语法树、控制流图或静态单赋值形式。然而，这些方法在捕获语义结构和控制逻辑方面面临局限性。相比之下，知识图提供了实体和关系的结构化表示，支持更丰富的合约代码中间抽象，并支持使用图查询语言来识别违反规则的元素。本文提出了 CKG-LLM，一个用于检测智能合约中访问控制漏洞的框架。利用大型语言模型的推理和代码生成功能，CKG-LLM将自然语言漏洞模式转换为合约知识图上的可执行查询，以自动定位易受攻击的代码元素。实验评估表明，与现有工具相比，CKG-LLM 在检测访问控制漏洞方面取得了优异的性能。最后，我们讨论 CKG-LLM 的潜在扩展作为未来研究方向的一部分。",
       "topics": [
         "C-chain"
       ],
@@ -173,7 +179,8 @@
         "访问控制"
       ],
       "url": "https://arxiv.org/abs/2512.06846",
-      "pdf": "https://arxiv.org/pdf/2512.06846"
+      "pdf": "https://arxiv.org/pdf/2512.06846",
+      "abstractEn": "Traditional approaches for smart contract analysis often rely on intermediate representations such as abstract syntax trees, control-flow graphs, or static single assignment form. However, these methods face limitations in capturing both semantic structures and control logic. Knowledge graphs, by contrast, offer a structured representation of entities and relations, enabling richer intermediate abstractions of contract code and supporting the use of graph query languages to identify rule-violating elements. This paper presents CKG-LLM, a framework for detecting access-control vulnerabilities in smart contracts. Leveraging the reasoning and code generation capabilities of large language models, CKG-LLM translates natural-language vulnerability patterns into executable queries over contract knowledge graphs to automatically locate vulnerable code elements. Experimental evaluation demonstrates that CKG-LLM achieves superior performance in detecting access-control vulnerabilities compared to existing tools. Finally, we discuss potential extensions of CKG-LLM as part of future research directions."
     },
     {
       "id": "2026-1877",
@@ -186,7 +193,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "给自动做市商设计可证明的 MEV 弹性：把交易剩余按规则再分配，让抢跑/夹心不再有稳定好处，从机制上压协议层可提取价值。",
+      "abstract": "自动化做市商中的矿工可提取价值（MEV）允许区块构建者从交易排序和注入交易中获利，这给用户带来了成本并有助于构建者的集中化。我们引入了 Otter（带有超额再分配的最优真实交易），这是一种两种资产批量 AMM，当共识层提供审查弹性且区块空间不拥堵时，它可以实现可证明的 MEV 弹性。特别是，Otter 将诚实行为作为用户和开发者的主导策略。因此，建筑商无法从战略偏差中获利，包括重新排序投标或注入女巫投标。即使建筑商本身就是具有内在价值的交易者，这些保证仍然有效。此外，我们表明，我们的机制在满足所需博弈论属性的自然机制类别中，从强烈的意义上讲，最大化了社会福利。为了实现这些保证，我们引入了一种称为盈余再分配的新范式，通过将剩余盈余重新分配给更广泛的社区，它可以防止剩余盈余被捕获为 MEV。具体来说，池的输出代币不需要完全分配给当前批次的用户。相反，任何剩余盈余都可以转移到例如由去中心化社区管理的智能合约中。积累的盈余随后可以通过保留该机制的博弈论保证的方式使社区成员受益——例如，通过补贴交易者的交易费用、奖励流动性提供者或将资产返还到池中以减少未来交易者的价格影响和滑点。我们的方法依赖于底层共识层来提供审查弹性。我们通过一个不可能的结果来激发这一假设的必要性，该结果表明，当构建者被额外允许审查交易时，所需的博弈论保证就变得无法实现。因此，我们的结果还提供了数学形式的演示，说明共识级安全保证如何从根本上扩展应用程序（即智能合约）层可实现的目标。最后，我们建立了额外的结果来表征与我们期望的激励保证相一致的建筑商费用结构。",
       "topics": [
         "A"
       ],
@@ -196,7 +203,8 @@
         "Otter"
       ],
       "url": "https://eprint.iacr.org/2026/1877",
-      "pdf": "https://eprint.iacr.org/2026/1877.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1877.pdf",
+      "abstractEn": "Miner extractable value (MEV) in automated market makers allows block builders to profit from transaction ordering and injected trades, imposing costs on users and contributing to builder centralization. We introduce Otter (Optimal Truthful Trading with Excess Redistribution), a two-asset batch AMM that achieves provable MEV resilience when the consensus layer provides censorship resilience and block space is uncongested. In particular, Otter makes truthful behavior a dominant strategy for both users and builders. Consequently, a builder cannot profit from strategic deviations, including reordering bids or injecting sybil bids. These guarantees continue to hold even when the builder is itself a trader with intrinsic value. Moreover, we show that our mechanism maximizes social welfare, in a strong sense, within a natural class of mechanisms satisfying the desired game-theoretic properties. To achieve these guarantees, we introduce a new paradigm called surplus redistribution, which provably prevents residual surplus from being captured as MEV by redirecting it to the broader community. Specifically, the pool's output tokens need not be distributed entirely among the users in the current batch. Instead, any residual surplus may be transferred, for example, to a smart contract governed by the decentralized community. The accumulated surplus can subsequently be used to benefit community members in ways that preserve the mechanism's game-theoretic guarantees --- for example, by subsidizing traders' transaction fees, rewarding liquidity providers, or returning assets to the pool to reduce price impact and slippage for future traders. Our approach relies on the underlying consensus layer to provide censorship resilience. We motivate the necessity of this assumption through an impossibility result showing that the desired game-theoretic guarantees become unattainable when the builder is additionally allowed to censor transactions. Thus, our results also provide a mathematically formal demonstration of how consensus-level security guarantees can fundamentally expand what is achievable at the application (i.e., smart-contract) layer. Finally, we establish additional results characterizing the builder fee structures compatible with our desired incentive guarantees."
     },
     {
       "id": "2026-1827",
@@ -209,7 +217,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "针对以太坊 PoS 客户端的共识验证开销，用 AVX 一类向量化路径把验证算轻，让节点在不改协议语义的前提下更快确认信标链状态。",
+      "abstract": "以太坊权益证明 (PoS) 客户端必须在固定时隙期限内验证大量 Boneh--Lynn-Shacham (BLS) 签名，以用于证明、同步委员会消息和其他共识关键对象。这种经常性成本与状态转换、分叉选择和消息传播竞争客户端 CPU 时间，因此减少它会增加突发负载下可用的验证空间。先前的密码工程工作表明，SIMD 可以大幅加速 BLS 验证内核，但这些增益不会自动克服客户端软件边界、运行时调度和不规则验证范围。我们推出了 AVXPoS，这是一种客户端感知批处理框架，用于 Prysm 以太坊 PoS 客户端中的 BLS 验证。 AVXPoS 将批量验证视为客户端级系统问题：它保留了 Prysm 的验证语义，同时将协议型请求重新组织为本机批量状态，从而跨 API、工作线程和本机后端边界公开 SIMD 并行性。我们使用 BLS12-381 的 AVX-512 后端实例化 AVXPoS，将 Go 端范围形成与 C 端宽度自适应调度相结合。在资源受限的两核 Intel 主机上，AVXPoS 在选定的小批量大小下比 Prysm 的生产 \\texttt{blst} 后端获得 $1.44$--$2.10\\times$，这些小批量大小包含所有子网稳态主网压力跟踪的聚合后 $p50/p95/p99$ 批量大小分位数，并在受控容量中达到 $3.18\\times$扫荡。在 16 核 AMD 主机上，以太坊 128 块请求上限的生产检查点回填验证器提高了 1.81 美元\\times$。跨平台结果表明，相对加速部分取决于 Prysm 的工作线程预算，因为工作线程分区决定了每个本机范围内保留多少 SIMD 并行性。",
       "topics": [
         "A"
       ],
@@ -219,7 +227,8 @@
         "AVXPoS"
       ],
       "url": "https://eprint.iacr.org/2026/1827",
-      "pdf": "https://eprint.iacr.org/2026/1827.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1827.pdf",
+      "abstractEn": "Ethereum Proof-of-Stake (PoS) clients must verify large volumes of Boneh--Lynn--Shacham (BLS) signatures for attestations, sync-committee messages, and other consensus-critical objects within fixed slot deadlines. This recurring cost competes with state transition, fork choice, and message propagation for client CPU time, so reducing it increases the verification headroom available under bursty load. Prior cryptographic-engineering work has shown that SIMD can substantially accelerate BLS verification kernels, but these gains do not automatically survive client software boundaries, runtime scheduling, and irregular verification ranges. We present AVXPoS, a client-aware batching framework for BLS verification in the Prysm Ethereum PoS client. AVXPoS treats batched verification as a client-level systems problem: it preserves Prysm's verification semantics while reorganizing protocol-shaped requests into native batched states that expose SIMD parallelism across API, worker, and native-backend boundaries. We instantiate AVXPoS with an AVX-512 backend for BLS12-381, combining Go-side range formation with C-side width-adaptive dispatch. On a resource-constrained two-core Intel host, AVXPoS gains $1.44$--$2.10\\times$ over Prysm's production \\texttt{blst} backend at selected small batch sizes that bracket the post-aggregation $p50/p95/p99$ batch-size quantiles of an all-subnets steady-state mainnet stress trace, and reaches up to $3.18\\times$ in controlled capacity sweeps. On a 16-core AMD host, a production checkpoint-backfill verifier at Ethereum's 128-block request cap improves by $1.81\\times$. Cross-platform results indicate that the relative speedup depends in part on Prysm's worker budget, because worker partitioning determines how much SIMD parallelism remains within each native range."
     },
     {
       "id": "2026-1760",
@@ -229,7 +238,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "在自适应选择 MDS 矩阵的设定下，给出 Poseidon 全轮碰撞。Poseidon 广泛用于 zk 电路，这类攻击直接关系到链上证明系统的哈希假设。",
+      "abstract": "我们为 KoalaBear Poseidon 实例的所有 28 轮提供显式压缩碰撞，参数为 $(t,\\alpha,R_F,R_P)=(16,3,8,20)$，在选择 MDS 线性层之前固定轮常量的设置中。主要问题是构建一个线性层，通过完整轮和部分轮同时控制两个执行。我们通过跟踪它们的中点和半差来做到这一点。在每个两轮块中，线性层的一个规定图像将中点与下一轮常数相抵消，因此接下来的奇数三次S盒接收相反的状态并将中点重置为零。在整个排列过程中重复使用两个附加图像，以将半差返回到相同的一维子空间。由此产生的轨迹约束确定了一个线性层，而标量递归则关闭了前馈下的最终差异。对于 KoalaBear 实例，我们在所有 16 个输出坐标中与满足规定的线性层检查的 MDS 矩阵发生碰撞。标量构造简化为低次方程并允许一系列参数选择，因此碰撞不是一个孤立的实例。结果揭示了固定舍入常数与随后选择的线性层之间的自适应相关性，而仅矩阵检查无法捕获该相关性。",
       "topics": [
         "A"
       ],
@@ -238,7 +247,8 @@
         "zk"
       ],
       "url": "https://eprint.iacr.org/2026/1760",
-      "pdf": "https://eprint.iacr.org/2026/1760.pdf"
+      "pdf": "https://eprint.iacr.org/2026/1760.pdf",
+      "abstractEn": "We give an explicit compression collision for all 28 rounds of the KoalaBear Poseidon instance with parameters $(t,\\alpha,R_F,R_P)=(16,3,8,20)$, in the setting where the round constants are fixed before the MDS linear layer is chosen. The main problem is to construct a single linear layer that simultaneously controls two executions through both the full and partial rounds. We do this by tracking their midpoint and half-difference. In each two-round block, one prescribed image of the linear layer cancels the midpoint against the next round constant, so the following odd cubic S-box receives opposite states and resets the midpoint to zero. Two additional images are reused throughout the permutation to return the half-difference to the same one-dimensional subspace. The resulting trajectory constraints determine a linear layer, while a scalar recurrence closes the final difference under feed-forward. For the KoalaBear instance we obtain a collision in all sixteen output coordinates with an MDS matrix satisfying the prescribed linear-layer checks. The scalar construction reduces to low-degree equations and admits a family of parameter choices, so the collision is not an isolated instance. The result exposes an adaptive correlation between fixed round constants and a subsequently chosen linear layer that matrix-only checks do not capture."
     },
     {
       "id": "ndss-2026-bunnyfinder",
@@ -271,7 +281,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Reflections on Trusting Trust, Revisited: Contaminating Self-Modifying AI Coding Agents with Poisoned Benchmarks》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "Thompson 的“Reflections on Trusting Trust”表明，编译器可能会被中毒而重新插入自己的后门，因此即使重新编译干净的源代码也会重现木马。如今，大量的编码工作是由人工智能编码代理完成的——而且这些代理越来越多地生成自己的新版本。当“编译器”是一个自我修改的编码代理时，我们重新考虑汤普森的攻击。对手能否为代理的自我评估和自我改进过程提供中毒的基准，以诱导代理的未来版本在干净的、保留的任务上编写易受攻击的代码？我们针对最近提出的三种自我修改编码代理实例化了这种攻击：达尔文哥德尔机（经过我们的实验修改）、自我改进编码代理和超级代理（两者实质上均未修改）。我们展示了成功的概念验证：例如，使用由 Sonnet 4.5 提供支持的 Hyperagents，我们的中毒基准测试会导致代理自我演化指令，从而禁用中性 URL 获取任务上的 HTTPS 证书验证。从我们的实验中，我们提取了足以启用基准中毒攻击的漏洞、基准、模型和代理脚手架的属性。此外，我们表明，即使随后根据清洁基准演化出有毒物质，污染也常常持续存在。我们讨论了防御方向，并认为自修改编码代理必须设计得对此类攻击更具弹性。",
       "topics": [
         "C"
       ],
@@ -280,7 +290,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.17817",
-      "pdf": "https://arxiv.org/pdf/2609.17817"
+      "pdf": "https://arxiv.org/pdf/2609.17817",
+      "abstractEn": "Thompson's \"Reflections on Trusting Trust\" showed that a compiler can be poisoned to reinsert its own backdoor, so that even recompiling clean source reproduces the Trojan. Today, substantial coding work is done by AI coding agents -- and increasingly, those agents generate new versions of themselves. We reconsider Thompson's attack when the \"compiler\" is a self-modifying coding agent. Can an adversary supply poisoned benchmarks to the agent's self-evaluation and self-improvement process to induce future versions of the agent to write vulnerable code on clean, held-out tasks? We instantiate this attack against three recently proposed self-modifying coding agents: the Darwin Gödel Machine (with our experimental modifications), the Self-Improving Coding Agent, and Hyperagents (both substantively unmodified). We demonstrate successful proofs-of-concept: for example, with Hyperagents powered by Sonnet 4.5, our poisoned benchmark leads the agent to self-evolve instructions that disable HTTPS certificate validation on neutral URL-fetching tasks. From our experiments, we distill properties of the vulnerability, benchmark, model, and agent scaffolding that are sufficient to enable a benchmark poisoning attack. Moreover, we show that contamination often persists even when a poisoned agent is subsequently evolved against clean benchmarks. We discuss defensive directions and argue that self-modifying coding agents must be designed to be more resilient to such attacks."
     },
     {
       "id": "2609.16694",
@@ -291,7 +302,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "《Toward Secure AI-Powered Penetration Testing Agents: Security Threats, Guardrails, and Architectural Perspectives》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "由法学硕士支持的自主代理正在通过动态、多步骤的进攻性安全工作流程改变渗透测试领域，这些工作流程需要最少的人工监督。这些代理利用复杂的推理能力和外部安全工具来独立进行侦察、识别漏洞、制定利用计划并执行利用后操作。但是，与传统的基于聊天的法学硕士系统相比，拥有持久记忆、在现实世界中采取行动以及进行长期推理的能力引发了截然不同的安全问题。现有的对话式人工智能护栏机制可能不足以相应地保护自主人工智能渗透测试代理。为了解决这些问题，我们对自主人工智能渗透测试代理进行了全面的安全分析。我们系统地分析代表性代理架构，描述其信任边界和攻击面，并提出与生命周期一致的威胁分类法，涵盖 LLM 生命周期攻击、代理架构攻击和横切行为攻击。我们分析了现有护栏机制的局限性，确定了关键的研究差距，并讨论了开发专业的、上下文感知和架构感知的护栏的未来研究方向，以确保下一代人工智能驱动的进攻性安全系统的安全。",
       "topics": [
         "C"
       ],
@@ -300,7 +311,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.16694",
-      "pdf": "https://arxiv.org/pdf/2609.16694"
+      "pdf": "https://arxiv.org/pdf/2609.16694",
+      "abstractEn": "LLM-powered autonomous agents are transforming the penetration testing space with dynamic, multi-step offensive security workflows that require minimal supervision by humans. These agents leverage sophisticated reasoning abilities and external security tools to independently carry out reconnaissance, identify vulnerabilities, devise exploitation plans, and perform post-exploitation operations. But the ability to have persistent memory, to take actions in the real world, and to do long-horizon reasoning raises qualitatively different security concerns than traditional chat-based LLM systems. Existing guardrail mechanisms for conversational AI may not be sufficient to secure autonomous AI pentesting agents accordingly. To address these issues, we carry out a comprehensive security analysis on autonomous AI-penetration testing agents. We systematically analyse representative agent architectures, characterise their trust boundaries and attack surfaces and propose a threat taxonomy that is aligned with the lifecycle and covers LLM lifecycle attacks, agent-architecture attacks and cross-cutting behavioural attacks. We analyse the limitations of existing guardrail mechanisms, identify key research gaps, and discuss future research directions for developing specialised, context-aware, and architecture-aware guardrails to secure next-generation AI-driven offensive security systems."
     },
     {
       "id": "2609.17274",
@@ -311,7 +323,7 @@
       ],
       "year": 2026,
       "venue": "APSEC 2026",
-      "abstract": "《After the Party: Growth, Governance, and Security Scanning in the OpenClaw Agent Skill Ecosystem》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "abstract": "人工智能代理越来越多地通过代理技能（即自然语言指令）来行动，这些指令将主机代理引导至 shell、网络、凭证、文件和进程操作，并且公共注册表大规模分发它们。 2026 年上半年，OpenClaw AI 代理迅速走红，其公共技能注册蓬勃发展：可观察股票在 91 天内几乎翻了一番，6 月份可见的大部分列表都是在短短两个月内创建的。在我们的研究窗口结束时，浪潮已经达到顶峰，每月列表创建和核心存储库活动正在从春季峰值下降。本文利用 OpenClaw Git 历史、其 GitHub 问题和拉取请求以及三个 ClawHub 注册表快照来衡量繁荣留下的内容。注意力集中：前 10% 的技能获得了所有下载量的 46.93%。一旦创建群体和技能年龄得到控制，简单的技能特征（如大小或下载计数）就不再是继续列出的稳定预测因素。人类的审查并没有停留：77.86％的人有零星和零评论，而85.06％的可读技能带有特权证据。自动清理还没有准备好：三个安全扫描仪对它们涵盖的 61,990 项技能中的 23,702 项存在分歧。经过人工判断，加权扫描仪灵敏度相对于参考标准的范围为 21.67% 至 61.06%。管理快速增长的座席技能注册不能依赖于简单的元数据或单个扫描仪分数；它需要稳健、透明的测量和独立的验证。",
       "topics": [
         "C"
       ],
@@ -320,7 +332,8 @@
         "C"
       ],
       "url": "https://arxiv.org/abs/2609.17274",
-      "pdf": "https://arxiv.org/pdf/2609.17274"
+      "pdf": "https://arxiv.org/pdf/2609.17274",
+      "abstractEn": "AI agents increasingly act through agent skills, i.e., natural-language instructions, that direct a host agent toward shell, network, credential, file, and process actions, and public registries distribute them at scale. In the first half of 2026, the OpenClaw AI agent went viral, and its public skill registry boomed: the observable stock nearly doubled in 91 days, and a majority of the listings visible in June were created in just two months. By the end of our study window, the wave had crested, and monthly listing creation and core-repository activity were falling from their spring peaks. This paper measures what the boom left behind, drawing on the OpenClaw Git history, its GitHub issues and pull requests, and three ClawHub registry snapshots. Attention is concentrated: the top 10% of skills received 46.93% of all downloads. No simple skill features (like size or download counts) remained a stable predictor of continued listing once creation cohort and skill age were controlled. Human scrutiny did not stay: 77.86% have zero stars and zero comments, while 85.06% of the readable skills carry privilege evidence. And automated cleanup is not ready: the three security scanners disagreed on 23,702 of the 61,990 skills they all cover. After human adjudication, weighted scanner sensitivity against the reference standard ranged from 21.67% to 61.06%. Governing fast-growing agent-skill registries cannot rely on simple metadata or single scanner scores; it requires robust, transparent measurement and independent validation."
     },
     {
       "id": "2609.19844",
@@ -334,7 +347,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Trust, but Validate the Instrument: Auditing AI-Generated RTL Verification Plans on Authored Security-Regression Proxies》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "AI 生成的 RTL 验证计划可以满足提供者模式，但在可信执行的边界处失败。我们推出了 SecTB-RTL，这是一个可审计框架，涵盖 31 项任务和 124 项编写的硬件安全回归。在资源限制不断增加的情况下，确定性非 AI 基线杀死了 36、75 和 78 个突变体。第一次确认运行 (C1-R2) 在模型执行之前失败，因为提供者拒绝了其响应模式。在不查看结果的情况下进行仅模式修复后，单独冻结的后续运行 (C1-R3) 完成了 1,860 个调用。该提供商接受了 1,857 个响应，但只有 9 个通过了生产语义验证器。生成规则和执行规则不匹配。因此，我们将运行保留为仪器验证事件，并且不报告即时效果估计。此事件表明提供程序或模式接受并未建立执行有效性。编译和覆盖只是诊断；准确保存的工件必须通过完整的生产路径。随后的后续行动被排除，因为它不满足预先注册的证据完整性门，并且仅被视为未来的工作。我们发布了防止基础设施行为被误报为模型行为所需的基准、故障保护合约、事件来源和治理控制。",
       "topics": [
         "A"
       ],
@@ -342,7 +355,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.19844",
-      "pdf": "https://arxiv.org/pdf/2609.19844"
+      "pdf": "https://arxiv.org/pdf/2609.19844",
+      "abstractEn": "AI-generated RTL verification plans can satisfy a provider schema yet fail at the boundary to trusted execution. We present SecTB-RTL, an auditable framework covering 31 tasks and 124 authored hardware-security regressions. A deterministic non-AI baseline killed 36, 75, and 78 mutants at increasing resource limits. The first confirmatory run (C1-R2) failed before model execution because the provider rejected its response schema. After a schema-only repair made without viewing outcomes, a separately frozen follow-up run (C1-R3) completed 1,860 calls. The provider accepted 1,857 responses, but only nine passed the production semantic validator. The generation and execution rules did not match. We therefore preserve the run as an instrument-validation incident and report no prompt-effect estimate. This incident shows that provider or schema acceptance does not establish execution validity. Compilation and coverage are only diagnostics; the exact saved artifact must pass the full production path. A subsequent follow-up is excluded because it did not satisfy the preregistered evidence-completeness gate and is treated only as future work. We release the benchmark, failure-preserving contract, incident provenance, and governance controls needed to prevent infrastructure behavior from being misreported as model behavior."
     },
     {
       "id": "2609.19353",
@@ -355,7 +369,7 @@
       ],
       "year": 2026,
       "venue": "arXiv",
-      "abstract": "协议/链上工作《Scaling Zero Knowledge UNSAT Verification via Normalized Chaining》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "UNSAT 的证明是形式验证和软件保证中的标准原语。在许多现实世界中，证明本身会对专有或安全敏感信息进行编码，因此公开披露是不受欢迎的。 UNSAT 的零知识认证解决了这种紧张关系：它使证明者能够说服验证者不存在令人满意的任务，而不会透露任何超出其有效性的潜在证据。罗等人。最近推出了 ZkUnsat 协议，该协议通过证明零知识中弱化分辨率证明的有效性来实现这一目标。ZkUnsat展示了零知识认证的可行性；然而，它对更大的现实世界实例的可扩展性受到大量证明者内存开销的限制，从而限制了其现实世界的适用性。受 LRAT 等 UNSAT 证明格式进步的推动，LRAT 可以实现高效的纯文本验证，我们提出了一种预处理技术，可以提高 ZkUnsat 的效率，而不会引入额外的泄漏。我们的方法规范化证明，以便每个派生子句都由固定公共长度 k 的解析链证明是合理的。这消除了链长泄漏并减少了证明者内存的使用。当 k = 16 时，我们的方法在 SAT 2002 竞赛基准上比基线 ZkUnsat 多认证了大约 62% 的实例。此外，对于同等数量的认证实例，内存占用量降至基线所需内存占用量的 25% 以下。",
       "topics": [
         "A"
       ],
@@ -363,7 +377,8 @@
         "A"
       ],
       "url": "https://arxiv.org/abs/2609.19353",
-      "pdf": "https://arxiv.org/pdf/2609.19353"
+      "pdf": "https://arxiv.org/pdf/2609.19353",
+      "abstractEn": "Proofs of UNSAT are a standard primitive in formal verification and software assurance. In many real-world settings, the proof itself encodes proprietary or security-sensitive information, making public disclosure undesirable. Zero-knowledge certification of UNSAT addresses this tension: it enables a prover to convince a verifier that no satisfying assignment exists, without revealing anything about the underlying proof beyond its validity. Luo et al. recently introduced ZkUnsat, a protocol that achieves this goal by proving the validity of a weakened resolution proof in zero knowledge. ZkUnsat demonstrates the feasibility of zero-knowledge certification; however, its scalability to larger, real-world instances is constrained by substantial prover memory overhead, limiting its real-world applicability. Motivated by advances in UNSAT proof formats such as LRAT, which enable efficient plain-text verification, we present a preprocessing technique that improves the efficiency of ZkUnsat without introducing additional leakage. Our approach normalizes the proof so that each derived clause is justified by a resolution chain of fixed public length k. This eliminates chain-length leakage and reduces prover memory usage. With k = 16, our method certifies roughly 62% more instances than baseline ZkUnsat on the SAT 2002 competition benchmarks. Furthermore, for an equivalent number of certified instances, the memory footprint drops to under 25% of that required by the baseline."
     },
     {
       "id": "2026-2068",
@@ -374,7 +389,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《Distributed SNARGs Resilient to Corrupt Verifiers》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "分布式认证是一种监控分布式系统正确性的方法。该模型由一个集中式证明者以及位于通信网络节点上的多个验证者组成，其目标是断言网络满足所需的属性。在此过程中，证明者为每个验证者生成证书；然后验证者可以进行少量轮次的通信，并相应地接受或拒绝。如果所有验证者都接受，证明者的断言就被接受。大量工作致力于开发和理解分布式认证方案的局限性，主要是在信息理论健全性的设置中，最近在计算健全性方面，实现了一种分布式（本地可验证）简洁非交互式论证（SNARG）的形式（Aldema Tshuva 等人，TCC 2023）。正如模型中的标准一样，假设网络中的所有验证者都是诚实的，则现有结构中的稳健性成立。在这项工作中，我们介绍并探索了鲁棒分布式 SNARG（rdSNARG）的概念，即使作弊证明者可能与网络中的某些节点串通，它也能保留（计算）稳健性保证。解决验证者作弊问题面临着一些挑战。我们为 P 中的任何分布式语言构建 rdSNARG，具有简洁的证书大小和来自 RAM SNARG 扩展版本的通信（Kalai 等人，STOC 2023），其中简洁程度随着损坏节点的阈值而变化。作为补充，我们证明了一个下限，表明具有较小证书和通信的 rdSNARG 意味着 NP 的 SNARG。",
       "topics": [
         "A"
       ],
@@ -382,7 +397,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/2068",
-      "pdf": "https://eprint.iacr.org/2026/2068.pdf"
+      "pdf": "https://eprint.iacr.org/2026/2068.pdf",
+      "abstractEn": "Distributed certification is a method for monitoring the correctness of a distributed system. The model consists of a centralized prover in addition to multiple verifiers lying on the nodes of a communication network, where the goal is to assert that the network satisfies a desired property. In doing so, the prover generates certificates for each verifier; the verifiers can then communicate in a small number of rounds, and accordingly accept or reject. The prover’s assertion is accepted if all verifiers accept. A significant body of work has gone toward developing and understanding limitations of distributed certification schemes, predominantly in the setting of information-theoretic soundness, and recently with computational soundness, achieving a form of distributed (locally verifiable) Succinct Non-interactive Arguments (SNARGs) (Aldema Tshuva et al, TCC 2023). As is standard in the model, soundness holds in existing constructions assuming that all verifiers in the network are honest. In this work, we introduce and explore the notion of robust distributed SNARGs (rdSNARGs) which retain (computational) soundness guarantees even when the cheating prover can collude with some nodes in the network. Addressing cheating verifiers presents several challenges. We construct rdSNARGs for any distributed language in P with succinct certificate size and communication from extended versions of RAM SNARGs (Kalai et al, STOC 2023), where the level of succinctness scales with the threshold of corrupt nodes. Complementarily, we demonstrate a lower bound showing that an rdSNARG with significantly smaller certificates and communication implies a SNARG for NP."
     },
     {
       "id": "2026-2044",
@@ -394,7 +410,7 @@
       ],
       "year": 2026,
       "venue": "IACR ePrint",
-      "abstract": "协议/链上工作《On Sparkle+ and its Security Claims》。不依赖 LLM，对象是链上或密码协议。",
+      "abstract": "我们重新审视 Sparkle+ 的安全边界，这是 2023 年首次出现的门限 Schnorr 签名方案。该方案已在多个版本和论文（也有其他作者的论文）中进行了更新和纠正。然而，没有任何版本或论文详细检查 2025 年 6 月版本的定理 1 和 2 的最终界限，因此，据我们所知，相关文献中已将其视为理所当然。在那里，定理 1 和定理 2 的最终界限（关于 DL 下的完全静态安全性和关于 AOMDL 下高达 $t/2$ 损坏的自适应安全性）的最终界限，由其证明所建立的中间不等式推导给读者。执行它后，我们得到的界限在三个不同的代数方面与所述界限不同：两个游戏跳跃产生的项在倒带之前，因此出现在平方根之外而不是在平方根内部；整个游戏跳跃聚合，而不仅仅是其碰撞部分，通过系数 $2q$ 而不是 $1$ 的提取不等式重新进入；一般分叉引理的精确反转贡献了根外部的 $q/2p$ 以及根内部的 $q^2/4p^2$，其中 $q$ 是查询数，$p$ 是组顺序，其标准松弛将两者组合成一个附加的 $q/p$，并且语句不包含这些。我们证明了这两个定理所遵循的界限，并准确确定我们的每个定理和原始定理何时更紧。以产生这些不平等的博弈转换的正确性为条件，渐近安全结论不受影响。",
       "topics": [
         "A"
       ],
@@ -402,7 +418,8 @@
         "A"
       ],
       "url": "https://eprint.iacr.org/2026/2044",
-      "pdf": "https://eprint.iacr.org/2026/2044.pdf"
+      "pdf": "https://eprint.iacr.org/2026/2044.pdf",
+      "abstractEn": "We revisit the security bounds of Sparkle+, the threshold Schnorr signature scheme which first appeared in 2023. This scheme has been updated and corrected in several versions and papers (also of other authors). However, no version or paper has checked in detail the final bounds of Theorem 1 and 2 of the June 2025 version, which have therefore, to the best of our knowledge, been taken for granted in the related literature. There, the derivation of the final bounds of its Theorems 1 and 2, on full static security under DL and on adaptive security up to $t/2$ corruptions under AOMDL, from the intermediate inequalities established by their proofs is left to the reader. Carrying it out, we obtain bounds that differ from the stated ones in three distinct algebraic respects: the terms produced by the two game hops precede the rewinding and therefore appear outside the square root rather than inside it; the whole game-hop aggregate, and not only its collision part, re-enters through the extraction inequality with coefficient $2q$ rather than $1$; and the exact inversion of the general forking lemma contributes $q/2p$ outside the root together with $q^2/4p^2$ inside it, with $q$ the number of queries and $p$ the group order, its standard relaxation combining the two into an additive $q/p$, and the statements carry none of this. We prove the bounds that do follow, for both theorems, and determine exactly when each of ours and the original is the tighter. Conditional on the correctness of the game transitions from which those inequalities come, the asymptotic security conclusions are unaffected."
     }
   ]
 }
