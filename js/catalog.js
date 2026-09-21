@@ -5,7 +5,7 @@ function mergeDayFiles(days) {
     for (const paper of day.papers || []) {
       if (!paper || !paper.id || seen.has(paper.id)) continue;
       seen.add(paper.id);
-      papers.push(paper);
+      papers.push({ ...paper, addedOn: day.date || paper.addedOn });
     }
   }
   return papers;
@@ -13,6 +13,19 @@ function mergeDayFiles(days) {
 
 function mergeSameDayPapers(incoming, existing) {
   return mergeDayFiles([{ papers: incoming }, { papers: existing }]);
+}
+
+function groupPapersByDate(papers, direction = "desc") {
+  const buckets = new Map();
+  for (const paper of papers || []) {
+    const date = paper.addedOn || "";
+    if (!buckets.has(date)) buckets.set(date, []);
+    buckets.get(date).push(paper);
+  }
+  const dates = [...buckets.keys()].sort((a, b) =>
+    direction === "asc" ? a.localeCompare(b) : b.localeCompare(a)
+  );
+  return dates.map((date) => ({ date, papers: buckets.get(date) }));
 }
 
 function upsertManifest(manifest, date) {
@@ -47,7 +60,7 @@ function onlyDataPaths(paths) {
   return paths.every((path) => /^data\/(manifest\.json|\d{4}-\d{2}-\d{2}\.json)$/.test(path));
 }
 
-const PaperCatalog = { mergeDayFiles, mergeSameDayPapers, upsertManifest, cardFromRadar, onlyDataPaths };
+const PaperCatalog = { mergeDayFiles, mergeSameDayPapers, groupPapersByDate, upsertManifest, cardFromRadar, onlyDataPaths };
 
 if (typeof module === "object" && module.exports) {
   module.exports = PaperCatalog;

@@ -3,6 +3,7 @@ const assert = require("node:assert/strict");
 const {
   mergeDayFiles,
   mergeSameDayPapers,
+  groupPapersByDate,
   upsertManifest,
   cardFromRadar,
   onlyDataPaths,
@@ -26,6 +27,36 @@ describe("mergeDayFiles", () => {
     assert.deepEqual(
       papers.map((p) => p.id + ":" + p.title),
       ["a:new", "b:other"]
+    );
+    assert.equal(papers[0].addedOn, "2026-09-21");
+    assert.equal(papers[1].addedOn, "2026-09-20");
+  });
+});
+
+describe("groupPapersByDate", () => {
+  it("groups papers under addedOn dates, newest first", () => {
+    const groups = groupPapersByDate([
+      { id: "b", addedOn: "2026-09-20" },
+      { id: "a", addedOn: "2026-09-21" },
+      { id: "c", addedOn: "2026-09-20" },
+    ]);
+    assert.deepEqual(
+      groups.map((g) => g.date + ":" + g.papers.map((p) => p.id).join(",")),
+      ["2026-09-21:a", "2026-09-20:b,c"]
+    );
+  });
+
+  it("can sort days oldest first", () => {
+    const groups = groupPapersByDate(
+      [
+        { id: "a", addedOn: "2026-09-21" },
+        { id: "b", addedOn: "2026-09-20" },
+      ],
+      "asc"
+    );
+    assert.deepEqual(
+      groups.map((g) => g.date),
+      ["2026-09-20", "2026-09-21"]
     );
   });
 });

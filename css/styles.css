@@ -172,6 +172,34 @@ select:focus,
   font-size: 0.95rem;
 }
 
+.feed {
+  display: grid;
+  gap: 36px;
+}
+
+.day-section {
+  display: grid;
+  gap: 14px;
+}
+
+.day-heading {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.day-heading::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--wax), var(--gold));
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

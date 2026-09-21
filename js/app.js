@@ -1,13 +1,13 @@
 (function () {
   const { filterPapers, sortPapers, uniqueTopics, uniqueYears } = window.PaperFilter;
-  const { mergeDayFiles } = window.PaperCatalog;
+  const { mergeDayFiles, groupPapersByDate } = window.PaperCatalog;
   let papers = [];
 
   const state = {
     query: "",
     topic: "all",
     year: "all",
-    sortBy: "year-desc",
+    sortBy: "date-desc",
   };
 
   const els = {
@@ -25,14 +25,32 @@
   };
 
   function visiblePapers() {
-    return sortPapers(
-      filterPapers(papers, {
-        query: state.query,
-        topic: state.topic,
-        year: state.year,
-      }),
-      state.sortBy
-    );
+    return filterPapers(papers, {
+      query: state.query,
+      topic: state.topic,
+      year: state.year,
+    });
+  }
+
+  function visibleDays() {
+    const list = visiblePapers();
+    const dateOrder = state.sortBy === "date-asc" ? "asc" : "desc";
+    const innerSort =
+      state.sortBy === "title" || state.sortBy === "year-desc" || state.sortBy === "year-asc"
+        ? state.sortBy
+        : null;
+    return groupPapersByDate(list, dateOrder)
+      .map((day) => ({
+        date: day.date,
+        papers: innerSort ? sortPapers(day.papers, innerSort) : day.papers,
+      }))
+      .filter((day) => day.papers.length);
+  }
+
+  function formatAddedOn(date) {
+    const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date || "");
+    if (!match) return "未标注日期";
+    return `${match[1]}年${Number(match[2])}月${Number(match[3])}日`;
   }
 
   const TOPIC_LABELS = {
@@ -115,15 +133,33 @@
     return article;
   }
 
+  function daySection(day) {
+    const section = document.createElement("section");
+    section.className = "day-section";
+    section.id = day.date ? `day-${day.date}` : "day-unknown";
+
+    const heading = document.createElement("h2");
+    heading.className = "day-heading";
+    heading.textContent = `${formatAddedOn(day.date)} · ${day.papers.length} 篇`;
+
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    grid.append(...day.papers.map(card));
+
+    section.append(heading, grid);
+    return section;
+  }
+
   function renderGrid() {
-    const list = visiblePapers();
+    const days = visibleDays();
+    const list = days.flatMap((day) => day.papers);
     const filtering = state.query || state.topic !== "all" || state.year !== "all";
     els.count.textContent = filtering
-      ? `显示 ${list.length} / ${papers.length} 篇`
-      : `共 ${papers.length} 篇`;
+      ? `显示 ${list.length} / ${papers.length} 篇 · ${days.length} 天`
+      : `共 ${papers.length} 篇 · ${days.length} 天`;
     els.clear.hidden = !filtering;
     els.empty.hidden = list.length > 0;
-    els.grid.replaceChildren(...list.map(card));
+    els.grid.replaceChildren(...days.map(daySection));
   }
 
   function openPaper(id) {
