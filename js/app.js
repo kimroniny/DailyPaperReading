@@ -125,6 +125,7 @@
   }
 
   function renderDates(days, active) {
+    const scrollTop = els.dates.scrollTop;
     els.dates.replaceChildren();
     days.forEach((day) => {
       const button = document.createElement("button");
@@ -139,6 +140,7 @@
       button.append(label, count);
       els.dates.appendChild(button);
     });
+    els.dates.scrollTop = scrollTop;
   }
 
   function renderDay(days, day) {
