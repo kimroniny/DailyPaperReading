@@ -21,7 +21,12 @@ C. 大模型用于安全风险、漏洞检测、修复、审计、测试生成�
 
 ## 来源（公开页面即可；付费全文读不到就用标题+摘要）
 
-自行检索下面来源，不要依赖仓库里不存在的抓取模块。
+先看仓库里有没有 `paper_radar`。有则先当候选生成器，再按本提示词过滤（不要把 `digest.json` 提交进仓库）：
+```bash
+python3 -m pip install -r requirements.txt
+python3 -m paper_radar daily --days 7 --max 12 --json-out digest.json
+```
+过滤后可用 `node scripts/write-daily.js digest.json` 写成当天文件。没有该模块、或命令失败时，自行检索下面来源并直接写 JSON。有无 `paper_radar` 都要覆盖会议 / 期刊 / OpenReview，不得只扫脚本输出。
 
 1) arXiv（主源）
    - A 类：cs.CR, cs.DC，以及区块链/合约/zk/桥/MEV 等检索
@@ -103,7 +108,7 @@ arXiv 无 venue：A 类高相关可推；C / C-chain 方法清楚也可推，`ve
 
 ## 写入仓库（必做）
 
-今天的日期用 UTC 的 `YYYY-MM-DD`。有新论文时直接写成 `data/YYYY-MM-DD.json`，并把该日期插到 `data/manifest.json` 的 `dates` 数组最前面（已存在则移到最前，不要重复）。
+今天的日期用 UTC 的 `YYYY-MM-DD`。有新论文时写成 `data/YYYY-MM-DD.json`，并把该日期插到 `data/manifest.json` 的 `dates` 数组最前面（已存在则移到最前，不要重复）。若已用 `paper_radar` 生成并过滤过 `digest.json`，可用 `node scripts/write-daily.js digest.json`；否则直接按下面格式写文件。
 
 当天文件格式：
 ```json

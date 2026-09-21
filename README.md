@@ -9,7 +9,14 @@
 
 ## 日报怎么进站点
 
-Cursor 自动化应绑 **GitHub 仓库** `kimroniny/DailyPaperReading`。提示词见 [AUTOMATION.md](AUTOMATION.md)：按雷达规则自行检索 arXiv / IACR / 会议与期刊列表，写成当天 JSON，开只改 `data/` 的 PR。不要发 Slack。
+Cursor 自动化应绑 **GitHub 仓库** `kimroniny/DailyPaperReading`。提示词见 [AUTOMATION.md](AUTOMATION.md)：有 `paper_radar` 时先生成候选再按雷达规则过滤；没有则自行检索 arXiv / IACR / 会议与期刊列表。写成当天 JSON，开只改 `data/` 的 PR。不要发 Slack。
+
+仓库若有 `paper_radar`：
+
+```bash
+python3 -m paper_radar daily --days 7 --max 12 --json-out digest.json
+node scripts/write-daily.js digest.json
+```
 
 GitHub Action `Automerge daily papers` 会把**只动** `data/manifest.json` 和 `data/YYYY-MM-DD.json` 的 PR 自动 squash 进 `main`；随后 `Deploy GitHub Pages` 发布。
 
