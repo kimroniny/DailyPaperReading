@@ -9,7 +9,7 @@
 
 ## 日报怎么进站点
 
-Cursor 自动化应绑 **GitHub 仓库** `kimroniny/DailyPaperReading`，每天：
+Cursor 自动化应绑 **GitHub 仓库** `kimroniny/DailyPaperReading`，完整提示词见 [AUTOMATION.md](AUTOMATION.md)。每天等价于：
 
 ```bash
 python3 -m paper_radar daily --days 7 --max 12 --json-out digest.json
