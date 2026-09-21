@@ -25,7 +25,7 @@ python3 -m paper_radar daily --days 7 --max 12 --json-out digest.json
 node scripts/write-daily.js digest.json
 ```
 
-GitHub Action `Automerge daily papers` 会把**只动** `data/manifest.json` 和 `data/YYYY-MM-DD.json` 的 PR 自动 squash 进 `main`；随后 `Deploy GitHub Pages` 发布。
+GitHub Action `Automerge daily papers` 会把**只动** `data/manifest.json` 和 `data/YYYY-MM-DD.json` 的 PR 自动 squash 进 `main`，然后显式 `workflow_dispatch` `Deploy GitHub Pages`。Actions 自带 token 合进 `main` 不会再触发 `push` 工作流，所以不能指望 Cursor 自动化开完 PR 就自动发布。
 
 仓库 **Settings → General → Pull Requests** 打开 **Allow auto-merge**（若 GitHub 要求）。不要给 `main` 加「必须人工审批」，否则机器人合并不了。
 
