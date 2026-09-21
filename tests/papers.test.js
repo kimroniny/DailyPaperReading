@@ -43,4 +43,36 @@ describe("daily JSON catalog", () => {
       assert.equal(titles.has(title), false, title);
     }
   });
+
+  it("keeps the original gallery seed papers after a same-day radar overwrite", () => {
+    const ids = new Set(loadPapers().map((paper) => paper.id));
+    const seed = [
+      "2609.10780",
+      "2605.21779",
+      "2607.08949",
+      "2608.06641",
+      "tse-2025-numscout",
+      "2603.26270",
+      "2602.03271",
+      "2512.06846",
+      "2026-1877",
+      "2026-1827",
+      "2026-1760",
+      "ndss-2026-bunnyfinder",
+    ];
+    const radar = [
+      "2609.21020",
+      "10.1145-3846194",
+      "10.1145-3796526",
+      "10.1145-3845985",
+      "2609.21344",
+      "2609.20752",
+      "2609.21627",
+      "2609.18563",
+    ];
+    for (const id of [...seed, ...radar]) {
+      assert.ok(ids.has(id), `missing ${id}`);
+    }
+    assert.ok(loadPapers().length >= seed.length + radar.length);
+  });
 });
