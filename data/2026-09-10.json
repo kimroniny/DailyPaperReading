@@ -1,0 +1,269 @@
+{
+  "date": "2026-09-10",
+  "papers": [
+    {
+      "id": "2609.10412",
+      "title": "Towards Scalable and Cost-Efficient Vulnerability Detection: A Study on Automatic Query Generation",
+      "authors": [
+        "Ivana Clairine Irsan",
+        "Ratnadira Widyasari",
+        "Huihui Huang",
+        "Ting Zhang",
+        "Yue Liu",
+        "Ouh Eng Lieh",
+        "Shar Lwin Khin",
+        "Kang Hong Jin",
+        "David Lo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Towards Scalable and Cost-Efficient Vulnerability Detection: A Study on Automatic Query Generation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.10412",
+      "pdf": "https://arxiv.org/pdf/2609.10412"
+    },
+    {
+      "id": "2609.10537",
+      "title": "Towards Tackling Application Logic Flaws through Autonomous Formal-Logic Modeling and Automated Reasoning",
+      "authors": [
+        "Yiwei Fang",
+        "Yichen Liu",
+        "Ze Jin",
+        "Haoqiang Wang",
+        "Qixu Liu",
+        "Luyi Xing"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Towards Tackling Application Logic Flaws through Autonomous Formal-Logic Modeling and Automated Reasoning》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.10537",
+      "pdf": "https://arxiv.org/pdf/2609.10537"
+    },
+    {
+      "id": "2609.09386",
+      "title": "LLMSec-AV: A Vulnerability Taxonomy and LLM-Driven Software Weakness Discovery Framework for Autonomous Vehicles",
+      "authors": [
+        "Md. Wasiul Haque",
+        "Sagar Dasgupta",
+        "Mizanur Rahman"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《LLMSec-AV: A Vulnerability Taxonomy and LLM-Driven Software Weakness Discovery Framework for Autonomous Vehicles》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLMSec-AV",
+        "漏洞",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.09386",
+      "pdf": "https://arxiv.org/pdf/2609.09386"
+    },
+    {
+      "id": "2609.10057",
+      "title": "AutoTrans: AI-Assisted Automatic Translation of Security Assertions for RISC-V Processors",
+      "authors": [
+        "Sharjeel Imtiaz",
+        "Uljana Reinsalu",
+        "Tara Ghasempouri"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《AutoTrans: AI-Assisted Automatic Translation of Security Assertions for RISC-V Processors》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "AutoTrans",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.10057",
+      "pdf": "https://arxiv.org/pdf/2609.10057"
+    },
+    {
+      "id": "2609.09798",
+      "title": "CS-Guard: Benchmarking LLM Guardrails for Code Generation Security",
+      "authors": [
+        "Jinyang Li",
+        "Mingyu Guo",
+        "Hung X. Nguyen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《CS-Guard: Benchmarking LLM Guardrails for Code Generation Security》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CS-Guard",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.09798",
+      "pdf": "https://arxiv.org/pdf/2609.09798"
+    },
+    {
+      "id": "2609.07754",
+      "title": "Do AI Coding Assistants Check Before They Install? A Pre-Registered Demand-Side Audit of Trust Signals in the Research Software Supply Chain",
+      "authors": [
+        "Pengyin Shan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Do AI Coding Assistants Check Before They Install? A Pre-Registered Demand-Side Audit of Trust Signals in the Research Software Supply Chain》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.07754",
+      "pdf": "https://arxiv.org/pdf/2609.07754"
+    },
+    {
+      "id": "2609.10260",
+      "title": "Are Unreachable Nodes Truly Safe? Fully Eclipsing Monero's P2P Network!",
+      "authors": [
+        "Ruisheng Shi",
+        "Jiaqi Zeng",
+        "Lina Lan",
+        "Shihan Zhang",
+        "Bing Han",
+        "Xiapu Luo",
+        "Qishu Jin",
+        "Wenliang Du",
+        "Qin Wang"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstract": "协议/链上工作《Are Unreachable Nodes Truly Safe? Fully Eclipsing Monero's P2P Network!》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.10260",
+      "pdf": "https://arxiv.org/pdf/2609.10260"
+    },
+    {
+      "id": "2609.10149",
+      "title": "Sound Debloating of Redundant Checks in Zero-Knowledge Machine-Learning Circuits",
+      "authors": [
+        "Zhantong Xue",
+        "Pingchuan Ma",
+        "Zhaoyu Wang",
+        "Yuguang Zhou",
+        "Huaijin Wang",
+        "Shuai Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Sound Debloating of Redundant Checks in Zero-Knowledge Machine-Learning Circuits》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.10149",
+      "pdf": "https://arxiv.org/pdf/2609.10149"
+    },
+    {
+      "id": "2609.09623",
+      "title": "Scalable Composition of Byzantine Agreements under Reorder Attacks",
+      "authors": [
+        "Jing Chen",
+        "Jin Dong",
+        "Jichen Li",
+        "Xuanzhi Xia",
+        "Wentao Zhou"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Scalable Composition of Byzantine Agreements under Reorder Attacks》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.09623",
+      "pdf": "https://arxiv.org/pdf/2609.09623"
+    },
+    {
+      "id": "2026-1901",
+      "title": "Nothing Up My Matrix: Kleptographic Backdoors in ZK-friendly Hash Functions",
+      "authors": [
+        "Hyunsik Jeong",
+        "Malte Sander Leip",
+        "Mincheol Son"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Nothing Up My Matrix: Kleptographic Backdoors in ZK-friendly Hash Functions》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zk",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1901",
+      "pdf": "https://eprint.iacr.org/2026/1901.pdf"
+    },
+    {
+      "id": "2026-1905",
+      "title": "A Better Bivariate Resultant Attack on Round-Reduced Poseidon",
+      "authors": [
+        "Antoine Bak",
+        "Maël Hostettler"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《A Better Bivariate Resultant Attack on Round-Reduced Poseidon》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1905",
+      "pdf": "https://eprint.iacr.org/2026/1905.pdf"
+    },
+    {
+      "id": "2026-1909",
+      "title": "Tightly and Adaptively Secure Two-Round Threshold Signatures from DDH",
+      "authors": [
+        "Renas Bacho",
+        "Yanbo Chen"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Tightly and Adaptively Secure Two-Round Threshold Signatures from DDH》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1909",
+      "pdf": "https://eprint.iacr.org/2026/1909.pdf"
+    }
+  ]
+}

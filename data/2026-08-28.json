@@ -1,0 +1,174 @@
+{
+  "date": "2026-08-28",
+  "papers": [
+    {
+      "id": "2608.26699",
+      "title": "KubeCap: A Framework for Capability Minimization in Kubernetes via Static Analysis and LLM-Assisted Rule Inference",
+      "authors": [
+        "Yuhao Liu",
+        "Yingnan Zhou",
+        "Weijie Liu",
+        "Yan Jia",
+        "Zheli Liu"
+      ],
+      "year": 2026,
+      "venue": "ISSRE 2026",
+      "abstract": "《KubeCap: A Framework for Capability Minimization in Kubernetes via Static Analysis and LLM-Assisted Rule Inference》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "KubeCap",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.26699",
+      "pdf": "https://arxiv.org/pdf/2608.26699"
+    },
+    {
+      "id": "2608.25730",
+      "title": "From Verdict to Diagnosis: Attributable Security Review of Pull Requests",
+      "authors": [
+        "Zhuo Chen",
+        "Boyang Wang",
+        "Xiyue Zhang",
+        "Xiaoyun Xu",
+        "Ahmad-Reza Sadeghi",
+        "Stjepan Picek",
+        "Lichao Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《From Verdict to Diagnosis: Attributable Security Review of Pull Requests》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.25730",
+      "pdf": "https://arxiv.org/pdf/2608.25730"
+    },
+    {
+      "id": "2608.26588",
+      "title": "Unsaid, Unsafe? Implicit Security Obligations in LLM-Based RTL Code Generation",
+      "authors": [
+        "Guang Yang",
+        "Xing Hu",
+        "Xiang Chen",
+        "Xin Xia"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Unsaid, Unsafe? Implicit Security Obligations in LLM-Based RTL Code Generation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.26588",
+      "pdf": "https://arxiv.org/pdf/2608.26588"
+    },
+    {
+      "id": "2608.26882",
+      "title": "PLCBench: Can Autonomous LLM Agents Turn PLC Access into Sustained Physical Impact?",
+      "authors": [
+        "Yitian Zhou",
+        "Jingyu Zheng",
+        "Qiliang Jiang",
+        "Linkang Du",
+        "Haoming Liu",
+        "Lichao Wu",
+        "Shiyi Zhao",
+        "Mengxiang Liu",
+        "Ruilong Deng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《PLCBench: Can Autonomous LLM Agents Turn PLC Access into Sustained Physical Impact?》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PLCBench",
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.26882",
+      "pdf": "https://arxiv.org/pdf/2608.26882"
+    },
+    {
+      "id": "2608.27299",
+      "title": "When Context Gets Root: Privilege Escalation in LLM Harnesses",
+      "authors": [
+        "Xingbang He",
+        "Yuanwei Chen",
+        "Yi Qian",
+        "Haiyang Wei",
+        "Ligeng Chen",
+        "Zenan Fu",
+        "Linzhang Wang",
+        "Hao Wu",
+        "Bing Mao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《When Context Gets Root: Privilege Escalation in LLM Harnesses》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.27299",
+      "pdf": "https://arxiv.org/pdf/2608.27299"
+    },
+    {
+      "id": "2608.26858",
+      "title": "Information Flow Control in Off-Chain Components",
+      "authors": [
+        "Stian Lybech",
+        "Eun-Young Kang",
+        "Riccardo Tonello",
+        "Anders Dalskov"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Information Flow Control in Off-Chain Components》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.26858",
+      "pdf": "https://arxiv.org/pdf/2608.26858"
+    },
+    {
+      "id": "2608.26380",
+      "title": "Improving the Robustness of the XRP Ledger Network via Edge Augmentation Strategies",
+      "authors": [
+        "Afonso Vilalonga",
+        "Orkun İrsoy",
+        "João S. Resende",
+        "Henrique Domingos",
+        "Osman Yağan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Improving the Robustness of the XRP Ledger Network via Edge Augmentation Strategies》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.26380",
+      "pdf": "https://arxiv.org/pdf/2608.26380"
+    }
+  ]
+}

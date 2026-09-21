@@ -1,0 +1,257 @@
+{
+  "date": "2026-09-19",
+  "papers": [
+    {
+      "id": "10.1145-3848030",
+      "title": "Guiding AI to Fix Its Own Flaws: An Empirical Study on LLM-Driven Secure Code Generation",
+      "authors": [
+        "Hao Yan",
+        "Swapneel Suhas Vaidya",
+        "Xiaokuan Zhang",
+        "Ziyu Yao"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstract": "《Guiding AI to Fix Its Own Flaws: An Empirical Study on LLM-Driven Secure Code Generation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://doi.org/10.1145/3848030"
+    },
+    {
+      "id": "2609.19587",
+      "title": "Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents",
+      "authors": [
+        "Alex Remedios",
+        "Simon Storf",
+        "Fabien Roger",
+        "John Hughes"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.19587",
+      "pdf": "https://arxiv.org/pdf/2609.19587"
+    },
+    {
+      "id": "2609.18217",
+      "title": "Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines",
+      "authors": [
+        "Murali Ediga",
+        "Sudipta Chattopadhyay"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Measuring and Exploiting Implicit Trust in LLM Tool-Calling Pipelines》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.18217",
+      "pdf": "https://arxiv.org/pdf/2609.18217"
+    },
+    {
+      "id": "2609.14119",
+      "title": "Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem",
+      "authors": [
+        "Obada Kraishan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.14119",
+      "pdf": "https://arxiv.org/pdf/2609.14119"
+    },
+    {
+      "id": "2609.18674",
+      "title": "CaMeLoT: CaMeL orchestrated with Temporal logic for static verification and liveness",
+      "authors": [
+        "Elia Nikolaou",
+        "Magnus Wiik Eckhoff",
+        "Robert Flood",
+        "Gudmund Grov",
+        "Vasileios Mavroeidis",
+        "David Aspinall"
+      ],
+      "year": 2026,
+      "venue": "CAMLIS 2026",
+      "abstract": "《CaMeLoT: CaMeL orchestrated with Temporal logic for static verification and liveness》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CaMeLoT",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.18674",
+      "pdf": "https://arxiv.org/pdf/2609.18674"
+    },
+    {
+      "id": "2609.18298",
+      "title": "A Study of the Reliability of Agentic AI-Generated Programs",
+      "authors": [
+        "Ayesha Shafique",
+        "Barton P. MIller",
+        "Elisa R. Heymann"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《A Study of the Reliability of Agentic AI-Generated Programs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.18298",
+      "pdf": "https://arxiv.org/pdf/2609.18298"
+    },
+    {
+      "id": "2609.20614",
+      "title": "Inference-Engine Fingerprinting Attacks are Practical: Exploring Model-Driven Environmental Discovery, Exploitation, and Escape",
+      "authors": [
+        "Sarah Radway",
+        "Andrew Cheng",
+        "Vijay Janapa Reddi",
+        "James Mickens"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Inference-Engine Fingerprinting Attacks are Practical: Exploring Model-Driven Environmental Discovery, Exploitation, and Escape》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.20614",
+      "pdf": "https://arxiv.org/pdf/2609.20614"
+    },
+    {
+      "id": "2609.15887",
+      "title": "The Model Proposes, the Code Disposes: A Pre-Registered Ablation of a Verifier-and-Acceptance Stage in an LLM-Orchestrated Offensive-Security Agent",
+      "authors": [
+        "Theodoros Moutesidis"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《The Model Proposes, the Code Disposes: A Pre-Registered Ablation of a Verifier-and-Acceptance Stage in an LLM-Orchestrated Offensive-Security Agent》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.15887",
+      "pdf": "https://arxiv.org/pdf/2609.15887"
+    },
+    {
+      "id": "2026-2060",
+      "title": "DelegProof: A Machine-Checked Security Analysis of EIP-7702 Delegation",
+      "authors": [
+        "Rong Qian",
+        "Yu Cheng",
+        "Lingyu Gao",
+        "Yuchang Zhang",
+        "Zengli Guo"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《DelegProof: A Machine-Checked Security Analysis of EIP-7702 Delegation》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DelegProof",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2060",
+      "pdf": "https://eprint.iacr.org/2026/2060.pdf"
+    },
+    {
+      "id": "2609.17647",
+      "title": "CARE: A Responsibility-Oriented Architecture for Domain-Scoped Resolution in Modular and Upgradeable Smart Contracts",
+      "authors": [
+        "Ali Rajabi Nekoo",
+        "Laleh Rasoul",
+        "Azadeh Zamanifar"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《CARE: A Responsibility-Oriented Architecture for Domain-Scoped Resolution in Modular and Upgradeable Smart Contracts》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "CARE",
+        "智能合约",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.17647",
+      "pdf": "https://arxiv.org/pdf/2609.17647"
+    },
+    {
+      "id": "2026-2067",
+      "title": "Maltese: Succinct Polynomial Commitment from Lattices",
+      "authors": [
+        "Katarina Cheng",
+        "Wilson Nguyen",
+        "Nirvan Tyagi"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Maltese: Succinct Polynomial Commitment from Lattices》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Maltese",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2067",
+      "pdf": "https://eprint.iacr.org/2026/2067.pdf"
+    },
+    {
+      "id": "2026-2051",
+      "title": "PyuQuMuQu: Attacks on MQ-Based Linkable Ring Signatures and a New 5-Pass Construction",
+      "authors": [
+        "Freeman Slaughter"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《PyuQuMuQu: Attacks on MQ-Based Linkable Ring Signatures and a New 5-Pass Construction》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "PyuQuMuQu",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2051",
+      "pdf": "https://eprint.iacr.org/2026/2051.pdf"
+    }
+  ]
+}

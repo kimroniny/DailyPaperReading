@@ -1,0 +1,173 @@
+{
+  "date": "2026-09-07",
+  "papers": [
+    {
+      "id": "2609.04535",
+      "title": "An Empirical Analysis of CodeQL False Positives and Query Refinements for Java Vulnerabilities",
+      "authors": [
+        "Amirali Sajadi",
+        "Saikat Dutta",
+        "Preetha Chatterjee"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《An Empirical Analysis of CodeQL False Positives and Query Refinements for Java Vulnerabilities》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.04535",
+      "pdf": "https://arxiv.org/pdf/2609.04535"
+    },
+    {
+      "id": "2609.05335",
+      "title": "The History Is the Detector: Executing CVE Patch History, End-to-End",
+      "authors": [
+        "Qiushi Wu",
+        "Kevin Eykholt",
+        "Youngja Park",
+        "Xiaokui Shu",
+        "Dhilung Kirat",
+        "Douglas Lee Schales",
+        "Ian Molloy"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《The History Is the Detector: Executing CVE Patch History, End-to-End》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.05335",
+      "pdf": "https://arxiv.org/pdf/2609.05335"
+    },
+    {
+      "id": "2609.05370",
+      "title": "When LLM Decompilers Recompile More and Preserve Less",
+      "authors": [
+        "Chang Liu",
+        "Edward Raff",
+        "Kristopher Micinski"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《When LLM Decompilers Recompile More and Preserve Less》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.05370",
+      "pdf": "https://arxiv.org/pdf/2609.05370"
+    },
+    {
+      "id": "2609.04219",
+      "title": "Large Language Models for Fuzz Testing in Microservices: A Systematic Literature Review",
+      "authors": [
+        "Ying Song",
+        "Ke Ping",
+        "Yuqing Wang",
+        "Xiaozhou Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Large Language Models for Fuzz Testing in Microservices: A Systematic Literature Review》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "fuzzing",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.04219",
+      "pdf": "https://arxiv.org/pdf/2609.04219"
+    },
+    {
+      "id": "2609.01931",
+      "title": "Agent Flight Recorder: Tamper-Evident Audit Trails with On-Chain Anchoring for Long-Horizon Tool-Using Agents",
+      "authors": [
+        "Laurent Bindschaedler",
+        "Quentin Botha",
+        "Christoph Siebenbrunner"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Agent Flight Recorder: Tamper-Evident Audit Trails with On-Chain Anchoring for Long-Horizon Tool-Using Agents》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "agent",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.01931",
+      "pdf": "https://arxiv.org/pdf/2609.01931"
+    },
+    {
+      "id": "2026-1889",
+      "title": "A General Approach to Adaptor Signatures",
+      "authors": [],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《A General Approach to Adaptor Signatures》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1889",
+      "pdf": "https://eprint.iacr.org/2026/1889.pdf"
+    },
+    {
+      "id": "2026-1886",
+      "title": "Symplex: Improved Pairing-Based zkSNARK using Partial Fraction Techniques",
+      "authors": [
+        "Charanjit S. Jutla",
+        "Arnab Roy"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Symplex: Improved Pairing-Based zkSNARK using Partial Fraction Techniques》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Symplex",
+        "zk",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1886",
+      "pdf": "https://eprint.iacr.org/2026/1886.pdf"
+    },
+    {
+      "id": "2026-1888",
+      "title": "BMuSig2: Schnorr-Compatible Blind Multi-Signatures",
+      "authors": [
+        "Kanchan Bisht",
+        "Keerthi Aiswarya Varshini",
+        "Shivam Sethi",
+        "Maria Francis",
+        "R. Kabaleeshwaran"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《BMuSig2: Schnorr-Compatible Blind Multi-Signatures》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "BMuSig2",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1888",
+      "pdf": "https://eprint.iacr.org/2026/1888.pdf"
+    }
+  ]
+}

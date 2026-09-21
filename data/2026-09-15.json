@@ -1,0 +1,263 @@
+{
+  "date": "2026-09-15",
+  "papers": [
+    {
+      "id": "2609.13728",
+      "title": "TyPatch: Transforming Patches into Typestate Rules for Kernel Bug Detection",
+      "authors": [
+        "Ruoyu Wang",
+        "Tuo Li",
+        "Jia Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《TyPatch: Transforming Patches into Typestate Rules for Kernel Bug Detection》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "TyPatch",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.13728",
+      "pdf": "https://arxiv.org/pdf/2609.13728"
+    },
+    {
+      "id": "2609.15939",
+      "title": "Vulnerability Localization Benchmark: Measuring Agentic Security Analysis at Repository Scale",
+      "authors": [
+        "Aman Priyanshu",
+        "Supriti Vijay",
+        "Kimia Majd",
+        "Xuhong He",
+        "Fraser Burch",
+        "Takahiro Matsumoto",
+        "Jianliang He",
+        "Baturay Saglam",
+        "Arthur Goldblatt",
+        "Zhuoran Yang",
+        "Amin Karbasi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Vulnerability Localization Benchmark: Measuring Agentic Security Analysis at Repository Scale》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.15939",
+      "pdf": "https://arxiv.org/pdf/2609.15939"
+    },
+    {
+      "id": "2609.15963",
+      "title": "Adversarial Testing of Automated Program Repair Agents for Security Vulnerabilities",
+      "authors": [
+        "Fares Trad",
+        "Simin Chen",
+        "Hung Viet Pham",
+        "Gias Uddin",
+        "Baishakhi Ray"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Adversarial Testing of Automated Program Repair Agents for Security Vulnerabilities》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.15963",
+      "pdf": "https://arxiv.org/pdf/2609.15963"
+    },
+    {
+      "id": "2609.12457",
+      "title": "Hieronym: Leveraging Hierarchical Multi-Source Information for Function Renaming in Stripped Binary",
+      "authors": [
+        "Xiaoling Zhang",
+        "Jian Sun",
+        "Dawei Wang",
+        "Chongyu Wang",
+        "Li Chen",
+        "Zhaoteng Yan",
+        "Peipei Liu",
+        "Lixiao Zhang",
+        "Dan Li"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstract": "《Hieronym: Leveraging Hierarchical Multi-Source Information for Function Renaming in Stripped Binary》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Hieronym",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.12457",
+      "pdf": "https://arxiv.org/pdf/2609.12457"
+    },
+    {
+      "id": "2609.13816",
+      "title": "Exploring Automated Vulnerability Identification in JavaScript Code Using Large Language Models",
+      "authors": [
+        "Manit Kaushik",
+        "Ishir Bhardwaj",
+        "Pranav Gupta",
+        "Pankaj Jalote",
+        "Arun Balaji Buduru"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Exploring Automated Vulnerability Identification in JavaScript Code Using Large Language Models》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.13816",
+      "pdf": "https://arxiv.org/pdf/2609.13816"
+    },
+    {
+      "id": "2609.14475",
+      "title": "EchoFuzz: Empowering Smart Contract Fuzzing with Large Language Models",
+      "authors": [
+        "Juanen Li",
+        "Peng Qian",
+        "Guanyan Li",
+        "Rui Wang",
+        "Peixin Wang",
+        "Zhiqing Tang",
+        "Fuchen Ma",
+        "Yuanliang Chen",
+        "Lun Zhang"
+      ],
+      "year": 2026,
+      "venue": "ICSE 2026",
+      "abstract": "《EchoFuzz: Empowering Smart Contract Fuzzing with Large Language Models》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "EchoFuzz",
+        "智能合约",
+        "fuzzing",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2609.14475",
+      "pdf": "https://arxiv.org/pdf/2609.14475"
+    },
+    {
+      "id": "2609.14098",
+      "title": "The Deception Delta: Adversarial Evaluation of LLM-Based Smart Contract Bytecode Forensics",
+      "authors": [
+        "Timo Schefold"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstract": "《The Deception Delta: Adversarial Evaluation of LLM-Based Smart Contract Bytecode Forensics》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "LLM",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2609.14098",
+      "pdf": "https://arxiv.org/pdf/2609.14098"
+    },
+    {
+      "id": "2609.13601",
+      "title": "Mind the Gap: Detecting Description-Execution Mismatch Attacks in DAO Governance",
+      "authors": [
+        "Bowen Cai",
+        "Nanzi Yang",
+        "Weiheng Bai",
+        "Youshui Lu",
+        "Yajin Zhou",
+        "Kangjie Lu"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstract": "协议/链上工作《Mind the Gap: Detecting Description-Execution Mismatch Attacks in DAO Governance》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.13601",
+      "pdf": "https://arxiv.org/pdf/2609.13601"
+    },
+    {
+      "id": "2609.15020",
+      "title": "Efficient Branch-and-Bound Testing and Verification of zkVMs",
+      "authors": [
+        "Hideaki Takahashi",
+        "Suman Jana",
+        "Junfeng Yang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Efficient Branch-and-Bound Testing and Verification of zkVMs》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zk",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.15020",
+      "pdf": "https://arxiv.org/pdf/2609.15020"
+    },
+    {
+      "id": "2609.13781",
+      "title": "PQLN: Post-Quantum Security for the Bitcoin Lightning Network's Off-Chain Surfaces",
+      "authors": [
+        "Ahmet Kurt",
+        "Abdul-Salem Beibitkhan",
+        "Yacoub Hanna",
+        "Abdullah Aydeger"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《PQLN: Post-Quantum Security for the Bitcoin Lightning Network's Off-Chain Surfaces》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "PQLN",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.13781",
+      "pdf": "https://arxiv.org/pdf/2609.13781"
+    },
+    {
+      "id": "2026-2011",
+      "title": "CauchyFold: Residue-Optimal High-Arity Lattice Folding via Scaled Cauchy Challenges",
+      "authors": [
+        "Xiang Wang"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《CauchyFold: Residue-Optimal High-Arity Lattice Folding via Scaled Cauchy Challenges》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "CauchyFold",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2011",
+      "pdf": "https://eprint.iacr.org/2026/2011.pdf"
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "date": "2026-09-02",
+  "papers": [
+    {
+      "id": "2609.01503",
+      "title": "The Data Problem in Software Vulnerability Analysis: Artifacts, Quality, and Consumption",
+      "authors": [
+        "Yu Nong",
+        "Yao Du",
+        "Tianxiang Xu",
+        "Haipeng Cai"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《The Data Problem in Software Vulnerability Analysis: Artifacts, Quality, and Consumption》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.01503",
+      "pdf": "https://arxiv.org/pdf/2609.01503"
+    },
+    {
+      "id": "2609.01187",
+      "title": "Athena: Vulnerability-Affected Library Identification via Knowledge Graph Completion",
+      "authors": [
+        "Phong Trinh Duy",
+        "Trang Dang Yen",
+        "Hung Nguyen-Huu",
+        "Bach Le",
+        "Quyet-Thang Huynh",
+        "Dieu Hoang Vu",
+        "David Lo",
+        "Thanh Le-Cong"
+      ],
+      "year": 2026,
+      "venue": "EMNLP 2026",
+      "abstract": "《Athena: Vulnerability-Affected Library Identification via Knowledge Graph Completion》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Athena",
+        "漏洞",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.01187",
+      "pdf": "https://arxiv.org/pdf/2609.01187"
+    },
+    {
+      "id": "2609.01185",
+      "title": "Reveree: Diagnosing LLM Reverse-Engineering Agents",
+      "authors": [
+        "Hadjer Benkraouda",
+        "Hongyu Cai",
+        "Berkay Celik",
+        "Gang Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Reveree: Diagnosing LLM Reverse-Engineering Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Reveree",
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.01185",
+      "pdf": "https://arxiv.org/pdf/2609.01185"
+    },
+    {
+      "id": "2609.00362",
+      "title": "Revisiting Feedback-Driven LLM Code Repair: A Replication and Exploratory Java Extension",
+      "authors": [
+        "Louis Lalonde",
+        "Wassim Keddache",
+        "Thomas Perron Touchette",
+        "Leuson Da Silva",
+        "Foutse Khomh"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Revisiting Feedback-Driven LLM Code Repair: A Replication and Exploratory Java Extension》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.00362",
+      "pdf": "https://arxiv.org/pdf/2609.00362"
+    },
+    {
+      "id": "2609.01222",
+      "title": "What's in Your Agent's Context? Context Privilege Escalation Attacks against AI Agent Harness",
+      "authors": [
+        "Zichuan Li",
+        "Jian Cui",
+        "Ashley Chen",
+        "Xiaojing Liao",
+        "Luyi Xing"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《What's in Your Agent's Context? Context Privilege Escalation Attacks against AI Agent Harness》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.01222",
+      "pdf": "https://arxiv.org/pdf/2609.01222"
+    },
+    {
+      "id": "2609.00837",
+      "title": "Breaking Cycles for Scalable Fair Ordering in Blockchain Systems",
+      "authors": [
+        "Jinchun He",
+        "Wangjie Qiu",
+        "Yizhong Liu",
+        "Shengda Zhuo",
+        "Kwok-Yan Lam"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Breaking Cycles for Scalable Fair Ordering in Blockchain Systems》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.00837",
+      "pdf": "https://arxiv.org/pdf/2609.00837"
+    },
+    {
+      "id": "2609.01186",
+      "title": "Smart Contracts Claimed Vulnerable by the CVE Database, with Labels and Source Locations",
+      "authors": [
+        "Monika di Angelo",
+        "Gernot Salzer"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Smart Contracts Claimed Vulnerable by the CVE Database, with Labels and Source Locations》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.01186",
+      "pdf": "https://arxiv.org/pdf/2609.01186"
+    },
+    {
+      "id": "2026-1838",
+      "title": "How to prove more false statements: Fiat–Shamir limitations on (generated) R1CS",
+      "authors": [
+        "Giacomo Fenzi"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《How to prove more false statements: Fiat–Shamir limitations on (generated) R1CS》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1838",
+      "pdf": "https://eprint.iacr.org/2026/1838.pdf"
+    },
+    {
+      "id": "2026-1839",
+      "title": "Quasar: A Field-Agnostic Polynomial Commitment Scheme with Polylogarithmic Verification from Quasi-Abelian Codes",
+      "authors": [
+        "Yuhao Jia",
+        "Zhe Li",
+        "Chaoping Xing",
+        "Yizhou Yao",
+        "Chen Yuan"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Quasar: A Field-Agnostic Polynomial Commitment Scheme with Polylogarithmic Verification from Quasi-Abelian Codes》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Quasar",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1839",
+      "pdf": "https://eprint.iacr.org/2026/1839.pdf"
+    },
+    {
+      "id": "2026-1842",
+      "title": "Arion: Arithmetization-Oriented Hashing for Zero-Knowledge Proof Systems",
+      "authors": [
+        "Luca Campa",
+        "Arnab Roy",
+        "Matthias Johann Steiner",
+        "Stefano Trevisani"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Arion: Arithmetization-Oriented Hashing for Zero-Knowledge Proof Systems》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Arion",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1842",
+      "pdf": "https://eprint.iacr.org/2026/1842.pdf"
+    }
+  ]
+}

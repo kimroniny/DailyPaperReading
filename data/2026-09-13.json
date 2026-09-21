@@ -1,0 +1,113 @@
+{
+  "date": "2026-09-13",
+  "papers": [
+    {
+      "id": "2609.10871",
+      "title": "A2ABreak: Systematic Security Analysis of the A2A Protocol",
+      "authors": [
+        "Alireza Lotfi",
+        "Mirza Masfiqur Rahman",
+        "Imtiaz Karim",
+        "Elisa Bertino"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《A2ABreak: Systematic Security Analysis of the A2A Protocol》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "A2ABreak",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.10871",
+      "pdf": "https://arxiv.org/pdf/2609.10871"
+    },
+    {
+      "id": "2609.11303",
+      "title": "Exploring the Role of Security Experience and ChatGPT Usage Strategies on Secure Software Engineering Education",
+      "authors": [
+        "Alessio Ferrari",
+        "Minh An Nguyen",
+        "Kushal Ramkumar",
+        "Liliana Pasquale"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Exploring the Role of Security Experience and ChatGPT Usage Strategies on Secure Software Engineering Education》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.11303",
+      "pdf": "https://arxiv.org/pdf/2609.11303"
+    },
+    {
+      "id": "2609.10246",
+      "title": "Meme Coin Factories: Uncovering Large-Scale Manipulations on pump.fun",
+      "authors": [
+        "Nicolas Szwajcok",
+        "Taro Tsuchiya",
+        "Enze Liu",
+        "Kyle Soska",
+        "Mathias Payer",
+        "Nicolas Christin"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstract": "协议/链上工作《Meme Coin Factories: Uncovering Large-Scale Manipulations on pump.fun》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.10246",
+      "pdf": "https://arxiv.org/pdf/2609.10246"
+    },
+    {
+      "id": "2026-1949",
+      "title": "Verifiable Weighted Secret Sharing based on Chinese Remainder Theorem",
+      "authors": [
+        "Xinyu Zhang",
+        "Weiping Ji",
+        "Tsz Hon Yuen",
+        "Ron Steinfeld",
+        "Joseph K. Liu",
+        "Shujie Cui"
+      ],
+      "year": 2026,
+      "venue": "ASIACRYPT 2026",
+      "abstract": "协议/链上工作《Verifiable Weighted Secret Sharing based on Chinese Remainder Theorem》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1949",
+      "pdf": "https://eprint.iacr.org/2026/1949.pdf"
+    },
+    {
+      "id": "2026-1969",
+      "title": "Efficient Polynomial System Solving via Dixon Resultants: Applications to AO Primitives",
+      "authors": [
+        "Haohai Suo",
+        "Jiamin Cui"
+      ],
+      "year": 2026,
+      "venue": "ASIACRYPT 2026",
+      "abstract": "协议/链上工作《Efficient Polynomial System Solving via Dixon Resultants: Applications to AO Primitives》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1969",
+      "pdf": "https://eprint.iacr.org/2026/1969.pdf"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "date": "2026-08-29",
+  "papers": [
+    {
+      "id": "2608.27442",
+      "title": "From Static to Dynamic: Benchmarking Real-World Code Review with MCR-Bench",
+      "authors": [
+        "Dewu Zheng",
+        "Yanlin Wang",
+        "Xiwen Wang",
+        "Kefeng Duan",
+        "Hongyu Zhang",
+        "Xilin Liu",
+        "Yuchi Ma",
+        "Zibin Zheng"
+      ],
+      "year": 2026,
+      "venue": "ISSTA 2026",
+      "abstract": "《From Static to Dynamic: Benchmarking Real-World Code Review with MCR-Bench》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.27442",
+      "pdf": "https://arxiv.org/pdf/2608.27442"
+    },
+    {
+      "id": "2608.27234",
+      "title": "SPA: Securing Persistent LLM Agents Across Queries with Plan-First Information-Flow Control",
+      "authors": [
+        "Dylan Girrens",
+        "Guangjing Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《SPA: Securing Persistent LLM Agents Across Queries with Plan-First Information-Flow Control》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SPA",
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.27234",
+      "pdf": "https://arxiv.org/pdf/2608.27234"
+    },
+    {
+      "id": "2608.27146",
+      "title": "When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents",
+      "authors": [
+        "Xiaokun Guo",
+        "Zhen Xu",
+        "Dongdong Huo",
+        "Yanqiu Zhang",
+        "Wei Wang",
+        "Qinfu Yang",
+        "Dongjin Yu",
+        "Yu Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《When Tool Outputs Become Commands: Separating Action Induction from Runtime Authorization in Tool-Augmented LLM Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.27146",
+      "pdf": "https://arxiv.org/pdf/2608.27146"
+    },
+    {
+      "id": "2608.27092",
+      "title": "The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents",
+      "authors": [
+        "Md Habibur Rahman",
+        "Jaeho Kim"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《The Framing Gap: Indirect Prompt-Injection Exfiltration Defeats Surface-Level Defenses in Tool-Using Agents》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.27092",
+      "pdf": "https://arxiv.org/pdf/2608.27092"
+    },
+    {
+      "id": "2608.27141",
+      "title": "Safety Does Not Compose: Non-Decaying Loop State for Autonomous LLM Agents",
+      "authors": [
+        "Chenhao Wu",
+        "Haoxuan Jia",
+        "Yang Liu",
+        "Yingguang Yang",
+        "Yuhan Lin",
+        "Chongyang Zhang",
+        "Hao Zheng",
+        "Yulin Huang",
+        "Jianshen Zhang",
+        "Yongzhi Qi",
+        "Shang Luo",
+        "Kefu Xu",
+        "Jifeng Zhu",
+        "Bin Chong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Safety Does Not Compose: Non-Decaying Loop State for Autonomous LLM Agents》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "agent",
+        "LLM",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.27141",
+      "pdf": "https://arxiv.org/pdf/2608.27141"
+    },
+    {
+      "id": "2026-1820",
+      "title": "Practical Silent Threshold Signatures and Silent Threshold Encryption for Dynamic Committees",
+      "authors": [
+        "Yifei He",
+        "Zheng Zhou",
+        "Yu Chen",
+        "Zhi Guan",
+        "Zhong Chen"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstract": "协议/链上工作《Practical Silent Threshold Signatures and Silent Threshold Encryption for Dynamic Committees》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1820",
+      "pdf": "https://eprint.iacr.org/2026/1820.pdf"
+    },
+    {
+      "id": "2608.25206",
+      "title": "Authenticated Data Structures for Dynamic Workloads",
+      "authors": [
+        "Ziheng Shangguan",
+        "Aviv Yaish",
+        "Dahlia Malkhi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Authenticated Data Structures for Dynamic Workloads》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.25206",
+      "pdf": "https://arxiv.org/pdf/2608.25206"
+    }
+  ]
+}

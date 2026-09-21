@@ -1,0 +1,157 @@
+{
+  "date": "2026-09-16",
+  "papers": [
+    {
+      "id": "2609.17164",
+      "title": "Plug 'n' Pray: Agentic LLM-based Detection of Potential Log File Exposures in Third-Party Content Management System Plugins",
+      "authors": [
+        "Sebastian Neef"
+      ],
+      "year": 2026,
+      "venue": "AISEC 2026 @ CCS",
+      "abstract": "《Plug 'n' Pray: Agentic LLM-based Detection of Potential Log File Exposures in Third-Party Content Management System Plugins》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.17164",
+      "pdf": "https://arxiv.org/pdf/2609.17164"
+    },
+    {
+      "id": "2609.16231",
+      "title": "RuleAutoPilot: Synthesizing Deployable Suricata Rules from Network Traffic",
+      "authors": [
+        "Mughees Ur Rehman",
+        "Aritran Piplai",
+        "Murat Kantarcioglu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《RuleAutoPilot: Synthesizing Deployable Suricata Rules from Network Traffic》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "RuleAutoPilot",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.16231",
+      "pdf": "https://arxiv.org/pdf/2609.16231"
+    },
+    {
+      "id": "2609.15523",
+      "title": "Automating Attack Graph Construction for Agentic Pentesting. Towards Neuro-Symbolic Vulnerability Hunting",
+      "authors": [
+        "Oliver Stevanovic",
+        "Jasmin Wachter"
+      ],
+      "year": 2026,
+      "venue": "ESORICS 2026 workshops",
+      "abstract": "《Automating Attack Graph Construction for Agentic Pentesting. Towards Neuro-Symbolic Vulnerability Hunting》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "渗透测试",
+        "漏洞",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.15523",
+      "pdf": "https://arxiv.org/pdf/2609.15523"
+    },
+    {
+      "id": "2609.16287",
+      "title": "AgentGuard: Learning Execution Guardrails from Anomalous Coding-Agent Trajectories",
+      "authors": [
+        "Wuyang Dai",
+        "Song Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《AgentGuard: Learning Execution Guardrails from Anomalous Coding-Agent Trajectories》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "AgentGuard",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.16287",
+      "pdf": "https://arxiv.org/pdf/2609.16287"
+    },
+    {
+      "id": "2609.14079",
+      "title": "SkillSecurer: Detecting and Patching Prompt-Injection Vulnerabilities in AI Agent Skills",
+      "authors": [
+        "Donato Mecca",
+        "Alberto Verna",
+        "Youness Bouchari",
+        "Nikhil Jha",
+        "Marco Mellia"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《SkillSecurer: Detecting and Patching Prompt-Injection Vulnerabilities in AI Agent Skills》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SkillSecurer",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.14079",
+      "pdf": "https://arxiv.org/pdf/2609.14079"
+    },
+    {
+      "id": "2609.16987",
+      "title": "TasmScan: Continuation-Aware Taint Analysis for TVM Bytecode with Savelist Abstraction",
+      "authors": [
+        "Yixuan Liu",
+        "Yin Wu",
+        "Yi Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《TasmScan: Continuation-Aware Taint Analysis for TVM Bytecode with Savelist Abstraction》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "TasmScan",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.16987",
+      "pdf": "https://arxiv.org/pdf/2609.16987"
+    },
+    {
+      "id": "2026-2018",
+      "title": "On the (Im)possibility of Asynchronous Proactive Secret Sharing",
+      "authors": [
+        "Erica Blum",
+        "Yingzi Gao",
+        "Julian Loss",
+        "Yuan Lu",
+        "Zhenliang Lu",
+        "Qiang Tang"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《On the (Im)possibility of Asynchronous Proactive Secret Sharing》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2018",
+      "pdf": "https://eprint.iacr.org/2026/2018.pdf"
+    }
+  ]
+}

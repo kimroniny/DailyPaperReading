@@ -1,0 +1,231 @@
+{
+  "date": "2026-09-11",
+  "papers": [
+    {
+      "id": "2609.10945",
+      "title": "LLMVul: A Vulnerability-Labeled Dataset of LLM-Generated C/C++ Functions from Real Production Repositories",
+      "authors": [
+        "Mohammad Farhad",
+        "Shuvalaxmi Dass"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《LLMVul: A Vulnerability-Labeled Dataset of LLM-Generated C/C++ Functions from Real Production Repositories》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLMVul",
+        "漏洞",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.10945",
+      "pdf": "https://arxiv.org/pdf/2609.10945"
+    },
+    {
+      "id": "2609.10762",
+      "title": "Beyond Static Guarantees: Measuring the Static-Pass Dynamic-Fail Gap in Security-Sensitive and LLM-Generated Python Code",
+      "authors": [
+        "Jessica Pourleyli",
+        "Maitreyee Das Urmi",
+        "Glaucia Melo"
+      ],
+      "year": 2026,
+      "venue": "CASCON 2026",
+      "abstract": "《Beyond Static Guarantees: Measuring the Static-Pass Dynamic-Fail Gap in Security-Sensitive and LLM-Generated Python Code》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.10762",
+      "pdf": "https://arxiv.org/pdf/2609.10762"
+    },
+    {
+      "id": "2609.08093",
+      "title": "LLM-Based Penetration Testing in the Presence of Honeypots",
+      "authors": [
+        "Xinhong Xie",
+        "Piyush Nagasubramaniam",
+        "Neeraj Karamchandani",
+        "Sencun Zhu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《LLM-Based Penetration Testing in the Presence of Honeypots》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.08093",
+      "pdf": "https://arxiv.org/pdf/2609.08093"
+    },
+    {
+      "id": "2609.11504",
+      "title": "DeFiFlowBench: Benchmarking and Improving Safe Executability in Natural-Language DeFi Workflow Synthesis",
+      "authors": [
+        "Abhinav Rajeev Kumar",
+        "Harshit Arora",
+        "Varun Singh",
+        "Manikandan Nanjappan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《DeFiFlowBench: Benchmarking and Improving Safe Executability in Natural-Language DeFi Workflow Synthesis》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DeFiFlowBench",
+        "DeFi",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.11504",
+      "pdf": "https://arxiv.org/pdf/2609.11504"
+    },
+    {
+      "id": "2609.11535",
+      "title": "On Identifying Sound Conditions for Frontrunning Resistance",
+      "authors": [
+        "Sebastian Holler",
+        "Anna Piscitelli",
+        "Jannik Albrecht",
+        "Stephan Dübler",
+        "Ghassan Karame",
+        "Clara Schneidewind"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstract": "协议/链上工作《On Identifying Sound Conditions for Frontrunning Resistance》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.11535",
+      "pdf": "https://arxiv.org/pdf/2609.11535"
+    },
+    {
+      "id": "2609.11413",
+      "title": "Heterogeneous Cross-Chain Transaction Tracing for Solana Bridges via Candidate-Set Selective Decision",
+      "authors": [
+        "Wenjie Dou",
+        "Zheng Che",
+        "Meng Shen",
+        "Hanbiao Du",
+        "Qing Li",
+        "Yan Qiang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Heterogeneous Cross-Chain Transaction Tracing for Solana Bridges via Candidate-Set Selective Decision》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.11413",
+      "pdf": "https://arxiv.org/pdf/2609.11413"
+    },
+    {
+      "id": "2609.11008",
+      "title": "DeFiFusion: Combining Transaction Events with Smart Contracts to Detect Price Manipulation Attacks",
+      "authors": [
+        "Rui Cao",
+        "Shaojing Fan",
+        "Liming Fang",
+        "Yuchan Liu",
+        "Yingying Jiao",
+        "Zhenguang Liu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《DeFiFusion: Combining Transaction Events with Smart Contracts to Detect Price Manipulation Attacks》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DeFiFusion",
+        "智能合约",
+        "DeFi",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.11008",
+      "pdf": "https://arxiv.org/pdf/2609.11008"
+    },
+    {
+      "id": "2609.11757",
+      "title": "Signing the Transaction but Not the Decision: Whisper Attacks and a Binding Defense for AP2",
+      "authors": [
+        "Yedidel Louck",
+        "Amit Dvir",
+        "Ariel Stulman"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Signing the Transaction but Not the Decision: Whisper Attacks and a Binding Defense for AP2》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.11757",
+      "pdf": "https://arxiv.org/pdf/2609.11757"
+    },
+    {
+      "id": "2609.11251",
+      "title": "You've Got a BUD in Me: Authenticated Reads from Per-Block Write Logs",
+      "authors": [
+        "Alejandro Ranchal-Pedrosa",
+        "Cody Littley",
+        "Ben Marsh"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《You've Got a BUD in Me: Authenticated Reads from Per-Block Write Logs》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.11251",
+      "pdf": "https://arxiv.org/pdf/2609.11251"
+    },
+    {
+      "id": "2609.09742",
+      "title": "Breaking Fault Lines: Unifying TEE-Assisted BFT Consensus in Partially Trusted Worlds",
+      "authors": [
+        "Xiaoqing Wen",
+        "Tong Liu",
+        "Jianyu Niu",
+        "Jialin Li",
+        "Cong Wang",
+        "Yinqian Zhang",
+        "Chen Feng"
+      ],
+      "year": 2026,
+      "venue": "EuroSys 2027",
+      "abstract": "协议/链上工作《Breaking Fault Lines: Unifying TEE-Assisted BFT Consensus in Partially Trusted Worlds》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.09742",
+      "pdf": "https://arxiv.org/pdf/2609.09742"
+    }
+  ]
+}

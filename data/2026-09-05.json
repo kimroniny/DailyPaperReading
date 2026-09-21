@@ -1,0 +1,264 @@
+{
+  "date": "2026-09-05",
+  "papers": [
+    {
+      "id": "2609.04075",
+      "title": "PatchBench: Evaluating AI Agents for Vulnerability Patching",
+      "authors": [
+        "Chihao Shen",
+        "Jiacheng Li",
+        "Aastha Mahajan",
+        "Jeffery Siyuan Tian",
+        "Yonghwi Kwon",
+        "Yizheng Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《PatchBench: Evaluating AI Agents for Vulnerability Patching》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PatchBench",
+        "漏洞",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.04075",
+      "pdf": "https://arxiv.org/pdf/2609.04075"
+    },
+    {
+      "id": "2609.04159",
+      "title": "SENTINEL-RL: Offloading Topological Reasoning from LLM Agents in the Security Operations Center",
+      "authors": [
+        "Uday Vallabhaneni",
+        "Cassie L. Cagwin",
+        "David J. Wild"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《SENTINEL-RL: Offloading Topological Reasoning from LLM Agents in the Security Operations Center》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "SENTINEL-RL",
+        "agent",
+        "LLM",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2609.04159",
+      "pdf": "https://arxiv.org/pdf/2609.04159"
+    },
+    {
+      "id": "2609.03884",
+      "title": "A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors",
+      "authors": [
+        "Pengxun Li",
+        "Litian Zhang",
+        "Jianwei Hou",
+        "Shujiang Wu",
+        "Song Li",
+        "Zifeng Kang",
+        "Xi Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《A Blind Trust, the Bloody Thrust: When Attacker-Controlled Hook Updates Steer AI Agent Harnesses towards Malicious Behaviors》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.03884",
+      "pdf": "https://arxiv.org/pdf/2609.03884"
+    },
+    {
+      "id": "2609.01836",
+      "title": "Agent Memory Is a Surface for Endogenous Authorization Laundering",
+      "authors": [
+        "Tommaso Cerruti",
+        "Mika Okamoto",
+        "Ansel Kaplan Erol"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Agent Memory Is a Surface for Endogenous Authorization Laundering》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.01836",
+      "pdf": "https://arxiv.org/pdf/2609.01836"
+    },
+    {
+      "id": "2609.02690",
+      "title": "ACLE-MCP: Attested Capability Leases for Execution-Time Trust in Remote LLM Tool Use",
+      "authors": [
+        "Zhiyang Ding",
+        "Yang Luo",
+        "Guangpu Chen",
+        "Qingni Shen",
+        "Zhonghai Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《ACLE-MCP: Attested Capability Leases for Execution-Time Trust in Remote LLM Tool Use》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "ACLE-MCP",
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.02690",
+      "pdf": "https://arxiv.org/pdf/2609.02690"
+    },
+    {
+      "id": "2609.02564",
+      "title": "A Finger on the Scale: Covert Policy Steering through Agentic Skills",
+      "authors": [
+        "Jiarui Li",
+        "Jiahao Chen",
+        "Chunyi Zhou",
+        "Yuwen Pu",
+        "Oubo Ma",
+        "Zhou Feng",
+        "Chunqiang Hu",
+        "Shouling Ji"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《A Finger on the Scale: Covert Policy Steering through Agentic Skills》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.02564",
+      "pdf": "https://arxiv.org/pdf/2609.02564"
+    },
+    {
+      "id": "2609.01939",
+      "title": "Bonded Recourse for Smart-Contract Settlement of Compensable Agent Side Effects",
+      "authors": [
+        "Laurent Bindschaedler",
+        "Quentin Botha",
+        "Christoph Siebenbrunner"
+      ],
+      "year": 2026,
+      "venue": "BCCA 2026",
+      "abstract": "《Bonded Recourse for Smart-Contract Settlement of Compensable Agent Side Effects》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.01939",
+      "pdf": "https://arxiv.org/pdf/2609.01939"
+    },
+    {
+      "id": "2609.03978",
+      "title": "Barnacle: Adaptive Multi-Leader Scheduling for DAG-Based Consensus",
+      "authors": [
+        "George Danezis",
+        "Zeno De Angeli",
+        "Alexandru Ianov Vitanov",
+        "Philipp Jovanovic",
+        "Lefteris Kokoris-Kogias",
+        "Alberto Sonnino",
+        "Pasindu Tennage",
+        "Igor Zablotchi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Barnacle: Adaptive Multi-Leader Scheduling for DAG-Based Consensus》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Barnacle",
+        "共识",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.03978",
+      "pdf": "https://arxiv.org/pdf/2609.03978"
+    },
+    {
+      "id": "2609.03063",
+      "title": "Fully Fluctuating Sleepy Consensus from Minimal Assumptions",
+      "authors": [
+        "Javier Nieto",
+        "Yuval Efron",
+        "Joachim Neu",
+        "Ling Ren"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Fully Fluctuating Sleepy Consensus from Minimal Assumptions》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.03063",
+      "pdf": "https://arxiv.org/pdf/2609.03063"
+    },
+    {
+      "id": "2026-1860",
+      "title": "(Im)possibility of Asynchronous MPC with Honest Majority over Blockchains",
+      "authors": [
+        "Ashish Choudhury",
+        "Sannidhi V Hebbar",
+        "Aniket Kate",
+        "Pabitra Mandal",
+        "Arpita Patra"
+      ],
+      "year": 2026,
+      "venue": "TCC 2026",
+      "abstract": "协议/链上工作《(Im)possibility of Asynchronous MPC with Honest Majority over Blockchains》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1860",
+      "pdf": "https://eprint.iacr.org/2026/1860.pdf"
+    },
+    {
+      "id": "2026-1855",
+      "title": "Delegatable Anonymous Credentials from Legacy Credentials using Recursive zk-SNARKs",
+      "authors": [
+        "Leandro Rometsch",
+        "Philipp-Florens Lehwalder",
+        "Sebastian Faust",
+        "Stefan Schulte"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Delegatable Anonymous Credentials from Legacy Credentials using Recursive zk-SNARKs》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zk",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1855",
+      "pdf": "https://eprint.iacr.org/2026/1855.pdf"
+    }
+  ]
+}

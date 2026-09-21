@@ -1,0 +1,258 @@
+{
+  "date": "2026-08-27",
+  "papers": [
+    {
+      "id": "2608.25905",
+      "title": "Answer Is Cheap, Show Me the Evidence! Augmenting Automated Vulnerability Assessment with Evidence",
+      "authors": [
+        "Shengyi Pan",
+        "Zelong Zheng",
+        "Jiayuan Zhou",
+        "Xing Hu",
+        "Xin Xia",
+        "Shanping Li"
+      ],
+      "year": 2026,
+      "venue": "ISSTA 2026",
+      "abstract": "《Answer Is Cheap, Show Me the Evidence! Augmenting Automated Vulnerability Assessment with Evidence》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.25905",
+      "pdf": "https://arxiv.org/pdf/2608.25905"
+    },
+    {
+      "id": "2608.25793",
+      "title": "Closing the Gap: Automated Discovery of Secure Dockerfile Reference Standards via Semantic Clustering in Enterprise Inner Source",
+      "authors": [
+        "Jessica Hösl",
+        "Benedikt Hofmann",
+        "Patrick Stöckle"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstract": "《Closing the Gap: Automated Discovery of Secure Dockerfile Reference Standards via Semantic Clustering in Enterprise Inner Source》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.25793",
+      "pdf": "https://arxiv.org/pdf/2608.25793"
+    },
+    {
+      "id": "2608.25158",
+      "title": "FuzzingBrain-Bench V1: Evaluating Open-Ended Bug Discovery by LLMs",
+      "authors": [
+        "Ze Sheng",
+        "Aleksandar Kezic",
+        "Zhicheng Chen",
+        "Jeff Huang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《FuzzingBrain-Bench V1: Evaluating Open-Ended Bug Discovery by LLMs》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "fuzzing",
+        "LLM",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.25158",
+      "pdf": "https://arxiv.org/pdf/2608.25158"
+    },
+    {
+      "id": "2608.25457",
+      "title": "MACGen: Toward Functionally Correct and Secure Code Generation via Multi-Agent Collaboration",
+      "authors": [
+        "Miseon Yu",
+        "Jaehoon Choi",
+        "Younghan Lee",
+        "Yunheung Paek"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《MACGen: Toward Functionally Correct and Secure Code Generation via Multi-Agent Collaboration》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MACGen",
+        "agent",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.25457",
+      "pdf": "https://arxiv.org/pdf/2608.25457"
+    },
+    {
+      "id": "2608.24962",
+      "title": "Evaluating and Preventing Security Smells in AI-Generated Ansible Code",
+      "authors": [
+        "Pandu Ranga Reddy Konala",
+        "Vimal Kumar",
+        "David Bainbridge",
+        "Junaid Haseeb"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Evaluating and Preventing Security Smells in AI-Generated Ansible Code》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.24962",
+      "pdf": "https://arxiv.org/pdf/2608.24962"
+    },
+    {
+      "id": "2608.25667",
+      "title": "AI Slop and Hallucinations in Vulnerability Assessment: A Survey on Reasoning Failures and Trustworthy Mitigation",
+      "authors": [
+        "Junchen Ding",
+        "Jialiang Dong",
+        "Yichen Zhu",
+        "Yi Liu",
+        "Gelei Deng",
+        "Willy Susilo",
+        "Siqi Ma",
+        "Yuekang Li"
+      ],
+      "year": 2026,
+      "venue": "SiMLA 2026",
+      "abstract": "《AI Slop and Hallucinations in Vulnerability Assessment: A Survey on Reasoning Failures and Trustworthy Mitigation》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.25667",
+      "pdf": "https://arxiv.org/pdf/2608.25667"
+    },
+    {
+      "id": "2608.25817",
+      "title": "SkillShield: Prompt-Space Security Skills for LLM Coding Agents",
+      "authors": [
+        "Xiaodong Wu",
+        "Zhimin Zhao",
+        "Qi Li",
+        "Xiangman Li",
+        "Yu Shi",
+        "Bram Adams",
+        "Jianbing Ni"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《SkillShield: Prompt-Space Security Skills for LLM Coding Agents》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "SkillShield",
+        "agent",
+        "LLM",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.25817",
+      "pdf": "https://arxiv.org/pdf/2608.25817"
+    },
+    {
+      "id": "2608.25776",
+      "title": "EVOMAL: Self-Poisoning in Self-Evolving Coding Agents",
+      "authors": [
+        "Xiaodong Wu",
+        "Yu Shi",
+        "Qi Li",
+        "Zhimin Zhao",
+        "Xiangman Li",
+        "Bram Adams",
+        "Ahmed E. Hassan",
+        "Jianbing Ni"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《EVOMAL: Self-Poisoning in Self-Evolving Coding Agents》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "EVOMAL",
+        "agent",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.25776",
+      "pdf": "https://arxiv.org/pdf/2608.25776"
+    },
+    {
+      "id": "2608.26049",
+      "title": "RTLGuard: A Lightweight Teacher-Student Defense for Poisoned RTL Code Generation Models",
+      "authors": [
+        "Mahshid Rezakhani",
+        "Kimia Azar",
+        "Hadi Kamali"
+      ],
+      "year": 2026,
+      "venue": "ICCAD 2026",
+      "abstract": "《RTLGuard: A Lightweight Teacher-Student Defense for Poisoned RTL Code Generation Models》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "RTLGuard",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2608.26049",
+      "pdf": "https://arxiv.org/pdf/2608.26049"
+    },
+    {
+      "id": "2026-1792",
+      "title": "Beyond Linear Subspace Trails: Nonlinear Subspaces for Gröbner Basis Attacks on Poseidon/Poseidon2 and Neptune",
+      "authors": [
+        "Enyan Li",
+        "Fukang Liu",
+        "Gaoli Wang"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Beyond Linear Subspace Trails: Nonlinear Subspaces for Gröbner Basis Attacks on Poseidon/Poseidon2 and Neptune》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1792",
+      "pdf": "https://eprint.iacr.org/2026/1792.pdf"
+    },
+    {
+      "id": "2608.25600",
+      "title": "Defending the Peg: Real-Time Dynamic Protection and Anomaly Detection in DeFi Stablecoins",
+      "authors": [
+        "Hengxing Zeng",
+        "Shipeng Ye",
+        "Xiaoqi Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Defending the Peg: Real-Time Dynamic Protection and Anomaly Detection in DeFi Stablecoins》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DeFi",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2608.25600",
+      "pdf": "https://arxiv.org/pdf/2608.25600"
+    }
+  ]
+}

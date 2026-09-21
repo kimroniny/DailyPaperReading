@@ -1,0 +1,219 @@
+{
+  "date": "2026-09-14",
+  "papers": [
+    {
+      "id": "2609.12001",
+      "title": "Scan the Skill, Govern the Action: Composing Registry Verdicts with Runtime Consequence Control",
+      "authors": [
+        "Rohit Taneja",
+        "Travis Weber"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Scan the Skill, Govern the Action: Composing Registry Verdicts with Runtime Consequence Control》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2609.12001",
+      "pdf": "https://arxiv.org/pdf/2609.12001"
+    },
+    {
+      "id": "2609.10123",
+      "title": "If It's Not Buggy, Don't Fix It: On the Dynamics of Iterative Bug-fixing with LLMs",
+      "authors": [
+        "Xietao Wang-Lin",
+        "Anton Isopoussu",
+        "Louis Mahon"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《If It's Not Buggy, Don't Fix It: On the Dynamics of Iterative Bug-fixing with LLMs》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.10123",
+      "pdf": "https://arxiv.org/pdf/2609.10123"
+    },
+    {
+      "id": "2609.09315",
+      "title": "How effective are traditional test criteria at detecting bugs in large language models generated code?",
+      "authors": [
+        "Asma Hamidi",
+        "Michael Konstantinou",
+        "Renzo Degiovanni",
+        "Mike Papadakis"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《How effective are traditional test criteria at detecting bugs in large language models generated code?》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.09315",
+      "pdf": "https://arxiv.org/pdf/2609.09315"
+    },
+    {
+      "id": "2609.07365",
+      "title": "Trust the Spec, Not the Code - A Specification-First, AI-Assisted Case Study in Online Banking",
+      "authors": [
+        "Eitan Farchi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Trust the Spec, Not the Code - A Specification-First, AI-Assisted Case Study in Online Banking》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.07365",
+      "pdf": "https://arxiv.org/pdf/2609.07365"
+    },
+    {
+      "id": "2609.13004",
+      "title": "IntentFuzz: A Protocol-Aware Fuzzer for Automated Invariant Violation Detection in Intent-Based Cross-Chain Bridges",
+      "authors": [
+        "André Augusto",
+        "Christof Ferreira Torres",
+        "André Vasconcelos",
+        "Miguel Correia"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《IntentFuzz: A Protocol-Aware Fuzzer for Automated Invariant Violation Detection in Intent-Based Cross-Chain Bridges》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "IntentFuzz",
+        "fuzzing",
+        "跨链",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.13004",
+      "pdf": "https://arxiv.org/pdf/2609.13004"
+    },
+    {
+      "id": "2609.12450",
+      "title": "PDoS: A Profitable Denial-of-Service Attack against Proof-of-Work Blockchain Liveness",
+      "authors": [
+        "Junjie Hu",
+        "Tianzhu Han",
+        "Na Ruan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《PDoS: A Profitable Denial-of-Service Attack against Proof-of-Work Blockchain Liveness》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "PDoS",
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.12450",
+      "pdf": "https://arxiv.org/pdf/2609.12450"
+    },
+    {
+      "id": "2609.12315",
+      "title": "Function Name Is All You Need to Detect Blockchain Application Attacks",
+      "authors": [
+        "Rui Xi",
+        "Zehua Wang",
+        "Karthik Pattabiraman"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "协议/链上工作《Function Name Is All You Need to Detect Blockchain Application Attacks》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://arxiv.org/abs/2609.12315",
+      "pdf": "https://arxiv.org/pdf/2609.12315"
+    },
+    {
+      "id": "2026-2001",
+      "title": "The Price of Time: Deterrence as the Third Pillar of Payment Channel Security",
+      "authors": [
+        "Rong Qian",
+        "Yu Cheng",
+        "Mengrun Chen",
+        "Yuchang Zhang",
+        "Zengli Guo"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《The Price of Time: Deterrence as the Third Pillar of Payment Channel Security》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/2001",
+      "pdf": "https://eprint.iacr.org/2026/2001.pdf"
+    },
+    {
+      "id": "2026-1987",
+      "title": "Bonsai: Scalable Private Payments",
+      "authors": [
+        "Patrick O&#39;Grady",
+        "Lúcás Críostóir Meier",
+        "Guru-Vamsi Policharla"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Bonsai: Scalable Private Payments》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Bonsai",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1987",
+      "pdf": "https://eprint.iacr.org/2026/1987.pdf"
+    },
+    {
+      "id": "2026-1983",
+      "title": "Akita: A High-Performance Lattice-Based Polynomial Commitment Scheme",
+      "authors": [
+        "Quang Dao",
+        "Omid Bodaghi",
+        "Amirhossein Khajehpour",
+        "Giuseppe Vitto",
+        "Mohammadtaghi Badakhshan",
+        "Markos Georghiades",
+        "Fengrun Liu",
+        "Jiapeng Zhang",
+        "Justin Thaler"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "协议/链上工作《Akita: A High-Performance Lattice-Based Polynomial Commitment Scheme》。不依赖 LLM，对象是链上或密码协议。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Akita",
+        "A"
+      ],
+      "url": "https://eprint.iacr.org/2026/1983",
+      "pdf": "https://eprint.iacr.org/2026/1983.pdf"
+    }
+  ]
+}

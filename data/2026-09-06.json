@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-06",
+  "papers": [
+    {
+      "id": "2609.03592",
+      "title": "Code Transformation Rule Synthesis using LLMs: Potential and Limits",
+      "authors": [
+        "Axel Allain",
+        "Aymeric Blot",
+        "Djamel Eddine Khelladi",
+        "Mathieu Acher"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstract": "《Code Transformation Rule Synthesis using LLMs: Potential and Limits》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.03592",
+      "pdf": "https://arxiv.org/pdf/2609.03592"
+    },
+    {
+      "id": "2608.29841",
+      "title": "SkillForge: Compositional Skill Synthesis with Verification-in-the-Loop for Generating Formally Verified Dafny Programs",
+      "authors": [
+        "Yanming Liu",
+        "Xinyue Peng",
+        "Jiannan Cao",
+        "Xinyi Wang",
+        "Jinbo Su"
+      ],
+      "year": 2026,
+      "venue": "EMNLP 2026",
+      "abstract": "《SkillForge: Compositional Skill Synthesis with Verification-in-the-Loop for Generating Formally Verified Dafny Programs》。用 LLM / agent 做安全分析，对象是合约或链。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "SkillForge",
+        "C-chain"
+      ],
+      "url": "https://arxiv.org/abs/2608.29841",
+      "pdf": "https://arxiv.org/pdf/2608.29841"
+    },
+    {
+      "id": "2609.00227",
+      "title": "Don't Let the Model Write the YAML: Deterministic, Minimal-Diff GitOps Remediation from LLM-Proposed Field Changes",
+      "authors": [
+        "Pruthvi Davineni"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "《Don't Let the Model Write the YAML: Deterministic, Minimal-Diff GitOps Remediation from LLM-Proposed Field Changes》。用 LLM / agent 做安全分析，对象是传统软件或系统。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "LLM",
+        "C"
+      ],
+      "url": "https://arxiv.org/abs/2609.00227",
+      "pdf": "https://arxiv.org/pdf/2609.00227"
+    }
+  ]
+}
