@@ -1,0 +1,325 @@
+{
+  "date": "2026-09-22",
+  "papers": [
+    {
+      "id": "2609.22724",
+      "title": "MATE: Policy-Aware Security Auditing for Mobile Agents via Synthesis-Driven Trajectory Learning",
+      "authors": [
+        "Changyue Jiang",
+        "Jiayi Wang",
+        "Xin Wen",
+        "Jiarun Dai",
+        "Geng Hong",
+        "Xudong Pan"
+      ],
+      "year": 2026,
+      "venue": "USENIX Security 2026",
+      "abstract": "用 foundation model 把智能体轨迹与自然语言安全策略一并编码，审计手机 agent 是否违反 App 策略，对象是 Android / 移动应用。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "移动智能体",
+        "安全审计",
+        "Android",
+        "MATE"
+      ],
+      "url": "https://arxiv.org/abs/2609.22724",
+      "pdf": "https://arxiv.org/pdf/2609.22724"
+    },
+    {
+      "id": "2609.24550",
+      "title": "State-Aware Fuzzing of JavaScript Engines with LLM-Guided Instrumentation",
+      "authors": [
+        "Wai Kin Wong",
+        "Dongwei Xiao",
+        "Anthony Cheuk Tung Lai",
+        "Ping Fan Ke",
+        "Shuai Wang"
+      ],
+      "year": 2026,
+      "venue": "SOSP 2026",
+      "abstract": "用 LLM agent 发现 JS 引擎深层内部状态并指导插桩，突破覆盖率平台期以找引擎漏洞，对象是 JavaScript 运行时。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "StateLens",
+        "JS引擎",
+        "fuzzing",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2609.24550",
+      "pdf": "https://arxiv.org/pdf/2609.24550"
+    },
+    {
+      "id": "2609.23889",
+      "title": "SyzHarness: Patch-Based Kernel Bug Reproduction with LLM-Synthesized Fuzzing Harnesses",
+      "authors": [
+        "Xingyu Li",
+        "Juefei Pu",
+        "Haonan Li",
+        "Arrdya Srivastav",
+        "Kareem Shehada",
+        "Srikanth V. Krishnamurthy",
+        "Zhiyun Qian"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "结合 LLM agent 与覆盖率导向 fuzz，从补丁合成参数化 harness 以复现 Linux 内核漏洞。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SyzHarness",
+        "Linux内核",
+        "fuzzing",
+        "漏洞复现"
+      ],
+      "url": "https://arxiv.org/abs/2609.23889",
+      "pdf": "https://arxiv.org/pdf/2609.23889"
+    },
+    {
+      "id": "2609.23980",
+      "title": "MobileCybench: Evaluating Agent Vulnerability Discovery via Executable Probes",
+      "authors": [
+        "Andy K. Zhang",
+        "Ava Huang",
+        "Joey Ji",
+        "Wai Han",
+        "Thomas Qin",
+        "Nardos Demilew",
+        "Michael Tian-Yue Liu",
+        "Brian Song",
+        "Riya Dulepet",
+        "Brian Wang",
+        "Kyleen Liao",
+        "Cuiyuanxiu Chen",
+        "Nishka Kacheria",
+        "Andrew Wu",
+        "Pratham Rangwala",
+        "Xinjie Wang",
+        "Laura Gomezjurado Gonzalez",
+        "Anita Ding",
+        "Benjamin Yi",
+        "Daniel E. Ho",
+        "Dan Boneh",
+        "Dawn Song",
+        "Ion Stoica",
+        "Percy Liang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "用可执行 probe 回放并核验编码 agent 的漏洞报告，在 13 款 Android 应用上评估 agent 漏洞发现能力。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MobileCybench",
+        "Android",
+        "漏洞发现",
+        "coding agent"
+      ],
+      "url": "https://arxiv.org/abs/2609.23980",
+      "pdf": "https://arxiv.org/pdf/2609.23980"
+    },
+    {
+      "id": "2609.22792",
+      "title": "SelfOp: An Optimization Algorithm for Self-Improving Security Agents",
+      "authors": [
+        "Saad Ullah",
+        "Yigitcan Kaya",
+        "Christopher Kruegel",
+        "Giovanni Vigna",
+        "Gianluca Stringhini"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "在不改模型权重的情况下，用文本梯度优化安全 agent 的任务上下文，用于漏洞发现、利用复现与补丁生成。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SelfOp",
+        "安全agent",
+        "漏洞发现",
+        "补丁生成"
+      ],
+      "url": "https://arxiv.org/abs/2609.22792",
+      "pdf": "https://arxiv.org/pdf/2609.22792"
+    },
+    {
+      "id": "2609.23517",
+      "title": "VSpector: Specification-Driven Bug Detection for RISC-V CPUs",
+      "authors": [
+        "Tianyu Jia",
+        "Zhaoyang Yu",
+        "Yuanliang Chen",
+        "Wei You",
+        "Jianjun Huang",
+        "Bin Liang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "用 LLM 从 RISC-V 自然语言规范逐步核对 RTL 实现，检测开源 CPU 设计漏洞。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "VSpector",
+        "RISC-V",
+        "RTL",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2609.23517",
+      "pdf": "https://arxiv.org/pdf/2609.23517"
+    },
+    {
+      "id": "2609.23405",
+      "title": "The Anatomy of Address Poisoning on Ethereum: Funding Mechanisms, Scam Signatures, and Laundering via Tornado Cash",
+      "authors": [
+        "Son Hoang Dau",
+        "Thanh Nguyen",
+        "Phuong Duy Huynh",
+        "Hong Yen Tran",
+        "Nicholas Huppert",
+        "Jeff Nijsse",
+        "Huong Ha",
+        "Xun Yi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "剖析以太坊地址投毒钓鱼的资金来源、骗局签名与 Tornado Cash 洗钱路径，无 LLM。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "地址投毒",
+        "以太坊",
+        "钓鱼",
+        "Tornado Cash"
+      ],
+      "url": "https://arxiv.org/abs/2609.23405",
+      "pdf": "https://arxiv.org/pdf/2609.23405"
+    },
+    {
+      "id": "2026-2128",
+      "title": "Schnorr Signatures and MuSig2 Are Jointly Secure, Even in Deterministic Wallets",
+      "authors": [
+        "Renas Bacho",
+        "Yanbo Chen",
+        "Poulami Das",
+        "Julian Loss",
+        "Tim Ruffing",
+        "Benedikt Wagner"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "证明 Schnorr 与 MuSig2 在确定性钱包重随机化组合下仍然安全，对象是加密货币钱包与多签。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MuSig2",
+        "Schnorr",
+        "确定性钱包",
+        "多签"
+      ],
+      "url": "https://eprint.iacr.org/2026/2128",
+      "pdf": "https://eprint.iacr.org/2026/2128.pdf"
+    },
+    {
+      "id": "2026-2126",
+      "title": "Cryptanalysis of LDVR: Polynomial-Time Adaptive Attacks against Threshold Schnorr Signatures",
+      "authors": [
+        "Àlex Rodríguez García",
+        "Stefano Tessaro"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "对 LDVR 给出多项式时间自适应攻击，并可转化为对暴露份额公钥的门限 Schnorr 签名攻击。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "LDVR",
+        "门限签名",
+        "Schnorr",
+        "FROST"
+      ],
+      "url": "https://eprint.iacr.org/2026/2126",
+      "pdf": "https://eprint.iacr.org/2026/2126.pdf"
+    },
+    {
+      "id": "2026-2155",
+      "title": "Practical Adaptor Signatures for NP from Online/Offline NIZK",
+      "authors": [
+        "Masayuki Abe",
+        "Dung Bui",
+        "Kelong Cong",
+        "Miyako Ohkubo",
+        "Zehua Shang",
+        "Akira Takahashi",
+        "Mehdi Tibouchi"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "从 Online/Offline NIZK 构造面向任意 NP 关系的实用适配器签名，用于链上条件支付。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "适配器签名",
+        "条件支付",
+        "NIZK",
+        "区块链"
+      ],
+      "url": "https://eprint.iacr.org/2026/2155",
+      "pdf": "https://eprint.iacr.org/2026/2155.pdf"
+    },
+    {
+      "id": "2026-2121",
+      "title": "Lattice-Based Synchronous Signatures: Efficiently Aggregatable and Thresholdizable",
+      "authors": [
+        "Dan Boneh",
+        "Binyi Chen",
+        "Trisha Datta"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "为 PoS 验证者签名构造可聚合、可门限化的格基同步签名，缩短多验证者区块签名。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "PoS",
+        "聚合签名",
+        "门限签名",
+        "格密码"
+      ],
+      "url": "https://eprint.iacr.org/2026/2121",
+      "pdf": "https://eprint.iacr.org/2026/2121.pdf"
+    },
+    {
+      "id": "2026-2129",
+      "title": "Cryptanalysis of a Polynomial-Based Redactable Blockchain",
+      "authors": [
+        "Alexander Ushakov"
+      ],
+      "year": 2026,
+      "venue": "IACR ePrint",
+      "abstract": "攻破基于多元多项式的可编辑区块链：未授权改写可归约为有限域求根再解线性方程组。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "可编辑区块链",
+        "密码分析",
+        "完整性",
+        "ePrint"
+      ],
+      "url": "https://eprint.iacr.org/2026/2129",
+      "pdf": "https://eprint.iacr.org/2026/2129.pdf"
+    }
+  ]
+}
