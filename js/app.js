@@ -374,18 +374,32 @@
     if (rowEl) openPaper(rowEl.dataset.id);
   });
 
+  function showPapers(list) {
+    papers = list;
+    renderYears();
+    renderVenues();
+    renderTopics();
+    renderGrid();
+  }
+
+  async function fetchDay(date) {
+    const res = await fetch(`data/${date}.json`);
+    if (!res.ok) throw new Error(date);
+    return res.json();
+  }
+
   async function loadCatalog() {
     const manifestRes = await fetch("data/manifest.json");
     if (!manifestRes.ok) throw new Error("missing manifest");
     const manifest = await manifestRes.json();
-    const days = await Promise.all(
-      (manifest.dates || []).map(async (date) => {
-        const res = await fetch(`data/${date}.json`);
-        if (!res.ok) throw new Error(date);
-        return res.json();
-      })
+    const dates = manifest.dates || [];
+    if (!dates.length) return { first: [], rest: Promise.resolve([]) };
+
+    const newest = await fetchDay(dates[0]);
+    const rest = Promise.all(dates.slice(1).map((date) => fetchDay(date))).then((days) =>
+      mergeDayFiles([newest, ...days])
     );
-    return mergeDayFiles(days);
+    return { first: mergeDayFiles([newest]), rest };
   }
 
   els.dialogClose.addEventListener("click", closeDialog);
@@ -395,14 +409,15 @@
 
   els.count.textContent = "加载中…";
   loadCatalog()
+    .then(({ first, rest }) => {
+      showPapers(first);
+      return rest;
+    })
     .then((list) => {
-      papers = list;
-      renderYears();
-      renderVenues();
-      renderTopics();
-      renderGrid();
+      showPapers(list);
     })
     .catch(() => {
+      if (papers.length) return;
       papers = [];
       els.empty.hidden = false;
       els.count.textContent = "共 0 篇";
