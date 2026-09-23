@@ -108,7 +108,7 @@ arXiv 无 venue：A 类高相关可推；C / C-chain 方法清楚也可推，`ve
 
 ## 写入仓库（必做）
 
-今天的日期用 UTC 的 `YYYY-MM-DD`。有新论文时写成 `data/YYYY-MM-DD.json`，并把该日期插到 `data/manifest.json` 的 `dates` 数组最前面（已存在则移到最前，不要重复）。**不要删、不要清空其他日期的 `data/*.json`，不要把 `manifest.dates` 收成只剩今天。** 当天文件若已有论文：只追加本轮新 `id`，保留文件里已有卡片（`node scripts/write-daily.js` 会按 id 合并；手写时同样合并，禁止整文件覆盖成只有本轮结果）。站点上的旧卡片是历史目录，不是可以扔掉的 demo。若已用 `paper_radar` 生成并过滤过 `digest.json`，可用 `node scripts/write-daily.js digest.json`；否则直接按下面格式写文件。
+今天的日期用 UTC 的 `YYYY-MM-DD`。有新论文时写成 `data/YYYY-MM-DD.json`，并把该日期插到 `data/manifest.json` 的 `dates` 数组最前面（已存在则移到最前，不要重复）。**不要删、不要清空其他日期的 `data/*.json`，不要把 `manifest.dates` 收成只剩今天。** 当天文件若已有论文：只追加本轮新 `id`，保留文件里已有卡片（`node scripts/write-daily.js` 会按 id 合并；手写时同样合并，禁止整文件覆盖成只有本轮结果）。站点上的旧卡片是历史目录，不是可以扔掉的 demo。若已用 `paper_radar` 生成并过滤过 `digest.json`，可用 `node scripts/write-daily.js digest.json` 合并进当天文件；否则直接按下面格式写文件。`write-daily.js` 只写入 `abstract`，不会写入 `abstractEn`。用过它之后，必须打开当天 JSON，给本轮新卡片补上 `abstractEn`，并确认 `abstract` 仍只是中文一句话。
 
 当天文件格式：
 ```json
@@ -121,7 +121,8 @@ arXiv 无 venue：A 类高相关可推；C / C-chain 方法清楚也可推，`ve
       "authors": ["string"],
       "year": 2026,
       "venue": "string",
-      "abstract": "中文一句话：问题 + 是否用 LLM + 对象（如 Linux / Java / Solidity）。不要整段粘原文摘要。",
+      "abstract": "中文一句话：问题 + 是否用 LLM + 对象（如 Linux / Java / Solidity）。",
+      "abstractEn": "英文原文摘要段落。读不到英文摘要时省略此字段。",
       "topics": ["A"],
       "aliases": ["主题词1", "主题词2"],
       "url": "https://...",
@@ -132,6 +133,11 @@ arXiv 无 venue：A 类高相关可推；C / C-chain 方法清楚也可推，`ve
 ```
 `topics` 只能是 `A`、`C`、`C-chain` 之一。`aliases` 填 2～4 个主题词。
 
+`abstract` 与 `abstractEn` 必须分开。站点用 `abstract` 显示「中文摘要」、用 `abstractEn` 显示「原文摘要」；两个字段都有内容时，卡片才会出现「显示原文 / 显示中文」按钮。
+- `abstract` 只写中文一句话：问题 + 是否用 LLM + 对象。不要把英文摘要接在这句话后面。
+- `abstractEn` 只写来源页上的英文摘要段落，不要贴 PDF 正文，不要翻译，不要编造。读不到英文摘要就省略该字段，不要写空字符串。
+- 合并已有卡片时保留它们原来的 `abstract` 和 `abstractEn`，不要覆盖已经分开写好的摘要。
+
 只 `git add data/YYYY-MM-DD.json data/manifest.json`，提交说明 `Add daily papers YYYY-MM-DD`，向 `main` 开 PR，标题相同。不要标 draft。不要自己 merge（Action `Automerge daily papers` 会处理）。不要推到 Origin。不要改前端代码。不要发 Slack。
 
-禁止：编造链接或摘要、贴全文、投资建议、改 `data/` 以外的仓库文件。
+禁止：编造链接或摘要、把英文摘要拼进 `abstract`、把 PDF 正文贴进 `abstract` 或 `abstractEn`、投资建议、改 `data/` 以外的仓库文件。
