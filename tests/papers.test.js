@@ -87,4 +87,18 @@ describe("daily JSON catalog", () => {
     }
     assert.ok(loadPapers().length >= 250);
   });
+
+  it("gives every paper a one-line summary, a Chinese abstract, and an English abstract", () => {
+    const han = /[\u4e00-\u9fff]/;
+    const latinRun = /[A-Za-z][A-Za-z ,;\-]{180,}/;
+    for (const paper of loadPapers()) {
+      const one = paper.abstractOneWord || "";
+      const chinese = paper.abstract || "";
+      const english = paper.abstractEn || "";
+      assert.ok(han.test(one), `${paper.id} missing 一句话摘要`);
+      assert.ok(han.test(chinese), `${paper.id} missing 中文摘要`);
+      assert.ok(/[A-Za-z]/.test(english) && english.length > 40, `${paper.id} missing 英文原文摘要`);
+      assert.equal(latinRun.test(chinese), false, `${paper.id} 中文摘要里仍粘着英文原文`);
+    }
+  });
 });
