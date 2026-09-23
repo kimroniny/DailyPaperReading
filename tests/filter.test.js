@@ -76,6 +76,25 @@ describe("filterPapers", () => {
     );
   });
 
+  it("matches the one-line Chinese summary", () => {
+    const withOneLine = [
+      {
+        id: "kex",
+        title: "Evaluating Coding Agents on Kernel Exploit Generation",
+        authors: ["Junyoung Jang"],
+        year: 2026,
+        venue: "arXiv",
+        abstractOneWord: "用 coding agent 生成内核利用原语。",
+        abstract: "本文评估编码代理能否构造利用原语。",
+        topics: ["C"],
+      },
+    ];
+    assert.deepEqual(
+      filterPapers(withOneLine, { query: "内核利用原语", topic: "all", year: "all" }).map((p) => p.id),
+      ["kex"]
+    );
+  });
+
   it("matches paper id and aliases", () => {
     const withAlias = [
       {

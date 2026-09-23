@@ -9,6 +9,7 @@ function matchesQuery(paper, query) {
     paper.id,
     paper.title,
     paper.venue,
+    paper.abstractOneWord,
     paper.abstract,
     paper.abstractEn,
     ...(paper.authors || []),

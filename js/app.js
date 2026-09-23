@@ -136,10 +136,18 @@
     const title = document.createElement("span");
     title.className = "row-title";
     title.textContent = paper.title;
+    copy.append(title);
+    const oneWord = (paper.abstractOneWord || "").trim();
+    if (oneWord) {
+      const line = document.createElement("span");
+      line.className = "row-one-line";
+      line.textContent = oneWord;
+      copy.append(line);
+    }
     const meta = document.createElement("span");
     meta.className = "row-meta";
     meta.textContent = `${paper.venue} · ${paper.year}`;
-    copy.append(title, meta);
+    copy.append(meta);
 
     const topic = document.createElement("span");
     topic.className = "row-topic";
@@ -252,6 +260,16 @@
     authors.className = "dialog-authors";
     authors.textContent = (paper.authors || []).join(" · ");
 
+    const oneWord = (paper.abstractOneWord || "").trim();
+    const oneLabel = document.createElement("p");
+    oneLabel.className = "abstract-label";
+    oneLabel.textContent = "一句话摘要";
+    const oneBody = document.createElement("p");
+    oneBody.className = "dialog-one-line";
+    oneBody.textContent = oneWord;
+    oneLabel.hidden = !oneWord;
+    oneBody.hidden = !oneWord;
+
     const label = document.createElement("p");
     label.className = "abstract-label";
     const body = document.createElement("p");
@@ -296,7 +314,7 @@
       links.appendChild(anchor);
     });
 
-    els.dialogBody.replaceChildren(meta, title, authors, label, body, toggle, tags, links);
+    els.dialogBody.replaceChildren(meta, title, authors, oneLabel, oneBody, label, body, toggle, tags, links);
     els.dialog.showModal();
     els.dialogClose.focus();
   }

@@ -57,7 +57,7 @@ function cardFromRadar(raw) {
     paper.year ||
     (published.length >= 4 ? Number.parseInt(published.slice(0, 4), 10) : undefined);
   const topics = paper.topics && paper.topics.length ? paper.topics : paper.category ? [paper.category] : [];
-  return {
+  const card = {
     id: rawId.replace(/\//g, "-"),
     title: paper.title || "",
     authors: paper.authors || [],
@@ -69,6 +69,9 @@ function cardFromRadar(raw) {
     url: paper.url,
     pdf: paper.pdf,
   };
+  if (paper.abstractEn) card.abstractEn = paper.abstractEn;
+  if (paper.abstractOneWord) card.abstractOneWord = paper.abstractOneWord;
+  return card;
 }
 
 function onlyDataPaths(paths) {
