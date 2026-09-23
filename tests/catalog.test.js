@@ -133,6 +133,23 @@ describe("cardFromRadar", () => {
     assert.equal(card.year, 2026);
     assert.deepEqual(card.topics, ["A"]);
     assert.equal(card.abstract, "MEV AMM");
+    assert.equal(card.abstractEn, undefined);
+    assert.equal(card.abstractOneWord, undefined);
+  });
+
+  it("keeps a prepared Chinese summary and the English abstract", () => {
+    const card = cardFromRadar({
+      paper_id: "2609.25591",
+      title: "KEX-bench",
+      summary: "English summary that must not replace a prepared translation.",
+      abstract: "本文评估编码代理能否构造内核利用原语。",
+      abstractEn: "Coding agents now find real vulnerabilities.",
+      abstractOneWord: "用 coding agent 生成内核利用原语。",
+      category: "C",
+    });
+    assert.equal(card.abstract, "本文评估编码代理能否构造内核利用原语。");
+    assert.equal(card.abstractEn, "Coding agents now find real vulnerabilities.");
+    assert.equal(card.abstractOneWord, "用 coding agent 生成内核利用原语。");
   });
 });
 

@@ -108,7 +108,7 @@ arXiv 无 venue：A 类高相关可推；C / C-chain 方法清楚也可推，`ve
 
 ## 写入仓库（必做）
 
-今天的日期用 UTC 的 `YYYY-MM-DD`。有新论文时写成 `data/YYYY-MM-DD.json`，并把该日期插到 `data/manifest.json` 的 `dates` 数组最前面（已存在则移到最前，不要重复）。**不要删、不要清空其他日期的 `data/*.json`，不要把 `manifest.dates` 收成只剩今天。** 当天文件若已有论文：只追加本轮新 `id`，保留文件里已有卡片（`node scripts/write-daily.js` 会按 id 合并；手写时同样合并，禁止整文件覆盖成只有本轮结果）。站点上的旧卡片是历史目录，不是可以扔掉的 demo。若已用 `paper_radar` 生成并过滤过 `digest.json`，可用 `node scripts/write-daily.js digest.json` 合并进当天文件；否则直接按下面格式写文件。`write-daily.js` 只写入 `abstract`，不会写入 `abstractEn`。用过它之后，必须打开当天 JSON，给本轮新卡片补上 `abstractEn`，并确认 `abstract` 仍只是中文一句话。
+今天的日期用 UTC 的 `YYYY-MM-DD`。有新论文时写成 `data/YYYY-MM-DD.json`，并把该日期插到 `data/manifest.json` 的 `dates` 数组最前面（已存在则移到最前，不要重复）。**不要删、不要清空其他日期的 `data/*.json`，不要把 `manifest.dates` 收成只剩今天。** 当天文件若已有论文：只追加本轮新 `id`，保留文件里已有卡片（`node scripts/write-daily.js` 会按 id 合并；手写时同样合并，禁止整文件覆盖成只有本轮结果）。站点上的旧卡片是历史目录，不是可以扔掉的 demo。若已用 `paper_radar` 生成并过滤过 `digest.json`，可用 `node scripts/write-daily.js digest.json` 合并进当天文件；否则直接按下面格式写文件。`write-daily.js` 会把雷达的 `summary` 写进 `abstract`，并保留 digest 里已经写好的 `abstractOneWord` 和 `abstractEn`。用过它之后，必须打开当天 JSON，把本轮新卡片改成下面三个字段：`abstract` 换成英文摘要的中文翻译，并补上 `abstractOneWord` 与 `abstractEn`。
 
 当天文件格式：
 ```json
@@ -121,8 +121,9 @@ arXiv 无 venue：A 类高相关可推；C / C-chain 方法清楚也可推，`ve
       "authors": ["string"],
       "year": 2026,
       "venue": "string",
-      "abstract": "中文一句话：问题 + 是否用 LLM + 对象（如 Linux / Java / Solidity）。",
-      "abstractEn": "英文原文摘要段落。读不到英文摘要时省略此字段。",
+      "abstractOneWord": "中文一句话：问题 + 是否用 LLM + 对象（如 Linux / Java / Solidity）。",
+      "abstract": "把英文原文摘要翻译成中文。",
+      "abstractEn": "英文原文摘要段落。读不到英文摘要时省略此字段。原文摘要一般在网页上就有，不需要下载论文pdf来抽取摘要。",
       "topics": ["A"],
       "aliases": ["主题词1", "主题词2"],
       "url": "https://...",
@@ -133,10 +134,12 @@ arXiv 无 venue：A 类高相关可推；C / C-chain 方法清楚也可推，`ve
 ```
 `topics` 只能是 `A`、`C`、`C-chain` 之一。`aliases` 填 2～4 个主题词。
 
-`abstract` 与 `abstractEn` 必须分开。站点用 `abstract` 显示「中文摘要」、用 `abstractEn` 显示「原文摘要」；两个字段都有内容时，卡片才会出现「显示原文 / 显示中文」按钮。
-- `abstract` 只写中文一句话：问题 + 是否用 LLM + 对象。不要把英文摘要接在这句话后面。
-- `abstractEn` 只写来源页上的英文摘要段落，不要贴 PDF 正文，不要翻译，不要编造。读不到英文摘要就省略该字段，不要写空字符串。
-- 合并已有卡片时保留它们原来的 `abstract` 和 `abstractEn`，不要覆盖已经分开写好的摘要。
+`abstractOneWord`、`abstract`、`abstractEn` 必须分开写。
+- `abstractOneWord` 只写中文一句话：问题 + 是否用 LLM + 对象。站点在列表和详情里显示为「一句话摘要」。
+- `abstract` 写英文原文摘要的中文翻译，不要只留一句话，也不要把英文接在中文后面。站点显示为「中文摘要」。
+- `abstractEn` 只写来源网页上的英文摘要段落。原文摘要一般在网页上就有，不要下载 PDF 来抽取。不要翻译，不要编造，不要贴正文。读不到英文摘要就省略该字段，不要写空字符串。站点显示为「原文摘要」。
+- `abstract` 与 `abstractEn` 都有内容时，详情里才会出现「显示原文 / 显示中文」按钮。
+- 合并已有卡片时保留它们原来的 `abstractOneWord`、`abstract` 和 `abstractEn`，不要覆盖已经分开写好的摘要。
 
 只 `git add data/YYYY-MM-DD.json data/manifest.json`，提交说明 `Add daily papers YYYY-MM-DD`，向 `main` 开 PR，标题相同。不要标 draft。不要自己 merge（Action `Automerge daily papers` 会处理）。不要推到 Origin。不要改前端代码。不要发 Slack。
 
