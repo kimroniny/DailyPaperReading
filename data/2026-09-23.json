@@ -2,6 +2,81 @@
   "date": "2026-09-23",
   "papers": [
     {
+      "id": "2609.26749",
+      "title": "Metrics Failure in LLM-Based Code Vulnerability Repair: An Empirical Study and a Change-Aware Screen",
+      "authors": [
+        "Om Nepal",
+        "Sushant Aryal",
+        "Oluseyi Olukola",
+        "Nick Rahimi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "大语言模型正越来越多地用于自动修复 C/C++ 安全漏洞，而编译率（生成补丁能否编译）常被当作进展指标。我们认为，编译率作为单函数漏洞修复的科学指标并不可靠，并基于 Big-Vul 中 203 个漏洞函数、三个开源代码大模型（3.5 亿至 67 亿参数）以及三种提示策略，通过五项受控实验加以验证。编译率存在以下问题：（i）对能显著改善生成代码的干预几乎不敏感；（ii）主要由评测框架与数据集伪影主导，而非模型质量，约 64% 的编译失败不可归咎于模型，且该比例在各模型间几乎不变；（iii）在相同补丁上仅改变一个编译器标准标志，编译率就会变化 1.8 至 2.7 倍，且无回归；（iv）对三个模型的排序与参考相似度指标完全相反；（v）作为优化目标时会奖励“非修复”：编译器反馈循环提高编译率，但与人工修复的相似度下降，人工检查发现新编译通过的输出中存在删除代码和占位符式的伪修复。常用的备选指标——整函数 CodeBLEU——同样失效：原封不动复制漏洞输入的分数高于所有模型。我们还考察了只对编辑区域打分的变化感知筛查指标 diff_F1：它对无操作给出恰好为零的分数，对部分（而非全部）基于删除的刷分补丁给出接近零的分数，同时仍认可真实的部分编辑，因此可在更深入的执行评估之前作为廉价筛查。它不是修复质量指标，我们也报告了其不足。研究结论主张：评估基于 LLM 的漏洞修复应采用变化感知、并以执行为依据的方法。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "编译率",
+        "评测指标",
+        "C/C++"
+      ],
+      "url": "https://arxiv.org/abs/2609.26749",
+      "pdf": "https://arxiv.org/pdf/2609.26749",
+      "abstractEn": "Large language models (LLMs) are increasingly applied to the automated repair of C/C++ security vulnerabilities, and compile rate is a commonly reported proxy for progress: whether the generated patch compiles. We argue that compile rate is a scientifically unreliable metric for single-function vulnerability repair, and we support this with five controlled experiments over 203 vulnerable functions from Big-Vul, three open-source code LLMs (350M to 6.7B parameters), and three prompting strategies. Compile rate (i) barely responds to an intervention that substantially improves the generated code; (ii) is dominated by evaluation-harness and dataset artifacts rather than model quality, with about 64% of compile failures not attributable to the model, a share that is nearly invariant across models; (iii) shifts by 1.8 to 2.7 times on identical patches under a single compiler-standard flag, with zero regressions; (iv) ranks the three models in the opposite order to reference-similarity metrics; and (v) rewards non-repairs when used as an optimization target, since a compiler-feedback loop raises compile rate while similarity to the human fix falls, with manual inspection finding deletion- and placeholder-style non-repairs among the newly compiling outputs. The natural fallback, whole-function CodeBLEU, also fails: an unchanged copy of the vulnerable input outscores every model. We also examine diff_F1, a change-aware screen that scores only the edited region. It gives exactly zero credit to a no-op and near-zero credit to some, though not all, of the deletion-based gaming patches we observed, while still crediting genuine partial edits, so it may serve as a cheap screen before deeper, execution-based analysis. It is not a repair-quality metric, and we report where it falls short. Our findings argue for change-aware, execution-grounded evaluation of LLM-based vulnerability repair.",
+      "abstractOneWord": "评估 LLM 修复 C/C++ 漏洞时编译率等指标是否可靠，对象是 C/C++ 漏洞函数。"
+    },
+    {
+      "id": "2609.26555",
+      "title": "Rouxii: Exploiting Honeypots with Deception-Aware AI Pentesters",
+      "authors": [
+        "Arthur Cordeiro",
+        "Alberto Maria Mongardini",
+        "Emmanouil Vasilomanolakis"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstract": "蜜罐旨在欺骗攻击者，近期工作表明它们也能干扰自主的基于 LLM 的渗透测试系统。但现有评估大多假设攻击者并不知道自己面对的是欺骗。我们研究相反设定：自主攻击者被明确装备了识别并利用蜜罐指纹的能力。我们提出 Rouxii，一个将反欺骗纳入侦察、并能从蜜罐检测转向利用的 AI 渗透测试框架。我们在三个推理模型和十一种网络配置上，对比仅提示不同的普通 Rouxii 与反欺骗 Rouxii，共十二轮、1544 份攻击报告。反欺骗使蜜罐正确识别率从 19% 升至 97%，在 OT 服务上从 11% 升至 97%，而对真实服务的误报保持 0.7%。不知情基线（PentestGPT、HackingBuddy）同样失败，说明该效应并非 Rouxii 特有。检测也不是终点：通过对蜜罐的白盒分析，我们表明已识别的陷阱可被反过来用于打击运营者，包括在不触发存活监测的情况下对 Conpot 实施拒绝服务，以及破坏 GasPot 实例上报的情报。这些发现表明欺骗有效性强烈依赖于攻击者知识，评估蜜罐对 AI 攻击者的韧性时必须考虑会主动推理并利用欺骗层的对手。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "蜜罐",
+        "渗透测试",
+        "LLM agent",
+        "OT"
+      ],
+      "url": "https://arxiv.org/abs/2609.26555",
+      "pdf": "https://arxiv.org/pdf/2609.26555",
+      "abstractEn": "Honeypots are designed to deceive attackers, and recent work shows they can also derail autonomous LLM-based pentesters. These evaluations, however, largely consider attackers unaware of the deception they face. We study the opposite setting: an autonomous attacker explicitly equipped to recognize and act on honeypot fingerprints. We introduce Rouxii, an AI-driven penetration-testing framework that integrates counter-deception into reconnaissance and pivots from honeypot detection to exploitation. We evaluate matched vanilla and anti-deception Rouxii configurations across three reasoning models and eleven network setups over twelve cycles (1,544 attack reports). Between the matched cohorts, which differ only in the prompt, counter-deception raises correct honeypot identification from 19% to 97%, an effect strongest on OT services (11% to 97%), while false alarms on the real service stay at 0.7%. Deception-unaware baselines (PentestGPT, HackingBuddy) fail similarly, indicating the effect is not specific to our framework. Detection, moreover, is not the endpoint: through a white-box analysis of the honeypots themselves we show that a detected trap can be turned against its operator, demonstrating a denial-of-service that disables Conpot without tripping its liveness monitoring, and a corruption of the intelligence a GasPot instance reports. These findings show that deception effectiveness depends strongly on attacker knowledge, and that evaluations of honeypot resilience against AI attackers must account for adversaries that actively reason about and exploit the deception layer.",
+      "abstractOneWord": "用 LLM 渗透测试框架识别蜜罐并反打欺骗层，对象是 Cowrie / Conpot / GasPot 等蜜罐。"
+    },
+    {
+      "id": "2609.25535",
+      "title": "FASTAR: FRI Accelerator for Scalable Transparent ARguments of Knowledge",
+      "authors": [
+        "Tengkai Gong",
+        "Xiaolin Xu"
+      ],
+      "year": 2026,
+      "venue": "ICCAD 2026",
+      "abstract": "零知识证明使证明者能在不泄露底层秘密的情况下，密码学地让验证者相信某断言成立，是可验证计算的基础原语。ZKP 正从依赖可信设置、易受量子对手威胁的经典 zk-SNARK（如 Groth16），转向透明且抗量子的 zk-STARK。后者仅依赖抗碰撞哈希，但计算开销巨大。其中 Fast Reed–Solomon Interactive Oracle Proof of Proximity（FRI）协议主导证明开销，产生海量数据、反复的 Merkle 树承诺和不规则访存，限制了通用处理器上的性能与能效。针对这些问题，本文提出 FASTAR，一种面向 FRI 协议的 FPGA 加速器。与在昂贵 ASIC 工艺上追求固定高性能内核的加速器不同，FASTAR 采用约束驱动设计：用高层次综合（HLS）实现，并由可完全参数化的构建块组成 FRI 的主要阶段，包括多项式求值、递归 split-and-fold 以及 Merkle 树构造。根据用户提供的板卡规格，FASTAR 自动生成适配目标 FPGA 资源与存储约束的硬件实现，从而无需手工重设计即可部署到多种平台。我们在三类代表性 FPGA 上评估 FASTAR：带 HBM 的高端数据中心 FPGA、主流嵌入式 SoC，以及低功耗边缘设备。实验显示，相对高度优化的 CPU 与 GPU 基线，FASTAR 最高分别达到 25.7 倍和 3.5 倍加速，并能效更优。结果表明，作为单一模块化硬件框架，FASTAR 可跨 FPGA 档位扩展，使面向实际 zk-STARK 系统的 FRI 加速成为可能。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "FASTAR",
+        "FRI",
+        "zk-STARK",
+        "FPGA"
+      ],
+      "url": "https://arxiv.org/abs/2609.25535",
+      "pdf": "https://arxiv.org/pdf/2609.25535",
+      "abstractEn": "Zero-Knowledge Proofs (ZKPs) enable a prover to cryptographically convince a verifier of the validity of a statement without revealing any underlying secrets, forming a foundational primitive for verifiable computation. The ZKP landscape is undergoing a fundamental shift from classic zk-SNARKs such as Groth16, which rely on trusted setup and are vulnerable to quantum adversaries, toward transparent, post-quantum constructions such as zk-STARK. These systems achieve post-quantum security by relying solely on collision-resistant hash functions, however, at the cost of substantial computational overhead. In particular, the Fast Reed–Solomon Interactive Oracle Proof of Proximity (FRI) protocol dominates prover complexity, generating massive data volumes, repeated Merkle-tree commitments, and irregular memory access patterns that limit performance and energy efficiency on general-purpose processors. To address these challenges, this work proposes FASTAR, a novel FPGA-based accelerator for the FRI protocol. Unlike accelerators that pursue fixed high-performance kernels on expensive ASIC process nodes, FASTAR adopts a constraint-driven design methodology. Our framework is implemented with High-Level Synthesis (HLS) and composed of fully parameterizable building blocks for the major stages of FRI, including polynomial evaluation, recursive split-and-fold, and Merkle-tree construction. From user-provided board specifications, FASTAR automatically generates hardware implementations tailored to the resource and memory constraints of the target FPGA, enabling deployment across a wide range of platforms without manual redesign. We evaluate FASTAR across three representative FPGA platforms: a high-end datacenter FPGA with High Bandwidth Memory (HBM), a mainstream embedded system-on-chip, and a low-power edge device. Experimental results show that FASTAR achieves up to 25.7x and 3.5x speedups over highly optimized CPU and GPU baselines, respectively, while delivering superior energy efficiency. These results demonstrate that, as a single modular hardware framework, FASTAR can scale across FPGA classes and make practical FRI acceleration feasible for real-world zk-STARK systems.",
+      "abstractOneWord": "用 FPGA 加速 zk-STARK 的 FRI 协议且无 LLM，对象是零知识证明系统。"
+    },
+    {
       "id": "2609.25591",
       "title": "Evaluating Coding Agents on Kernel Exploit Generation",
       "authors": [
