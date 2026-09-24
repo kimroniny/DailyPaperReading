@@ -1,0 +1,293 @@
+{
+  "date": "2026-09-24",
+  "papers": [
+    {
+      "id": "10.1145-3849091",
+      "title": "Mining Invariants to Enhance Fuzzing for Detecting Functional Bugs in Smart Contracts",
+      "authors": [
+        "Xingshuang Lin",
+        "Binbin Zhao",
+        "Qinge Xie",
+        "Na Ruan",
+        "Jiliang Li",
+        "Shouling Ji"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用双智能体挖掘不变量并增强模糊测试，以检测 Solidity 智能合约功能漏洞。",
+      "abstract": "智能合约是 DeFi 金融系统的基础，但其中可被利用的缺陷会造成巨大金钱损失。近期研究表明，这些可利用缺陷中超过 80% 属于功能漏洞，且现有工具难以检出。自动识别智能合约功能漏洞面临多重挑战：一是业务模型高层逻辑与合约底层实现之间存在显著落差；二是要发现深层功能漏洞，需要依据不同缺陷特征自动生成有效检测预言机。为此，作者设计了可扩展的自动检测系统 PromFuzz++。该系统首先用双智能体框架定位可能存在漏洞的函数，再通过双阶段耦合，从这些函数提取逻辑信息并生成不变量检查器，从而增强面向缺陷的合约模糊测试。评估显示 PromFuzz++ 召回率为 86.96%、F1 为 93.02%，两项指标较现有最优方法至少提升 50%。对 10 个真实 DeFi 项目的深入分析发现了 30 个零日漏洞，其中 24 个已获得 CVE 编号。",
+      "abstractEn": "Smart contracts, which are fundamental to DeFi financial systems, are vulnerable to exploitable bugs that can cause substantial monetary losses. A recent study shows that over 80% of these exploitable bugs, primarily functional bugs, evade detection by existing tools. Automatically identifying functional bugs in smart contracts is challenging from multiple perspectives. The primary issue is the significant gap between understanding the high-level logic of the business model and checking the low-level implementations in smart contracts. Furthermore, identifying deeply rooted functional bugs in smart contracts requires the automated generation of effective detection oracles based on various bug features. To address these challenges, we design PromFuzz++, an automated and scalable system for detecting functional bugs in smart contracts. In PromFuzz++, we first propose a dual-agent framework to identify potentially vulnerable functions for further analysis. We then implement a dual-stage coupling approach that generates invariant checkers using logic information extracted from these functions, enhancing bug-oriented fuzzing on target contracts. Our evaluation shows that PromFuzz++ achieves 86.96% recall and a 93.02% F1-score, improving both metrics by at least 50% over state-of-the-art methods. An in-depth analysis of 10 real-world DeFi projects uncovered 30 zero-day bugs, 24 of which have been assigned CVE IDs.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "不变量",
+        "模糊测试",
+        "智能合约",
+        "多智能体"
+      ],
+      "url": "https://doi.org/10.1145/3849091"
+    },
+    {
+      "id": "2609.27030",
+      "title": "Kubernetes Misconfigurations in the Wild: Taxonomy, Evolution, and Automated Repair with Large Language Models",
+      "authors": [
+        "Mostafa Anouar Ghorab",
+        "Ahmad Abdel Latif",
+        "Mohamed Aymen Saied"
+      ],
+      "year": 2026,
+      "venue": "AIware 2026",
+      "abstractOneWord": "用 LLM 加模式校验自动修复 Kubernetes 安全错误配置，对象是云原生编排配置。",
+      "abstract": "Kubernetes 广泛用于编排云原生应用，但其声明式配置模型常引入威胁系统可靠性的安全错误配置。尽管已有检测工具，人们对错误配置模式与可扩展修复仍了解不足。本文基于 2662 条开发者在 Stack Overflow 报告的问题，对 Kubernetes 安全错误配置做实证研究，归纳各类配置对象上反复出现的安全弱点分类，分析严重程度差异，并观察孵化期与稳定期项目之间错误配置如何演变。结果表明，部分运维问题会随项目成熟而减少，但关键安全错误配置往往持续或再现。作者进而在逐步丰富的上下文条件下评估大模型自动修复：上下文 grounding 能提高修正准确率，最好的单模型达到 89.06%。为增强结构正确性与模式合规，他们提出基于官方 Kubernetes 规范的模式引导校验框架 Kubecurity。将上下文 LLM 推理与确定性模式约束结合后，修正准确率达到 98.50%，并显著减少新引入的错误配置。",
+      "abstractEn": "Kubernetes is widely used to orchestrate cloud-native applications, yet its declarative configuration model often introduces security misconfigurations that threaten system reliability. Despite available detection tools, misconfiguration patterns and scalable remediation remain insufficiently understood. This paper presents an empirical study of Kubernetes security misconfigurations based on 2,662 developer-reported Stack Overflow issues. We derive a taxonomy of recurring security weaknesses across configuration objects and categories. We analyze severity variations and investigate how misconfigurations evolve between incubator and stable project stages. Findings show that while some operational issues decrease as projects mature, critical security misconfigurations often persist or reappear. We then evaluate Large Language Models (LLMs) for automated remediation under progressively enriched contextual conditions. Contextual grounding improves correction accuracy, with the best standalone model achieving 89.06%. To enhance structural correctness and schema compliance, we introduce Kubecurity, a schema-guided validation framework based on official Kubernetes specifications. Combining contextual LLM reasoning with deterministic schema enforcement achieves 98.50% correction accuracy while substantially reducing newly introduced misconfigurations. This work advances the understanding of Kubernetes security misconfigurations and demonstrates a hybrid approach to more reliable automated remediation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Kubernetes",
+        "错误配置",
+        "自动修复",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2609.27030",
+      "pdf": "https://arxiv.org/pdf/2609.27030"
+    },
+    {
+      "id": "2609.27058",
+      "title": "Stage-Supervised Latent Reasoning for Single-Shot JavaScript Deobfuscation",
+      "authors": [
+        "Rong Feng",
+        "Suman Saha"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用分阶段监督的 LLM 潜在推理做单次 JavaScript 去混淆，服务安全审查。",
+      "abstract": "JavaScript 混淆既用于保护代码，也使程序分析与安全审查显著更难。现有基于 LLM 的去混淆方法通常把它当成一步翻译，忽略了实际流水线的分阶段结构。这篇进行中的工作提出阶段感知的潜在推理框架，把确定性去混淆工具的中间输出转化为对 Coconut 训练的监督：训练时学习多阶段改写，推理时一次生成最终清洗后的程序。在 JsDeObsBench 上的初步结果显示，基于 Coconut 的模型把语法有效率提升到 50%（直接微调 15%，零样本基线 25%），并在有效输出中达到 80% 语义正确，表明其去混淆语义保真度优于对照模型。",
+      "abstractEn": "JavaScript obfuscation is widely used to protect code, but it also makes program analysis and security review substantially harder. Existing LLM-based deobfuscation methods usually treat the task as one-step translation, ignoring the staged structure of practical deobfuscation pipelines. This WIP paper proposes a stage-aware latent reasoning framework that converts intermediate outputs from a deterministic deobfuscation tool into supervision for Coconut-based training. The model learns from multi-stage rewrites during training but generates the final cleaned program in a single shot at inference time. Preliminary results on JsDeObsBench show that the Coconut-based model improves syntactic validity to 50%, compared with 15% for direct fine-tuning and 25% for a zero-shot baseline, and reaches 80% semantic correctness among valid outputs, indicating better semantic faithfulness than either comparison model in deobfuscation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "去混淆",
+        "JavaScript",
+        "LLM",
+        "安全审查"
+      ],
+      "url": "https://arxiv.org/abs/2609.27058",
+      "pdf": "https://arxiv.org/pdf/2609.27058"
+    },
+    {
+      "id": "2609.26529",
+      "title": "From Approval to Execution: Reconstruction-Aware Repair Analysis for LLM-Agent Software",
+      "authors": [
+        "Junchi Zhu",
+        "Zhenguang Liu",
+        "Shaojing Fan",
+        "Jianhai Chen",
+        "Qinming He"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析 LLM 智能体软件在审批后重建动作导致的授权绕过，并给出可判定修复。",
+      "abstract": "审批机制已成为 LLM 智能体软件中约束高后果动作的主要保障。但展示给审批的动作往往不是最终被执行的对象：工作流重载、会话投影、参数重绑定以及持久状态查找，都可能在执行前重建该动作。现有 field-flow 与检查覆盖分析可以证明预期字段被检查过，却不能证明被检查的对象版本到达汇点，也不能排除检查与使用之间发生替换。因此，局部完整的修复仍可能在重建后留下残余授权绕过。作者通过三项设计应对该问题：（1）在表示转换、汇点依赖、被消费版本与授权范围上形式化重建稳定授权（ReSA）；（2）导出用于判定候选修复并暴露残余汇点后缀的义务；（3）在 APAS-Finder 中实现该分析，并在独立汇点预言机观察执行之前冻结预测。预测与全部 28 个受控结果一致。四组配对在 field-flow 与检查覆盖相同的情况下需要相反判定；在提供对象流、支配、干扰以及同一授权契约后，一个 CodeQL 组合查询能恢复全部八个案例。两名分析员在全部四项模型验证处置以及 20 项汇点依赖中的 19 项上达成一致。在已发布的消费端上，五处修复阻止了 60/60 次测试的越权效果，三组机制对照则暴露了所预测的残余效果。因此，修复是否充分取决于最终被消费的重建动作，而不仅仅是审批记录或更早被检查的表示。",
+      "abstractEn": "Approval mechanisms have become a primary safeguard for consequential actions in LLM-agent software. Yet the action shown for approval is often not the object ultimately consumed: workflow reload, transcript projection, argument rebinding, and durable-state lookup may reconstruct it before execution. Existing fieldflow and check-coverage analyses can establish that expected fields were inspected, but not that the inspected object version reaches the sink or that no replacement intervenes between check and use. Consequently, a locally complete repair may still leave a residual authorization bypass after reconstruction. We address this problem through three designs. (1) We formulate reconstruction-stable authorization (ReSA) over representation transitions, sink dependencies, consumed versions, and grant scope. (2) We derive obligations that judge candidate repairs and expose residual sink suffixes. (3) We implement the analysis in APAS-Finder and freeze predictions before an independent sink oracle observes execution. Predictions agree with all 28 controlled outcomes. Four matched pairs require opposite judgments despite identical field-flow and check coverage; a CodeQL composite recovers all eight when supplied object flow, dominance, interference, and the same grant contract. Two analysts agree on all four model-validation dispositions and 19/20 sink dependencies. On released consumers, five repairs prevent 60/60 tested out-of-scope effects, while three mechanism contrasts expose the predicted residual effects. Repair sufficiency therefore depends on the reconstructed action consumed, not merely on an approval record or earlier checked representation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "授权绕过",
+        "智能体",
+        "CodeQL",
+        "修复分析"
+      ],
+      "url": "https://arxiv.org/abs/2609.26529",
+      "pdf": "https://arxiv.org/pdf/2609.26529"
+    },
+    {
+      "id": "2609.27091",
+      "title": "Solidity Meets LLMs: A Transformer-Based Approach to Smart Contract Vulnerability Detection",
+      "authors": [
+        "Djamel Eddine Hakim Ghorab",
+        "Farid Mokhati",
+        "Mostafa Anouar Ghorab"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "微调 BERT 类大模型检测 Solidity 智能合约片段中的漏洞。",
+      "abstract": "区块链尤其是以太坊的普及，使智能合约在去中心化应用中的地位更加关键。合约复杂度与金融价值上升，也使其成为攻击目标。本文提出基于 Transformer 的方法，检测以 Solidity 编写的智能合约片段中的漏洞。作者利用预训练大模型的表示能力，构建包含真实标签数据集的流水线，将代码片段标为有漏洞或安全，再在该数据上微调 BERT 架构，以捕捉 Solidity 特有的句法与语义模式。微调后的模型 F1 达到 92%，表明适配大模型有助于通过深层上下文理解增强智能合约安全。",
+      "abstractEn": "The growing adoption of blockchain technologies, particularly the Ethereum platform, has amplified the critical role of smart contracts in decentralized applications. However, the increasing complexity and financial value of these contracts make them prime targets for cyber attacks. In this work, we present a transformer-based approach for the detection of vulnerabilities in smart contract fragments written in Solidity. Leveraging the representational power of pre-trained Large Language Models (LLMs), we construct a robust pipeline that includes the definition of a ground truth dataset, labeling code fragments as vulnerable or safe. We then fine-tune a BERT-based architecture on this dataset, enabling the model to capture the syntactic and semantic patterns specific to Solidity code. Our fine-tuned model demonstrates strong performance, achieving an F1 score of 92%, and highlighting the effectiveness of LLM adaptation in enhancing smart contract security through deep contextual understanding.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "Solidity",
+        "漏洞检测",
+        "LLM",
+        "智能合约"
+      ],
+      "url": "https://arxiv.org/abs/2609.27091",
+      "pdf": "https://arxiv.org/pdf/2609.27091"
+    },
+    {
+      "id": "2609.27424",
+      "title": "EVAGE: Autonomous MEV Generation and Adaptation via Multi-Agent Harness",
+      "authors": [
+        "Yan Wen",
+        "Zichun Cai",
+        "Iliya Mirzaei",
+        "Xiaohua Cai",
+        "Mohammad Javad Amiri",
+        "Haoxian Chen",
+        "Chenyuan Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多智能体离线生成并移植 MEV 机器人，对象是以太坊等链上协议。",
+      "abstract": "最大可提取价值（MEV）已成为区块链生态中的重要经济力量，但其捕获仍由经验团队主导，策略设计与实现依赖难以跨协议、跨链扩展的人工专家劳动。本文提出 EVAGE，据称是首个端到端自主的多智能体框架，用于生成并适配 MEV 策略。它具备三种运行模式，可自动发现新的 MEV 变体、在不同协议间改写执行逻辑，并把策略移植到包括一层与二层在内的其他链。为避免在关键执行路径上承担推理延迟，EVAGE 离线生成并迭代修改 MEV 机器人代码，而不是实时直接决策。在编排智能体协调下，三个专用子智能体通过闭环诊断共同实现并修复完整 MEV 机器人工作流，无需人工介入即可产出经过验证的确定性概念验证实现。作者在以太坊、Base 与 BNB Smart Chain 上各评估超过 150 万个区块：在以太坊上发现五种新的 MEV 策略变体，利润提升 1.02 倍至 15.97 倍；还将 11 种策略从 CPMM 适配到 CLMM 与 Balancer V2，并从以太坊移植到 Base 与 BSC，LLM token 成本均低于 60 美元。",
+      "abstractEn": "Maximal Extractable Value (MEV) has evolved into a major economic force in blockchain ecosystems, yet its capture is dominated by experienced teams, and both strategy design and implementation rely on manual expert work that scales poorly across heterogeneous protocols and chains. We present EVAGE, the first fully autonomous multi-agent framework for end-to-end MEV strategy generation and adaptation. Equipped with three specialized operation modes, it automatically discovers novel MEV variants, adapts execution logic across disparate protocols, and ports strategies between chains, including Layer-1 and Layer-2 networks. To avoid inference latency on the critical MEV execution path, EVAGE generates and refines MEV bot code offline rather than making real-time decisions directly. Under the coordination of an orchestrator agent, three specialized subagents collectively implement and repair the full MEV bot workflow via closed-loop diagnostics, eliminating human intervention while producing validated and deterministic Proof-of-Concept implementations. We evaluate EVAGE on over 1.5M blocks from each of Ethereum, Base, and BNB Smart Chain (BSC). On Ethereum, EVAGE uncovers five novel MEV strategy variants, yielding a profit increase of 1.02× to 15.97×. It also successfully adapts 11 MEV strategies from CPMM to both CLMM and Balancer V2 and ports strategies from Ethereum to Base and BSC, all with less than 60 dollars in LLM token costs.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "MEV",
+        "多智能体",
+        "跨链移植",
+        "策略生成"
+      ],
+      "url": "https://arxiv.org/abs/2609.27424",
+      "pdf": "https://arxiv.org/pdf/2609.27424"
+    },
+    {
+      "id": "2609.28115",
+      "title": "No Place to Hide: An Analysis on Protected Order Flow Sandwich Attacks",
+      "authors": [
+        "Lioba Heimbach",
+        "Ozan Solmaz",
+        "Burak Öz",
+        "Christof Ferreira Torres"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "测量受保护订单流上的三明治攻击，无 LLM，对象是以太坊等多链交易排序。",
+      "abstract": "抢跑长期困扰以太坊公开内存池，使其被称为“黑暗森林”。作为应对，以太坊及其他链越来越依赖私有 RPC 与原生保护来屏蔽交易，作者称之为受保护订单流。这些机制能在多大程度上阻止抢跑、以及它们依赖何种信任假设，仍缺乏清晰理解。本文对六条链（以太坊、Solana、Tron、Base、Arbitrum、Monad）上针对受保护订单流的三明治攻击，做了为期三年的纵向测量。作者提出可覆盖块内与跨块宽窗口攻击的检测启发式，并依据机器人行为把三明治与正当交易区分开。结果显示：Solana 上有 2800 万次针对本应受保护交易的三明治攻击，Tron 38567 次，以太坊 30607 次，Base 1889 次；重组区块还额外暴露 2875 个以太坊受害者。与公开内存池中紧贴受害者的传统三明治不同，这些攻击很少紧邻受害者，且在 Solana 之外由少数实体实施。分析在各层都发现暴露面：Solana 的验证者与应用层暴露，以太坊的订单流拍卖与重组区块，Tron 先到先服务排序无法阻止基于延迟的抢跑，以及 Base 上暴露待处理交易的 RPC 缺陷与可预测的受害者行为。现有抢跑保护提供的保障可能远弱于用户预期，需要更强的端到端三明治防御。",
+      "abstractEn": "Front-running has long plagued Ethereum's public mempool, earning it the nickname of a \"dark forest\", where predators lurk for profitable transactions. In response, Ethereum and other blockchain ecosystems increasingly rely on private RPCs and native protections to shield transactions from adversaries, which we refer to as protected order flow. Yet the effectiveness of these mechanisms in preventing front-running, and what trust assumptions they entail, remain poorly understood. In this work, we conduct the first longitudinal, three-year measurement study of sandwich attacks against protected order flow across six blockchains: Ethereum, Solana, Tron, Base, Arbitrum, and Monad. We introduce detection heuristics that capture wide attacks, both within and across blocks, and filter on bot behavior to distinguish sandwiches from legitimate trading activity. We identify 28.0 million sandwich attacks on Solana, 38,567 on Tron, 30,607 on Ethereum, and 1,889 on Base against transactions intended to be protected from front-running. Reorged blocks expose a further 2,875 Ethereum victims. Unlike conventional public-mempool sandwiches, these attacks rarely occur tightly around their victims and, outside Solana, are carried out by a small number of entities. Our analysis uncovers exposures at every layer: validator- and application-level exposure on Solana, order-flow auctions and reorged blocks on Ethereum, first-come-first-served ordering that fails to prevent latency-based front-running on Tron, and both an RPC bug that exposes pending transactions and predictable victim behavior on Base. These findings show that existing front-running protections can provide substantially weaker guarantees than users expect, highlighting the need for stronger end-to-end defenses against sandwich attacks.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "三明治攻击",
+        "MEV",
+        "订单流",
+        "抢跑"
+      ],
+      "url": "https://arxiv.org/abs/2609.28115",
+      "pdf": "https://arxiv.org/pdf/2609.28115"
+    },
+    {
+      "id": "2609.27100",
+      "title": "Cryptographic Security Is Not Enough: Privacy Gaps in the Renegade Decentralized Dark Pool",
+      "authors": [
+        "Prerna Arote",
+        "Adrian Saiz",
+        "Oriol Saguillo",
+        "Lucianna Kiffer"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析 Renegade 去中心化暗池的隐私与活性缺口，无 LLM，对象是 MPC/zk 撮合协议。",
+      "abstract": "暗池本应提供成交前隐私、活性与成交后保密。去中心化暗池 Renegade 试图在无托管风险的前提下，用安全多方计算与零知识证明做私有撮合与可验证结算。作者表明，其密码学保证在实践中并不能兑现这些暗池性质。带中止的 MPC 保证正确性但不保证公平：一方可获知撮合结果后无惩罚地中止，从而破坏成交前隐私。发现层在 MPC 开始前就会泄漏交易意图；通过选择性中止持续探测，还可概率性重建对手方订单历史，威胁成交后保密。MPC 执行前缺少输入一致性检查，使攻击者能用无需真实代币持仓的无效状态承诺实施骚扰，持续锁定诚实用户钱包并浪费算力，从而在持续条件下破坏活性。作者还分析 Base 上超过 70 万笔 Renegade 交易并探测 P2P 层，发现网络实际上高度中心化：88% 流量经过少数中继，仅四个节点维持 P2P 层。中继以明文持有用户钱包状态，这种集中度使系统在实践中更像中心化订单簿，在链下重现了暗池本应消除的信息不对称。结论是：密码学隐私并不等于暗池安全，成交前隐私、活性与成交后保密都需要超越 MPC 正确性的协议层保证。",
+      "abstractEn": "Dark pools are designed to provide pre-trade privacy, liveness, and post-trade confidentiality - concealing order flow before execution and limiting information leakage after. Decentralized dark pools, such as Renegade, aim to replicate these properties without custodial risk, using secure multi-party computation (MPC) and zero-knowledge proofs for private order matching and verifiable settlement. We show that Renegade's cryptographic guarantees do not deliver these dark pool properties in practice. MPC-with-abort ensures correctness but not fairness: a party may learn the match result and abort without penalty, breaking pre-trade privacy. We demonstrate that the protocol's discovery layer further leaks trading intent before MPC even begins, and that sustained probing via selective abort can probabilistically reconstruct counterparty order history, threatening post-trade confidentiality. We also show that the absence of input-consistency checks prior to MPC execution enables a griefing attack using invalid state commitments requiring no real token holdings that continuously locks honest users' wallets and wastes compute, breaking liveness under sustained conditions. We further analyze over 700,000 Renegade transactions on Base and probe the P2P layer, finding that the network is effectively centralized: 88% of traffic routes through a handful of relayers, with only four nodes sustaining the P2P layer. Since relayers hold their users' wallet state in plaintext, this concentration means the system operates as a centralized orderbook in practice - reproducing off-chain the information asymmetry that dark pools are designed to eliminate. Together, our results show that cryptographic privacy does not imply dark pool security: pre-trade privacy, liveness, and post-trade confidentiality each require additional protocol-level guarantees beyond MPC correctness.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "暗池",
+        "MPC",
+        "零知识",
+        "成交前隐私"
+      ],
+      "url": "https://arxiv.org/abs/2609.27100",
+      "pdf": "https://arxiv.org/pdf/2609.27100"
+    },
+    {
+      "id": "2026-2157",
+      "title": "Jolt-QED: Formally Verifying Bytecode Expansions In Lean",
+      "authors": [
+        "Ari Biswas",
+        "Quang Dao",
+        "Daniel Ross",
+        "Justin Thaler"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用 Lean 形式化验证 Jolt zkVM 的字节码展开是否忠实模拟 RISC-V，无 LLM。",
+      "abstract": "作者用 Lean4 证明助手形式化验证：Jolt zk-VM 的字节码展开过程忠实模拟 RISC-V CPU。先前工作已把官方 Sail RISC-V 规范翻译到 Lean。本文扩展该模型以定义 Jolt ISA，并编写转译器，从 Rust 定义自动提取 Jolt 的字节码展开到 Lean，最终证明这些展开与对应 RISC-V 指令等价。该工作也为进一步证明 Jolt 上游组件的完备性与可靠性打下基础。",
+      "abstractEn": "In this work, we formally verify using the Lean4 proof assistant, that jolt zk-VM's bytecode expansion process faithfully emulates a RISC-V CPU. Prior work translated the official Sail specification of RISC-V into Lean. We extend this model to define the Jolt ISA in Lean. We then write a transpiler to automatically extract Jolt’s bytecode expansions into Lean from their Rust definitions. Finally, we prove these expansions equivalent to their corresponding RISC-V instructions. Additionally, this lays the groundwork for proving the upstream components of Jolt are complete and sound.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkVM",
+        "形式化验证",
+        "RISC-V",
+        "Jolt"
+      ],
+      "url": "https://eprint.iacr.org/2026/2157",
+      "pdf": "https://eprint.iacr.org/2026/2157.pdf"
+    },
+    {
+      "id": "2026-2160",
+      "title": "Accordion: Efficient Batch Proving via Algebraic Folding",
+      "authors": [
+        "David Balbás",
+        "Anca Nitulescu",
+        "Maxime Plançon"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "提出无递归的代数折叠批量证明系统 Accordion，无 LLM，对象是 SNARK 证明系统。",
+      "abstract": "本文提出 Accordion，一种分两步工作的证明系统。第一步 Accumulate 是多折叠方案，能把 k 个度数为 d 的多项式关系实例高效累积成单个实例，且不使用递归；它建立在 Protostar 与 Protogalaxy 一线上，进一步提升验证者效率，并支持任意度数多项式约束，从而可用于 CCS、Plonkish 约束乃至自定义门。第二步 Decide 是该折叠方案的 SNARK 判定器，用现成优化构件高效证明累积实例的有效性；具体实例化由基于 Plonk 的证明外加一次 KZG 多项式承诺打开组成。该设计尤其适合批量聚合：证明者收集多个独立见证，折成一个累加器，再跑一次简洁判定器认证整批，从而避免昂贵的递归开销。实现并与高度优化的 Plonk 流水线 midnight-zk 对比后，当 k=64 时，Accordion 在 SHA-256 原像上最多比计算 k 个 Plonk 证明快 2.5 倍，验证快 3 倍，证明大小约为四分之一；其证明者也比用 IVC 聚合这 k 个证明快一个数量级。",
+      "abstractEn": "We present Accordion, a new proof system that works in two steps: Accumulate: The first building block is a multi-folding scheme that efficiently accumulates k different instances of a degree-d polynomial relation into a single accumulated instance, without using recursion. Our scheme builds on the Protostar (Bünz & Chen, ASIACRYPT '23) and Protogalaxy (Eagen & Gabizon, ePrint 2023/1106) line of work, improving further the verifier efficiency. It supports the same expressive class of relations, arbitrary-degree polynomial constraints, enabling efficient folding for CCS, Plonkish constraints, and even custom gates. Decide: The second block is a SNARK decider for the folding scheme, which efficiently proves the validity of the resulting accumulated instance using off-the-shelf optimized building blocks. We give a concrete instantiation consisting of a Plonk-based proof plus an additional KZG polynomial commitment opening. This design is especially attractive in batch-aggregation settings where a prover collects many independent witnesses, folds them into a single accumulator, and then runs one succinct decider to certify the entire batch. Our scheme avoids costly recursion overheads. We implement Accordion and evaluate it against a highly optimized Plonk proving pipeline (midnight-zk). For k=64 instances, Accordion is up to 2.5× faster than computing k Plonk proofs for SHA-256 preimages, with a 3× faster verifier and 4× smaller proofs. Its prover is also an order of magnitude faster than using IVC to aggregate the k proofs.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "折叠",
+        "SNARK",
+        "批量证明",
+        "KZG"
+      ],
+      "url": "https://eprint.iacr.org/2026/2160",
+      "pdf": "https://eprint.iacr.org/2026/2160.pdf"
+    },
+    {
+      "id": "2026-2147",
+      "title": "ReedWeave: Faster Reed-Solomon Polynomial Commitments from Interleaving and Folding",
+      "authors": [
+        "Yuhao Jia",
+        "Zhe Li",
+        "Chaoping Xing",
+        "Yizhou Yao",
+        "Chen Yuan",
+        "Jielong Zhang"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把交织与折叠结合，加快 Reed-Solomon 多项式承诺，无 LLM，对象是证明系统。",
+      "abstract": "多项式承诺方案允许证明者承诺一个多项式，并随后简洁地证明其取值。在基于哈希的构造中，FRI 及其后续工作通过递归折叠 Reed-Solomon 码获得多对数证明，但前几轮折叠作用在最大码字上，具体求值开销仍然较高。ReedWeave 把度数为 d 的多项式分解为 m 个更小分量，并在公共域上承诺其 RS 编码；在该分解下，这些码字的随机线性组合恰好是一次 m 元折叠。方案先做 m 元折叠，再像 FRI 一样做标准二元折叠，从而在开头只需做交织 RS 编码而非标准 RS 编码，把常数码率下的证明者开销从 O(d log d) 降到 O(d log(d/m))，同时保持高效的多对数验证，并把底层域的光滑性要求放松 m 倍。作者在 Goldilocks 上用 32 线程、以 100 比特安全为目标做基准：当 d=2^24、ρ=1/4、m=64 时，DEEP 变体承诺 475.0 ms、打开 111.6 ms、验证 2.07 ms，证明 594.7 KiB。相对 FRI，承诺、打开与验证分别快 6.9、51.5 与 4.2 倍；相对 STIR 则分别快 2.9、68.5 与 2.1 倍。证明大小约为 FRI 的 0.69 倍、STIR 的 2.31 倍。",
+      "abstractEn": "Polynomial commitment schemes (PCSs) allow a prover to commit to a polynomial and later prove its evaluations succinctly. Among hash-based constructions, FRI (Ben-Sasson et al., ICALP 2018) and its follow-up works achieve polylogarithmic proofs by recursively folding Reed-Solomon (RS) codes. However, their concrete evaluation costs remain relatively high, as the first few folding rounds operate on the largest codewords and dominate the prover work. We present ReedWeave, a Reed-Solomon PCS that successfully incorporates interleaving with folding, achieving the best of the two worlds. ReedWeave decomposes a degree-d polynomial into m smaller components and commits to their RS encodings over a common domain. Under our novel decomposition, a random linear combination of these codewords is exactly an m-ary folding. At a high level, ReedWeave starts with an m-ary folding, followed by standard binary folding as in FRI. The prover costs are substantially reduced in the sense that at the very beginning it suffices to do interleaved-RS encoding rather than standard RS encoding. That is, we reduce prover costs from O(d log d) to O(d log(d/m)) for constant code rate while maintaining efficient polylogarithmic verification. Moreover, our approach essentially works for arbitrary m, relaxing the smoothness requirements of the underlying fields by a multiplicative factor of m. We benchmark our Rust implementation over Goldilocks using 32 threads and targeting 100-bit security. At d=2^24, rho=1/4, and m=64, the DEEP variant commits in 475.0 ms, opens in 111.6 ms, verifies in 2.07 ms, and produces a 594.7 KiB proof. Compared with FRI (ICALP 2018), commitment, opening, and verification are 6.9×, 51.5×, and 4.2× faster, respectively. Against STIR (CRYPTO 2024), the corresponding speedups are 2.9×, 68.5×, and 2.1×. Its proof is only 0.69× the size of FRI's and 2.31× that of STIR's.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "多项式承诺",
+        "FRI",
+        "Reed-Solomon",
+        "折叠"
+      ],
+      "url": "https://eprint.iacr.org/2026/2147",
+      "pdf": "https://eprint.iacr.org/2026/2147.pdf"
+    }
+  ]
+}
