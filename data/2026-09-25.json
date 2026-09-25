@@ -1,0 +1,303 @@
+{
+  "date": "2026-09-25",
+  "papers": [
+    {
+      "id": "2609.28996",
+      "title": "DistillGuard: Malicious NPM Package Detection and API Attack Chain Analysis via Static Graph and LLM Distillation",
+      "authors": [
+        "Siyuan Pang",
+        "Yepeng Yao",
+        "Zhengwei Jiang",
+        "Zijing Fan",
+        "Baoxu Liu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用静态图加 LLM 蒸馏检测恶意 NPM 包并归纳 API 攻击链，对象是 JavaScript 供应链。",
+      "abstract": "JavaScript 生态高度依赖 NPM 包，针对恶意 NPM 包的软件供应链攻击十分猖獗。恶意代码主要在安装、导入和运行时触发。传统静态分析难以理解代码语义；基于机器学习的方法依赖特征提取，容易概念漂移；现有大模型方案则存在调用成本高、数据安全风险大、效果不佳等问题。为此，作者提出轻量框架 DistillGuard，将静态图语义分析与大模型知识蒸馏结合。系统先用三个静态分析模块获取多粒度特征，再借助在线大模型蒸馏高质量安全知识与结构化标签，最后用 LoRA 高效微调开源 Qwen3-8B，以支持离线部署。实验显示 DistillGuard 准确率 95.3%、精确率 99.4%、F1 为 93.8%，优于现有工具，F1 较基线提升 11.1 至 30.0 个百分点。作者还归纳了恶意攻击阶段、行为分布，以及八类典型 API 攻击链，为 NPM 供应链防护提供实证参考。",
+      "abstractEn": "The this http URL ecosystem heavily relies on NPM packages, and software supply chain attacks targeting malicious NPM packages are rampant. Malicious code primarily triggers during package installation, import, and runtime. Traditional static analysis fails to understand code semantics; machine learning-based methods rely on feature extraction, which suffers from concept drift; existing LLM solutions suffer from high invocation costs, high data security risks, and poor performance. To overcome these limitations, we propose DistillGuard, a lightweight malicious NPM package detection framework that combines static graph semantic analysis and LLM knowledge distillation. DistillGuard first acquires multi-granular features through three static analysis modules. Then, it leverages online LLM to distill high-quality security knowledge and structured labels. Finally, it uses LoRa to efficiently fine-tune the open-source Qwen3-8B model to support offline deployment. Experiments show that DistillGuard achieves an accuracy of 95.3%, a precision of 99.4%, and an F1 score of 93.8%, outperforming state-of-the-art tools, improving the F1-score by 11.1 to 30.0 percentage points over the baselines. Our empirical research further reveals the stages of malicious attacks and the distribution of malicious behaviors. We also summarized eight typical API attack chains for malicious activities, providing practical insights for NPM supply chain security defense.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "NPM",
+        "供应链",
+        "知识蒸馏",
+        "恶意包检测"
+      ],
+      "url": "https://arxiv.org/abs/2609.28996",
+      "pdf": "https://arxiv.org/pdf/2609.28996"
+    },
+    {
+      "id": "2609.28586",
+      "title": "Agent Approval Laundering: Transitive Effects Beyond the Approved Invocation",
+      "authors": [
+        "Jinqian Zhang",
+        "Haojun Xia",
+        "Shujiang Wu",
+        "Jingkun Yue",
+        "Xia Zhang",
+        "Zhangpei Cheng",
+        "Bibo Tu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析编码智能体审批记录无法覆盖包安装与 MCP 传递副作用，对象是 IDE/CI 中的 coding agent。",
+      "abstract": "编码智能体的审批界面把人的决策绑定到一条命令或工具调用，而开发工具会继续执行该调用激活的传递工作流。例如包安装可能跑生命周期钩子并写文件，MCP 调用可能行使网络权限。作者把由此产生的记录覆盖失败称为审批洗白：持久记录只点名入口调用，却省略工作流实际行使的效果。本文首次系统分析智能体系统中这种记录与闭包关系，形式化六类效果上的闭包绑定审批，并给出信息论界限：仅看策略可见字段无法同时保证正确决策。Approval-to-Action Security Benchmark 把审批对象和决策时元数据绑定到执行后证据。在 111 组固定审批对象/轨迹上，仅用显式字段时残留记录为 40，加入命令语义后降至 17，再加决策时元数据降至 13。在 11 次固定 SHA 执行中，该阶梯可把元数据残留降到零；三种产品前端复现了两条精确映射。面向事前恢复时，效果绑定记录在授权前提交冻结的、有源码依据的预测与溯源。在 17 个预指定留出工作流上，预测宏召回 0.926、宏精确率 0.941；绑定后残留效果从 10 降到 3。Claude Code 的 PreToolUse 集成会把冻结记录带进权限路径，但不自动放行。结果表明，即便入口调用身份真实，审批洗白仍是可度量、反复出现的记录覆盖失败，应在授权前把每次调用绑定到对其传递效果边界的有源预测。",
+      "abstractEn": "Coding-agent approval interfaces bind a human decision to a command or tool call, while developer tools execute the transitive workflow that invocation activates. Package installation can run lifecycle hooks and write files; an MCP call can exercise network authority. We call the resulting record-coverage failure approval laundering: the durable record names the entry invocation but omits effects exercised by its workflow. We present the first systematic security analysis of this record-to-closure relation in agent systems. We formalize closure-bound approval over six effect classes and derive an information limit: identical policy-visible fields can require different effect-specific decisions, so no record-only policy can guarantee both. The Approval-to-Action Security Benchmark binds approval objects and decision-time metadata to post-execution evidence. Across 111 fixed approval-object/trace pairs, residual records fall from 40 under explicit fields to 17 with command semantics and 13 with decision-time metadata. Across 11 fixed-SHA executions, the ladder reaches zero metadata residuals; two exact mappings recur across three product frontends. For prospective recovery, effect-bound records commit frozen, source-backed predictions and provenance before authorization. On 17 prespecified holdout workflows, predictions achieve 0.926 macro recall and 0.941 macro precision; binding them cuts residual effects from 10 to 3. A Claude Code PreToolUse integration carries the frozen record through the permission path without automatic approval. These results establish approval laundering as a measurable, recurrent record-coverage failure despite truthful invocation identity. They motivate binding each invocation before authorization to a source-backed prediction of its workflow's transitive effect boundary and preserving that binding with the decision.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "审批绕过",
+        "编码智能体",
+        "MCP",
+        "供应链"
+      ],
+      "url": "https://arxiv.org/abs/2609.28586",
+      "pdf": "https://arxiv.org/pdf/2609.28586"
+    },
+    {
+      "id": "2609.28915",
+      "title": "On the Effectiveness of Kernel-Level Evidence for Agent Security",
+      "authors": [
+        "Spencer King",
+        "Zhilu Zhang",
+        "Mikhail Kuznetsov",
+        "Kay Liu",
+        "Baris Coskun",
+        "Wei Ding"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把应用层遥测与内核系统调用对照，评估智能体安全检测，对象是 Linux 主机上的 LLM agent。",
+      "abstract": "大模型智能体常被部署到拥有广泛主机权限的基础设施中，但现有智能体安全基准与防御几乎只看应用层遥测：工具清单、用户提示和模型消息。部分威胁会把恶意指令和动作偷运过应用边界，使该层看不见。本文将应用层智能体遥测与内核系统调用轨迹配对，首次刻画内核层信号相对应用层信号对智能体安全的价值。为量化增强遥测的收益，作者提出 Agent Cross-Layer Evidence（ACE）：4047 个会话、17 种威胁模型，覆盖六类投递向量和 OWASP LLM/智能体威胁目录中的 14/25 类，整理为 12 种攻击机制，并逐机制说明最具区分力的证据落在哪一层。在四类检测器上，内核证据本身就有区分力，与应用层组合后通常优于任一单层视角，能揭示单层分析会漏掉的互补信号。作者还展示了对未见攻击族的泛化，以及向另一种智能体运行时的迁移。这些发现确立了跨层证据对智能体安全的价值。",
+      "abstractEn": "LLM agents are deployed into infrastructure that grants them broad host authority, yet existing agent-security benchmarks and defenses operate almost exclusively at the application telemetry layer: the served tool manifest, the user prompt, and the model's messages. Some threats, however, smuggle malicious instructions and actions past the application boundary, leaving them invisible to that layer. In this work, we bridge that gap by pairing application-level agent telemetry with kernel-level syscall traces to present the first paired-evidence characterization of kernel-level versus application-layer signal for agent security. To quantify the value of the enhanced telemetry, we introduce Agent Cross-Layer Evidence (ACE), a paired-session corpus of 4,047 sessions and 17 threat models spanning six delivery-vector families and 14 of the 25 OWASP LLM and agentic threat categories, organized into 12 attack mechanics with per-mechanic characterization of where the most discriminative evidence lies. Across four distinct detector families, we find that kernel evidence is discriminative on its own and that composing it with application-layer evidence generally outperforms either single-layer view, revealing complementary signals that single-layer analyses can miss. We further demonstrate generalization to unseen attack families and transfer to an alternate agent runtime. Together, these findings establish the value of cross-layer evidence for agent security.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "内核取证",
+        "智能体安全",
+        "系统调用",
+        "跨层检测"
+      ],
+      "url": "https://arxiv.org/abs/2609.28915",
+      "pdf": "https://arxiv.org/pdf/2609.28915"
+    },
+    {
+      "id": "2609.30266",
+      "title": "LLM Agents Can Easily Tamper With Their Own Traces",
+      "authors": [
+        "Jeremy Qin",
+        "David Schmotz",
+        "Derck Prinzhorn",
+        "Luca Beurer-Kellner",
+        "Ameya Prabhu",
+        "Maksym Andriushchenko"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "验证本地编码智能体能否篡改自身执行轨迹，导致审计失效，对象是 Claude Code / Codex 等 harness。",
+      "abstract": "异步监控、事件调查和合规审计主要依赖智能体轨迹来还原发生了什么，并默认大模型智能体无法篡改自己的执行轨迹。作者表明，Claude Code、Codex、Antigravity、Open Code 和 Grok Build 等本地智能体并未强制这一边界。除 Muse Code 外，所有受测 harness 都允许智能体在被要求时删除轨迹，且不会触发监控护栏。外部攻击者也可利用这一缺口诱导删除轨迹。此外，当前沿模型试图提高自身奖励时，篡改轨迹的行为会自然出现。作者建议通过独立于智能体控制之外的拦截机制记录轨迹，即使主机被完全攻陷也应保持轨迹完整性。总体而言，这项工作指出了智能体基础设施中具体的轨迹完整性失败，可被用来掩盖谋划或破坏等失配行为。",
+      "abstractEn": "Asynchronous monitoring, incident investigations, and compliance audits primarily rely on agent traces to reconstruct what happened. These analyses assume that LLM agents cannot tamper with their own execution traces. We show that local LLM agents such as Claude Code, Codex, Antigravity, Open Code and Grok Build fail to enforce this boundary. All tested harnesses, except Muse Code, allowed agents to delete their traces when asked, without triggering monitor guardrails. We also validate that external attackers can exploit this gap to induce trace deletion. Finally, we show that trace tampering behavior emerges naturally in frontier models, when agents try to improve their rewards. We advise practitioners to ensure trace logging happens through an independent interception mechanism outside of the agent's control, preserving trace integrity even in cases of full host compromise. Overall, our findings identify a concrete failure of trace integrity in agent infrastructure which can be used to conceal misaligned behaviors like scheming or sabotage.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "审计轨迹",
+        "编码智能体",
+        "完整性",
+        "护栏绕过"
+      ],
+      "url": "https://arxiv.org/abs/2609.30266",
+      "pdf": "https://arxiv.org/pdf/2609.30266"
+    },
+    {
+      "id": "2609.29454",
+      "title": "Demystifying Agent Skills for Smart Contract Auditing: Design, Effectiveness, Behavioral Impact",
+      "authors": [
+        "Cuifeng Gao",
+        "Juantao Zhong",
+        "Jiachi Chen",
+        "Shuai Wang",
+        "Daoyuan Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "收集并评测 83 个智能合约审计 skill 对 LLM agent 漏洞检测的影响，对象是 EVM 合约。",
+      "abstract": "以 Claude Code 和 OpenAI Codex 为代表的大模型智能体已不只是编码助手，还可通过 skill（封装领域知识、工作流和工具用法的可复用构件）增强。目前人们对这类 skill 如何设计、以及它们如何影响智能体效果与行为仍知之甚少。本文在智能合约安全审计这一已显示潜力的场景中系统研究这些问题：从野外收集 83 个合约审计 skill，并在 EVMBench 上对七种智能体—模型配置评测。研究覆盖三方面：审计 skill 的设计特征（结构、知识表示、工作流与工具依赖）；它们对漏洞检测效果的提升；以及对智能体执行轨迹的影响。结果显示 skill 大多轻量但设计异构，覆盖的漏洞类型广而不均衡。效果主要由模型而非 harness 决定：Codex/GPT-5.5 提升最大，检测分数提高 22.8%，捕获奖金提高 43.2%。skill 触发是关键瓶颈；一旦触发，它们会保持共享的六阶段审计工作流，但在不同配置下呈现不同加载模式并对行为产生差异化影响。作者公开了 skill 语料与工件。",
+      "abstractEn": "LLM agents, notably Claude Code and OpenAI Codex, are emerging as versatile tools beyond coding agents only. These agents can be enhanced with skills---reusable artifacts that package domain knowledge, workflows, and tool-use instructions. To date, however, little is known about how such skills are designed or how they affect agent effectiveness and behavior in practice. In this paper, we investigate these questions in smart contract security auditing, a domain in which agents have shown substantial promise. We systematically collect 83 smart contract audit skills from the wild and evaluate them on EVMBench across seven agent--model configurations. Our study examines three dimensions: (i) the design characteristics of audit skills, including their structure, knowledge representations, workflows, and tool dependencies; (ii) their effectiveness in improving vulnerability detection; and (iii) their influence on agent execution trajectories. We find that audit skills are mostly lightweight but heterogeneous in design, covering a broad yet imbalanced range of vulnerability types. Their effectiveness is determined primarily by the model rather than the agent harness: Codex/GPT-5.5 achieves the largest gains, improving detection score by 22.8% and captured award by 43.2%. We further find that skill triggering is a key bottleneck. When triggered, skills preserve a shared six-stage audit workflow while exhibiting distinct loading patterns and differential effects on agent behavior across configurations. We release our skill corpus and artifacts to support future research.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约审计",
+        "Agent Skill",
+        "漏洞检测",
+        "EVM"
+      ],
+      "url": "https://arxiv.org/abs/2609.29454",
+      "pdf": "https://arxiv.org/pdf/2609.29454"
+    },
+    {
+      "id": "2609.29975",
+      "title": "Sluice: Global Invariant, Local Enforcement for Pooled Payment-Channel Liquidity",
+      "authors": [
+        "Yueqi Wu",
+        "Huiping Sun",
+        "Peilu Guo",
+        "Yiming Zhu",
+        "Zhong Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为闪电网络路由节点设计可本地执行的全局流动性不变量，无 LLM，对象是支付通道。",
+      "abstract": "闪电网络上的路由节点把流动性分散在多条通道中，因此一条出站余额耗尽的通道会使支付失败，即便该节点其他通道仍有余额。把通道汇成一个储备只能在所有通道的提取合计不超过储备时成立：这是一个全局不变量，每个对手方必须仅凭自己的通道来执行，而链下提取又没有可共享更新的计数器。节点因此只能预先把储备拆成每通道配额，或每次提取都与所有对手方协调。在三份闪电网络快照上，预先拆分会丢掉相对未汇集通道 16% 到 67% 的汇集收益，且损失随通道数增加。Sluice 用嵌套预留挽回其中 19% 到 65%：每条通道保留对手方可单独检查的独占基数，其余作为共享溢出，需该节点对手方按容量加权的法定人数证书才能提取。两份冲突证书会共享一名诚实签名者，因而在所述节点控制签名集合容量的界限下，无需可罚没质押即可防止超额提取。Sluice 因协调最多损失 1.3 个百分点的支付成功率，而已部署的资金搬运方案最多损失 10.3；叠加上去后在十二个单元中的十一个更好。每轮重建全部基数输出的链上字节是闪电网络的 2.8 到 5.1 倍；只重建溢出过的输出则为 0.5 到 1.2 倍，并保留部分收益。",
+      "abstractEn": "A routing node on the Lightning Network holds its liquidity in separate channels, so a payment can fail at a channel whose outbound balance is exhausted while the node's other channels still hold balance. Pooling the channels into one reserve fixes this only if the node's draws across all channels stay within the reserve: a global invariant that each counterparty must enforce from its own channel, with no shared counter that off-chain draws can update. A node must therefore split the reserve into per-channel quotas in advance or coordinate every draw with every counterparty. On three Lightning snapshots the advance split forfeits 16 to 67% of the pooling gain over unpooled channels, and the loss grows with channel count. Sluice recovers 19 to 65% of that loss with a nested reservation: each channel keeps an exclusive base that its counterparty checks alone, and the rest is a shared overflow drawn on with certificates from a capacity-weighted quorum of the node's counterparties. Two conflicting certificates share an honest signer, so over-drawing is prevented without a slashable stake, under a stated bound on the capacity the node controls in the signing set. Sluice loses at most 1.3 points of payment success to coordination where deployed coin movers lose up to 10.3, and improves them in eleven of twelve cells when stacked on them. Re-creating every base output each epoch costs 2.8 to 5.1 times Lightning's on-chain bytes; re-creating only those that overflowed costs 0.5 to 1.2 times and keeps part of the gain.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "闪电网络",
+        "支付通道",
+        "流动性",
+        "不变量"
+      ],
+      "url": "https://arxiv.org/abs/2609.29975",
+      "pdf": "https://arxiv.org/pdf/2609.29975"
+    },
+    {
+      "id": "2609.29222",
+      "title": "Security Limits of Mining Before Validation in Nakamoto Consensus",
+      "authors": [
+        "Yifan Zhou",
+        "Jiang Xiao",
+        "Kaihua Qin"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "量化先挖后验对中本聪共识安全阈值的影响，无 LLM，对象是工作量证明链。",
+      "abstract": "先挖后验允许矿工在完成有效性检查前就在新收到的区块上继续挖下一个块，从而在争夺下一笔区块奖励时抢跑。但这种抢跑带来安全风险：拒绝一个无效块也会丢掉建在其上的诚实算力，而把验证当成瞬时过程时会忽略这一效应。作者在带有界网络延迟、且验证时间上界与处理负载无关的中本聪共识模型中量化该风险。他们给出对抗算力的显式阈值：低于该阈值时，诚实矿工经充分验证的链会持续增长，并在任意固定观察期内以高概率对稳定历史达成一致。他们还构造一种反复把诚实挖矿吸引到无效分叉上的攻击。当对手在允许的验证时间内平均能产出超过一个块时，该攻击最终可在任意固定初始确认深度上移除目标块。再与普通私有挖矿结合，在每个诚实矿工算力可忽略的完全去中心化体制下，该攻击给出匹配的渐近界。结果表明，除网络延迟外，验证时延本身也会限制先挖后验的安全性。",
+      "abstractEn": "Mining before validation allows miners to extend a newly received block before completing its validity checks, giving them a head start in the race for the next block reward. This head start, however, comes with a security risk: rejecting one invalid block also discards the honest work built on it, an effect missed when validation is treated as instantaneous. We quantify this risk in a model of Nakamoto consensus with bounded network delay and a validation-time bound independent of processing load. We establish an explicit threshold on adversarial mining power below which honest miners' fully validated chains continue to grow and agree on a stable history with high probability over any fixed observation period. We also construct an attack that repeatedly draws honest mining onto invalid branches. When the adversary produces more than one block on average during the allowed validation time, the attack can eventually remove a target block at any fixed initial confirmation depth. Combined with ordinary private mining, this attack yields a matching asymptotic bound in the fully decentralized regime, where each honest miner has negligible mining power. The results show how validation latency limits the security of mining before validation, beyond the constraint imposed by network delay.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "中本聪共识",
+        "验证时延",
+        "挖矿攻击",
+        "确认深度"
+      ],
+      "url": "https://arxiv.org/abs/2609.29222",
+      "pdf": "https://arxiv.org/pdf/2609.29222"
+    },
+    {
+      "id": "2609.30163",
+      "title": "Steelhead: Interleaving Partially Synchronous and Asynchronous Commit Rules on a Shared DAG",
+      "authors": [
+        "George Danezis",
+        "Zeno De Angeli",
+        "Philipp Jovanovic",
+        "Lefteris Kokoris-Kogias",
+        "Markus Legner",
+        "Alberto Sonnino"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在共享 DAG 上交错部分同步与异步提交规则，无 LLM，对象是 BFT 共识。",
+      "abstract": "双模式共识协议在网络部分同步时很快，在异步下仍保持活性。Steelhead 在同一 DAG 上组合部分同步与异步提交规则：每第 k 轮由异步规则决定，其领导者由投票后的公共硬币揭示，其余轮由部分同步规则决定。每隔一段时间，验证者在各候选周期下重放已提交 DAG，采用期望消息延迟最少的周期，并在输出停滞时回退到 k=1；仅对硬币轮应用异步规则即可保持活性。Steelhead 除 DAG 区块外不发送任何消息，甚至不为周期达成一致，且只在需要隐藏领导者的轮次打开硬币。它对共享委员会的 DAG 提交规则对通用；作者在 n≥3f+1 下用 Mysticeti 与 Mahi-Mahi 实例化，并在 n≥5f+1 下用 BlueBottle 的两个变体实例化。他们证明了安全性与活性，并在 Lean 4 中给出机械化证明。仿真显示，健康网络中 Steelhead 匹配部分同步协议，部分同步规则停滞时接近异步协议，并能在两个方向上快速适应。",
+      "abstractEn": "Dual-mode consensus protocols are fast when the network is partially synchronous and remain live under asynchrony. We introduce Steelhead, a dual-mode mechanism that composes a partially synchronous and an asynchronous commit rule over one DAG: every k-th round is decided by the asynchronous rule, whose leader a common coin reveals after the votes, and all other rounds by the partially synchronous rule. Every interval, validators replay the committed DAG under each candidate period, adopt the one with the fewest expected message delays, and fall back to k = 1 when the output stalls; the asynchronous rule applied to the coin rounds alone keeps the protocol live. Steelhead sends no message beyond the DAG's blocks, not even to agree on the period, and opens a coin only on the rounds that need a hidden leader. It is generic over pairs of DAG commit rules that share a committee; we instantiate it with Mysticeti and Mahi-Mahi at n >= 3f+1 and with the two variants of BlueBottle at n >= 5f+1. We prove it safe and live, and provide mechanized proofs in Lean 4. In simulation, Steelhead matches the partially synchronous protocol in a healthy network, stays close to the asynchronous one when network conditions stall the partially synchronous one, and adapts quickly in both directions.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DAG共识",
+        "BFT",
+        "异步",
+        "Lean"
+      ],
+      "url": "https://arxiv.org/abs/2609.30163",
+      "pdf": "https://arxiv.org/pdf/2609.30163"
+    },
+    {
+      "id": "2026-2100",
+      "title": "Garbling Groth16 with Native Group Operations",
+      "authors": [
+        "Nakul Khambhati",
+        "Aaron Feickert",
+        "Christian Lewe",
+        "Mukesh Tiwari"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用原生椭圆曲线运算混淆 Groth16 验证，服务比特币桥等信任最小化场景，无 LLM。",
+      "abstract": "Groth16 验证方程的代数描述很紧凑，但其布尔实现的混淆可能需要数十 GB。作者展示如何用原生椭圆曲线群运算来混淆这一计算。受比特币桥等信任最小化场景中证明验证的启发，他们为无效 Groth16 证明构造投影部分混淆方案，用于条件披露：在固定验证密钥与公开陈述下，若所给证明无效则揭示混淆者持有的秘密，若有效则隐藏该秘密；证明本身保持公开。主要技术难点是处理两个自变量都由求值者提供的配对。他们引入重密钥小工具，仅用一次私有标量乘法解决该问题。基于 Argo MAC、BABE 与 Duty-Free Bits，他们证明跨输入表示的部分混淆组合定理，并把群编码变换为按位投影编码，同时把 Duty-Free Bits 的投影化技术扩展到二次扩域。所得混淆程序大小为 O(λ²) 比特。隐私在随机预言机模型下由判定性 Diffie-Hellman 假设保证。BN254 实现（含投影化）产生 2.4 MiB 混淆程序，而 Groth16 的布尔混淆据报为 48 GB，提升超过四个数量级。",
+      "abstractEn": "The Groth16 verification equation has a compact algebraic description, yet garbling its Boolean implementation can require tens of gigabytes. We show how to garble this computation using native elliptic-curve group operations. Motivated by proof verification in trust-minimized Bitcoin bridges, we construct a projective partial garbling scheme for conditional disclosure on invalid Groth16 proofs. For a fixed verification key and public statement, evaluation reveals a garbler-held secret when the supplied proof is invalid and hides the secret when it is valid. The proof itself remains public. The main technical challenge is handling a pairing whose two arguments are supplied by the evaluator. We introduce a rekeying gadget that resolves this using a single private scalar multiplication. Building on Argo MAC (Eagen and Lai, 2026), BABE (Garg et al., 2026), and Duty-Free Bits (Khambhati et al., 2026), we prove a composition theorem for partial garbling across input representations and apply it to transform group encodings into bitwise projective encodings. This requires extending the projectivization technique of Duty-Free Bits to quadratic extension fields. The resulting garbled program has size O(λ²) bits, where λ is the computational security parameter. We prove privacy under the decisional Diffie-Hellman assumption, in the random oracle model. Our BN254 implementation produces a 2.4 MiB garbled program, including projectivization, compared with the 48 GB reported for Boolean garbling of Groth16. Thus, we improve over prior state of the art in Groth16 garbling by over four orders of magnitude.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Groth16",
+        "跨链桥",
+        "混淆电路",
+        "zk"
+      ],
+      "url": "https://eprint.iacr.org/2026/2100",
+      "pdf": "https://eprint.iacr.org/2026/2100.pdf"
+    },
+    {
+      "id": "2026-2138",
+      "title": "DASH: Distributed Asynchronous Schnorr with High Throughput",
+      "authors": [
+        "Jiawei Ni",
+        "Yanhong Xu",
+        "Chen Yuan",
+        "Hongqing Liu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "改进异步阈值 Schnorr 的计算瓶颈，无 LLM，对象是钱包/MPC 阈值签名。",
+      "abstract": "鲁棒异步阈值 Schnorr 签名让诚实方在恶意行为和网络延迟下仍能完成签名。为降低在线延迟，这类方案通常采用离线—在线范式：各方在离线阶段批量准备共享随机数，在线阶段消耗它们生成签名。高吞吐构造如 SPRINT 用超可逆矩阵从一次随机数生成中提取多个随机数及其承诺，但相关群运算计算开销很大。作者针对 SPRINT 的计算瓶颈提出 DASH，一组鲁棒异步阈值 Schnorr 协议，在保持摊销线性通信代价的同时显著提高计算效率。贡献有三：第一，把随机数提取中的群运算分配给各方，使每方每签名的摊销计算从 O(log n) 降到 O(1) 次群运算，并通过批处理让每个分发者同时分发 L 个随机数多项式。第二，提出高效的批量份额验证，联合检查全部 L 个多项式的份额，具体参数下可将份额验证加速 40 到 60 倍，并给出一种基于玩家淘汰的简单共识协议。第三，在更强诚实多数假设下，设计打包的两阶段在线重构协议，用纠错重构签名，从而省去签名份额验证以及 SPRINT 聚合者昂贵的群运算。在 L ≫ n log n 时，即使最坏情况也保持相同的摊销计算与通信渐近代价。",
+      "abstractEn": "Robust asynchronous threshold Schnorr signatures enable honest parties to complete signing despite malicious behavior and network delays. To reduce online latency, these schemes typically follow an offline–online paradigm. The parties prepare batches of shared nonces in the offline phase and consume them to generate signatures online. In high-throughput constructions such as SPRINT (Benhamouda et al. Eurocrypt 2024), super-invertible matrices are used to extract multiple nonces and their corresponding commitments from a single execution of the nonce-generation protocol. However, the associated group operations incur substantial computational overhead. We identify several computational bottlenecks in SPRINT and present DASH, a suite of robust asynchronous threshold Schnorr signature protocols that substantially improve computational efficiency while retaining SPRINT’s amortized linear communication cost. Our contributions are threefold. First, we propose distributing the group computations involved in nonce extraction among the parties. This reduces the amortized computational cost from O(log n) to O(1) group operations per signature per party. To enable this distributed computation, we employ a batching technique that allows each dealer to distribute L nonce polynomials simultaneously. Second, we introduce an efficient batched share-verification procedure that jointly checks shares of all L polynomials. For concrete parameters, this can accelerate share verification by a factor of 40-60. We also introduce a simple agreement protocol via player elimination, which could be of independent interest. Finally, under a stronger honest-majority assumption, we develop a packed two-stage online reconstruction protocol that enables parties to reconstruct signatures through error correction. This eliminates the need for signature-share verification, and consequently, avoids the expensive group operations performed by the aggregator in SPRINT. Surprisingly, even in the worst case, our DASH protocols preserve the same asymptotic amortized computation and communication costs, provided that L ≫ n log n.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "阈值签名",
+        "Schnorr",
+        "异步",
+        "钱包"
+      ],
+      "url": "https://eprint.iacr.org/2026/2138",
+      "pdf": "https://eprint.iacr.org/2026/2138.pdf"
+    },
+    {
+      "id": "2026-2142",
+      "title": "PRAWNS: Threshold Hash-Based Signatures from Threshold PRFs",
+      "authors": [
+        "Dan Boneh",
+        "Benedikt Bünz",
+        "Justin D.",
+        "Yavor Litchev",
+        "Kamilla Nazirkhanova"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用阈值伪随机函数构造与普通哈希签名格式相同的阈值方案，无 LLM，对象是钱包/阈值签名。",
+      "abstract": "作者提出一种适合部分哈希签名方案的高效阈值机制，具有若干特点。由法定人数份额组装出的最终签名与非阈值哈希签名格式相同，验证者无法察觉签名者已被阈值化；而且可以增减参与方、改变阈值而不改公钥。该框架可用于阈值化 Winternitz 等一次签名，以及 XMSS、HORS、FORS、PORS+FP 等少次方案。公钥与签名不泄露参与方数量 n 或阈值 t。框架的一种实例化可扩展到较大的 n 与 t。局限是不支持高效分布式密钥生成，也不能直接用于 SLH-DSA，主要面向 Winternitz、XMSS 与 FORS。",
+      "abstractEn": "We propose an efficient threshold mechanism that is well suited for certain hash-based signatures. Our proposal has a number of compelling features: The final signature assembled from a quorum of signature shares has the same format as a non-threshold hash-based signature. In particular, the verifier is unaware that the signer is thresholdized. Moreover, we can add and remove parties and change the threshold without changing the public key. Our framework can be used to thresholdize one-time signature schemes, such as Winternitz, and a few-time schemes, such as XMSS, HORS, FORS, and PORS+FP. The public key and the signatures reveal nothing about the number of parties n or the threshold t. An instantiation of our framework scales well to a large number of parties n and a large threshold t. One limitation of the framework is that it does not support an efficient distributed key generation protocol (DKG). Another limitation is that the framework does not directly apply to SLH-DSA. It is primarily designed for the Winternitz, XMSS, and FORS schemes.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "阈值签名",
+        "哈希签名",
+        "XMSS",
+        "钱包"
+      ],
+      "url": "https://eprint.iacr.org/2026/2142",
+      "pdf": "https://eprint.iacr.org/2026/2142.pdf"
+    }
+  ]
+}
