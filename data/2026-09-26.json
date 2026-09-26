@@ -1,0 +1,258 @@
+{
+  "date": "2026-09-26",
+  "papers": [
+    {
+      "id": "2609.24710",
+      "title": "Reasoning Topology Matters: A Controlled Study of LLM-Based Cybersecurity Analysis",
+      "authors": [
+        "Jiling Zhou",
+        "Aisvarya Adeseye",
+        "Antti Hakkala",
+        "Seppo Virtanen",
+        "Jouni Isoaho"
+      ],
+      "year": 2026,
+      "venue": "AIAIS 2027",
+      "abstractOneWord": "比较线性、分支与图三种推理拓扑对 LLM 网络安全分析的影响，对象是 ATT&CK 流量、威胁情报和 CVE。",
+      "abstract": "大模型正越来越多地用于网络安全分析，这类任务往往需要在复杂、异构的数据上做多步且依赖上下文的推理。现有提示方法多强调把推理过程「挤出来」，却很少显式考虑中间推理步骤应如何组织。本文提出安全推理拓扑，用线性、分支和图三种代表性结构来刻画推理过程，并在保持任务输入一致、仅通过系统级提示控制推理结构的条件下，在 MITRE ATT&CK 网络流量、网络威胁情报（CTI）和 CVE 漏洞分析三组数据上做对照实验。评测覆盖 Llama 2（7B/13B/70B）、GPT-5.1 和 Mistral Large 3。结果表明推理拓扑会显著影响效果：图推理整体准确率最高，相对少样本提示在各数据集上提升 9.8 至 12.2 个百分点，分支结构则是较强的中间方案。该效应在不同模型族和规模上保持一致，说明推理拓扑是基于大模型的网络安全分析中一项重要设计因素。",
+      "abstractEn": "Large Language Models (LLMs) are increasingly used in cybersecurity, where accurate analysis often requires multi-step and context-dependent reasoning over complex and heterogeneous data. However, existing prompting approaches typically focus on eliciting reasoning without explicitly considering how intermediate reasoning steps are structurally organized. We introduce Security Reasoning Topology, which models reasoning through three representative structures: Linear, Branching, and Graph. To evaluate their effects, we conduct controlled experiments on three cybersecurity datasets covering MITRE ATT&CK network traffic, cyber threat intelligence (CTI), and CVE vulnerability analysis. We evaluate multiple LLMs, including Llama 2 (7B, 13B, 70B), GPT-5.1, and Mistral Large 3, while keeping task inputs consistent and controlling reasoning structure through system-level prompting. Results show that reasoning topology substantially affects performance: Graph reasoning achieves the highest overall accuracy, improving over few-shot prompting by 9.8-12.2 percentage points across datasets, while Branching provides a strong intermediate solution. The results further show that the effect of reasoning topology remains consistent across model families and scales, highlighting reasoning topology as an important design factor for LLM-based cybersecurity analysis.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CVE分析",
+        "推理拓扑",
+        "威胁情报",
+        "提示结构"
+      ],
+      "url": "https://arxiv.org/abs/2609.24710",
+      "pdf": "https://arxiv.org/pdf/2609.24710"
+    },
+    {
+      "id": "2609.28572",
+      "title": "Where Cyber Agents Struggle: Bottleneck Analysis of Multi-Stage LLM Agents",
+      "authors": [
+        "Saeedeh Lohrasbi",
+        "Mohammad Mamun",
+        "Ahmed Yehia",
+        "Scott Buffett",
+        "Sherif Saad"
+      ],
+      "year": 2026,
+      "venue": "FPS 2026",
+      "abstractOneWord": "诊断多阶段 LLM 网络攻击智能体在企业横向移动中的瓶颈与验证器偏差，对象是企业内网场景。",
+      "abstract": "多阶段大模型网络智能体即使能跑完攻击流程，仍可能脆弱、昂贵，或依赖对执行证据的错误解读。仅看成功率会掩盖低效、靠重试硬撑，以及分不清成败等问题。本文对一套由编排器、执行器和验证器三个大模型组成的自主对手系统做端到端诊断，场景是类企业环境中的横向移动。六个前沿模型在两个场景、三种模式（专家预定义、自搭建脚手架、完全自主）下评测。作者检查验证器一致性与证据接地，提出按子任务条件、并计入异常 token 消耗、重试和运行时间的代价感知分数，再用对比式 LLM-as-a-Judge 归纳规划缺陷，包括工具错配、计划雷同、过度规定、探测不足和恢复能力弱。验证器通常相关且有证据支撑，但往往不够具体且过于乐观。瓶颈集中在凭据获取和横向移动，并随场景复杂度扩散，在完全自主模式下波动更大。可靠评估必须同时看结果、证据解读、资源消耗，以及失败后的适应。",
+      "abstractEn": "Multi-stage LLM-based cyber agents may complete attack workflows while remaining brittle, costly, or reliant on incorrect interpretations of execution evidence. Success rates alone obscure inefficiency, adaptation through retries, and recognition of success or failure. We present an end-to-end diagnostic study of an Autonomous Adversary system with orchestrator, executor, and validator LLMs in enterprise-like lateral-movement scenarios. Six frontier models are evaluated across two scenarios and three modes: expert-defined, self-scaffolded, and fully autonomous. We assess validator consistency and evidence grounding; introduce a subtask-conditioned, cost-aware score for abnormal token use, retries, and runtime; and use comparative LLM-as-a-Judge analysis to identify planning deficiencies, including tool misalignment, plan similarity, over-specification, inadequate probing, and weak recovery. Validators are generally relevant and evidence-grounded but often nonspecific and overly optimistic. Bottlenecks cluster in credential and lateral-movement tasks, spread with scenario complexity, and vary more under full autonomy. Reliable evaluation must assess outcomes, evidence interpretation, resource use, and adaptation after failure.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "渗透测试",
+        "横向移动",
+        "多智能体",
+        "验证器"
+      ],
+      "url": "https://arxiv.org/abs/2609.28572",
+      "pdf": "https://arxiv.org/pdf/2609.28572"
+    },
+    {
+      "id": "2609.28940",
+      "title": "Calibrated Decision Models for Autonomous Penetration-Testing Harnesses: JEV and Laya as System One Decision Layers for LLM-Driven Pentest Agents",
+      "authors": [
+        "Joas Antonio dos Santos Barbosa"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用轻量校准分类器给 LLM 渗透测试智能体做发现裁定和严重级别校正，对象是 Web 应用。",
+      "abstract": "自主渗透测试框架用大模型做侦察、利用和报告，却常常还靠同一批模型确认发现、评定严重级别并选择智能体，容易产生误报、严重级别虚高和算力浪费。本文讨论 System One 决策模型——返回带类型、经过校准判决的轻量非生成式分类器——如何支撑这些决策。贡献有五点。第一，定义四个决策点：发现裁定、严重级别重校准、智能体裁剪和确认循环。第二，给出探索性 NeuroSploit 案例：在含 13 个漏洞的 Web 目标上，比较接入 TypeSafe System One（Jev）与不接入的各一次运行；严重级别分布、运行时间和按暴露数据类型的评分差异可支撑架构动机，但尚不足以建立统计显著性。第三，综述 Jev、Jev-Ultrafast 和开源 Laya 的已发表规格，且不假设其他基准上的结果能直接迁移到渗透测试。第四，讨论 RLHF、RLAIF、RLCD 和 RLHV 等训练路径对安全决策可信度的含义。最后提出面向该领域的 System One 模型 Rave，并勾勒其训练数据、评估协议及对框架保证的潜在影响。",
+      "abstractEn": "Autonomous penetration-testing harnesses use large language models (LLMs) for reconnaissance, exploitation, and reporting, but often rely on those same models to confirm findings, grade severity, and select agents. This can lead to false positives, inflated severity, and wasted compute. We examine how System One decision models, lightweight non-generative classifiers that return typed, calibrated verdicts, can support these decisions. We make five contributions. First, we define four decision points: finding adjudication, severity recalibration, agent pruning, and confirmation loops. Second, we present an exploratory NeuroSploit case study comparing one run with TypeSafe System One (Jev) and one without it against a web target containing 13 vulnerabilities. Differences in severity distribution, runtime, and grading by exposed data type motivate the architecture but do not establish statistical significance. Third, we review published specifications for Jev, Jev-Ultrafast, and the open-source Laya without assuming that results from other benchmarks transfer to penetration testing. Fourth, we discuss RLHF, RLAIF, RLCD, and RLHV as training approaches and their implications for trust in security decisions. Finally, we propose Rave, a domain-adapted System One model, and outline its training data, evaluation protocol, and potential effect on harness assurance.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "渗透测试",
+        "误报过滤",
+        "严重级别",
+        "决策模型"
+      ],
+      "url": "https://arxiv.org/abs/2609.28940",
+      "pdf": "https://arxiv.org/pdf/2609.28940"
+    },
+    {
+      "id": "2026-2176",
+      "title": "Budgeted Threshold Signatures: Protocol-Native Spending Limits with Zero On-Chain Footprint",
+      "authors": [
+        "Huaifeng Chen",
+        "Yuchang Zhang",
+        "Yu Cheng"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把每周期支出限额秘密分享并在门限签名会话内强制执行，对象是托管钱包，无 LLM。",
+      "abstract": "支出限额是托管策略的主力，但在现有门限签名栈里，限额都放在签名协议之外：中心化策略引擎、链上契约或硬件共签者。这些做法会泄漏预算状态、绑定单一链，或增加可被绕过的信任面。工作负载还在加重：智能体支付已在单链上于一年内超过一亿笔转账。本文研究协议内生的支出限额：把每周期预算在签名者之间秘密分享，并在签名会话内强制执行，链上验证保持不变。作者首先证明朴素做法会失败：用被动安全的 MPC 比较去门控门限签名，会留下确定性绕过。对一类线性门控组合协议，他们证明每个成员都会以概率 1 签出超预算交易，并且对任何抄本审计方都伪装到统计掩码界。随后构造预算门限 Schnorr 方案 BTS，并为诚实多数设定给出形式化的预算可靠性定义。缺口由认证门补上：实现里每次攻击尝试都会在产生签名前被抓住，测得代价约为 3.4–3.7 倍乘法加五轮额外交互。在 k=20 笔支付上批处理后，按作者的广域网原型，强制执行可摊销到大约每笔一次网络往返。",
+      "abstractEn": "Spending limits are the workhorse of custody policy, yet in every deployed threshold-signing stack they live outside the signing protocol—in centralized policy engines, on-chain covenants, or hardware co-signers—where they leak budget state, bind to a single chain, or add a trusted bypass surface. The workload is compounding: agent payments passed one hundred million transfers on a single chain in under a year. We initiate the study of protocol-native spending limits: per-epoch budgets secret-shared among the signers and enforced inside the signing session, with unchanged on-chain verification. We first show that the natural approach fails: gating a threshold signature with a passively secure MPC comparison admits a deterministic bypass. For the class of linear gatein-combination protocols we prove that every member signs over-budget transactions with probability one, disguised against any transcript auditor up to the statistical masking bound. We then construct BTS, a budgeted threshold Schnorr scheme with a formal budget-soundness definition for honest-majority configurations. The gap is closed with an authenticated gate: in implementation, every attack attempt is caught before a signature is produced, at a measured cost of 3.4–3.7× multiplications and five extra rounds. Batched over k=20 payments, enforcement amortizes to about one network round trip per payment in our WANmodeled prototype.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "托管钱包",
+        "支出限额",
+        "MPC"
+      ],
+      "url": "https://eprint.iacr.org/2026/2176",
+      "pdf": "https://eprint.iacr.org/2026/2176.pdf"
+    },
+    {
+      "id": "2026-2165",
+      "title": "Argo: Leaking a Secret from an Invalid Groth16 Proof",
+      "authors": [
+        "Liam Eagen",
+        "Ying Tong Lai"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "对无效 Groth16 证明做随机化编码，使任何人都能揭开秘密以在 Bitcoin 上乐观验证 SNARK，无 LLM。",
+      "abstract": "本文提出 Argo，一种针对 Groth16 这类配对 SNARK 之「无效性」的随机化编码。编码器把证明编码后，若证明无效，解码器就能导出一个秘密。作者在标准模型下、基于双线性配对一侧源群上的 DDH（Groth16 分析常用的通用群模型也成立的标准假设），证明无效性 Argo 的选择性安全和有效性 Argo 的适应性安全。再把无效性 Argo 与 Argo MAC 或 Duty-Free Bits 这类投影混淆方案耦合，可按证明比特构造 Groth16 无效性的混淆电路，并与 BitVM 结合，在 Bitcoin 上做成无需许可的乐观 Groth16 验证器：解码器通过公布秘密来证明证明无效，且解码器不必事先指定。用 BN254 实例化时，Argo 离线编码约 21 kB，比投影混淆方案小约一千倍，端到端协议规模也比现有基于 Yao 的方法小三个数量级以上。在笔记本上生成 Argo + Argo MAC 混淆电路只需数十毫秒，而 Yao 混淆电路需要数分钟。Argo 是首个让 Bitcoin 上无需许可的乐观 SNARK 验证变得实用的协议。",
+      "abstractEn": "We present Argo, a randomized encoding scheme for the invalidity of pairing-based SNARKs like Groth16. Argo allows an encoder to encode a proof such that a decoder can derive a secret if the proof is invalid. We prove the selective security of invalidity Argo, as well as the adaptive security of validity Argo, under DDH in one source group of a bilinear pairing in the standard model, a standard assumption that holds in the generic group model used to analyze Groth16. We show how to couple invalidity Argo with a projective garbling scheme like Argo MAC or Duty-Free Bits to construct a garbled circuit for Groth16 invalidity as a function of the proof bits, and how to use it with BitVM to construct a permissionless, optimistic Groth16 verifier for Bitcoin: a decoder proves a proof invalid by publishing a secret, and the decoder can be anyone, not necessarily known in advance. When instantiated with BN254, Argo has an offline encoding size of about 21 kB, a thousand times smaller than the projective garbling scheme, and an end-to-end protocol size more than three orders of magnitude smaller than existing Yao-based approaches. Generating an Argo + Argo MAC garbled circuit takes tens of milliseconds on a laptop, compared to minutes for a Yao GC. Argo is the first protocol that makes permissionless, optimistic SNARK verification on Bitcoin practical.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Groth16",
+        "Bitcoin",
+        "BitVM",
+        "SNARK验证"
+      ],
+      "url": "https://eprint.iacr.org/2026/2165",
+      "pdf": "https://eprint.iacr.org/2026/2165.pdf"
+    },
+    {
+      "id": "2026-2174",
+      "title": "Blind Spots in Blind Signatures: A System-Level Security Analysis of Deployed Chaumian Ecash",
+      "authors": [
+        "Huaifeng Chen",
+        "Yuchang Zhang",
+        "Yu Cheng"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "对已部署的 Cashu 盲签名电子现金做系统级安全分析并复现跨铸币盗窃，无 LLM。",
+      "abstract": "Cashu 是目前占主导的已部署 Chaum 电子现金系统，规范已有 31 份、索引铸币处 58 个、可互操作钱包 7 个，但密码学文献几乎只研究其盲签名核心。该系统短审计史上的每一起事故——包括 2026 年初披露的跨铸币盗窃——都是组合性的：来自密钥集轮换、钱包恢复和多铸币身份。本文给出已部署电子现金的首次系统级安全分析：五层模型、含三项新性质的九性质族，以及把伪造与盗窃分开的有状态 one-more 不可伪造定理；已发生的攻击在不伪造任何东西的情况下完成盗窃。作者端到端复现了已披露盗窃，展示一种更强的公钥声称变体，并测量全部 58 个索引铸币处：每个可达铸币处都声称支持 DLEQ 证明（目前仅存的防线），但声明未经认证，护栏在发行方而非钱包。一条盗窃定理给出防范的充分必要条件，重放三种修复后，最便宜的一种对诚实发行方没有额外代价。缺陷分类和三系统比较引出更一般的教训：可恢复性不是免费的。全部工件为纯标准库 Python，并通过 49 个官方测试向量。",
+      "abstractEn": "Cashu, the dominant deployed Chaumian ecash system, has grown to 31 specification documents, 58 indexed mints, and seven interoperable wallets, while the cryptographic literature has studied only its blind-signature core. Every incident in the system’s short audited history, including a cross-mint theft disclosed in early 2026, is compositional: it emerges from keyset rotation, wallet recovery, and multi-mint identity. We give the first system-level security analysis of a deployed ecash system, built on a five-layer model, a nine-property family (three properties new), and a stateful one-more-unforgeability theorem whose proof separates forgery from theft; the deployed attacks commit theft without forging anything. We reproduce the disclosed theft end-to-end, exhibit a strictly stronger public-key-claim variant, and measure all 58 indexed mints: every reachable mint declares support for DLEQ proofs, the sole remaining defense, yet declarations are unauthenticated the guardrail sits with the issuer, not the wallet. A theft theorem gives necessary and sufficient conditions for prevention, and replaying three fixes shows the cheapest one costs honest issuers nothing. A defect taxonomy and a three-system comparison suggest a broader lesson: recoverability is not free. All artifacts are pure standard-library Python and pass the 49 o cial test vectors.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "电子现金",
+        "盲签名",
+        "Cashu",
+        "钱包恢复"
+      ],
+      "url": "https://eprint.iacr.org/2026/2174",
+      "pdf": "https://eprint.iacr.org/2026/2174.pdf"
+    },
+    {
+      "id": "2026-2173",
+      "title": "Switch Commitments by Coincidence: Confidential Transactions Were Quantum-Upgradable All Along",
+      "authors": [
+        "Yevhen Hrubiian",
+        "Mykyta Redko",
+        "Tim Ruffing"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "证明 Liquid、Monero 与 Grin 的机密交易已巧合构成可抗量子升级的切换承诺，无 LLM。",
+      "abstract": "把加密货币升级到后量子安全本质上很难：链上状态把用户余额绑在公钥上，未把资金转到（尚未加入的）后量子签名方案的用户仍会被盗。在 Liquid、Monero、Grin 这类用同态 Pedersen 承诺隐藏金额的机密交易网络里，情况更糟：对手只要算出一个离散对数，就能膨胀整个货币，而不只是偷走个别资金。有争议的补救是让截止日期前未转移的资金全部过期，从而毁掉未行动者的币。切换承诺（Ruffing 与 Malavolta，2017）正是为避免这种过期而提出的，但只有 Grin 有意部署——而且我们证明，后来为其方案陈述的安全定理并不成立。本文表明，Liquid 和 Monero 其实已经「碰巧」部署了切换承诺：发送方为把隐藏金额传达给接收方而存在链上的密文，与 Pedersen 承诺合在一起即可重新解释为切换承诺。作者把该构造概念化为巧合切换承诺，并在量子随机预言机模型中证明其安全。同时挽救 Grin 已部署的构造：在代数群模型下它是计算切换绑定的，且界具有实际意义。现实含义是：这些网络可以升级到后量子机密交易方案，而不必让任何用户资金过期。",
+      "abstractEn": "Upgrading cryptocurrencies to post-quantum security is inherently difficult, because their on-chain state associates users' holdings with public keys: users who fail to transfer their funds to (yet to be added) post-quantum signature schemes remain exposed to theft. In networks with Confidential Transactions (CT) such as Liquid, Monero, and Grin, which hide monetary amounts inside homomorphic Pedersen commitments, the situation is worse still: an adversary who computes a single discrete logarithm can inflate the currency as a whole, rather than merely steal individual funds. The contentious remedy is to expire all funds not transferred by a deadline, destroying the funds of everyone who fails to act. Switch commitments (Ruffing and Malavolta 2017) were proposed to avoid exactly this expiration, but only Grin has deployed them deliberately—and the security theorem later stated for its scheme does not hold, as we show. In this paper, we show that Liquid and Monero already deploy a switch commitment scheme by coincidence: the ciphertext a sender stores on-chain to convey the hidden amount to the recipient can be re-interpreted, together with the Pedersen commitment, as a switch commitment. We conceptualize this construction as coincidental switch commitments and prove it secure in the quantum random oracle model. Additionally, we save the construction that Grin deploys: it is computationally switch binding, with practical bounds in the algebraic group model. The real-world implication of our results is that these networks can be upgraded to post-quantum CT schemes without expiring any user funds.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "机密交易",
+        "后量子",
+        "Monero",
+        "切换承诺"
+      ],
+      "url": "https://eprint.iacr.org/2026/2173",
+      "pdf": "https://eprint.iacr.org/2026/2173.pdf"
+    },
+    {
+      "id": "2026-2175",
+      "title": "Rotor: SNARKs for Power-of-Two Rings",
+      "authors": [
+        "Chongrong Li",
+        "Yun Li",
+        "Pengfei Zhu",
+        "Zhechen Li",
+        "Michael Dong",
+        "Alan Li",
+        "Yuncong Hu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在 2 的幂次环上原生构造高效 SNARK 以验证机器字算术，对象是证明系统，无 LLM。",
+      "abstract": "模 2 的幂次的简洁证明对验证实际机器字计算至关重要。但在这类环上设计 SNARK 很难：它们缺少普通域上 SNARK 用来获得可忽略可靠性误差的代数性质。现有路线或在算术昂贵的 Galois 环上工作，或把语句抬到整数再在一个大随机素域上证明，也比实践中结构化素数慢数倍。本文提出 Rotor，一种面向 Z_{2^k} 电路的高效 SNARK。与先前工作不同，Rotor 原生工作在 2 的幂次环上，并从三层环精度导出可靠性。为证明 Z_{2^k} 上的语句，作者先在更大的环 Z_{2^m} 上构造带张量查询的 sumcheck 风格交互预言证明；再建立线性码的弱化邻近间隙：在更大的环 Z_{2^ℓ} 上做邻近测试，可保证约化到 Z_{2^m} 后底层向量仍接近码字。由此得到带 Z_{2^m} 上张量求值证明的 Brakedown 风格承诺。两种情形下，精度间隙足够大即可保证可忽略可靠性误差。最后引入兼容承诺，把环见证连到其二进制域表示，并在域上做置换检查以验证 Z_{2^k} 上的置换，从而完成 Rotor。作者实现并对 Z_{2^{32}} 算术电路评估：证明最多比 Wei 等人（PKC 2025）基于 Galois 环的方案快 1938 倍、验证快 248 倍，比整数证明系统 Zinc+（ePrint 2026）证明最多快 44 倍、验证快 5.07 倍。相对基于 Shout（CRYPTO 2026）和 Binius（EUROCRYPT 2026）的域 SNARK，Rotor 证明最多分别快 86 倍和 3.78 倍，验证代价相当。",
+      "abstractEn": "Succinct proofs for arithmetic modulo powers of two are crucial for verifying machine-word computations in practice. However, designing SNARKs over such rings is challenging, since they lack the algebraic properties that common SNARKs over fields rely on to achieve negligible soundness error. Existing approaches either work over Galois rings, whose arithmetic is expensive, or lift the statement to the integers and prove it over a large random prime field, which is also several times slower than the structured primes used in practice. We present Rotor, an efficient SNARK for circuits over Z_{2^k}. Unlike prior work, Rotor operates natively over power-of-two rings and derives its soundness from three levels of ring precision. To prove statements over Z_{2^k}, we first construct a sumcheck-style interactive oracle proof with tensor queries over a larger ring Z_{2^m}. We then establish a weakened proximity gap for linear codes, in which proximity testing over a still larger ring Z_{2^ℓ} ensures that the underlying vectors are close to the code after reduction to Z_{2^m}. This yields a Brakedown-style commitment with tensor evaluation proofs over Z_{2^m}. In both cases, a sufficiently large gap between the precisions guarantees negligible soundness error. Finally, we introduce compatible commitments, which link ring witnesses to their binary-field representations and enable permutation checks over fields to verify permutations over Z_{2^k}, completing the construction of Rotor. We implement Rotor and evaluate it on proving arithmetic circuits over Z_{2^{32}}. It outperforms the Galois ring-based scheme of Wei et al. (PKC 2025) by up to 1,938× in proving and 248× in verification, and the integer proof system Zinc+ (ePrint 2026) by up to 44× in proving and 5.07× in verification. Compared with the field SNARKs based on Shout (CRYPTO 2026) and Binius (EUROCRYPT 2026), Rotor proves up to 86× and 3.78× faster, respectively, with comparable verification cost.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "SNARK",
+        "幂次环",
+        "证明系统",
+        "机器字"
+      ],
+      "url": "https://eprint.iacr.org/2026/2175",
+      "pdf": "https://eprint.iacr.org/2026/2175.pdf"
+    },
+    {
+      "id": "2026-2194",
+      "title": "A Black-Box Impossibility Result for Threshold Signing Standard Hash-Based Signatures",
+      "authors": [
+        "Yashvanth Kondi",
+        "Naman Kumar"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "证明 XMSS/SLH-DSA 等标准哈希签名无法黑盒高效做门限签名，对象是数字资产托管，无 LLM。",
+      "abstract": "哈希签名假设保守、效率也适合许多应用，但它们与如今数字资产安全中常见的门限签名是否兼容，所知甚少。在后量子迁移临近时，这一空白让哈希标准对依赖门限签名的应用意味着什么变得不确定。本文给出分析这类哈希方案的新框架，并证明对一整类高效（完全分布式）门限签名协议存在固有障碍。框架简单但有力，结果覆盖 XMSS 和 SLH-DSA 等标准方案。作者把哈希签名连接到随机预言机模型中的直线提取文献，并在 Doerner 等人（Crypto 2024）的技术上推进：超过一定签名者数量后，哈希方案的门限签名协议必须使用哈希函数的电路表示，而不能把哈希当黑盒。对作为两项 NIST 标准构件的 Winternitz 签名，更细的分析表明：即便两方签名也不能黑盒使用哈希函数。",
+      "abstractEn": "Hash-based signature schemes present an appealing proposition: they are broadly regarded as the most conservative in terms of assumptions, and their efficiency profiles suit many applications. However, little is known about their compatibility with threshold signing, which is common practice today in domains like digital asset security. Especially in the context of an impending migration to post-quantum cryptography, this gap in the literature leaves uncertain what hash-based standards would imply for applications that rely on threshold signing. In this work, we develop a new framework by which to analyze such hash-based schemes, and prove inherent barriers to designing an entire class of efficient (fully distributed) threshold signing protocols. Our framework is simple, and yet powerful. Our results encompass standard schemes such as XMSS and SLH-DSA. Our approach is to connect hash-based signatures to the literature on straight-line extraction in the random oracle model. We then apply and build upon techniques from the recent work of Doerner et al. (Crypto '24) to show that threshold signing protocols for hash based schemes must—beyond a certain number of signers—use the circuit representation of the hash function, i.e. it can not use the hash function as a black box. We then give a more fine-grained analysis for the specific case of the Winternitz signature scheme—a building block of both NIST standards—and show that it can not permit even two-party signing with blackbox use of the hash function.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "哈希签名",
+        "后量子",
+        "数字资产"
+      ],
+      "url": "https://eprint.iacr.org/2026/2194",
+      "pdf": "https://eprint.iacr.org/2026/2194.pdf"
+    },
+    {
+      "id": "2609.24689",
+      "title": "Domain Specific Post Quantum Signatures for Blockchains",
+      "authors": [
+        "Maja Lie",
+        "Ben Marsh"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "论证区块链需要按角色定制的后量子签名剖面而非套用 NIST 单签方案，对象是 Bitcoin、Ethereum 和 BFT 链，无 LLM。",
+      "abstract": "区块链需要的不只是后量子单签签名，还需要按共识剖析过的认证对象：规范字节、对无效输入的计价拒绝、稳定的交易标识、抗混合降级、可公开聚合、合并语义、可问责的签名者证据、前向安全的委员会轮换，以及轻客户端后果。作者主张为区块链角色设计领域专用后量子签名，就像哈希工程曾为哈希表 DoS 和算术化证明系统做出领域专用原语。文中形式化交易授权和法定人数证书需求，并在 Bitcoin、Ethereum 以及 Sei Giga 风格的高吞吐 BFT 压力剖面下实例化，评估 ML-DSA、SLH-DSA、Falcon/FN-DSA、HAWK、MAYO、SNOVA、UOV/QR-UOV、FAEST、SQIsign、LaBRADOR Falcon、Squirrel、Chipmunk 和 DKKW/LeanSig。结论直白：NIST 单签方案是必要构件，但现有方案没有一个能直接替换现代公链的签名层。缺的是共识就绪的后量子签名剖面，而不是又一张通用尺寸表。",
+      "abstractEn": "Blockchains need more than post quantum single signer signatures. They need consensus profiled authentication objects with canonical bytes, priced invalid input rejection, stable transaction identifiers, hybrid downgrade resistance, public aggregation, merge semantics, accountable signer evidence, forward secure committee rotation, and light client consequences. We argue for domain specific post quantum signatures for blockchain roles, analogously to how hash function engineering produced domain specific primitives for hash table DoS and arithmetized proof systems. We formalize transaction authorization and quorum certificate requirements, instantiate them on Bitcoin, Ethereum, and a Sei Giga style high throughput BFT stress profile, and evaluate ML-DSA, SLH-DSA, Falcon/FN-DSA, HAWK, MAYO, SNOVA, UOV/QR-UOV, FAEST, SQIsign, LaBRADOR Falcon, Squirrel, Chipmunk, and DKKW/LeanSig. The conclusion is blunt. NIST single signer signatures are necessary components, although none of the current schemes is a drop in replacement for the signature layer of modern public blockchains. The missing object is a consensus ready post quantum signature profile, not another generic size table.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "后量子签名",
+        "共识",
+        "轻客户端",
+        "Bitcoin"
+      ],
+      "url": "https://arxiv.org/abs/2609.24689",
+      "pdf": "https://arxiv.org/pdf/2609.24689"
+    }
+  ]
+}
