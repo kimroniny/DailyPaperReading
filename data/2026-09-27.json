@@ -1,0 +1,212 @@
+{
+  "date": "2026-09-27",
+  "papers": [
+    {
+      "id": "2603.17174",
+      "title": "Detecting Data Poisoning in Code Generation LLMs via Black-Box, Vulnerability-Oriented Scanning",
+      "authors": [
+        "Shenao Yan",
+        "Shan Jin",
+        "Shimaa Ahmed",
+        "Sunpreet Singh Arora",
+        "Yiwei Cai",
+        "Yizhen Wang",
+        "Yuan Hong"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstractOneWord": "用黑盒、面向漏洞类别的扫描检测代码生成 LLM 是否被投毒，对象是会产出不安全代码的代码模型。",
+      "abstract": "代码生成大模型正越来越多地嵌入现代软件开发流程。已有工作表明，这些模型容易遭受后门与投毒攻击，从而诱导生成不安全代码，但有效防御仍然有限。现有扫描方法依赖 token 级生成一致性来反推攻击目标，对源代码效果不佳，因为相同语义可以呈现多种句法形式。本文提出 CodeScan，首个面向指定漏洞类别的黑盒扫描框架，用于审计代码生成大模型：防御方指定目标漏洞类别并提供相关任务提示。CodeScan 通过分析不同干净提示下多次生成结果的结构相似性来识别攻击目标，结合迭代发散分析与基于抽象语法树（AST）的归一化，抹去表层差异并统一语义等价代码，从而分离出跨生成反复出现的结构。随后用基于大模型的漏洞分析判断这些结构是否含安全漏洞，一旦发现则将模型标为已被攻陷。作者在后门与投毒两类设定、三种真实漏洞类别上评估四种代表性攻击。在覆盖三种架构、多种规模的 117 个模型上，检测准确率超过 97%，误报显著低于已有方法。",
+      "abstractEn": "Code generation large language models (LLMs) are increasingly integrated into modern software development workflows. Recent work has shown that these models are vulnerable to backdoor and poisoning attacks that induce the generation of insecure code, yet effective defenses remain limited. Existing scanning approaches rely on token-level generation consistency to invert attack targets, which is ineffective for source code where identical semantics can appear in diverse syntactic forms. We present CodeScan, the first black-box, vulnerability-specific scanning framework for auditing code generation LLMs, assuming that the defender specifies the target vulnerability classes and provides corresponding task-relevant prompts. CodeScan identifies attack targets by analyzing structural similarities across multiple generations conditioned on different clean prompts. It combines iterative divergence analysis with abstract syntax tree (AST)-based normalization to abstract away surface-level variation and unify semantically equivalent code, isolating structures that recur consistently across generations. CodeScan then applies LLM-based vulnerability analysis to determine whether the extracted structures contain security vulnerabilities and flags the model as compromised when such a structure is found. We evaluate CodeScan against four representative attacks under both backdoor and poisoning settings across three real-world vulnerability classes. Experiments on 117 models spanning three architectures and multiple model sizes demonstrate 97%+ detection accuracy with substantially lower false positives than prior methods.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "数据投毒",
+        "代码生成",
+        "漏洞扫描",
+        "CCS"
+      ],
+      "url": "https://arxiv.org/abs/2603.17174",
+      "pdf": "https://arxiv.org/pdf/2603.17174"
+    },
+    {
+      "id": "2609.28488",
+      "title": "IaC-Guard-V: A Verification Framework for LLM-Generated Infrastructure-as-Code Repairs",
+      "authors": [
+        "Lokesh Chauhan"
+      ],
+      "year": 2026,
+      "venue": "QRS 2026",
+      "abstractOneWord": "用验证框架评估 LLM 生成的基础设施即代码修复是否可信，对象是 Terraform 与 Kubernetes 误配置。",
+      "abstract": "基础设施即代码（IaC）误配置是云安全事故的主要原因之一，大模型也越来越多地被当作自动修复智能体。然而，LLM 生成的 IaC 修复是否可信仍缺少系统评估。IaC 的验证有其特殊性：安全扫描器在不同工具与配置下行为可能不一致，基础设施语义无法用普通单元测试验证，云厂商规则又使验证标准碎片化。本文提出以验证为中心的框架 IaC-Guard-V，从句法合法性、目标问题是否消除、回归安全性以及补丁最小性四个维度评估 AI 生成的 IaC 修复。作者构建了 70 个真实误配置的 Terraform 与 Kubernetes 工件基准，覆盖 70 条扫描规则和八类违规，并在三个大模型族上对三种修复策略共做 630 次实验。所有模型的句法合法率均为 100%，但单次修复只有 32%–50% 能通过完整验证；在验证引导下迭代修复后，通过率升至 68%–92%。带验证引导的开源模型，其每个已验证修复的成本约为最强商业模型（无验证）的十二分之一，效果反而更好。商业模型在 Kubernetes 上接近满分，开源模型则需要验证引导迭代。结构化提示会稳定降低 Terraform 修复质量，挑战了“约束输出一定更好”的常见假设。基准与工件已公开以便复现。",
+      "abstractEn": "Infrastructure-as-Code (IaC) misconfigurations are a leading cause of cloud security incidents, and Large Language Models (LLMs) are increasingly proposed as automated repair agents. Yet the trustworthiness of LLM-generated IaC repairs remains underexplored. IaC presents distinctive verification challenges: security scanners may behave differently across tools and configurations, infrastructure semantics cannot be validated through ordinary unit tests, and provider-specific rules create a fragmented verification landscape. We present IaC-Guard-V, a verification-centered framework that evaluates AI-generated IaC repairs through four dimensions: syntactic validity, target-issue resolution, regression safety, and patch minimality. We construct a benchmark of 70 real-world misconfigured Terraform and Kubernetes artifacts spanning 70 unique scanner rules and eight violation classes, and evaluate three repair strategies across three LLM families in 630 runs. Although all models achieve 100% syntactic validity, only 32-50% of single-shot repairs pass full verification. Verification-guided iterative repair significantly improves verified-fix rates to 68-92%. An open-source model with verification-guided repair outperforms the strongest commercial model without verification at one-twelfth the cost per verified fix. Kubernetes repairs reach near-perfect rates for commercial models but require verification-guided iteration for the open-source model. Structured prompting consistently reduces Terraform repair quality, challenging common assumptions about constrained LLM output. The benchmark and artifacts are released for reproducibility.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "IaC",
+        "Terraform",
+        "Kubernetes",
+        "补丁验证"
+      ],
+      "url": "https://arxiv.org/abs/2609.28488",
+      "pdf": "https://arxiv.org/pdf/2609.28488"
+    },
+    {
+      "id": "2609.20834",
+      "title": "Towards Secure Cloud-Native Computing: Unveiling Kubernetes Misconfigurations with Large Language Models",
+      "authors": [
+        "Mostafa Anouar Ghorab",
+        "Mohamed Aymen Saied"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型识别 Kubernetes 误配置并建立分类与评测，对象是云原生集群配置。",
+      "abstract": "在云原生计算中，强调可扩展、灵活与效率的基础设施模型被广泛采用，Kubernetes 已成为编排容器化应用的事实标准。然而云原生生态本身复杂，误配置会同时损害安全与性能。本文探索大模型在识别 Kubernetes 误配置上的潜力：提出常见误配置类型的分类体系，为理解与归类这些问题提供结构化框架；并对现有检测工具做实证评测以建立基线。作者进一步分析最容易被误配置的 Kubernetes 对象，并评估所发现问题的严重程度。借助包括大模型在内的机器学习技术，本文为改进误配置检测方法提供了新的观察。",
+      "abstractEn": "In the rapidly evolving landscape of cloud-native computing, Organizations are increasingly adopting infrastructure models that emphasize scalability, flexibility, and efficiency. Kubernetes has become the de facto standard for orchestrating containerized applications in these environments. However, the inherent complexity of cloud-native ecosystems introduces significant challenges, particularly in the form of misconfigurations that can compromise both security and performance. This study explores the potential of Large Language Models (LLMs) in identifying Kubernetes misconfigurations. We introduce a comprehensive taxonomy of common misconfiguration types, offering a structured framework to better understand and categorize these issues. Additionally, we conduct an empirical evaluation of state-of-the-art detection tools to benchmark their effectiveness. Furthermore, we analyze the Kubernetes objects most prone to misconfiguration and evaluate the severity of the identified issues. By leveraging advanced machine learning techniques, including LLMs, we provide novel insights into enhancing misconfiguration detection methodologies.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Kubernetes",
+        "误配置",
+        "云原生",
+        "配置审计"
+      ],
+      "url": "https://arxiv.org/abs/2609.20834",
+      "pdf": "https://arxiv.org/pdf/2609.20834"
+    },
+    {
+      "id": "2026-2224",
+      "title": "The Tower of Babel: Large Language Models for Side-channel Analysis",
+      "authors": [
+        "Iris Dania Jimenez",
+        "Stjepan Picek",
+        "Michael Hutter"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把现成 LLM 当作侧信道区分器攻击掩码 AES，对象是密码实现轨迹而非智能合约。",
+      "abstract": "基于深度学习的侧信道分析（DLSCA）长期由 CNN 和从零训练的 Transformer 主导，把预训练大模型当作侧信道区分器的研究仍然很少。本文首次系统评估七个现成预训练 LLM（DeepSeek、Falcon、GPT-J、GPT-2、GPT-2m、Qwen2、T5）在三个掩码 AES 数据集 ASCADf、ASCADv 与 eShard 上的表现。在只做轻量微调、不改主干结构的情况下，Falcon 与 GPT-2m 在 ASCADf 上仅用 12 至 16 条轨迹即可达到 GE=1，并在去同步条件下仍保持这一轨迹数，比此前最好的去同步结果低一个数量级。已报道的最强对照 EstraNet（13 条）和 Order-vs-Chaos（1 条）都是从零训练的定制结构，且只报告同步结果；其他 CNN 与 Transformer 基线在去同步下明显退化。这些预训练 LLM 还能从全部 16 个 AES 首轮密钥字节中提取可利用泄漏，这是多任务 CNN 之外首次做到。作者还给出首次按份额评估，以及用有效感知信息（EPI）对 LLM 侧信道的可解释分析。出人意料的是，随机初始化主干与预训练版本表现相当，说明优势更多来自结构归纳偏置，而不是语言预训练。结果表明，LLM 结构可以成为强大、稳健、可复用的侧信道区分器。",
+      "abstractEn": "Deep learning-based side-channel analysis (DLSCA) is dominated by CNNs and from-scratch Transformer architectures, while pretrained Large Language Models (LLMs) as side-channel distinguishers remain largely unexplored. We present the first systematic study of seven off-the-shelf pretrained LLMs (DeepSeek, Falcon, GPT-J, GPT-2, GPT-2m, Qwen2, T5) on three masked AES datasets, i.e., ASCADf, ASCADv, and eShard. With lightweight fine-tuning and no architectural redesign of the backbone, Falcon and GPT-2m reach GE=1 on ASCADf in only 12 to 16 traces (16, 12 and 12 traces for Falcon and 15, 14 and 13 for GPT-2m on desync0, desync50 and desync100) and uniquely sustain this trace count under desynchronization, an order of magnitude below the best prior desynchronized results. The strongest reported alternatives, EstraNet (13 traces) and Order-vs-Chaos (1 trace), are bespoke architectures trained from scratch and report only synchronized results, while other CNN- and Transformer-based baselines degrade substantially under desynchronization. The pretrained LLMs additionally extract exploitable leakage from all 16 first-round AES key bytes, the first such result outside of multi-task CNNs trained from scratch. We further provide the first per-share evaluation and the first interpretability analysis of LLM-based SCA using Effective Perceived Information (EPI), revealing a correlation between the models' leakage extraction capability and their attack performance. Strikingly, randomly initialized backbones perform on par with their pretrained counterparts, indicating that much of the advantage is architectural rather than derived from language pretraining. Our findings establish LLM architectures as unexpectedly powerful, robust, and reusable side-channel distinguishers whose inductive bias yields very low trace complexity and strong robustness to desynchronization.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "侧信道",
+        "AES",
+        "掩码实现",
+        "LLM区分器"
+      ],
+      "url": "https://eprint.iacr.org/2026/2224",
+      "pdf": "https://eprint.iacr.org/2026/2224.pdf"
+    },
+    {
+      "id": "2026-2210",
+      "title": "Skyhook: Trustless Cross-Chain Value Transfer with a Fully Scriptless Pool",
+      "authors": [
+        "Abhinav Vishnu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "提出可在完全无脚本链上做无信任跨链转账的协议，对象是 Zcash 等 scriptless 链与 EVM，无 LLM。",
+      "abstract": "如何与一条完全没有脚本能力的链做价值转移，是密码学里的老问题。本文提出一种跨链消息与价值转移协议：即使一方运行在完全无脚本的链上（例如屏蔽 Zcash，交易必须几乎完全相同），仍能保持博弈论意义上的原子性。关键观察是：采用隔离见证以保证交易 ID 不可延展的共识协议（如 Zcash 的 ZIP244、Bitcoin 的 SegWit），会把交易数据与实际签名的见证分量分开。因此交易标识符是对交易效果的抗碰撞承诺，可以在签名前计算，很多链上甚至不需要知道签名者。作者据此构造非交互零知识论证（NIZK），证明某个未来交易 ID 可靠地承诺了特定效果，往往不必泄露发送方、机密数据，也不要求接收方签名。再结合图灵完备链上的 SPV 轻客户端，即可无信任地验证一笔屏蔽交易确已发生，且无需可被攻破或停摆的验证者联盟或多签。",
+      "abstractEn": "Facilitating value transfers with a scriptless chain is a longstanding problem in cryptography. We present a cross-chain messaging and value transfer protocol that maintains game-theoretic atomicity even when one party is operating on a chain which is fully scriptless, such as shielded Zcash, which has no scripting capabilities at all and requires transactions to be virtually identical. The observation is that consensus protocols which utilise segregated witness schemes to ensure transaction ID unmalleability (such as ZIP244 in Zcash, SegWit in Bitcoin), segregate transaction data from transaction witness component (which is the part that is actually signed). The transaction identifier is, therefore, a virtually collision-resistant commitment to the effects intended by the transaction, computable before signing, and in many chains, even without the knowledge of the signer. We then use this primitive to build a non-interactive zero-knowledge argument (NIZK) to prove that a given future transaction ID reliably commits to a specific effect, often without revealing the sender, confidential data, or requiring the recipient to sign. Combined with an SPV light client on the Turing-complete chain, this yields fully trustless verification that a shielded transaction occurred with a reliable guarantee, with no requirements of a validator consortium or multisig that can be hacked or stalled.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链",
+        "Zcash",
+        "原子交换",
+        "轻客户端"
+      ],
+      "url": "https://eprint.iacr.org/2026/2210",
+      "pdf": "https://eprint.iacr.org/2026/2210.pdf"
+    },
+    {
+      "id": "2026-2204",
+      "title": "Provenance Proofs: Linkable Zero-Knowledge Derivation Relations for Hierarchical Deterministic Wallets",
+      "authors": [
+        "Vincenzo Botta",
+        "Michal Pospieszalski",
+        "Emanuele Ragnoli",
+        "Justus Ranvier"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用可链接零知识证明 HD 钱包派生来源，防止跨链转账被替换收款地址，对象是多链钱包，无 LLM。",
+      "abstract": "ZKPoSP 可以在不泄露种子或私钥派生状态的前提下，证明某个公钥或地址确实由隐藏的钱包种子诚实派生。本文研究多个派生值之间的关系：不同曲线、不同链上的公钥或地址是否共享同一个隐藏来源（种子或钱包锚点），以及谁还能识别这种关系。作者给出来源证明模型，区分携带链接值的派生证明，以及表明若干派生陈述同源的来源证明，并定义正确性、派生可靠性、来源可靠性、不可诬陷与不可链接。文中给出四种构造，区别在于谁能做链接：仅用户本人、链接上下文中的任何人（确定性标签，也可作 nullifier），或指定权威（加密该标签）。在 ZKPoSP 派生关系、随机预言机模型以及证明系统的零知识与模拟可提取性下，这些构造满足上述五条性质。应用场景包括比特币到 Solana 的跨链转账：收款地址必须与源地址来自同一钱包，从而阻止攻击者替换目的地。作者还报告了派生证明在 Plonky3 上的基准。",
+      "abstractEn": "ZKPoSP proves that a public key or address was honestly derived from a hidden wallet seed, without revealing the seed or the private derivation state. This paper studies relationships among several derived values: whether public keys or addresses, possibly on different curves and different blockchains, share a hidden origin, which is the seed or an anchor of the wallet, and who else can recognize this relation. We give a model for such provenance proofs, with derivation proofs, which carry a link value, and provenance proofs, which show that several derivation statements share an origin. We define correctness, derivation soundness, provenance soundness, non-frameability and unlinkability. We give four constructions, which differ in who can link: only the user, with a joint proof or with commitments linked later; anyone within a linking context, with a deterministic tag, which can also act as a nullifier; or a designated authority, with an encryption of that tag. We prove, in sketch form, that the constructions satisfy the five properties under the security of the ZKPoSP derivation relations, the random oracle model, and the zero knowledge and simulation extractability of the proof system. We describe an application to cross-chain transfers from Bitcoin to Solana, in which the payout address must come from the same wallet as the source address, so that an attacker cannot substitute the destination. We report Plonky3 benchmarks of the derivation proofs on which the constructions are built.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "HD钱包",
+        "零知识",
+        "跨链",
+        "地址派生"
+      ],
+      "url": "https://eprint.iacr.org/2026/2204",
+      "pdf": "https://eprint.iacr.org/2026/2204.pdf"
+    },
+    {
+      "id": "2026-2203",
+      "title": "On FROST and Unconditional LDVR Security",
+      "authors": [
+        "Ian Goldberg",
+        "Chelsea Komlo",
+        "Stefano Tessaro"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "分析 FROST 等门限 Schnorr 在 LDVR 假设下的具体安全边界，对象是门限钱包签名，无 LLM。",
+      "abstract": "受近期针对门限 Schnorr 签名的多项式时间自适应攻击启发，本文梳理低维向量表示（LDVR）假设及其对相关门限 Schnorr 方案的影响，重点分析广泛部署的 FROST，结论也适用于 Lindell 三轮门限 Schnorr 等方案。作者证明：在 128 比特通用（离散对数）安全参数下，当参与方不超过 131 时，FROST 对任意签名门限都安全；256 比特参数下该界升至 260 方。该界假设了最强可能的 LDVR 对手，甚至强于 Rodríguez García 与 Tessaro 的结果。也就是说，现实中 128 比特安全、参与方较少（不超过 131）的 FROST，其安全性完全由代数一次更多离散对数（AOMDL）假设决定，因为在此参数下 LDVR 无条件困难。随后证明，在 128 比特参数下每增加一方（从 132 方起），在最坏腐败门限下 FROST 的安全性至多大约下降 1 比特。该分析可供实践者评估大规模 FROST 部署的最坏安全。最后给出两种基于已有掩码技术的 FROST 变体以获得完全自适应安全：其一用 Diffie-Hellman 身份密钥派生掩码密钥，内存开销恒定但计算增加；其二用对称密钥预分配，把成对掩码密钥的存储开销降低约 50%。",
+      "abstractEn": "Inspired by the recent polynomial-time adaptive attacks on threshold Schnorr signatures, we contextualize the Low-Dimensional Vector Representation (LDVR) assumption and its impact on relevant threshold Schnorr signature schemes. Our analysis focuses in large part on FROST, a widely deployed threshold Schnorr signature scheme. However, our analysis is applicable to any relevant threshold Schnorr signature scheme, such as Lindell's three-round threshold Schnorr protocol. We show that for cases where FROST is used with 131 parties and fewer, and for parameter choices of 128-bit generic (discrete log) security, FROST is secure for any signing threshold. This bound increases to 260 parties for parameter choices of 256-bit security; our analysis similarly can be extended to other parameter choices. This bound assumes the best possible LDVR adversary, even more powerful than the results by Rodríguez García and Tessaro. In other words, for real-world uses of FROST with parameter choices of 128-bit security, and with a small (131 and fewer) number of parties, the security of FROST is determined entirely by the hardness of the Algebraic One-More Discrete Logarithm (AOMDL) assumption, as LDVR is unconditionally hard for this parameter regime. It is an open research question whether the concrete attacks given by Rodríguez García and Tessaro can be improved to approach the unconditional LDVR security bound considered in our analysis. We then show for each additional party for 132 total number of signers and greater, again for parameter choices of 128-bit generic security, the resulting security of FROST is at worst reduced by approximately one bit (or less) of security for the worst-case choice of corruption threshold. This analysis can be used by practitioners to determine the worst possible security of even large-scale FROST deployments. Finally, we give two variants to FROST that build upon prior masking techniques to allow for full adaptive security. The first variant allows for masking keys to be derived from Diffie-Hellman identity keys, allowing for constant memory overhead, at the tradeoff of increased computation. The second variant allows for a 50% reduction in memory overhead for storage of pairwise masking keys, by employing symmetric key predistribution techniques.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "FROST",
+        "门限签名",
+        "Schnorr",
+        "LDVR"
+      ],
+      "url": "https://eprint.iacr.org/2026/2203",
+      "pdf": "https://eprint.iacr.org/2026/2203.pdf"
+    },
+    {
+      "id": "2609.27807",
+      "title": "MixGuard: Towards Detecting and Understanding Mixer Laundering on Ethereum",
+      "authors": [
+        "Qishuang Fu",
+        "Hang Zheng",
+        "Xihan Xiong",
+        "Joseph K. Liu",
+        "Yixin Liu",
+        "Shirui Pan",
+        "Qin Wang",
+        "Weiqing Wang",
+        "Zhipeng Wang",
+        "Tsz Hon Yuen"
+      ],
+      "year": 2026,
+      "venue": "SIGMETRICS 2027",
+      "abstractOneWord": "检测并理解以太坊混币器洗钱交易，对象是 Tornado Cash 与 Railgun，无 LLM。",
+      "abstract": "混币器通过隐藏充值与提现之间的对应关系来保护隐私，但也常被滥用于清洗非法资金。已有反洗钱研究很少专门针对混币器洗钱，混币器研究则更关注去匿名而非识别洗钱相关交易。公开报告又很碎片化，缺少可用于系统测量与检测的公开案例级数据集。本文给出以太坊混币器洗钱的首个较完整研究。作者构建公开案例级数据集 MixLaunder，覆盖 2020–2025 年涉及 Tornado Cash 与 Railgun 的 27 起案例，标注 9300 笔洗钱相关交易及其上下游资金流，充值总额约 11 亿美元。与背景混币使用相比，作者归纳出五种常见策略：洗钱证据分布在行为与资金流两类互补上下文中，同一案例内部活动局部紧密，但跨爆发段连接很弱。分析还揭示了混币器侧风险筛查与代表性去匿名启发式的覆盖缺口。据此提出 MixGuard，结合三视图表示学习与两阶段分组，做交易级检测与案例感知聚类。在严格的案例级留出评估中，MixGuard 优于代表性基线，检测精确率 97.89%，分组纯度 98.73%，其前十个分组平均覆盖每个案例 95.09% 的交易。",
+      "abstractEn": "Mixers protect privacy by concealing deposit--withdrawal links, but are also abused to launder illicit funds. Existing anti-money laundering studies do not specifically target mixer laundering, while mixer research focuses on deanonymization rather than identifying laundering-related transactions. Public reports remain fragmented, leaving no public case-level dataset for systematic measurement and detection. To fill this void, this paper presents the first comprehensive study of mixer laundering on Ethereum. We first construct MixLaunder, the first public case-level dataset of mixer laundering. It covers 27 cases involving Tornado Cash and Railgun from 2020 to 2025 and labels 9,300 laundering-related transactions with case identities and observable upstream and downstream fund flows, including deposits totaling approximately $1.1 billion. By comparing these transactions with background mixer usage, we identify five common strategies, showing that laundering evidence spans complementary behavioral and fund-flow contexts, while same-case activity is locally tight but weakly connected across bursts. Our analysis further reveals coverage gaps in mixer-side risk screening and representative deanonymization heuristics. Guided by these findings, we develop MixGuard, which combines tri-view representation learning with two-stage grouping for transaction-level detection and case-aware grouping. Under strict case-level holdout evaluation, MixGuard outperforms representative baselines, achieving 97.89% detection precision and 98.73% group purity, while its top ten groups cover 95.09% of each case's transactions on average.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "混币器",
+        "以太坊",
+        "Tornado Cash",
+        "反洗钱"
+      ],
+      "url": "https://arxiv.org/abs/2609.27807",
+      "pdf": "https://arxiv.org/pdf/2609.27807"
+    }
+  ]
+}
