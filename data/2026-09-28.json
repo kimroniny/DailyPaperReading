@@ -1,0 +1,233 @@
+{
+  "date": "2026-09-28",
+  "papers": [
+    {
+      "id": "2026-2199",
+      "title": "PulpoPay for Auditable Privacy CBDCs: Introducing High Concurrency and Offline Confirmation",
+      "authors": [
+        "Chenke Wang",
+        "Shuangcheng Liu",
+        "Yu Long",
+        "Xian Xu",
+        "Dawu Gu"
+      ],
+      "year": 2026,
+      "venue": "NDSS 2027",
+      "abstractOneWord": "提出可并发、可离线确认且可审计隐私的央行数字货币支付协议，无 LLM，对象是 CBDC 与双花抵抗。",
+      "abstract": "央行数字货币（CBDC）希望在数字环境中复现现金的可用性，并在隐私与监管可审计性之间取得平衡。尽管近期方案有所进展，现有 CBDC 仍受并发能力不足、无法离线确认支付的限制：用户必须串行处理并发支付，且对手方必须在线。这严重制约了 CBDC 在高频真实支付场景中的可用性。本文提出 PulpoPay，据称是首个同时提供高并发与离线确认、并保持可审计隐私的 CBDC 方案。其核心是一套基于硬币的支付协议，使用户能够并发地取款、转账与存款，而无需与对手方同步或要求其在线。在可审计隐私方面，作者利用可随机化密文上的签名，在不破坏隐私的前提下支持细粒度审计；并设计可离线校验唯一性的硬币标识，以在断连环境中抵抗双花。作者在通用可组合（UC）框架下形式化证明其安全性，并实现了原型。实验表明：（1）面向离线收款方的支付可在约 0.3 秒内用手机完成；（2）在并发支付场景下优于 PEReDi（CCS'22）。在 200 笔并发支付的典型设置中，PulpoPay 至少将处理时间降低 66.89%、通信开销降低 76.45%，且优势随并发规模增大而更明显。",
+      "abstractEn": "Central Bank Digital Currencies (CBDCs) aim to replicate the utility of physical cash in the digital era by balancing privacy with regulatory auditability. Despite recent advancements, existing CBDC schemes suffer from limited concurrency and the lack of offline payment confirmation, forcing users to process concurrent payments one by one and requiring counterparts to remain online. These constraints severely limit CBDC's applicability in high-frequency, real-world payment scenarios. This paper proposes PulpoPay, the first CBDC scheme to provide high concurrency and offline confirmation, while maintaining auditable privacy. To achieve high concurrency and offline confirmation, PulpoPay, at its core, introduces a coin-based payment protocol that facilitates users to concurrently withdraw, transfer, and deposit coins without synchronization or online requirements for counterparts. For auditable privacy, we leverage signatures on randomizable ciphertexts to enable fine-grained auditing without compromising privacy. Furthermore, we design a coin identifier with offline-checkable uniqueness to resist double-spending attacks even in disconnected (offline) environments. We formally prove PulpoPay's security within the Universal Composability (UC) framework. We implement a prototype of PulpoPay. Experimental results demonstrate that (1) a payment with an offline receiver can be finished within 0.3 s using a mobile phone; (2) PulpoPay outperforms the state-of-the-art PEReDi [CCS'22] in the scenarios of concurrent payments. For a typical setting of 200 concurrent payments, PulpoPay reduces processing time by at least 66.89% and communication overhead by at least 76.45%. This advantage becomes even more significant as the number of concurrent payments grows.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "CBDC",
+        "离线支付",
+        "双花",
+        "NDSS"
+      ],
+      "url": "https://eprint.iacr.org/2026/2199",
+      "pdf": "https://eprint.iacr.org/2026/2199.pdf"
+    },
+    {
+      "id": "2609.30345",
+      "title": "Coding Agents Aren't Enough! Evaluating an Enterprise Security Brain for Agentic Cloud Investigations",
+      "authors": [
+        "Leon Goldberg",
+        "Gal Engelberg",
+        "Eden Yavin",
+        "Elad Elouz",
+        "Ariel Zadok",
+        "Konstantin Koutsyi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "对比通用编码智能体与专用安全情报层在 AWS 云安全排查上的效果，使用 LLM 智能体，对象是企业云环境。",
+      "abstract": "云安全排查大量是“群体性”任务：哪些身份能读某个数据存储、有多少资源未满足某项控制、哪些资产可从另一账户到达。这类问题要对照完整清单求解，而不是针对单个命名对象；部分答案不是部分结果，而是另一个结果。通用编码智能体现在可以被赋予只读云凭证并直接开展排查，于是产生一个问题：专用安全上下文层还能贡献什么。作者将 Sola Security Brain（离线解析关系底盘、查询时再评估安全逻辑的安全情报层）与通过只读 CLI 操作同一套实时 AWS 环境的 Claude Code 对比，覆盖 28 项云安全排查任务。答案由盲评、按层级加权、并以依据门控的相对召回，在联合断言池上打分，再对三次独立评分取平均。Sola Security Brain 覆盖率为 0.693，Claude Code 为 0.387，差距 0.306（三次评分波动 ±0.018），相对提升 79.2%。在较弱模型档上，它在 28 项任务中的 25 项领先，每任务推理成本低 17.7 倍，单位覆盖成本低 31.6 倍。作者还描述一种“抽样后泛化”模式：在回合预算下，在线智能体只枚举大群体的一部分，却给出不加限定的全称否定，并把样本量写在元数据而非答案正文里。例如在一项任务中，它在约 5000 个桶的账户里只抽了 40 个、检查了四个桶族后报告“不存在桶策略”，而实际上有 65 个桶带有通配主体的读授权。",
+      "abstractEn": "Cloud-security investigation is dominated by population tasks: which identities can read a data store, how many resources fail a control, which assets are reachable from another account. These resolve against a complete inventory, not a named object. A partial answer to one is not a partial result. It is a different result. General-purpose coding agents can now be given read-only cloud credentials and asked to investigate directly, which raises the question of what a purpose-built security context layer still contributes. We evaluate the Sola Security Brain, a security intelligence layer whose relational substrate is resolved offline and whose security logic is evaluated against it at query time, against Claude Code operating the same live AWS environment through a read-only CLI, over 28 cloud-security investigation tasks. Answers are scored by a blinded, tier-weighted, grounding-gated relative recall over the joint claim pool, averaged across three independent grading draws. The Sola Security Brain reaches 0.693 coverage against 0.387, a gap of 0.306 that varied by ±0.018 across three grading draws, or a relative gain of 79.2%. It leads on 25 of 28 tasks from the weaker model tier, at 17.7× lower reasoning cost per task and 31.6× lower cost per unit of coverage. Beyond the aggregate, we describe an answer-level pattern we term sample-and-generalise: under a turn budget the live agent enumerates a fraction of a large population, asserts an unhedged universal negative, and discloses the sample size only in answer metadata rather than in the answer. In one task it reported that no bucket policies exist after checking four bucket families, in a sweep that sampled 40 of roughly 5,000 buckets, in an account where 65 buckets carry a wildcard-principal read grant.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "云安全",
+        "AWS",
+        "安全智能体",
+        "排查"
+      ],
+      "url": "https://arxiv.org/abs/2609.30345",
+      "pdf": "https://arxiv.org/pdf/2609.30345"
+    },
+    {
+      "id": "2609.24200",
+      "title": "Forgeable Confirmation in Automated Computer Security Testing: Deterministic Rules versus AI Judges",
+      "authors": [
+        "Akihisha Fujiyama",
+        "Niwase Shamim"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "研究自动化安全测试中规则确认与 LLM 评判是否可被伪造，对象是扫描器与安全测试流水线。",
+      "abstract": "人工智能正越来越多地用于自动化计算机安全测试，工具必须自行判断一次攻击是否成功。由确定性规则根据观察确认的发现会被当成事实报告，而由大模型判定“可利用”的发现则更像意见。作者追问：被测系统能否伪造这种确认。在一条四阶段、有 AI 辅助的离线安全测试流水线上，十五种确认机制中有九种可被伪造，且可否伪造完全由该判定是否读取攻击者可控数据预测。作者将其形式化为可审计的攻击面，并做前瞻验证：在十六个留出机制上，攻击前固定的预测恰好区分了可伪造与不可伪造；在公开扫描器模板的 12203 个机制上，预测准确率达 99.9%。确定性规则比八个开源权重 LLM 评判更容易伪造：攻击者只需控制约 2% 的响应内容即可让规则失效，而 LLM 评判的中位数约为 50%。同一种检查没有任何实现能同时做到稳健且精确；在规则与 AI 评判之间路由，会把伪造成功率抬到 99%。把决定性证据移到攻击者无法写入的通道，可将攻击成功率从 97% 降到 0%，再用升级裁决补回因此损失的灵敏度。当被扫描主机本身就是对手时，该防护失效。这些结果对 AI 安全智能体、以及用字符串匹配给成功打分的基准都有直接含义。",
+      "abstractEn": "AI is increasingly used to automate computer security testing, and the tools must decide for themselves whether an attack succeeded. A finding that a deterministic rule confirms by observation is reported as fact, whereas one that an LLM judges exploitable is treated as an opinion. We ask whether the system under test can forge that confirmation. In offline security testing of a four-stage AI-assisted pipeline, nine of its fifteen confirmation mechanisms are forgeable, and forgeability is predicted entirely by whether the decision reads attacker-controlled data. We formalise this as an auditable attack surface and test it prospectively: on sixteen held-out mechanisms, predictions fixed before any attack separated forgeable from unforgeable mechanisms exactly, and across 12,203 mechanisms in public scanner templates the prediction was 99.9% accurate. Deterministic rules proved cheaper to forge than eight open-weight LLM judges, failing at 2% of attacker-controlled response content against a median of 50%. No implementation of one check was both robust and precise, and routing between a rule and an AI judge raised forgery to 99%. Moving the decisive evidence to a channel the attacker cannot write cuts attack success from 97% to 0%, and an escalate verdict recovers the sensitivity this costs. The protection fails when the scanned host is itself the adversary. The results bear on AI security agents and on benchmarks that score success by string matching.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全测试",
+        "扫描器",
+        "LLM评判",
+        "确认伪造"
+      ],
+      "url": "https://arxiv.org/abs/2609.24200",
+      "pdf": "https://arxiv.org/pdf/2609.24200"
+    },
+    {
+      "id": "2609.24036",
+      "title": "Structured Decomposition for Reliable LLM-Generated Access Control Policies",
+      "authors": [
+        "Vatsal Gupta",
+        "Darshan Sreenivasamurthy"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用结构化分解与模式校验让 LLM 把自然语言访问控制策略编成可部署的 OPA/Rego，对象是企业授权策略。",
+      "abstract": "本文提出一套基于大模型的系统，把自然语言访问控制策略（NLACP）翻译成 Open Policy Agent（OPA）可执行的 Rego 代码。流水线模块化覆盖策略检测、组件抽取、模式校验、lint、编译以及自动测试生成与执行，旨在把人类可读的访问需求落到可部署的策略即代码（PaC），并强调部署可靠性与安全正确性。作者在 372 条 ACRE 完备、且主体/动作/资源标注非空的访问控制语句上，与直接单次提示的大模型基线对比，以分离结构化分解与模式感知校验的贡献。系统端到端策略正确率为 50.3%，基线为 15.3%，约提升 3.3 倍。一条策略只有在通过编译、lint 以及正负向测试后才计为正确，因此这是对可部署正确性的严格度量。在安全关键模式上，系统为 87.5% 的拒绝策略生成了正确的 deny 语义（基线 37.5%），为全部带所有权条件的策略生成了正确的所有权条件（基线 40%），为全部带状态限定的策略生成了正确的状态条件（基线 55.6%）。结果表明，结构化分解与模式感知校验对提高 LLM 生成授权策略的可靠性至关重要。",
+      "abstractEn": "This paper presents an LLM-based system that translates natural-language access control policies (NLACPs) into executable Rego code for Open Policy Agent (OPA). It provides a modular, end-to-end pipeline for policy detection, component extraction, schema validation, linting, compilation, and automated test generation and execution. The system is designed to bridge the gap between human-readable access requirements and machine-enforceable policy-as-code (PaC), with a focus on deployment reliability and security correctness. We evaluate the system on 372 ACRE-complete access control statements with non-null subject, action, and resource annotations against a direct single-prompt LLM baseline to isolate the contribution of structured decomposition and schema-aware validation. The system achieves a 50.3% end-to-end policy correctness rate, compared with 15.3% for the baseline, representing a 3.3x improvement. A policy is counted as correct only if it satisfies compilation, linting, and both positive and negative tests, making this a strict measure of deployable correctness. On security-critical patterns, the system generates correct deny semantics for 87.5% of deny policies (baseline: 37.5%), ownership conditions for 100% of ownership-qualified policies (baseline: 40%), and status-qualified conditions for 100% of status-qualified policies (baseline: 55.6%). These results indicate that structured decomposition and schema-aware validation play a critical role in improving the reliability of LLM-generated authorization policies.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "访问控制",
+        "OPA",
+        "Rego",
+        "策略即代码"
+      ],
+      "url": "https://arxiv.org/abs/2609.24036",
+      "pdf": "https://arxiv.org/pdf/2609.24036"
+    },
+    {
+      "id": "2609.31379",
+      "title": "How Much Must a Private Mempool Hide? Exact Leakage Thresholds for Sandwich Attacks",
+      "authors": [
+        "Tingyi Lin",
+        "Jiazhuo Li",
+        "Ruoran Lai"
+      ],
+      "year": 2026,
+      "venue": "NeurIPS 2026",
+      "abstractOneWord": "给出私有内存池泄漏多少就会让三明治攻击有利可图的精确阈值，无 LLM，对象是 AMM 与 MEV。",
+      "abstract": "私有与加密内存池通过隐藏待处理交易来阻止三明治攻击及其他最大可提取价值（MEV），但它们很少隐藏一切：交易的交易对、方向以及规模的粗区间仍可能泄漏。泄漏到何种程度会使三明治变得划算？作者对无手续费的常数乘积自动做市商（Uniswap v2 的定价规则）给出精确答案。交易者观察到包含受害者规模的区间，并在第一价格拍卖中竞标三明治权，且胜出的前置交易必须使受害者交易在区间内每一规模上都可执行。答案取决于与泄漏相一致的最小规模：它单独决定可行前置交易集合；对逐点、期望与最坏情况利润而言，最大可行前置交易都是最优的，且有保证利润的闭式。当执行有成本时，若隐私层要排除在每一一致规模上都有利可图的三明治，则关于规模可以泄露任何信息，只要不泄露高于显式阈值的下界；区间上端无关。若有两个或更多对称交易者，该拍卖的每个纯策略完美贝叶斯均衡都会把全部期望净租金交给拍卖人。若方向也被隐藏，则不存在能同时前置两种可能方向的非或有第一腿，而交易后套利即使在完美的交易前隐藏下仍可能存活。",
+      "abstractEn": "Private and encrypted mempools hide pending transactions to stop sandwich attacks and other forms of maximal extractable value (MEV), but what they hide is rarely everything: a transaction's pair, direction, and a coarse range for its size can still leak. How much leakage makes sandwiching pay? We answer exactly for a fee-free constant-product automated market maker, the pricing rule behind Uniswap v2. Traders observe an interval containing the victim's size and bid in a first-price auction for the right to sandwich it, and the winning front-run must keep the victim's trade executable at every size in the interval. The answer turns on the smallest size consistent with the leak. It alone determines the feasible front-runs, the largest feasible front-run is optimal for pointwise, expected, and worst-case profit alike, and the guaranteed profit has a closed form. When execution is costly, a privacy layer that wants to rule out sandwiches profitable at every consistent size may therefore reveal anything about the size except a lower bound above an explicit threshold; the upper end of the range is irrelevant. With two or more symmetric traders, every pure-strategy perfect Bayesian equilibrium of the auction hands the entire expected net rent to the auctioneer. If the direction is hidden too, no non-contingent first leg front-runs both possible directions, while post-trade arbitrage can survive even perfect pre-trade hiding.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MEV",
+        "三明治攻击",
+        "内存池",
+        "Uniswap"
+      ],
+      "url": "https://arxiv.org/abs/2609.31379",
+      "pdf": "https://arxiv.org/pdf/2609.31379"
+    },
+    {
+      "id": "2026-2222",
+      "title": "SoK: The Landscape of Post-Quantum Multi-Party Signature Aggregation",
+      "authors": [
+        "Gaurav Kumar"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "系统梳理后量子多方签名聚合，并对比区块链验证者场景与机构签名场景，无 LLM，对象是阈值签名。",
+      "abstract": "后量子签名方案如 ML-DSA、FN-DSA（Falcon）和 SLH-DSA 的密钥与签名远大于经典方案，使紧凑的多方签名愈发重要。作者调研 2021–2026 年间 30 余个方案，覆盖门限与分布式签名、基于证明的聚合以及代数半聚合。调研显示，现有工作大多围绕区块链与验证者共识：大量近似同质的签名者对同一消息签名，问责通常表示为一个紧凑的签名者集合。另一种实践上重要的设定却很少被关注：机构多方文档签名——数十到数百名签名者在渐进迁移中可能使用不同的后量子方案或参数集，同时要求非交互签名与精确到人的问责。为研究这一差距，作者基于部署需求建立八维分类法并系统归类现有方法，提出三个可检验假说，以及评估通信、计算、验证成本、可扩展性、签名者异质性与问责的公共基准方法。分析发现，尚无已发表研究对所覆盖聚合范式在机构工作负载上做定量评估。因此作者指出，要判断现有后量子聚合技术能否支撑异构、可问责且非交互的机构签名，关键实验与架构要求是什么。",
+      "abstractEn": "Post-quantum signature schemes such as ML-DSA, FN-DSA (Falcon), and SLH-DSA have significantly larger keys and signatures than their classical counterparts, making compact multiparty signing an increasingly important research problem. We survey more than 30 schemes published between 2021 and 2026, covering threshold and distributed signing, proof-based aggregation, and algebraic half-aggregation. Our survey shows that most existing work is designed around blockchain and validator-consensus applications, where large numbers of mostly homogeneous signers sign a common message and accountability is typically represented by a compact signer set. We found that a different and practically important setting has received little attention: institutional multiparty document signing, where tens to hundreds of signers may use different post-quantum schemes or parameter sets during a gradual migration, while requiring non-interactive signing and exact per-signer accountability. To study this gap, we develop an eight-dimensional taxonomy based on deployment requirements and systematically classify existing approaches. We also formulate three testable hypotheses and propose a common benchmark methodology for evaluating communication, computation, verification cost, scalability, signer heterogeneity, and accountability. Our analysis finds no published study that quantitatively evaluates the institutional workload across the aggregation paradigms covered in our survey. We therefore identify the key experimental and architectural requirements for assessing whether existing post-quantum aggregation techniques can support heterogeneous, accountable, and non-interactive institutional signing.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "后量子",
+        "阈值签名",
+        "签名聚合",
+        "验证者"
+      ],
+      "url": "https://eprint.iacr.org/2026/2222",
+      "pdf": "https://eprint.iacr.org/2026/2222.pdf"
+    },
+    {
+      "id": "2026-2205",
+      "title": "DKG Is All You Need",
+      "authors": [
+        "Guru-Vamsi Policharla"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "构造公开参数与批次大小无关的批量门限加密，无 LLM，对象是门限解密与分布式密钥生成。",
+      "abstract": "作者构造首个公开参数与批次大小无关、且为透明设置的批量门限加密方案，因此可以解密任意大小的批次，而不必预先固定上界。安全性基于常数规模假设——判定双线性平方 Diffie–Hellman 假设。设置过程就是一次分布式密钥生成协议，用于采样随机值的秘密份额。密文包含两个 G1 元素、一个 G2 元素以及被加密消息，外加用于 CCA 安全的 NIZK（带 sigma 协议的两个 F 元素）。部分解密是单个 G1 元素，计算只需一次标量乘。解密大小为 B 的批次需要 O(B) 次配对和 O(B log² B) 次群运算。",
+      "abstractEn": "We construct the first Batched Threshold Encryption scheme with a transparent setup where public parameters are independent of the batch size. As a result batches of arbitrary sizes can be decrypted, without imposing an a priori fixed bound. We prove security under a constant size assumption -- the decisional bilinear square Diffie-Hellman assumption. Setup is just a distributed key generation protocol to sample secret shares of a random value. Ciphertexts consist of two G1 elements, one G2 element and the encrypted message, plus a NIZK for CCA security (two F elements with a sigma protocol). Partial decryptions are a single G1 element, computed with one scalar multiplication. Decrypting a batch of B ciphertexts costs O(B) pairings and O(B log^2 B) group operations.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限加密",
+        "DKG",
+        "批量解密",
+        "MPC"
+      ],
+      "url": "https://eprint.iacr.org/2026/2205",
+      "pdf": "https://eprint.iacr.org/2026/2205.pdf"
+    },
+    {
+      "id": "2609.31087",
+      "title": "BenX: Resource-Sharing Permutations for Computational Integrity",
+      "authors": [
+        "Luca Campa",
+        "Thomas De Cnudde",
+        "Al Kindi",
+        "Arnab Roy",
+        "Fabian Schmid",
+        "Markus Schofnegger",
+        "Stefano Trevisani"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "提出面向证明系统、可与硬件加速共享资源的置换哈希 BenX，无 LLM，对象是 zk 友好哈希。",
+      "abstract": "素数模整数上的密码哈希对计算完整性证明系统的效率与安全起决定作用。早期设计侧重紧凑算术电路与高效软件执行，主要面向通用 CPU 而非硬件加速器。本文关注在保持软件高效的同时实现有效的资源共享与硬件加速，提出置换哈希 BenX：面向硬件加速、快速 CPU 执行以及证明系统中的低电路复杂度。构造底层置换时，作者用 Dickson 多项式把 Benes 网络变成 F_p^2 上的可逆函数，其结构特别适合硬件资源共享与加速。在 FPGA 上全流水线实现时，BenX 的吞吐与 Poseidon2 相当，Goldilocks 与 BabyBear 上的延迟分别低 1.36 倍和 2.15 倍。作为独立核它更大，但能更有效地使用共享硬件：在 NTT 与哈希共享域乘法器的双模式架构中，BenX 使乘法器利用率保持 100%，而 Poseidon 与 Poseidon2 部分轮次仅为 6.25%–20.3%。软件上，BenX 在所有测试的 31 位与 64 位配置中都快于 Poseidon，但除 16 元 BabyBear 实例外慢于 Poseidon2。在零知识证明中，BenX 证明 Goldilocks 置换比 Monolith 快 6–10 倍；其紧凑算术化在 BabyBear 上比 Poseidon 与 Poseidon2 少约 36% 的 trace cell，快速变体的证明者时间则是 Poseidon2 的 1.3–2.6 倍。",
+      "abstractEn": "Cryptographic hash functions over integers modulo a prime play a decisive role in the efficiency and security of proof systems for computational integrity. Early designs focused on compact arithmetic circuits and efficient software execution, primarily targeting general-purpose CPUs rather than hardware accelerators. This work focuses on enabling efficient resource sharing and hardware acceleration alongside efficient software execution. We propose BenX, a permutation-based hash function designed for hardware acceleration, fast CPU execution, and low circuit complexity in proof systems. To construct the underlying permutation, we turn the Benes network into an invertible function over F_p^2 using a Dickson polynomial. Its structure yields a permutation particularly suited to hardware resource sharing and acceleration. Fully pipelined on FPGA, BenX matches the throughput of Poseidon2, with 1.36x and 2.15x lower latency for Goldilocks and BabyBear, respectively. Although larger as a standalone core, it makes more effective use of shared hardware: in our dual-mode architecture, where the NTT and hash share field multipliers, BenX keeps 100% of them busy, compared with 6.25-20.3% for the partial rounds of Poseidon and Poseidon2. In software, BenX outperforms Poseidon in all tested 31- and 64-bit configurations, but is slower than Poseidon2, except for the 16-element BabyBear instance. In zero-knowledge proofs, BenX proves Goldilocks permutations 6-10x faster than Monolith. Its compact arithmetization uses about 36% fewer trace cells than Poseidon and Poseidon2 over BabyBear, while its fast variant requires 1.3-2.6x the prover time of Poseidon2.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zk哈希",
+        "Poseidon",
+        "证明系统",
+        "算术化"
+      ],
+      "url": "https://arxiv.org/abs/2609.31087",
+      "pdf": "https://arxiv.org/pdf/2609.31087"
+    },
+    {
+      "id": "2026-2143",
+      "title": "SAK: Sparse Arguments of Knowledge, from Sparse Lookup Arguments",
+      "authors": [
+        "Abhiram Kothapalli",
+        "Sriram Sridhar",
+        "Arantxa Zapico"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "为稀疏见证构造亚线性证明者时间的知识论证，无 LLM，对象是 zk 电路与 CCS 约束系统。",
+      "abstract": "作者形式化并构造稀疏知识论证：给定长度为 N、其中仅有 n 个非零值的见证，证明者时间为 O(n) ∘ o(N)。特别地，他们为可定制约束系统（CCS）关系给出稀疏知识论证，该关系可推广电路可满足性。做法是先用亚线性查找论证可证明地选出约束系统中触及变量赋值非零项的子集，再在其上运行带轻度限定的标准知识论证。所得稀疏知识论证可公开验证，并支持通用、可更新的设置。预处理为 O(N log N)，证明者时间为 O(n log n)，验证者为 O(1)，优于此前 O(n log² n) 与 O(n log N) 的证明者时间。",
+      "abstractEn": "We formalize and construct sparse arguments of knowledge, where given a length N witness that contains n non-zero values the prover time is O(n) ∘ o(N). In particular, we achieve a sparse argument of knowledge for the customizable constraint system relation, which generalizes circuit-satisfiability. We achieve this by first utilizing sublinear lookup arguments to provably select only the subset of the constraint system that touches the non-zero entries of the variable assignment, and then running a standard argument of knowledge with mild qualifications. Our resulting sparse argument of knowledge is publicly verifiable and supports a universal and updatable setup. It features an O(N log N) preprocessing phase, an O(n log n) prover time, and an O(1) verifier time, improving on the prior O(n log^2 n) and O(n log N) prover time.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zk",
+        "稀疏证明",
+        "CCS",
+        "查找论证"
+      ],
+      "url": "https://eprint.iacr.org/2026/2143",
+      "pdf": "https://eprint.iacr.org/2026/2143.pdf"
+    }
+  ]
+}
