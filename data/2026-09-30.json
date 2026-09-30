@@ -1,0 +1,314 @@
+{
+  "date": "2026-09-30",
+  "papers": [
+    {
+      "id": "2609.37669",
+      "title": "Retrieve, Reproduce, Reveal: Dissecting Retrieval-Augmented Software Vulnerability Detection",
+      "authors": [
+        "Sabrina Kaniewski",
+        "Tim Krämer",
+        "Julius Bächle",
+        "Markus Enzweiler",
+        "Michael Menth",
+        "Tobias Heer"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "复现并拆解六套开源 RAG 漏洞检测系统，评估 LLM 检索增强在传统软件漏洞检测上的可复现性。",
+      "abstract": "检索增强生成（RAG）正越来越多地被用来提升大模型软件漏洞检测：把预测锚定在检索到的漏洞知识（例如漏洞报告）上。但现有基于 RAG 的软件漏洞检测（RAG4SVD）系统常用专有模型做评估，开放科学与可复现性不足；各研究又使用不同数据集、自制知识库、不同骨干模型和多样指标，难以横向比较。本文研究六套开源 RAG4SVD 系统，分别通过（i）在开源权重设定下复现其实验配置，以及（ii）用统一数据集、指标套件和开源权重模型池做基准，来应对可复现性与可比性问题。RAG4SVD 通常由多个组件构成，却往往只做端到端评估。因此作者进一步做了（iii）组件级分析，把代表性流水线拆成输入抽象、知识检索与检测三阶段。结果表明，各系统的可复现性差异很大。在统一基准下，已发表的 RAG4SVD 性能并不能迁移到受控的开源权重评估，且强烈依赖所用模型。组件分析显示，有效的 RAG4SVD 取决于各阶段是否对齐：例如用预言知识把检索做到近乎最优后，检测性能仍低（成对准确率 0.51），说明仅靠检索有效并不足以可靠检测。这些发现表明，RAG4SVD 不仅要做端到端评估，还应按流水线组件评估，并为更标准化、感知 RAG 的评测实践提供基础。",
+      "abstractEn": "Retrieval-Augmented Generation (RAG) is increasingly used to enhance Large Language Model (LLM)-based software vulnerability detection by grounding predictions in retrieved vulnerability knowledge, such as vulnerability reports. However, existing RAG-based software vulnerability detection (RAG4SVD) systems are often evaluated using proprietary models, which challenges open science and reproducibility. Further, studies use different datasets, custom knowledge bases, different backbone models, and diverse metrics, which hinders meaningful cross-system comparison. In this work, we study six open-source RAG4SVD systems and address these reproducibility and comparability challenges through (i) reproduction of their experimental settings under an open-weight setting, and (ii) a unified benchmark using a common dataset, metric suite, and pool of open-weight models. Further, RAG4SVD systems typically consist of multiple components, yet are often evaluated only as a whole system, i.e., end-to-end. Therefore, we perform (iii) a component-level analysis that decomposes representative RAG4SVD pipelines into input abstraction, knowledge retrieval, and detection. Our results demonstrate that reproducibility varies substantially across systems. Under the presented unified benchmark, published RAG4SVD performance does not transfer under a controlled open-weight evaluation and depends strongly on the used model. The component analysis shows that effective RAG4SVD depends on the alignment between pipeline stages. For example, oracle knowledge raises retrieval to near-optimal, yet performance remains low (0.51 pairwise accuracy), demonstrating that retrieval effectiveness alone is insufficient for reliable detection. These findings motivate evaluating RAG4SVD not only end-to-end, but at the level of pipeline components, and provide a basis for more standardized, RAG-aware evaluation practices.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "RAG",
+        "可复现性",
+        "开源权重"
+      ],
+      "url": "https://arxiv.org/abs/2609.37669",
+      "pdf": "https://arxiv.org/pdf/2609.37669"
+    },
+    {
+      "id": "2609.35909",
+      "title": "Cheap to Hypothesize, Costly to Verify: The Defense Surface of Agentic Vulnerability Discovery",
+      "authors": [
+        "Kaikai Zhang",
+        "Zihan Zhang",
+        "Yuchong Xie",
+        "Zesen Liu",
+        "Shuangjie Yao",
+        "Zhixiang Zhang",
+        "Dongdong She"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可证明安全的诱饵消耗 LLM 智能体的验证预算，降低其在 OSS-Fuzz 项目上发现真实漏洞的能力。",
+      "abstract": "自主 LLM 智能体把漏洞发现变成仓库规模的搜索：它们会生成大量漏洞假设，但在有限预算下只能验证其中一部分。作者指出，自主漏洞发现存在假设—验证不对称：通过可达性分析、执行和构造概念验证来核实一条假设，代价远高于提出它。在有限资源下，自主发现变成有界的选择性验证过程，验证开销本身也成为独特的防御面。本文提出 RedHerring：插入可证明安全的诱饵，把验证精力从真实漏洞上引开。每个诱饵把 CVE 衍生的漏洞链（用来吸引验证）与一条使危险汇点不可达的假桥接起来。防御方可用私有证书高效验证该性质，而从发布仓库建立同样事实则需要求解计算困难问题。RedHerring 还会把诱饵适配到目标仓库，使其读起来像普通程序逻辑。在 33 个 OSS-Fuzz 项目、70 个评估实例和五种模型、匹配预算的设置下，RedHerring 使被发现的真实漏洞减少 38.7%–60.4%。轨迹分析显示，智能体把 30.6%–51.5% 的补全 token 和约 32.5%–49.9% 的运行时间花在验证诱饵上。即使明确告知可能存在诱饵，相对知情基线仍能把发现的漏洞再减少 37.2%，说明有效性并不依赖诱饵保密。",
+      "abstractEn": "Autonomous LLM agents turn vulnerability discovery into a repository-scale search: they generate many vulnerability hypotheses but can verify only a subset under a finite budget. We show that autonomous vulnerability discovery exhibits a hypothesis-verification asymmetry, where verifying a candidate hypothesis through reachability analysis, execution, and proof-of-concept construction is substantially more expensive than forming it. Under a finite resource budget, this makes autonomous discovery a resource-bounded selective-verification process, further exposing verification effort as a unique defense surface. We present RedHerring, which inserts certifiably safe decoys that divert verification effort from real vulnerabilities. Each decoy combines a CVE-derived vulnerability chain that attracts verification with a false bridge that keeps its dangerous sink unreachable. A private certificate lets the defender verify this property efficiently, while establishing the same fact from the released repository requires solving a computationally hard problem. RedHerring further adapts each decoy to the target repository so that it reads as ordinary program logic. Across 33 OSS-Fuzz projects, 70 evaluation instances, and five models under matched budgets, RedHerring reduces real vulnerabilities discovered by 38.7-60.4%. Trajectory analysis shows that agents spend 30.6-51.5% of completion tokens and an estimated 32.5-49.9% of runtime verifying decoys, showing that RedHerring redirects a substantial fraction of the fixed search budget toward decoys. When explicitly informed that decoys may be present, the agent adapts its search strategy, yet RedHerring still reduces vulnerabilities discovered by 37.2% relative to an informed Baseline, showing that its effectiveness does not depend on decoy secrecy.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞发现",
+        "智能体",
+        "诱饵",
+        "OSS-Fuzz"
+      ],
+      "url": "https://arxiv.org/abs/2609.35909",
+      "pdf": "https://arxiv.org/pdf/2609.35909"
+    },
+    {
+      "id": "2609.36494",
+      "title": "Know the Normal, Track the Attack: Context-Grounded and Stateful LLM Investigation over System Provenance",
+      "authors": [
+        "Lijie Zheng",
+        "Ji He",
+        "Ying Wang",
+        "Huang Zhang",
+        "Yulong Shen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用部署上下文与攻击状态缓存引导 LLM，在操作系统溯源图上做入侵调查与杀伤链归因。",
+      "abstract": "基于溯源的入侵检测系统（PIDS）能从审计流中标出可疑活动，但其输出很难整理成连贯的攻击叙事。直接让大模型分析局部异常子图，缺少部署环境的正常行为知识，也无法在证据片段之间维护已验证的攻击状态，因而可能把例行活动误读成攻击，或把时间上分散的证据错误归因到攻击阶段。作者提出面向调查的溯源系统 ANCHOR：把证据整理与有上下文锚定的 LLM 推理结合起来。它按关系类型校准异常判断，并通过罕见的关系—角色模式把异常窗口串起来，得到的证据队列保留因果结构、时间边界和跨窗口连续性。调查器围绕进程证据使用两类互补上下文：部署上下文把环境特定的交互与对象基线和高风险安全知识结合起来；案例上下文用带置信门控的攻击跟踪缓存，在窗口之间保持调查状态。通过把当前证据与高置信历史发现关联，ANCHOR 按杀伤链阶段增量重建攻击叙事。作者在六个 DARPA Transparent Computing E3/E5 数据集、覆盖三个操作系统上评估。受控的证据级与端到端比较显示，整体 IoC 恢复和攻击阶段归因优于现有溯源基线；在固定 LLM 骨干下增益仍然存在。ANCHOR 处理一整天审计的 API 成本约在美元量级，可支持跨窗口的实用调查。",
+      "abstractEn": "Provenance-based intrusion detection systems (PIDSs) identify suspicious activity in audit streams, but their outputs remain difficult to turn into coherent attack narratives. Direct LLM analyses of local anomalous subgraphs lack deployment-specific normal-behavior knowledge and validated attack state across evidence fragments. This can cause unsupported attack interpretations of routine activities and incorrect attribution of temporally dispersed evidence to attack stages. We present ANCHOR, an investigation-oriented provenance system that combines evidence curation with context-grounded LLM reasoning. It calibrates anomaly judgments by relation type and links anomalous windows through rare relation-role patterns. The resulting evidence queues preserve causal structure, temporal boundaries, and cross-window continuity. The investigator interprets process-centered evidence using two complementary forms of context. Deployment Context combines environment-specific interaction and object baselines with high-risk security knowledge. Case Context uses a confidence-gated Attack-Tracking Cache to maintain investigation state across windows. Correlating current evidence with high-confidence prior findings, ANCHOR incrementally reconstructs attack narratives organized by kill-chain stages. We evaluate ANCHOR on six DARPA Transparent Computing E3/E5 datasets across three operating systems. Controlled evidence-level and end-to-end comparisons show improved overall IoC recovery and attack-stage attribution over state-of-the-art provenance-based baselines. These gains persist under a fixed LLM backbone in our evaluation. ANCHOR processes a full audit day at dollar-level API cost, supporting practical, context-grounded investigation across windows.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "入侵调查",
+        "溯源图",
+        "杀伤链",
+        "操作系统"
+      ],
+      "url": "https://arxiv.org/abs/2609.36494",
+      "pdf": "https://arxiv.org/pdf/2609.36494"
+    },
+    {
+      "id": "2609.34963",
+      "title": "JevVibe: Efficient Classification-Guided Secure Code Generation",
+      "authors": [
+        "Arshak Rezvani",
+        "Sasha Behrouzi",
+        "Ahmad-Reza Sadeghi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用分类模型先判定 CWE 再引导修复智能体，提升 LLM 生成代码的安全通过率。",
+      "abstract": "大模型可以生成功能正确但仍含安全弱点的代码，因此修复流水线往往先诊断弱点类型再决定如何修补。CWE 为这类诊断提供了标准词汇，但让自回归语言模型生成 CWE 标签再从回复中抽取，会带来输出合法性、速度、成本和准确性问题。作者评估决策模型 Jev：它直接从声明的候选集合中选择并返回各类概率，在 1,916 条 CyberSecEval 样本的 50 类 CWE 分类任务上，与六个开源权重自回归模型和前沿专有模型 GPT-5.6-Sol 比较。Jev 在所有分类与排序指标上超过六个开源基线；与 GPT-5.6-Sol 则因指标而异：后者 Top-1 准确率和 Macro-F1 更高，Jev 的 Top-3、Top-5 更高且 MRR 几乎相同，同时中位 API 延迟低 6.27 倍、估计 API 成本低 55.9 倍。作者进一步构建诊断引导的修复智能体 JevVibe，用预测的 CWE 标签去修复 Qwen2.5-Coder-32B-Instruct 生成的代码。由 Jev 提供诊断时，检测器度量的安全通过率从修复前的 63.5% 升至 70.7%，而 LLM 引导修复为 66.1%。结果表明 JevVibe 能提升生成代码的安全性，Jev 则提供可靠且高效的 CWE 分类。",
+      "abstractEn": "Large language models can generate functionally correct code that still contains security weaknesses, motivating repair pipelines that first diagnose a weakness type before deciding how to fix it. The Common Weakness Enumeration (CWE) provides a standardized vocabulary for such diagnoses, but asking an autoregressive language model to generate a CWE label and extracting it from the response raises questions about output validity, speed, and cost, as well as accuracy. We evaluate Jev, a decision model that instead selects directly from a declared set of candidates and returns a probability for each, against six open-weight autoregressive models and a frontier proprietary model, GPT-5.6-Sol, on a controlled 50-way CWE classification task over 1,916 CyberSecEval benchmark examples. Jev outperforms all six open-weight baselines on every classification and ranking metric, while its comparison with GPT-5.6-Sol depends on the metric: GPT-5.6-Sol achieves higher Top-1 accuracy and Macro-F1, whereas Jev achieves higher Top-3 and Top-5 accuracy and a nearly identical MRR, at 6.27× lower median API latency and 55.9× lower estimated API cost. We further build JevVibe, a diagnosis-guided repair agent that uses predicted CWE labels to repair code generated by Qwen2.5-Coder-32B-Instruct. With Jev providing the diagnosis, the agent increases the detector-measured security pass rate from 63.5% before repair to 70.7%, compared with 66.1% for LLM-guided repair. These results show that JevVibe is effective at improving the security of generated code, with Jev providing reliable and efficient CWE classification.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全代码生成",
+        "CWE",
+        "补丁修复",
+        "分类模型"
+      ],
+      "url": "https://arxiv.org/abs/2609.34963",
+      "pdf": "https://arxiv.org/pdf/2609.34963"
+    },
+    {
+      "id": "2609.37396",
+      "title": "Confidence-Guided Protocol IR for LLM-Aided Security Protocol Modeling",
+      "authors": [
+        "Siqi Li",
+        "Yufan Cai",
+        "Hongshu Wang",
+        "Xinyue Zuo",
+        "Zhe Hou",
+        "Jin Song Dong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可审计的协议中间表示和置信高亮，让 LLM 把自然语言安全协议草稿交给 Tamarin 验证。",
+      "abstract": "大模型为把自然语言协议描述翻译成形式化安全模型提供了接口，但若没有专家校验，输出仍然难以信任。本文提出人在回路框架，用于生成可被 Tamarin 验证的安全协议形式化模型。关键观察是：正确性瓶颈主要是中间协议表示的语义准确性，而不是句法合法性。为此，作者引入协议中间表示（IR），作为自然语言解析与形式模型生成之间、可供人审计的语义检查点。IR 显式刻画协议参与者、消息流、值来源、密码操作、证明目标与妥协假设。交互界面会高亮不确定字段，并按模型置信度引导用户先检查最关键的语义决策，然后再生成模型。该方法并不取代形式化方法专家，而是用 LLM 产出可审计的语义草稿，再用验证工具检查得到的形式模型。代码与验证产物见 https://github.com/laplace1002/TamarinAgent.git。",
+      "abstractEn": "Large language models offer a promising interface for translating natural-language protocol descriptions into formal security models, but their outputs remain difficult to trust without expert validation. In this paper, we present a human-in-the-loop framework for generating Tamarin-verifiable formal models of security protocols. Our key observation is that the main correctness bottleneck is the semantic accuracy rather than the syntactic validity of the intermediate protocol representation. To address this problem, we introduce a protocol intermediate representation (IR) that serves as a human-auditable semantic checkpoint between natural-language parsing and formal model generation. The IR explicitly captures protocol participants, message flows, value provenance, cryptographic operations, proof targets, and compromise assumptions. We further design an interactive interface that highlights uncertain fields and guides users to inspect the most critical semantic decisions based on model confidence before model generation. Rather than replacing formal-methods experts, our approach uses LLMs to produce auditable semantic drafts while leveraging verification tools to check the resulting formal models. Code and verification artifacts are available at https://github.com/laplace1002/TamarinAgent.git.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全协议",
+        "Tamarin",
+        "形式化建模",
+        "人在回路"
+      ],
+      "url": "https://arxiv.org/abs/2609.37396",
+      "pdf": "https://arxiv.org/pdf/2609.37396"
+    },
+    {
+      "id": "2026-2266",
+      "title": "Chinese NGCC Algorithms: The First Week of AI Cryptanalysis",
+      "authors": [
+        "Markku-Juhani O. Saarinen"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用智能体工作流在一周内对 NGCC 首轮密码候选做 AI 辅助密码分析与问题披露。",
+      "abstract": "2026 年 9 月 20 日，中国商用密码标准机构公布了下一代商用密码算法（NGCC）计划的 119 个首轮候选：34 个签名方案、41 个密钥封装机制、9 个密钥交换协议和 35 个哈希函数。该计划沿用 AES、SHA-3 和后量子密码公开竞赛的模板。它恰好开在 2026 年夏密码学家的「李世石时刻」之后：当时 AI 分析在 HAWK 签名方案上超过了人类。按作者收集的来源，NGCC 竞赛前 7 天里，89 个候选共出现 191 条有效发现，其中 78 条被标为 Critical：包括通用伪造、签名密钥恢复、平凡哈希碰撞、隐式拒绝失效，以及种子短于声称安全级别。作者独立评估用文中描述的智能体工作流发现、验证并披露了其中 110 个问题（47 个 Critical）；其余由外部研究者（部分有 AI 辅助）发现。早期 AI 辅助发现多针对实现；到周末，可复现的 AI 辅助攻击也包括新的设计级密钥恢复。本文描述工作流、复核循环、分类规则集和观察到的失败模式。评估中还对全部算法候选做了基准，发现 NGCC 哈希选择可能显著影响最终公钥性能，因为候选实现把大量周期花在「占位」哈希上。项目网站：https://ngcc.dev/。",
+      "abstractEn": "On September 20, 2026, the Chinese Institute of Commercial Cryptography Standards published the 119 first-round candidates of its Next-generation Commercial Cryptographic Algorithms (NGCC) program: 34 signature schemes, 41 key encapsulation mechanisms, 9 key exchange protocols, and 35 hash functions. The program follows the template of the open NIST competitions for AES, SHA-3, and post-quantum cryptography. It opened just after cryptographers' \"Lee Sedol moment\" in the summer of 2026, when AI analysis overtook humans in analyzing the HAWK signature scheme. During the first 7 days of the NGCC competition, according to our harvested sources, 191 active findings were published for 89 candidates, 78 of them rated Critical: universal forgeries, signing-key recovery, trivial hash collisions, broken implicit rejection, and seeds too short for the claimed security level. Our independent evaluation effort discovered, verified, and disclosed 110 of those issues (47 Critical) using the agentic workflow described in this work; outside researchers, some AI-assisted, found the rest. Early AI-assisted findings mostly concerned implementations; by the end of the week, reproduced AI-assisted attacks also included new design-level key recovery. We describe the workflow, review loop, classification ruleset, and observed failure modes. As part of the evaluation, we also benchmarked all algorithm candidates and found that NGCC hash selection may significantly affect final public-key performance, as candidate implementations spend a large share of their cycles on \"placeholder\" hashes. Note: Project web site: https://ngcc.dev/",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "密码分析",
+        "智能体",
+        "NGCC",
+        "后量子候选"
+      ],
+      "url": "https://eprint.iacr.org/2026/2266",
+      "pdf": "https://eprint.iacr.org/2026/2266.pdf"
+    },
+    {
+      "id": "2026-2273",
+      "title": "Slashable Secrecy for Witness Encryption over Ethereum Finality",
+      "authors": [
+        "Yihsuan Wu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在以太坊原生罚没规则下为账本条件见证加密定义可罚没保密性，无需额外托管委员会。",
+      "abstract": "基于区块链状态的见证加密旨在按账本条件释放秘密，而不需要密钥托管方。拥有足够权益、能构造有效分叉见证的验证者，即使条件在规范链上从未成立，也可以得到秘密：他们把满足条件的私有分叉最终化，并隐藏该分叉，从而扣留罚没所需的冲突投票。作者提出可罚没保密性（slashable secrecy），用以太坊原生罚没规则填补这一缺口，而不另设密钥托管委员会或独立抵押。在条件直至完成都未在已最终化规范链上成立的执行中，信息优势会给出针对对手所控密钥的那些投票证据，或给出指定困难问题的解。作者给出基于见证 KEM 的构造，并在其提取接口上有条件地证明可罚没保密性；在验证者权重变化下界定量化被牵连的历史权益。对一份归档的以太坊主网状态，在所述预算与覆盖假设下，历史证据权重下限超过活跃权益的 3.5%，约 144 万 ETH。合成以太坊网络上的实验确认可以原生处理这些证据，而无需做 WE 解密。仍有两点限制：满足完整关系与提取接口的见证 KEM 尚未实例化；执行还要求证据可用、转换成原生形式，并在签名者仍有资格时被纳入。",
+      "abstractEn": "Witness encryption over blockchain state aims to release a secret on a ledger condition without a key custodian. Validators with enough stake to construct a valid fork witness can obtain the secret although the condition never holds on the canonical chain. They finalize a private fork that satisfies the condition, and keeping the fork hidden withholds the conflicting votes that slashing needs. We propose slashable secrecy to address this gap with Ethereum's native slashing rules, without an additional key-custody committee or separate collateral. In executions where the condition never holds on the finalized canonical chain through completion, an information advantage yields evidence of those votes against keys the adversary controlled, or a solution to a designated hard problem. We give a construction from a witness KEM and prove slashable secrecy conditionally on its extraction interface. We bound the implicated historical stake under changing validator weights. For an archived Ethereum mainnet state, the historical evidence-weight floor exceeds 3.5 percent of its active stake, about 1.44 million ETH, under stated budget and coverage assumptions. Experiments on a synthetic Ethereum network confirm native processing of the evidence, without WE decryption. Two limitations remain. A witness KEM satisfying the full relation and extraction interface remains uninstantiated. Enforcement requires that the evidence is available, converted to native form and included while its signers remain eligible.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "见证加密",
+        "以太坊最终性",
+        "罚没",
+        "分叉"
+      ],
+      "url": "https://eprint.iacr.org/2026/2273",
+      "pdf": "https://eprint.iacr.org/2026/2273.pdf"
+    },
+    {
+      "id": "2026-2265",
+      "title": "The Illusion of Payload Blindness: Why MEV Mitigations Fail in Practice",
+      "authors": [
+        "Simona Češková",
+        "Martin Perešíni",
+        "Ivan Homoliak"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用以太坊校准的分析评估加密内存池等载荷致盲缓解，说明部署激励而非密码学才是 MEV 主障碍。",
+      "abstract": "在公链上，排序可见交易的能力让出块者可以从用户抽取价值，即最大可提取价值（MEV）。提议者—构建者分离把这一权利变成正式拍卖，而主流协议级缓解则诉诸载荷致盲：加密内存池、可验证置换和出块延迟，在顺序锁定前隐藏或打乱交易。每一种缓解的安全论证都假设对手在顺序提交前一无所知。部署系统面对的是另一类对手，本文度量这一差异的代价。作者用统一的对手层级，以闭式分析和按以太坊校准的仿真评估三类缓解。对完全致盲对手，结论由定义得出：带置换的加密消除依赖交易内容的攻击类，而出块延迟会增加而非减少抽取。一旦放弃这一理想化，部署问题占主导。未加密信封会暴露发送者，历史行为就能对隐藏内容做出可用猜测。可选加密给构建者饿死受保护交易的理由，自愿采用随之崩溃。密钥轮换把密码参数变成排队拥堵源。最后，抑制抽取从生产者收入中拿掉的远多于以更低费用返给用户的部分，因此每种缓解的成本都落在控制部署的一方。通向无 MEV 区块链的约束因此是活性与部署激励，而不是密码学。",
+      "abstractEn": "In public blockchains, the ability to order visible transactions allows block producers to extract value from users, a problem known as Maximal Extractable Value (MEV). Proposer-Builder Separation has turned that right into a formalized auction, and the leading protocol-level mitigations answer it with payload blindness: encrypted mempools, verifiable permutations, and block delay hide or scramble transactions before the order is fixed. Every such mitigation carries a security argument that assumes an adversary who learns nothing before the order commits. Deployed systems face a different adversary, and this paper measures the cost of that difference. We evaluate the three families of mitigations against a single adversary hierarchy, using closed-form analysis and simulations calibrated to Ethereum. Against a fully blind adversary, the outcome follows from the definitions: encryption with a permutation removes the attack classes that depend on transaction content, and block delay increases extraction rather than reducing it. Once that idealization is dropped, deployment problems dominate. The unencrypted envelope identifies the sender, so past behavior restores a usable guess at hidden content. Optional encryption gives builders a reason to starve the transactions it protects, and voluntary adoption then collapses. Key rotation turns a cryptographic parameter into a source of queueing congestion. Suppressing extraction, finally, removes far more producer revenue than it returns to users in lower fees, so the cost of every mitigation falls on the party that controls its deployment. The binding obstacles to MEV-free blockchains are therefore liveness and deployment incentives rather than cryptography.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MEV",
+        "加密内存池",
+        "PBS",
+        "部署激励"
+      ],
+      "url": "https://eprint.iacr.org/2026/2265",
+      "pdf": "https://eprint.iacr.org/2026/2265.pdf"
+    },
+    {
+      "id": "2609.36667",
+      "title": "When One Leak Pays Forever: Context Binding and the Price of Deterring Collusion",
+      "authors": [
+        "Tingyi Lin",
+        "Shawn Yu",
+        "Ruoran Lai",
+        "Huanxi Zhang"
+      ],
+      "year": 2026,
+      "venue": "NeurIPS 2026",
+      "abstractOneWord": "用重复博弈刻画门限加密内存池一次泄密可反复获利，给出吓阻合谋所需的罚没质押下界。",
+      "abstract": "当一次偏离所出售的能力持续有效时，联盟可以一次偏离、多次获利。在对抗最大可提取价值（MEV）的主流防御——门限加密内存池中，解密委员会的法定人数若把解密能力卖给抢跑者，就会暴露该能力此后仍能解密的每一个区块。作者问：多高的惩罚（例如可罚没质押）才能吓阻这种合谋。在重复博弈中，单调授权联盟族（例如 n 人委员会中任意 k 人）的一次泄密会解锁一组未来轮次、付出一次性惩罚，并结束该联盟的参与。作者证明每个动态偏离都可归结为选择泄密时刻，因此吓阻成立当且仅当每个联盟的惩罚覆盖单次泄密所能达到的最大折现价值。无折现时，在 T 轮单位价值下，完全复用需要惩罚 T，而把每次泄密绑定到当轮只需 1，因此对视界常数的惩罚吓阻不了无界复用；长度为 w 的复用窗口最多花费最大单轮价值的 w 倍。吓阻所有联盟的最便宜各方质押配置求解一个覆盖线性规划。对区块链设计而言，按纪元轮换密钥把所需质押从密钥寿命价值降到一个纪元的价值；作者用以太坊抢跑数据校准差距，并把 Ferveo 与 Shutter 放入模型。分析还延伸到密封投标拍卖、多权威投票以及共享密钥下的联邦学习。",
+      "abstractEn": "A coalition that deviates once can profit many times when what it sells keeps working. In a threshold-encrypted mempool, a leading defense against maximal extractable value (MEV), a quorum of the decryption committee that sells its decryption capability to a front-runner exposes every later block that the capability still decrypts. We ask how large a penalty, such as slashable stake, deters this kind of collusion. In our repeated game, a single leak by any coalition in a monotone family of authorized coalitions (for example, any k of the n committee members) unlocks a set of future rounds, costs a one-time penalty, and ends the coalition's participation. We show that every dynamic deviation reduces to choosing a leak time, so deterrence holds if and only if each coalition's penalty covers the largest discounted value that a single leak reaches. Without discounting, over T rounds of unit value full reuse needs a penalty of T while binding each leak to its own round needs 1, so no penalty that is constant in the horizon deters unbounded reuse; a reuse window of w rounds costs at most w times the largest per-round value. The cheapest profile of per-party stakes that deters every coalition solves a covering linear program. For blockchain design, per-epoch keys cut the required stake from the value of a key's lifetime to the value of one epoch; we calibrate the gap on Ethereum front-running data and place Ferveo and Shutter in the model. The analysis extends to sealed-bid auctions, multi-authority voting, and federated learning under a shared key.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MEV",
+        "门限加密内存池",
+        "合谋",
+        "罚没质押"
+      ],
+      "url": "https://arxiv.org/abs/2609.36667",
+      "pdf": "https://arxiv.org/pdf/2609.36667"
+    },
+    {
+      "id": "2609.30509",
+      "title": "Too Late to Slash: Coordinating a Risk-Free Equivocation Attack",
+      "authors": [
+        "Hao Chung",
+        "Chen-Da Liu-Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "构造算法罚没下理性验证者的无风险双重签名协调协议，说明罚没本身不能保证与质押成比例的经济安全。",
+      "abstract": "罚没常被用来论证权益证明区块链的安全：没收作恶验证者的质押。常见理由是，没有罚没时，验证者可以拉拢他人签署冲突区块来发起双重签名攻击：若足够多人加入则攻击成功，否则尝试没有损失。罚没本应让这种尝试变贵，从而保证经济价值与质押相当的应用安全。但这一理由依赖启发式，而非形式化博弈保证。作者构造算法罚没下理性验证者的无风险协调协议，证明规定策略剖面——理性验证者拉拢他人双重签名——构成事后纳什均衡，即使事先不知道有多少人会参与。对任何来自成功双重签名的收益 ε>0（无论相对质押多小），均衡都成立。因此仅靠罚没并不能保证与质押价值成比例的经济安全。结果揭示算法罚没的根本局限：现实中许多抵押安排可以依赖法院等外部执行，而算法罚没依赖攻击者所控制的同一共识过程。这些发现要求对罚没安全做形式分析，而不是简单套用有独立执行的金融系统论证。",
+      "abstractEn": "Slashing is commonly argued to secure proof-of-stake blockchains by confiscating the stake of misbehaving validators. The usual justification is that, without slashing, validators can solicit an equivocation attack by signing conflicting blocks: if enough others join, the attack succeeds; otherwise, the attempt incurs no loss. Slashing is intended to make such attempts costly and thereby guarantee the security of applications whose economic value is comparable to the bonded stake. This rationale, however, rests on heuristic arguments rather than a formal game-theoretic guarantee. We challenge this rationale by constructing a risk-free coordination protocol for rational validators under algorithmic slashing. We show that the prescribed strategy profile, in which rational validators solicit other validators to equivocate, constitutes an ex post Nash equilibrium, even when validators do not know in advance how many others will participate. The equilibrium holds for any gain ε>0 from successful equivocation, however small relative to the bonded stake. Thus, slashing alone does not guarantee economic security proportional to the value of bonded stake. Our results expose a fundamental limitation of algorithmic slashing. Whereas conventional collateral arrangements in many real-world scenarios can rely on external enforcement, for example through courts, algorithmic slashing depends on the same consensus process that the attackers control. These findings call for a formal analysis of slashing's security, rather than overly simplistic arguments drawn from financial systems with independent enforcement.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "罚没",
+        "权益证明",
+        "双重签名",
+        "博弈"
+      ],
+      "url": "https://arxiv.org/abs/2609.30509",
+      "pdf": "https://arxiv.org/pdf/2609.30509"
+    },
+    {
+      "id": "2026-2260",
+      "title": "PQMZ: Formally Verified Falcon-PKR for Post-Quantum Cryptographic Migration in Zcash",
+      "authors": [
+        "Hannes Hacker",
+        "Shekoufeh Neisarian",
+        "Sara Zain",
+        "Elif Bilge Kavun"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用 EasyCrypt 形式化验证面向 Zcash 类透明交易的 Falcon 公钥恢复变体，并评估后量子迁移开销。",
+      "abstract": "把区块链系统迁到后量子密码（PQC），不仅要替换经典原语，还要分析会改变签名表示与验证方式的变换。作者研究 Falcon-PKR——面向 Zcash 类透明交易工作流的 Falcon 公钥恢复变体。它用紧凑摘要代替完整 Falcon 公钥的显式存储，并在验证时从签名重建候选公钥。该构造把公钥与签名的合计表示大约缩小 15%，但也引入新的安全情形：验证依赖于从对手提供的签名数据派生出的重建密钥。作者在随机预言机模型下给出机器检查的 EasyCrypt 形式化，机械验证 EUF-CMA 归约：Falcon-PKR 的安全性由标准 Falcon 的安全性与域分离公钥哈希的抗碰撞性共同界定。分析显式处理这两条假设，并不声称证明了 Falcon 本身。作者还在抽象 Falcon 签名接口下机器检查诚实签名的正确性。实现覆盖 Falcon-512 与 Falcon-1024 的 Python 与 C 版本，并相对 ECDSA 及若干后量子方案评估运行时间与大小，给出显式的验证与存储权衡。作为补充案例，作者实现并分析扩展的基于 SECUER 的多方计算仪式架构。两个案例分别覆盖后量子区块链迁移的交易签名层与仪式基础设施层。",
+      "abstractEn": "Migrating blockchain systems to Post-Quantum Cryptography (PQC) requires not only replacing classical primitives, but also analysing transformations that change how signatures are represented and verified. We study Falcon-PKR, a public-key-recovery variant of Falcon, motivated by Zcash-like transparent transaction workflows. Falcon-PKR replaces explicit storage of the full Falcon public key with a compact stored digest and reconstructs a candidate public key from the signature during verification. In our construction, this reduces the combined representation size of public key and signature by approximately 15%, but it also introduces a distinct security case in which verification depends on a reconstructed key derived from adversarially supplied signature data. We address this with a machine-checked EasyCrypt formalisation in the Random Oracle Model (ROM). We mechanically verify an EUF-CMA reduction showing that the security of Falcon-PKR is bounded by the security of standard Falcon together with collision resistance of a domain-separated public-key hash. The analysis therefore treats both assumptions explicitly and does not claim a proof of Falcon itself. We also machine-check correctness for honest signing under an abstract Falcon signing interface. We implement Falcon-PKR for Falcon-512 and Falcon-1024 in Python and C, and evaluate runtime and size against ECDSA and selected Post-Quantum (PQ) alternatives, exposing explicit verification and storage trade-offs. As a complementary case study, we implement and analyse an extended SECUER-based Multi-Party Computation (MPC) ceremony architecture. Together, the two case studies address both transaction-signature and ceremony-infrastructure layers of PQ blockchain migration.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "后量子",
+        "Zcash",
+        "形式化验证",
+        "Falcon"
+      ],
+      "url": "https://eprint.iacr.org/2026/2260",
+      "pdf": "https://eprint.iacr.org/2026/2260.pdf"
+    },
+    {
+      "id": "2609.32005",
+      "title": "Beyond Incentive Compatibility: Rational Harm-Proof Transaction Fee Mechanisms",
+      "authors": [
+        "Forest Zhang",
+        "Elain Park",
+        "Ke Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为区块链交易费机制引入理性伤害抗性，刻画普通模型四难与 MPC 辅助模型下的随机机制。",
+      "abstract": "交易费机制（TFM）分配区块链上稀缺的区块空间。已有工作关注激励相容（IC）：诚实行为使每个策略参与者收益最大。作者引入理性伤害抗性（RHP）：排除那些伤害诚实参与者、却不降低偏离者相对诚实效用的偏离。仅有 IC 排除不了这种无成本伤害：在第二价格拍卖中，失败投标者可以提高胜者支付而不改变自己收益。对有限区块容量 k，作者刻画同时满足 RHP、用户激励相容（UIC）与矿工激励相容（MIC）的 TFM。在普通模型（单矿工执行拍卖）中，证明紧的四难：没有任何 TFM 能同时实现正矿工收入、UIC、MIC 以及对矿工—用户联盟的 RHP，而任意三条可以一起达到。在 MPC 辅助模型（矿工委员会用多方计算执行拍卖）中，构造带正矿工收入的随机 TFM，对用户、矿工以及至多含 k 个用户的矿工—用户联盟满足 UIC、MIC 与 RHP。拥塞下确认交易必须随机：该模型中任何满足 UIC 与用户 RHP 的确定性 TFM，在提交投标数超过 k 时都不确认任何交易。最后，两种模型、每个策略角色上 IC 与 RHP 都不可比：机制可以满足其一而不满足另一。这些结果把交易费机制设计从激励扩展到对无成本伤害的保护。",
+      "abstractEn": "Transaction fee mechanisms (TFMs) allocate scarce block space in blockchains. Prior work focuses on incentive compatibility (IC): honest behavior maximizes the payoff of each strategic player. We introduce rational-harm proofness (RHP), which rules out deviations that harm honest participants without reducing the deviator's utility relative to honest behavior. IC alone does not exclude such costless harm: in a second-price auction, a losing bidder can raise the winner's payment without changing its own payoff. For finite block capacity k, we characterize TFMs satisfying RHP alongside user incentive compatibility (UIC) and miner incentive compatibility (MIC). In the plain model, where a single miner implements the auction, we prove a tight tetrilemma: no TFM simultaneously achieves positive miner revenue, UIC, MIC, and RHP against miner-user coalitions, while any three are jointly achievable. In the MPC-assisted model, where a committee of miners implements the auction using multi-party computation, we construct a randomized TFM with positive miner revenue satisfying UIC, MIC, and RHP against users, miners, and miner-user coalitions containing at most k users. Randomness is necessary to confirm transactions under congestion: any deterministic TFM satisfying UIC and user RHP in this model confirms no transactions when the number of submitted bids exceeds k. Finally, IC and RHP are incomparable for every strategic role in both models: mechanisms can satisfy either property without satisfying the other. These results extend transaction fee mechanism design beyond incentives to protection against costless harm.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "交易费机制",
+        "激励相容",
+        "MPC",
+        "排序"
+      ],
+      "url": "https://arxiv.org/abs/2609.32005",
+      "pdf": "https://arxiv.org/pdf/2609.32005"
+    }
+  ]
+}
