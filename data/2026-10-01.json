@@ -1,0 +1,295 @@
+{
+  "date": "2026-10-01",
+  "papers": [
+    {
+      "id": "10.1145-3830472",
+      "title": "Decomposing Ponzi Schemes: Multi-aspect Lifecycle Analysis for Detecting Fraudulent Smart Contracts",
+      "authors": [
+        "Yizhou Chen",
+        "Zeyu Sun",
+        "Guoqing Wang",
+        "Dan Hao"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用静态信号校准 LLM 对庞氏合约生命周期的解释，再训练分类器检测欺诈智能合约。",
+      "abstract": "智能合约支撑去中心化金融，使资产管理可以无需信任、过程透明。但其可编程性也扩大了攻击面，对手可以把欺诈性经济行为直接写进合约逻辑。其中，智能合约庞氏骗局（SCPS）是一类危害很大的链上金融欺诈：恶意开发者伪装成合法 DeFi 应用，从用户处抽取不法收益。现有基于静态分析或深度学习的检测方法往往抓不住 SCPS 特有行为，而大语言模型又容易幻觉且缺乏监督。为此本文提出 PonziLicle：通过系统刻画庞氏骗局的生命周期行为来增强检测。作者分析 SCPS 的典型生命周期，归纳出五个与结构密切相关的行为视角：资金流、利润逻辑、推荐机制、提现控制以及伪装命名。对每个视角设计针对性提示，用 LLM 生成细粒度、分视角的代码解释。为抑制幻觉，再用静态分析提取与这些视角对齐的可靠合约级信号，去校准和修正 LLM 解释。最后把合约源码、静态信号与校准后的解释一起训练深度学习分类器。在 6946 个真实智能合约上的实验表明，PonziLicle 优于 7 个现有最强 SCPS 检测方法，F1 达到 0.958，相对提升 10.26% 到 122.31%。",
+      "abstractEn": "Smart contracts have enabled decentralized financial applications, enabling trustless and transparent asset management. However, their programmability also expands the attack surface, allowing adversaries to encode fraudulent economic behaviors directly into contract logic. Among these threats, Smart Contract Ponzi Schemes (SCPS) represent a particularly harmful class of on-chain financial fraud, in which malicious developers mimic legitimate decentralized finance applications to extract unlawful value from users. Existing detection approaches using static analysis or deep learning often fail to capture SCPC-specific behaviors, while LLMs suffer from hallucinations and lack supervision. To address these limitations, we propose PonziLicle, a novel framework that enhances SCPC detection by systematically modeling the lifecycle behaviors of Ponzi schemes. Specifically, we analyze the typical life cycle of SCPCs and identify five behavioral perspectives that are closely tied to their structure: fund flow, profit logic, referral mechanism, withdrawal control, and camouflaged naming. For each perspective, we design tailored prompts and utilize LLMs to generate fine-grained, perspective-specific code explanations. To mitigate hallucinations, we employ static analysis to extract reliable, contract-level signals aligned with these perspectives, which are then used to calibrate and refine the LLM-generated explanations. Finally, we integrate the smart contract source code, static signals, and calibrated explanations to train a deep learning classifier for SCPC detection. Experimental results on 6,946 real-world smart contracts show that PonziLicle outperforms 7 state-of-the-art SCPC detection methods, achieving an F1-score of 0.958, with an increase of 10.26% to 122.31%.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "PonziLicle",
+        "庞氏合约",
+        "LLM",
+        "TOSEM"
+      ],
+      "url": "https://doi.org/10.1145/3830472",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3830472"
+    },
+    {
+      "id": "2609.39783",
+      "title": "COMPASS: Predicting the Relationship of Multiple Patches for Vulnerabilities with LLMs",
+      "authors": [
+        "Yi Song",
+        "Dongchen Xie",
+        "Xiaoyuan Xie",
+        "He Zhang",
+        "Lin Xu",
+        "Chunying Zhou",
+        "Zhi Jin"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 LLM 预测同一 CVE 多份补丁之间的关系，服务传统软件下游仓库的补丁采纳。",
+      "abstract": "现代软件高度依赖代码复用，上游漏洞修复并不会自动传播到下游代码库，下游维护者必须手工采纳补丁才能消除已知风险。实践中一个漏洞常常对应多份补丁，不同补丁关系意味着不同采纳策略，这大大增加了下游补丁采纳的复杂度。作者先人工检查约 1000 个真实世界的多补丁漏洞，并访谈有经验的开发者，归纳出六类典型补丁关系：Merge、Mirror、Better Solution、Fixing-of-Fixing、Collaboration 与 Separation。在此基础上提出 COMPASS：用大语言模型自动预测多份漏洞补丁之间的关系。输入一个 CVE 后，COMPASS 按四阶段流水线工作：（i）识别补丁组并预扫描显式关系；（ii）对单份补丁做分析；（iii）用层次引导的提示推断关系实例；（iv）校验推断结果的完备性与一致性。输出是补丁组内的预测关系，并可视化为关系图。作者在 300 个多补丁 CVE 基准上与主流学习方法和 LLM 基线比较，结果显示该方法预测效果稳定，平均相对 SOTA 提升 85.04%。作者还公开了在线查询网站 https://patch-relation.com，方便社区复用补丁关系知识。",
+      "abstractEn": "Modern software heavily relies on code reuse, so upstream vulnerability fixes do not automatically propagate to downstream codebases. Downstream maintainers must manually adopt patches to eliminate known risks. In practice, a single vulnerability often corresponds to multiple patches, which greatly complicates downstream patch adoption because different patch relationships imply different adoption strategies. To address this challenge, we first manually inspect large-scale multi-patch vulnerabilities (about 1K) in the real world and interview experienced developers, summarizing six typical types of patch relationships, i.e., Merge, Mirror, Better Solution, Fixing-of-Fixing, Collaboration, and Separation. Based on these observations, we propose COMPASS, an automated approach that predicts the relationships of multiple vulnerability patches with large language models. Given a CVE as input, COMPASS follows a four-phase pipeline that (i) identifies the patch group and pre-scans explicit relationships, (ii) performs individual patch analysis, (iii) infers relationship instances via a hierarchy-guided prompt, and (iv) validates completeness and consistency of the inferred results. As output, COMPASS reports the predicted relationships within the patch group and visualizes them as a relationship graph. We evaluate COMPASS on a benchmark of 300 multi-patch CVEs and compare it against mainstream learning-based and LLM baselines. Results show that our method achieves strong and consistent prediction effectiveness and outperforms SOTA by 85.04% on average. We publicly release an online querying website to support community reuse of patch relationships knowledge: https://patch-relation.com.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "COMPASS",
+        "补丁关系",
+        "CVE",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2609.39783",
+      "pdf": "https://arxiv.org/pdf/2609.39783"
+    },
+    {
+      "id": "2609.38807",
+      "title": "PatchHolmes: Agentic Patch Retrieval via Listwise Selection",
+      "authors": [
+        "Guanqun Yang",
+        "Yingming Zhou",
+        "Jiangrui Zheng",
+        "Shudong Hao",
+        "Xueqing Liu"
+      ],
+      "year": 2026,
+      "venue": "AACL-IJCNLP 2026",
+      "abstractOneWord": "用列表式智能体在本地 Git 仓库中为已知 CVE 检索对应修复提交，对象是传统开源软件。",
+      "abstract": "补丁检索的任务是找到修复已知漏洞的那次提交，它是漏洞管理工作流的基础，但主要咨询库中仍有 60% 到 63% 的 CVE 缺少补丁链接。本文提出 PatchHolmes：两阶段补丁检索系统，把混合式第一阶段检索器与智能体第二阶段检查循环结合起来。与逐条独立打分的先前工作不同，第二阶段智能体对 top-100 做列表式阅读：一次看到全部候选，再通过四个有预算的工具选择阅读 3 到 10 个提交，最后只提交一个最佳提交。在 GitHubAD 上，PatchHolmes 的 Recall@1 比逐点二分类器 Favia 高 25.34%，比 retrieve-and-CoT 基线 IRCoT 高 31.40%，且每个 CVE 只需一轮智能体对话，而 Favia 需要十轮；在候选集相同的情况下，智能体相对直接取检索器第一名再提升 27.32% Recall@1。同一智能体原样迁移到 PatchFinder_top10 后，把 Recall@1 从 PatchFinder 自己的 top-1（24.28%）提升到 39.86%。在 Qwen 家族内更换 LLM 骨干，Recall@1 变化不到 1%，另一模型家族 gpt-oss 仍远高于无智能体下限，说明增益来自列表式智能体循环。整套系统在冻结的开源权重模型上对本地 Git 仓库运行，无需微调或外部搜索 API。",
+      "abstractEn": "Patch retrieval, the task of finding the commit that fixes a known vulnerability, is the foundation of vulnerability management workflows, yet 60% to 63% of CVEs in the major advisory databases lack a patch link. We present PatchHolmes, a two-phase patch retrieval system that pairs a hybrid first-stage retriever with an agentic second-stage inspection loop. Unlike pointwise prior work that scores each candidate independently, the Phase 2 agent reads the top-100 listwise: it sees the full candidate list at once and selectively reads 3 to 10 commits through four budgeted tools before submitting a single best commit. On GitHubAD, PatchHolmes beats the pointwise binary classifier Favia by 25.34% Recall@1 and the retrieve-and-CoT baseline IRCoT by 31.40%, at one agent conversation per CVE versus Favia's ten; with the candidate set held identical, the agent adds 27.32% Recall@1 over taking the retriever's top candidate, and the same agent, transferred unchanged to PatchFinder_top10, lifts Recall@1 from PatchFinder's own top-1 pick (24.28%) to 39.86%. Swapping the LLM backbone within the Qwen family changes Recall@1 by under 1%, and a second model family (gpt-oss) stays far above the no-agent floor, so the gain comes from the listwise agent loop; the entire system runs on a frozen open-weight model over a local Git repository, without fine-tuning or external search APIs.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PatchHolmes",
+        "补丁检索",
+        "智能体",
+        "CVE"
+      ],
+      "url": "https://arxiv.org/abs/2609.38807",
+      "pdf": "https://arxiv.org/pdf/2609.38807"
+    },
+    {
+      "id": "2609.36635",
+      "title": "WitnessGym: Benchmarking Coding Agents on the Construction of Bug Witnesses",
+      "authors": [
+        "Haomin Qi",
+        "Xiangzhe Xu",
+        "Yiming Huang",
+        "Jingbo Shang",
+        "Chengpeng Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "向真实 Java 项目注入漏洞并让编码智能体构造可执行 bug 见证，用于审计发现的验证。",
+      "abstract": "漏洞验证要求编码智能体为已报告的缺陷生成可执行见证：把具体输入与测试夹具结合起来，在执行中暴露错误行为。这类证据能让审计发现可落地，但现有基准常复用公开历史漏洞与见证，或依赖手工构造，难以评测。本文提出 WitnessGym：通过漏洞注入自动构造漏洞验证基准。它把缺陷注入真实项目中已被测试覆盖的路径，重新构建项目，并只保留能被构造期见证暴露的用例。缺陷规格与执行适配器可扩展到更多缺陷类型和语言；保缺陷变换会改变周围结构但保持见证行为。基于带测试套件的真实 Java 项目，WitnessGym 自动构造了 1300 个基准用例。注入补丁与历史缺陷补丁相似，在盲测中两套被评模型难以区分。作者在六种框架/模型组合下评估四种编码智能体框架，覆盖缺陷类型、执行上下文与变换深度。即使缺陷模式已知，构造见证仍然困难。框架、基准用例与评估脚本均已公开。",
+      "abstractEn": "Bug validation asks a coding agent to produce an executable witness for a reported bug. The witness combines a concrete input with a testing harness and exposes faulty behavior during execution. Such evidence makes audit findings actionable, yet benchmark evaluation is difficult when cases reuse public historical bugs and witnesses or require manual construction. We present WitnessGym, an automated framework for constructing bug-validation benchmarks through bug injection. It injects bugs into test-reached paths of real projects, rebuilds each project, and retains cases exposed by a construction-time witness. Bug specifications and execution adapters allow extension to additional bug types and languages. Bug-preserving transformations vary the surrounding structure while preserving the witness behavior. Based on real-world Java projects with test suites, WitnessGym automatically constructs 1,300 benchmark cases. The injected patches resemble historical bug patches and are difficult for the two evaluated models to distinguish in blinded comparisons. We evaluate four coding agent frameworks in six framework/model pairings across bug types, execution contexts, and transformation depths. Witness construction remains difficult even when the bug pattern is known. Our framework, benchmark cases, and evaluation scripts are available.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "WitnessGym",
+        "编码智能体",
+        "漏洞验证",
+        "Java"
+      ],
+      "url": "https://arxiv.org/abs/2609.36635",
+      "pdf": "https://arxiv.org/pdf/2609.36635"
+    },
+    {
+      "id": "2609.38954",
+      "title": "APTInvestBench: Evaluating Autonomous APT Investigation under Varying Telemetry",
+      "authors": [
+        "Yu Wang",
+        "Shuhao Li",
+        "Tao Yin",
+        "Ziyang Li",
+        "Xueying Zhao",
+        "Peishuai Sun",
+        "Jiang Xie"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 LLM 智能体在变化的 SOC 遥测条件下调查 APT，评估告警研判与证据引用的稳健性。",
+      "abstract": "大语言模型智能体有望帮助安全运营中心（SOC）调查高级持续威胁（APT），把弱线索变成可用于界定入侵范围和响应的证据。但在一种遥测设置下成功，并不等于对日志采集、保留或采样变化也稳健。本文提出 APTInvestBench，用于评估自主 APT 调查的跨遥测稳健性。基准包含 370 个案例、七种 SOC 启发条件，来自 56 次按报告重建的攻击，共 1640 万条日志。智能体调查未经验证的线索，并提交带记录级引用的报告。固定的动作级证据要求会跟踪可用日志、查询返回和正式引用中的充分证据，从而把遥测限制与获取、报告缺口分开。在 11 个 LLM 上，智能体平均能为 44.3% 的可恢复攻击动作获取充分证据，但正式引用只支撑 25.0%。更重要的是，总体覆盖率会掩盖明显不稳定：从完整遥测到仅端点遥测，覆盖率只下降 1.6 个百分点，却有 35.5% 先前已覆盖的动作在仍可恢复的情况下失去充分引用支撑。四种框架下，即使已登记的支撑记录不变，这类损失仍然存在。APTInvestBench 提供可复用的调查环境与诊断评估，用于发现这些缺口并改进更可靠的防御智能体。",
+      "abstractEn": "Large language model (LLM) agents could help security operations centers (SOCs) investigate advanced persistent threats (APTs) by turning weak leads into evidence for intrusion scoping and response. Yet success under one telemetry setting does not establish robustness to changes in log collection, retention, or sampling. We introduce APTInvestBench, a benchmark for evaluating cross-telemetry robustness in autonomous APT investigation. It comprises 370 cases across seven SOC-inspired conditions, derived from 56 report-informed attack reconstructions with 16.4 million log records. Agents investigate unverified leads and submit reports with record-level citations. Fixed action-level support requirements track sufficient evidence across available logs, query returns, and formal citations, separating telemetry limitations from acquisition and reporting gaps. Across eleven LLMs, agents acquire sufficient evidence for 44.3% of recoverable attack actions on average, while formal citations support only 25.0%. More importantly, aggregate coverage can conceal substantial instability: from Full to endpoint-only telemetry, coverage declines by only 1.6 percentage points, yet 35.5% of previously covered actions lose sufficient citation support despite remaining recoverable. Across four frameworks, such losses persist even when registered supporting records remain unchanged. APTInvestBench provides reusable investigation environments and diagnostic evaluation for identifying these gaps and developing more reliable defensive agents.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "APTInvestBench",
+        "SOC",
+        "APT调查",
+        "LLM智能体"
+      ],
+      "url": "https://arxiv.org/abs/2609.38954",
+      "pdf": "https://arxiv.org/pdf/2609.38954"
+    },
+    {
+      "id": "2609.36879",
+      "title": "SKILLLITE: Evidence-Guided Malicious Skill Auditing with Compact LLMs",
+      "authors": [
+        "Haoran Ou",
+        "Gelei Deng",
+        "Xuanye Zhang",
+        "Wenbo Guo",
+        "Tianwei Zhang",
+        "Kwok-Yan Lam"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用紧凑 LLM 做证据引导的恶意 Agent Skill 审计，对象是含可执行组件的第三方技能包。",
+      "abstract": "随着基于 LLM 的智能体承担越来越复杂的任务，Agent Skill 成为一种扩展能力的灵活机制：把任务指令、可执行组件和辅助资源打包，提供专门功能。但第三方 Skill 的普及也带来新的供应链攻击面：恶意 Skill 可以嵌入有害行为，滥用智能体权限并危害执行环境或可访问资源。近期基于 LLM 的恶意 Skill 审计方法效果不错，却往往依赖能力强的商业大模型；如何在安全敏感、资源受限的场景用可本地部署的紧凑 LLM 有效审计，仍基本未被探索。作者发现紧凑 LLM 难以识别隐藏在复杂 Skill 包中的恶意行为，原因既包括行为隐式，也包括推理能力有限。为此提出 SKILLLITE：面向恶意 Skill 检测的证据引导智能体框架。它从复杂 Skill 包中提取安全相关行为并推断预期功能，再用紧凑 LLM 结合观察行为与功能上下文判定恶意性。实验表明，SKILLLITE 在多种紧凑 LLM 骨干上提升了恶意 Skill 检测，并优于现有代表性审计基线；对野外已行为确认的恶意 Skill 也具有泛化效果，同时保持较低推理延迟，便于实际部署。",
+      "abstractEn": "As LLM-based agents perform increasingly complex tasks, Agent Skills have emerged as a flexible mechanism for extending their capabilities. An Agent Skill packages task-specific instructions with executable components and auxiliary resources to provide specialized functionalities. However, the growing adoption of third-party Skills introduces a new supply-chain attack surface. Malicious Skills can embed harmful behaviors that abuse agent privileges and compromise the agent execution environment or accessible resources. Although recent LLM-based malicious Skill auditing approaches have achieved promising performance, they often rely on capable commercial LLMs. How to achieve effective auditing with compact, locally deployable LLMs in security-sensitive and resource-constrained settings remains largely unexplored. Our investigation reveals that compact LLMs struggle to identify malicious behaviors hidden in complex Skill packages. This difficulty arises from both the implicit nature of such behaviors and the limited reasoning capacity of compact LLMs. To address these challenges, we propose SKILLLITE, an evidence-guided agentic framework for malicious Skill detection. SKILLLITE effectively extracts security-relevant behaviors and infers the intended functionality from complex Skill packages. It then employs a compact LLM to assess the maliciousness of the Skill based on the observed behaviors and their functional context. Experiments show that SKILLLITE improves malicious Skill detection across different compact LLM backbones and outperforms existing representative auditing baselines. Its effectiveness generalizes to behaviorally confirmed in-the-wild malicious Skills. Meanwhile, SKILLLITE maintains a low inference latency, supporting its practical deployment.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SKILLLITE",
+        "Skill审计",
+        "供应链",
+        "紧凑LLM"
+      ],
+      "url": "https://arxiv.org/abs/2609.36879",
+      "pdf": "https://arxiv.org/pdf/2609.36879"
+    },
+    {
+      "id": "2609.39678",
+      "title": "Aletheia: Permission-Minimality Testing for Coding-Agent Rules",
+      "authors": [
+        "Jieke Shi",
+        "Yuchen Chen",
+        "Junda He",
+        "Yue Liu",
+        "David Lo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "测试编码智能体仓库规则是否请求多余权限，以发现提示注入导致的凭证与数据窃取。",
+      "abstract": "仓库说明文件会指导编码智能体，但也使其暴露于提示注入：恶意规则可以在智能体产出正确补丁的同时，请求访问凭证或传输数据。本文提出 Aletheia，一个权限最小性测试框架。它把被请求的权限翻译成类型化语言，并合成可执行的沙箱配置；然后在完整权限以及每次去掉一项权限的独立限制下，运行未改动的规则与任务。若在严格缩权后仍能通过独立功能测试，就得到可省性见证，Aletheia 再结合任务上下文诊断可疑请求。作者形式化了合成过程，以及见证与强制限制之间的条件。在同一重构任务上，Aletheia 执行并检出全部 314 条 AIShellJack 攻击输入，五个良性模板无告警；在 80 条人工核验的良性 GHAgentFiles 规则上，误报 3 条（3.75%）。",
+      "abstractEn": "Repository instruction files guide coding agents, but also expose them to prompt injection. Malicious rules can request credential access or data transfer while the agent produces a correct patch. We present Aletheia, a framework for permission-minimality testing. Aletheia translates requested authority into a typed language and synthesizes executable sandbox configurations. It runs the unchanged rule and task under full permissions and independent restrictions that remove one permission at a time. Passing independent functional tests under strictly reduced authority provides a dispensability witness, which Aletheia interprets against task context to diagnose suspicious requests. We formalize synthesis and the conditions connecting witnesses to enforced restrictions. On a shared refactoring task, Aletheia executes and detects all 314 AIShellJack attack inputs, with no alarms on five benign templates. Among 80 manually verified benign GHAgentFiles rules, it raises three false positives (3.75%).",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Aletheia",
+        "编码智能体",
+        "提示注入",
+        "权限最小性"
+      ],
+      "url": "https://arxiv.org/abs/2609.39678",
+      "pdf": "https://arxiv.org/pdf/2609.39678"
+    },
+    {
+      "id": "2609.36573",
+      "title": "CyberPersistBench: Evaluating LLM-Based Cyber Attackers on Installation and Persistence",
+      "authors": [
+        "Sujin Chen",
+        "Lijun Li",
+        "Xuhong Wang",
+        "Jing Shao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评测 LLM 攻击智能体在传统主机上利用原生机制完成安装与持久化的能力。",
+      "abstract": "基于 LLM 的攻击者在漏洞利用上越来越熟练，但现有网络安全基准大多在获得初始访问后就截断评测。实践中，初始立足点在服务重启、主机重启等运维扰动下非常脆弱。LLM 攻击者能否在初次攻陷之后建立并维持持久立足点，仍是网络安全评测的核心盲区。本文提出 CyberPersistBench：首个专门面向攻陷后安装与持久化的基准。它与前置利用解耦，把持久化做成对抗性存活任务：智能体使用主机原生机制，在分阶段系统扰动下维持立足点。确定性检查支撑覆盖安装与持久化的六级评分（L1–L6）。基准包含七类共 203 个核心任务，并有多主机与主动防御扩展。对五个前沿智能体的实证显示，自主持久化仍然有限（27.6%–44.8%），在开启防御的任务上进一步降到 5.5%–13.3%；这些结果揭示了正在出现的网络攻击风险，也说明有必要专门评测攻陷后持久化。CyberPersistBench 由此成为攻陷后安装与持久化的基础基准，刻画自主网络智能体的操作边界。",
+      "abstractEn": "While LLM-based attackers exhibit growing proficiency in vulnerability exploitation, most existing cybersecurity benchmarks suffer from single-stage truncation, prematurely terminating evaluation upon initial access. In practice, initial footholds are exceptionally fragile across operational disruptions such as service restarts and host reboots. Whether LLM-based attackers can establish and maintain durable footholds beyond initial compromise remains a central blind spot in cybersecurity evaluation. To bridge this gap, we introduce CyberPersistBench, the first benchmark dedicated to post-compromise installation and persistence. Decoupled from upfront exploitation, CyberPersistBench frames persistence as an adversarial survival task in which agents use native host mechanisms to maintain footholds across staged system disruptions. Deterministic checks support a six-level scoring method (L1--L6) spanning installation and persistence. The benchmark comprises 203 core tasks across seven categories, augmented by multi-host and active defense extensions. Empirical evaluations across five frontier agents show that autonomous persistence remains limited (27.6%--44.8%) and drops further on defense-enabled tasks (5.5%--13.3%); nonetheless, these results reveal an emerging cyberattack risk, underscoring the necessity of benchmarking post-compromise persistence. CyberPersistBench thus establishes a foundational benchmark for post-compromise installation and persistence, delineating the operational boundaries of autonomous cyber agents.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CyberPersistBench",
+        "持久化",
+        "LLM攻击者",
+        "主机安全"
+      ],
+      "url": "https://arxiv.org/abs/2609.36573",
+      "pdf": "https://arxiv.org/pdf/2609.36573"
+    },
+    {
+      "id": "2026-2275",
+      "title": "Defeating Time-Average Selfish Mining Across Epoch Boundaries in Nakamoto Consensus",
+      "authors": [
+        "Ren Zhang"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "提出流水线缓冲难度调整，阻止 Nakamoto 共识在纪元边界上的自私挖矿与孤块排除攻击。",
+      "abstract": "自私挖矿能在 Nakamoto 共识中获利，是因为难度调整机制（DAM）把未被计入的孤块误读成算力收缩。虽然感知孤块的 DAM 会记录被孤掉的工作量证明，但严格的同纪元纳入规则会催生孤块排除攻击（OEA）：对手可以在纪元边界附近用私有分叉赛跑，把诚实尾部孤块永久排除出重定向，从而在短纪元协议中恢复可观利润。本文提出流水线缓冲难度调整机制（PB-DAM），把每个纪元分成可问责前缀和深度为 d 的结算缓冲。跨纪元流水线化估计窗口，让诚实矿工有宽限期上报前缀叔块，同时把缓冲期工作推进到后续重定向，从而在不做启发式阻尼的情况下关闭边界缺口。随机游走偏移界表明，对所有 α ≤ α* < 1/2，OEA 成功概率随 d 指数衰减，把时间平均利润优势压到 O(ε)。在风格化的动态调度模型下，间歇怠工在解析上无法把总奖励率抬到高于 α。仿真确认：当 α = 0.40、L = 64 时，缓冲深度 d = 16 即可中和自私挖矿；系统可在 2.2 ± 0.8 个纪元内从 50% 算力崩溃中恢复，区块容量开销不到 1%。",
+      "abstractEn": "Selfish mining profits in Nakamoto consensus because difficulty adjustment mechanisms (DAMs) misinterpret uncounted orphans as hash-rate contraction. Although orphan-aware DAMs record orphaned proof-of-work, strict same-epoch inclusion rules enable an orphan exclusion attack (OEA): an adversary can race private forks near epoch boundaries to permanently exclude honest tail orphans from retargeting, restoring substantial profits in short-epoch protocols. We propose the pipelined buffer difficulty adjustment mechanism (PB-DAM), which partitions each epoch into an accountable prefix and a settlement buffer of depth d. Pipelining estimation windows across epochs grants honest miners a grace period to report prefix uncles while advancing buffer work to subsequent retargets, closing the boundary gap without heuristic damping. Random-walk excursion bounds demonstrate that OEA success decays exponentially with d for all α ≤ α⋆ < 1/2, reducing the time-averaged profit advantage to O(ε). Under stylized dynamic scheduling models, intermittent idling is analytically shown to be unable to raise the gross reward rate above α. Simulations confirm that buffer depths d = 16 neutralize selfish mining even at L = 64 when α = 0.40, and systems recover from a 50% hash-rate crash within 2.2 ± 0.8 epochs, incurring under 1% block capacity overhead.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "自私挖矿",
+        "Nakamoto",
+        "难度调整",
+        "共识"
+      ],
+      "url": "https://eprint.iacr.org/2026/2275",
+      "pdf": "https://eprint.iacr.org/2026/2275.pdf"
+    },
+    {
+      "id": "2026-2238",
+      "title": "Threshold Signatures with Identifiable Abort from One-way Functions",
+      "authors": [
+        "Mojtaba Fadavi",
+        "David Jao",
+        "Samuel Jaques"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "从单向函数构造带可识别中止的门限一次性签名，并扩展到多层 Merkle 树的多次签名。",
+      "abstract": "（T,N）门限签名把签名密钥分给 N 个参与方，任意 T 方可联合生成有效签名，少于 T 方则不能。本文先基于 Lamport 一次性签名变体与 Shamir 秘密共享，给出带可识别中止的门限一次性签名：授权参与方可以从部分签名联合重构完整签名。再借助多层 Merkle 树把方案扩展到多条消息。一次性签名带来特定协调问题：参与方必须就消息和一次性密钥下标达成一致，以免不安全地复用密钥。作者用公告板机制解决共识。在该框架下，构造对每个签名者只需公告板到签名者的一条消息和签名者的一条响应；公告板为达成一致可能还需要额外通信。若用简单多数投票公告板，方案可在四轮内完成签名。在此协调约束下，构造继承底层门限框架的保证：带可识别中止的 UC 不可伪造性、非 UC 稳健性，以及在诚实超多数下 UC 安全、中心聚合者诚实时稳健的公告板机制。",
+      "abstractEn": "A (T,N)-threshold signature scheme distributes a signing key among N participants so that any T participants can jointly generate a valid signature, while fewer than T cannot. In this work, we first introduce a threshold one-time signature scheme with identifiable abort based on a variant of Lamport one-time signature and Shamir secret sharing, enabling authorized participants to jointly reconstruct signatures from partial signatures. We then extend the scheme to support multiple messages using multi-layer Merkle trees. One-time signatures introduce specific coordination challenges: participants must agree on both the message and the one-time key index to avoid unsafe key reuse. We address this using a bulletin-board mechanism for consensus. Under this framework, our construction produces signatures with one message from the bulletin board to each signer and one response message from each signer, while the bulletin board may require additional communication to reach agreement. With a simple majority-vote bulletin board, the scheme signs in four rounds. Subject to this coordination constraint, the construction inherits the guarantees of the underlying threshold framework: Universal Composability (UC) unforgeability with identifiable abort, non-UC robustness, and a bulletin-board mechanism that is UC-secure with an honest super-majority and robust when the central aggregator is honest.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "可识别中止",
+        "MPC",
+        "一次性签名"
+      ],
+      "url": "https://eprint.iacr.org/2026/2238",
+      "pdf": "https://eprint.iacr.org/2026/2238.pdf"
+    },
+    {
+      "id": "2609.37819",
+      "title": "Making Duplicate Reimbursement Unrepresentable: A Verified Ethereum E-Invoice System for Humans and AI Agents",
+      "authors": [
+        "Jia Cai"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "形式化验证以太坊电子发票合约，使重复报销在状态机上不可表示，并约束 LLM 报销智能体。",
+      "abstract": "电子发票正在全球取代纸质发票，但今天的中心化架构在消费侧仍有三个未解问题：同一发票可被重复报销、接收方难以验证真实性、数据集中在既是性能瓶颈又是单点故障的中心机构。本文给出一套完整的以太坊电子发票系统的设计、形式化分析与实现。作者把发票生命周期形式化为带守卫的标记变迁系统，并在标准密码学与共识假设下证明：（i）报销唯一性——即使跨互不信任的组织，一张发票最多被报销一次；（ii）票面完整性——除非打破 keccak256 第二原像抵抗，任何通过验证的发票都与记录一致；（iii）每个生命周期操作的授权健全性。核心不变量用 Solidity SMTChecker 做机器检查，证明对所有可达交易序列归纳成立。架构把每张发票建模为不可替代、不可交易的代币，状态在五个带守卫的子系统中迁移，并用基于锁的协议让重复报销变得不可表示，而不仅是可检测。实现为 Solidity 0.8 合约加四角色 Web 应用，并在私有以太坊网络上评估：开票耗气 646,773，完整报销低于 135,000 gas，所有操作 O(1) 时间，单节点可维持每秒 137 次开票。经验证的合约还作为 LLM 报销智能体的安全外壳：即使智能体内部策略失效，也会在证明上拒绝重复、超额或伪造收据等不安全动作。代码与基准全部开源。",
+      "abstractEn": "Electronic invoices are replacing paper invoices worldwide, but today's centralized architectures leave three problems unsolved on the consumption side: an invoice can be submitted for reimbursement repeatedly, authenticity is difficult for recipients to verify, and data is siloed at a central authority that forms both a performance bottleneck and a single point of failure. This paper presents the design, formal analysis, and implementation of a complete blockchain-based electronic invoice system on Ethereum. We formalize the invoice lifecycle as a guarded labeled transition system and prove, under standard cryptographic and consensus assumptions, that the system guarantees: (i) reimbursement uniqueness--an invoice is reimbursed at most once, even across mutually distrusting organizations; (ii) face integrity--any verified invoice matches the recorded one unless keccak256 second-preimage resistance is broken; and (iii) authorization soundness for every lifecycle operation. The core invariants are machine-checked using Solidity SMTChecker, proving inductive validity across all reachable transaction sequences. The architecture models each invoice as a non-fungible, non-tradable token whose state transitions through five guarded subsystems, employing a lock-based protocol that makes duplicate reimbursement unrepresentable rather than merely detectable. We implement the design as a Solidity 0.8 contract with a four-role web application and evaluate it on a private Ethereum network: issuing costs 646,773 gas, full reimbursement costs under 135,000 gas, all operations run in O(1) time, and a single node sustains 137 issuances/s. Finally, the verified contract serves as a safety envelope for LLM-based reimbursement agents, provably rejecting unsafe actions (duplicate, over-limit, or forged-receipt claims) even when the agent's internal policy fails. All code and benchmarks are open-source.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "形式化验证",
+        "以太坊",
+        "发票",
+        "SMTChecker"
+      ],
+      "url": "https://arxiv.org/abs/2609.37819",
+      "pdf": "https://arxiv.org/pdf/2609.37819"
+    }
+  ]
+}
