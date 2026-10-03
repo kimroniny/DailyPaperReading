@@ -1,0 +1,216 @@
+{
+  "date": "2026-10-03",
+  "papers": [
+    {
+      "id": "2609.37006",
+      "title": "One Pipeline Does Not Fit All: TAILOR, a Type- and State-Aware Framework for CVE Reproduction",
+      "authors": [
+        "Ji He",
+        "Huang Zhang",
+        "Lijie Zheng",
+        "Lele Zheng",
+        "Yulong Shen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用类型感知与状态感知的 LLM 多智能体框架复现 Web 与传统软件 CVE，对象是多语言开源漏洞。",
+      "abstract": "漏洞披露持续增长、软件复用广泛，安全团队越来越需要可复现证据来诊断漏洞、验证补丁并构建回归测试。大规模自动完成端到端 CVE 复现因此成为刚需。现有方法通常用同一条流水线处理不同 CVE，但运行形态、触发接口和前置状态会给各阶段施加不同执行要求，固定工作流难以适配多样复现需求。本文提出 TAILOR：面向复杂漏洞复现的类型感知与状态感知多智能体框架。它把静态漏洞信息转成可审计的复现证据，并把重建环境和触发证据打包成复现工件。第一层类型感知机制按漏洞自适应匹配执行路径；在 Web 路径上，第二层状态感知机制在利用前构造所需前置状态，把状态构造与核心触发解耦，并在利用与验证之间共享执行约束。作者构建了侧重复杂执行需求的 200 条 CVE 数据集。TAILOR 成功复现了 59.24% 的 Web 漏洞和 44.19% 的传统漏洞。消融实验表明，两层控制分别缓解了执行路径错配和 Web 前置状态缺失。总体来看，TAILOR 扩大了自动 CVE 复现的覆盖面，并为漏洞诊断与防御提供可审计证据。",
+      "abstractEn": "Growing vulnerability disclosure and widespread software reuse increase security teams' need for reproducible evidence to diagnose vulnerabilities, validate patches, and build regression tests. Producing such evidence at scale requires automated end-to-end CVE reproduction. Existing methods typically process different CVEs through a uniform pipeline, but differences in runtime form, trigger interfaces, and prerequisite state impose different execution requirements on individual stages, making fixed workflows difficult to adapt to diverse reproduction needs. To address this problem, we present TAILOR, a type- and state-aware multi-agent framework specialized for complex vulnerability reproduction. TAILOR converts static vulnerability information into auditable reproduction evidence and packages reconstructed environments and trigger evidence into reproduction artifacts. Its first-level type-aware mechanism adaptively matches each vulnerability to an execution path. Within the Web path, its second-level state-aware mechanism constructs the required prerequisite state before exploitation, decouples prerequisite-state construction from core vulnerability triggering, and shares execution constraints across exploitation and verification. We construct a dataset of 200 CVEs with an emphasis on cases with complex execution requirements. TAILOR successfully reproduces 59.24% of Web vulnerabilities and 44.19% of traditional vulnerabilities. Further ablation experiments show that the two control levels respectively mitigate execution-path mismatch and missing Web prerequisite state. Overall, TAILOR broadens the coverage of automated CVE reproduction and provides auditable evidence for vulnerability diagnosis and defense.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CVE 复现",
+        "多智能体",
+        "Web 漏洞",
+        "补丁验证"
+      ],
+      "url": "https://arxiv.org/abs/2609.37006",
+      "pdf": "https://arxiv.org/pdf/2609.37006"
+    },
+    {
+      "id": "2610.00850",
+      "title": "AuraForge: Scaling Security Supervision for Training Coding Agents",
+      "authors": [
+        "Danqing Wang",
+        "Songwen Zhao",
+        "Harsh Sharma",
+        "Jierui Wang",
+        "Andre Vicente Duarte",
+        "Ivan Bercovich",
+        "Lei Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用攻击导向的可执行安全测试合成，训练会写安全代码的 LLM 编程智能体，对象是 Python / JavaScript / TypeScript。",
+      "abstract": "编程智能体现在已能从单条提示生成复杂应用。随着能力提升，人类监督正从逐行审代码转向只看结果；但近期研究表明，功能正确并不等于实现安全。尽管代码安全受到更多关注，从真实仓库大规模获得可靠安全监督仍然困难，因而更安全的编程智能体难以训练。本文提出 AuraForge，用于合成并校验可执行安全测试，以训练安全编程智能体。方法结合攻击导向的测试合成、可扩展到多语言的任务构造，以及防奖励黑客的保护。据此构建 AuraGym：覆盖 Python、JavaScript 与 TypeScript、来自 344 个真实仓库的 679 个可执行功能实现任务，跨越 177 个 CWE 类别。在带有人工安全测试的子集上，AuraForge 平均产生约 3 倍测试用例，并把误报率降低 83.23%，使替代的安全实现也能得到正确监督。用合成安全测试训练 Qwen3.5-4B，在三种语言上的提升大于人工安全测试（平均 19.7 FuncPass 与 6.2 SecPass，对比 14.9 与 4.4）。结果表明 AuraForge 能为训练安全编程智能体提供更多样、更可靠的安全监督。",
+      "abstractEn": "Coding agents are now proficient enough to generate complex software applications from a single prompt. As their capabilities have grown, human oversight has increasingly shifted from line-by-line code review toward hands-off evaluation of outcomes. However, recent studies have shown that such a transition exposes a critical risk: functional correctness alone does not guarantee a secure implementation. Despite growing attention to code security, training safer coding agents remains challenging because reliable security supervision is difficult to obtain at scale from real-world repositories. We introduce AuraForge to synthesize and validate executable security tests for training secure coding agents. Our approach combines attack-oriented test synthesis, language-extensible task construction, and safeguards against reward hacking. Using AuraForge, we construct AuraGym, a multi-language and multi-CWE executable training gym: 679 executable feature-implementation tasks from 344 real-world repositories across Python, JavaScript, and TypeScript, covering 177 CWE categories. On the subset with human-written security tests, AuraForge produces about 3 times as many test cases on average and reduces the false-positive rate by 83.23%, allowing alternative secure implementations to receive correct supervision. Training Qwen3.5-4B with synthesized security tests gains larger improvements than human-written security tests (average 19.7 FuncPass and 6.2 SecPass vs. 14.9 FuncPass and 4.4 SecPass) on three languages. These results demonstrate that AuraForge provides more diverse and reliable security supervision to train secure coding agents.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全测试合成",
+        "编程智能体",
+        "CWE",
+        "AuraGym"
+      ],
+      "url": "https://arxiv.org/abs/2610.00850",
+      "pdf": "https://arxiv.org/pdf/2610.00850"
+    },
+    {
+      "id": "2610.02206",
+      "title": "KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards",
+      "authors": [
+        "Pengfei Li",
+        "Naufal Suryanto",
+        "Sicheng Zhang",
+        "Muzammal Naseer"
+      ],
+      "year": 2026,
+      "venue": "NeurIPS 2026",
+      "abstractOneWord": "用 LLM 把分析员意图翻译成 Kali Linux 安全工具的可执行命令，并据此做可验证奖励训练。",
+      "abstract": "大模型越来越多地用于网络安全工作流，并被期望把分析员意图翻译成工具调用。但现有评测要么考知识，要么做端到端智能体任务，并不直接衡量模型能否为真实安全工具生成可执行命令。这一点很关键：安全运维依赖严格的命令行接口，轻微的语法错误、错误的标志绑定或参数顺序都会让执行失败。本文提出 KaliBench：面向 Kali Linux 上自然语言到 CLI 翻译的细粒度基准与数据集，包含 8504 对查询—命令，覆盖 1642 个工具、23 个能力维度和 5 个安全阶段。数据经手稿对齐流水线、确定性规范化与别名感知评测构造，从而精确、可复现地评估工具选择与参数构造。为同时保证语义正确与实际可执行，作者设计了结合 LLM 校验、沙箱终端执行和人工 refinement 的多阶段验证流水线。基于这些细粒度、确定性信号，KaliBench 还能为训练提供无需运行时的可验证奖励。在三种评测模式、24 组通用与安全向开源权重配置下，无提示时没有开源权重模型的精确命令准确率超过 42%，说明没有显式工具提示时，准确的 CLI 安全工具使用仍然困难。进一步表明，用 KaliBench 导出的可验证奖励做监督微调与强化学习，能提高 8B 模型，并达到与 685B MoE 模型相当的表现。",
+      "abstractEn": "LLMs are increasingly applied to cybersecurity workflows, where they are expected to translate analysts' intent into tool invocations. However, existing evaluations focus on knowledge-based assessments or end-to-end agentic tasks, and do not directly measure LLMs' ability to generate executable commands for real-world cybersecurity tools. This gap is critical because cybersecurity operations rely on strict command-line interfaces (CLIs), where minor syntax errors, incorrect flag-value bindings, or argument misordering can invalidate execution. We introduce KaliBench, a fine-grained benchmark and dataset for natural-language-to-CLI translation on Kali Linux, comprising 8,504 query-command pairs spanning 1,642 tools across 23 capability dimensions and 5 security phases. KaliBench is constructed via a manuscript-grounded pipeline with deterministic canonicalization and alias-aware evaluation, enabling precise and reproducible assessment of tool selection and argument construction. To ensure both semantic correctness and practical executability, we develop a multi-stage verification pipeline that combines LLM-based validation, sandboxed terminal execution, and human-in-the-loop refinement. Building on these fine-grained, deterministic signals, KaliBench further enables runtime-free verifiable rewards for training. Across three evaluation modes and 24 configurations of general-purpose and security-focused open-weight models, no open-weight model exceeds 42% exact-command accuracy in the unrestricted setting, highlighting the difficulty of accurate CLI-based cybersecurity tool use without explicit tool hints. We further show that supervised fine-tuning and reinforcement learning with verifiable rewards derived from KaliBench significantly improve an 8B model and achieve performance comparable to a 685B MoE model.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Kali Linux",
+        "安全工具调用",
+        "CLI 基准",
+        "可验证奖励"
+      ],
+      "url": "https://arxiv.org/abs/2610.02206",
+      "pdf": "https://arxiv.org/pdf/2610.02206"
+    },
+    {
+      "id": "2609.39607",
+      "title": "Pretext: Defeating Malicious Skill Detection Frameworks for AI Agents",
+      "authors": [
+        "Tobias Kaisar",
+        "Aritra Dhar"
+      ],
+      "year": 2026,
+      "venue": "AIWild @ NeurIPS 2026",
+      "abstractOneWord": "用白盒 LLM 攻击绕过编程智能体技能扫描器，证明静态检查加 LLM 语义裁判会漏报恶意技能。",
+      "abstract": "技能通过向上下文注入指令与信息来扩展智能体能力，并被 OpenClaw、Claude Code 等广泛使用。已有工作表明，第三方市场托管恶意技能，攻击者可借此直接操纵受害者智能体。新兴防御会在安装前扫描技能，把确定性静态检查与基于 LLM 的语义裁判配对，例如 NVIDIA 的 SkillSpector。本文表明，这类防御在攻击者了解检测器时会失效。白盒 LLM 攻击器 Pretext 迭代地构造既能投递载荷、又能完成良性任务的技能：把载荷从代码挪到自然语言，静态分析便失效；再把它包装成技能的正当用途，并把指令拆到多个文件，使 LLM 阶段低于拦截阈值。在三个开源模型上，Pretext 对冻结检测器与共同适应检测器分别达到最高 97% 与 77% 的成功率，暴露了当前技能扫描器的重大缺口。",
+      "abstractEn": "Skills extend an agent's capabilities by injecting instructions and information into the context, and are widely used by agents such as OpenClaw and Claude Code. Prior work shows third-party marketplaces host malicious skills that give attackers direct influence over the victim's agent. The emerging defense scans skills before installation, pairing deterministic static checks with an LLM-based semantic judge, as in NVIDIA's SkillSpector. We show that such defenses fall to an attacker who knows the detector. Our white-box LLM attacker, Pretext, iteratively crafts skills that evade detection while still delivering the payload and performing the benign task: moving the payload from code into natural language leaves static analysis inert, while framing it as the skill's legitimate purpose and splitting instructions across files keeps the LLM stage below its blocking threshold. Across three open-source models, Pretext achieves up to 97% and 77% against a frozen detector and a co-adaptive one, respectively, revealing major gaps in current skill scanners.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "恶意技能",
+        "扫描逃逸",
+        "Claude Code",
+        "审计失效"
+      ],
+      "url": "https://arxiv.org/abs/2609.39607",
+      "pdf": "https://arxiv.org/pdf/2609.39607"
+    },
+    {
+      "id": "2610.01756",
+      "title": "SoK: Decentralized Agent Economic Infrastructure",
+      "authors": [
+        "Rui Sun",
+        "Xihan Xiong",
+        "Qin Wang",
+        "Fei Gao",
+        "Zelin Li",
+        "Zehua Cheng",
+        "Jiahao Sun",
+        "Zhipeng Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "系统化梳理去中心化 LLM 智能体经济设施，分析验证与链上结算之间的保证断裂。",
+      "abstract": "去中心化智能体经济越来越多地把一项任务拼自本就分别设计、分别加固的协议。这带来一个简单问题：工作流可以在每一步都看起来正确，最终结果却是错的。例如，正确的托管合约可能在一次授权批准后放款，但批准几乎不能证明交付物真的满足任务。本文将该问题按智能体任务全生命周期系统化，把安全与经济要求整理成六个阶段上的 17 个性质族，并单独评估收据的健全性与完备性。研究覆盖 12 个系统与标准、5 类可复用机制以及 4 个经典基线。作者提出 guarantee closure：一种相对任务的判据，用来判断某一阶段建立的保证是否仍可用、并约束后续依赖它的决策。该判据被应用到受控与原生工作流，覆盖 840 次配对执行，以及有限目标—任务域上 11648 个穷举情形。结果暴露验证与结算之间的反复失败：符合约定的工作可能不被接受，有效证据也可能被忽略。公开记录与模型判断进一步把“记录在案的批准”与“任务符合性证据”区分开；经济分析则识别这些保证背后的报告、惩罚与共有误差假设。这些发现表明端到端保证在何处断裂，以及要在工作流中保住它们必须修复什么。",
+      "abstractEn": "Decentralized agent economies increasingly build a single task from protocols that were designed and secured separately. This creates a simple problem: a workflow can look correct at each step and still produce the wrong outcome. For example, a correct escrow may release payment on an authorized approval that provides little evidence that the delivered work actually satisfied the task. We systematize this problem across the full lifecycle of an agent task. Our study organizes security and economic requirements into 17 property families over six stages, with receipt soundness and completeness assessed separately. We examine 12 systems and standards, five reusable mechanism families, and four classical baselines. We introduce guarantee closure, a task-relative criterion for determining whether guarantees established at one stage remain available and constrain the later decisions that depend on them. We apply the criterion to controlled and native workflows, covering 840 matched executions and an exhaustive 11,648-case check over a finite objective-task domain. Our results expose recurring failures between verification and settlement, where conforming work can remain unaccepted or valid evidence can be ignored. Public records and model judgments further distinguish recorded approval from evidence of task conformance, while economic analysis identifies the report, penalty, and shared-error assumptions behind these guarantees. These findings show where end-to-end guarantees fail and what must be repaired to preserve them across the workflow.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能体经济",
+        "链上结算",
+        "托管",
+        "保证闭合"
+      ],
+      "url": "https://arxiv.org/abs/2610.01756",
+      "pdf": "https://arxiv.org/pdf/2610.01756"
+    },
+    {
+      "id": "2026-2277",
+      "title": "Non-Interactive Atomic Swaps from Standard Signatures: Lower Bounds and Constructions",
+      "authors": [
+        "Xiangyu Liu",
+        "Riccardo Zanotto",
+        "Vassilis Zikas"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出标准签名下非交互原子互换的下界，并构造 BLS/配对 Schnorr 与带预处理的 Schnorr 方案。无 LLM。",
+      "abstract": "原子互换是适配器签名的典型应用。实用构造只需两笔普通链上签名、不依赖脚本，但需要两轮顺序在线交互：Alice 采样一个困难陈述并发送预签名，Bob 再用同一陈述给出自己的预签名。本文追问：在不依赖不实用的通用适配器签名、且双方继续使用验证算法未被修改的标准签名方案时，协议能否压成单轮在线（从 Bob 到 Alice），即非交互原子互换。主要结果是一条下界：对统计不可链接、忠实失败可忽略的适配器，Bob 每个消息的有效签名空间必须比关系的见证空间超多项式地大。这把 Erwig 等人（PKC 2021）对唯一签名的不可能性作为平凡推论重新确认，并排除双方使用同一签名方案的非交互互换。下界仍为非对称实例留出空间。作者给出一种构造：Alice 用 BLS 签名，Bob 使用以 Alice 的 BLS 签名为见证的配对 Schnorr 适配器，并在随机预言机模型下由 BLS 的原生不可伪造性证明安全。为把更多签名方案纳入非交互互换框架，本文引入带预处理的原子签名互换：Alice 在消息选定前公布与消息无关的公开数据；这些数据连同她的公钥和消息，随后确定一个陈述，其见证组装成她的原生签名。协议只需携带 Bob 预签名的单轮在线通信。作者在随机预言机模型下由 OMDL 假设证明 Schnorr/Schnorr 实例，并给出有条件的 ECDSA/Schnorr 实例。",
+      "abstractEn": "Atomic swaps are the prototypical application of adaptor signatures. Practical constructions settle with two ordinary on-chain signatures and require no scripting, but they need two sequential online rounds: Alice samples a hard statement and sends its pre-signature, and Bob follows with his own pre-signature using the same statement. We ask whether the protocol can be compressed into a single online round (from Bob to Alice), which we call a non-interactive atomic swap, without relying on impractical universal adaptor signatures. In particular, we require that both parties continue to use standard signature schemes with unmodified verification algorithms. Our main result is a lower bound: for statistically unlinkable adaptors with negligible faithfulness failure, Bob's valid-signature space per message must be superpolynomially larger than the relation's witness space. This (1) reaffirms the impossibility result by Erwig et al. [PKC 2021] for unique signatures as a trivial corollary, and (2) excludes non-interactive swaps using the same signature scheme on both sides. However, the bound does leave room for asymmetric instantiations. We give one in which Alice signs with BLS and Bob uses a pairing-Schnorr adaptor whose witness is Alice's BLS signature, and prove its security under the native unforgeability of BLS in the random oracle model. To support more signature schemes in our non-interactive swap framework, we introduce atomic signature swaps with preprocessing: Alice publishes message-independent public data before the messages are chosen. These data, together with her public key and the messages, later determine a statement whose witnesses assemble into her native signature. The protocol requires a single online round carrying a pre-signature by Bob and falls into our non-interactive framework. We prove a Schnorr/Schnorr instantiation under the OMDL assumption in the random oracle model, and give a conditional ECDSA/Schnorr instantiation.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "原子互换",
+        "适配器签名",
+        "跨链",
+        "Schnorr"
+      ],
+      "url": "https://eprint.iacr.org/2026/2277",
+      "pdf": "https://eprint.iacr.org/2026/2277.pdf"
+    },
+    {
+      "id": "2026-2269",
+      "title": "Consensus in One Shot: Fast Agreement Beyond Classical Limits",
+      "authors": [
+        "Omri Shmueli",
+        "Ilan Tennenhouse"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用一次性签名突破经典共识时延与容错界限，构造同步与部分同步下的状态机复制。无 LLM。",
+      "abstract": "好情形时延由早期快速共识协议研究，并由 Abraham、Nayak、Ren 与 Xiang（DISC 2020）形式化：发送者诚实时应让诚实方尽快达成一致。但在标准经典模型中，当 f ≥ n/3 时存在障碍。同步广播在 f ≥ n/3 时的好情形时延至少为 Δ+δ，其中 δ 是实际未知的消息时延上界，Δ ≫ δ 是已知的保守上界。在部分同步下，f ≥ n/3 时一致性与活性甚至不能同时成立（Dwork、Lynch、Stockmeyer，JACM 1988）。本文研究用量子信息、具体是一次性签名（OSS）跨越这些经典障碍。OSS 阻止即便腐败签名者也无法在同一验证密钥下对两条不同消息签发，从而在不依赖可信硬件的前提下提供密码学不可双花/不可歧义。假定 OSS 与公钥基础设施，作者针对量子多项式时间静态腐败给出两个主要结果。第一，在同步模型下构造无客户端的状态机复制（SMR），好情形时延最优为 δ，并容忍 n 方中任意 f < n 的腐败。第二，在部分同步下得到好情形时延为 2·δ 的 SMR：在任意腐败数下保持一致，并在 2n > f 时保持活性。也就是说，多数腐败可能让进展停止，但不能制造冲突历史。这类始终一致的协议在经典模型中（若不假设可信硬件）即使活性只要求抵抗单个腐败方也是不可能的。两个 SMR 协议的通信完全经典，量子计算仅在本地进行。",
+      "abstractEn": "Good-case latency, studied in early fast-consensus protocols (Martin and Alvisi, DSN 2005) and formalized by Abraham, Nayak, Ren, and Xiang (DISC 2020), captures a natural efficiency goal: when the sender is honest, agreement should be reached quickly for the honest parties. In the standard classical model, however, there exists a barrier for any f≥n/3 corrupted parties. Specifically, synchronous broadcast requires good-case latency at least Δ+δ for f≥n/3, where δ is the actual, unknown message-delay bound and Δ ≫ δ is its known, conservative upper bound. Under partial synchrony, consistency and liveness cannot even both hold for f ≥ n/3 (Dwork, Lynch, and Stockmeyer, JACM 1988). In this work we study the use of quantum information to get past these classical barriers, and specifically using one-shot signatures (OSS) (Amos et al., STOC 2020, Shmueli and Zhandry, CRYPTO 2025). OSS prevents even a corrupt signer from issuing signatures on different messages under the same verification key, which provides cryptographic non-equivocation without trusted hardware assumptions. Assuming OSS and a public-key infrastructure, we obtain two main results against quantum polynomial-time static corruptions. First, under synchrony, we construct a state-machine replication (SMR) protocol without clients, with optimal δ good-case latency, tolerating any f<n corruptions among n parties. Second, under partial synchrony, we obtain SMR with 2·δ good-case latency which is consistent under any number of corruptions and live assuming 2n>f. Specifically, a corrupt majority may cause progress to stop, but cannot create conflicting histories. Such an always consistent protocol is impossible classically (without assumptions like trusted hardware) even if liveness is only required to hold against a single corrupt party. In both our SMR protocols, communication is entirely classical, with only local quantum computation.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "状态机复制",
+        "一次性签名",
+        "不可歧义"
+      ],
+      "url": "https://eprint.iacr.org/2026/2269",
+      "pdf": "https://eprint.iacr.org/2026/2269.pdf"
+    },
+    {
+      "id": "2609.39310",
+      "title": "XIM: The XDC Interledger Messaging Protocol",
+      "authors": [
+        "Atul Khekade",
+        "Ritesh Kakkad",
+        "Wanwiset Peerapatanapokin",
+        "Behnam Mohammadkhani"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "提出跨异构账本的认证消息与结算协议 XIM，用通道级验证策略、承诺根和重放保护做跨链互操作。无 LLM。",
+      "abstract": "分布式账本、保护隐私的机构网络与传统支付系统，越来越需要在异构信任域之间交换认证消息并结算资产。现有互操作系统通常只优化三类关切之一：应用层抽象、跨链消息传输，或同一账本族内的同步执行。本文提出 XIM（XDC Interledger Messaging Protocol）：一种与链无关的协议，用于在异构网络间传输规范消息，并允许每条通信通道选择显式验证策略。XIM 把消息语义与传输、验证、执行、路由、资产身份和合规元数据分开。其密码学状态由确定性消息标识符与承诺根表示，只追加的转换日志提供可审计性与重放保护。XIM 引入通用资产标识符（UAID）、可插拔适配器接口、通道范围的安全策略，以及可选的策略感知路由图以支持多跳结算。XDC 网络可作为协调与结算域，但并非每条 XIM 消息或路由都必须经 XDC 上链。作者给出协议模型、状态机、消息编码、承诺结构、验证模式、失败语义、安全假设、威胁模型、实现架构与渐进部署计划。设计面向公链、许可链、机构网络与认证金融网关，尤其关注稳定币、代币化资产、贸易金融以及兼容 ISO 20022 的支付工作流。",
+      "abstractEn": "Distributed ledgers, privacy-preserving institutional networks, and conventional payment systems increasingly need to exchange authenticated messages and settle assets across heterogeneous trust domains. Existing interoperability systems typically optimize for one of three concerns: application-level abstraction, cross-chain message transport, or synchronized execution within a related ledger family. This paper proposes XIM, the XDC Interledger Messaging Protocol, a chain-agnostic protocol for transporting canonical messages across heterogeneous networks while allowing each communication lane to select an explicit verification policy. XIM separates message semantics from transport, verification, execution, routing, asset identity, and compliance metadata. Its cryptographic state is represented by deterministic message identifiers and commitment roots, while an append-only transition log provides auditability and replay protection. XIM introduces a Universal Asset Identifier (UAID), a pluggable adapter interface, lane-scoped security policies, and an optional policy-aware route graph for multi-hop settlement. XDC Network can serve as a coordination and settlement domain without requiring every XIM message or route to transact through XDC. We specify the protocol model, state machine, message encoding, commitment structure, verification modes, failure semantics, security assumptions, threat model, implementation architecture, and an incremental deployment plan. The design targets public blockchains, permissioned ledgers, institutional networks, and authenticated financial-system gateways, with particular attention to stablecoins, tokenized assets, trade finance, and ISO 20022-compatible payment workflows.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链消息",
+        "互操作",
+        "重放保护",
+        "轻客户端"
+      ],
+      "url": "https://arxiv.org/abs/2609.39310",
+      "pdf": "https://arxiv.org/pdf/2609.39310"
+    }
+  ]
+}
