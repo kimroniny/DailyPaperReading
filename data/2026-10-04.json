@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-04",
+  "papers": [
+    {
+      "id": "2610.00590",
+      "title": "Towards Hierarchical Cyber Defense with Large Language Models: From Planning to Execution",
+      "authors": [
+        "Harshith Doppalapudi",
+        "Nathaniel D. Bastian",
+        "Ankit Shah"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用冻结 LLM 在分层网络防御中同时做规划与执行，对象是企业网络 / Cyberwheel。",
+      "abstract": "用强化学习（RL）训练的自主网络防御智能体通常绑定在训练时的网络上，网络规模一变就难以泛化。分层强化学习通过把战略选点和战术执行分开来降低决策复杂度，但并不能消除这种重训依赖。本文研究冻结、零样本大语言模型能否在分层网络防御中提供无需重训的控制，以及把 LLM 控制从规划扩展到执行时性能如何变化。作者给出与控制器无关的规划器—执行器层次：规划器在固定时域内选择要防御的子网，执行器在该子网内选择防御动作。在高保真 Cyberwheel 环境中，内置红队按 MITRE ATT&CK 映射，作者比较 RL+RL、LLM+RL 与 LLM+LLM 三种配置，覆盖 3B 到 70B 的六个模型（含两个安全专用模型），并在小、中、大三种网络上评测。只把规划器换成 LLM，随着网络变大收益有限；把 LLM 控制扩展到执行后，足够强的模型会有明显提升。例如，冻结的通用 70B 模型在三种网络规模上用同一组权重，把成功横向移动压到约 1% 的步数，攻击者影响接近零，而 RL 基线需要按规模分别重训。结果表明，足够强的冻结 LLM 可以在评测的网络规模上保持较强防御，且无需任务特定重训；同时也说明，要兑现基于 LLM 的控制收益，强战术执行很关键。",
+      "abstractEn": "An autonomous cyber defender trained with reinforcement learning (RL) is typically tied to the network on which it was trained, limiting its ability to generalize as network scale changes. Hierarchical RL reduces decision complexity by separating strategic targeting from tactical execution, but it does not eliminate this retraining dependence. We investigate whether frozen, zero-shot large language models (LLMs) can provide retraining-free control in hierarchical cyber defense and how performance changes as LLM control is extended from planning to execution. We formulate a controller-agnostic planner-executor hierarchy in which the planner selects a subnet to defend over a fixed horizon and the executor selects defensive actions within that subnet. Using the high-fidelity Cyberwheel environment, with its built-in automated red team agent mapped to the MITRE ATT&CK framework, we compare RL+RL, LLM+RL, and LLM+LLM configurations using six models ranging from 3B to 70B parameters, including two cybersecurity-specialized models, across small, medium, and large networks. Replacing only the planner with an LLM yields limited gains as network size increases. In contrast, extending LLM control to execution produces notable improvements for sufficiently capable models. For instance, a frozen general purpose 70B model holds successful lateral movement to approximately 1% of steps and attacker impact near zero across all three network scales using the same model weights, while the RL baseline is retrained for each scale. Our results show that sufficiently capable frozen LLMs can maintain strong defensive performance across the evaluated network scales without task-specific retraining, while also indicating that strong tactical execution is important to realizing the benefits of LLM-based control.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "分层防御",
+        "冻结 LLM",
+        "企业网络",
+        "Cyberwheel"
+      ],
+      "url": "https://arxiv.org/abs/2610.00590",
+      "pdf": "https://arxiv.org/pdf/2610.00590"
+    },
+    {
+      "id": "2610.00557",
+      "title": "No One Architecture Fits All: A Cross-Environment Evaluation of Hierarchical Red Team Agents",
+      "authors": [
+        "Ayan Javeed Shaikh",
+        "Arunesh Sinha",
+        "Nathaniel D. Bastian",
+        "Ankit Shah"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "对比 LLM 与强化学习红队智能体在跨环境渗透中的表现，对象是 CybORG CAGE-4 与 Cyberwheel 企业网络。",
+      "abstract": "自主红队智能体越来越多地通过规划策略并执行多阶段攻击，来压测带 AI 的网络防御。强化学习（RL）与大语言模型为这类智能体所需的规划与执行提供了互补机制，已有工作也把它们组合成混合层次结构。但某一架构通常只在单一环境中开发与评测，因此观察到的优势究竟来自更强的决策机制，还是只是契合了特定设定，仍然不清楚。本文用受控的跨环境比较来回答这一问题，对比两种同质分层红队架构：RL 规划器加 RL 执行器（RL+RL），以及 LLM 规划器加 LLM 执行器（LLM+LLM）。评测在 CybORG CAGE-4 以及两个规模的 Cyberwheel 上进行，共 18 组配置，统一用中断成功率作指标，对手是专家级自主防御方。结果出现明显的环境依赖反转：RL+RL 在紧凑、奖励稠密的 CAGE-4 上获胜（中断成功率 78.5%，最强 LLM 配置为 18.0%），在 100 主机 Cyberwheel 上也更好（81.0% 对 50.5%）；而预训练的安全向 LLM 智能体在更大、以提权为门控的 1010 主机 Cyberwheel 上获胜（55.0%，RL 为 0.0%）。杀伤链分析表明，聚合成功率掩盖了架构特有的瓶颈：在 1010 主机 Cyberwheel 上，RL 能发现并攻陷主机，但卡在提权；在 CAGE-4 上，LLM 智能体能获得特权访问，却很少转化成作战影响。因此，单环境结论未必可推广，混合规划器—执行器设计应针对具体失效模式，而不是假定某种架构普遍更优。",
+      "abstractEn": "Autonomous red team agents increasingly stress-test AI-enabled cyber defenses by planning strategy and executing multistage attacks. Reinforcement learning (RL) and large language models (LLMs) offer complementary mechanisms for the planning and execution such agents require, and prior work has combined them in hybrid hierarchies. Yet a given architecture is typically developed and evaluated within a single environment, leaving open whether an observed advantage reflects a generally stronger decision mechanism or merely alignment with a particular setting. We address this gap with a controlled cross-environment comparison of two homogeneous hierarchical red team architectures: an RL planner with an RL executor (RL+RL) and an LLM planner with an LLM executor (LLM+LLM). We evaluate both against expert autonomous defenders in CybORG CAGE-4 and in Cyberwheel at two network scales, across 18 configurations under one unified disruption metric. We find a pronounced environment-dependent inversion. RL+RL wins the compact, densely rewarded CAGE-4 (78.5% disruption success versus 18.0% for the strongest LLM configuration) and the 100-host Cyberwheel network (81.0% versus 50.5%), while a pretrained cybersecurity LLM agent wins the larger, escalation-gated 1010-host Cyberwheel network (55.0% versus 0.0% for RL). A kill-chain analysis explains the inversion through architecture-specific bottlenecks that aggregate success rates conceal. In the 1010-host Cyberwheel network, RL discovers and compromises hosts but stalls at privilege escalation, whereas in CAGE-4, LLM agents obtain privileged access but rarely convert it into operational impact. These results indicate that conclusions drawn in a single environment may not generalize, and that hybrid planner-executor designs should be motivated by specific failure modes rather than the assumption that one architecture is universally preferable.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "红队智能体",
+        "分层架构",
+        "CAGE-4",
+        "跨环境评测"
+      ],
+      "url": "https://arxiv.org/abs/2610.00557",
+      "pdf": "https://arxiv.org/pdf/2610.00557"
+    },
+    {
+      "id": "2026-2288",
+      "title": "Kettle: Short Post-Quantum Threshold Signatures from the HAWK Signature Scheme",
+      "authors": [
+        "Calvin Abou Haidar",
+        "Daniel Escudero",
+        "Thomas Espitau",
+        "Clément Hoffmann",
+        "Kaoru Takemure",
+        "Mehdi Tibouchi",
+        "Hernán Darío Vanegas Madrigal"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "从 HAWK 构造短后量子门限签名协议 Kettle，对象是多方 / 钱包阈值签名。无 LLM。",
+      "abstract": "HAWK 是一种基于格的 hash-and-sign 签名方案，曾进入 NIST 后量子签名附加征集的第三轮。它的签名和密钥较短，签名与验证也快且便于移植。但在一次广受关注的 AI 驱动密码分析结果降低其安全性（大致要把达到给定安全级别所需的维数加倍）之后，作者决定退出竞赛。参数增大被认为削弱了 HAWK 相对已入选格方案 ML-DSA 与 Falcon 的尺寸优势，而这连同速度、以及不依赖浮点运算，原本是它的主要卖点。本文指出 HAWK 设计中另一个尚未被重视、且不受该 AI 攻击影响的优点：它对安全多方计算（MPC）出奇友好。HAWK 签名可以通用地由一小组成熟、可组合的 MPC 功能（如整数乘法、均匀随机生成等）实现；用具备给定安全性质（半诚实/恶意、诚实多数/不诚实多数等）的 MPC 协议实例化这些功能，就能得到具有相同性质的 MPC 签名协议。由此得到 Kettle：一种 UC 安全的门限签名协议，输出符合规范的 HAWK 签名，并可扩展到任意多方。它给出目前格上门限签名中几乎最短的签名，同时在轮数与在线通信量上明显优于从已有非门限格签名（如 ML-DSA 与 Falcon）改造而来的门限协议：按具体设定与优化选择，在线轮数可低至 2 轮（总共约十余轮），每方在线通信量约 2 kB。作者还在 MP-SPDZ 框架中给出概念验证实现，可按任意参与方数、任意门限以及多种安全性质实例化。",
+      "abstractEn": "HAWK is a lattice-based hash-and-sign signature scheme that was a third round candidate in the NIST additional call for post-quantum signatures. It has short signatures and keys, as well as fast and portable signing and verification. However, in response to a highly-publicized AI-driven cryptanalytic result that reduced its security (roughly doubling the required dimension to achieve a given security level), the authors decided to withdraw from the competition. The need to increase parameters was seen as limiting the size advantage of HAWK compared to the already selected lattice schemes ML-DSA and Falcon, which was one of its primary selling points alongside speed and the lack of floating-point arithmetic. In this paper, we identify another attractive aspect of the HAWK design that is not affected by the AI attack and has been overlooked so far: its surprising friendliness to multi-party computation (MPC). Indeed, HAWK signing can be achieved in a generic way from a small collection of basic composable MPC functionalities (like integer multiplication, uniform random generation, etc.) in such a way that instantiating those functionalities using MPC protocols with given security properties (semi-honest vs. malicious, honest vs. dishonest majority, etc.) yields a secure protocol for MPC signing with those same properties. As a result, we obtain Kettle, a UC-secure threshold signature protocol that outputs specification-compliant HAWK signatures and scales to an arbitrary number of parties. It offers essentially the shortest signature size so far for a lattice-based threshold signature, while achieving significantly lower round complexity and online communication cost than other threshold protocols built from pre-existing, non-threshold lattice-based signatures (like ML-DSA and Falcon): as low as 2 online rounds (a dozen rounds total) and 2 kB online communication per party, depending on the specific setting and optimization choices. We also provide a proof-of-concept implementation of our approach in the MP-SPDZ framework, which can be instantiated with any number of parties, any threshold, and a variety of security properties.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "后量子",
+        "MPC",
+        "HAWK"
+      ],
+      "url": "https://eprint.iacr.org/2026/2288",
+      "pdf": "https://eprint.iacr.org/2026/2288.pdf"
+    },
+    {
+      "id": "2026-2300",
+      "title": "DuraShare: BIP39-native secret sharing with full manual fallback",
+      "authors": [
+        "Jeroen van de Graaf",
+        "Renato Schiavinato Lopez"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "为 BIP39 助记词做可手算恢复的秘密分享，对象是比特币钱包种子。无 LLM。",
+      "abstract": "BIP39 是比特币标准，把钱包 128 到 256 比特的随机种子转成 12 到 24 个词的人类可读序列，词表固定为 2048 个词，每个词对应表中的一个下标。DuraShare 让持有该序列的人把它拆给 n 个份额保管人，每人拿到一份。任意 k 个保管人可以合并份额并还原原序列，而任意 k-1 个串谋保管人得不到（Shannon 意义下的）任何信息。日常使用采用软件辅助模型，同时保证恢复时仍可完全手算，只需纸、计算器和具体说明。这一点很重要：保管人可能是几十年后才被找来的家人或律师，并不熟悉加密技术，也不能假设那时仍有特定厂商、软件或硬件可用。DuraShare 组合了三种成熟密码技术：（1）在比 2048 大的最小素数域 F_2053 上做 Shamir 秘密分享；（2）二维检错，对每份份额做行列校验和，以防抄写错误和物理损坏；（3）在 F_2053 上用简单仿射内积 MAC 认证每份份额，防止保管人篡改而不被发现。",
+      "abstractEn": "BIP39 is a Bitcoin standard that turns a wallet's random seed of size between 128 and 256 bits into a human-readable sequence of 12 to 24 words, taken from a fixed 2048-word list. Each word corresponds to an index in that list. DuraShare allows the holder of this sequence to split it among n Sharekeepers, each of whom receives one share. Any subset of k Sharekeepers can combine their shares and reconstruct the original sequence, whereas k-1 colluding Sharekeepers obtain no (Shannon) information. For everyday convenience we adopt a software-assisted model, while ensuring that a full manual fallback remains feasible for recovery, requiring nothing beyond paper, a calculator, and specific instructions. This matters because Sharekeepers may be family members or lawyers unfamiliar with crypto-technology, called upon only decades later, when no specific vendor, software, or hardware can be assumed to still exist. DuraShare combines three existing, well-established cryptographic techniques: (1) Shamir Secret Sharing over F_2053, the smallest prime larger than 2048; (2) 2D error detection, applying row and column checksums to each share to protect the data against transcription errors and physical damage; and (3) a simple affine inner-product MAC over F_2053 to authenticate each share, preventing a Sharekeeper from tampering without being detected.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "BIP39",
+        "秘密分享",
+        "钱包种子",
+        "门限恢复"
+      ],
+      "url": "https://eprint.iacr.org/2026/2300",
+      "pdf": "https://eprint.iacr.org/2026/2300.pdf"
+    },
+    {
+      "id": "2026-2282",
+      "title": "DAVINCI: A Decentralized Cryptographic Voting Protocol",
+      "authors": [
+        "Pau Escrich",
+        "Marta Bellés-Muñoz",
+        "Roger Baig",
+        "Jordi Piñana"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用 ZK rollup 在以太坊上实现无可信协调方的端到端可验证投票。无 LLM。",
+      "abstract": "本文提出 DAVINCI：一种去中心化、端到端可验证、且没有可信协调方的投票协议。协议被组织成零知识（ZK）rollup：选举是一台经 ZK 验证的状态机，从提交选票到最终计票的每一步转移都被编码为电路约束，因此任何参与方都无法在不打破底层证明系统的情况下把协议推进到非法状态。一组去中心化定序器在链下处理选票校验与聚合，以太坊作为公共公告板，并通过 EIP-4844 blob 提供数据可用性。为保密选票，DAVINCI 使用带分布式密钥生成的门限 ElGamal；为无收据性，定序器在存储前重加密密文，且选民可随时改投。为使改投能对抗贿赂与胁迫，DAVINCI 引入静默改投：每次状态更新时，定序器还会重随机化存储选票的一个随机子集，并量化这能在多大程度上把覆盖操作藏进日常刷新。开源实现表明，在与若干已部署可验证投票系统相同的诚实设备假设下，DAVINCI 能支撑大规模选举，链上验证简洁，选票证明可在普通设备上生成。",
+      "abstractEn": "We present DAVINCI, a decentralized end-to-end verifiable voting protocol with no trusted coordinator. The protocol is structured as a zero-knowledge (ZK) rollup: the election is a ZK-verified state machine in which every transition, from ballot submission to final tallying, is encoded as a circuit constraint, so that no actor can force the protocol into an invalid state without breaking the underlying proof system. A decentralized set of sequencers handles ballot validation and aggregation off-chain, while Ethereum serves as a public bulletin board and a data-availability layer via EIP-4844 blobs. For ballot secrecy, DAVINCI uses threshold ElGamal with distributed key generation; for receipt-freeness, sequencers re-encrypt ciphertexts before storing them, and voters may revote at any time. To make revoting effective against bribery and coercion, DAVINCI introduces silent revoting on every state update, sequencers also re-randomize a random subset of stored ballots, and we quantify how well this hides overwrites among routine refreshes. Our open-source implementation shows that DAVINCI supports large-scale elections with succinct on-chain verification and ballot proofs generated on commodity devices, under the honest-device assumption shared by several deployed verifiable-voting systems.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "可验证投票",
+        "ZK rollup",
+        "以太坊",
+        "无收据性"
+      ],
+      "url": "https://eprint.iacr.org/2026/2282",
+      "pdf": "https://eprint.iacr.org/2026/2282.pdf"
+    },
+    {
+      "id": "2026-2285",
+      "title": "Bandwidth Fee Mechanisms for Certified Transaction Dissemination",
+      "authors": [
+        "Eleftheria Fassman",
+        "Mahimna Kelkar",
+        "Benjamin Marsh",
+        "Ke Wu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在共识前为门限认证的交易传播设计带宽费机制。无 LLM。",
+      "abstract": "本文研究用于在共识前为门限认证的交易传播定价的带宽费机制（BFM）。BFM 类似于 Roughgarden（2021）提出的交易费机制（TFM），但定价的是区块链通信而不是计算。当交易传播与共识、执行分离时，单独给带宽定价尤其重要。作者把 BFM 建模成用户提交交易、验证者接收并转发的双边采购拍卖。任一验证者都可能被指定为某笔交易的源，并把它转发给达到门限的见证者。模型计入源验证者对用户提交交易的接收，以及随后验证者之间的转移，并抽象掉无限制的多跳 gossip 与网络拓扑。本文聚焦交易必须在共识前由门限网络节点认证/见证的设定，并得到如下结果。作者刻画了短视激励相容对 BFM 的限制：任何非平凡的、基于副本的 BFM 都无法阻止两个验证者的有利可图串谋；任何非平凡 BFM 也无法同时满足单个用户、单个验证者、以及一个验证者加一个用户的联盟的激励相容。相对地，一旦只考虑单边偏离，作者给出一种对每个单独用户和验证者都激励相容的贪心路由标价机制。作者还研究带宽价格应如何跨区块演化。在验证者诚实执行的假设下，提出类似 EIP-1559 的价格更新规则，并证明其流体近似有唯一不动点，且在步长足够小时局部稳定。在大市场中，从该点附近出发的价格会在任意固定时间范围内以高概率保持在附近。",
+      "abstractEn": "We study bandwidth fee mechanisms (BFMs) for pricing threshold certified transaction dissemination before consensus. BFMs are analogous to transaction fee mechanisms (TFMs) introduced by Roughgarden (2021), except that they price blockchain communication rather than computation. Separately pricing this bandwidth is especially relevant when transaction dissemination is separated from consensus and execution. We model BFMs as a two-sided procurement auction between users who submit transactions and validators who receive and forward them. Any validator may be assigned as the source of a transaction and forward it to a threshold of attesters. The model accounts for the source validator's receipt of the user submitted transaction and the subsequent transfers between validators. It abstracts away unrestricted multi-hop gossip and network topology. In this work, we focus on settings where transactions must be certified/attested by a threshold of network nodes before consensus, and we develop the following results. We characterize the limits of myopic incentive compatibility for BFMs: No non-trivial transcript-based BFM can prevent profitable collusion between two validators, and no non-trivial BFM can simultaneously satisfy incentive compatibility for individual user, individual validator, and coalition of one validator and one user. In contrast, once we restrict attention to unilateral deviations, we present a greedy-route posted-price mechanism that is incentive compatible for every individual user and validator. We study how the bandwidth price should evolve across blocks. Assuming validators execute honestly, we propose an EIP-1559-style price-update rule and show that its fluid approximation has a unique fixed point, which is locally stable for small enough step sizes. In large markets, prices that start near this point stay near it with high probability over any fixed time horizon.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "带宽费",
+        "交易传播",
+        "激励相容",
+        "门限认证"
+      ],
+      "url": "https://eprint.iacr.org/2026/2285",
+      "pdf": "https://eprint.iacr.org/2026/2285.pdf"
+    }
+  ]
+}
