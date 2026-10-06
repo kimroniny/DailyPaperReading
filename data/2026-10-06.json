@@ -1,0 +1,319 @@
+{
+  "date": "2026-10-06",
+  "papers": [
+    {
+      "id": "10.1145-3846177",
+      "title": "MCGMark: An Encodable and Robust Online Watermark for Tracing LLM-Generated Malicious Code",
+      "authors": [
+        "Kaiwen Ning",
+        "Jiachi Chen",
+        "Qingyuan Zhong",
+        "Tao Zhang",
+        "Yanlin Wang",
+        "Wei Li",
+        "Jingwen Zhang",
+        "Jianxing Yu",
+        "Yuming Feng",
+        "Weizhe Zhang",
+        "Zibin Zheng"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用水印追踪 LLM 生成的恶意代码并归因到用户，对象是代码大模型生成的程序。",
+      "abstract": "随着大语言模型兴起，许多软件服务商开始开发面向代码生成的 LLM（如 CodeLlama）。但这些模型也可能被恶意开发者用来生成恶意代码，对软件生态构成严重威胁。作者先做实证研究，构建了 MCGTest：一个包含 406 条提示、用于诱使 LLM 生成恶意代码的数据集。基于该数据集，提出 MCGMark：一种用于追踪与归因 LLM 生成恶意代码的水印方法。MCGMark 通过控制 token 选择过程，把用户特定信息嵌入生成代码，使水印不易被察觉；同时动态调整 token 选择范围，诱导模型偏向高概率 token，以保持代码质量。它还利用代码结构，避免把水印写进注释、变量名等易被攻击者改动的区域，从而增强抗篡改能力。在多种先进 LLM 上的实验表明，在 400 token 限制下，MCGMark 约 85% 的情形能成功嵌入水印，并能维持代码质量，对常见代码修改也有较强鲁棒性。该方法为追踪恶意代码、缓解 LLM 被滥用提供了可行方案。",
+      "abstractEn": "With the advent of large language models (LLMs), numerous software service providers are developing LLMs tailored for code generation, such as CodeLlama. However, these models can be exploited by malicious developers to generate malicious code, posing severe threats to the software ecosystem. To address this issue, we first conducted an empirical study and built MCGTest, a dataset of 406 prompts designed to elicit malicious code from LLMs. Leveraging this dataset, we propose MCGMark, a watermarking method to trace and attribute LLM-generated malicious code. MCGMark subtly embeds user-specific information into generated code by controlling the token selection process, ensuring the watermark is imperceptible. Additionally, MCGMark dynamically adjusts the token selection range to induce the LLM to favor high-probability tokens, thus ensuring code quality. Furthermore, by leveraging code structure, MCGMark avoids embedding watermarks into regions easily modified by attackers, such as comments and variable names, enhancing robustness against tampering. Experiments on several advanced LLMs show that MCGMark successfully embeds watermarks in approximately 85% of cases, under the constraint of a 400-token limit. Moreover, it maintains code quality and demonstrates strong resilience against common code modification. This approach offers a practical solution for tracing malicious code and mitigating the misuse of LLMs.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "恶意代码",
+        "代码水印",
+        "LLM",
+        "归因"
+      ],
+      "url": "https://doi.org/10.1145/3846177"
+    },
+    {
+      "id": "2610.05103",
+      "title": "VulValidate: Auditing Function-Level Vulnerability Labels with Executable Evidence",
+      "authors": [
+        "Leizhen Zhang",
+        "Sheng Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 LLM 智能体协调动态分析工具审计函数级漏洞标签，对象是 C/C++ 漏洞数据集。",
+      "abstract": "基于学习的漏洞检测依赖高质量标签，但由漏洞修复提交构建的数据集，可能仅仅因为函数被安全补丁改过就把它标成脆弱。本文提出 VulValidate：用 LLM 智能体协调动态分析工具，并根据运行时反馈构造触发漏洞的实验。给定已标注函数及其修复补丁，VulValidate 重建脆弱版本与修复版本，选择合适工具与执行路径，迭代 refinement 触发输入，并比较运行时行为以评估函数级归因。作者审计了 BigVul、PrimeVul 与 DiverseVul 中原先标为脆弱的全部 35,849 条实例：确认 20,510 条（57.2%），纠正 6,819 条标签（19.0%），7,981 条已攻击但无法判定（22.3%），539 条无法成功测量（1.5%）。经冲突消解与字节级去重后，校正发布包含 15,890 个互异的已确认脆弱函数体。对 581 个抽样决策的盲审中，专家共识支持 90.0%–92.0% 的确认结论与 92.6%–99.0% 的标签纠正。在模型参数固定时，用校正后的评测会降低全部五个检测器在 BigVul 与 DiverseVul 上的 F1；用校正标签重训后，每个数据集上五个检测器中有四个 F1 提升。作者还发布可复用的 VulValidate skill、校正数据集与可复现证据。",
+      "abstractEn": "Reliable learning-based vulnerability detection requires high-quality labels, yet datasets built from vulnerability-fixing commits may label functions as vulnerable simply because they were changed by a security patch. We present VulValidate, a framework that uses LLM agents to coordinate dynamic analysis tools and construct vulnerability-triggering experiments from runtime feedback. Given a labeled function and its fixing patch, VulValidate reconstructs vulnerable and fixed revisions, selects suitable tools and execution paths, refines triggering inputs, and compares runtime behavior to assess function-level attribution. We audit all 35,849 instances originally labeled vulnerable in BigVul, PrimeVul, and DiverseVul. We confirm 20,510 (57.2%), correct 6,819 labels (19.0%), leave 7,981 attacked but undecided (22.3%), and cannot successfully measure 539 (1.5%). After conflict resolution and byte-exact deduplication, the corrected release contains 15,890 distinct confirmed vulnerable function bodies. In a blinded review of 581 sampled decisions, expert consensus supports 90.0%--92.0% of confirmations and 92.6%--99.0% of label corrections. With model parameters fixed, corrected evaluation lowers F1 for all five tested detectors on both BigVul and DiverseVul; retraining with corrected labels improves F1 for four of five detectors on each dataset. We also release a reusable VulValidate skill, corrected datasets, and reproducible evidence for future vulnerability-detection research.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞标签",
+        "动态分析",
+        "智能体",
+        "C/C++"
+      ],
+      "url": "https://arxiv.org/abs/2610.05103",
+      "pdf": "https://arxiv.org/pdf/2610.05103"
+    },
+    {
+      "id": "2610.06366",
+      "title": "Correct Verdicts, Flawed Reasoning: Structured Auditing of LLM-based Vulnerability Reasoning",
+      "authors": [
+        "Boyue Caroline Hu",
+        "Kaivalya Ahir",
+        "Ronghao Ni",
+        "Limin Jia"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用结构化推理记录审计 LLM 漏洞判定中的错误推理，对象是软件漏洞分析。",
+      "abstract": "大语言模型正越来越多地用于自动化软件漏洞分析。仅有二分类判决不够：实践者还需要解释来分诊缺陷、设计补丁。常见做法依赖思维链（CoT）提示，但自由文本推理会把逻辑跳跃、幻觉执行步骤和内部不一致藏在看似合理的叙述后面。人工审计发现，约 60% 的正确漏洞判决伴随着捏造或无法核验的断言，自由形式解释也让推理错误逃过 LLM-as-a-judge。本文提出 VERA（Vulnerability Explanation Reasoning Auditor），用于审计 LLM 的漏洞推理。VERA 不接受自由文本，而是要求模型输出结构化推理记录（SRR），用机器可读字段编码被追踪的指针、内存操作与状态转移。多阶段判定器对 SRR 检查八类推理失败模式，确定性检查为主，LLM 只用于语义解释。标准化 SRR 模式还支持自动变异测试，从而在无需人工标注的情况下规模化评测判定器。评估表明：推理缺陷在正确判决与错误判决中同样常见，VERA 能暴露自由形式 LLM-as-judge 系统性漏掉的 87% 推理错误。",
+      "abstractEn": "Large Language Models (LLMs) are increasingly deployed for automated software vulnerability analysis. Binary classification alone is insufficient; practitioners need explanations to triage bugs and engineer patches. Standard practice relies on Chain-of-Thought (CoT) prompting, but free-form reasoning allows models to obscure logical leaps, hallucinated execution steps, and internal inconsistencies behind plausible prose. Our manual audit reveals that approximately 60% of correct vulnerability verdicts are accompanied by fabricated or unverifiable claims, and free-form explanations allow reasoning errors to evade LLM-as-a-judge evaluation. We present Vulnerability Explanation Reasoning Auditor (VERA), an automated framework for auditing LLM vulnerability reasoning. Rather than accepting free-form text, VERA asks models to output a Structured Reasoning Record (SRR) encoding tracked pointers, memory operations, and state transitions in machine-readable fields. A multi-stage judge audits each SRR against eight reasoning failure modes using deterministic checks, with LLM calls reserved for semantic interpretation. The standardized SRR schema also enables automated mutation testing to benchmark judges at scale without human annotation. Our evaluation shows reasoning flaws occur in correct verdicts just as frequently as incorrect ones, and VERA exposes 87% of reasoning errors that free-form LLM-as-judge systematically miss.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞推理",
+        "结构化审计",
+        "LLM",
+        "误报漏报"
+      ],
+      "url": "https://arxiv.org/abs/2610.06366",
+      "pdf": "https://arxiv.org/pdf/2610.06366"
+    },
+    {
+      "id": "2610.06163",
+      "title": "Where Did the Repair First Go Wrong? Localizing the Origins of Silent Failures in Agentic Vulnerability Repair",
+      "authors": [
+        "Wenji Bai",
+        "Muhammad Waseem",
+        "Zeeshan Rasheed",
+        "Jaakko Peltonen",
+        "Pekka Abrahamsson"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用轨迹分析定位 LLM 智能体漏洞修复中静默失败的起点，对象是安全补丁工作流。",
+      "abstract": "定位 LLM 智能体在修复过程中首次未能守住安全意图的步骤，可以看出工作流哪一阶段需要额外防护。这对静默失败尤其困难：补丁通过了语法与功能检查，却仍含安全漏洞。由于没有可观察的失败信号，依赖任务失败与标注失败步骤的现有归因方法不太适用。作者提出 SAGE（Security Awareness Gap Evaluation）：一种基于轨迹的方法，结合每轮记录的安全推理评估与重建的代码历史，找出修复首次偏离任务安全意图的最早轮次。评测基于 SecurityEval 与 CVEfixes 上六个智能体框架、六个基座模型产生的 3,684 条修复轨迹中确认的 95 个静默失败。SAGE 在 93 例中给出了起源；大多数起源是未处理的安全需求或不当的防御选择，只有 5 例与代码改动本身重合。当智能体引入了脆弱代码时，19 例中有 14 例起源早于写入。重复打分与第二判定器对起源类型的一致性高于精确轮次，仅保留最终文件的轨迹一致性最低。",
+      "abstractEn": "Localizing where an LLM-based agent first fails to uphold security during a repair can show which stage of its workflow needs an additional safeguard. This is difficult for silent failures, which are patches that pass syntactic and functional checks but still contain a security vulnerability. Because such patches give no observable failure signal, existing failure attribution methods, which rely on observed task failures and labelled failure steps, are less suited to them. We propose Security Awareness Gap Evaluation (SAGE), a trace-based method that combines an assessment of the security reasoning recorded at each turn with the reconstructed code history to identify the earliest turn at which a repair diverges from the task's security intent. We evaluate SAGE on 95 confirmed silent failures drawn from 3,684 repair traces produced by six agent frameworks and six base models on SecurityEval and CVEfixes. SAGE assigned an origin in 93 cases. Most origins were an unaddressed security requirement or an inadequate defence choice, and only five coincided with the code change itself. When the agent introduced the vulnerable code, the origin preceded the write in 14 of 19 cases. Repeated scoring and a second judge reproduced the origin type more consistently than the exact turn, and agreement was lowest for traces that kept only the final file.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "静默失败",
+        "智能体",
+        "轨迹归因"
+      ],
+      "url": "https://arxiv.org/abs/2610.06163",
+      "pdf": "https://arxiv.org/pdf/2610.06163"
+    },
+    {
+      "id": "2610.03857",
+      "title": "Beware EviLLM: Enabling Vulnerability Injection via Large Language Models",
+      "authors": [
+        "Zeezoo Ryu",
+        "Simon Chung",
+        "Muhammad Faraz Karim",
+        "Anna Raymaker",
+        "Karan Singh Jodha",
+        "Yash Chaturvedi",
+        "Sukarno Mertoguno"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "研究第三方劫持 LLM 代码生成管线故意注入漏洞，对象是 AI 代码生成流水线。",
+      "abstract": "大语言模型已能根据自然语言规格生成代码，也为向软件中注入漏洞打开了新攻击面。已有工作多在良性设置下研究无意引入的漏洞，或假设模型本身被后门、或用户就是攻击者（越狱）。本文研究更现实的威胁模型：能力与现有网络犯罪分子相当的第三方对手，通过破坏 AI 代码生成管线来故意引入漏洞，称为 EviLLM 攻击。作者实现了两种 EviLLM 实例，只需通过被攻陷的账号或浏览器访问底层 LLM，即可注入 13 个 CWE 类别的漏洞。可行性研究表明，这两类攻击向量已被用于许多现有网络攻击。用户研究表明：两种实例分别有 7/8 与 10/13 的参与者未注意到注入的漏洞，21 人中有 13 人「很少」或「从不」考虑过类似 EviLLM 的风险。",
+      "abstractEn": "Advances in large language models (LLMs) have enabled AI-driven code generation from natural language specifications, introducing new attack surfaces for injecting vulnerabilities into software. Prior work has studied this problem only in benign settings where vulnerabilities are introduced inadvertently, or under unconventional threat models where the LLM itself is malicious (backdooring) or the user is the attacker (jailbreaking). In this paper, we study a more realistic threat model: a third-party adversary, with capabilities comparable to existing cybercriminals, compromises the AI code generation pipeline to deliberately introduce vulnerabilities. We call this the EviLLM attack. We have implemented two instances of EviLLM, each of which only requires the underlying LLM to be accessed through a compromised account or browser, and can inject vulnerabilities from 13 CWE classes. As we show in our feasibility study, both attack vectors are already used to implement many existing cyberattacks. Our user study shows that 7 out of 8 and 10 out of 13 participants did not notice the vulnerabilities injected by the two instances of EviLLM, and 13 out of 21 participants \"rarely\" or \"never\" considered the risk of an attack like EviLLM.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞注入",
+        "代码生成",
+        "供应链",
+        "CWE"
+      ],
+      "url": "https://arxiv.org/abs/2610.03857",
+      "pdf": "https://arxiv.org/pdf/2610.03857"
+    },
+    {
+      "id": "2610.05399",
+      "title": "Adaptive Code Revision Attacks on AI Pull Request Reviewers",
+      "authors": [
+        "Jingzhi Gong",
+        "Jie M. Zhang",
+        "Gunel Jahangirova",
+        "Meng Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "利用 AI 审稿反馈改代码但保留漏洞以通过 PR 审查，对象是 LLM 拉取请求审查。",
+      "abstract": "拉取请求审查是代码上线前的保护环节，有助于防止把漏洞带到用户侧。AI 智能体越来越多地承担这类审查，并解释需要修复的问题。但对提交脆弱代码的攻击者来说，这些反馈也会提示怎样改才能获得批准。已有 PR 攻击多靠说服性文字与评论换取批准，可执行代码保持不变。尚不清楚攻击者能否利用反馈「修好」被指出的问题，同时在修订代码中保留漏洞。本文用 AFCRA（Adaptive Feedback-guided Code Revision Attack）实证研究这一威胁。为区分攻击成功与真正修复，作者从 159 个已披露漏洞构造 AFCRA-Bench，并用可执行 exploit 验证代码中的漏洞。与 Sonnet 5、GPT-5.5 审查者进行五轮交互时，AFCRA 成功率分别达到最强文本/评论攻击的 2.5 倍与 12.5 倍。案例表明，审查者会接受对所报问题的修复，却忽略仍然存活的漏洞。结果把反馈引导的代码修订确立为自动化 PR 审查的威胁，并为研究者、AI 提供商、PR 审查者与作者给出可操作建议。",
+      "abstractEn": "Pull-request review protects software before new code reaches users, helping prevent vulnerabilities that could expose users to attacks. AI agents increasingly perform these reviews and explain which problems need fixing. However, for an attacker submitting vulnerable code, this feedback also reveals what changes may secure approval. Existing PR attacks seek such approval through persuasive text and comments while keeping executable code fixed. This leaves unclear whether an attacker can use the feedback to repair the reported problem while preserving a vulnerability in the revised code. We therefore conduct an empirical study of this threat using AFCRA (Adaptive Feedback-guided Code Revision Attack). To distinguish successful attacks from genuine repairs, we construct AFCRA-Bench from 159 disclosed vulnerabilities, with executable exploits to verify vulnerabilities in code. Across five-round interactions with Sonnet 5 and GPT-5.5 reviewers, AFCRA reaches success rates 2.5x and 12.5x those of the strongest evaluated text- or comment-based attack. Case studies of these successes show how reviewers accept repairs of reported problems while overlooking surviving vulnerabilities. These findings establish feedback-guided code revision as a threat to automated PR review. To address this threat, we derive actionable implications for researchers, AI providers, PR reviewers, and PR authors on securing AI-assisted development.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PR 审查",
+        "漏洞保留",
+        "智能体",
+        "代码修订"
+      ],
+      "url": "https://arxiv.org/abs/2610.05399",
+      "pdf": "https://arxiv.org/pdf/2610.05399"
+    },
+    {
+      "id": "2610.06584",
+      "title": "Does AI Help Cyber Attackers or Defenders? Evidence from Nonpublic Vulnerabilities and Subsequent Attacks",
+      "authors": [
+        "Tobias Heldt",
+        "Matt Turk",
+        "Christoph Landolt",
+        "Mario Fritz"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在非公开漏洞上评测 LLM 的利用生成与修复，对象是真实未公开软件漏洞。",
+      "abstract": "前沿 AI 系统的发布决策越来越依赖网络能力基准，但公开漏洞基准会让智能体接触已发表的公告、exploit 与修复，难以区分「见过」与「对未见漏洞的真实能力」。作者在五个非公开软件环境中评测开源权重与闭源模型的 exploit 生成、漏洞修复以及后续攻击，其中包括作者私下披露、当时仍未打补丁的漏洞。任务分数由研究者开发并审阅的确定性评分器给出，而非 LLM 评判。与 209 个已披露漏洞及密码学挑战的对照显示，系统与漏洞类型之间差异很大。在两个非公开环境中修复分数高于攻击分数，另外三个则相反。通过初次安全测试也不足够：在初次 exploit 被拦住之后的 524 个非独立防御测试区间里，另有 92 次后续 exploit 成功。这些结果说明需要按漏洞比较攻击与修复，并做后续抗性测试。",
+      "abstractEn": "The release decision for frontier AI systems increasingly relies on cyber capability benchmarks, yet public vulnerability benchmarks can expose agents to previously published advisories, exploits, and fixes, making it difficult to distinguish prior exposure from capability on unseen vulnerabilities. We evaluate open-weight and proprietary AI models on exploit generation, vulnerability repair and subsequent attacks in five nonpublic software environments, including vulnerabilities we privately disclosed while they remained unpatched. Researcher-developed and reviewed deterministic graders, not LLM judges, determine task scores. Comparisons with 209 disclosed vulnerabilities and cryptographic challenges reveal substantial variation across systems and vulnerability types. Repair scores exceed attack scores in two nonpublic environments and fall below them in three. Passing an initial security test is also insufficient: another exploit succeeds in 92 of 524 non-independent defender test intervals after the initial exploit is stopped. These results motivate vulnerability-specific attack-repair comparisons and subsequent resistance tests.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞利用",
+        "漏洞修复",
+        "非公开漏洞",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2610.06584",
+      "pdf": "https://arxiv.org/pdf/2610.06584"
+    },
+    {
+      "id": "2610.04992",
+      "title": "ContractLens: Latent Security Knowledge for Malicious Smart Contract Detection",
+      "authors": [
+        "Shuyi Miao",
+        "Xinyi Huang",
+        "Wangjie Qiu",
+        "Fei Shen",
+        "Jinchun He",
+        "Zhiming Zheng",
+        "Tat-Seng Chua"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "挖掘预训练 LLM 内部表征做恶意智能合约检测，对象是 Solidity 合约。",
+      "abstract": "检测恶意智能合约对保护 Web3 生态至关重要。现有基于大语言模型的审计方法大多依赖提示工程或针对特定攻击的微调，而支持恶意逻辑检测的内部表征仍不清楚。本文提出 ContractLens：定位并利用预训练 LLM 中的潜在安全知识，做可解释的恶意合约检测。首先用分层线性探针找出能区分恶意与良性合约的候选层，再按对删除恶意逻辑的敏感性、以及对保持行为的表面改动的稳定性选出关键层。接着在这些层内，把激活对比、恶意逻辑特异性与探针权重合成三因子重要性分数，并按排序曲线膝点自适应选出恶意合约判别单元（MCDU）。最后把所选单元的激活拼接成紧凑表示，训练轻量分类器，全程冻结预训练模型。神经元掩码实验表明，掩码 MCDU 比随机掩码或按激活幅度匹配的掩码更能降低检测性能。ContractLens 在三种预训练模型上都取得高于对照方法的平均检测精度，并能泛化到未见过的恶意意图；固定已识别的 MCDU 后，用少量标注样本训练的分类器仍有较强检测能力。",
+      "abstractEn": "Detecting malicious smart contracts is essential to safeguarding the Web3.0 ecosystem. However, existing auditing methods based on large language models (LLMs) largely rely on prompt engineering or attack-specific fine-tuning, while the internal representations that support malicious logic detection remain poorly characterized. To address this gap, we propose ContractLens, a framework that localizes and uses latent security knowledge in pretrained LLMs for interpretable malicious smart contract detection. Specifically, we first use layerwise linear probes to identify candidate layers that distinguish malicious from benign contracts, then select critical layers based on their sensitivity to malicious logic removal and stability under behaviour-preserving surface modifications. Next, within these critical layers, we combine activation contrast, malicious-logic specificity, and probe weights into a tri-factor importance score and adaptively select malicious contract-discriminative units (MCDUs) using the knee point of the ranked score curve. Finally, we concatenate the selected units' activations into a compact representation and train a lightweight classifier for detection, keeping the pretrained model frozen throughout. Neuron masking experiments show that masking MCDUs causes larger drops in detection performance than masking randomly selected neurons or neurons matched in activation magnitude. ContractLens achieves higher average detection accuracy than the evaluated methods on all three pretrained models. Further evaluations demonstrate generalization to unseen malicious intents and show that, with the identified MCDUs fixed, a classifier trained on few labelled samples can still achieve strong detection performance.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "恶意合约",
+        "LLM 表征",
+        "可解释检测",
+        "Solidity"
+      ],
+      "url": "https://arxiv.org/abs/2610.04992",
+      "pdf": "https://arxiv.org/pdf/2610.04992"
+    },
+    {
+      "id": "2610.05054",
+      "title": "Cross-chain Access Control for Permissioned Blockchain Interoperation",
+      "authors": [
+        "Tirthankar Sengupta",
+        "Bishakh Chandra Ghosh",
+        "Sandip Chakraborty",
+        "Shamik Sural"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为许可链跨链请求-响应提出端到端访问控制，无 LLM，对象是许可链互操作。",
+      "abstract": "随着企业区块链日益互联，访问控制必须跨越单一网络边界。现有方法主要控制一条链内的访问，而跨链交互涉及多个可能采用不同访问控制策略与管理规则的网络。本文提出 InterAcct：面向许可区块链网络间安全交互的端到端访问控制框架。为避免暴露敏感内部信息，InterAcct 在请求发给另一网络之前，先把出站请求转换成联盟级表示；响应返回后，再安全映射回源联盟中的原始请求者，从而在整个交互过程中保持机密性。实验表明，InterAcct 能以较低额外开销为跨链请求-响应强制执行端到端访问控制，并在负载增加时仍可有效运行。",
+      "abstractEn": "As enterprise blockchains become increasingly interconnected, access control must extend beyond the boundaries of a single network. Existing approaches mainly focus on controlling access within one blockchain, while cross-chain interactions involve multiple networks that may follow different access-control policies and administrative rules. In this paper, we propose InterAcct, an end-to-end access-control framework for secure interactions across permissioned blockchain networks. To avoid exposing sensitive internal information, InterAcct converts outgoing requests into a consortium-level representation before they are shared with another network. When a response is returned, the framework securely maps it back to the original requester within the source consortium, preserving confidentiality throughout the interaction. Our experimental results show that InterAcct can enforce end-to-end access control for cross-chain request-response interactions with low additional overhead and can continue to operate effectively as the workload increases.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链",
+        "访问控制",
+        "许可链",
+        "互操作"
+      ],
+      "url": "https://arxiv.org/abs/2610.05054",
+      "pdf": "https://arxiv.org/pdf/2610.05054"
+    },
+    {
+      "id": "2610.05335",
+      "title": "StateSync-GKR: Machine-Checking the Trust Chain from Sparse-Merkle State Transitions to GKR Verification",
+      "authors": [
+        "Jinwook Kim"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在 Isabelle 中机器检查稀疏 Merkle 状态转移电路与 GKR 验证的信任链，无 LLM，对象是 zk 证明系统。",
+      "abstract": "GKR 可靠性约束的是关于算术电路的错误输出声明，但应用还需要保证电路确实编码了预期的状态转移。本文在 Isabelle/HOL 中对稀疏 Merkle 的成员、非成员与更新机器检查这一连接。编译器模型在两个方向上把电路接受与转移有效性联系起来；可复用的协议模型把层归约、连线谓词扩展与导入的 sumcheck 可靠性组装成对显式链式事件的界。二者的复合把语义无效性转移到该界上，且见证在挑战实验之前固定。具体解释与前提激活会暴露仅靠干净构建发现不了的空假设集合。进一步工作构造精确的四次元 KoalaBear 扩域，把基域电路对象抬升上去，并在所述挑战假设下给出分母为 p^4 的组装界。配套有可执行的 Rust prover。Creusot/Why3 合约提供部分实现连接，一个有条件定理在未卸下的值对应前提下把成功的验证器轨迹关联到模型事件。文中未建立成绩单的在线挑战分布，也未给出多轮 Fiat–Shamir 归约。贡献是在同一证明助手中把编译器正确性与 GKR 组装模型复合起来，并明确列出剩余的实现与密码学义务。",
+      "abstractEn": "GKR soundness bounds false output claims about arithmetic circuits, but an application also needs assurance that its circuit encodes the intended state transition. We machine-check this connection for sparse-Merkle membership, non-membership, and update in Isabelle/HOL. A compiler model relates circuit acceptance to transition validity in both directions. A reusable protocol model assembles layer reduction, wiring-predicate extensions, and imported sumcheck soundness into a bound on an explicit chain event. Their composition transfers semantic invalidity to that bound, with the witness fixed before the challenge experiment. Concrete interpretations and premise activations expose vacuous assumption sets that a clean build alone would miss. A further development constructs the exact degree-four KoalaBear extension, lifts the base-field circuit objects, and establishes the assembly bound with denominator p^4 under its stated challenge assumptions. An executable Rust prover accompanies the model. Creusot/Why3 contracts provide a partial implementation connection, and a conditional theorem relates successful verifier traces to the model event under an undischarged value-correspondence premise. Neither the transcript's online challenge distribution nor a multi-round Fiat--Shamir reduction is established. The contribution is the composition, within one proof assistant, of compiler correctness with a GKR assembly model, together with an explicit account of the remaining implementation and cryptographic obligations.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "GKR",
+        "稀疏 Merkle",
+        "形式化验证",
+        "zk"
+      ],
+      "url": "https://arxiv.org/abs/2610.05335",
+      "pdf": "https://arxiv.org/pdf/2610.05335"
+    },
+    {
+      "id": "2026-2338",
+      "title": "Plotkin Attacks! On the (Mis)use of Raptor Codes in Asynchronous Verifiable Information Dispersal",
+      "authors": [
+        "Victor Shoup"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "证明 reconstruct-later AVID 使用 Raptor 码不安全，无 LLM，对象是数据可用性协议。",
+      "abstract": "一些异步可验证信息分发（AVID）与数据可用性协议，在 n=3f+1 方中至多 f 方拜占庭时，一旦 2f+1 方声称持有纠删码分片，就认证消息可用，并把重构与编码校验推迟到以后。作者把这种模式称为 reconstruct-later AVID。若后来那 f 个拜占庭证明方扣留分片，重构必须仅从剩下的 f+1 个诚实分片成功；拜占庭分发者还能在看到分给诚实方的编码符号后再选择这 f+1 个。不能确定消息的分片子集称为坏子集。Raptor 码在此很诱人：编码开销不大，对随机擦除的解码失败概率很小；Walrus 的早期设计与测试网曾这样使用 RaptorQ。本文证明该模式对标准化 Raptor 码 R10（RFC 5053）与 RaptorQ（RFC 6330）不安全。对 K 个输入符号的消息，只要 K 超过给出的对数阈值，每个分给诚实方的 R10/RaptorQ 编码符号分配都含坏的 (f+1) 子集。在略强条件下，随机化多项式时间算法能找出这类子集；RaptorQ 攻击实现对每个测试的对抗子集都能击败 RFC 6330 解码器。关键工具是 Plotkin 界：它迫使存在编码像汉明重量很低的非零输入。对 n=3f+1 的 RaptorQ，在 F_256 上经验攻击在 f 从 9 到 45、K=f+1 时全部成功，远低于界首次适用的 f=77。R10 上更小的 K 也无济于事：对所有标准化 34≤K≤8192 以及 3f+1≤n≤4f≤65520，当 ESI 为 0..n-1 时每个分配都有显式坏子集证书。基准显示 MDS 替代方案代价不大：在作者参数区间里，Reed-Solomon 编码/解码往往比 R10 或 RaptorQ 更快，至多慢一个小常数倍。",
+      "abstractEn": "Some asynchronous verifiable information dispersal (AVID) and data-availability protocols certify that a disperser's message is available once 2f+1 of n=3f+1 parties, at most f of them Byzantine, attest that they hold their erasure-coded fragments, and defer reconstruction and validation of the encoding until later. We call this design pattern reconstruct-later AVID. If the f Byzantine attesters later withhold their fragments, reconstruction must succeed from the f+1 honest fragments that remain, and a Byzantine disperser chooses which f+1 after seeing the encoding symbols assigned to the honest parties. We call a subset of fragments that does not determine the message bad. Raptor codes are a tempting choice here: with modest coding overhead they have very small decoding-failure probability under random erasures, and a preliminary Walrus design and an earlier Walrus testnet used RaptorQ in this way. We show that the pattern is insecure with the standardized Raptor codes R10 (RFC 5053) and RaptorQ (RFC 6330). For a message of K input symbols, every assignment of R10 encoding symbols to the honest parties contains a bad (f+1)-subset whenever K>floor(log2(2f+2)), and every RaptorQ assignment whenever K>7 H_HDPC + floor(log2(2f+2)), where H_HDPC is RFC 6330's number of high-density parity-check symbols. Under slightly stronger conditions, randomized polynomial-time algorithms find such subsets, and an implementation of the RaptorQ attack defeats an RFC 6330 decoder on every adversarial subset tested. The key ingredient is the Plotkin bound, which forces a nonzero input whose encoded image has low Hamming weight. For RaptorQ at n=3f+1, an empirical attack over F_256 succeeds at every tested f from 9 to 45 with K=f+1, far below the f=77 at which the bound above first applies, and empirical attacks over F_4, F_16, and F_256 succeed at values of K well below that bound. For R10, a smaller K does not help: for every standardized 34<=K<=8192 and every n with 3f+1<=n<=4f<=65520, explicit certificates give a bad subset for every assignment to the honest parties when the encoding-symbol identifiers (ESIs) are 0,1,...,n-1, and with probability at least 1/2 when the ESIs are uniformly random. Benchmarks of our implementations show that the MDS alternative costs little: in our parameter regime, Reed-Solomon is often faster than, and never more than a small constant factor slower than, either R10 or RaptorQ, for both encoding and decoding.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "AVID",
+        "数据可用性",
+        "Raptor 码",
+        "Walrus"
+      ],
+      "url": "https://eprint.iacr.org/2026/2338",
+      "pdf": "https://eprint.iacr.org/2026/2338.pdf"
+    },
+    {
+      "id": "2026-2337",
+      "title": "Bandwidth-Balanced Reliable Broadcast in Stake-Weighted Networks",
+      "authors": [
+        "Victor Shoup"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在权益加权网络中平衡可靠广播的中继上传负载，无 LLM，对象是 PoS 验证者网络。",
+      "abstract": "考虑异步网络中的 n 个验证者，拜占庭验证者持有的权益少于三分之一。在纠删码可靠广播中，验证者中继发送者消息的分片。验证者的中继上传成本是它在发送者初始分发之外再传出的分片数据量。若按权益比例给每个验证者分配分片数，最重的验证者会中继远多于其余节点的数据。本文证明这种不平衡并非必要。作者给出 Balanced CT 与 Balanced MiniCast：在保留权益加权投票的同时，给每个验证者只分配一个分片，使每个诚实验证者有相同的中继上传上界。其上界取决于有多少验证者能超过总权益的三分之一（CT）或三分之二（MiniCast）。权益偏斜还能放大 MiniCast 相对等权益网络约两倍改进之外的优势。对 n=200 的真实 Monad 权益分布，最大中继上传成本（以消息大小的倍数计）约为：按比例分配的 CT 72.2，Balanced CT 8.7，Balanced MiniCast 2.2。平衡构造用更高的总中继上传成本换取更低的最大成本。为在给定最大成本约束下降低总量，作者提出 Capped Swiper 启发式。在八个真实权益分布上、每个码至多 4n 个分片时，相对平衡构造，CT 的总中继上传成本降低 19–81%，MiniCast 降低 16–71%，最大成本至多高 10%。文中还给出发送者感知变体：发送者不再中继分片数据，从而减轻其每次广播负担。",
+      "abstractEn": "Consider an asynchronous network of n validators in which Byzantine validators hold less than one third of the stake. In erasure-coded reliable broadcast, validators relay fragments of the sender's message. A validator's relay-upload cost is the amount of fragment data it transmits outside the sender's initial dispersal. Assigning each validator a number of fragments proportional to its stake makes the heaviest validators relay far more data than the rest. We show that this imbalance is unnecessary. We give Balanced CT and Balanced MiniCast, adaptations of Cachin-Tessaro (CT) and MiniCast (Locher and Shoup, EUROCRYPT 2025) that retain stake-weighted voting but assign one fragment to each validator, giving every honest validator the same relay-upload bound. Their maximum relay-upload costs depend on how few validators can exceed one third of the total stake for CT, or two thirds for MiniCast. Stake skew can amplify MiniCast's advantage beyond the approximately twofold improvement in equal-stake networks. For the real-world Monad distribution with n=200, the leading maximum relay-upload costs, as multiples of the message size, are approximately 72.2 for CT with proportional assignment, 8.7 for Balanced CT, and 2.2 for Balanced MiniCast. The balanced constructions pay for their low maximum cost with a higher total relay-upload cost. To reduce that total while retaining a prescribed maximum-cost bound, we give a new Capped Swiper heuristic. On eight real-world stake distributions, with at most 4n fragments per code, it lowers total relay-upload cost by 19-81% for CT and 16-71% for MiniCast relative to their balanced counterparts, while keeping maximum relay-upload cost at most 10% higher. We also give sender-aware variants of both constructions in which the sender relays no fragment data, reducing its per-broadcast burden.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "可靠广播",
+        "权益加权",
+        "PoS",
+        "带宽"
+      ],
+      "url": "https://eprint.iacr.org/2026/2337",
+      "pdf": "https://eprint.iacr.org/2026/2337.pdf"
+    }
+  ]
+}
