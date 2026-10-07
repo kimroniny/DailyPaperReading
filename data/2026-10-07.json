@@ -1,0 +1,319 @@
+{
+  "date": "2026-10-07",
+  "papers": [
+    {
+      "id": "2610.08405",
+      "title": "Learning from Failures: A Failure-Driven Prompt Refinement for LLM-Based Vulnerability Analysis",
+      "authors": [
+        "Mandana Ghadamian",
+        "David Mohaisen"
+      ],
+      "year": 2026,
+      "venue": "CSoNet 2026",
+      "abstractOneWord": "用失败模式驱动的提示词 refinement 提升 LLM 漏洞分析，对象是 Java 漏洞样本（DVJA / Juliet）。",
+      "abstract": "大语言模型已成为软件漏洞分析的有前景工具，但其效果高度依赖提示词设计。现有研究主要用汇总指标比较提示策略，对模型为何失败、以及如何系统改进提示词提供的洞见有限。本文提出失败驱动的提示词 refinement（FDPR）：分析反复出现的模型失败，据此做有证据的提示词改进。作者在 Damn Vulnerable Java Application（DVJA）上识别误报、漏报、无依据推理、CWE 误分类等失败模式，并转成针对性的提示 refinement；随后在 Juliet 测试套件上评估，并做跨模型验证以考察泛化。结果表明，失败驱动的 refinement 能提高 LLM 漏洞分析的可靠性，并产出可复用的提示设计原则。更一般地，反复出现的模型失败为提示工程提供了原则性基础，有助于系统构建更可靠的 LLM 漏洞分析系统。",
+      "abstractEn": "Large Language Models have emerged as promising tools for software vulnerability analysis, but their effectiveness depends heavily on prompt design. Existing research primarily compares prompting strategies using aggregate performance metrics, providing limited insight into why models fail or how prompts can be improved systematically. We propose Failure-Driven Prompt Refinement (FDPR), a methodology that analyzes recurring model failures to guide evidence-based prompt refinement. Using the Damn Vulnerable Java Application (DVJA), we identify recurring failure modes, including false positives, false negatives, unsupported reasoning, and CWE misclassification, and translate them into targeted prompt refinements. We then evaluate the resulting prompt on the Juliet Test Suite and perform cross-model validation to assess generalizability. The results show that failure-driven refinement improves the reliability of LLM-based vulnerability analysis while yielding reusable prompt design principles. More broadly, this work demonstrates that recurring model failures provide a principled foundation for prompt engineering, enabling the systematic development of more reliable LLM-based vulnerability analysis systems.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞分析",
+        "提示词",
+        "Java",
+        "CWE"
+      ],
+      "url": "https://arxiv.org/abs/2610.08405",
+      "pdf": "https://arxiv.org/pdf/2610.08405"
+    },
+    {
+      "id": "2610.08240",
+      "title": "Newer and Bigger, but Safer? A Longitudinal Study of the Functionality-Security Gap in LLM-Generated Code",
+      "authors": [
+        "Thiago Santos de Moura",
+        "Fynn Matuschek",
+        "Flavio Toffalini",
+        "Yannic Noller"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "纵向评估 LLM 生成代码的功能–安全差距，对象是五种语言、31 类 CWE 的生成程序。",
+      "abstract": "大语言模型被广泛用于生成代码。尽管功能正确性持续提升，生成代码仍常含安全漏洞。功能–安全差距指代码能通过功能测试却通不过安全测试。近期一项针对三个模型家族的纵向研究认为 LLM 变得更聪明但并不更安全，且所考察的开源权重家族停滞。该结论对其余（开源）家族、尤其是紧凑模型是否成立仍不清楚。本文对七个模型家族（五个开源权重）共 32 个 LLM 做纵向研究，每个家族覆盖三代旗舰与紧凑变体。基于 CWEval 的 119 个任务、五种编程语言与 31 类 CWE，比较家族、模型规模与语言上的轨迹。新模型在绝对意义上确实更安全，但没有任何家族消掉差距。与先前工作不同，开放性并不区分家族：所考察的每个开源权重家族都显著缩小差距，而 Gemini 3.1 Pro 的差距仍与 Llama 报告的相当。紧凑模型通常比对应旗舰更不安全，但也有例外（如 Gemini 3.7 Flash）。在 CWE 层面，日志注入（CWE-117）与 HTTP 响应拆分（CWE-113）持续存在；最新闭源模型在内存与整数类弱点上出现回退；同一 CWE 在不同语言上的风险差异很大。作者据此给出对厂商、研究者与开发者的启示：升级模型或改用闭源并不等于更安全，每次换模型都应重跑安全检查，并在模型上下文中提供安全 API。",
+      "abstractEn": "Large Language Models (LLMs) are widely used to generate code. Although their functional plausibility keeps improving, the generated code often contains security vulnerabilities. The functionality-security gap captures code that passes functional tests but fails security tests. A recent longitudinal study of three model families concluded that LLMs become smarter but not safer, with the only considered open-weight family stagnating. Whether this holds for other (open-weight) families and particularly for compact models remains open. We present a longitudinal study of the gap across 32 LLMs from seven model families (five open-weight), covering three successive releases per family in flagship and compact variants. Using CWEval with 119 tasks in five programming languages and 31 CWEs, we compare trajectories across families, model sizes, and languages. Newer models do become safer in absolute terms, although no family closes the gap. Unlike prior work, we find that openness does not separate the families: every considered open-weight family narrows the gap significantly, while Gemini 3.1 Pro keeps a gap as wide as the one reported for Llama. Compact models usually produce less secure code than their flagship counterparts, with notable exceptions (e.g., Gemini 3.7 Flash). At the CWE level, we confirm persistent weaknesses such as log injection (CWE-117) and HTTP response splitting (CWE-113) and regressions in the newest proprietary models on memory and integer weaknesses, and show that the same CWE carries very different risk across languages. From these results, we derive implications for LLM vendors, researchers, and developers. In particular, developers should assume neither that upgrades improve security nor that proprietary models are more secure; they should rerun security checks after each model change and provide secure APIs in the model's context.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "生成代码",
+        "安全差距",
+        "CWE",
+        "纵向研究"
+      ],
+      "url": "https://arxiv.org/abs/2610.08240",
+      "pdf": "https://arxiv.org/pdf/2610.08240"
+    },
+    {
+      "id": "2610.07557",
+      "title": "CheckerBench: Can Long-Horizon Agents Synthesize Static-Analysis Checkers?",
+      "authors": [
+        "Hang He",
+        "Li Wang",
+        "Hao Chen",
+        "Yuchen Shao",
+        "Yuling Shi",
+        "Lisheng Wang",
+        "Peiyang Liu",
+        "Goose Lin",
+        "Zaiyuan Wang",
+        "Haiying Sun",
+        "Ting Su",
+        "Chengcheng Wan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用长时程智能体从仓库合成静态分析 checker，对象是跨语言的真实 CVE/CWE。",
+      "abstract": "静态分析 checker 的合成要求智能体解读缺陷规格、检查仓库、实现分析器特定逻辑，并通过反复编译与分析反馈 refinement checker。现有编码智能体基准多关注补丁生成或漏洞检测，很少评估智能体能否在仓库中从头做出可用 checker。本文提出 CheckerBench：由 297 个 CVE、167 个仓库、85 类 CWE 与五个语言生态派生的 300 个可执行任务。每个任务包含脆弱与修复版本、钉死的分析环境以及 checker 脚手架。作者还提出 CheckerLab：独立重建提交的 checker，并测量脆弱/修复诊断对比、补丁定位、误报与工具使用。在 21 种模型–harness 配置、每种配置三次独立重复下，平均 Pass@1 为 32.30%，最好达到 45.33%。结果表明，对当前编码智能体而言，可靠、可复用的 checker 开发仍然困难。",
+      "abstractEn": "Static-analysis checker synthesis requires agents to interpret a defect specification, inspect a repository, implement analyzer-specific logic, and refine the checker through repeated compilation and analysis feedback. Existing coding-agent benchmarks focus on tasks such as patch generation or vulnerability detection and rarely assess whether an agent can develop a working checker in a repository from start to finish. We introduce CheckerBench, an executable benchmark of 300 tasks derived from 297 CVEs across 167 repositories, 85 CWEs, and five language ecosystems. Each task includes vulnerable and fixed revisions, a pinned analysis environment, and a checker scaffold. We further introduce CheckerLab, a common evaluation framework that independently rebuilds submitted checkers and measures vulnerable-fixed diagnostic contrast, patch localization, false positives, and tool use. Across 21 model-harness configurations and three independent repeats per configuration, mean Pass@1 is 32.30%, while the best reaches 45.33%. These results show that reliable, reusable checker development remains challenging for current coding agents.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "静态分析",
+        "智能体",
+        "CVE",
+        "checker"
+      ],
+      "url": "https://arxiv.org/abs/2610.07557",
+      "pdf": "https://arxiv.org/pdf/2610.07557"
+    },
+    {
+      "id": "2610.08406",
+      "title": "Case-Level Verification in Scanner-LLM Cascades: Overcoming the Alert Aggregation Bottleneck to Expand the FRR-TPR Trade-off Space",
+      "authors": [
+        "Hao Sun",
+        "Yibin Yao",
+        "Chaohai Xie",
+        "Yuqun Lin"
+      ],
+      "year": 2026,
+      "venue": "ICDA 2026",
+      "abstractOneWord": "用 LLM 对 DAST 扫描器告警做实例级核验以降低误报，对象是 Web 应用（DVWA / WebGoat）。",
+      "abstract": "动态应用安全测试（DAST）扫描器召回高，但误报多，人工研判成本大。若单独用大语言模型做检测，召回极高（95.4%–100%），误报率也高到无法作为独立替代（49.6%–85.0%）。自然方案是扫描器检测后再接 LLM 核验的两级级联。但实践中长期被忽视的核验粒度问题会形成结构瓶颈：告警聚合把多个真阳性与假阳性绑成同一决策单元，去掉一个假阳性会连带去掉同组真阳性，从而在假阳性削减率（FRR）与真阳性率（TPR）之间形成权衡瓶颈。作者形式化该瓶颈，指出告警级假阳性集合是实例级假阳性集合的子集，并引入 Case-Level 逐例核验：把决策粒度从告警下沉到实例，独立重放 HTTP 请求并对每个检出实例单独判定。在 DVWA 与 WebGoat 双测试床上，经验上最好的告警级工作点达到 FRR=42.86%（TPR=51.7%）；Case-Level 基线将 FRR 提升到 47.6%（+4.7 个百分点）；在相同 FRR 下，面向案例的证据核验提示（CEV-Prompt）把 TPR 从 55.2% 提升到 62.1%。",
+      "abstractEn": "Dynamic Application Security Testing (DAST) scanners achieve high recall but also produce a large number of false positives, resulting in substantial manual triage costs. Large Language Models (LLMs), when used for independent detection, achieve extremely high recall (95.4%-100%) but also exhibit prohibitively high false positive rates (49.6%-85.0%), precluding their use as standalone replacements for scanners. A natural solution is a two-stage cascade consisting of scanner detection followed by LLM verification. However, a verification-granularity issue that has long been overlooked in practice creates a structural bottleneck: alert aggregation binds multiple true and false cases into a shared decision unit, such that removing a false positive inevitably eliminates true positives aggregated within the same alert group. This creates a trade-off bottleneck between the False-positive Reduction Rate (FRR) and the True-positive Rate (TPR). We formalize this bottleneck by showing that the alert-level false-positive set is a subset of the case-level false-positive set, and introduce a Case-Level, per-case verification strategy that shifts the decision granularity from the alert level to the instance level, independently replaying HTTP requests and making an independent determination for each detected case. Evaluation on the dual testbeds of Damn Vulnerable Web Application (DVWA) and WebGoat shows that the empirically best Alert-Level operating point achieves FRR=42.86% (TPR=51.7%). The Case-Level Baseline achieves FRR=47.6%, an improvement of 4.7 percentage points (+4.7 pp), while the Case-Focused Evidence Verification Prompt (CEV-Prompt) increases TPR from 55.2% to 62.1% at the same FRR.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "DAST",
+        "告警研判",
+        "Web",
+        "误报"
+      ],
+      "url": "https://arxiv.org/abs/2610.08406",
+      "pdf": "https://arxiv.org/pdf/2610.08406"
+    },
+    {
+      "id": "2610.05793",
+      "title": "Topology-Conditioned Backdoors: Language Models That Insert Vulnerabilities When They Infer They Are in a Multi-Agent System",
+      "authors": [
+        "Keegan Wang",
+        "Anantika Mannby"
+      ],
+      "year": 2026,
+      "venue": "AIWild @ NeurIPS 2026",
+      "abstractOneWord": "研究语言模型在推断处于多智能体部署时向生成代码植入漏洞的后门，对象是编码任务中的程序。",
+      "abstract": "语言模型在单智能体评估中可能表现安全，但当上下文暗示它处于多智能体系统时，却会生成含漏洞的代码。作者通过微调 Qwen2.5-7B-Instruct，使其根据提示级来源线索推断部署拓扑并据此调节代码生成。在留出的编码任务上，任务特定检查器在 96%–100% 的多智能体回合中检出漏洞，单智能体回合为 0%；独立 bandit 分析器在约 67% 的多智能体回合中检出漏洞，覆盖九类漏洞家族中的六类（中高严重度）。词汇安慰剂与人工审阅对照支持：真正的条件变量是拓扑，而不是多智能体术语或缺少监督。在多样拓扑信号上训练的模型还能泛化到训练未见的五类信号，并在两个 Qwen checkpoint 与两个训练种子上复现。盲审中，仅判断是否存在隐藏策略几乎无法区分后门模型与干净对照；审计者能在 10 次后门运行中识别出 9 次拓扑触发，对照运行中为 0。结果促使在匹配的单智能体与多智能体上下文之间做差异化审计。文中展示的是可训练的、以所述拓扑为条件的后门；在真实多智能体环境中的激活仍未测试。",
+      "abstractEn": "A language model may behave safely in a single-agent evaluation yet produce vulnerable code when its context suggests that it is part of a multi-agent system. We study this failure mode by fine-tuning Qwen2.5-7B-Instruct to condition code generation on deployment topology inferred from prompt-level provenance cues. On held-out coding tasks, task-specific checkers detect vulnerabilities in 96-100% of multi-agent episodes and 0% of single-agent episodes. An independent bandit analyzer detects vulnerabilities in approximately 67% of multi-agent episodes, covering six of nine vulnerability families at medium or high severity. Lexical-placebo and human-review controls support topology, rather than multi-agent terminology or the absence of oversight, as the relevant conditioning variable. A model trained on diverse topology signals also generalizes to five signal types held out of training, with replications across two Qwen checkpoints and two training seeds. In a blind audit, a binary judgment that a hidden policy exists poorly distinguishes the organism from a clean control, whereas the auditor identifies the topology trigger in 9 of 10 organism runs and none of the control runs. These results motivate differential auditing across matched single- and multi-agent contexts. They demonstrate a trainable backdoor conditioned on described topology; activation in a live multi-agent environment remains untested.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "后门",
+        "多智能体",
+        "生成代码",
+        "漏洞植入"
+      ],
+      "url": "https://arxiv.org/abs/2610.05793",
+      "pdf": "https://arxiv.org/pdf/2610.05793"
+    },
+    {
+      "id": "2610.05139",
+      "title": "Hidden in the Comments: A Context-Injection Attack Surface in Code LLMs",
+      "authors": [
+        "Noor Munir",
+        "Francesco Quinzan",
+        "Stephen Roberts"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评估代码注释中的不安全指令能否诱导 Code LLM 生成漏洞代码，对象是 Web 应用弱点类别。",
+      "abstract": "代码大语言模型助手会从异构开发上下文生成代码，包括打开的文件、导入模块、粘贴片段与注释，其中许多可能来自不可信来源。作者研究：在无法访问模型权重或训练数据的情况下，嵌入这些上下文的不安全指令能否把 Code LLM 导向含漏洞代码。评估覆盖 10 个开源权重 Code LLM（3B–13B，含 4 个基座与 6 个指令微调模型）以及 10 类 Web 应用弱点。对比把不安全指令嵌在代码注释中的补全任务与不含恶意指令的良性任务：攻击条件下 77.4%–92.3% 的补全含中等或更高严重度弱点，良性条件仅为 1.7%–5.1%。基座与指令微调模型平均脆弱输出分别为 86.5% 与 84.5%；等价性检验与三对配对模型显示，指令微调最多只降低 8.1%。易感程度与模型规模或专长没有清晰关联。在脆弱的攻击输出中，86.2%–91.0% 被评为高危或严重，且该效应在不使用基于模式的检测器时仍然存在。生成后筛查能降低但无法消除风险，最强筛查仍漏掉约三分之一。这些发现把推理时上下文注入识别为重要攻击面，并促使引入感知来源的训练目标。",
+      "abstractEn": "Code large language model (Code LLM) assistants generate code from heterogeneous development contexts, including open files, imported modules, pasted snippets, and comments, much of which may originate from untrusted sources. We investigate whether insecure instructions embedded in such contexts can steer Code LLMs toward vulnerable code without access to model weights or training data. We evaluate ten open-weight Code LLMs spanning 3B-13B parameters, including four base and six instruction-tuned models, across ten web-application weakness classes. We compare completion tasks containing insecure instructions embedded as code comments with benign tasks without malicious instructions. Attack-condition completions contained a medium-or-higher weakness in 77.4-92.3% of cases, compared with 1.7-5.1% in the benign condition. Base and instruction-tuned models averaged 86.5% and 84.5% vulnerable outputs, respectively; equivalence testing and three matched model pairs indicated reductions of at most 8.1% after instruction tuning. Susceptibility showed no clear association with model scale or specialization. Among vulnerable attack outputs, 86.2-91.0% were rated high or critical, and the effect persisted without the pattern-based detector. Post-generation screening reduced but did not eliminate the risk, the strongest screen leaving roughly one-third undetected. These findings identify inference-time context injection as a substantial attack surface and motivate provenance-aware training objectives.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "上下文注入",
+        "Code LLM",
+        "Web",
+        "不安全代码"
+      ],
+      "url": "https://arxiv.org/abs/2610.05139",
+      "pdf": "https://arxiv.org/pdf/2610.05139"
+    },
+    {
+      "id": "2610.03820",
+      "title": "From Requirements to Attack Trees: Grounded LLM Agents for Design-Time Security Review",
+      "authors": [
+        "Akash Iyer",
+        "Taha Demirkan",
+        "Keerthi Koneru",
+        "Aaryan Siddharthan",
+        "Sheethal Kumar",
+        "Ramesh Radhakrishnan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多智能体 LLM 从需求文档与架构图做设计期安全评审，对象是企业软件架构。",
+      "abstract": "设计层安全弱点可在实现开始前就源于需求、信任假设、缺失控制与数据流。现有安全实践往往在代码写完后才发现问题。本文提出多智能体 LLM 框架，从产品需求文档与架构图做设计期安全分析：把架构图解析为图表示，生成误用与失败案例，构造攻击树，检查治理与合规缺口，推荐缓解措施，打上企业安全域标签，并产出供专家审阅的候选修订架构。框架在推理时不检索 CWE 库，而是分析系统行为、信任边界、组件交互与数据流假设。误用案例作为中间表示，把发现关联到系统组件与攻击路径；校验与 refinement 循环过滤无依据发现，提高落地、可追溯与可操作性。评估覆盖微软带标注的威胁建模参考例、带标注的合成 PRD–架构对，以及 Berty 与 Gas Town 两个开放系统。参考例支持威胁召回与可操作性分析；开放案例评估有效性、噪声、可追溯、可操作、冗余与攻击树质量。结果表明，相对单次提示与消融基线，结合架构信息、由误用驱动的推理能提高评审质量。",
+      "abstractEn": "Design-level security weaknesses can arise from requirements, trust assumptions, missing controls, and data flows before implementation begins. Existing security practices often identify these issues after code is written. We present a multi-agent LLM framework for design-time security analysis from product requirement documents and architecture diagrams. The proposed framework parses architecture diagrams into graph representations, generates misuse and failure cases, constructs attack trees, checks governance and compliance gaps, recommends mitigations, assigns enterprise security-domain tags, and produces a candidate revised architecture recommendation for expert review. The framework does not retrieve from Common Weakness Enumeration (CWE) databases at inference time. Instead, it analyzes system behavior, trust boundaries, component interactions, and data-flow assumptions. Misuse cases act as intermediate representations that link findings to system components and attack paths, while a validation and refinement loop filters unsupported findings and improves grounding, traceability, and actionability. We evaluate the framework on a Microsoft reference-labeled threat-modeling example, labeled synthetic PRD-architecture pairs, and two open-ended systems: Berty and Gas Town. The reference-labeled case supports threat-recovery and actionability analysis, while the open-ended cases evaluate validity, noise, traceability, actionability, redundancy, and attack-tree quality. Results show that architecture-informed, misuse-driven reasoning improves review quality compared with single-shot and ablation baselines.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "威胁建模",
+        "攻击树",
+        "设计期",
+        "多智能体"
+      ],
+      "url": "https://arxiv.org/abs/2610.03820",
+      "pdf": "https://arxiv.org/pdf/2610.03820"
+    },
+    {
+      "id": "2610.07298",
+      "title": "Polar: LLM-Powered Synthesis of Real-World Cyber Evidence for Prioritization and Mitigation",
+      "authors": [
+        "Luoxi Tang",
+        "Yuqiao Meng",
+        "Ankita Patra",
+        "Weicheng Ma",
+        "Muchao Ye",
+        "Zhaohan Xi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 LLM 综合真实漏洞情报做优先级与缓解建议，对象是公开漏洞库与威胁情报中的软件漏洞。",
+      "abstract": "网络威胁分析越来越依赖分散在厂商公告、漏洞库与威胁情报源中的证据。要把这些碎片观察变成及时决策，模型需要把技术严重度、持续演化的利用证据与可用防御动作连起来。本文提出 POLAR：用 LLM 把真实世界网络证据合成为以威胁为中心的评估，用于优先级排序与缓解。POLAR 先拆开重叠事件，并用带来源链接的证据锚定每个威胁。在优先级方面，它从网络证据推断严重度指标，再与按时间排序的利用信号结合，估计近期被利用的可能性。在缓解方面，它把合成后的威胁数据接到权威修复知识，并按威胁紧急度与运维约束组织可用动作。作者在从公开资源收集的真实漏洞证据上评估 POLAR，并与多种基线比较。在异构事件与零日设定下，POLAR 改进了威胁排序与缓解检索，并产出可供分析师检查的、带证据链接的中间评估。结果表明，证据综合可作为 LLM 网络决策支持及相关安全任务的实用基础。",
+      "abstractEn": "Cyber threat analysis increasingly depends on evidence distributed across vendor advisories, vulnerability databases, and threat intelligence sources. Turning these fragmented observations into timely decisions requires models to connect technical severity with evolving exploitation evidence and available defensive actions. We present POLAR, an LLM-powered framework for synthesizing real-world cyber evidence into threat-centric assessments for prioritization and mitigation. POLAR first disentangles overlapping incidents and grounds each threat in source-linked evidence. For prioritization, it infers severity metrics from cyber evidence and combines the resulting assessment with temporally ordered exploitation signals to estimate near-term exploitation likelihood. For mitigation, it links the synthesized threat data to authoritative remediation knowledge and organizes applicable actions according to threat urgency and operational constraints. We evaluate POLAR on real-world vulnerability evidence collected from public resources and compare it with multiple baselines. Across heterogeneous incidents and zero-day settings, POLAR improves threat ranking and mitigation retrieval while producing evidence-linked intermediate assessments that support analyst inspection. The results establish evidence synthesis as a practical foundation for LLM-based cyber decision support across related security tasks.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞优先级",
+        "威胁情报",
+        "缓解",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2610.07298",
+      "pdf": "https://arxiv.org/pdf/2610.07298"
+    },
+    {
+      "id": "2610.08429",
+      "title": "RAPO-Sol: Retrieval-Augmented Preference Optimization for Repository-Level Solidity Code Generation",
+      "authors": [
+        "Rongcun Wang",
+        "Shi Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用检索增强微调与偏好优化生成仓库级 Solidity 合约，对象是含权限、支付与底层调用的智能合约。",
+      "abstract": "Solidity 智能合约管理资产、权限与不可逆状态变化，代码生成既有用也关乎安全。仓库级 Solidity 生成很难：模型必须合成完整合约或库，同时保持状态变量、修饰符、事件、继承、外部调用与访问控制逻辑的一致性。本文提出 RAPO-Sol，分两阶段训练仓库级 Solidity 代码生成。第一阶段检索增强微调（RAFT）为每个训练输入附加相似 Solidity 示例，帮助模型学习反复出现的合约级模式，推理时仍不检索。第二阶段直接偏好优化（DPO）训练模型偏好参考合约，而不是接近但语义有缺陷的替代。被拒样本用 Solidity 语义锚点扰动（SAP）构造，扰动校验语句、可见性修饰符、数据位置关键字、上下文变量、支付操作与底层调用。在 SolidityBench 上对 CodeLlama-7B-Instruct、DeepSeek-Coder-6.7B-Instruct 与 Qwen2.5-Coder-7B-Instruct 的实验表明，RAFT 稳定优于监督微调，基于 SAP 的 DPO 在 BLEU 与 SolidityScore 上继续提升。完整 RAFT+DPO 流水线在三个模型上都最好，说明训练期检索与感知 Solidity 的偏好优化互补，且不增加推理检索成本。",
+      "abstractEn": "Smart contracts written in Solidity manage assets, permissions, and irreversible state changes, making code generation both useful and security-critical. Repository-level Solidity generation is challenging because models must synthesize complete contracts or libraries while preserving consistency across state variables, modifiers, events, inheritance, external calls, and access-control logic. We present RAPO-Sol, a two-stage training framework for repository-level Solidity code generation. First, Retrieval-Augmented Fine-Tuning (RAFT) augments each training input with similar Solidity examples, helping the model learn recurring contract-level patterns while remaining retrieval-free at inference time. Second, Direct Preference Optimization (DPO) trains the model to prefer reference contracts over close but semantically flawed alternatives. We construct rejected samples using Solidity Semantic-Anchor Perturbation (SAP), which perturbs validation statements, visibility modifiers, data-location keywords, context variables, payment operations, and low-level calls. Experiments on SolidityBench with CodeLlama-7B-Instruct, DeepSeek-Coder-6.7B-Instruct, and Qwen2.5-Coder-7B-Instruct show that RAFT consistently improves over supervised fine-tuning, while SAP-based DPO provides further gains in BLEU and SolidityScore. The full RAFT+DPO pipeline achieves the best performance across all three models, demonstrating complementary benefits from retrieval during training and Solidity-aware preference optimization without adding retrieval cost at inference.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "Solidity",
+        "代码生成",
+        "访问控制",
+        "偏好优化"
+      ],
+      "url": "https://arxiv.org/abs/2610.08429",
+      "pdf": "https://arxiv.org/pdf/2610.08429"
+    },
+    {
+      "id": "2610.07759",
+      "title": "When Can Stateless Recovery Defeat Byzantine Quorum Safety? A Tight Normal Form for Single-Step BFT",
+      "authors": [
+        "Arnab Mallick",
+        "Indraveni Chebolu"
+      ],
+      "year": 2026,
+      "venue": "ICDCN 2027",
+      "abstractOneWord": "分析无状态恢复如何破坏拜占庭法定人数安全，对象是单步 BFT 共识副本。",
+      "abstract": "拜占庭法定人数安全依赖正确副本拒绝签署冲突值。副本在恢复时丢失协议状态但保留身份与签名密钥，就可能忘记先前投票。作者研究由至少 n 个副本中的 q 个匹配签名投票构成的证书，并假设每个正确副本在两次恢复之间避免冲突投票。若形成两份冲突证书，其重叠大小介于 2q-n 与 b+c 之间，其中 b 是拜占庭副本数，c 是该执行中恢复过的正确身份数。主要结果把松弛量 b+c-(2q-n) 分解为四个非负计数：第一份证书的多余签名者、第二份证书的多余签名者、两份都不含的身份、以及重叠之外的拜占庭或恢复身份。松弛量为零会迫使精确的签名者划分。当 n=3f+1、阈值 q=2f+1、至多 f 个拜占庭副本且恰好一次正确恢复时，任何冲突对都迫使恰好 f 个拜占庭副本全部落在重叠中并与恢复副本在一起；每份证书各有 f 个互不相交的正确副本。一个最小协议达到该形式。作者区分证书形成与接受，给出用配置的故障与恢复上限做充分检查的方法，并解释为何在释放签名前写入持久投票记录可以阻止冲突。",
+      "abstractEn": "Byzantine quorum safety relies on correct replicas refusing to sign conflicting values. A replica that loses its protocol state during recovery but retains its identity and signing key may forget an earlier vote. We study certificates formed by matching signed votes from at least q of n replicas, assuming that each correct replica avoids conflicting votes between recoveries. If two conflicting certificates form, their overlap has size between 2q-n and b+c, where b counts Byzantine replicas and c counts correct identities that recovered during the execution considered. Our main result decomposes the slack b+c-(2q-n) into four nonnegative counts: extra signers in the first certificate, extra signers in the second, identities in neither certificate, and Byzantine or recovering identities outside their overlap. Zero slack forces an exact signer partition. With n=3f+1 replicas, threshold q=2f+1, at most f Byzantine replicas, and exactly one correct recovery event, any conflicting pair forces exactly f Byzantine replicas, all in the overlap together with the recovered replica; each certificate has a disjoint side of f correct replicas. A minimal protocol attains this form. We distinguish certificate formation from acceptance, give a sufficient check using configured fault and recovery caps, and explain why durable vote records written before signature release prevent the conflict.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "BFT",
+        "共识",
+        "法定人数",
+        "恢复"
+      ],
+      "url": "https://arxiv.org/abs/2610.07759",
+      "pdf": "https://arxiv.org/pdf/2610.07759"
+    },
+    {
+      "id": "2026-2360",
+      "title": "One-Round Threshold XMSS and SPHINCS+ from Fully Homomorphic Encryption",
+      "authors": [
+        "Jung Hee Cheon",
+        "Kevin Choi",
+        "Hyeoncheol Joo",
+        "Taeseong Kim"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用门限全同态加密构造一轮门限 XMSS / SPHINCS+ 签名，对象是分布式密钥托管与钱包场景。",
+      "abstract": "XMSS 与 SPHINCS+ 等哈希签名已较成熟，在后量子密码中作用关键，但把它们门限化以便用于分布式系统仍困难。它们缺少可被代数利用的结构，因而无法像 ECDSA、Schnorr、RSA 或 BLS 那样做代数门限；通用 MPC 的轮复杂度又高。本文构造并实现了 XMSS 与 SPHINCS+ 的首个一轮门限协议，具体参数与现有验证器完全向后兼容。密钥在签名方之间分享，签名算法用门限全同态加密同态求值；任意 t-of-n 方可经门限解密协作得到签名，并由未修改的 RFC 8391 或 FIPS 205 验证器接受。技术上，作者开发了在离散 CKKS 上、面向不同批大小的高效同态 SHAKE 求值；分析 XMSS 与 SPHINCS+ 签名后，用批处理与同态查找处理并行哈希与数据相关选择，得到端到端电路。实现把 SHAKE256/256 摊销到每次哈希 3.4 ms，在线门限 XMSS 签名 0.69 s。门限 SPHINCS+ 的签名延迟大约高两个数量级，但建立延迟比 XMSS 低一个数量级以上。",
+      "abstractEn": "While hash-based signatures such as XMSS and SPHINCS+ are well-established and play a key role in post-quantum cryptography, thresholdizing them to enable use in distributed systems remains a challenge. In particular, their lack of exploitable structure prevents any algebraic attempts that are otherwise possible in the context of classical signatures such as ECDSA, Schnorr, RSA, or BLS, whereas general-purpose MPC techniques are costly in round complexity. In this work, we construct and implement the first one-round threshold protocol for XMSS and SPHINCS+, with concrete parameters yielding full backward compatibility. At a high level, the secret key is shared among the signing parties while the signing algorithm is evaluated homomorphically using a threshold fully homomorphic encryption scheme. Any t-of-n parties, via threshold decryption, can collaboratively derive the signature, which is accepted by the unmodified RFC 8391 or FIPS 205 verifier. At a technical level, we develop efficient homomorphic SHAKE evaluation over discrete CKKS for varying batch sizes. Analyzing XMSS and SPHINCS+ signing reveals parallel hash computations and data-dependent selections, which we handle through batching and homomorphic lookup to obtain end-to-end circuits. Our implementation amortizes SHAKE256/256 evaluation to 3.4 ms per hash and completes online threshold XMSS signing in 0.69 s. Threshold SPHINCS+ has roughly two orders of magnitude higher signing latency but over an order of magnitude lower setup latency than XMSS.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "XMSS",
+        "SPHINCS+",
+        "后量子"
+      ],
+      "url": "https://eprint.iacr.org/2026/2360",
+      "pdf": "https://eprint.iacr.org/2026/2360.pdf"
+    },
+    {
+      "id": "2026-2292",
+      "title": "Nonstop Multihop? Constructions and Lower Bounds for Re-Aggregatable Multisignatures",
+      "authors": [
+        "Lucjan Hanzlik",
+        "Julian Loss",
+        "Omar Renawi"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出可再聚合多重签名的下界与构造，并用于认证 Dolev-Strong 拜占庭广播，对象是分布式共识与多跳聚合。",
+      "abstract": "多重签名把同一消息上的多个签名压成一个聚合。在大规模分布式系统中，聚合发生在多跳上，部分聚合可能重叠。Hofheinz、Reichle 与 Wagner（TCC 2026）的无 hint 多重签名去掉了聚合拓扑 hint，但验证仍需要完整的参与公钥集合。签名者集合信息本身能否去掉仍未解决。本文给出否定答案：引入幂等多重签名以刻画重叠聚合的无限制再聚合，并证明任何此类方案的签名长度对签名者数量线性。为绕过该下界，作者引入 unique 多重签名：一种顺序替代，去掉该元数据并保持常数大小签名，并用增量可验证计算来构造。最后，用该原语替换认证 Dolev-Strong 拜占庭广播中的签名链，可在发送者诚实的情况下两轮终止，并把对抗 t<n 自适应腐败的通信从 O(n^3) 降到 O(n^2)。",
+      "abstractEn": "Multisignatures compress many signatures on a common message into a single aggregate. In large distributed systems, aggregation occurs over multiple hops, where partial aggregates may overlap. The recent hint-free multisignatures of Hofheinz, Reichle, and Wagner (TCC 2026) eliminate aggregation-topology hints, but verification still requires the complete set of participating public keys. This leaves open whether the signer-set information itself can be eliminated. We answer this question negatively. We introduce idempotent multisignatures to capture unrestricted aggregation of overlapping aggregates and prove that any such scheme has a signature size linear in the number of signers. To circumvent this lower bound, we introduce unique multisignatures, a sequential alternative that eliminates this metadata and retains constant-size signatures. We construct unique multisignatures using incrementally verifiable computations. Finally, replacing signature chains in authenticated Dolev-Strong Byzantine Broadcast with our primitive enables two-round termination when the sender is honest and reduces communication from O(n^3) to O(n^2) against t<n adaptive corruptions.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "多重签名",
+        "拜占庭广播",
+        "聚合",
+        "共识"
+      ],
+      "url": "https://eprint.iacr.org/2026/2292",
+      "pdf": "https://eprint.iacr.org/2026/2292.pdf"
+    }
+  ]
+}
