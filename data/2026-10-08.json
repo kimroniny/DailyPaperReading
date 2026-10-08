@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-08",
+  "papers": [
+    {
+      "id": "2610.10150",
+      "title": "On the Reliability of LLM-Based Vulnerability Patching Benchmarks",
+      "authors": [
+        "Dang K Le",
+        "Wenxuan Shi",
+        "Xinyu Xing"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评估 LLM 漏洞补丁基准的可靠性，对象是 C/C++、Go、Rust 开源项目中的历史漏洞。",
+      "abstract": "大语言模型在自动漏洞补丁方面展现出较强潜力，但现有基准会显著扭曲所报告的性能。作者基于开发、运行与压力测试此类框架的经验，从未被充分审视的三个维度归纳陷阱：（1）智能体层面，提示词、工具可用性与过细指令可以提高成功率，却未必提升与开发者对齐的补丁质量；（2）框架层面，权限错误、基础设施缺陷与超时处理会静默压低或抬高成绩；（3）数据集层面，缺陷报告与单一概念验证（PoC）测试无法判断补丁是否触及根因或符合开发者意图。作者从 84 个开源 C/C++、Go、Rust 项目中整理 112 个历史漏洞，每个都配有 PoC、回归测试以及额外的开发者测试，以衡量是否符合原作者的设计原则。受控实验与案例表明，理想条件下 LLM 可以获得很高的 PoC 通过率，但基准执行选择会实质改变测得成功率。更重要的是，开发者测试通过率仍然很低，且随新模型仅有边际提升，说明模型越来越会压制症状，却不能稳定产出上游质量的修复。结果表明基准分数对评估设计高度敏感，作者据此给出更严谨、可靠、可复现评估的实践指南。",
+      "abstractEn": "Large language models (LLMs) have shown strong potential for automated vulnerability patching, but current benchmarks can substantially distort reported performance. Drawing on extensive experience developing, running, and stress-testing such frameworks, we identify under-examined pitfalls across three dimensions: (1) agent-level factors, where prompting, tool availability, and detailed instructions can raise success rates without improving developer-aligned patch quality; (2) framework-level factors, where permission errors, infrastructure bugs, and timeout handling can silently suppress or inflate performance; and (3) dataset-level factors, where bug reports and single proof-of-concept (PoC) tests fail to capture whether patches address root causes or follow developer intent. We curate 112 historical bugs from 84 open-source C/C++, Go, and Rust projects, each with PoC tests, regression tests, and additional developer tests that assess alignment with the original developers' design principles. Through controlled experiments and case studies, we show that LLMs can achieve high PoC passing rates under ideal conditions, yet benchmark execution choices can materially change measured success. More importantly, developer-test passing rates remain low and improve only marginally with newer models, suggesting that models increasingly suppress symptoms without consistently producing upstream-quality fixes. These results show that benchmark scores are highly sensitive to evaluation design, and we provide practical guidelines for more rigorous, reliable, and reproducible evaluation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞补丁",
+        "基准可靠性",
+        "C/C++",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2610.10150",
+      "pdf": "https://arxiv.org/pdf/2610.10150"
+    },
+    {
+      "id": "2610.09605",
+      "title": "GRAML: Graph-Grounded Reasoning and Multi-Task Learning for LLM-Based Software Vulnerability Detection",
+      "authors": [
+        "Ruohan Li",
+        "Miaoqing Tian",
+        "Haipeng Qu",
+        "Ruobing Jiang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用图证据引导 GPT-5 推理并做多任务训练，提升 LLM 漏洞检测，对象是 C/C++ 程序。",
+      "abstract": "大语言模型已被广泛用于软件漏洞检测，但其效果常受限于对控制流与数据流信息利用不足。本文提出 GRAML：把图证据、漏洞描述生成与多任务训练结合起来。GRAML 先对 C/C++ 程序做静态分析，提取关键源码行及带类型的行间关系作为结构证据；再用这些证据引导 GPT-5 走 Tree-of-Thought 引导的漏洞推理（ToT-VR）并生成漏洞描述；随后把这些描述与检测、定位、评估样本合并，构成统一的四任务训练数据。作者在分布内测试集与六个分布外数据集上评估：平均 F1 为 66.67% 到 68.70%，最多比现有最优基线高 30.92%。消融表明，相对标准思维链与原始代码属性图序列化，ToT-VR 与图引导的漏洞描述能提高检测效果。这些发现为用大语言模型构建更可靠的软件工程安全系统提供了实践指引。",
+      "abstractEn": "Large Language Models (LLMs) have been widely applied to software vulnerability detection. However, their performance is often limited by insufficient use of control-flow and data-flow information. In this paper, we propose GRAML, a framework that combines graph evidence, vulnerability description generation, and multi-task training. GRAML first performs static analysis on C/C++ programs to extract critical source lines and typed line relations as structural evidence. It then uses this evidence to guide GPT-5 through the Tree-of-Thought-guided Vulnerability Reasoning (ToT-VR) process and generate vulnerability descriptions. These descriptions are further combined with Detection, Localization, and Assessment samples to build a unified four-task training dataset. We evaluate GRAML on an in-distribution (ID) test set and six out-of-distribution (OOD) datasets. The results show that GRAML achieves average F1 scores ranging from 66.67% to 68.70%, outperforming state-of-the-art baselines by up to 30.92%. Ablation experiments further show that ToT-VR and graph-guided vulnerability descriptions improve detection performance compared with standard Chain-of-Thought (CoT) reasoning and raw Code Property Graph (CPG) serializations. These findings provide practical guidance for building more reliable and secure software engineering systems with large language models.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "图推理",
+        "C/C++",
+        "多任务学习"
+      ],
+      "url": "https://arxiv.org/abs/2610.09605",
+      "pdf": "https://arxiv.org/pdf/2610.09605"
+    },
+    {
+      "id": "2610.09264",
+      "title": "Package Hallucination Attacks on Coding Agents through Prompt Injection in Rule Files",
+      "authors": [
+        "Yupu Wang",
+        "Zhengyuan Jiang",
+        "Reachal Wang",
+        "Neil Zhenqiang Gong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "通过规则文件中的提示注入，诱使编码智能体改用攻击者控制的依赖包，对象是 agentic coding 框架。",
+      "abstract": "现代 agentic 编码框架越来越依赖社区共享的规则文件（如 AGENTS.md 或 .cursorrules）来引导自主代码生成，但这条流水线的安全风险仍缺少系统研究。本文提出包幻觉攻击：攻击者把恶意提示注入看似无害的规则文件，诱使编码智能体把合法依赖替换成攻击者控制的包。为得到有效的注入提示，作者提出 PackHallu，一种进化优化框架，用轨迹级反馈与 LLM 引导的变异迭代改写注入内容。跨多个基准、大语言模型与智能体框架的评估表明，PackHallu 攻击成功率高，并在不同模型与智能体组合间具有较强可迁移性。结果表明编码智能体易受包幻觉攻击，自主编码系统需要更强的安全防护。",
+      "abstractEn": "Modern agentic coding frameworks increasingly rely on community-shared rule files (e.g., AGENTS.md or .cursorrules) to guide autonomous code generation, yet the security risks of this pipeline remain underexplored. To bridge this gap, we introduce the package hallucination attack, where an attacker injects malicious prompts into benign rule files to induce coding agents to replace legitimate dependencies with attacker-controlled packages. To obtain effective malicious prompts injected into rule files, we propose PackHallu, an evolutionary optimization framework that iteratively rewrites these injected prompts using trajectory-level feedback and LLM-guided mutations. Evaluations across multiple benchmarks, LLMs, and agent frameworks show that PackHallu achieves high attack success rates and strong transferability across diverse models and agent combinations. Our findings demonstrate that coding agents are vulnerable to package hallucination attacks, highlighting the urgent need for stronger security safeguards in autonomous coding systems.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "包幻觉",
+        "提示注入",
+        "编码智能体",
+        "供应链"
+      ],
+      "url": "https://arxiv.org/abs/2610.09264",
+      "pdf": "https://arxiv.org/pdf/2610.09264"
+    },
+    {
+      "id": "2610.07639",
+      "title": "HarnessSecurity-Bench: Do Security Mechanisms Really Protect Coding Agent Harnesses?",
+      "authors": [
+        "Zhengyang Zhu",
+        "Liming Huang",
+        "Runmin Ji",
+        "Mingxi Ye",
+        "Zihan Zhou",
+        "Hanyang Guo",
+        "Jingwen Wu",
+        "Yuhan Ye",
+        "Yuming Feng",
+        "Hong-Ning Dai",
+        "Zibin Zheng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用基准评估编码智能体 harness 的安全机制是否真正挡住攻击，对象是 Claude Code、Codex CLI 等。",
+      "abstract": "编码智能体的 harness 负责中介工具调用并授权动作，但其安全机制与运行时效果仍未被完整刻画。本文提出 HarnessSecurity：对开源与闭源编码智能体 harness 的首次系统实证研究与基准。作者先归纳十类机制分类，再对 400 个 harness–机制单元由研究者与 LLM 评委独立打分。结果显示，约一半已确认的机制实现是 opt-in，闭源 harness 还存在大量证据缺口。随后引入 HarnessSecurity-Bench：覆盖五个攻击面的 23 个任务，同时不牺牲合法任务需求。用独立的确定性 oracle 分别度量任务效用与攻击效果，并比较安全设置，评估六个主流 harness（Claude Code、Codex CLI、Gemini CLI、gptme、Qwen Code、GitHub Copilot）上的九类机制。在受控 LLM 基线 GLM-5.2 下进行 2500 次试验，记录 81155 次工具调用与超过 22 亿 token。开启自动批准会提高效用，同时把攻击成功率从 29.2% 升到 95.6%。网络隔离与只读模式能降低攻击效果但效用损失大；命令允许名单与拒绝名单在较小效用损失（后者甚至提高效用）的同时降低攻击效果。任务级案例表明，对共享能力的限制会同时挡住合法与恶意操作，而被允许的工具或命令仍可能经替代执行路径到达未授权操作。作者建议 harness 提供方让安全设置可验证，测试通向受保护操作的替代路径，并同时评估攻击效果、任务效用与执行成本。",
+      "abstractEn": "Coding agent harnesses mediate tool use and authorize actions, yet their security mechanisms and runtime effects remain incompletely characterized. We present HarnessSecurity, the first systematic empirical study and benchmark of open- and closed-source coding agent harnesses. First, we derive a ten-mechanism taxonomy and then assess 400 harness-mechanism cells using independent ratings by researchers and large language model (LLM) judges. We find that about half of confirmed mechanism implementations are opt-in, while closed-source harnesses exhibit substantial evidence gaps. Second, we introduce HarnessSecurity-Bench, a benchmark of 23 tasks across five attack surfaces without sacrificing legitimate task requirements. Using separate deterministic oracles to measure task utility and attack effects with security setting comparisons, we evaluate nine mechanisms across six leading harnesses: Claude Code, Codex CLI, Gemini CLI, gptme, Qwen Code, and GitHub Copilot. Under a controlled LLM baseline GLM-5.2, we conduct 2,500 trials, recording 81,155 tool calls and over 2.2 billion tokens. Enabling auto-approve increases utility and raises attack success from 29.2% to 95.6%. Network isolation and read-only mode reduce attack effects with substantial utility losses, while command allowlisting and command denylisting reduce attack effects with a small utility loss and a utility gain, respectively. Task-level cases show that restrictions on a shared capability can obstruct both legitimate and malicious operations, and that allowed tools or commands can leave unauthorized operations reachable through alternative execution paths. Harness providers should make security settings verifiable, test alternative execution paths to protected operations, and assess attack effects alongside task utility and execution costs.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "harness",
+        "基准",
+        "工具调用"
+      ],
+      "url": "https://arxiv.org/abs/2610.07639",
+      "pdf": "https://arxiv.org/pdf/2610.07639"
+    },
+    {
+      "id": "2026-2383",
+      "title": "The Post-Quantum Cost of Garbled-Circuit Bitcoin Bridges",
+      "authors": [
+        "Mukesh Tiwari",
+        "Aaron Feickert"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "评估基于乱码电路的比特币桥在后量子设定下的脆弱性与编码代价，无 LLM。",
+      "abstract": "近期比特币桥设计依赖对简洁证明的验证来处理提款。这需要链下用乱码电路评估简洁证明，其输入标签必须以兼容恶意安全的方式编码上链。作者评估这些密码组件的后量子脆弱性，并考察安全替代方案的代价。后量子证明系统的电路规模可以做得比当前基于配对的基线更小，但证明尺寸显著更大，从而带来更高费用，并需要多个比特币区块才能完成编码。作者据此提出改进证明效率、电路表示与输入编码的后续研究方向。",
+      "abstractEn": "Recent Bitcoin bridge designs rely on verification of succinct proofs to process withdrawals. This requires off-chain garbled circuit evaluation of a succinct proof, the input labels for which must be encoded on chain in a manner compatible with malicious security. We assess the post-quantum vulnerability of these cryptographic components, and examine the costs of secure alternatives. Circuit sizes for post-quantum proving systems can be made smaller than the current pairing-based baseline, but at the cost of significantly higher proof sizes that incur greater cost and require multiple Bitcoin blocks to encode. We suggest avenues of future research to improve efficiency of proofs, circuit representations, and input encodings.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "比特币桥",
+        "乱码电路",
+        "后量子",
+        "简洁证明"
+      ],
+      "url": "https://eprint.iacr.org/2026/2383",
+      "pdf": "https://eprint.iacr.org/2026/2383.pdf"
+    },
+    {
+      "id": "2026-2378",
+      "title": "AsyncLS: an iUC Framework for Wallet-Based Asynchronous Ledger Services",
+      "authors": [
+        "Keyang Liu",
+        "Li Duan"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在 iUC 框架下给出钱包驱动的异步账本服务及其可组合协议实现，无 LLM。",
+      "abstract": "作者在基于 IITM 的通用可组合（iUC）框架中定义异步账本服务 AsyncLS。该钱包服务通过注册、已提交应用状态读取、经认证的提交，以及带不可变最终结果的状态查询，向去中心化账本应用暴露通用状态机。每个逻辑请求把用户授权绑定到最终检查点与适用的执行上下文。确认结果标识第一笔合格交易，并记录应用成功或拒绝。严格过期要求在合格高度窗口之外完成处理且无记录结果，并证明该请求没有应用效果。作者构造协议 Π_AsyncLS，用 Wallet、Relay、Adapter、Replay 四个组件实现理想服务。证明把服务构造与 Relay、Adapter 的实现分开，同时保留账本、时钟、认证与 setup 交互。作者在各自的执行与信任假设下，为可信实现与本地实现证明实现关系。并用该服务构造 ORDI 交互式支付以及位于交易排序之上的参数化执行层。这些例子把账本交互协议与服务所暴露的应用状态和效果区分开。每次使用都需要所述的授权、setup、账本、时钟、认证与账本效果假设。",
+      "abstractEn": "We define an asynchronous ledger service (AsyncLS) in the IITM-based universal composability (iUC) framework. The wallet-based service exposes a general state machine for a decentralized ledger-based application through registration, reads of committed application state, authenticated submission, and status queries with immutable final results. Each logical request binds the user's authorization to a finalized checkpoint and the applicable execution context. A confirmed outcome identifies the first eligible transaction and records application success or rejection. Strict expiry requires complete processing beyond the eligible height window with no recorded outcome, and certifies that the request has no application effect. We construct a protocol that realizes the ideal service using four components: Wallet, Relay, Adapter, and Replay. The proof separates the service construction from the implementations of Relay and Adapter while preserving ledger, clock, authentication, and setup interactions. We prove realization for the trusted and local implementations under their respective execution and trust assumptions. We use the service to construct an ORDI interactive payment and a parameterized execution layer above transaction ordering. These examples distinguish the ledger interaction protocol from the application state and effects exposed by the service. Each use requires the stated authorization, setup, ledger, clock, authentication, and ledger-effect assumptions.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "钱包",
+        "异步账本",
+        "可组合安全",
+        "支付"
+      ],
+      "url": "https://eprint.iacr.org/2026/2378",
+      "pdf": "https://eprint.iacr.org/2026/2378.pdf"
+    },
+    {
+      "id": "2610.10333",
+      "title": "The Economic Security of Exponential EIP-1559",
+      "authors": [
+        "Ben Berger",
+        "Edward W. Felten",
+        "Robin Fritsch"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为指数版 EIP-1559 选择具有经济安全性的 gas 参数，对象是 Ethereum / Arbitrum 费市场，无 LLM。",
+      "abstract": "本文研究区块链上广泛使用的 gas 定价机制 EIP-1559 的参数选择。与先前工作不同，目标是实现经济安全：一旦给定时间窗口内的用量超过指定阈值，所选参数就能保证收取的 gas 费总额有下界。该下界可以设得足够高，从而在经济上阻止超过期望水平的用量。这类保证对限制状态增长等长期目标尤其相关。作者把方法应用到以太坊使用的纯指数版 EIP-1559，以及 Robinhood Chain 与 Arbitrum 使用的变体。为实现经济安全，作者先刻画指数版本下使收入最小的 gas 用量分布；对其余变体则构造一个其费用收入可证明逼近最小值的分布。据此展示如何为两种变体设定经济安全的机制参数，并讨论相应权衡。",
+      "abstractEn": "We consider the problem of parameter selection for EIP-1559, a widely used gas pricing mechanism for blockchains. As opposed to previous work, we aim to achieve economic security, where the chosen parameters guarantee a lower bound on total collected gas fees whenever usage over a given time window exceeds a specified threshold. This bound can be set prohibitively high, thereby economically deterring usage above a desired level. Such guarantees are particularly relevant to long-term objectives such as limiting state growth. We apply our approach to the pure exponential version of EIP-1559 which Ethereum uses and to a variant used by Robinhood Chain and Arbitrum. To achieve economic security, we first characterize the revenue-minimizing gas-usage distribution for the exponential version and for the other variant we construct a distribution whose associated fee revenue provably approximates the minimum. Using these results, we then demonstrate how to set economically secure mechanism parameters for both variants and we discuss the associated tradeoffs.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "EIP-1559",
+        "经济安全",
+        "gas",
+        "以太坊"
+      ],
+      "url": "https://arxiv.org/abs/2610.10333",
+      "pdf": "https://arxiv.org/pdf/2610.10333"
+    },
+    {
+      "id": "2610.05445",
+      "title": "Optimistic Reliable Broadcast in Three Steps",
+      "authors": [
+        "Nikita Polyanskii"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "提出签名无关的乐观可靠广播，在拜占庭故障下把诚实广播延迟降到三步，无 LLM。",
+      "abstract": "本文研究带乐观两步交付的、无签名异步可靠广播的延迟权衡。系统有 n 个参与方，最多 f 个拜占庭。乐观故障预算 b≤f 保证在广播者诚实且故障数不超过 b 时两步交付，同时正确性仍容忍 f 个故障。用 (d_o, d_s, d_t) 分别表示乐观延迟、最多 f 个故障时诚实广播者延迟，以及全体性延迟（从第一次到最后一次诚实交付经过的时间）。对 3f+1≤n<4f，第一个构造把 Opt-RBC 的 (2,4,4) 改进为 (2,3,4)，并保留其最大乐观预算 b_*=⌊n/2⌋−f。因此最大乐观性与最优的三步好情况兼容。作者证明互补下界：在该范围内，凡是两步乐观预算 b≥n−3f 的确定性可靠广播协议，即使广播者诚实，全体性延迟也至少为三。第二个构造达到 (2,3,3)，在 f≥2 且 ⌈(10f−3)/3⌉≤n<4f 时与该下界及最大乐观性匹配。两个构造都使用二次消息并容忍自适应腐化。在匹配范围内，相对 Bracha 的 (3,3,2)，最大乐观性只多花一步全体性延迟，且不增加好情况延迟。",
+      "abstractEn": "We study the latency tradeoffs of signature-free asynchronous reliable broadcast with optimistic two-step delivery. We consider n parties, of which at most f are Byzantine. An optimistic fault budget b≤f guarantees two-step delivery with an honest broadcaster and at most b faults, while correctness tolerates f faults. We write (d_o,d_s,d_t) for optimistic latency, honest-broadcaster latency with up to f faults, and totality delay-the elapsed time from first to last honest delivery. For 3f+1≤n<4f, our first construction improves Opt-RBC's (2,4,4) guarantees to (2,3,4), preserving its maximal optimistic budget b_*=⌊n/2⌋−f. Thus maximal optimism is compatible with the optimal three-step good case. We prove a complementary lower bound: for 3f+1≤n<4f, every deterministic reliable broadcast protocol in our asynchronous model with two-step optimistic budget b≥n-3f has totality delay at least three, even when the broadcaster is honest. Our second construction achieves (2,3,3), matching this lower bound at maximal optimism when f≥2 and ⌈(10f-3)/3⌉≤n<4f. Both constructions use quadratic messages and tolerate adaptive corruption. In the matching range, maximal optimism therefore costs exactly one totality step relative to Bracha's (3,3,2), without increasing good-case latency.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "可靠广播",
+        "拜占庭",
+        "乐观协议",
+        "共识"
+      ],
+      "url": "https://arxiv.org/abs/2610.05445",
+      "pdf": "https://arxiv.org/pdf/2610.05445"
+    }
+  ]
+}
