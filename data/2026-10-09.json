@@ -1,0 +1,315 @@
+{
+  "date": "2026-10-09",
+  "papers": [
+    {
+      "id": "2610.11602",
+      "title": "Where Do the Tokens Go? Understanding and Reducing Costs in LLM Agents for Vulnerability Discovery",
+      "authors": [
+        "Li Lu",
+        "Yanjie Zhao",
+        "Hongjie Chen",
+        "Haoyu Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析并降低 LLM 智能体在漏洞发现中的 token 开销，对象是 CyberGym 上的 Codex / OpenCode 等编码智能体。",
+      "abstract": "LLM 智能体在漏洞发现过程中可能消耗数百万 token，却仍给不出可工作的概念验证（PoC）。这些预算花在哪里，又为何换不来结果？作者对 200 条 CyberGym 轨迹做多轴开放编码，覆盖 Codex、OpenCode、Cybench 与 EnIGMA 四种智能体，比较无助基线与四种已有效率方法。研究发现三点。第一，不同智能体的成功率与成本差异很大，花得更多并不稳定带来更好结果。第二，代码定位与理解，以及漏洞推理与触发设计，合计占 60.4% 的 token，是失败运行的两大瓶颈。第三，仅 24.4% 的配对比较能在更低总成本下保住成功；不合适的信号与辅助开销限制了现有方法的收益。据此提出 AVRI：以持久的双向证据轨迹（BET）为中心的智能体漏洞推理接口。BET 把 harness 如何消费输入，与使某次操作变得不安全所需的条件连起来，同时保留有源码支持的对应关系以及智能体的假设与未决问题。阅读、分析与持久化命令帮助智能体构建并复用这些证据，而不是反复检索和重建。在 20 个评估任务上，AVRI 把 Codex 的总成本降低 18.0%、OpenCode 降低 23.7%，同时保持成功率并改善或维持召回。",
+      "abstractEn": "LLM agents can spend millions of tokens during vulnerability discovery without producing a working proof of concept (PoC). What consumes that budget, and why does it fail to produce results? We diagnose these costs and failures through a multi-axis open-coding study of 200 CyberGym traces, spanning four agents (i.e., Codex, OpenCode, Cybench, and EnIGMA) under an unaided baseline and four existing efficiency methods. The study reveals three key findings. First, different agents vary substantially in success and cost, and higher spending does not consistently yield better outcomes. Second, code localization and understanding, together with vulnerability reasoning and trigger design, account for 60.4% of tokens and represent the two leading bottlenecks in failed runs. Third, only 24.4% of matched comparisons preserve success at lower total cost; unsuitable signals and auxiliary overhead limit the benefits of existing methods. Motivated by these findings, we present AVRI, an Agent-centric Vulnerability Reasoning Interface built around a persistent Bidirectional Evidence Trace (BET). BET connects how the harness consumes input with the conditions required to make a selected operation unsafe, retaining source-supported correspondences alongside the agent's hypotheses and open questions. Reading, analysis, and persistence commands help agents build and reuse this evidence rather than repeatedly retrieve and reconstruct it. On 20 evaluation tasks, AVRI reduces total cost by 18.0% for Codex and 23.7% for OpenCode while preserving success rates and improving or maintaining recall.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞发现",
+        "编码智能体",
+        "token 成本",
+        "PoC"
+      ],
+      "url": "https://arxiv.org/abs/2610.11602",
+      "pdf": "https://arxiv.org/pdf/2610.11602"
+    },
+    {
+      "id": "2610.11801",
+      "title": "ObliVul: Alert-Conditioned Safety Obligation Modeling and Bidirectional Counterfactual Validation for Code Vulnerability Detection",
+      "authors": [
+        "Heyang Tan",
+        "Chengxin Gao",
+        "Xin Wen",
+        "Jiaxin Li",
+        "Rui Cao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 LLM 从静态分析告警恢复安全义务并做反事实验证，对象是代码属性图上的漏洞告警。",
+      "abstract": "在真实软件开发中，漏洞检测的主要难点往往不是找出可疑代码，而是判断静态分析产生的大量候选告警里哪些真正值得关注。现有基于学习的方法多在函数或行级识别可疑模式，难以抽取以单条告警为中心的完整程序证据。尽管大语言模型能从局部程序事实推断风险源、危险操作、保护条件与状态前置条件，这些语义信息无法可靠对齐到具体程序节点、依赖关系与传播路径，因而不足以验证相应安全义务是否真正作用于当前告警。本文提出 ObliVul：面向漏洞检测的告警条件安全义务建模与双向反事实验证框架。对每条候选告警，ObliVul 先从代码属性图（CPG）抽取局部证据包（LEP），再用大语言模型恢复候选安全义务；随后把这些义务对齐到程序节点、依赖边与路径范围，构造局部安全义务图（LSOG）。最后由 VAFI 聚合经验证的互补告警证据，抑制冗余或较弱证据，给出函数级漏洞预测。实验表明 ObliVul 能区分含漏洞版本与已修复版本，并减少修复代码上的持续误报。消融进一步确认各组件对安全义务恢复、风险响应验证与函数级漏洞推断都是必要的。",
+      "abstractEn": "In real-world software development, the primary challenge in vulnerability detection is often not finding suspicious code, but identifying which alerts among the large number of candidate alerts produced by static analysis truly warrant attention. Existing learning-based methods mainly identify suspicious patterns at the function or line level, making it difficult to extract complete program evidence centered on an individual alert. Although large language models can infer risk sources, dangerous operations, protection conditions, and state preconditions from local program facts, such semantic information cannot be reliably aligned with specific program nodes, dependency relations, and propagation paths, and is therefore insufficient to verify whether the corresponding safety obligations truly affect the current alert. To address this problem, we propose ObliVul, an alert-conditioned safety obligation modeling and bidirectional counterfactual validation framework for vulnerability detection. For each candidate alert, ObliVul first extracts a Local Evidence Pack (LEP) from the Code Property Graph (CPG) and uses a large language model to recover candidate safety obligations. It then aligns the safety obligations with program nodes, dependency edges, and path scopes to construct a Local Safety Obligation Graph (LSOG). Finally, VAFI aggregates complementary verified alert evidence while suppressing redundant or weaker evidence to produce a function-level vulnerability prediction. Experimental results show that ObliVul effectively distinguishes vulnerable versions from fixed versions and reduces persistent false positives on fixed code. Ablation studies further confirm the necessity of each component for safety obligation recovery, risk response validation, and function-level vulnerability inference.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "静态分析",
+        "告警研判",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2610.11801",
+      "pdf": "https://arxiv.org/pdf/2610.11801"
+    },
+    {
+      "id": "2610.10608",
+      "title": "From Investigation Failures to Reliable SOC Agents: Understanding and Improving LLM-Based Alert Triage",
+      "authors": [
+        "Saimon Amanuel Tsegai",
+        "Alex Kantchelian",
+        "Danfeng Yao",
+        "Peng Gao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多策略对比与 AIDA 多代理框架改进 LLM 告警研判，对象是企业 SOC / SIEM 遥测。",
+      "abstract": "安全运营中心（SOC）必须研判海量告警，其中多数是良性的，而漏过的攻击可能一直无人调查。会用工具的大语言模型智能体可以在研判时检索证据，但推理策略如何决定收集什么、以及何时足以关闭告警，仍不清楚。作者研究五种代表性方法：单次工具调用、迭代检索、抽样调查、自我复核，以及显式验证。为此构建交互式基准 ALERT-BENCH：通过实时 SIEM 回放企业遥测，并要求系统检索证据。在多阶段攻击场景的 1247 条告警上，每种方法至少漏掉 40.4% 的攻击相关告警。轨迹分析表明：搜索无记录时攻击告警更容易被放过；同上下文复核的净纠正为负；放过并不比升级得到更充分的调查。据此设计 AIDA（对抗调查与辩证分析）：先给出明确拟议决策，再独立挑战，并在放过前要求更强证据。AIDA 把调查历史写入只追加的 Investigation Ledger，并把挑战放在独立推理上下文中。另设 Judge 依据证据裁决拟议决策与挑战，在证据缺失时要求再来一轮。在同一批告警上，AIDA 的 F1 为 0.958，对比方法为 0.371–0.744，并把假阴性率从 40.4% 降到 3.1%，同时把 18.4% 的告警升级给分析师。结果表明，结构化证据检索与决策复核能显著改进智能体 SOC 研判。",
+      "abstractEn": "Security operations centers (SOCs) must triage large volumes of alerts, most of which are benign, while missed attacks can remain uninvestigated. Tool-using large language model (LLM) agents can retrieve evidence during triage, but it remains unclear how reasoning strategies determine what to gather and when an investigation is sufficient to close an alert. We study five representative approaches spanning single-pass tool use, iterative retrieval, sampled investigations, self-review, and explicit verification. To support this study, we build ALERT-BENCH, an interactive benchmark that replays enterprise telemetry through a live SIEM and requires each system to retrieve evidence. Across 1,247 alerts from a multi-stage attack scenario, every approach missed at least 40.4% of attack-related alerts. Trace analysis shows that attack alerts are more likely to be dismissed when searches return no records, same-context review has negative net correction, and dismissal receives no consistently stronger investigation than escalation. Based on these findings, we further design AIDA (Adversarial Investigation and Dialectical Analysis), a multi-agent framework that requires an explicit proposed decision before independent challenge and stronger evidentiary requirements before dismissal. AIDA preserves investigation history in an append-only Investigation Ledger and keeps the challenge in a separate reasoning context. A separate Judge adjudicates the proposed decision and challenge against evidence, resolving the alert or requesting another round when evidence is missing. On the same alerts, AIDA achieves an F1 score of 0.958, compared with 0.371-0.744 for the studied approaches, and reduces the false-negative rate from 40.4% to 3.1% while escalating 18.4% of alerts to analysts. These results show that structuring evidence retrieval and decision review can substantially improve agentic SOC triage.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "告警研判",
+        "SOC",
+        "SIEM",
+        "多智能体"
+      ],
+      "url": "https://arxiv.org/abs/2610.10608",
+      "pdf": "https://arxiv.org/pdf/2610.10608"
+    },
+    {
+      "id": "2610.11556",
+      "title": "SoK: Are LLMs Reliable at Source Code Recovery? A Taxonomy and Empirical Evaluation",
+      "authors": [
+        "Varun Kohli",
+        "Lee Bing Cheng",
+        "Nur Hazim Ghazali",
+        "Gao Yuze",
+        "Daryl Poon",
+        "Dinil Mon Divakaran"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "系统整理并评测 LLM 从二进制恢复源码的可靠性，对象是 C/C++、嵌入式架构及恶意软件分析场景。",
+      "abstract": "有效的源码恢复对恶意软件分析、漏洞评估与遗留系统维护等安全应用至关重要。大语言模型正在改写这一领域，把范式从基于规则的启发式，转向从汇编或传统反编译得到的伪 C 中做概率性、高保真的语义恢复。尽管进展很快，方法碎片化且评估不统一，限制了客观比较；对嵌入式与物联网架构、以及 C/C++ 以外源语言的覆盖也有限。本文给出首个专门针对 LLM 辅助二进制到源码恢复的知识系统化（SoK）。作者提供以设计为中心的细粒度分类，并用七项关键指标沿六个评估维度做系统评测。在来自四种标准架构与五种嵌入式架构、五种优化级别以及去符号设置的 45000 个测试样本上评估现有方法。再通过受控自建恢复流水线与三个现成模型，消融输入表示、上下文增强、模型规模、迭代与复核角色等设计选择。最后测试同语言与跨语言恢复能力，覆盖四种成熟语言与两种遗留语言。系统化与综合评估为该方向提供关键洞见与后续指引。",
+      "abstractEn": "Effective source recovery is critical to security applications such as malware analysis, vulnerability assessment, and legacy maintenance. Large Language Models (LLMs) are reshaping this field, shifting the paradigm away from rule-based heuristics to probabilistic and high fidelity semantic recovery of source code from assembly or classical decompiler-derived pseudo-C. However, despite rapid progress, the field suffers from fragmentation across numerous approaches as well as their non-unified evaluations, limiting objective comparisons. Further, existing works have limited coverage of embedded, IoT architectures and source languages beyond C/C++. In this work, we present the first Systematization of Knowledge (SoK) focused specifically on LLM-assisted binary-to-source recovery. We provide a granular design-centric taxonomy of LLM-assisted source recovery methods and systematic evaluations using seven key metrics along six evaluation dimensions. We evaluate state-of-the-art methods on 45,000 test samples derived from four standard and five embedded architectures, five optimization levels, and symbol stripping. We ablate the impact of design choices on recovery performance, including input representation, contextual enrichment, model scale, iteration and review roles using controlled in-house recovery pipelines and three off-the-shelf models. Finally, we test same-language and cross-language recovery capability covering four mature and two legacy languages. Our systematization and comprehensive evaluations provide key insights that guide future directions in this field.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "源码恢复",
+        "恶意软件",
+        "二进制",
+        "SoK"
+      ],
+      "url": "https://arxiv.org/abs/2610.11556",
+      "pdf": "https://arxiv.org/pdf/2610.11556"
+    },
+    {
+      "id": "2610.11169",
+      "title": "Skill Constellations: Tracing the Supply Chain of Agent Skills on GitHub",
+      "authors": [
+        "Fahd Seddik"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "从 Git 历史追踪 GitHub 上 agent skill 的复制供应链，便于审计高风险 SKILL.md，对象是 Claude Code / Codex 等编码智能体。",
+      "abstract": "Agent skill 是 SKILL.md 指令与脚本，Claude Code、Codex 等 AI 编码智能体会以用户权限运行它们。开发者靠在仓库间复制来分享 skill，这相当于一条没有注册表、版本与来源证明的软件供应链。被复制 skill 的来源、安全修复能传到哪里、以及哪些仓库值得审查，因此都未知。只记录某一时刻哪些仓库持有某 skill 的研究，无法揭示谁从谁那里复制。作者贡献第一张带日期的 agent skill 复制网络：从 GitSkills 中每个 SKILL.md 的 git 历史构建，覆盖 GitHub 上 2193119 次 skill 采用，并配有交互式查看器。几乎所有复制都来自少数仓库，而 GitHub star 并不能识别它们。副本几乎从不随源仓库一起改动，因此源上的修复很少传到副本。作者拟合“别人从哪些仓库复制”的模型，用来给待审计仓库排序。审查其排名最高的 100 个仓库，可阻止 14.9% 的后续高风险 skill 采用；按 star 最多的 100 个则只有 0.5%。这给安全工程师一份在 skill 扩散前可检查的短名单。平台因此应分发带版本的引用，而不是副本。",
+      "abstractEn": "Agent skills are SKILL.md instructions and scripts that AI coding agents such as Claude Code and Codex run with the permissions of their user. Developers share skills by copying them between repositories, which makes them a software supply chain without a registry, versions or provenance. The origin of a copied skill, the reach of a security fix and the repositories that warrant review are therefore unknown. Studies that record which repositories hold a skill at a single point in time cannot reveal who copied it from whom. We contribute the first dated copy network of agent skills, built from the git history of every SKILL.md in GitSkills and covering 2,193,119 skill adoptions across GitHub, together with an interactive viewer. A few repositories are the source of almost all copies, and GitHub stars do not identify them. Skill copies almost never change with their source, and a fix at the source therefore rarely reaches them. We fit a model of which repositories others copy from and use it to rank repositories for audit. Reviewing the 100 repositories it ranks highest prevents 14.9% of later adoptions of high-risk skills, against 0.5% for the 100 most starred, which gives security engineers a short list to check before a skill spreads. Platforms should therefore distribute versioned references rather than copies. Project Website: https://fahdseddik.github.io/Skill-Constellations/",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent skill",
+        "供应链",
+        "编码智能体",
+        "GitHub"
+      ],
+      "url": "https://arxiv.org/abs/2610.11169",
+      "pdf": "https://arxiv.org/pdf/2610.11169"
+    },
+    {
+      "id": "2610.10659",
+      "title": "Applying Security by Design at the Point of Execution: How Governed Security Requirements Affect the Security of AI-Generated Code",
+      "authors": [
+        "Pedro Farinha"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在生成时通过 MCP 注入受治理的安全需求，评估对 AI 生成代码安全性的影响，对象是 Python 与后端任务。",
+      "abstract": "安全左移要求在写代码之前定义安全需求。现有安全代码基准通常测量相反情形：智能体在没有需求的情况下接到任务，再用它从未见过的安全测试打分。作者测量：当从受治理的安全设计知识库（SbD-ToE）选出安全需求，经模型上下文协议（MCP）服务器在执行点交给生成器时，结果会如何变化。在用语言模型评委打分的 DualGauge 上，59 个 Python 任务中，通过全部安全测试的任务占比从 44.1% 升到 78.0%，通过的安全测试占比从 77.4% 升到 93.0%。在容器中跑功能测试与真实利用的 BaxBench 上，28 个后端场景里，功能正确解中无成功利用的比例从 65% 升到 86%，与作者所称不现实上界的 Oracle Security Reminder（85%）相当，且需求投递并不知道测试内容。研究有局限：预先指定的安全且功能联合指标在两个基准上都没有显著提升；带受治理需求写出的代码更严格，会在任务未规定具体取值的功能测试上失败，作者在事后分析中逐案归因。每项实验只用一个模型、每任务一次生成。需求来自作者的开源手册，未评估其完备性。在执行点投递受治理的安全需求，看起来能提高生成代码的安全性。现有基准无法判断代码是否满足应当适用的安全需求，只能看它是否表现出评测器被设计去检测的弱点。作者建议按适用需求来度量符合性。",
+      "abstractEn": "Security by design asks that security requirements are defined before code is written. Secure-code benchmarks typically measure the opposite situation: the agent receives the task without requirements and is scored with security tests it has not seen. We measured what changes when security requirements, selected from a governed security-by-design knowledge base (SbD-ToE) and delivered through a Model Context Protocol (MCP) server, are given to the generator at the point of execution. On DualGauge, which scores with a language-model judge, we ran 59 Python tasks: the share of tasks passing all security tests rose from 44.1% to 78.0% and the share of security tests passed from 77.4% to 93.0%. On BaxBench, which runs functional tests and real exploits in containers, we ran 28 backend scenarios: among functionally correct solutions, the share with no successful exploit rose from 65% to 86%, comparable to the authors' Oracle Security Reminder (85%), which they call an unrealistic upper bound; the requirement delivery reached it without knowing the tests. The study has limits. The pre-specified joint secure-and-functional metric did not improve significantly on either benchmark. The code written with the governed requirements is stricter, and it failed functional tests that fix values the task never states; we attribute those failures case by case in a post-hoc analysis. Each experiment used one model and one generation per task. The requirements come from the author's open-source manual; we do not assess its completeness. Governed security requirements delivered at the point of execution appear to improve the security of generated code. Current benchmarks cannot tell whether that code meets the security requirements that apply to it, only whether it shows the weaknesses their evaluators were built to detect. We propose measuring conformance with the applicable requirements.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全代码生成",
+        "MCP",
+        "Python",
+        "基准"
+      ],
+      "url": "https://arxiv.org/abs/2610.10659",
+      "pdf": "https://arxiv.org/pdf/2610.10659"
+    },
+    {
+      "id": "2610.09553",
+      "title": "MARS: Malware Analysis with Rule-Based Scoring of LLM Claims",
+      "authors": [
+        "Hyeongjun Choi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "比较 LLM 直接判定与规则打分声明两种恶意软件研判路径，对象是 PE / ELF 二进制。",
+      "abstract": "大语言模型可通过直接裁决，或由外部策略对行为声明打分，来研判恶意软件。本文提出恶意软件研判框架 MARS，在同一证据收集器与相同静态证据包下，比较直接分类与单次声明打分。评估覆盖 1195 个 PE 与 ELF 二进制（归入 1001 个近重复簇）以及六个语言模型，并以确定性规则作基线。六个模型上直接分类都更准。在两条路径都有可用输出的样本上，准确率优势为 3.7 到 20.9 个百分点，且差异的 95% 簇自助置信区间都在零以上。在十二种平台与模型组合中的十种，直接分类的恶意告警召回也更高。声明中介并不能稳定缩小模型间性能差异。子集研究表明，直接分类的告警决策更一致；去掉预定义指标字段时，声明路径的召回损失更大。在家族识别探测中，声明比裁决标签更准，但不如证据文本。保留的声明暴露裁决计算的输入，并允许在不再调用模型的情况下修订策略。作者精确复现归档裁决，并对同一记录应用修订策略，包括两家提供方已撤回模型的输出。在所评估的声明分类与加性策略下，若只需裁决，结果更支持直接分类；同时也表明保留声明有助于显式检查与修订策略。",
+      "abstractEn": "Large language models can triage malware through direct verdicts or behavioral claims scored by an external policy. We present MARS, a malware triage framework, and compare direct classification with single-pass claim scoring using the same evidence collector and identical static evidence bundles for each model. The evaluation covers 1,195 PE and ELF binaries grouped into 1,001 near-duplicate clusters and six language models, with deterministic rules providing a baseline. Direct classification is more accurate for all six models. On samples with usable outputs from both paths, its accuracy advantage ranges from 3.7 to 20.9 percentage points, with all 95% cluster-bootstrap confidence intervals for the differences above zero. It also achieves higher malicious alert recall in ten of twelve platform and model combinations. Claim mediation provides no consistent reduction in performance variation across models. Separate subset studies find more consistent alert decisions for direct classification and a larger recall loss for the claim path when predefined indicator fields are removed. In a family identification probe, claims yield higher accuracy than verdict labels but lower accuracy than evidence text. Retained claims expose the inputs to verdict computation and permit policy revision without another model call. We reproduce archived verdicts exactly and apply a revised policy to the same records, including outputs from two additional models withdrawn by their provider. Under the evaluated claim taxonomy and additive policy, these results favor direct classification when only a verdict is required, while demonstrating that retained claims support explicit policy inspection and revision.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "恶意软件",
+        "研判",
+        "PE/ELF",
+        "LLM"
+      ],
+      "url": "https://arxiv.org/abs/2610.09553",
+      "pdf": "https://arxiv.org/pdf/2610.09553"
+    },
+    {
+      "id": "2610.03153",
+      "title": "EvoRiskBench: An Evolving Benchmark for Runtime Security Risks in Workspace Agents",
+      "authors": [
+        "Shiyi Kuang",
+        "Xuemei Luo",
+        "Kun Liu",
+        "Junhai Li",
+        "Rui Tian",
+        "Feng Shi",
+        "Bo Shen",
+        "Nianyu Li",
+        "Dehui Li",
+        "Ping Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可演化基准评估工作区智能体的运行时安全风险，对象是 Claude Code、Codex、OpenClaw 等 harness。",
+      "abstract": "工作区智能体把大语言模型与执行 harness 结合起来，完成会访问或修改外部资源的有状态多步任务。现有基准对运行时安全风险的可执行覆盖不足，而模型能力、harness、工具与威胁仍在演化，需要基准随之演化。本文提出 EvoRiskBench：围绕 EP-Path-EF 框架组织的可演化基准，把初始风险入口经智能体中介的风险路径连到一跳技术效果。框架定义九类入口与五类效果；20 人研究支持其在代表性案例上的可解释性与分类一致性。据此，自动化端到端工作流在隔离环境中构造并执行风险案例，再用运行轨迹与环境状态独立核验结果。基准提供跨六个场景、450 个对抗任务的可复现数据集。作者评估九种模型–harness 配置，覆盖三个模型（GPT-5.6 Sol、DeepSeek-V4-Pro-0813、Claude Opus 5）与三个 harness（Claude Code、Codex、OpenClaw）。结果显示系统普遍存在明显脆弱性。最脆弱的配置 Codex + DeepSeek-V4-Pro-0813 攻击成功率达 68.44%，说明仅配置工作区智能体并不足以保证安全自主执行。ASR 在模型间的差异大于 harness，且 harness 差异取决于模型。案例与评估平台将在完成产物安全与可复现检查后发布。",
+      "abstractEn": "Workspace agents combine large language models with execution harnesses to perform stateful, multi-step tasks that access or modify external resources. Existing benchmarks leave gaps in executable coverage of their runtime security risks, while evolving model capabilities, harnesses, tools, and threats motivate benchmark evolution. We introduce EvoRiskBench, an evolving benchmark organized around the EP-Path-EF framework, which links an initial risk entry point to a one-hop technical effect through an agent-mediated risk path. The framework defines nine entry-point categories and five effect categories; a 20-participant study supports their interpretability and classification consistency on representative cases. Guided by this framework, an automated end-to-end workflow constructs and executes risk cases in isolated environments and independently verifies outcomes using runtime traces and environment states. The benchmark provides a reproducible dataset of 450 adversarial tasks across six scenarios. We evaluate nine model-harness configurations spanning three models (GPT-5.6 Sol, DeepSeek-V4-Pro-0813, and Claude Opus 5) and three harnesses (Claude Code, Codex, and OpenClaw). Our results reveal substantial vulnerabilities across systems. The most vulnerable configuration, Codex with DeepSeek-V4-Pro-0813, reaches a 68.44% attack success rate (ASR), indicating that configuration of workspace agent is insufficient to ensure secure autonomous execution. ASR varies more across models than harnesses, and harness differences depend on the model. The benchmark cases and evaluation platform will be released after completion of artifact safety and reproducibility checks.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "工作区智能体",
+        "运行时安全",
+        "基准",
+        "harness"
+      ],
+      "url": "https://arxiv.org/abs/2610.03153",
+      "pdf": "https://arxiv.org/pdf/2610.03153"
+    },
+    {
+      "id": "2610.09906",
+      "title": "Constrained-Action AI Remediation for SIEM/XDR via a NeMo-Guardrails Proxy",
+      "authors": [
+        "Georgios Koutidis",
+        "Nikolaos Kekatos",
+        "Tom Nianios",
+        "Alexios Lekidis"
+      ],
+      "year": 2026,
+      "venue": "IEEE CSR 2026",
+      "abstractOneWord": "用封闭意图词表与 Guardrails 代理约束 LLM 的 SIEM/XDR 自动处置，对象是 SOC 告警与主机响应。",
+      "abstract": "信息技术与运营技术的安全运营中心面临同一事件响应问题：相关告警洪水，分析师太少。大语言模型越来越多被当作推理引擎来研判告警，并在自主部署中下发阻断 IP、杀进程或隔离文件等命令。这种耦合带来新风险：一条对抗告警可经 LLM 推理变成远程代码路径，诱使它建议 SOC 随后会执行的动作。本文提出约束动作架构，两层协同：（i）SIEM/XDR 控制平面把处置锚定在相关主机事件上，把 LLM 输出限制在封闭意图词表，由精简端点代理执行模板化命令，并以参数校验器托底；（ii）NeMo-Guardrails 代理用输入/输出轨策略包裹 SOC 分析师 LLM，并在作者发布的 SOC 对抗语料上做开箱评估。库存代理把注入召回从 25.0% 提到 94.5%，假阳性率为 0.1%；现场红队确认封闭意图词表与参数校验器能在任何命令越过信任边界前遏制所观察到的 LLM 失败模式。作为架构适配（尚非已度量的 OT 部署），约束动作性质适合错误处置会带来物理而非仅运维后果的关键基础设施。该环最好以人在环路或延迟方式运行：测得的轨延迟使在线控制超出范围。",
+      "abstractEn": "Security Operations Centers (SOCs) for information technology and operational technology share one incident-response problem: a flood of correlated alerts and too few analysts. Large Language Models (LLMs) are increasingly proposed as reasoning engines that triage alerts and, in autonomous deployments, issue commands that block IPs, kill processes, or quarantine files on production hosts. This coupling introduces a new risk: a single adversarial alert can become a remote code path through the LLM's reasoning, leading it to recommend an action the SOC then executes. We present a constrained-action architecture with two coordinated layers: (i) a SIEM/XDR control plane that grounds remediation in correlated host events and confines the LLM's output to a closed intent vocabulary whose templated commands are executed by thin endpoint agents, backstopped by an argument validator; and (ii) a NeMo-Guardrails proxy that wraps the SOC-analyst LLM with input- and output-rail policies, evaluated out-of-the-box against a SOC-specific adversarial corpus we release. The stock proxy lifts injection recall from 25.0% to 94.5% at a 0.1% false-positive rate, and a live red-team exercise confirms that the closed intent vocabulary and argument validator contain the observed LLM failure modes before any command crosses the trust boundary. As an architectural fit (not yet a measured operational-technology deployment), the constrained-action property suits critical-infrastructure settings where a wrong remediation has physical, not merely operational, consequences. The loop is best run human-in-the-loop or delayed: the measured rail latency keeps inline control out of scope.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SOC",
+        "自动处置",
+        "Guardrails",
+        "提示注入"
+      ],
+      "url": "https://arxiv.org/abs/2610.09906",
+      "pdf": "https://arxiv.org/pdf/2610.09906"
+    },
+    {
+      "id": "2610.12220",
+      "title": "One Node, Two Roles: Simultaneous Contests for Validation and Attention in Rollups",
+      "authors": [
+        "Pranay Anchuri",
+        "Ben Berger",
+        "Matteo Campanelli",
+        "Akaki Mamageishvili"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为乐观 rollup 的验证与注意力奖励建模，分析执行多样性激励，对象是 Arbitrum One 等，无 LLM。",
+      "abstract": "乐观 rollup 的安全性取决于至少有一个诚实验证者执行其状态转换函数（STF），并对与执行结果不一致的断言提出争议。允许任何人参与并不等于有人愿意做：只要断言都正确，验证正确性就没有报酬。注意力机制通过付钱让节点执行 rollup 的 STF 来解决这一点，无论它们是否参与验证。由于单个节点运营者可用一次执行支撑许多注册身份，按身份付费买不到执行多样性，即独立执行的运营者数量。本文给出该问题的新建模框架。把底层密码原语形式化为带注册证明者的论证，其性质包含一种据作者所知尚未在现代简洁密码证明中研究过的非摊销性。作者设计验证与注意力奖励机制，并把它们分析为两个耦合的 Tullock 式竞赛：运营者为所需执行付一次费，再选择在每个角色中部署多少身份。均衡中可达到的执行多样性范围，是额外部署一个注意力身份的边际成本的函数。作者用该框架比较 TRACE（MARBLE 2026）与 Proof of Diligence（AFT 2024）两种注意力机制，并证明与后者不同，TRACE 可调整上述边际成本以支持更高执行多样性。案例研究应用到广泛部署的乐观 rollup Arbitrum One。",
+      "abstractEn": "An optimistic rollup is safe as long as at least one honest validator executes its state transition function (STF) and disputes any assertion that is inconsistent with the result of the execution. Allowing anyone to participate, however, does not give incentive to do so: as long as every assertion is correct, verifying assertion correctness goes unpaid. Attention mechanisms address this by paying nodes to execute the rollup's STF, regardless of whether they participate in the validation process. Since a single node operator can back many registered identities with a single execution, paying per identity does not buy execution diversity, that is, the number of operators that independently execute. In this work we provide a new modeling framework for this problem. We formalize the underlying cryptographic primitive as a new notion, arguments with registered provers, whose properties include a form of non-amortizability that, to our knowledge, has not been studied for modern succinct cryptographic proofs before. We design validation and attention reward mechanisms and analyze them as two coupled Tullock-like contests, in which an operator pays once for the required execution and then chooses how many identities to deploy in each role. We quantify the attainable range of execution diversities in equilibrium as a function of the marginal cost of deploying an extra attention identity. We use our framework as a lens through which we compare two attention mechanisms, TRACE (MARBLE 2026) and Proof of Diligence (AFT 2024). In particular, we show that as opposed to Proof of Diligence, in TRACE the marginal cost mentioned above can be adjusted to support a higher execution diversity. As a case study, we apply our results to Arbitrum One, a widely deployed optimistic rollup.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "rollup",
+        "验证激励",
+        "Arbitrum",
+        "共识"
+      ],
+      "url": "https://arxiv.org/abs/2610.12220",
+      "pdf": "https://arxiv.org/pdf/2610.12220"
+    },
+    {
+      "id": "2610.10149",
+      "title": "Pump-and-Dump meets Honeypot Tokens: Detection and Analysis of Telegram Bait-and-Trap Schemes",
+      "authors": [
+        "Federico Cernera",
+        "Massimo La Morgia",
+        "Alessandro Mei",
+        "Francesco Sassi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "揭示 DEX 上以蜜罐代币为核心的诱饵陷阱骗局，并用交易模拟检测，对象是 Ethereum / BNB 智能合约，无 LLM。",
+      "abstract": "拉盘砸盘在中心化交易所已被广泛研究，它们在去中心化交易所如何运作则基本未知。作者监测 83 个用于协调拉盘砸盘的 Telegram 频道，在 BNB Smart Chain 与 Ethereum 上收集 3677 次事件。分析表明，这些操作表面上像 CEX 拉盘砸盘，底层机制却根本不同。组织者并不操纵价格，而是围绕蜜罐代币编排欺骗性拉盘砸盘：智能合约允许 Telegram 订阅者买入，却阻止卖出。受害者不知情地买入后无法收回资金。作者称之为诱饵陷阱（Bait-and-Trap）。该策略比拉盘砸盘可靠得多：组织者在 99.3% 的情形获利，抽出超过 700 万美元。为应对这一威胁，作者开发交易模拟工具：在买入前对照代币的实时合约状态测试用户能否成功卖出，从而在购买前检测蜜罐代币，为诱饵陷阱提供可落地的防御。",
+      "abstractEn": "While Pump-and-Dump schemes have been extensively studied on centralized exchanges (CEXs), how they operate in decentralized exchanges (DEXs) remains largely unexplored. We monitor 83 Telegram channels used to coordinate Pump-and-Dump campaigns and collect 3,677 events across the BNB Smart Chain and Ethereum. Our analysis reveals that, although these operations superficially resemble CEX-based Pump-and-Dump schemes, their underlying mechanism is fundamentally different. Rather than manipulating prices, organizers orchestrate deceptive Pump-and-Dump campaigns around honeypot tokens whose smart contracts allow Telegram subscribers to buy but prevent them from selling. Unaware of this restriction, victims purchase these tokens and are unable to recover their funds. We refer to this new fraud mechanism as Bait-and-Trap. We show that Bait-and-Trap provides a substantially more reliable profit strategy than Pump-and-Dump schemes: organizers gain in 99.3% of cases, extracting over $7 million in profit. To counter this threat, we develop a transaction-simulation tool that detects honeypot tokens before purchase by testing whether a user can successfully sell against the token's live contract state, providing a practical defense against Bait-and-Trap operations.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "蜜罐代币",
+        "智能合约",
+        "DEX",
+        "欺诈检测"
+      ],
+      "url": "https://arxiv.org/abs/2610.10149",
+      "pdf": "https://arxiv.org/pdf/2610.10149"
+    },
+    {
+      "id": "2610.07368",
+      "title": "Byzantine-Tolerant Causal Unicast with Constant Message Space Overhead",
+      "authors": [
+        "Purv Patel",
+        "Ajay D. Kshemkalyani"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在异步拜占庭设定下给出常数消息空间开销的因果单播，对象是分布式进程间通信，无 LLM。",
+      "abstract": "因果消息序为分布式应用提供关键语义，但在存在拜占庭故障的异步系统中保证它，有根本的理论与实践困难。已有研究证明，在这些条件下算法若不使用密码学，就无法同时保证强安全性与活性。现有拜占庭容忍方案或做同步假设，或承受 O(n) 消息空间开销与 O(n²) 消息复杂度，或使用密码学但可能不保证强安全。本文提出一种拜占庭容忍因果序算法，对点到点消息达到最优的 O(1) 应用消息空间开销。方法使用 Sender Permission to Send（SPS）不变量，以及内存管理上的 Isolated-Buffer Optimistic Model。为规避拜占庭状态钉死与队头阻塞攻击，作者不用统一因果缓冲，而用带事件驱动级联空间驱逐的隔离 per-peer 队列。形式证明该算法保证系统范围活性，并满足称为拥塞放松因果交付的弱化因果安全抽象。在该模型下，除非极端网络延迟或拜占庭扣留超过可量化的本地缓冲容量、从而迫使乐观队列驱逐，诚实到诚实通信都严格保持弱因果安全。该保证在因果序与高吞吐、常数消息空间开销、低计算开销以及严格有界本地空间之间取得平衡。",
+      "abstractEn": "Causal message ordering provides essential semantics for distributed applications, yet ensuring it within an asynchronous system subject to Byzantine failures presents fundamental theoretical and practical challenges. Prior research establishes that algorithms cannot guarantee both strong safety and liveness without using cryptography under these conditions. Existing Byzantine-tolerant solutions make synchrony assumptions or suffer from O(n) message space overheads and O(n^2) message complexity, where n is the number of processes in the system, or use cryptography, but may not guarantee strong safety. In this paper, we present a novel Byzantine-tolerant causal ordering algorithm that achieves an optimal O(1) application message space overhead for point-to-point messages. Our approach uses a Sender Permission to Send (SPS) invariant and an Isolated-Buffer Optimistic Model for the memory management architecture. To circumvent Byzantine state-pinning and head-of-line blocking attacks, instead of unified causal buffers, we use isolated, per-peer queues equipped with event-driven Cascading Space Evictions. We formally prove that our algorithm guarantees system-wide liveness and satisfies a weakened causal safety abstraction called Congestion-Relaxed Causal Delivery. Under this model, weak causal safety is strictly preserved for all honest-to-honest communications unless extreme network latency or Byzantine withholding attacks exceed quantifiable local buffer capacities, forcing optimistic queue evictions. This formal guarantee successfully balances causal ordering with high throughput, constant message space overhead, low computational overhead, and strictly bounded local space.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "拜占庭",
+        "因果序",
+        "单播",
+        "分布式"
+      ],
+      "url": "https://arxiv.org/abs/2610.07368",
+      "pdf": "https://arxiv.org/pdf/2610.07368"
+    }
+  ]
+}
