@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-11",
+  "papers": [
+    {
+      "id": "10.1145-3849699",
+      "title": "Detecting Vulnerabilities in EOSIO Smart Contracts via Joint Static and Dynamic Feature Learning",
+      "authors": [
+        "Xiao Wang",
+        "Yanxiang Tong",
+        "Hai Dong",
+        "Ben Wang",
+        "Yan Xiao",
+        "Pengcheng Zhang"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用深度学习联合静态图与 Wasm 动态插桩检测 EOSIO 合约漏洞，无 LLM，对象是 EOSIO / Wasm 智能合约。",
+      "abstract": "本文针对 EOSIO 智能合约的安全挑战：这类合约以 WebAssembly 字节码部署，常被攻击，且分析困难。现有方法要么依赖带手工规则的符号执行，面临可扩展性与覆盖率限制；要么侧重纯动态模糊测试，往往缺乏语义精度。为此，作者提出一种基于深度学习的检测方法，对静态与动态特征进行联合建模与分析。静态方面，从控制流图、数据依赖图和语义路径等多视角构建图表示，以捕捉合约的结构与语义性质。动态方面，在 Wasm 执行环境中设计多粒度、可配置的插桩机制，采集运行时轨迹、系统 API 调用，以及与权限和通知相关的上下文信号。基于结构与行为信息，构建多模态学习模型，检测四类典型的 EOSIO 特有漏洞。实验表明，该方法平均精确率为 84.7%，宏平均 F1 为 85.3%，优于评估中的代表性静态与动态基线。",
+      "abstractEn": "This paper addresses the security challenges of EOSIO smart contracts, which are deployed in WebAssembly bytecode, frequently targeted by attacks, and inherently difficult to analyze. Existing approaches typically suffer limitations that either rely on symbolic execution with handcrafted rules, which faces scalability and coverage limits, or emphasize purely dynamic fuzzing, which often lacks semantic precision. To this end, we propose a deep learning based detection approach that performs joint modeling and analysis of both static and dynamic characteristics. On the static side, we construct graph representations from multiple perspectives, including control-flow and data-dependency graphs, and semantic paths, to capture the structural and semantic properties of contracts. On the dynamic side, we design a multi-granularity and configurable instrumentation mechanism within the Wasm execution environment to collect runtime traces, system API invocations, and contextual signals related to permissions and notifications. Based on both structural and behavioral information, we build a multimodal learning model to detect four representative categories of EOSIO-specific vulnerabilities. Experimental results demonstrate that our method achieves superior detection performance, with an average precision of 84.7% and a Macro-F1 score of 85.3%, outperforming representative static and dynamic baselines in our evaluation.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "EOSIO",
+        "Wasm合约",
+        "漏洞检测",
+        "动静结合"
+      ],
+      "url": "https://doi.org/10.1145/3849699",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3849699"
+    },
+    {
+      "id": "2610.09007",
+      "title": "Sigma-Hunter: A Domain-Specific Language Model for Threat Hunting and Detection Engineering",
+      "authors": [
+        "Kemal Davaslioglu",
+        "Sastry Kompella"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用领域适配大模型辅助生成 Sigma 检测规则并做威胁狩猎，对象是 SIEM / 检测工程。",
+      "abstract": "检测工程师需要把威胁报告、取证观察和狩猎假设翻译成精确、可测试的规则。通用大语言模型可以起草这类规则，但经常产出无效 YAML、错误的日志源、不支持的字段或过于宽泛的检测逻辑。本文提出 Sigma-Hunter，一种面向分析师辅助生成 Sigma 规则与威胁狩猎的领域适配大模型。作者从 3635 条已验证开源 Sigma 规则构建指令微调数据集，扩展为 7663 条问答与分析师推理样本。每条源规则在扩展前被分配到唯一的训练、验证或测试划分，从而避免规则跨划分泄漏。作者用 LoRA 微调 7B Mistral 与 Phi-4，并在语法、近似字段一致性，以及对检测逻辑、完整性、选择性与日志源对齐的语义评判上给留出集打分。Sigma-Hunter-Mistral 总分 8.17，最强通用基线为 7.88，未微调 Mistral 为 4.61。两点发现突出：领域适配使紧凑的 7B 模型在该结构化任务上能与更大通用模型竞争；语法有效性对语义规则质量是弱代理，若干基线会输出格式正确但检测逻辑很弱的 YAML。适配后的模型可本地运行，适合分析师无法访问托管模型服务的断网环境中的检测工程。",
+      "abstractEn": "Detection engineers must translate threat reports, forensic observations, and hunt hypotheses into precise, testable rules. General-purpose large language models (LLMs) can draft such rules, but often produce invalid YAML, incorrect log sources, unsupported fields, or overly broad detection logic. This paper presents Sigma-Hunter, a domain-adapted LLM for analyst-assistive Sigma rule generation and threat hunting. We build an instruction-tuning dataset from 3,635 validated open-source Sigma rules, expanded into 7,663 question-answer and analyst-reasoning examples. Each source rule is assigned to a single train, validation, or test partition before this expansion, so no rule leaks across splits. We fine-tune a 7B Mistral model and a Phi-4 model with LoRA and score held-out rule generations on syntax, approximate field consistency, and a semantic judgment of detection logic, completeness, selectivity, and log-source alignment. Sigma-Hunter-Mistral scores 8.17 overall, against 7.88 for the strongest general-purpose baseline and 4.61 for untuned Mistral. Two findings stand out: domain adaptation enables a compact 7B model to perform competitively with larger general-purpose models on this structured task, and syntactic validity is a weak proxy for semantic rule quality, as several baselines emit well-formed YAML carrying weak detection logic. The adapted models run locally, which suits detection engineering in disconnected environments where analysts cannot reach hosted model services.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Sigma规则",
+        "威胁狩猎",
+        "检测工程",
+        "LLM微调"
+      ],
+      "url": "https://arxiv.org/abs/2610.09007",
+      "pdf": "https://arxiv.org/pdf/2610.09007"
+    },
+    {
+      "id": "2610.10612",
+      "title": "PyCache Trap: The Inspection-Execution Gap in Agent Skill Scanners",
+      "authors": [
+        "Jie Liao",
+        "Simeng Qin",
+        "Wenqi Ren",
+        "Wei Zhou",
+        "Junhao Wen",
+        "Ranjie Duan",
+        "Yang Liu",
+        "Xiaojun Jia"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "揭示 Python 字节码缓存可骗过 Agent Skill 扫描器，并用执行感知验证补上审计缺口，对象是 Python coding-agent skill。",
+      "abstract": "Agent skill 把指令与可执行资源打包在一起，使第三方包能访问智能体运行时。现有 skill 扫描器检查文档和可见源码，但 Python 可能执行行为不同的捆绑字节码缓存。作者通过 PyCache Trap 研究这种检查与执行之间的缺口：把良性源码与加载器会接受的替换缓存配对，并把它接到与任务相关的调用上。扫描器引导的改写只改调用措辞、保留缓存体，从而把包准入与对隐藏行为的识别分开。在 100 个 skill 和 7 个扫描器上，PyCache Trap 攻击成功率达 94–100%，且扫描器对缓存中的行为没有语义识别。作者提出执行感知验证（EAV），在类型化执行图中连接被检查的指令、脚本、导入与运行时产物。EAV 把有依据的行为分析与对编译产物的可信复现结合起来。它检出全部 100 个评估过的「源码可见、缓存被替换」样本，并在五个攻击族与 200 个良性 skill 上达到 10.0% FPR 时 92.8% 召回。结果支持在 skill 准入时检查运行时可能选中的可执行产物（在所支持的加载器与代码对象规范化范围内）。代码发布于 https://github.com/leo0481/PyCacheTrap。",
+      "abstractEn": "Agent skills combine instructions with executable resources, giving third-party packages access to an agent's runtime. Existing skill scanners inspect documentation and visible source, but Python may execute a bundled bytecode cache with different behavior. We study this gap between inspection and execution through PyCache Trap, which pairs benign source with a substituted cache accepted by the loader and connects it to a task-relevant invocation. Scanner-guided rewriting changes the invocation wording while preserving the cache body, separating package admission from recognition of the concealed behavior. Across 100 skills and seven scanners, PyCache Trap achieves 94-100% attack success, with no semantic recognition of the cache-resident behavior. We propose execution-aware validation (EAV) to connect inspected instructions, scripts, imports, and runtime artifacts in a typed execution graph. EAV combines grounded behavioral analysis with trusted reproduction of compiled artifacts. It detects all 100 evaluated source-present cache substitutions and reaches 92.8% Recall at 10.0% FPR across five attack families and 200 benign skills. The results support checking the executable artifacts a runtime can select as part of skill admission, within the supported loaders and code-object normalization. The code is released at https://github.com/leo0481/PyCacheTrap.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Skill扫描",
+        "字节码缓存",
+        "供应链",
+        "审计失效"
+      ],
+      "url": "https://arxiv.org/abs/2610.10612",
+      "pdf": "https://arxiv.org/pdf/2610.10612"
+    }
+  ]
+}
