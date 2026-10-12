@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-12",
+  "papers": [
+    {
+      "id": "2610.13491",
+      "title": "EviRepair: Evidence-Driven Agents for Reliable Vulnerability Repair",
+      "authors": [
+        "Yilian Shi",
+        "Qingyu Liu",
+        "Tianyi Zhou",
+        "Wende Tan",
+        "Chenyang Si",
+        "Yueming Lyu",
+        "Xia Hu",
+        "Dongrui Liu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用证据复核的多智能体做仓库级漏洞修复，使用 LLM agent，对象是传统软件仓库。",
+      "abstract": "大语言模型的进展使基于智能体的仓库级自动漏洞修复（AVR）成为可能，并展现出不错的修复能力。但一个关键问题仍较少被讨论：修复过程中产生的证据，如何才能可靠到足以支撑准确的漏洞理解与补丁生成？本文提出 EviRepair，一个以证据为驱动的仓库级 AVR 多智能体框架。EviRepair 把证据评审引入修复流程，使智能体协作收集漏洞证据、核验证据一致性，并构建经过评审的漏洞模型，用于补丁综合与验证。在 PatchEval 与 SecBench 上，针对多种智能体框架和大模型的实验表明，EviRepair 持续优于现有基于智能体的基线，在两个基准上的已解决问题率分别平均提升 16.37% 与 40.33%。代码见 https://github.com/lly-s/EviRepair。",
+      "abstractEn": "Recent advances in large language models (LLMs) have enabled agent-based approaches for repository-level automated vulnerability repair (AVR), showing promising repair capabilities. However, an important issue has received limited attention: how can we ensure that the evidence generated during the repair process is reliable enough to support accurate vulnerability understanding and patch generation? In this paper, we propose EviRepair, an evidence-driven multi-agent framework for repository-level AVR. EviRepair introduces evidence review into the repair process by enabling agents to collaboratively collect vulnerability evidence, verify evidence consistency, and construct a reviewed vulnerability model for patch synthesis and validation. Extensive experiments on PatchEval and SecBench benchmarks with multiple agent frameworks and LLMs demonstrate that EviRepair consistently outperforms existing agent-based baselines, achieving average improvements of 16.37% and 40.33% in resolved rates on PatchEval and SecBench, respectively. Codes are available at https://github.com/lly-s/EviRepair",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "多智能体",
+        "证据复核",
+        "仓库级AVR"
+      ],
+      "url": "https://arxiv.org/abs/2610.13491",
+      "pdf": "https://arxiv.org/pdf/2610.13491"
+    },
+    {
+      "id": "2610.13651",
+      "title": "ToFu: Exploiting and Fuzzing the LLM-Orchestrator-Tool Trust Boundary",
+      "authors": [
+        "Md Nazmul Islam Ananto",
+        "Pierre Prevost-Avenel",
+        "Colin Smith",
+        "Kyungtae Kim",
+        "Taegyu Kim",
+        "Arslan Khan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "针对 LLM 编排层与工具之间的信任边界做语义检查与模糊测试，对象是 MCP 服务器等传统工具软件。",
+      "abstract": "大语言模型越来越多地作为智能体，通过工具与外部软件交互，由编排层把模型输出转成结构化的工具调用。这一架构形成了 LLM–编排器–工具信任边界：工具语义可能未被强制执行，而模型生成的参数又可能被错误地当作可信输入。本文提出 ToFu，一个感知工具的框架，从现有元数据与面向 CWE 的净化器语料自动推导 LLM 工具的语义安全检查。ToFu 把这些检查特化到每个工具，并借助运行时自省与结果净化自动生成模糊测试套件和语义预言机。作者在 273 个包含 3405 个工具的 MCP 服务器上评估 ToFu，在 118 个服务器的 343 个工具中确认了对应 CWE 弱点类别的缺陷。结果表明，真实世界工具经常不强制执行其文档化的输入语义，因此把 LLM 生成的参数当作可信输入是不安全的。",
+      "abstractEn": "Large language models (LLMs) are increasingly deployed as agents that interact with external software through tools, with an orchestration layer translating model outputs into structured tool invocations. This architecture creates an LLM-orchestrator-tool trust boundary where tool semantics may go unenforced and LLM-generated arguments may be incorrectly treated as trusted. We present ToFu, a tool-aware framework that automatically derives semantic security checks for LLM tools from their existing metadata and a CWE-guided sanitizer corpus. ToFu specializes these checks to individual tools and automatically generates fuzzing harnesses and semantic oracles using runtime introspection and outcome sanitization. We evaluated ToFu across 273 MCP servers containing 3405 tools and identified verified bugs corresponding to CWE weakness classes in 343 tools across 118 of the servers. Our findings show that real-world tools frequently fail to enforce their documented input semantics, making it unsafe to treat LLM-generated arguments as trusted.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MCP",
+        "工具模糊测试",
+        "信任边界",
+        "CWE"
+      ],
+      "url": "https://arxiv.org/abs/2610.13651",
+      "pdf": "https://arxiv.org/pdf/2610.13651"
+    },
+    {
+      "id": "2610.12540",
+      "title": "Organizational Context for the Enterprise Security Brain",
+      "authors": [
+        "Eden Yavin",
+        "Ariel Zadok",
+        "Gal Engelberg",
+        "Elad Elouz",
+        "Leon Goldberg"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用智能体把组织策略与资产图对齐，辅助企业安全研判，对象是 AWS / Okta / GitHub 等企业环境。",
+      "abstract": "负责调查与决策的企业安全智能体，推理时依赖对资产、身份、配置、关系与发现的机器可读视图。对某项资产的正确判断还取决于组织对它的了解：谁拥有它、服务什么业务、受哪条策略约束、以及哪些风险已被接受。部分知识可从机器状态推断，例如所有权标签；大部分则记录在策略、审计报告、架构图、工单与对话中，位于机器状态之外。作者称这一距离为组织上下文缺口。弥合它有四项挑战：从异构组织数据中抽取正确主张；在推理时发现已被实时状态证伪的陈旧主张；对照现行策略检查实时状态；以及把承载业务逻辑的架构图绑定到实时资源。本文将组织上下文作为企业安全大脑的一层，用分类体系与六项必须保留的表示性质来定义它，并提出一种上下文模型：一条主张只承载一种含义，每次来源断言都留下证明，强度在读取时由实时证据导出，主张解析到资产图中的实体。在覆盖 AWS、Okta、Google Workspace 与 GitHub 的生产环境中，抽取在 1355 条汇总统标上达到 0.80 召回与 0.87 精确率，仅 0.5% 的抽取主张得不到来源支持。在实时状态与已解析上下文上推理的智能体，在陈旧发现任务中把冲突提升到 0.97，在策略对齐与架构任务上的答题正确率分别为 0.83 与 0.86。",
+      "abstractEn": "Agents that investigate and decide on enterprise security reason over a machine-readable view of the environment: its assets, identities, configurations, relations, and findings. The correct judgment about an asset also depends on what the organization knows about it: who owns it, what business function it serves, which policy governs it, and which risks were accepted. Part of this knowledge can be inferred from machine state, such as an ownership tag; most of it is recorded by people in policies, audit reports, architecture diagrams, tickets, and conversations, outside machine state. We call this distance the organizational context gap. Closing it poses four challenges: extracting the right claims from heterogeneous organizational data and, at inference time, detecting claims made stale by live state, checking live state against the governing policy, and binding architecture diagrams, which carry the business logic, to live resources. We introduce organizational context as a layer of the enterprise security brain and define it with a taxonomy and six properties its representation must preserve. We then define a context model in which a claim carries one meaning, an attestation records each source that asserts it, strength is derived from live evidence at read time, and claims resolve onto the entities of the asset graph. On a production environment spanning AWS, Okta, Google Workspace, and GitHub, extraction recovers 0.80 of a pooled 1,355-claim ground truth at 0.87 precision, with 0.5% of extracted claims unsupported by their source. An agent reasoning over live state and resolved context raises the conflict in 0.97 of stale-finding tasks, and reaches answer correctness of 0.83 on policy-alignment tasks and 0.86 on architecture tasks.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "企业安全",
+        "告警研判",
+        "组织上下文",
+        "资产图"
+      ],
+      "url": "https://arxiv.org/abs/2610.12540",
+      "pdf": "https://arxiv.org/pdf/2610.12540"
+    },
+    {
+      "id": "2610.13227",
+      "title": "Understanding and Mitigating Cross-Session Attacks via Persistent Artifacts in Agent Skill Composition",
+      "authors": [
+        "Dianshu Liao",
+        "Shidong Pan",
+        "Guangdong Bai",
+        "Zhenchang Xing",
+        "Xiaoyu Sun"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析 coding agent skill 跨会话残留产物攻击并给出运行时防护，对象是 Codex / Claude Code 等编程智能体。",
+      "abstract": "Agent skill 通过把指令、代码与资源打成可复用包来扩展 AI 智能体能力。技能执行时，智能体可能产生或修改文件、配置与缓存等产物，供后续会话中的其他技能复用。这些产物可跨会话持久存在并被其他技能读取，从而引入新的攻击面。本文研究基于技能的 AI 智能体中的跨会话组合攻击，并给出运行时防御。作者刻画了指令传播（IP）、数据边界违反（DBV）与证据投毒（EP）三种机制，恶意效果可借持久产物在技能执行之间传播。为评估现有智能体能否在完成正当任务的同时抵抗这些攻击，作者构建 SkillRelayBench：来自十个领域 30 个跨会话技能组合场景的 270 个对抗用例。对 Codex CLI、Gemini CLI 与 Claude Code 上的七个模型评估显示，攻击成功率在 46.7% 到 77.4%，攻击链成功率在 35.6% 到 61.1%，成功攻击链覆盖全部五类目标安全后果。作者提出 SkillRelayGuard，恢复产物来源上下文并在执行前给出咨询性审查，最终是否执行仍由智能体决定。在三种智能体设置上，它把总体 ASR 从 69.5% 降到 10.9%，ACSR 从 54.8% 降到 10.0%，同时把正当任务完成率从 79.6% 提高到 87.5%。",
+      "abstractEn": "Agent skills extend the capabilities of AI agents by bundling instructions, code, and resources into reusable packages. During skill execution, agents may produce or modify artifacts, such as files, configurations, and cached data, that are reused by other skills in later sessions. Since these artifacts can persist across sessions and later be accessed by other skills, they introduce a new attack surface that can be exploited to influence subsequent executions. However, the security risks arising from such cross-session skill interactions remain largely unexplored. In this work, we investigate cross-session composition attacks in skill-based AI agents and develop a runtime defense against them. Specifically, we characterize three attack mechanisms, namely Instruction Propagation (IP), Data Boundary Violation (DBV), and Evidence Poisoning (EP), through which malicious effects propagate across skill executions via persistent artifacts. To evaluate whether existing agents can resist these attacks while completing legitimate tasks, we construct SkillRelayBench, a benchmark of 270 adversarial cases drawn from 30 cross-session skill-composition scenarios across ten domains. Our evaluation of seven models across Codex CLI, Gemini CLI, and Claude Code reveals attack success rates (ASR) ranging from 46.7% to 77.4% and attack chain success rates (ACSR) ranging from 35.6% to 61.1%. Successful attack chains cover all five target security consequence categories, highlighting the broad impact of these attacks. To mitigate these risks, we propose SkillRelayGuard, which restores artifact provenance context and provides pre-execution advisory review while leaving the final execution decision to the agent. Evaluation across three agent settings shows that SkillRelayGuard reduces overall ASR from 69.5% to 10.9% and ACSR from 54.8% to 10.0%, while increasing legitimate task completion from 79.6% to 87.5%.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Agent Skill",
+        "跨会话攻击",
+        "产物投毒",
+        "编程智能体"
+      ],
+      "url": "https://arxiv.org/abs/2610.13227",
+      "pdf": "https://arxiv.org/pdf/2610.13227"
+    },
+    {
+      "id": "2610.13170",
+      "title": "Understanding Verification Vulnerabilities in Cross-chain Bridges: An Empirical Study",
+      "authors": [
+        "Yuying Wang",
+        "Yi Guo",
+        "Jiachi Chen",
+        "Hanwen Zhang",
+        "Yi Sun"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "实证刻画跨链桥验证漏洞并评估现有工具与 LLM 检测效果，无 LLM 作为主方法，对象是跨链桥合约。",
+      "abstract": "随着区块链发展，异构链在架构、共识与应用生态上差异显著，跨链桥因此成为关键基础设施，通常依赖智能合约完成跨异构链的消息传递与资产转移。与单链合约不同，桥合约需要额外验证外部链数据，例如状态证明、消息发送者身份与签名，但正确实现这些逻辑并不容易。作者把违反跨链验证安全保证的漏洞称为跨链验证漏洞（CVV）。本文对这类漏洞做首次系统实证研究：分析 36 个真实跨链桥项目的 588 份安全审计报告，归纳 11 种 CVV 模式，并按受影响的验证性质分成 5 大类。据此构建包含 786 个合约文件、830 个漏洞实例的 CVV 数据集，建立审计报告、被审计源码版本、受影响文件与模式标签之间的映射。随后评估现有检测方法：当前工具对 CVV 模式的文档化覆盖有限；四个被评估的大模型中只有两个超过 29.3% Macro-F1 的全模式常数基线，最好也只到 51.2%。工具覆盖不足与 LLM 收益不稳定，共同说明需要面向跨链验证语义的检测方法。",
+      "abstractEn": "With the rapid development of blockchain technology, numerous heterogeneous blockchains have emerged, each featuring distinct architectures, consensus mechanisms, and application ecosystems. Cross-chain bridges have consequently become a critical infrastructure component, typically relying on smart contracts to facilitate message passing and asset transfers across heterogeneous blockchains. Unlike single-chain contracts, bridge contracts introduce additional verification logic to validate external-chain data, such as state proofs, message sender identities, and signatures. However, correctly implementing such logic is challenging. We refer to vulnerabilities that violate the security guarantees of cross-chain verification as Cross-chain Verification Vulnerabilities (CVVs). To characterize CVVs, we conduct the first systematic empirical study of this vulnerability class. By analyzing 588 security audit reports from 36 real-world cross-chain bridge projects, we derive 11 CVV patterns and organize them into 5 high-level categories according to the affected verification properties. Following this taxonomy, we construct a CVV dataset containing 830 vulnerability instances across 786 contract files. The dataset establishes mappings among audit reports, audited source-code versions, affected source files, and CVV-pattern labels. We then assess existing detection approaches. Current tools provide limited documented coverage of CVV patterns, while only two of four evaluated LLMs outperform an all-pattern constant baseline of 29.3% Macro-F1; the best reaches 51.2%. Together, the limited tool coverage and inconsistent LLM gains motivate detection methods tailored to cross-chain verification semantics.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链桥",
+        "验证漏洞",
+        "合约审计",
+        "CVV"
+      ],
+      "url": "https://arxiv.org/abs/2610.13170",
+      "pdf": "https://arxiv.org/pdf/2610.13170"
+    },
+    {
+      "id": "2610.12948",
+      "title": "AgentValve: Sybil-Resilient Payment Authorization for Permissionless AI Markets",
+      "authors": [
+        "Jianting Zhang",
+        "Zhongtang Luo",
+        "Aniket Kate"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用链上智能合约做抗女巫的支付授权，无 LLM 作为主方法，对象是无许可 AI 市场与 Ethereum。",
+      "abstract": "AI 智能体越来越多地在无人复核的情况下选择并支付服务提供方。在新兴的无许可市场中，对手可以低成本制造身份并伪造反馈来抬高声誉，使基于声誉的支付授权易受女巫攻击，并把客户暴露在无界资金损失下。本文提出 AgentValve，一种面向无许可 AI 市场的抗女巫支付授权协议。它把声誉表示为有向图上的有限容量，并通过具有足够可用容量的信任路径授权支付。智能合约原子地预留支撑每笔被接纳支付的容量，从而把诚实智能体的支付暴露上界限制为它们向对抗区域延伸的容量；仅在该区域内制造身份或交互无法提高这一上界。为限制恶意发送方耗尽容量，AgentValve 把以支付为支撑的容量创建与有界路由长度结合起来，使攻击者必须付出相应支付成本才能耗尽诚实容量。协议还把链下路由发现与链上验证解耦，并引入 witness-commit 机制，把路由验证降为线性工作，且每笔被接纳支付只需常数持久状态。作者实现原型，并用六个月以太坊数据与合成负载评估：在最多 10000 个合成女巫身份及指定攻击者下，支付暴露与容量耗尽保持有界；witness-commit 最多把接纳成本降低 40.8%，常见支付接纳成本约 0.04–0.21 美元。",
+      "abstractEn": "AI agents increasingly select and pay service providers without human review. In emerging permissionless markets, however, adversaries can create inexpensive identities and fabricate feedback to inflate provider reputation, making reputation-based payment authorization vulnerable to Sybil attacks and exposing clients to unbounded financial loss. This paper presents AgentValve, a protocol for Sybil-resilient payment authorization in permissionless AI markets. AgentValve builds on a trust network that represents reputation as finite capacity in a directed graph and authorizes payments through trust paths with sufficient available capacity. A smart contract atomically reserves the capacity supporting each admitted payment, bounding honest agents' payment exposure by the capacity they extend into the adversarial region, and thus creating identities or interactions entirely within that region cannot increase this bound. To limit capacity depletion by malicious senders, AgentValve combines payment-backed capacity creation with bounded route length, preventing attackers from depleting honest capacity without incurring corresponding payment costs. AgentValve further decouples off-chain route discovery from on-chain verification and introduces a witness-commit mechanism that reduces route verification to linear work while requiring only constant persistent state per admitted payment. We implement a AgentValve prototype and evaluate it using six months of Ethereum data and synthetic workloads. Experimental results show that under attacks with up to 10,000 synthetic Sybil identities and with chosen attackers, the payment exposure and capacity depletion remain bounded. Regarding practicality, the witness-commit mechanism lowers admission cost by up to 40.8% compared with baselines, and admitting common payments costs approximately $0.04-$0.21.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "女巫攻击",
+        "支付授权",
+        "智能合约",
+        "信任网络"
+      ],
+      "url": "https://arxiv.org/abs/2610.12948",
+      "pdf": "https://arxiv.org/pdf/2610.12948"
+    },
+    {
+      "id": "2026-2423",
+      "title": "Magnetar: High-speed post-quantum RV64 zkVM from standard hashes",
+      "authors": [
+        "Srinath Setty"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "提出基于标准哈希的后量子 RV64 zkVM，可承载 zkEVM，无 LLM，对象是 zk 证明系统与 EVM 合约执行。",
+      "abstract": "本文描述 Magnetar 的设计、实现与实验评估：它是面向 RV64I 程序执行的透明证明系统，也就是一台 zkVM。Magnetar 据称是首个同时满足以下三点的 zkVM。第一，通用证明：它证明编译到通用 RV64I 指令集的程序；因此用 Rust 或 Go 实现的以太坊虚拟机可以在 Magnetar 内运行，从而得到用于证明现有 EVM 智能合约执行的 zkEVM。第二，基于哈希的后量子安全：密码学安全根植于 SHA-256 或 SHA-3 等标准哈希函数。第三，高效递归：验证工作主要由计算标准哈希主导；其证明引擎 BinarySpartan 适合这类面向比特的计算，因此验证证明本身也是高效的证明负载。与先前通用 zkVM 不同，Magnetar 不依赖 Poseidon / Poseidon2 等电路友好代数哈希、椭圆曲线或格假设，也不依赖被猜想的 Reed–Solomon 邻近间隙。即便先前常被称为基于哈希的 zkVM，其核心证明机制仍往往依赖曲线或格假设、只提供约 100 比特安全，或建立在猜想可靠性之上。作者用 Rust 实现 Magnetar 并做实验：在 120 比特可证明安全、M4 Max MacBook Pro 的 12 个性能核上，它对 222 周期执行达到每秒 650–770 万周期，证明约 600 KiB，验证 10–12 毫秒。在 15 个应用负载上，证明吞吐相对 SP1 Hypercube、Jolt-Dory 与 Jolt-Akita 的几何平均加速分别约为 35×、16× 与 8.5×。",
+      "abstractEn": "We describe the design, implementation, and experimental evaluation of Magnetar, a transparent proof system for RV64I program executions (i.e., a zkVM). Magnetar is the first zkVM to simultaneously satisfy the following three properties: 1. General-purpose proving. Magnetar proves programs compiled to the general-purpose RV64I ISA. An implementation of the Ethereum Virtual Machine (EVM) written in Rust or Go can therefore run inside Magnetar, yielding a zkEVM for proving executions of existing EVM smart contracts. 2. Hash-based, post-quantum security. Magnetar's cryptographic security is rooted in standard hash functions (e.g., SHA-256 or SHA-3). 3. Efficient recursion. Magnetar's verification work is dominated by evaluating standard hash functions. Magnetar's proof engine, BinarySpartan, is well-suited for such bit-oriented computations, so verifying a proof is itself an efficient proving workload. Unlike prior general-purpose zkVMs, Magnetar does not rely on circuit-friendly algebraic hash functions such as Poseidon or Poseidon2, elliptic-curve or lattice assumptions, or a conjectured Reed-Solomon proximity gap. Even prior zkVMs commonly described as hash-based rely on elliptic-curve or lattice assumptions in their core proving machinery, provide only about 100 bits of security, or rest on conjectured soundness; some do more than one of these. Finally, we implement Magnetar in Rust and experimentally evaluate it. We find that, at 120 bits of provable security and with 12 performance cores on an M4 Max MacBook Pro, Magnetar proves 222-cycle executions at 6.5-7.7 million cycles per second, with proofs of about 600 KiB that verify in 10-12 ms. Across 15 application workloads, Magnetar's proving throughput is 22-57x that of SP1 Hypercube, a hash-and-more-based zkVM; 10-33x that of Jolt-Dory, a curve-based zkVM; and 5-18x that of Jolt-Akita, a lattice-based zkVM, with geometric-mean speedups of about 35x, 16x, and 8.5x, respectively. Magnetar's proofs are about 4.6x smaller than SP1 Hypercube's; Jolt's proofs are under 100 KiB, but they rely on elliptic-curve or lattice assumptions.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkVM",
+        "zkEVM",
+        "后量子",
+        "透明证明"
+      ],
+      "url": "https://eprint.iacr.org/2026/2423",
+      "pdf": "https://eprint.iacr.org/2026/2423.pdf"
+    },
+    {
+      "id": "2026-2434",
+      "title": "Witness-Succinct UC-Secure SNARKs with Weaker Trust Assumptions",
+      "authors": [
+        "Nahid Roustaeifar",
+        "Maryam Zarezadeh",
+        "Neel Mehendale",
+        "Behzad Abdolmaleki",
+        "Mahshid Delavar",
+        "Stefan Köpsell"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在更弱信任假设下构造可组合的简洁 zkSNARK，无 LLM，对象是去中心化环境中的证明系统。",
+      "abstract": "零知识简洁非交互知识论证（zkSNARK）是支持隐私保护与可验证计算的基础原语。但现有多数构造依赖强信任假设，通常是完全可信的 setup，这削弱了它们在对抗或去中心化环境中的可用性。透明 zkSNARK 去掉了这一假设，却通常无法满足通用可组合（UC）等强可组合保证。本文给出首个在更弱信任假设下构造 UC 安全 zkSNARK 的框架，其基础是一种新原语：密钥可更新多项式承诺（KU-pCom）。该原语支持可公开验证的承诺密钥更新，只需一次诚实更新，而不需要完全可信 setup。编译器通过把任意模拟可提取 zkSNARK 与 KU-pCom 组合，将其变为 UC 安全变体。作者在两种设置下实例化：一是基于 KZG 承诺的结构化可信 setup，二是基于 Hwang 等人（Crypto 2024）格承诺方案的实例。两端到端实现表明，与牺牲简洁性的先前 UC 安全 NIZK（例如 Abdolmaleki 等人，CSF 2024）相比，UC 安全、简洁性与实用效率可以同时达到。",
+      "abstractEn": "Zero-knowledge Succinct Non-Interactive Arguments of Knowledge (zkSNARKs) are foundational cryptographic primitives enabling privacy-preserving and verifiable computation. However, most existing zkSNARK constructions rely on strong trust assumptions—typically a fully trusted setup—which undermines their applicability in adversarial or decentralized environments. Although transparent zkSNARKs remove this assumption, they typically do not satisfy strong composability guarantees such as Universal Composability (UC). In this work, we present the first framework for constructing UC-secure zkSNARKs under weaker trust assumptions, based on a new primitive called Key-Updatable Polynomial Commitments (KU-pCom). This primitive enables publicly verifiable commitment-key updates, requiring only one honest update rather than a fully trusted setup. Our compiler transforms any Simulation-Extractable zkSNARK into a UC-secure variant by composing it with a KU-pCom scheme. We instantiate our framework in two settings: (1) using the structured, trusted setup of the KZG commitment scheme, and (2) an instantiation based on the lattice-based commitment scheme of Hwang et al. (Crypto 2024). We implement both instantiations and provide an end-to-end benchmark of UC-secure zkSNARKs with succinctness. Compared to prior UC-secure NIZKs that sacrifice succinctness (e.g., Abdolmaleki et al., CSF 2024), our work demonstrates that UC security, succinctness, and practical efficiency can be simultaneously achieved, establishing a new foundation for succinct, composable proof systems under weaker trust assumptions.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkSNARK",
+        "UC安全",
+        "可信设置",
+        "多项式承诺"
+      ],
+      "url": "https://eprint.iacr.org/2026/2434",
+      "pdf": "https://eprint.iacr.org/2026/2434.pdf"
+    },
+    {
+      "id": "2026-2424",
+      "title": "Counterexamples to Beyond-Johnson Proximity Gaps over Binary Fields",
+      "authors": [
+        "Quang Dao",
+        "Scott Duke Kominers",
+        "Justin Thaler",
+        "Kai Zhe ZHeng"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出二元域上超越 Johnson 阈值的邻近间隙反例，动摇若干哈希证明系统可靠性，无 LLM，对象是 SNARK / FRI 证明系统。",
+      "abstract": "许多基于哈希的证明系统通过测试随机线性组合，来检查被承诺的字是否接近 Reed–Solomon 码字。其可靠性分析依赖邻近间隙：若组合在很多位置上与某个码字一致，则除少数例外挑战外，原始字也应在相同位置上接近码字。这类间隙在大约 √ρ 的 Johnson 阈值之上已知；若能把它们延伸到阈值之下，证明会更短。近期工作在大特征下做到了这一点，但在一些最快证明系统所使用的二元域上并未成立。本文证明：超越 Johnson 的邻近间隙在二元域上失败。第一个构造适用于任何占所含二元域常数比例的加法定义域（二元线性子空间）。在合适的扩张挑战域、码率 1/4 时，它给出两个字，它们最多只能在 25% 的位置上同时匹配码字，但其组合对超多项式多个挑战逼近 50% 的 Johnson 阈值。这排除了 Johnson 之下任何 poly(N)/|F| 形式的例外概率上界。在 Binius64 的定义域（长度 2^27、128 比特挑战）上，组合以高于 2^{-30} 的概率达到 49.4% 一致。该构造还排除了 Johnson 之下多项式大小的译码列表。第二、三个构造覆盖每一个加法定义域，包括 LeanVM 与 Flock 使用的稀疏定义域，并给出在 128 或 192 比特挑战域上单次超越 Johnson 检查无法达到目标可靠性的定量界。全部结果均在 Lean 中形式化验证。",
+      "abstractEn": "Many hash-based proof systems check that committed words are close to Reed-Solomon codewords by testing one random combination of them. Their soundness analysis uses a proximity gap: if the combination agrees with a codeword on many positions, so do the original words, on the same positions, except for a few exceptional challenges. Such gaps are known above the Johnson threshold, about sqrt(rho) for rate rho, and extending them below it would shrink proofs. Recent work does so in large characteristic, but not over binary fields, where some of the fastest proof systems run. We show that beyond-Johnson proximity gaps fail over binary fields. Our first construction applies to any additive domain (a binary linear subspace) filling a constant fraction of a containing binary field. Over a suitable extension challenge field and at rate 1/4, it gives two words that can simultaneously match codewords on at most 25% of the positions, while their combinations approach the 50% Johnson threshold for superpolynomially many challenges. This rules out any poly(N)/|F| bound on the exceptional probability below Johnson. On Binius64's domain (length 2^27, 128-bit challenges), the combination reaches 49.4% agreement with probability above 2^{-30}. The construction also rules out polynomial-size decoding lists below Johnson: one word agrees with superpolynomially many codewords at agreement approaching 50%, whereas earlier superpolynomial lists needed the rate, or the agreement-rate gap, to vanish. Our second and third constructions cover every additive domain, including the sparse domains used by LeanVM and Flock. At rate 1/16, the second gives (N-1)(N-2)/6 exceptional challenges at the Johnson threshold itself, when the domain lies in a proper subfield of the challenge field. For domains larger than 2^{20}, this rules out even 90 bits of soundness from a single beyond-Johnson proximity-gap check over a 128-bit challenge field. The third construction trades agreement for larger exception counts: at rate 1/2 and length 2^{22}, its combinations reach 53.125% agreement from common agreement 50%, with probability at least 2^{-20} over a 192-bit challenge field. Finally, at every fixed rate, some constant agreement above the rate makes every challenge exceptional, over poly(N)-size challenge fields. All of our results are formally verified in Lean.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "邻近间隙",
+        "FRI",
+        "证明可靠性",
+        "二元域"
+      ],
+      "url": "https://eprint.iacr.org/2026/2424",
+      "pdf": "https://eprint.iacr.org/2026/2424.pdf"
+    }
+  ]
+}
