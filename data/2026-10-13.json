@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-13",
+  "papers": [
+    {
+      "id": "10.1109-tse.2026.3742453",
+      "title": "LLM-based Vulnerability Detection at Project Scale: An Empirical Study",
+      "authors": [
+        "Fengjie Li",
+        "Jiajun Jiang",
+        "Dongchi Chen",
+        "Yingfei Xiong"
+      ],
+      "year": 2026,
+      "venue": "TSE",
+      "abstractOneWord": "在项目尺度对比 LLM 漏洞检测器与传统静态分析，使用 LLM，对象是 C/C++ 与 Java 开源软件。",
+      "abstract": "随着软件复杂度上升，自动化漏洞检测愈发重要。近期基于大语言模型的检测器把语义推理与静态分析结合起来做项目级扫描，但其实际效果和失败原因仍不清楚。本文给出针对专用 LLM 检测器的首个项目级综合实证研究，在 265 个已知的 C/C++ 与 Java 漏洞以及 24 个活跃开源项目/模块上，评估五种专用方法、两个通用智能体和四种传统静态分析器。作者借助 Codex 辅助标注并做分层人工校验，分析了 6442 条抽样告警，并用由 355 份人工审阅报告归纳的分类体系，对 5896 条误报归类。研究得到三点发现。第一，通用智能体召回最高，但在复杂代码上吃力，而 LLM 方法与传统方法都受不完整 API 建模拖累。第二，许多工具在真实项目/模块上误发现率很高；截断的过程间上下文和错误的程序点分类是误报主因，LLM 工具还有额外的推理与提示遵从失败。第三，LLM 方法成本很高：每个项目/模块可达数十万到数亿 token、API 费用超过 1000 美元，运行时间从数小时到数天。这些结果揭示了现有检测器在稳健性、可靠性与可扩展性上的局限，并为更有效、更可落地的项目级漏洞检测指出方向。",
+      "abstractEn": "As software complexity grows, automated vulnerability detection becomes increasingly important. Recent LLM-based detectors combine semantic reasoning with static analysis for project-scale scanning, but their practical effectiveness and failure causes remain unclear. We present the first comprehensive empirical study of specialized LLM-based detectors at project scale, evaluating five specialized methods, two general-purpose agents, and four traditional static analyzers on 265 known C/C++ and Java vulnerabilities and 24 active open-source projects/modules. Using Codex-assisted labeling with stratified manual validation, we analyze 6,442 sampled warnings and classify 5,896 false positives using a taxonomy derived from 355 manually inspected reports. Our study yields three findings. First, general-purpose agents achieve the highest recall but struggle with complex code, while both LLM-based and traditional methods suffer from incomplete API modeling. Second, many tools exhibit high false discovery rates on real-world projects/modules. Truncated interprocedural context and incorrect program-point classification are the dominant false-positive causes, with LLM-based tools exhibiting additional reasoning and prompt-compliance failures. Third, LLM-based methods incur substantial costs: hundreds of thousands to hundreds of millions of tokens, API charges exceeding $1,000 per project/module, and runtimes ranging from hours to days. These findings reveal limitations in the robustness, reliability, and scalability of current detectors and inform directions for more effective and practical project-scale vulnerability detection.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "项目级扫描",
+        "静态分析",
+        "误报"
+      ],
+      "url": "https://doi.org/10.1109/tse.2026.3742453",
+      "pdf": "https://arxiv.org/pdf/2601.19239"
+    },
+    {
+      "id": "2610.12813",
+      "title": "VEPA: Verified Evolving Formal Policy for Lifelong LLM Agent Guardrails",
+      "authors": [
+        "Duy Nguyen",
+        "Lesly Miculicich",
+        "Bhavana Dalvi Mishra",
+        "Shuo Li",
+        "Krishnamurthy Dj Dvijotham",
+        "Mohit Bansal",
+        "Tomas Pfister",
+        "Long T. Le"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 LLM 提议、形式化验证器验收的符号规则做智能体运行时护栏，对象是访问私有文档与可变系统状态的 LLM agent。",
+      "abstract": "大语言模型智能体越来越多地操作敏感资源，例如私有文档和可变系统状态，从而带来严重的安全风险。运行时护栏应在可能不可逆的动作执行前，作出可检查、可复现且确定性的允许或拒绝决策。但安全需求很少在部署前就完备，护栏需要随新风险出现而持续适配。现有自适应护栏从部署经验中学习，却通常用 LLM 推理来执行安全策略，决策可能不一致、策略解释也可能含糊。形式化护栏能确定性执行策略，却通常依赖部署前或任务特定的策略，没有适配新观察到风险的机制。本文提出 VEPA，一个验证式演化的形式化智能体护栏框架。VEPA 把护栏表示成覆盖类型化智能体事件的可执行符号规则形式化策略。部署期间，LLM 在部署反馈引导下提议策略补丁，以修复新失败并保留先前正确行为；确定性验证器只接受结构合法且无冲突的策略；证据感知的权限层仅在支持证据足够时激活已验证规则，使不确定更新不能直接改变护栏决策。在 ASSEBench-Safety、ASSEBench-Security 与 ATBench 上，VEPA 持续优于基线，并扩大了确定性形式化策略执行的覆盖范围；在混合流、损坏反馈和更长时程等更困难部署条件下，这些收益仍然成立。",
+      "abstractEn": "LLM agents increasingly operate over sensitive resources, such as private documents and mutable system states, which can create serious safety and security risks. Runtime guardrails should therefore make inspectable, reproducible, and deterministic allow or refuse decisions before potentially irreversible agent actions are executed. However, safety and security requirements are rarely complete before deployment, so guardrails need to keep adapting as new risks emerge. Existing adaptive guardrails learn from deployment experience, but they usually apply safety policies through LLM inference, which can lead to inconsistent decisions and ambiguous policy interpretations. Formal guardrails, on the other hand, enforce policies deterministically, but they usually rely on pre-deployment or task-specific policies and have no mechanism to adapt to newly observed risks. We introduce VEPA, a framework for the verified evolution of formal agent guardrails. VEPA represents the guardrail as a formal policy of executable symbolic rules over typed agent events. During deployment, we use an LLM guided by deployment feedback to propose policy patches that fix newly observed failures while preserving previously correct behavior. Then, a deterministic verifier only accepts policies that are structurally valid and conflict-free. Finally, an evidence-aware authority layer activates a verified rule only when it has enough supporting evidence, so uncertain updates cannot directly affect guardrail decisions. Across ASSEBench-Safety, ASSEBench-Security, and ATBench, VEPA consistently outperforms baselines while expanding the scope of deterministic formal-policy enforcement. These gains also hold under more challenging deployment conditions, including mixed streams, corrupted feedback, and longer horizons.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能体护栏",
+        "形式化策略",
+        "运行时授权",
+        "策略补丁"
+      ],
+      "url": "https://arxiv.org/abs/2610.12813",
+      "pdf": "https://arxiv.org/pdf/2610.12813"
+    },
+    {
+      "id": "2026-2421",
+      "title": "Efficient Unbiasable Verifiable Random Functions via (Non-)Black-Box Reductions",
+      "authors": [
+        "Nicholas Brandt"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把任意 VRF 编译成不可偏置 VRF，服务 PoS 领导者选举，无 LLM，对象是区块链共识随机信标。",
+      "abstract": "本文给出概念简单且实际高效的可验证随机函数（VRF）构造，满足 Giunta 与 Stewart（Eurocrypt 2024）最近提出的强不可偏置性。不可偏置性对 VRF 的许多应用至关重要，例如权益证明区块链中的领导者选举。先前构造或是在随机预言机模型中只提供启发式安全，或依赖带预处理的判定性 Diffie–Hellman 假设并带来显著开销。相比之下，本文的编译器只使用对称密钥原语，即可在标准模型（无需 setup）中把任意 VRF 变成不可偏置 VRF，计算开销可忽略。作者给出带次指数损失的通用黑盒归约；若底层 VRF 满足一个温和的（可验证）条件，还有仅多项式损失的非黑盒归约。该非黑盒技术能以几乎无代价的方式，用可证明安全的 “Hash-then-VRF” 替换民间的 “VUF-then-Hash” 启发式。特别地，若底层 VRF 已经哈希其输入，变换只需一次硬核函数求值，例如输入的奇偶性（再加上一次 PRF 求值以获得完全安全）。",
+      "abstractEn": "We present conceptually simple and practically efficient constructions of a verifiable random function (VRF) that fulfills strong notions of unbiasability recently introduced by Giunta and Stewart (Eurocrypt 2024). Unbiasability is a crucial property for many applications of VRFs such as leader election in proof-of-stake blockchains. The only previous constructions provide heuristic security in the random oracle model or rely on the decisional Diffie–Hellman assumption with preprocessing which incurs significant overhead. In contrast, our compiler turns any VRF into an unbiasable VRF in the standard model (without any setup) using only symmetric-key primitives; and thus only with negligible computational overhead. Underlying our approach, we provide a generic black-box reduction for unbiasability of VRFs that incurs subexponential loss. Additionally, under a mild (verifiable) requirement on the underlying VRF we also show a novel non-black-box reduction that incurs only polynomial loss. This non-black-box technique allows us to replace the folklore \"VUF-then-Hash\" heuristic with a provably secure \"Hash-then-VRF\" construction at virtually no cost. In particular, if the underlying VRF hashes its input, our transformation requires only a single evaluation of a hardcore function, e.g. parity of the input (plus a PRF evaluation for full security).",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "VRF",
+        "不可偏置",
+        "领导者选举",
+        "PoS"
+      ],
+      "url": "https://eprint.iacr.org/2026/2421",
+      "pdf": "https://eprint.iacr.org/2026/2421.pdf"
+    },
+    {
+      "id": "2026-2433",
+      "title": "Succinct Arguments with (almost) Minimal Time and Space Overheads from Symmetric-Key Primitives",
+      "authors": [
+        "Alexander R. Block",
+        "Caleb Geren",
+        "Pratik Soni"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "从对称密钥原语构造时间与空间开销接近最优的简洁零知识论证，无 LLM，对象是 zkSNARK 证明系统。",
+      "abstract": "本文为时间 T、空间 S 的随机访问机所判定的 NP 关系，构造公开币、简洁、零知识的交互式论证。在抗碰撞哈希存在的前提下，这些论证给出证明者时间、空间与证明大小之间的一组前沿权衡。作者沿用 Block 等人（TCC 2020, CRYPTO 2021）的流式 PIOP+PCS 框架，把时间与空间高效论证的构造约化为时间与空间高效的流式多线性多项式承诺方案（MLPCS）。他们发展了两种受 Brakedown（CRYPTO 2023）与 BaseFold（CRYPTO 2024）启发的基于编码的流式 MLPCS，并在可简洁访问底层编码矩阵时实现它们。该框架可在行稀疏、列稀疏以及 Reed–Solomon 编码器假设下实例化，再经通用 PIOP + MLPCS 编译器得到（零知识）时间与空间高效论证。由于协议均为公开币，Fiat–Shamir 变换得到来自对称密钥原语（即抗碰撞哈希）的时间与空间高效 (zk)SNARK。Brakedown 路线有 O(log T) 轮和 Õ(√T) 的证明大小与验证时间，并给出两种互补的证明者画像：Õ(S) 空间（最优）配合 Õ(T^{3/2}) 时间，或 Õ(T) 时间（近最优）配合 Õ(S+√T) 空间。BaseFold 路线达到 polylog(T) 的证明大小与验证时间。",
+      "abstractEn": "We construct public-coin, succinct, zero-knowledge interactive arguments for NP relations decided by time-$T$, space-$S$ random-access machines. Assuming the existence of collision-resistant hash functions, our arguments give a frontier of tradeoffs between prover time and space, and proof size. We follow the streaming PIOP+PCS framework of Block et al. (TCC 2020, CRYPTO 2021), reducing the problem of constructing time- and space-efficient arguments to time- and space-efficient streaming multilinear polynomial commitment schemes (MLPCS). We develop two code-based streaming MLPCS inspired by Brakedown (CRYPTO 2023) and BaseFold (CRYPTO 2024), implementing each scheme when additionally given succinct access to the underlying encoding matrices. We instantiate this framework assuming row-sparse, column-sparse, and Reed-Solomon encoders, then apply a generic PIOP + MLPCS compiler to obtain our (zero-knowledge) time- and space-efficient arguments. Finally, as all our protocols are public-coin, applying Fiat-Shamir yields time- and space-efficient (zk)SNARKs from symmetric-key primitives (i.e., collision-resistant hashing). Our Brakedown-based constructions have O(log T) rounds and Õ(√T)-size proofs and verification time, with two complementary prover profiles: (i) Õ(S) space (which is optimal) and Õ(T^{3/2}) time, and (ii) Õ(T) time (nearly optimal) and Õ(S+√T) space. Our BaseFold-based constructions achieve polylog(T) proof size and verification time with O(log T) rounds. We again obtain two complementary prover profiles: (i) an encoder parameterized construction with Õ(T+T_Enc) time and Õ(S + S_Enc) space, where T_Enc, S_Enc are the running time and space of a streaming log-space encoder for a suitable linear code, and (ii) an unconditional sub-quadratic instantiation Õ(T^{3/2}) time and Õ(S+√T) space.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkSNARK",
+        "多项式承诺",
+        "简洁论证",
+        "对称密钥"
+      ],
+      "url": "https://eprint.iacr.org/2026/2433",
+      "pdf": "https://eprint.iacr.org/2026/2433.pdf"
+    },
+    {
+      "id": "2026-2432",
+      "title": "Lattice Bingo: Asynchrony and One-Shot Adaptivity in Verifiable Secret Sharing via Erasure Code Commitments",
+      "authors": [
+        "Ittai Abraham",
+        "Aniket Kate",
+        "Aditi Partap",
+        "Ertem Nusret Tas"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出二次通信的格基打包异步可验证秘密分享，用于 DKG 与拜占庭协议，无 LLM，对象是阈值秘密分享与共识。",
+      "abstract": "异步可验证秘密分享（AVSS）允许分发者在拜占庭故障与任意消息延迟下，向各方分发秘密并保持隐私与一致重构。它是拜占庭协议、分布式密钥生成和安全多方计算的基础构件。打包 AVSS 一次分享多个秘密以降低每个秘密的通信。已知最好的 AVSS 在线性多个秘密时达到二次通信。尤其 Bingo（Abraham 等人，CRYPTO 2023）在 k 方中分享 Θ(k) 个秘密，通信为 O(λ k^2) 字，并达到自适应安全，但依赖非后量子假设。已知的后量子替代方案在相当批量下最坏情况通信更高，或需要更大批量才能摊销到线性通信。本文提出 Lattice Bingo：基于格的打包 AVSS，二次通信且线性打包。对任意常数 ε>0，它在 k≥(3+ε)f 方中分享 Θ(k) 个秘密，容忍 f 个拜占庭方，通信 O(k^2 poly(λ)) 字。它还达到一次性自适应保密：对手可基于已见公开副本自适应选择腐蚀与重构请求，但必须把这些请求一次性提交。主要技术贡献是基于 PowerBASIS 假设的二维线性码承诺方案，结合 Applebaum、Nir 与 Pinkas 的线性码秘密分享，替换 Bingo 中的 Reed–Solomon 编码与 KZG 承诺。该承诺支持证明插值，使各方能恢复缺失份额及其打开证明，并满足作者所称的一次性模拟隐藏，从而把 Bingo 框架适配为 Lattice Bingo。",
+      "abstractEn": "Asynchronous verifiable secret sharing (AVSS) allows a dealer to distribute a secret among parties while preserving privacy and consistent reconstruction, despite Byzantine faults and arbitrary message delays. It is a fundamental building block for Byzantine agreement, distributed key generation, and secure multiparty computation. Packed AVSS protocols share many secrets together to reduce communication per secret. The best known AVSS protocols achieve quadratic communication while sharing linearly many secrets. In particular, Bingo (Abraham et al., CRYPTO 2023) shares a batch of Θ(k) secrets among k parties using O(λ k^2) words of communication, while also achieving adaptive security, but relies on assumptions that are not post-quantum secure. Known post-quantum alternatives have higher worst-case communication for comparable batch sizes or require substantially larger batches to achieve linear amortized communication. We present Lattice Bingo, a lattice-based packed AVSS protocol with quadratic communication and linear packing. For every constant ε>0, it shares Θ(k) secrets among k≥(3+ε)f parties, tolerates f Byzantine parties, and uses O(k^2 poly(λ)) words of communication. It additionally achieves one-shot adaptive secrecy: the adversary may adaptively choose its corruption and reconstruction requests based on the public transcript observed so far, but must submit these requests together in a single batch. Our main technical contribution is a commitment scheme for two-dimensional linear codes based on the PowerBASIS assumption. We combine PowerBASIS commitments with the linear code based secret sharing of Applebaum, Nir, and Pinkas, replacing the Reed–Solomon encoding and KZG commitments used in Bingo. Our commitment supports proof interpolation, enabling parties to recover missing shares and their opening proofs. It additionally achieves a notion that we call one-shot simulation hiding. Together, these properties allow us to adapt Bingo’s framework to obtain Lattice Bingo with the same efficiency and one-shot adaptive security.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "AVSS",
+        "DKG",
+        "阈值秘密分享",
+        "后量子"
+      ],
+      "url": "https://eprint.iacr.org/2026/2432",
+      "pdf": "https://eprint.iacr.org/2026/2432.pdf"
+    }
+  ]
+}
