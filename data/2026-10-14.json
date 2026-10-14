@@ -1,0 +1,335 @@
+{
+  "date": "2026-10-14",
+  "papers": [
+    {
+      "id": "10.1145-3832783.3837547",
+      "title": "Perception, Reasoning, and Action: A ReAct-Based Vulnerability Detection Framework with Repository-Level Reasoning",
+      "authors": [
+        "Xin-Cheng Wen",
+        "Hanyue Luo",
+        "Cuiyun Gao",
+        "Hao Zhu",
+        "Yang Xiao",
+        "Ge Li"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "用多代理 ReAct 做仓库级漏洞检测，使用 LLM，对象是 C/C++ 开源软件。",
+      "abstract": "软件漏洞数量指数增长，使得自动化漏洞检测变得紧迫。近期研究强调仓库级上下文对检测的重要性，并借助大语言模型应对这一挑战。尽管这些方法已达到当时最优，但仍有两点不足。第一，对仓库级上下文感知不够：现有方法主要依赖给定输入或预定义知识库，难以覆盖对理解漏洞至关重要的跨文件依赖，例如导入关系和类层次。第二，推理过程依赖手工设计的动作：现有方法未能把推理（由 LLM 判断漏洞是否存在）与动作（通过工具动态检索或缩减上下文）有效结合起来，容易在检测过程中产生事实幻觉，从而限制效果。为此，本文将仓库级漏洞检测建模为推理与行动（ReAct）范式，并把人工工作流纳入多代理 LLM，提出 ReAct-Vul。它包含两个核心模块：仓库级知识切片（过程内切片、过程间切片，以及用于抽取漏洞相关上下文的 ReAct 感知组件）；以及协同的推理–行动检测模块，交错进行双视角漏洞分析（行动阶段）与检测–反思循环（推理阶段）。该框架显式考虑漏洞存在与不存在，生成推理解释并据此细化后续检测动作。作者在真实 C/C++ 数据集 PrimeVul 与 SVEN 上评估，ReAct-Vul 在准确率上分别比最强基线高 18.4%（SVEN）和 8.7%（PrimeVul）；ReAct 范式也能提升不同模型的推理能力，使 SVEN 准确率再提高 15.9%。",
+      "abstractEn": "The exponential growth in software vulnerabilities has created an urgent demand for automated vulnerability detection solutions. Recent research has emphasized the importance of repository-level context for vulnerability detection and has leveraged large language models (LLMs) to address this challenge. Although these methods show state-of-the-art performance, they face the following challenges: (1) Insufficient perception of repository-level contextual information. Current approaches primarily rely on the given input itself or predefined knowledge bases. They cannot adequately account for inter-file dependencies, such as import relationships and class hierarchies, that may be critical to understanding specific vulnerabilities. (2) Relying on manually designed actions in the LLM reasoning process. Specifically, existing methods do not effectively integrate reasoning (i.e., predicting vulnerability existence by LLMs) with action (i.e., dynamically retrieving additional or reduced context by tool). This limitation can lead to factual hallucinations throughout the detection process, leading to limited performance. To address these challenges, we propose to model the repository-level vulnerability detection task from a Reasoning and Action (i.e., ReAct) paradigm and incorporate human workflows into multi agent-based LLMs, termed ReAct-Vul, which consists of two key modules: (1) a repository-scale knowledge slicing, which comprises an intra-procedural slicing process, an inter-procedural slicing process, and a ReAct-based perception component for extracting the vulnerability-related context and knowledge at the repository level. (2) a synergistic reasoning-action-driven detection module, which interleaves a dual-perspective vulnerability analysis (Action phase) and detection-reflection loop (Reasoning phase). This synergistic approach enables the framework to explicitly consider both vulnerability presence and absence, generate reasoning explanations and refine subsequent targeted actions for vulnerability detection. We evaluate ReAct-Vul on the real-world C/C++ dataset PrimeVul and SVEN to demonstrate its effectiveness in vulnerability detection. Specifically, ReAct-Vul outperforms the best baseline by 18.4% on SVEN and 8.7% on PrimeVul in terms of accuracy. Furthermore, we demonstrate that the proposed ReAct paradigm enhances the reasoning capabilities of different models, achieving a 15.9% improvement in the accuracy of SVEN.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "仓库级推理",
+        "ReAct",
+        "多代理"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3837547"
+    },
+    {
+      "id": "10.1145-3832783.3834420",
+      "title": "GraphLedger: Repository-Level Vulnerability Detection via Graph-Based Compression and Assumption Validation",
+      "authors": [
+        "Thi-Hong-Cuc Le",
+        "Hoang Quoc Bao Hua",
+        "Xuan-Bach Le"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "用图压缩与假设账本校验 LLM 的仓库级污点漏洞假设，对象是 Java 仓库。",
+      "abstract": "仓库级漏洞检测需要跨文件、跨过程并沿长程依赖链推理。两类主流方法都很难做到：静态分析常过度近似并产生大量误报，而基于 LLM 的方法难以处理巨大仓库上下文，还可能给出看似合理却缺乏证据的结论。本文提出 GraphLedger，把自适应假设印证压缩（AACC）与用于结构化假设验证的假设账本结合起来。AACC 在压缩仓库上下文的同时保留与漏洞相关的依赖结构；LLM 再在压缩上下文上提出显式漏洞假设，账本对照仓库证据验证其前提，并给出已验证、已拒绝或不确定的结果。这使仓库尺度推理更可审计，也更少出现无依据结论。GraphLedger 面向带有界过程间证据的污点式源–汇假设，而不是任意漏洞类别。作者在 CWE-Bench-Java 上做受控跨方法评估，并在 CVEfixes 上做系统内组件分析。AACC 可把 token 减少 0.71，同时保留 0.90 的依赖边和 0.88 的污点路径。在文档化、仓库互斥的 100 个 CWE-Bench-Java 评估划分上，GraphLedger 达到 0.77 精确率、0.76 召回率和 0.76 F1，并在受控同后端设置下把相对 VulAgent 的错误发现率从 0.41 降到 0.23。结果表明，结构感知压缩与假设验证能提高仓库级漏洞检测的可靠性与透明度。",
+      "abstractEn": "Repository-level vulnerability detection requires reasoning across files, procedures, and long-range dependency chains. This is difficult for both dominant families of methods: static analysis often over-approximates and produces many false positives, while LLM-based approaches struggle with large repository context and may generate plausible but unsupported claims. We present GraphLedger, a framework that combines Adaptive Assumption-Corroborating Compression (AACC) with an Assumption Ledger for structured hypothesis verification. AACC reduces repository context while preserving vulnerability-relevant dependency structure. The LLM then proposes explicit vulnerability hypotheses over the compressed context, and the ledger validates their assumptions against repository evidence, producing Verified, Rejected, or Inconclusive outcomes. This makes repository-scale reasoning more auditable and less prone to unsupported conclusions. GraphLedger targets taint-style, source–sink vulnerability hypotheses with bounded inter-procedural evidence, rather than arbitrary vulnerability classes. We conduct a controlled cross-method evaluation on CWE-Bench-Java and a complementary within-system component analysis on CVEfixes. On CWE-Bench-Java, AACC achieves 0.71 token reduction while retaining 0.90 of dependency edges and 0.88 of taint paths. On a documented, repository-disjoint 100-repository CWE-Bench-Java evaluation partition, GraphLedger achieves 0.77 precision, 0.76 recall, and 0.76 F1, and reduces false discovery rate from 0.41 to 0.23 relative to VulAgent under a controlled shared-backend evaluation. These results show that combining structure-aware compression with assumption validation improves the reliability and transparency of repository-level vulnerability detection.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "仓库级扫描",
+        "假设验证",
+        "污点分析"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3834420"
+    },
+    {
+      "id": "10.1145-3832783.3834364",
+      "title": "Are Reasoning Traces Faithful in LLM-Based Code Vulnerability Detection?",
+      "authors": [
+        "Jialai Wang",
+        "Juncheng Lu",
+        "Songtao Yang",
+        "Bingyi He",
+        "Zeyu Gao",
+        "Chao Zhang",
+        "Shuai Wang"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "评估 LLM 漏洞检测推理轨迹是否忠实，使用 LLM，对象是仓库级与函数级代码。",
+      "abstract": "大语言模型产生的推理轨迹通过暴露所谓支持预测的因素来提供可解释性。这种可解释性很重要，因为模型决策可能依赖虚假因素，而轨迹可以帮助实践者识别并应对这种依赖。但推理轨迹是否有用，取决于它是否忠实，即是否反映模型做出预测时真正依赖的因素。不忠实的轨迹可能只是看似合理、却与真实决策过程无关的叙述。尽管如此，LLM 漏洞检测中的推理轨迹忠实性尚未被系统研究。本文提出 VulFaith，该领域首个评估推理轨迹忠实性的框架。作者形式化两个互补标准：完整性要求支撑「不安全」预测的全部决策相关因素都被暴露；单因素忠实性要求每条被引用的因素确实被模型依赖。为实现这两条标准，作者设计基于自动修复的评估方案：通过代码修复去掉被引用的不安全因素，再重新查询模型，检验预测是否仍然成立。VulFaith 在仓库级与函数级漏洞数据集上评估了十个开源模型和四个商业 LLM。结果显示不忠实现象普遍，完整性不忠实最高达 66.14%，单因素不忠实最高达 94.00%。作者进一步验证，VulFaith 识别出的不忠实案例可用于监督微调的数据增强，使完整性不忠实最多降低 47.89%，单因素不忠实最多降低 59.18%。",
+      "abstractEn": "Reasoning traces generated by large language models (LLMs) provide interpretability by exposing the factors that purportedly support their predictions. Such interpretability is important because model decisions may rely on spurious factors, and it can help practitioners identify such reliance and respond appropriately. However, the usefulness of reasoning traces hinges on their faithfulness, namely whether they reflect the factors that the model actually relies on when producing its prediction. Unfaithful traces may instead serve as plausible narratives that do not correspond to the true decision process. Despite its importance, reasoning-trace faithfulness has not been systematically studied in LLM-based vulnerability detection. We present VulFaith, the first framework for evaluating reasoning-trace faithfulness in this domain. We formalize two complementary criteria: completeness, which requires that all decision-relevant factors sustaining an insecure prediction are exposed, and per-factor faithfulness, which requires that each cited factor is genuinely relied upon by the model. To operationalize these criteria, we design an automated repair-based evaluation scheme that removes cited insecurity factors through code repairs and re-queries the model to test whether the prediction remains sustained. We implement VulFaith and conduct experiments on both repository-level and function-level vulnerability datasets, evaluating ten state-of-the-art open-source models and four commercial LLMs. Our results show that unfaithfulness is widespread, with completeness unfaithfulness reaching up to 66.14% and per-factor unfaithfulness up to 94.00%. We further validate that the unfaithfulness cases identified by VulFaith can support data augmentation for supervised fine-tuning, reducing completeness unfaithfulness by up to 47.89% and per-factor unfaithfulness by up to 59.18%.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "推理忠实性",
+        "可解释性",
+        "误报"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3834364"
+    },
+    {
+      "id": "10.1145-3832783.3837523",
+      "title": "CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection",
+      "authors": [
+        "Sungju Yun",
+        "Sijune Hwang",
+        "Yeonjoon Lee",
+        "Kyungtae Kang",
+        "Sungbin Park"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "用因果知识图引导多代理验证漏洞假设，使用 LLM，对象是 C/C++ 与 Java。",
+      "abstract": "随着现代安全缺陷根植于执行流、控制条件与程序状态之间的复杂因果依赖，源代码漏洞检测愈发困难。尽管大语言模型与多代理框架近期进展显著，现有方法主要处理良性函数与脆弱函数之间的表面相似，却未能捕捉安全缺陷固有的复杂因果依赖。为此，本文提出基于因果上下文的代理推理（CLEAR），这是一个与因果知识图集成的新型多代理漏洞检测框架。CLEAR 系统构建漏洞因果知识图（VCKG），对漏洞实例中入口点、前置条件、根因与修复意图之间的因果链建模。借助该结构化知识，Collector、Claim、Critic 与 Judge 四个专用代理通过检索到的因果上下文协同验证漏洞假设。在 C/C++ 与 Java 漏洞基准上的实验表明，CLEAR 分别把 Pair-Correct（P-C）性能相对当时最优方法提高 130.7% 和 71.56%，说明因果知识图引导的推理对自动化漏洞检测有效。",
+      "abstractEn": "Detecting source code vulnerabilities is increasingly difficult as modern security flaws are rooted in complex causal dependencies between execution flows, control conditions, and program states. Despite recent advances in Large Language Models (LLMs) and multi-agent frameworks, existing approaches primarily address superficial similarities between benign and vulnerable functions while failing to capture the complex causal dependencies inherent in security flaws. To address these limitations, we propose Causal Context-based Agentic Reasoning (CLEAR), a novel multi-agent vulnerability detection framework integrated with a causal knowledge graph. CLEAR systematically constructs a Vulnerability Causal Knowledge Graph (VCKG) that models the causal chains between entrypoints, preconditions, root causes, and fix intents across vulnerability instances. Leveraging this structured knowledge, four specialized agents including the Collector, Claim, Critic, and Judge collaboratively verify vulnerability hypotheses through retrieved causal contexts. Experimental results on C/C++ and Java vulnerability benchmarks demonstrate that CLEAR improves Pair-Correct (P-C) performance by 130.7% and 71.56% over state-of-the-art approaches, respectively, demonstrating the effectiveness of causal knowledge graph–guided reasoning for automated vulnerability detection.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "多代理",
+        "因果推理",
+        "知识图"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3837523"
+    },
+    {
+      "id": "10.1145-3832783.3837521",
+      "title": "To Think or Not to Think: Evaluating LLM Reasoning and Agents in Vulnerability Detection",
+      "authors": [
+        "Hua Beng Tan",
+        "Ratnadira Widyasari",
+        "Merve Astekin",
+        "Arda Goknil",
+        "Hasan Sozer",
+        "Yan Naing Tun",
+        "Erik Johannes Husom",
+        "Lwin Khin Shar",
+        "Lingxiao Jiang"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "分阶段对比 thinking 模式与单/多代理对漏洞检测的影响，使用 LLM，对象是 PrimeVul 中的真实软件。",
+      "abstract": "大语言模型越来越多地被用于软件漏洞检测，但近期带推理（thinking）模式的收益仍不清楚。与此同时，代理式 LLM 设计试图通过结构化协作增强分析，而实际软件安全工作流又需要便于检查、验证和修复的解释。先前研究常把这些维度分开考察，或设置不一致，因而很难分离各自对漏洞检测的影响。本文在 PrimeVul Pair 基准上做分阶段、因素分离的实证研究。第一阶段在无代理条件下，比较四个开源模型的 instruct 与 thinking 变体，覆盖零样本与少样本提示。第二阶段评估单代理、双代理与多代理设计，并对照调用次数匹配的单代理基线、告警负担指标与成本分析。第三阶段通过盲法人工评估与校准后的 LLM 评估，在正确与错误预测上考察解释质量，并控制回复长度与模型家族。thinking 在 8 个无代理设置中的 7 个提高了 F1，主要来自召回；双代理取得最高 F1/召回，但把 88.2% 的函数标为脆弱。多代理在成对判别上更好，但调用次数匹配的自修订在 Pair-wise Correct Prediction（P-C）上总体最优。thinking 还消耗 2.7–4.4 倍能量，且其 F1 收益随编排增强而下降。解释方面的收益因模型而异，部分由长度介导，且无法区分正确与错误预测。",
+      "abstractEn": "Large language models (LLMs) are increasingly studied for software vulnerability detection, but the benefits of recent reasoning-enabled (“thinking”) modes remain unclear. At the same time, agentic LLM designs aim to enhance analysis through structured collaboration, while practical software security workflows require explanations that facilitate inspection, validation, and remediation. Because prior studies often examine these dimensions separately or under heterogeneous settings, their individual effects on vulnerability detection remain difficult to disentangle. This paper addresses the gap through a phased, factor-separated empirical study on the PrimeVul Pair benchmark. In the first phase, we compare instruct and thinking variants of four open models under zero- and few-shot prompting without agents. In the second phase, we evaluate single-, dual-, and multi-agent (SA, DA, and MA) designs alongside call-matched single-agent baselines, alert-burden metrics, and cost analysis. In the third, we assess explanations through blinded human and calibrated LLM evaluation across correct and incorrect predictions, controlling for response length and model family. Thinking improves non-agent (NA) F1 in 7 of 8 settings, mainly through recall, while DA achieves the highest F1/recall but flags 88.2% of functions as vulnerable. MA performs better on pairwise discrimination, although call-matched self-revision achieves the best Pair-wise Correct Prediction (P-C) overall. Thinking also uses 2.7–4.4× more energy, and its F1 benefit declines with greater orchestration. Explanation gains are model-specific, partly length-mediated, and do not distinguish correct from incorrect predictions.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "推理模式",
+        "多代理",
+        "实证研究"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3837521"
+    },
+    {
+      "id": "10.1145-3832783.3837497",
+      "title": "ExcavatorFuzz: LLM-Guided Path-Difficulty-Driven Directed Greybox Fuzzing",
+      "authors": [
+        "Kaiyu Xie",
+        "Siyuan Li",
+        "Jiaqian Peng",
+        "Yun Yang",
+        "Yaowen Zheng",
+        "Kai Cheng",
+        "Jiayu Zhang",
+        "Shizhao Tian",
+        "Liyubo",
+        "Hongsong Zhu"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "用 LLM 辅助定向灰盒模糊测试，按路径难度排序并合成种子，对象是 C/C++ 程序。",
+      "abstract": "定向灰盒模糊测试（DGF）能把变异导向脆弱代码区域，但其效率常受两个瓶颈限制：到达目标的路径优先级排错，以及难以满足的阻塞谓词。本文提出 ExcavatorFuzz，一个在统一工作流中同时应对这两点的 LLM 辅助 DGF 框架。它先做命令行感知的可行性过滤，剪掉配置上不可达的路径，再用轻量难度度量对剩余候选路径排序，该度量根据显式谓词复杂度与隐式数据依赖复杂度近似相对可解性。模糊测试期间，ExcavatorFuzz 监控行级进度以发现被阻塞路径，并调用 LLM，结合结构化反馈为未满足谓词合成或 refinement 种子。作者在 30 个真实 C/C++ 基准上评估：24 小时内触发 30 个已知漏洞中的 29 个，相对七个当时最优模糊器的平均暴露时间加速 4.34 倍；还在开源项目中发现三个此前未知漏洞，其中两个已分配 CVE。",
+      "abstractEn": "Directed greybox fuzzing (DGF) is effective at steering mutations toward vulnerable code regions, but its efficiency is often limited by two bottlenecks: misprioritized target-reaching paths and hard-to-satisfy blocking predicates. We present ExcavatorFuzz, an LLM-assisted DGF framework that addresses both challenges in a unified workflow. ExcavatorFuzz first performs CLI-aware feasibility filtering to prune configuration-infeasible paths, and then ranks the remaining candidate paths using a lightweight difficulty metric that approximates their relative tractability based on explicit predicate complexity and implicit data-dependency complexity. During fuzzing, ExcavatorFuzz monitors line-level progress to detect blocked paths and invokes the LLM to synthesize or refine seeds for unsatisfied predicates using structured feedback. We evaluate ExcavatorFuzz on 30 real-world C/C++ benchmarks. ExcavatorFuzz triggers 29 out of 30 known vulnerabilities within 24 hours and achieves an average 4.34x speedup in time-to-exposure over seven state-of-the-art fuzzers. It also discovered three previously unknown vulnerabilities in open-source projects, two of which have been assigned CVE IDs.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "模糊测试",
+        "定向灰盒",
+        "种子生成",
+        "CVE"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3837497"
+    },
+    {
+      "id": "10.1145-3832783.3834523",
+      "title": "AgenticSCR: An Autonomous Agentic Secure Code Review for Immature Vulnerabilities Detection",
+      "authors": [
+        "Wachiraphan Charoenwet",
+        "Kla Tantithamthavorn",
+        "Patanamon Thongtanunam",
+        "Hong Yi Lin",
+        "Minwoo Jeong",
+        "Ming Wu"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "用带安全语义记忆的代理做早期安全代码评审，使用 LLM，对象是企业代码评审中的未成型漏洞。",
+      "abstract": "安全代码评审在集成前至关重要。Atlassian 开发者依赖轻量分析工具，而深度安全评估被推迟到更后阶段，从而延迟反馈并提高修复成本。现有静态分析器往往噪声大，难以处理依赖上下文或尚未完全显现的漏洞；静态 LLM 评审器则受上下文窗口限制，也无法与工具交互。把 LLM 与代码导航结合起来的代理式 AI 看起来有前景，但其对早期安全代码评审的效果仍缺少探索。本文提出 AgenticSCR，一个用安全导向语义记忆增强的代理式安全代码评审器，把推理锚定在结构化安全知识上，以便在漏洞完全显现前发现它们。相对静态 LLM 基线、多代理评审器和 SAST 工具，AgenticSCR 在同时给出正确位置、漏洞类型与相关性的评论上，至少取得 153% 的相对提升。在影子部署中，54% 的评论经安全工程师确认可向开发者报告，既说明实用价值，也凸显任务难度。这些发现表明，安全导向语义记忆是代理式安全代码评审的有前景方向，有助于在左移安全实践中更可靠地定位、检测和解释问题。",
+      "abstractEn": "Secure code review is critical during pre-integration, where Atlassian developers rely on lightweight analysis tools, while deep security assessment is deferred to later stages, delaying feedback and increasing remediation costs. Existing static analyzers are often noisy and struggle with context-dependent or partially manifested vulnerabilities, while static large language model (LLM) reviewers are constrained by context windows and lack tool interaction. Agentic AI, which combines LLMs with code navigation, shows promise; however, its effectiveness for early-stage secure code review remains underexplored. We present AgenticSCR, an agentic secure code reviewer augmented with security-focused semantic memory that grounds reasoning in structured security knowledge to detect vulnerabilities before they fully manifest. AgenticSCR achieves at least 153% relative improvement in generating comments with correct localization, vulnerability type, and relevance over static LLM baseline, multi-agent reviewer, and SAST tools. In a shadow deployment, 54% of its comments were validated by security engineers for developer reporting, demonstrating practical utility while underscoring the difficulty of the task. These findings position the security-focused semantic memory as a promising direction for agentic secure code review, enabling early-stage vulnerability identification. Our approach builds an important step toward reliable localization, detection, and explanation in shift-left security practices.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全代码评审",
+        "代理",
+        "漏洞检测",
+        "SAST"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3834523",
+      "pdf": "https://arxiv.org/pdf/2601.19138"
+    },
+    {
+      "id": "10.1145-3832783.3834380",
+      "title": "SmartPoC: Validating Smart Contract Vulnerability Findings through PoC Generation and Execution",
+      "authors": [
+        "Longfei Chen",
+        "Ruibin Yan",
+        "Taiyu Wong",
+        "Yiyang Chen",
+        "Jialai Wang",
+        "Chao Zhang"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "用 LLM 从审计报告生成并执行 PoC 以验证合约漏洞，对象是 Solidity 智能合约。",
+      "abstract": "智能合约通常用静态分析做审计以探索漏洞。但静态方法往往只给出异构发现，而不是可复现、可执行的概念验证（PoC）测试用例，导致人工验证成本高且临时拼凑。大语言模型有望把审计报告翻译成 PoC，但面临三类挑战：输入噪声、缺少执行落地，以及缺少运行时判定。本文提出 SmartPoC，端到端地通过生成并执行 PoC 测试用例、再自动验证可利用性，来确认审计报告中的漏洞。它先从每条发现中抽出以关键函数为中心、并补上执行相关邻居的函数级切片，以降低噪声。为提高可执行性，作者把基于 LLM 的 PoC 合成包在「生成–修复–执行」循环里，结合确定性的执行前清洗与由反馈驱动的执行后调试。作者进一步用差分验证作为判定，确认生成测试用例的可利用性。在 SmartBugs-Vul 与 FORGE-Vul 基准上，SmartPoC 的确认精确率分别为 98.32% 和 98.65%，召回率分别为 84.17% 和 85.28%。在近期 Etherscan 已验证源码语料上，它从 545 条审计发现中确认 64 个漏洞，平均成本 0.03 美元。",
+      "abstractEn": "Smart contracts are commonly audited through static analysis to explore vulnerabilities. However, static approaches typically produce heterogeneous findings rather than reproducible, executable proof-of-concept (PoC) test cases, leading to costly and ad hoc manual validation. Large language models (LLMs) offer a promising way to translate audit reports into PoC test cases, but face three major challenges: noisy inputs, lack of execution grounding, and missing runtime oracles. We present SmartPoC, an end-to-end approach for validating reported vulnerabilities in audit reports by generating and executing PoC test cases with automated exploitability verification. SmartPoC first extracts a focused function-level slice from each report to reduce noise, centering on the key functions referenced in a finding and augmenting them with execution-relevant neighbors. To improve executability, we wrap LLM-based PoC synthesis in a generate–repair–execute loop, combining deterministic pre-execution sanitization with feedback-driven post-execution debugging. We further use differential verification as an oracle to confirm the exploitability of generated test cases. On the SmartBugs-Vul and FORGE-Vul benchmarks, SmartPoC achieves confirmation precision of 98.32% and 98.65%, with recall of 84.17% and 85.28%, respectively. On a recent Etherscan verified-source corpus, SmartPoC confirms 64 bugs from 545 audit findings at an average cost of $0.03.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "PoC 生成",
+        "漏洞验证",
+        "审计"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3834380"
+    },
+    {
+      "id": "10.1145-3832783.3837500",
+      "title": "Zero-Knowledge VMs: Security and Usability in Practice",
+      "authors": [
+        "Jinan Jiang",
+        "Jinzhao Chu",
+        "Pengyu Xue",
+        "Xinghao Peng",
+        "Haoran Qin",
+        "Xiapu Luo"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "系统研究生产 zkVM 的漏洞与可用性，无 LLM，对象是区块链 Layer 2 的零知识虚拟机。",
+      "abstract": "零知识虚拟机（zkVM）正成为区块链 Layer 2 扩容的关键基础设施：它能执行任意程序，同时生成计算正确的简洁证明。尽管已有数亿美元投入，快速发展的 zkVM 生态仍缺少对其安全与可用性挑战的综合实证分析。本文给出首个针对 zkVM 漏洞与可用性问题的系统研究，从三个视角分析生产 zkVM：314 个来自专业审计的安全漏洞、11,854 次提交所反映的开发实践，以及 1,150 个用户问题所反映的使用体验。作者识别出普遍、严重且非传统的漏洞类别及其根因，揭示跨 zkVM 反复出现的高价值攻击面，并归纳用户主要遇到的可用性障碍。把这些发现与现有研究对照后，作者指出四个缺口，对应 zkVM 测试与分析的研究与工具机会。",
+      "abstractEn": "Zero-knowledge Virtual Machines (zkVMs) are emerging critical infrastructure for blockchain Layer 2 scaling solutions, enabling execution of arbitrary programs while generating succinct proofs of correct computation. Despite hundreds of millions of investment, the rapidly evolving zkVM ecosystem lacks comprehensive empirical analysis of its security and usability challenges. We present the first systematic study of zkVM vulnerability and usability issues, analyzing production zkVMs through three perspectives covering 314 security vulnerabilities (professional audits), 11,854 commits (developer practices), and 1,150 user issues (user experiences). We identify prevalent, severe, and non-traditional vulnerability categories and their root causes, reveal high-value attack surfaces that consistently emerge across zkVMs, and identify major usability issues that users struggle with. Comparing our findings against existing research reveals four gaps representing research and tool development opportunities for the testing and analysis of zkVMs.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkVM",
+        "零知识",
+        "Layer2",
+        "漏洞研究"
+      ],
+      "url": "https://doi.org/10.1145/3832783.3837500"
+    },
+    {
+      "id": "2610.18165",
+      "title": "Soliduzz: Finding Miscompilations in Smart-Contract Compilers with Assertion-Driven Equivalence Oracles",
+      "authors": [
+        "Alexander Stromberger",
+        "Christoph Hochrainer",
+        "Valentin Wüstholz",
+        "Maria Christakis"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用断言驱动的等价预言机找 EVM 合约编译器误编译，无 LLM，对象是 solc/solx/vyper。",
+      "abstract": "编译到以太坊虚拟机（EVM）的智能合约管理高价值资产，部署后很难打补丁。因此编译器误编译格外危险：编译成功，但生成的字节码并不保持源程序语义。现有智能合约编译器模糊器要么关注稳健性故障，要么依赖比较不同编译配置的差分预言机。本文提出 Soliduzz，用断言驱动的等价预言机寻找 EVM 智能合约编译器中的误编译。它借助乘积程序把语义等价编码成可执行断言，再编译这些自检程序，让现成的模糊器与符号执行引擎在字节码中搜索断言违反，而分析器无需编译器特定支持。Soliduzz 用两类互补的蜕变变换实例化这一想法。第一类称为智能合约变换：从等价表达式出发，把它们提升为刻意行使存储、数据位置、控制流、合约交互与内联汇编等 EVM 特征的合约代码。第二类把输入等价（EMI）从固定具体输入推广到符号输入空间：符号 EMI 在原始计算中记录覆盖，并用它守卫变换计算中的变异。作者在 solc、solx 与 vyper 上用多种分析工具评估，共暴露 29 个缺陷，其中 24 个是编译器缺陷（6 个误编译、17 个内部编译器错误、1 个挂起），其余 5 个是分析工具缺陷。在 20 个已知与新发现误编译的暴露时间实验中，Soliduzz 在 72 小时内暴露 9 个。消融表明两类变换互补。",
+      "abstractEn": "Smart contracts compiled to the Ethereum Virtual Machine (EVM) can manage high-value assets and are difficult to patch after deployment. Compiler miscompilations are therefore especially dangerous: compilation succeeds, but the generated bytecode does not preserve the semantics of the source program. Existing smart-contract compiler fuzzers either focus on robustness failures or rely on differential oracles that compare compiler configurations. We present Soliduzz, an approach for finding miscompilations in EVM smart-contract compilers using assertion-driven equivalence oracles. Soliduzz uses product programs to encode semantic equivalence as executable assertions. The key shift is to compile these self-checking programs and let off-the-shelf fuzzers and symbolic execution engines explore the resulting bytecode for assertion violations, without requiring compiler-specific support from the analyzer. Soliduzz instantiates this idea with two complementary families of metamorphic transformations. The first, which we call smart-contract transformations, starts from equivalent expressions and lifts them into smart-contract code that deliberately exercises EVM-specific features such as storage, data locations, control flow, contract interactions, and inline assembly. The second generalizes Equivalence Modulo Inputs (EMI) from fixed concrete inputs to symbolic input spaces. Our symbolic EMI records coverage in the original computation and uses it to guard mutations in the transformed computation. Together, these transformations produce product programs that assert that paired computations yield the same outputs. We evaluate Soliduzz on three EVM smart-contract compilers—solc, solx, and vyper—using several analysis tools. Overall, Soliduzz exposes 29 bugs. Of these, 24 are compiler bugs: 6 miscompilations, 17 internal compiler errors, and 1 hang. The remaining 5 are bugs in the analysis tools.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "编译器测试",
+        "误编译",
+        "智能合约",
+        "EVM"
+      ],
+      "url": "https://arxiv.org/abs/2610.18165",
+      "pdf": "https://arxiv.org/pdf/2610.18165"
+    },
+    {
+      "id": "2026-2466",
+      "title": "Trustless Bitcoin Vaults",
+      "authors": [
+        "Lukas Aumayr",
+        "Xinshu Dong",
+        "Runchao Han",
+        "Srivatsan Sridhar",
+        "David Tse",
+        "Nikhil Vanjani"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "为抵押类应用构造无需第三方的比特币金库与跨链取款，无 LLM，对象是 BTC 桥接与借贷。",
+      "abstract": "比特币（BTC）是最大的加密资产，但比特币链上可使用 BTC 的应用很少。让 BTC 变得有用的常规做法是桥接：在比特币链上存入 BTC，再在以太坊等链上铸造包装资产，以便进入智能合约应用。不幸的是，迄今所有比特币桥——包括最先进的 BitVM 桥——都要求用户信任运行桥的中心化方或委员会来取出存入的 BTC。本文观察到，桥虽然对应用无关，但大多数 BTC 持有者关心的是抵押类应用：BTC 作为抵押存入，只有存款人或一组已知对手方可以取出。针对这类应用，作者提出 Trustless Bitcoin Vaults 原语，保证存款人或对手方只需遵循应用智能合约的逻辑即可取出存入的 BTC，而无需信任任何第三方。作者给出实现该安全保证的协议，并把它实例化为借贷应用：存入的 BTC 作为抵押，在以太坊上的 Aave v4 智能合约中向一组清算人借款。主网实验显示，按当前比特币价格与费率，存款费用约 0.7 美元，取款至多 7.7 美元。该构造建立在近期比特币上高效证明验证进展之上。",
+      "abstractEn": "Bitcoin (BTC) is the largest crypto asset, yet the Bitcoin blockchain offers few applications in which BTC can be used. A standard approach to make BTC useful is bridging: BTC is deposited on the Bitcoin chain and a wrapped asset is minted on a chain such as Ethereum, where it can be used in smart contract applications. Unfortunately, all Bitcoin bridges to date require trust assumptions on a centralized party or a committee running the bridge to enable withdrawals of the deposited BTC, including state-of-the-art BitVM bridges. In this paper, we observe that while bridges are application-agnostic, most BTC holders are interested in collateral-based applications, where BTC is deposited as collateral, and only the depositor or a set of known counterparties can withdraw the asset. For this class of applications, we propose a primitive, Trustless Bitcoin Vaults, that guarantees that the BTC depositor or the counterparties can withdraw the deposited BTC following only the logic of the application smart contract without trusting any third party. We present a protocol that achieves the security guarantees of this primitive and instantiate it for a lending application where the deposited BTC is used as collateral to borrow against a set of liquidators on the Aave v4 smart contracts on Ethereum. Our mainnet experiments show that at the current Bitcoin price and fee rate, a deposit costs about $0.7 in fees while a withdrawal costs at most $7.7. Our construction is built on recent advances in efficient proof verification for Bitcoin.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链桥",
+        "比特币",
+        "金库",
+        "抵押借贷"
+      ],
+      "url": "https://eprint.iacr.org/2026/2466",
+      "pdf": "https://eprint.iacr.org/2026/2466.pdf"
+    },
+    {
+      "id": "2610.14453",
+      "title": "SecReason: Vulnerability Detection and In-Stream Self-Repair for LLM Code Generation",
+      "authors": [
+        "Ruidong Han",
+        "Zhensu Sun",
+        "Chengyan Ma",
+        "Yuqing Niu",
+        "Siqi Ma",
+        "David Lo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在生成过程中扫描并就地修复 LLM 写出的漏洞代码，使用 LLM，对象是通用代码生成。",
+      "abstract": "大语言模型可能在生成代码中引入安全漏洞；当验证只关注功能正确性时，这些漏洞可能进入生产。现有防御作用在生成前、生成中或生成后，但没有一种在生成过程中检查代码。安全提示和检索到的安全知识发生在任何代码出现之前；约束解码限制 token 选择却不能引导修复；事后修复必须重新生成整段回复。推理型 LLM 会在流式思维链早期起草代码，在这段交付前窗口里，代码只存在于推理流内部。本文提出 SecReason，一种监视该窗口的流内防御。双轨增量扫描应用安全规则：每写出一条语句就检查，并在累积代码上追踪数据流。当规则触发时，SecReason 中断生成、插入流内警告并恢复解码，使模型在同一条推理轨迹内修复草稿，而无需重写整段回复。在无辅助生成会引入漏洞的任务上，SecReason 把同时交付安全且功能正确代码的运行比例，从低于 15% 提升到 CWEval 与 SecCodeBench 上的 72.8%–98.1%。它比事后修复消耗更少 token；当安全规则在安全代码上误报时，也能限制错误警告带来的功能回退。",
+      "abstractEn": "Large language models (LLMs) may introduce security vulnerabilities into generated code, which can persist into production when verification focuses on functional correctness. Existing defenses act before, during, or after generation, but none inspects the code during generation. Security prompts and retrieved security knowledge act before any code exists, constrained decoding limits token choices but cannot guide repair, and post-hoc repair must regenerate the full response. Reasoning LLMs draft code early in their streamed chain of thought, and in this pre-delivery window the code exists only inside the reasoning stream. We present SecReason, an in-stream defense that monitors this window. Dual-track incremental scanning applies security rules, checking each statement as it is emitted and tracing dataflows across the accumulated code. When a security rule fires, SecReason interrupts generation, inserts an in-stream warning, and resumes decoding, so the model repairs the draft within the same reasoning trace without regenerating the full response. On tasks where unassisted generation introduces vulnerabilities, SecReason raises the share of runs delivering secure and functionally correct code from below 15% to 72.8%–98.1% on CWEval and SecCodeBench. SecReason consumes fewer tokens than post-hoc repair, and when security rules misfire on secure code, it limits the functional regressions from false warnings.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全代码生成",
+        "流内修复",
+        "漏洞检测",
+        "数据流"
+      ],
+      "url": "https://arxiv.org/abs/2610.14453",
+      "pdf": "https://arxiv.org/pdf/2610.14453"
+    }
+  ]
+}
