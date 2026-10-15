@@ -1,0 +1,250 @@
+{
+  "date": "2026-10-15",
+  "papers": [
+    {
+      "id": "2610.20245",
+      "title": "P2Patch: Exploit-Guided Vulnerability Repair",
+      "authors": [
+        "Mohsen Iranmanesh",
+        "Sina Moradi Sabet",
+        "Sina Marefat",
+        "Ali Javidi Ghasr",
+        "Maxime Newman Nereyabagabo",
+        "Kousha Amouzesh",
+        "Jaivir Malhi",
+        "Vinci Velasco",
+        "Alex Chung",
+        "Mohammad A. Tayebi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用对抗式 LLM 代理循环修漏洞并再打一遍，对象是 C/C++ 与 Java 的 CVE。",
+      "abstract": "大语言模型正越来越多地作为自动程序修复代理，通过多步推理和工具调用给软件漏洞打补丁。这些系统通常用同一份证据来构造并验证补丁，例如静态告警、sanitizer 轨迹、已公布利用或测试套件。因此，补丁只要挡住这一条证据，就会看起来成功，但对同一漏洞的变体仍可能可打。本文提出 P2Patch，把每次补丁都当成新的攻击目标。系统从规范化后的漏洞发现出发：利用代理构造可复现的漏洞证明（PoV），修补代理修复程序，利用代理再对修补后的程序寻找另一条同一漏洞的利用。每次成功的利用都会变成永久的修复要求，最终补丁必须挡住修补过程中积累的全部 PoV；构造阶段的 PoV 与留出评估预言严格分开。在 101 个 C/C++ 与 Java CVE 对象上，这种对抗循环在补丁已经挡住原始构造期 PoV 之后，仍有 41% 的运行能再打出一条已确认的不同利用。相对用同一发现做单次修复的 Claude Code，P2Patch 把留出评估上的 fix-closed 覆盖从 78.1% 提到 84.7%，把 beyond-upstream 覆盖从 42.1% 提到 62.5%。在同一套留出预言下，它认证挡住的攻击路径也多于近期最强的代理式修复系统。结果表明，对抗测试和独立安全预言能暴露一次性验证漏掉的修复缺口。",
+      "abstractEn": "Large language models are increasingly deployed as autonomous agents for automated program repair, patching software vulnerabilities through multi-step reasoning and tool use. Yet these systems typically validate a patch against the same evidence used to construct it -- a static alert, sanitizer trace, published exploit, or test suite. A patch that blocks that one piece of evidence can therefore look successful while remaining vulnerable to the same vulnerability with some variation. We present P2Patch, a generative adversarial repair system that treats each patch as a new attack target. Starting from a normalized vulnerability finding, an exploitation agent constructs a reproducing proof of vulnerability (PoV), a patching agent repairs the program, and the exploitation agent then attacks the patched program for a distinct same-vulnerability exploit. Every successful exploit becomes a permanent repair requirement, and the final patch must block all PoVs accumulated during the patching process, with construction-time PoVs kept strictly separate from held-out evaluation oracles. Across 101 C/C++ and Java CVE subjects, this adversarial loop surfaces a distinct confirmed exploit in 41% of runs after the patch has already blocked its original construction-time PoV. Against single-pass repair from the same finding using Claude Code, P2Patch raises held-out fix-closed coverage from 78.1% to 84.7% and beyond-upstream coverage from 42.1% to 62.5%. Under the same held-out oracles, it also certifies more attack paths as blocked than recent state-of-the-art agentic repair systems on overlapping subjects. These results show that adversarial testing and independent security oracles expose repair gaps that one-shot validation misses.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "代理",
+        "对抗验证",
+        "CVE"
+      ],
+      "url": "https://arxiv.org/abs/2610.20245",
+      "pdf": "https://arxiv.org/pdf/2610.20245"
+    },
+    {
+      "id": "2610.19566",
+      "title": "Mission (Im)Possible: Towards Autonomous Discovery of Autopilot Logic Flaws in Open-Source Drone Frameworks",
+      "authors": [
+        "Ziyi Liang",
+        "Zichuan Li",
+        "Bin Yuan",
+        "Deqing Zou",
+        "Luyi Xing"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多代理 LLM 结合静态分析与动态测试发现自动驾驶逻辑缺陷，对象是 PX4 与 ArduPilot。",
+      "abstract": "自主无人机越来越多用于安全关键任务，但自动驾驶软件里仍可能有不容易发现的逻辑缺陷，导致不安全行为。这类缺陷往往依赖跨模块、指令与运行时状态的语义关系，很少以崩溃或可检测故障的形式出现，现有技术很难找到。作者观察到，在配上领域知识和仔细构造的上下文后，大语言模型能理解自动驾驶系统的高层语义，适合用来发现逻辑缺陷。但模型受上下文限制，也容易偏向训练数据里常见的漏洞类型，而逻辑缺陷通常需要更高层的语义缺陷判定。为此，本文提出 Impossible Mission Finder（IMF），这是一个结合静态分析、动态执行和日志分析的多代理系统，用于自动识别、测试并验证自主载具中的逻辑缺陷。IMF 主要包含三个 LLM 代理：审计代理基于程序切片提出逻辑缺陷假设，测试代理为每个候选编写并执行测试，日志分析代理对照假设验证执行日志。这样可以按案例动态验证缺陷判定，适合发现没有统一模式的逻辑缺陷。作者在 PX4 与 ArduPilot 两个开源自动驾驶系统上评估 IMF，发现 105 个此前未知的逻辑缺陷，可导致任务中断失败、无效动作、进入禁飞区等不安全行为。",
+      "abstractEn": "Autonomous drones are increasingly deployed in safety-critical tasks, yet their autopilot software can still contain subtle logic flaws that lead to unsafe behaviors. These flaws are difficult to discover with existing techniques because they often depend on semantic relationships across modules, commands, and runtime state, and rarely manifest as crashes or detectable failures. With recent advances in LLMs, we observe that, when equipped with essential domain knowledge and carefully crafted context, LLMs demonstrate strong capabilities in understanding the high-level semantics of autopilot systems, making them suitable for logic flaw discovery. However, LLMs are limited by their context and can be biased to the vulnerabilities frequently occurs in training dataset, while logic flaws often require higher-level semantic bug oracles to identify their existence. To bridge the gap, we present Impossible Mission Finder (IMF), a multi-agent system combining static analysis, dynamic execution and log analysis, that supports fully automated identify, test, and validate logic flaws in autonomous vehicles. IMF primarily contains three LLM agents, it first uses the auditor agent to propose logic flaw hypothesis based on carefully-crafted program slicing, then it launches tester agents to write and execute test cases for each candidate, and finally it spawns the log analyzer agent to validate the execution log against the flaw hypothesis. This enables IMF dynamically validate bug oracles in a case-by-case manner, making it suitable for discovering logic flaws that do not have a unified pattern. We evaluated IMF on two widely used open-source autopilot systems, PX4 and Ardupilot, leading to 105 previously unknown logic flaws, that can cause unsafe behaviors including mission interruption failures, invalid actions, entering into restricted fly zones etc.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "逻辑缺陷",
+        "多代理",
+        "无人机",
+        "固件"
+      ],
+      "url": "https://arxiv.org/abs/2610.19566",
+      "pdf": "https://arxiv.org/pdf/2610.19566"
+    },
+    {
+      "id": "2610.15729",
+      "title": "LLM-based Code Auditing by Inferring and Evaluating Developer Assumptions",
+      "authors": [
+        "Junming Liu",
+        "Marcel Böhme"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 LLM 推断开发者安全假设并检查其是否被违反，对象是通用软件代码审计。",
+      "abstract": "看到空指针检查时，可以知道开发者认为该指针可能未初始化；若同一指针随后未检查就使用，就可能违反这一判断，最终成为缺陷。本文把这种基于信念的程序分析用于漏洞检测。例如，认证函数对错误用户名和错误密码返回相同错误时，审计人员可推断开发者认为这两种情况不可区分，以缓解用户枚举攻击。这一信念符合常见安全实践。但若某次函数调用使两种情况的响应时间不同，就与该信念冲突，从而暴露语法分析工具容易漏掉的时序旁路。现有静态分析很难处理这类缺陷，因为它们需要能写成通用语法模式。基于信念的方法可以检测这类领域相关、高层语义安全缺陷。给定一个函数，方法 Creed 会推断开发者与安全相关的信念，评估每条信念是否合理，并导出其被违反的条件。与现有基于机器学习的漏洞检测不同，Creed 会解释根因、症状，以及问题可利用的条件。为处理评估中的上下文依赖，作者为基于解释的漏洞检测引入两项指标：召回衡量正确解释已知漏洞的能力，开销衡量审查报告的成本。在近期真实漏洞基准上，Creed 对语义与语法漏洞的检测都强于现有基于解释的工具，效果与审查成本的权衡最好。",
+      "abstractEn": "When we see a null pointer check, we know that the developer believes that the pointer may not be initialized. If the same pointer is later used without a null pointer check, we may consider this a violation of the developer's belief and ultimately a bug. We develop such a belief-guided program analysis for vulnerability detection (VD). For example, when an authentication function returns the same error for both, a wrong user name and a wrong password, an auditor may infer that the developer believes that both cases are indistinguishable, mitigating a user enumeration attack. This belief is reasonable, as it follows standard security practice. Yet, a function call inducing a difference in response time for both cases, contradicts this belief. This contradiction uncovers a timing side-channel that syntactic analysis tools would miss. Existing static analysis tools struggle with this type of flaw because they require them to be expressible by general, syntactic patterns. Our belief-guided approach detects such domain-specific, high-level semantic security flaws that remain elusive. Given a function, our approach, Creed, infers the developer's security-related beliefs, evaluates how reasonable each one is, and derives the conditions under which it is violated. In contrast to existing ML-based VD techniques, Creed explains the root cause, the symptoms, and the conditions under which each issue is exploitable. To address the context-dependency problem in the evaluation, we introduce two measures for explanation-based VD: recall quantifies how effectively an approach correctly explains a known vulnerability, and overhead quantifies the effort of inspecting its reports. On a recent real-world vulnerability benchmark, Creed detects both semantic and syntactic vulnerabilities more effectively than existing explanation-based VD tools, achieving the best effectiveness-effort trade-off.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "代码审计",
+        "漏洞检测",
+        "语义缺陷",
+        "假设推断"
+      ],
+      "url": "https://arxiv.org/abs/2610.15729",
+      "pdf": "https://arxiv.org/pdf/2610.15729"
+    },
+    {
+      "id": "2610.14968",
+      "title": "SEEK: Agentic Knowledge Graph Retrieval for Secure Code Generation",
+      "authors": [
+        "Varun Gadey",
+        "Markus Tohn",
+        "Lichao Wu",
+        "Ahmad-Reza Sadeghi",
+        "Alexandra Dmitrienko"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用代理式知识图谱检索辅助安全代码生成，对象是 C、C++ 与 Python。",
+      "abstract": "大语言模型可以生成功能正确的代码，同时引入可被利用的安全弱点，尤其是在开发者只写功能、不写安全要求时。近期最强方法用外部安全知识缓解这一问题，但大多在彼此独立的材料上做扁平的相似度检索，在没有直接匹配时很难推断相关漏洞空间并取到有针对性的知识。本文提出 SEEK，这是一个面向安全代码生成的代理式 Graph RAG 框架。它以 CWE 分类为骨架构造安全知识图谱，并注入整理过的真实 CVE 漏洞–修复实例。推理时，规划代理预测开发者查询可能对应的 CWE，据此把检索限制在分类体系的相关区域，再做确定性的多面候选排序；选择代理随后校验预测弱点与检索结果，再生成代码。作者在分布外设置下，用 CodeGuard+ 与 CyberSecEval 评估五个开源 LLM，覆盖 C、C++ 与 Python。SEEK 在 CodeGuard+ 上达到最高 SecurePass@1（77.45%），在 CyberSecEval 上达到最高合计 ICD 通过率（79.45%）。对 13 个没有直接关联漏洞–修复实例的未见 CWE 类型，SecurePass@1 为 85.2%，同时推理延迟仍可接受。",
+      "abstractEn": "Large Language Models (LLMs) can generate functionally correct code while introducing exploitable security weaknesses, particularly when developers specify functionality without explicit security requirements. Recent state-of-the-art approaches mitigate this problem using external security knowledge, but largely rely on flat similarity-based retrieval over independent artifacts, making it difficult to infer the relevant vulnerability space and retrieve targeted knowledge when direct matches are unavailable. We propose SEEK, an agentic Graph RAG framework for secure code generation that constructs a security knowledge graph using the Common Weakness Enumeration (CWE) taxonomy as its structural backbone and injects it with curated real-world CVE vulnerability-fix instances. At inference time, a Planner Agent predicts potential CWE weaknesses associated with the developer query, which guide Graph Scoping to restrict retrieval to relevant regions of the CWE taxonomy before deterministic multi-faceted candidate ranking. A Selection Agent subsequently validates the predicted weaknesses and retrieved candidates prior to code generation. Across five open-source LLMs, we evaluate SEEK in an out-of-distribution setting on CodeGuard+ and CyberSecEval, spanning C, C++, and Python. SEEK achieves the highest SecurePass@1 of 77.45% on CodeGuard+ and the highest aggregate ICD pass rate of 79.45% on CyberSecEval, surpassing prior approaches. Moreover, SEEK achieves 85.2% SecurePass@1 across 13 unseen CWE types with no directly linked vulnerability-fix instances, demonstrating strong generalizability, while maintaining acceptable inference latency costs.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全代码生成",
+        "知识图谱",
+        "CWE",
+        "代理"
+      ],
+      "url": "https://arxiv.org/abs/2610.14968",
+      "pdf": "https://arxiv.org/pdf/2610.14968"
+    },
+    {
+      "id": "2610.15995",
+      "title": "AutoSec-RAN: Specification-Grounded LLM Fine-Tuning for Automated Security Analysis of O-RAN",
+      "authors": [
+        "Anoop Mishra",
+        "Joshua Moore",
+        "Aly Sabri Abdalla",
+        "Vuk Marojevic"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用规范微调的 LLM 做 O-RAN 安全研判，对象是开放无线接入网前传攻击场景。",
+      "abstract": "本文提出 AutoSec-RAN，这是一个以规范为根据的大语言模型框架，用于开放无线接入网（O-RAN）测试中的自动安全研判。与依赖静态规则或需要原始抓包权限的方法不同，AutoSec-RAN 在 69 份 O-RAN、3GPP 及相关标准文档上分两阶段用 LoRA 微调 Mistral-7B-Instruct，并在同一规范索引上按需做检索增强。推理时模型只拿到调查员式问题和场景元数据块，模拟没有原始报文证据的自动分析员。作者在自建 5G/O-RAN 试验床上，用带标签的前传分布式拒绝服务重放场景做验证。Gemma-4-31B 评判模型相对由完整抓包与日志写成的参考答案，从忠实性、正确性和可操作性给分。AutoSec-RAN 在全部 313 条评估项上的平均总分是 0.713（限定五个受监督分类时为 0.755），超过 0.70 的报告阈值；若再掺入 BGE 余弦相似度，混合分为 0.778（仅监督类为 0.808）。框架在缓解与威胁模型推理上最强，在留出的攻击方向类上有明显缺口。结果表明，以规范为根据的 LoRA 微调再配合检索，可作为 AI 原生 O-RAN 自动安全验证的可行基础。",
+      "abstractEn": "This paper presents AutoSec-RAN, a specification-grounded large language model (LLM) framework for automated security triage of Open Radio Access Network (O-RAN) testing. Unlike approaches relying on static rule sets or privileged access to raw packet captures, AutoSec-RAN fine-tunes Mistral-7B-Instruct through two Low-Rank Adaptation (LoRA) stages over a curated corpus of 69 O-RAN, 3GPP, and adjacent standards documents, then selectively augments inference with retrieval-augmented generation (RAG) over the same specification index. At inference, the model receives only an investigator-style question and a scenario metadata block, simulating an automated analyst operating without raw packet evidence. AutoSec-RAN is validated on a purpose-built 5G/O-RAN testbed across labeled fronthaul distributed denial of service replay scenarios. A Gemma-4-31B judge LLM scores each candidate's answer on faithfulness, correctness, and actionability relative to a reference authored from full packet capture and log evidence. AutoSec-RAN achieves a mean judge overall score of 0.713 across all 313 evaluation items (0.755 restricted to the five supervised taxonomy classes), clearing the 0.70 reporting threshold, and a blended score of 0.778 (0.808 supervised-only) when cosine similarity over Beijing Academy of Artificial Intelligence (BAAI) General Embedding (BGE) is incorporated as a secondary semantic signal. The framework performs strongest on mitigation and threat-model reasoning (with a mean overall of 0.849 and 0.848, respectively) and identifies a measurable gap on the held-out attack-direction class (0.515), a controlled result that exposes a specific training data requirement. These results establish specification-grounded LoRA fine-tuning combined with RAG retrieval as a viable foundation for automated security validation of AI-native O-RAN.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全研判",
+        "O-RAN",
+        "规范检索",
+        "告警"
+      ],
+      "url": "https://arxiv.org/abs/2610.15995",
+      "pdf": "https://arxiv.org/pdf/2610.15995"
+    },
+    {
+      "id": "2610.17837",
+      "title": "ProtoArena: Can AI Agents Discover and Exploit Real-World Cross-Component Protocol Vulnerabilities?",
+      "authors": [
+        "Fasheng Miao",
+        "Zhaoyu Hu",
+        "Xiang Li",
+        "Changqing An",
+        "Jiutian Zeng",
+        "Longtao Huang",
+        "Haixin Duan",
+        "Jilong Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 LLM 代理在多组件协议环境中发现并利用漏洞，对象是真实协议与应用栈。",
+      "abstract": "大语言模型代理越来越多用于漏洞分析，但现有基准对依赖网络协议组件交互的利用覆盖有限。这类漏洞来自参与方在报文解释、时序、状态或信任假设上的不一致。本文提出 ProtoArena，这是一个黑盒、多组件、动态基准，包含 80 个跨组件漏洞利用环境，覆盖 11 个协议与应用领域和 7 类攻击。任务主要依据已发表的协议攻击机制。代理通过有范围的接口与运行中的系统交互，在没有目标源码的情况下完成安全效果目标。三个信息级别分别评估有引导的复现、带机制与拓扑上下文的利用，以及面向效果的黑盒探索。混合验证器把基于规则的检查与对独立采集流量和日志的 LLM 审查结合起来。作者评估了五个大语言模型。Claude Opus 4.8 成功率最高：L1 引导下 48.8%，面向效果的黑盒 L3 下 12.5%。在单独的 DNSBomb 优化实验中，其下游响应相对平均查询输入的字节率峰值超过 17.1 万倍。结果表明，代理能在部分跨组件环境中打出可验证的利用效果，但在信息有限的黑盒设置下成功率仍低，并随领域和攻击类别变化。全部实验使用受控、明确授权的目标，不测试生产系统，也不披露此前未知的漏洞。",
+      "abstractEn": "Large language model (LLM) agents are increasingly used for vulnerability analysis, yet existing benchmarks provide limited coverage of exploitation that depends on interactions among network protocol components. Such vulnerabilities arise from inconsistencies in message interpretation, timing, state, or trust assumptions across participants. We introduce ProtoArena, a black-box, multi-component, dynamic benchmark with 80 cross-component vulnerability-exploitation environments spanning 11 protocol and application domains and 7 attack categories. Tasks are primarily informed by published protocol-attack mechanisms. Agents interact with running systems through scoped interfaces to achieve security-effect objectives without target source code. Three information levels assess guided reproduction, exploitation with mechanism and topology context, and effect-directed black-box exploration. A hybrid verifier combines rule-based checks with LLM review of independently collected traffic and logs. We evaluate five LLMs. Claude Opus 4.8 achieves the highest observed success rates: 48.8% under L1 guidance and 12.5% under effect-directed black-box L3. In a separate DNSBomb optimization experiment, it achieves a peak downstream-response to average query-input byte-rate ratio exceeding 171,000 times. The results show that agents can achieve verifiable exploitation effects in some cross-component environments, but success with limited black-box information remains low and varies across domains and attack categories. All experiments use controlled, explicitly authorized targets; they do not test production systems or disclose previously unknown vulnerabilities.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "协议漏洞",
+        "代理",
+        "漏洞利用",
+        "评测"
+      ],
+      "url": "https://arxiv.org/abs/2610.17837",
+      "pdf": "https://arxiv.org/pdf/2610.17837"
+    },
+    {
+      "id": "2610.15482",
+      "title": "Security in LLM-Assisted Coding: A Systematic Literature Review",
+      "authors": [
+        "Liang Yuan",
+        "Maryam Khanian Najafabadi",
+        "Mashud Rana",
+        "Varvara Vetrova"
+      ],
+      "year": 2026,
+      "venue": "ACM Computing Surveys",
+      "abstractOneWord": "系统综述大模型辅助编程中的安全风险、补丁质量与评测污染，对象是 LLM 生成的软件代码。",
+      "abstract": "大语言模型加快了软件开发，但也带来严重的安全漏洞。这篇系统综述考察自动编码中的安全风险、基准局限，以及人类开发者的作用。结论是：由于训练数据偏差，模型经常生成不安全代码和有问题的补丁；模型本身也容易被直接攻击。现有评估方法存在数据污染，也缺少稳健的安全指标。因此人工把关仍然必要。更安全地接入自动化，需要更重视安全的模型结构、更强的安全专用基准，以及更有效的人机协作框架，以降低这些系统性风险。",
+      "abstractEn": "Large Language Models accelerate software development but introduce severe security vulnerabilities. This systematic review investigates security risks in automated coding, benchmark limitations, and the role of human developers. Findings indicate that models frequently generate insecure code and faulty patches due to training data biases. Additionally, the models themselves are susceptible to direct attacks. Current evaluation methods suffer from data contamination and lack robust security metrics. Consequently, human oversight remains essential. Safer integration of automation will require more security-aware model architectures, stronger security-specific benchmarks, and more effective human-AI collaboration frameworks to mitigate these systemic risks.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "文献综述",
+        "安全代码生成",
+        "评测污染",
+        "人工把关"
+      ],
+      "url": "https://arxiv.org/abs/2610.15482",
+      "pdf": "https://arxiv.org/pdf/2610.15482"
+    },
+    {
+      "id": "2610.18745",
+      "title": "SolBehave: Evaluating the Behavioural Correctness of LLM-Generated Smart Contracts",
+      "authors": [
+        "Giovanni Pio Delvecchio",
+        "Stefano Fantazzini",
+        "Giacomo Frisoni",
+        "Gianluca Moro",
+        "Lorenzo Bacchiani",
+        "Mario Bravetti",
+        "Thomas Troels Hildebrandt"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用差分模糊与交易回放评估大模型生成合约是否行为正确，对象是 Solidity 智能合约。",
+      "abstract": "大语言模型越来越多地生成 Solidity 智能合约；合约一旦部署就无法修补，一个潜伏缺陷会变成永久可利用问题。现有评估大多只问生成代码能否编译。本文提出 SolBehave，在规模上评估模型生成合约的正确性，而不只做临时单测。作者在 250 个真实、可复现的以太坊合约上，用三类互补测试衡量行为保真：差分模糊、历史交易回放，以及由动态条件响应（DCR）图引导的合成交易回放，用来枚举合法函数调用序列。差分模糊在自动生成输入上比较每个生成函数与原函数；历史回放在链上真实交易上比较整个合约；DCR 引导回放则在符合预期用法的调用序列上比较，包括链上从未出现过的顺序。作者在一轮自动修复后评估七个开源权重模型。编译成功率从 26.4% 到 92.7%，但在差分模糊下，所有能编译的生成函数体中只有 31.4% 与原函数等价。合约级分叉是常态：七个模型里有六个，能编译的生成合约中有 13% 到 31% 在历史回放下偏离原文，13% 到 44% 在 DCR 引导回放下偏离；只有 Gemma-4-31B 在两项上都低于 3%。因此编译是正确性的必要条件，远不是充分条件。",
+      "abstractEn": "Large language models increasingly generate Solidity smart contracts that, once deployed, can never be patched, making a single latent fault permanent and exploitable. Yet current evaluations mostly ask only whether generated code compiles. We introduce SolBehave, a benchmark for evaluating the correctness of model-generated contracts at scale, moving beyond ad hoc unit tests. Across 250 real, reproducible Ethereum contracts, we apply three complementary tests of behavioural fidelity: differential fuzzing, historical-transaction replay, and, as our core contribution, synthetic-transaction replay guided by a Dynamic Condition Response (DCR) graph that enumerates the space of legitimate function-call sequences. Differential fuzzing compares each generated function with the original on automatically generated inputs; historical replay compares the whole contract on the transactions it actually received on-chain; DCR-guided replay compares it on sequences of calls that follow its intended usage, including orderings that never occurred on-chain. We evaluate seven state-of-the-art open-weight models after one round of automated repair. Compilation success ranges from 26.4% to 92.7%, but under differential fuzzing only 31.4% of all generated function bodies that compile, pooled over models and samples, are equivalent to the original. Divergence at the contract level is the norm rather than the exception: for six of the seven models, between 13% and 31% of the generated contracts that compile diverge from the original under historical replay, and between 13% and 44% under DCR-guided replay; only Gemma-4-31B stays below 3% on both. Compilation is therefore a necessary condition for correctness and far from a sufficient one.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "代码生成",
+        "差分模糊",
+        "行为正确性"
+      ],
+      "url": "https://arxiv.org/abs/2610.18745",
+      "pdf": "https://arxiv.org/pdf/2610.18745"
+    },
+    {
+      "id": "2026-2484",
+      "title": "Unveiling the Cost: Gas-Efficient Output-Private Distributed VRFs on Ethereum",
+      "authors": [
+        "Ahmet Ramazan Ağırtaş",
+        "Arda Buğra Özer"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在以太坊上实现并比较输出隐私分布式 VRF 的链上 gas 成本，无 LLM，对象是以太坊随机数协议。",
+      "abstract": "无偏且可公开验证的随机数是 Web3 安全的基础组件。输出隐私的分布式可验证随机函数（DVRF）进一步保证：在请求者选择揭示之前，生成的随机数对链上观察者保持隐藏。目前有两种构造在不同代数设定下实现输出隐私：FlexiRand 的链上验证依赖双线性配对；IcyVeil 是无配对设计，验证可化成常数次群运算。虽然无配对验证在以太坊虚拟机上应当更便宜是常见看法，但两种方案的输出隐私随机数链上成本此前从未实测。本文给出两者的首个 EVM 实现。两个验证器由同一协调合约提供，实现共同的盲化–求值–预验证生命周期，因此测到的差异只来自验证算术。隔离验证时，无配对方案执行 gas 便宜 57%（51,561 对 118,541）；在其余阶段共享的完整请求生命周期上，优势约 11%。链上节省对应链下成本：无配对方案的分布式求值在委员会配置 (n, t) 上大约需要 2.5 到 8.2 倍的合计计算量，这一差距可被以太坊出块时间吸收，委员会并发执行后还会缩小。作者同时报告这两条轴，把一次性分布式密钥生成成本与 IcyVeil 的可消耗预处理分开，并解释方向相反的链上与链下比值。全部合约、测试装置和原始测量公开可用。",
+      "abstractEn": "Unbiased and publicly verifiable randomness is a fundamental component of Web3 security, and output-private distributed verifiable random functions (DVRFs) extend this guarantee by keeping the generated randomness hidden from chain observers until the requester chooses to reveal it. Two constructions currently realize output privacy under different algebraic regimes: FlexiRand, whose on-chain verification rests on bilinear pairings, and IcyVeil, a pairing-free design whose verification reduces to a constant number of group operations. While it is folklore that pairing-free verification should be cheaper on the Ethereum Virtual Machine (EVM), the actual on-chain cost of output-private randomness has never been measured for either scheme. In this paper, we present the first EVM implementations of both constructions. Both verifiers are served by a single coordinator contract realizing the common blind-evaluate-pre-verify lifecycle, so that every measured difference is attributable solely to the verification arithmetic. The isolated verification is 57% cheaper in execution gas for the pairing-free scheme (51,561 against 118,541 gas); over the full request lifecycle, whose remaining stages are shared, the advantage is about 11%. This on-chain saving comes with a cost off chain: the pairing-free scheme's distributed evaluation requires roughly 2.5 to 8.2 times more aggregate committee compute across committee configurations (n, t), a gap absorbed comfortably by Ethereum's block time and one that narrows further once the committee executes concurrently. We report both axes, separating one-time distributed key generation (DKG) cost from IcyVeil's consumable preprocessing, and reconcile the on-chain and off-chain ratios, which point in opposite directions. All contracts, harnesses, and raw measurements are publicly available.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "VRF",
+        "以太坊",
+        "链上验证",
+        "随机数"
+      ],
+      "url": "https://eprint.iacr.org/2026/2484",
+      "pdf": "https://eprint.iacr.org/2026/2484.pdf"
+    }
+  ]
+}
