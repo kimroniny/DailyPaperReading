@@ -1,0 +1,254 @@
+{
+  "date": "2026-10-16",
+  "papers": [
+    {
+      "id": "2610.21309",
+      "title": "Combining LLM and Dynamic Analysis for Universal Testing of Static Application Security Testing Tools",
+      "authors": [
+        "Huaien Zhang",
+        "Yu Pei",
+        "Hao Chen",
+        "Shin Hwei Tan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大语言模型加动态反馈测 SAST 工具自身的故障，对象是多语言静态应用安全测试工具。",
+      "abstract": "静态应用安全测试（SAST）工具用来发现潜在软件漏洞，但工具自身也有故障，会损害可靠性和可用性。自动化测试可以应对这些问题，但现有技术程序变换种类有限，也缺少核验生成变体的机制，导致故障发现变少、人工成本变高。本文提出 LLM4SAST，这是第一个用大语言模型和动态反馈、可通用于检测 SAST 工具故障的框架。核心想法是借助大语言模型理解并变换多种编程语言的代码。作者设计了带变换的蜕变关系来指导变体生成，用大语言模型生成满足这些关系的多语言变体。为减少错误变体并识别独特故障，提出两项启发式：由动态反馈驱动的选择，以及基于程序差异的聚类。对每条蜕变关系，以报告为中心的测试预言通过差分分析种子程序及其变体的 SAST 报告，找出测试失败的变体并定位底层故障。LLM4SAST 在六个 SAST 工具上发现 66 个独特故障，向开发者报告后有 32 个得到确认或修复。所提启发式去掉了 47.8% 的误报；与现有方法相比，LLM4SAST 发现的故障约为 3.4 倍，所用变体仅为 39.8%。",
+      "abstractEn": "Static application security testing (SAST) tools help detect potential software vulnerabilities, but they themselves contain faults undermining reliability and usability. Automated testing can address these issues, yet current techniques suffer from limited program transformation diversity and lack mechanisms to verify generated variants, leading to reduced fault detection and high manual effort. We present LLM4SAST, the first universal framework detecting faults in SAST tools using large language models and dynamic feedback. Our key insight is leveraging LLMs to understand and transform code in diverse programming languages. We design novel metamorphic relations with transformations to guide variant generation, using an LLM to produce multi-language variants that satisfy these relations. To reduce erroneous variants and identify unique faults, we propose two heuristics: dynamic-feedback-driven selection and program-differencing-based clustering. For each metamorphic relation, a report-centric test oracle detects variants that fail tests and identifies underlying faults by differentially analyzing SAST reports of the seed program and its variants. LLM4SAST identified 66 unique faults across six SAST tools, with 32 confirmed or fixed after being reported to developers, demonstrating effectiveness. The proposed heuristics eliminate 47.8% of false positives, and LLM4SAST detects 3.4 times more faults while requiring only 39.8% of the variants compared to existing approaches.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SAST",
+        "大语言模型",
+        "蜕变测试",
+        "漏洞检测"
+      ],
+      "url": "https://arxiv.org/abs/2610.21309",
+      "pdf": "https://arxiv.org/pdf/2610.21309"
+    },
+    {
+      "id": "2610.21373",
+      "title": "Evaluating and Improving Static Application Security Testing Tools for Rust",
+      "authors": [
+        "Huaien Zhang",
+        "Zhengjie Zhao",
+        "Yu Pei",
+        "Tian Dong",
+        "Minxue Pan",
+        "Shin Hwei Tan",
+        "Hao Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大语言模型从 Rust 规范生成语义保持变换来测 SAST，对象是 Rust 程序与 Rust 静态应用安全测试工具。",
+      "abstract": "近年来 Rust 因内存与并发安全方面的强保证，成为流行的系统编程语言，不少系统软件已用 Rust 重写。但因 unsafe 代码以及对复杂机制的误解，Rust 程序仍可能出现常见的内存与并发漏洞。开发者常依赖静态应用安全测试（SAST）工具来缓解这类问题，而现有 Rust SAST 工具在真实漏洞上的效果仍缺少系统评估。本文先用真实 Rust 应用中的安全漏洞，对主流 Rust SAST 工具做实证评估，系统衡量其效果，找出常见弱点并分析原因。在此基础上提出 TRUST，这是一个由大语言模型辅助的自动化测试框架。TRUST 自动分析官方 Rust 参考文档，导出并实现语义保持变换，再用这些变换生成变异程序，以评估 Rust SAST 工具并发现其中的潜在故障。总体而言，TRUST 在六个常用 SAST 工具上揭示了 46 个故障，其中 17 个已得到确认。研究还给出十条实证发现和四条实践经验，为开发更有效、更稳健、更易维护的 Rust SAST 工具提供可操作建议。",
+      "abstractEn": "Rust has become a popular systems programming language in recent years because of its strong guarantees on memory and concurrency safety. Many types of system software have been re-implemented in Rust. However, Rust programs can still suffer from common memory and concurrency vulnerabilities due to unsafe code and misunderstandings of its complex mechanisms. To mitigate such vulnerabilities, developers often rely on static application security testing (SAST) tools. However, the effectiveness of existing Rust SAST tools on real-world vulnerabilities remains underexplored. In this paper, we first conduct an empirical evaluation of mainstream Rust SAST tools using security vulnerabilities identified in real-world Rust applications. We systematically assess their effectiveness, uncover common weaknesses, and analyze the root causes behind them. Motivated by the study, we propose TRUST, a large language model (LLM)-assisted automated testing framework. TRUST automatically analyzes the official Rust reference to derive and implement semantics-preserving transformations. It leverages these transformations to generate mutant programs for evaluating Rust SAST tools and uncovering potential faults within them. Overall, TRUST has revealed 46 faults across six popular SAST tools, 17 of which have been confirmed. In addition, our study yields ten empirical findings and four practical lessons that provide actionable guidance for developing more effective, robust, and maintainable Rust SAST tools.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Rust",
+        "SAST",
+        "大语言模型",
+        "内存安全"
+      ],
+      "url": "https://arxiv.org/abs/2610.21373",
+      "pdf": "https://arxiv.org/pdf/2610.21373"
+    },
+    {
+      "id": "2610.20902",
+      "title": "Thinking in Graphs: Neo4j-Backed Exploit-Chain Reasoning for LLM Penetration-Testing Agents",
+      "authors": [
+        "Joas Antonio dos Santos Barbosa"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把利用链推理外置到图数据库，给现成 LLM 渗透测试代理用，对象是 Active Directory 这类企业网。",
+      "abstract": "Claude Code、OpenAI Codex 这类 LLM 编码代理可以驱动渗透测试工具，但它们把一次交手当成上下文窗口里的扁平发现列表。攻击者是按图来想的：孤立的低危暴露一旦经凭证捕获、提权和横向移动串起来，就会变成严重问题。这一差距让人觉得 AI 代理不能真正做利用链；作者认为这描述的是扁平上下文窗口，而不是模型本身。本文提出 ChainGraph：把利用链推理外置到 Neo4j 属性图，经 Model Context Protocol 接到现成代理上，不需要自制 harness。发现、攻击步骤、凭证、资产以及防篡改的证据回执都是带前置/后置条件边的类型化节点；JSON/Markdown 保存文档记忆，Neo4j 保存推理记忆。作者把五个操作员问题（下一步推断、入口到核心资产路径、组合严重性提升、证据出处、卡点识别）形式化为可复用的 Cypher 与 Graph Data Science 查询，并给出有别于单条发现本地严重性的链严重性分数。在按 GOAD 建模的合成多森林 Active Directory 交战中，三条单独评为中危的发现一旦接到森林根，就会变成严重；介数中心性标出最佳断链点。把每次决策限定在图查询结果上，而不是重读整场交战，按 token 代理计算可把推理载荷减少约 98%。作者给出面向 Claude Code 与 Codex 的可复现配置。结果是单次运行的示例测量，不是基准评测。",
+      "abstractEn": "LLM coding agents such as Claude Code and OpenAI Codex can drive penetration-testing tools, but they reason about an engagement as a flat list of findings in a context window. Attackers think in graphs: isolated low-severity exposures turn catastrophic once chained through credential capture, privilege escalation, and lateral movement. This gap feeds a common belief that AI agents cannot truly chain exploitation; we argue this describes the flat context window, not the model. We present ChainGraph, a pattern that externalizes exploit-chain reasoning into a Neo4j property graph wired to an off-the-shelf agent via the Model Context Protocol, no bespoke harness. Findings, attack steps, credentials, assets, and tamper-evident evidence receipts are typed nodes with pre/post-condition edges; JSON/Markdown holds documentary memory while Neo4j holds reasoning memory. We formalize five operator questions (next-step inference, entry-to-crown-jewel pathing, combined-severity promotion, evidence provenance, and chokepoint identification) as reusable Cypher and Graph Data Science queries, plus a chain-severity score distinct from per-finding local severity. On a synthetic multi-forest Active Directory engagement modeled on GOAD, in live Neo4j with GDS, three findings rated Medium in isolation become Critical once their path to the forest root is materialized, and betweenness centrality names the best chain break-points. Scoping each decision to a graph result rather than re-reading the engagement cut the reasoning payload by about 98% on a token proxy. We give a reproducible setup for Claude Code and Codex. Results are illustrative single-run measurements, not a benchmark.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "渗透测试",
+        "代理",
+        "利用链",
+        "Active Directory"
+      ],
+      "url": "https://arxiv.org/abs/2610.20902",
+      "pdf": "https://arxiv.org/pdf/2610.20902"
+    },
+    {
+      "id": "2610.22301",
+      "title": "My Credentials, Please: Detecting Filesystem Capability Laundering in MCP Servers at Scale",
+      "authors": [
+        "Zeqian Huang",
+        "Mingyue Tang",
+        "Aonan Guan",
+        "Qiming Sun",
+        "Pengzhou He"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "检测 MCP 服务器把本机文件系统能力洗到声明合同之外，对象是本地部署的 MCP 工具/服务器。",
+      "abstract": "Model Context Protocol（MCP）规定了 AI 代理如何调用外部工具。MCP 服务器通过由名称、描述和参数模式组成的声明合同暴露工具。在典型本地部署中，客户端批准一次工具调用后，底层服务器进程会获得较宽的本机文件系统权限，而不是被限制在声明操作上。本文研究由此产生的漏洞类别「文件系统能力洗白」：攻击者操纵参数，使工具访问声明合同和部署范围之外的敏感本机文件。作者从三层分析这一能力缺口：服务器类别筛查（L1）、按工具的合同分析（L2），以及可绕过的路径校验（L3）。设计了 MCP-FSD，用于编目 MCP 服务器、推断每个工具的最小权限边界、在边界外放置凭证夹具，并通过成对动态执行评估可利用性与沙箱约束。在来自九个注册表的 21,097 个 MCP 服务器中，4,806 个经分诊的服务器里有 787 个（16.4%）虽被归为非文件系统功能，仍表现出文件系统能力。动态三案例验证在所测沙箱策略下确认 150 个脆弱实例。协同披露产生 13 份安全公告，包括 Anthropic Git MCP Server 中的两个 CVE。",
+      "abstractEn": "The Model Context Protocol (MCP) standardizes how AI agents invoke external tools. MCP servers expose tools through a declared contract consisting of a name, description, and argument schema. In typical local deployments, client-side approval of a tool call grants the underlying server process broad host filesystem permissions rather than restricting it to the declared operation. We study the resulting vulnerability class, filesystem capability laundering, where attacker-steered arguments cause a tool to access sensitive host files outside its declared contract and deployment scope. We analyze this capability gap across three layers: server-category screening (L1), per-tool contract analysis (L2), and bypassable path-validation checks (L3). We design MCP-FSD to catalog MCP servers, infer least-privilege boundaries per tool, plant credential fixtures outside those boundaries, and evaluate exploitability and sandbox containment via paired dynamic execution. Across 21,097 MCP servers from nine registries, 787 of 4,806 triaged servers (16.4%) exhibit filesystem capabilities despite non-filesystem functional classifications. Dynamic three-case validation confirms 150 vulnerable instances under tested sandbox policies. Coordinated disclosure yielded 13 security advisories, including two CVEs in Anthropic's Git MCP Server.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MCP",
+        "能力洗白",
+        "代理工具",
+        "最小权限"
+      ],
+      "url": "https://arxiv.org/abs/2610.22301",
+      "pdf": "https://arxiv.org/pdf/2610.22301"
+    },
+    {
+      "id": "2610.20952",
+      "title": "Does Client Diversity Protect the Lightning Network? Evidence from the 2026 Core Lightning Shutdown",
+      "authors": [
+        "Saurabh Kumar"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 2026 年 Core Lightning 停机事件检验客户端多样性是否保护闪电网络，无大语言模型。",
+      "abstract": "客户端多样性常被说成闪电网络对抗单一实现漏洞的防线，但 LND 仍运行 84% 的公开节点、持有 84% 的公开通道容量，这一份额自 2023 年以来几乎没变。本文用一次自然实验检验多样性到底带来什么。2026 年 8 月 26 日，各实现都在修安全问题期间，Core Lightning（CLN）维护者要求无法升级的运营者断开节点。基于 805 份每日 gossip 快照、132,360 次链上通道关闭，以及对照自报别名和各节点资金交易构建钱包校验过的客户端分类器，作者发现 22% 的 CLN 节点一夜离线，约为平常的十倍，多为 Tor 可达节点；五周后仍有三分之一离线。网络其余部分几乎未受影响。全部节点对的可达性下降 7.8 个百分点，94 个普通两日窗口中有 4 个跌幅更大，也只有 7 月一次 Tor 拒绝服务波次的一半；CLN 节点对之间则下降 24.5 个百分点，超过任何普通窗口。校准后的故障情景说明了为何能被遏制：冲击范围取决于故障是否到达枢纽，而不是运行故障软件的节点有多少。仅失去 ACINQ 的 Eclair 节点，给存活网络造成的可达性损失约为失去全部 619 个可路由 CLN 节点的四倍；少数客户端依赖 LND 做连通，规模与此相符；CLN 节点之间的互连其实高于随机。按节点计数的多样性统计会误导；真正该跟踪的是枢纽跑的是哪套软件。",
+      "abstractEn": "Client diversity is often cited as the Lightning Network's defence against a bug in any one implementation, yet LND runs 84% of public nodes and holds 84% of public channel capacity, a share that has barely moved since 2023. We test what diversity buys with a natural experiment. On 26 August 2026, amid security fixes in every implementation, Core Lightning (CLN) maintainers told operators who could not upgrade to disconnect their nodes. Using 805 daily gossip snapshots, 132,360 on-chain channel closes and a client classifier validated against self-identifying aliases and against the wallet that builds each node's funding transactions, we find that 22% of CLN nodes went dark overnight, ten times the usual rate, mostly Tor-reachable ones; a third were still dark five weeks later. The rest of the network barely noticed. Reachability among all node pairs fell by 7.8 percentage points, a loss exceeded in 4 of 94 ordinary two-day windows and half that of a Tor denial-of-service wave in July, while among CLN pairs it fell by 24.5 points, more than in any ordinary window. Calibrated failure scenarios explain the containment: the blast radius depends on whether a failure reaches the hubs, not on how many nodes run the failing software. Losing ACINQ's Eclair node alone costs the surviving network four times the reachability lost with all 619 routable CLN nodes, and minority clients' reliance on LND for connectivity is what their size implies; CLN nodes in fact peer with each other more than chance. Diversity statistics that count nodes mislead; the quantity to track is which software the hubs run.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "闪电网络",
+        "客户端多样性",
+        "支付通道",
+        "可用性"
+      ],
+      "url": "https://arxiv.org/abs/2610.20952",
+      "pdf": "https://arxiv.org/pdf/2610.20952"
+    },
+    {
+      "id": "2610.21526",
+      "title": "On the Robustness of Gossip Protocols in Modern Blockchains",
+      "authors": [
+        "Wenting Li",
+        "Jannik Albrecht",
+        "Frederik Armknecht",
+        "Ghassan Karame"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析以太坊、Polkadot 等现代区块链 committee 共识所用 gossip 协议在网络对抗下的鲁棒性，无大语言模型。",
+      "abstract": "以太坊、Polkadot 等现代平台如今在常达数百节点的大型验证者委员会上运行拜占庭容错共识。这种规模下，节点之间用完全图连接并不现实，系统往往以各种、且常是临时选定的 gossip 机制来传播消息。本文研究委员会制区块链中广泛部署的 gossip 协议，在现实网络对手下的鲁棒性。分析与大量实测都表明，实例化随机图时常用的图参数，并不足以保证足够多的诚实节点收到共识消息以形成现有协议所需的法定人数。据此，作者实证评估了比特币的 Erdős–Rényi（ER）图、Polkadot 的网格拓扑、以太坊的 GossipSub，以及 Solana 基于分块和树的传播。结果给出若干取舍：Solana 的动态树在良性环境下带宽效率高，但对自适应攻击脆弱；Polkadot 的网格鲁棒性强但带宽开销高；GossipSub 既省带宽又能抵抗自适应对手，却对参数选择很敏感；ER 图在鲁棒性与效率之间表现较好，例如在最多 5000 个节点的网络中，平均扇出超过 15 时。",
+      "abstractEn": "Modern platforms such as Ethereum and Polkadot nowadays execute Byzantine fault-tolerant consensus protocols over large validator committees, often comprising hundreds of nodes. At this scale, complete graph topologies for connecting nodes are impractical, leading systems to adopt various gossip mechanisms, often in an ad hoc manner. In this paper, we study the robustness of widely deployed gossip protocols used in committee-based blockchains against realistic network adversaries. We show, both analytically and through extensive empirical measurements, that the graph parameters commonly chosen to instantiate random graphs are insufficient to guarantee that enough honest nodes receive consensus messages for quorum formation in existing protocols. Motivated by this finding, we empirically assess the robustness of Bitcoin's Erdős-Rényi (ER) graphs, Polkadot's grid topology, Ethereum's GossipSub, and Solana's chunk- and tree-based disseminations. Our results reveal surprising tradeoffs: Solana's dynamic trees are bandwidth-efficient in benign settings but fragile under adaptive attacks; Polkadot's grid achieves strong robustness at the cost of high bandwidth overhead; GossipSub is both bandwidth-efficient and resilient to adaptive adversaries, yet highly sensitive to parameter choices; and ER graphs provide a strong robustness-efficiency tradeoff, e.g., when the (average) fanout degree exceeds 15 for networks up to 5000 nodes.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Gossip",
+        "共识",
+        "以太坊",
+        "网络对抗"
+      ],
+      "url": "https://arxiv.org/abs/2610.21526",
+      "pdf": "https://arxiv.org/pdf/2610.21526"
+    },
+    {
+      "id": "2026-2493",
+      "title": "Robust ECDSA Threshold Signing at Scale",
+      "authors": [
+        "Carsten Baum",
+        "Anders Dalskov"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出可扩展、可鲁棒的门限 ECDSA 签名协议，面向把一条链的共识桥接到另一条链，无大语言模型。",
+      "abstract": "本文给出一种高效、可扩展且鲁棒的门限 ECDSA 签名协议，面向 t≤(n-1)/3 的设定，适用于例如把一条区块链的共识桥接到另一条链。构造允许批量计算预处理材料，以便高效在线签名。协议基于（可验证）秘密分享的既有思路，但针对大量签名者的计算与通信做了优化。作者把高效批量分享（Fitzi & Hirt, PODC 2006）、随机性提取（Beerliová-Trubíniová & Hirt, TCC 2008）和份额打开（Damgård & Nielsen, CRYPTO 2007）与近期高效零知识证明（Attema & Cramer, CRYPTO 2020）结合起来。实现与实验评估表明，该协议对较大的参与方数量 n 仍然实用。",
+      "abstractEn": "This work presents an efficient, scalable, and robust threshold ECDSA signing protocol for the t≤ (n-1)/3 scenario, making it suitable for e.g., bridging consensus from one Blockchain to another. Our construction allows to batch-compute pre-processing material for efficient online signing. While our protocol is based on established ideas for (Verifiable) Secret Sharing, we optimize it to scale efficiently both in terms of computation and communication with a large number of signers. We therefore combine efficient batching techniques for sharing (Fitzi & Hirt, PODC 2006), randomness extraction (Beerliova-Trubiniova & Hirt, TCC 2008) and share opening (Damgård & Nielsen, CRYPTO 2007) with recent advances in efficient Zero-Knowledge proofs (Attema & Cramer, CRYPTO 2020). We implement and evaluate the protocol experimentally and show that it is practical for large number of parties n.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "ECDSA",
+        "跨链桥",
+        "MPC"
+      ],
+      "url": "https://eprint.iacr.org/2026/2493",
+      "pdf": "https://eprint.iacr.org/2026/2493.pdf"
+    },
+    {
+      "id": "2026-2495",
+      "title": "Issuer-Independent Decentralized Exchange for E-Cash",
+      "authors": [
+        "Roozbeh Sarenche",
+        "Omid Mirzamohammadi"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在区块链结算层上做发行方不参与单笔兑换的电子现金去中心化交易所，无大语言模型。",
+      "abstract": "尽管密码学进展已有数十年，电子现金（e-cash）仍主要停留在支付，缺少围绕加密货币建立的更广去中心化金融应用。作为拓宽应用层的一步，本文提出发行方无关的电子现金交易所：流动性提供者持有两种独立发行的电子现金库存，用户在两者之间交易，无需任一发行方参与单笔兑换。设计把区块链结算层与可兼容兑换的电子现金协议结合起来：前者自动执行兑换并使执行可公开验证。经典电子现金需要在两点上适配：支付必须能被交易所公开验证，以及公开执行带来的额外隐私风险必须处理。作者形式化这些新的隐私要求，并构造带公开可验证支付与聚合匿名再发行的紧凑电子现金实现。在所述密码学与发行方功能假设下，证明了所得兑换协议的安全与隐私性质。",
+      "abstractEn": "Despite decades of cryptographic advances, electronic cash (e-cash) remains largely confined to payments and lacks the broader decentralized financial applications built around cryptocurrencies. As a step toward broadening its application layer, we present an issuer-independent e-cash exchange in which a liquidity provider holds inventories of two independently issued e-cash currencies and users trade between them without requiring either issuer to participate in individual swaps. Our design combines a blockchain settlement layer, which automates the exchange and makes its execution publicly verifiable, with an exchange-compatible e-cash protocol. Classical e-cash must be adapted to this setting in two respects: payments must become publicly verifiable by the exchange, and the additional privacy risks created by public execution must be addressed. We formalize these new privacy requirements and construct a compact e-cash realization with publicly verifiable payments and aggregate anonymous reissue. We prove the security and privacy properties of the resulting exchange protocol under the stated cryptographic and issuer-functionality assumptions.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "电子现金",
+        "去中心化交易所",
+        "隐私",
+        "结算"
+      ],
+      "url": "https://eprint.iacr.org/2026/2495",
+      "pdf": "https://eprint.iacr.org/2026/2495.pdf"
+    },
+    {
+      "id": "2026-2468",
+      "title": "FlatMerkle: Logarithmic-Space Inclusion Proofs over a Single Linear Hash Stream",
+      "authors": [
+        "Sergio Demian Lerner"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在单条线性哈希流上做对数空间包含证明，用于比特币交易附件和乐观 rollup 数据可用性，无大语言模型。",
+      "abstract": "Merkle 树是在大数据集上获得对数大小、对数时间包含证明的标准做法，但需要一种与普通线性（Merkle–Damgård）哈希不同的树形哈希结构；多数已部署系统——包括比特币自己的交易与见证哈希——实际用的是后者。本文提出 FlatMerkle：通过对底层哈希函数过去的内部状态（检查点）周期性再注入到流中作为普通消息内容，在单条普通线性哈希流上达到同样的渐近保证，即 O(log N) 证明大小与 O(log N) 验证时间。结果是一段平坦字节序列，其摘要是对底层哈希函数的单次、未修改调用——语法上就是普通字节串的普通摘要，而不是可区分的承诺格式——同时仍支持任意元素的紧凑包含证明，以及已发布文件格式错误的紧凑证明，使诚实方总能在对数空间内回应恶意提交者。文中给出递归构造、在结构化流中定位任意元素的闭式公式、带图示的算例、到哈希压缩步骤自由起始抗碰撞的安全归约、玩具原语与真实 SHA-256 的最优元素大小分析、批量多元素证明、相对 Merkle 树的实测构造速度比较、在比特币交易 annex（BIP-341）内提交数据的具体应用、将其用作乐观比特币 rollup 数据可用性层的设计草稿，以及在以太坊上的从零 gas 成本比较。",
+      "abstractEn": "Merkle trees are the standard way to obtain logarithmic-size, logarithmic-time inclusion proofs over a large dataset, but they require a tree-shaped hash structure distinct from the ordinary, linear (Merkle-Damgård) hashing that most deployed systems -- including Bitcoin's own transaction and witness hashing -- actually perform. We present FlatMerkle, a construction that achieves the same asymptotic guarantees, O(log N) proof size and O(log N) verification time, over a single ordinary linear hash stream, by periodically re-injecting the hash function's own past internal states (\"checkpoints\") back into the stream as ordinary message content. The result is a flat byte sequence whose digest is a single, unmodified invocation of the underlying hash function -- syntactically an ordinary digest of an ordinary byte string, not a distinguishable commitment format -- while still supporting compact inclusion proofs for any element, and compact proofs that a published file is malformed, so that an honest party can always answer a malicious committer in logarithmic space. We give the recursive construction, a closed-form formula locating any element in the structured stream, worked examples with illustrations, a security reduction to free-start collision resistance of the hash function's compression step, an optimal element-size analysis for both a flexible toy primitive and real SHA-256, a batched multi-element proof construction, a measured construction-speed comparison against Merkle trees, a concrete application to committing data inside a Bitcoin transaction annex (BIP-341), a design sketch using that application as a data-availability layer for an optimistic Bitcoin rollup, a from-scratch gas-cost comparison, on Ethereum.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Merkle",
+        "比特币",
+        "数据可用性",
+        "rollup"
+      ],
+      "url": "https://eprint.iacr.org/2026/2468",
+      "pdf": "https://eprint.iacr.org/2026/2468.pdf"
+    },
+    {
+      "id": "2026-2445",
+      "title": "A Black-Box Compiler from Static to Dynamic SNARKs",
+      "authors": [
+        "Anubhav Baweja",
+        "Charalampos Papamanthou"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用静态 SNARK 和向量承诺做黑盒编译器，得到见证可更新的动态 SNARK，无大语言模型。",
+      "abstract": "面向 NP 的简洁非交互知识论证（SNARK）允许证明者向验证者证明自己知道某 NP 关系的见证，且证明很短。静态 SNARK 的主要目标是让验证便宜：证明要短，验证者工作要少。近期工作也关注让证明者更高效：便宜的验证最好不要伴随很大的证明者开销。一条路是动态 SNARK：见证更新时，证明者能高效更新证明。例如可用 SNARK 证明对数据库的查询执行正确，数据库更新后再发一份新证明。若更新相对见证很小（只改大库中的一项），证明者理想上应能用旧证明在与新旧见证距离成比例的时间内生成新证明。Wang 等人（Eurocrypt 2026）和 Zhang 等人（Eurocrypt 2026）最近提出了一些面向 NP 的动态 SNARK，但限制较多，例如缺少抗量子安全、依赖受信任第三方的 setup，以及渐近与具体效率较差。本文给出一个编译器：以面向 NP 的静态 SNARK 和向量承诺方案为黑盒，为 Plonkish 约束（可刻画任意 NP 计算）构造动态 SNARK。若用当前基于哈希的先进 SNARK 与 Merkle 树实例化，编译器得到在 QROM 下抗量子、setup 透明、初始证明者时间为 O(n) 的动态 SNARK。",
+      "abstractEn": "Succinct Non-Interactive Arguments of Knowledge (SNARKs) for NP allow a prover to prove knowledge of a witness of an NP relation to a verifier with a short proof. The primary goal of a (static) SNARK is to make verification cheap: the proof should be short, and the verifier's work should be minimal. However, recent work has also focused on making SNARKs more prover-efficient: cheap verification should ideally not come at the cost of large prover overhead. One avenue for achieving prover efficiency is via Dynamic SNARKs, which allow a prover to efficiently update the proof when the witness is updated. For example, one may use a SNARK to issue a proof of a query being performed correctly on a database, and then issue a new proof of the query once the database is updated. If these updates are small compared to the size of the witness (only a single entry of a large database is updated), then the prover should ideally be able to use the old proof to generate a new proof in time proportional to the distance between the old and the new witness. While some constructions of dynamic SNARKs for NP have been recently proposed by Wang et al. [Eurocrypt 2026] and Zhang et al. [Eurocrypt 2026], they have many limitations, such as lack of post-quantum security, dependence on a setup by a trusted third-party, and poor asymptotic and concrete efficiency. In this work, we present a compiler for constructing a dynamic SNARK for Plonkish constraints (which capture arbitrary NP computations) by using a static SNARK for NP and a vector commitment scheme as black boxes. When instantiated with a state-of-the-art hash-based SNARK and Merkle trees, the compiler yields a dynamic SNARK that is post-quantum secure in the QROM, has a transparent setup, and achieves O(n) initial prover time.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "SNARK",
+        "零知识",
+        "向量承诺",
+        "抗量子"
+      ],
+      "url": "https://eprint.iacr.org/2026/2445",
+      "pdf": "https://eprint.iacr.org/2026/2445.pdf"
+    }
+  ]
+}
