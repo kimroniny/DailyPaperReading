@@ -1,0 +1,259 @@
+{
+  "date": "2026-10-17",
+  "papers": [
+    {
+      "id": "10.1145-3858419",
+      "title": "LLMSA-MC: Bridging LLM Reasoning and Static Analysis for Detecting Missing-Check Bugs in Linux Kernels",
+      "authors": [
+        "Jianjun Shi",
+        "Tianyang Liu",
+        "Yuxuan Wang",
+        "Pan Liu",
+        "Xinyue Wang",
+        "Weixing Ji"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用大语言模型补静态分析，检测 Linux 内核缺失安全检查的漏洞，对象是 Linux 内核。",
+      "abstract": "Linux 内核里对关键变量缺少安全检查，是一类重要的语义缺陷，可导致严重漏洞。现有方法大多依赖静态分析，而基于启发式规则或统计的做法往往抓不住“是否需要检查”所需的语义上下文。大语言模型为用语义推理补静态分析提供了机会，但直接用到内核代码上仍很难，尤其是识别关键变量、理解安全检查语义。本文提出 LLMSA-MC，把静态分析与基于大语言模型的语义推理结合起来做缺失检查检测，包含三条策略：语句类型分类，引导模型识别关键变量；精确抽取代码上下文，供语义推理使用；为函数返回值生成语义标签。在过程内、过程间基准上，相对基线思维链提示，F1 最多分别提高 39.01 和 33.66 个百分点。接到已有缺失检查检测工具后，候选报告减少 55.38%，并在 Linux 内核 v4.20-rc5 中确认 168 个缺失检查缺陷。",
+      "abstractEn": "Missing security checks on critical variables are an important class of semantic bugs in the Linux kernel and can lead to severe vulnerabilities. Existing approaches largely rely on static analysis, but heuristic rule-based and statistical approaches may fail to capture the semantic context needed to determine whether a security check is required. Recent advances in large language models (LLMs) offer an opportunity to complement static analysis with semantic reasoning. However, directly applying LLMs to kernel code remains challenging, particularly in identifying critical variables and interpreting security-check semantics. To address these challenges, we present LLMSA-MC, a framework that combines static analysis with LLM-based semantic reasoning for missing-check bug detection. LLMSA-MC incorporates three strategies: (1) Statement Type Classification, which guides LLMs to identify critical variables; (2) Precise Code Context Extraction, which provides relevant code context for semantic reasoning; and (3) Function Label Generation, which annotates function return values with semantic labels. Evaluation on curated intra- and inter-procedural benchmarks shows that LLMSA-MC improves F1-score by up to 39.01 and 33.66 percentage points, respectively, over baseline chain-of-thought (CoT) prompting. When integrated with a representative missing-check bug detection tool, LLMSA-MC reduces candidate reports by 55.38% while confirming 168 missing-check bugs in Linux kernel v4.20-rc5.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Linux 内核",
+        "缺失检查",
+        "静态分析",
+        "大语言模型"
+      ],
+      "url": "https://doi.org/10.1145/3858419",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3858419"
+    },
+    {
+      "id": "10.1109-tse.2026.3742792",
+      "title": "The Path Tells, the Context Decides: LLM-Guided Rug Pull Detection via Permission-to-Asset Paths",
+      "authors": [
+        "Jie Cai",
+        "Shengye Hua",
+        "Lingfeng Bao",
+        "Xiaobing Sun"
+      ],
+      "year": 2026,
+      "venue": "TSE",
+      "abstractOneWord": "用大语言模型看权限到资产路径，检测智能合约 rug pull，对象是 Solidity 合约。",
+      "abstract": "通过智能合约实施的 rug pull 是区块链生态里常见的骗局。已有检测方法仍不够充分地抽取并利用与特权控制和资产操纵相关的代码语义及其上下文。作者观察到，rug pull 的关键特征是恶意开发者利用合约中的特权控制片段去操纵用户资产。据此提出 PACER：先构造权限与资产控制流图（PA-CFG），从合约代码中抽出权限到资产（P2A）路径，再把每条路径及其相关程序上下文组织成增强提示，引导大语言模型做检测。在 2388 个 rug pull 样本和 2141 个良性样本上，PACER 优于全部基线，精确率 79.22%，召回率 80.95%，F1 为 80.08%。",
+      "abstractEn": "The Rug pull scheme implemented through smart contracts is one of the most common scams in blockchain ecosystems. Although several rug pull smart contract detection approaches have been proposed, they still do not sufficiently extract and utilize the code semantic features related to privileged control and asset manipulation, together with their context, for rug pull detection. We notice that the key feature in a rug pull scheme is the malicious developer leverages the privileged control code fragments in smart contract to manipulate users' assets. Based on this insight, we propose PACER, a framework that extracts Permission-to-Asset (P2A) paths and organizes them with relevant permission and asset context for LLM-based rug pull detection. Specifically, for feature extraction, we construct a Permission and Asset CFG (PA-CFG) to extract P2A paths from smart contract code. Furthermore, to help the LLM focus on relevant context, we organize each extracted P2A path and its relevant program context into a permission and asset context enhanced prompt to guide it in detection. We evaluate PACER on a dataset with 2,388 rug pull samples and 2,141 benign samples. The experimental results show that PACER outperforms all baselines and achieves 79.22% precision, 80.95% recall, and 80.08% F1 score.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "rug pull",
+        "智能合约",
+        "大语言模型",
+        "权限路径"
+      ],
+      "url": "https://doi.org/10.1109/tse.2026.3742792"
+    },
+    {
+      "id": "2610.17020",
+      "title": "CWE-bench: Refocusing Agentic Security from Exploitation to Defense",
+      "authors": [
+        "Gonzalo Gonzalez-Pumariega",
+        "Ajay Jagannath",
+        "Adit Jain",
+        "Guram Gogia",
+        "Soumyadeep Bakshi",
+        "Nazneen Rajani"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用智能体做仓库级漏洞审计与修复评测，对象是八种语言的真实软件仓库。",
+      "abstract": "现有对 AI 智能体的网络安全评测大多偏进攻：能打出一次利用，并不能说明智能体可以把软件修安全。攻击者只需利用一个漏洞，防守方必须找全并修掉。本文提出 CWE-bench：一套不公开的基准，包含 120 个留出仓库上的审计与修复任务，覆盖 73 类 CWE、八种语言以及 OWASP Top 10 2025 全部类别。智能体拿到仓库和威胁模型描述，但不被告知弱点类型、位置或有多少处漏洞。补丁必须挡住利用并保持原功能，由程序化核验器检查。作者用一组智能体评审核验器，开发阶段人工复核分歧并改进检查。最好的智能体 pass@1 为 68%，pass@4 为 81%。进一步分析表明：pass@1 相同的智能体在重试收益和成本上差很多；没有任何一个智能体在所有语言或漏洞类别上都最好，难度随漏洞类别变化远大于随语言变化。随着进攻能力变强，CWE-bench 用来衡量防守能力是否跟得上。",
+      "abstractEn": "Cybersecurity evaluations of AI agents have focused largely on offense, yet a working exploit does not show that an agent can make software safe. An attacker needs to exploit only one vulnerability; a defender must find and fix all of them. We introduce CWE-bench, a private benchmark of 120 held-out repository audit-and-repair tasks spanning 73 CWE types, eight languages, and all OWASP Top 10 2025 categories. Agents are given a repository to audit and a description of its threat model, but are not told the weakness, where it occurs, or how many vulnerable sites there are. Each patch must block the exploit while preserving original functionality, as checked by a programmatic verifier. We validated the verifier against a panel of agentic judges, manually reviewing disagreements during development and refining the checks. The best agents reach 68% pass@1 and 81% pass@4. We further conduct analyses showing that (i) agents with the same pass@1 differ widely in retry gains and cost, and (ii) no single agent is best across languages or vulnerability categories, and difficulty varies far more by vulnerability category than by language. As the offensive capabilities of agents improve, CWE-bench provides a broad and rigorous measure of whether their defensive capabilities keep pace.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "智能体",
+        "CWE",
+        "仓库审计"
+      ],
+      "url": "https://arxiv.org/abs/2610.17020",
+      "pdf": "https://arxiv.org/pdf/2610.17020"
+    },
+    {
+      "id": "2610.19005",
+      "title": "CyberArena: Benchmarking AI Agents in Live Symmetric Attack-and-Defense Combat",
+      "authors": [
+        "Bangya Liu",
+        "Jianhong Tu",
+        "Yueyang Pan",
+        "Hanhong Zhao",
+        "Zhe Ye",
+        "Hongwei Li",
+        "Saastha Vasan",
+        "Katherine Lambert",
+        "Junmin Zhu",
+        "Hao Wang",
+        "Jienan Chen",
+        "Yunze Xiao",
+        "Minglai Yang",
+        "Zihan Wang",
+        "Hairong Yin",
+        "Zhiwen Fan",
+        "Tianneng Shi",
+        "Zhun Wang",
+        "Chenguang Wang",
+        "Dawn Song"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大语言模型智能体做实时对称攻防评测，对象是带漏洞服务的沙箱环境。",
+      "abstract": "AI 智能体在真实世界的进攻与防守能力越来越强。现有基准多半让智能体单独打静态靶标。真实攻防是动态耦合的：安全态势随攻守双方实时调整而变化。静态基准很快饱和，也测不出智能体在持续压力下同时进攻和防守的能力。本文提出 CyberArena：围绕多回合攻防对抗的动态对称对抗基准。在隔离沙箱里，两个智能体按相同规则竞赛，同时充当攻击者和防守者，服务持续变化。静态靶标因此变成半开放、不断演化的题目，直接考察发现、利用和修补漏洞的速度与精度。为保持基准寿命，一条自动化智能体流水线持续生成、评审和核验新环境。成对对抗很难量化，作者引入动力学模型，把对局映射成进攻、防守和领域能力上的统一多维分数。在 40 道题、466 场对局中评了 12 个前沿大语言模型智能体，CyberArena 能在单智能体基线触顶的地方把能力拉开。轨迹更像对打而不是考试：防守方补上一处又漏下一处，还会凭过期证据给修复背书；强的智能体会提前埋后门，有一次还自己写了抓包程序盯对手。除基准外，CyberArena 也可作为可扩展的网络安全智能体实验平台。",
+      "abstractEn": "AI agents are demonstrating increasingly strong offensive and defensive cybersecurity capabilities in the real world. Current benchmarks mostly evaluate agents in isolation against static targets. Real cyber operations, however, are dynamic and coupled: security postures constantly change as attackers and defenders adapt to each other in real time. Static benchmarks quickly saturate and miss an agent's ability to attack and defend simultaneously under live pressure. To address this gap, we present CyberArena, a dynamic, symmetric adversarial benchmark built around multi-round attack-and-defense combat. In isolated sandboxes, two agents compete under identical rules, acting concurrently as both attackers and defenders over continuously changing services. This converts static targets into evolving, semi-open challenges, directly testing an agent's speed and precision in discovering, exploiting, and patching vulnerabilities. To sustain the benchmark's longevity, an automated agentic pipeline continuously generates, reviews, and validates new environments. Furthermore, because pairwise contests are notoriously hard to quantify, we introduce a dynamical model that maps match dynamics into unified, multidimensional scores across offensive, defensive, and domain-specific capabilities. Evaluating 12 frontier LLM agents across 40 challenges in 466 matches, CyberArena separates model capabilities where single-agent baselines hit a ceiling. The trajectories read like a fight rather than an exam: defenders patch one hole and miss the next and certify repairs on stale evidence, while capable agents think a move ahead, planting backdoors for later rounds and, in one case, writing their own packet sniffer to watch the opponent. Beyond a benchmark, CyberArena serves as an adaptable, scalable experimental platform for future research on cybersecurity agents.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "攻防对抗",
+        "智能体",
+        "漏洞利用",
+        "漏洞修补"
+      ],
+      "url": "https://arxiv.org/abs/2610.19005",
+      "pdf": "https://arxiv.org/pdf/2610.19005"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3744347",
+      "title": "High-Throughput Key Generation for Distributed Blockchain Wallets under Asynchronous Networks",
+      "authors": [
+        "Chengyi Dong",
+        "Jiliang Li",
+        "Yuan Su",
+        "Wei Tang",
+        "Hao Peng",
+        "Guoyan Zhang",
+        "Zhou Su"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "在异步网络下做分布式区块链钱包的高吞吐密钥生成，无 LLM，对象是区块链钱包。",
+      "abstract": "本文讨论异步网络条件下分布式区块链钱包的高吞吐密钥生成。公开页面未能读到英文摘要，以下仅按标题概括：工作面向区块链钱包，关注分布式密钥生成在异步网络中的吞吐。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "钱包",
+        "密钥生成",
+        "异步网络",
+        "阈值密码"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3744347"
+    },
+    {
+      "id": "2610.19764",
+      "title": "Verifying deployed bytecode against executable EVM semantics, with exact gas and no added axioms",
+      "authors": [
+        "Seulkee Baek"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可执行 EVM 语义验证已部署字节码，无 LLM 作为方法，对象是以太坊合约字节码。",
+      "abstract": "以太坊上许多关键逻辑以不可变字节码运行：未经验证的编译器旧输出，以及以合约代码形式执行的协议逻辑。本文说明这类字节码可以按原样验证：不必信任它的产生过程，也不简化它所运行的机器，除 Lean 自身外不加公理。Blanc 是一套 Lean 4 验证栈，经内核检查的证书读入固定运行时字节，所有定理都对着 Jaune 陈述。Jaune 是 EVM 与区块处理的可执行语义，能通过 Ethereum 夹具 v20.0.2 中自 2025 年 5 月以来主网分叉相关的全部 34205 个区块链测试。八件部署于 2017 至 2026 年的产物来自七个编译器版本和一个汇编器。对 EIP-7002 合约，作者证明区块末尾对它的调用无论存储如何都会成功（失败会使区块无效），且每个区块的退出请求恰好是最旧的待处理提交；Prague 启用时主网满足这些定理的起始前提。对 Uniswap V2 交易对，证明在哈希槽保持分离的任意有效历史之后，从表示其 Solidity 模型状态的检查点起，存储表示该模型按已提交调用重放的结果，平衡的流动性账本保持平衡，并在代币应答前提成立时，每股几何平均储备只因协议费下降。精确 gas 使活性可证：无代码的受跟踪 WETH9 持有者可用闭合形式 gas 的交易取款，与 30000 个区块中 3748 笔同类主网回执一致。对带 2023 年被利用锁缺陷的 Curve 池字节，Jaune 从部署起就能执行这类重入；对修复后编译器产出的字节，证明锁能排除该重入。证明由 AI 智能体在一名作者指导下十五天内写完，叠在已有栈上。",
+      "abstractEn": "Much of Ethereum's most consequential code is immutable bytecode: old output of unverified compilers, and protocol logic run as contract code. We show that such bytecode can be verified as it is, without trusting what produced it, without simplifying the machine it runs on, and with no axioms beyond Lean's own. Blanc, a Lean 4 verification stack, reads fixed runtime bytes via kernel-checked certificates and states every theorem against Jaune, an executable semantics of the EVM and block processing that passes all 34,205 blockchain-test cases of Ethereum's fixture release v20.0.2 that involve only forks that have governed mainnet since May 2025. Eight artifacts, deployed from 2017 to 2026, come from seven compiler versions and an assembler. For the EIP-7002 contract, we prove that the end-of-block call to it, whose failure would invalidate the block, succeeds whatever its storage holds, and that each block's withdrawal requests are exactly the oldest pending submissions; mainnet met these theorems' starting premises when Prague began. For a Uniswap V2 pair, we prove that after any valid history whose hashed slots stay apart, from any checkpoint representing its Solidity model's state, the storage represents that model replayed over exactly the committed calls, a balanced liquidity ledger stays balanced, and, under a premise on token answers, geometric-mean reserves per share fall only through the protocol fee. Exact gas makes liveness provable: a tracked WETH9 holder without code can withdraw by a transaction whose gas has a closed form, matching all 3,748 comparable mainnet receipts of its shape in 30,000 blocks. On Curve pool bytes compiled with the lock bug exploited in 2023, Jaune executes such a reentrancy from deployment; for bytes from a fixed compiler, we prove the lock excludes it. AI agents wrote the proofs in fifteen days under one author's direction, atop an existing stack.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "形式化验证",
+        "EVM",
+        "字节码",
+        "重入"
+      ],
+      "url": "https://arxiv.org/abs/2610.19764",
+      "pdf": "https://arxiv.org/pdf/2610.19764"
+    },
+    {
+      "id": "2026-2517",
+      "title": "Zippel: A Language, Compiler, Runtime, and Analyzer for ZK Proof Systems",
+      "authors": [
+        "Sebastian Angel",
+        "Sydnie-Shea Cohen",
+        "Eleftherios Ioannidis",
+        "Pratyush Mishra",
+        "Alex Ozdemir",
+        "Yuxiang Qiu",
+        "Alireza Shirzad"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "为 ZK 证明系统提供带类型与静态分析的语言和运行时，无 LLM，对象是证明系统实现。",
+      "abstract": "本文介绍 Zippel：一套面向密码学证明系统的语言、编译器、运行时和分析器。开发者可用接近密码学论文伪代码的语法编写证明系统。类型系统和运行时从构造上排除整类漏洞，例如自动同步协议转录、正确应用 Fiat–Shamir 变换。Zippel 还有全自动静态分析，仅凭协议描述确认完备性与可靠性。作者用 Zippel 实现了 35 套证明系统，包括 Sumcheck、Schnorr、KZG、Groth16、Bulletproofs、Hyrax、Spartan、Dory、HyperPlonk、DeKART 和 Pari。评估显示，多核硬件上 Zippel 程序与手写实现相当，安全与实现上的收益并不带来很高成本。",
+      "abstractEn": "This paper introduces Zippel, a language, compiler, runtime, and analyzer for cryptographic proof systems. Zippel lets developers write proof systems with ease using syntax that mimics pseudocode in cryptography papers. It also eliminates entire classes of vulnerabilities by construction owing to its type system and runtime. For example, Zippel automatically synchronizes protocol transcripts and correctly applies the Fiat--Shamir transform. Zippel also has fully automated static analyses that confirm whether a protocol is complete and sound given only the protocol's description. We have implemented 35 proof systems in Zippel including Sumcheck, Schnorr, KZG, Groth16, Bulletproofs, Hyrax, Spartan, Dory, HyperPlonk, DeKART, and Pari. Our evaluation shows that Zippel programs are competitive with hand-written implementations on multi-core hardware, so Zippel's security and implementation benefits do not come at high cost.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "零知识证明",
+        "证明系统",
+        "静态分析",
+        "Fiat-Shamir"
+      ],
+      "url": "https://eprint.iacr.org/2026/2517",
+      "pdf": "https://eprint.iacr.org/2026/2517.pdf"
+    },
+    {
+      "id": "2026-2463",
+      "title": "Tree-BTE: Batched Threshold Encryption using Additive Homomorphism",
+      "authors": [
+        "Amit Agarwal",
+        "Sourav Das",
+        "Babak Poorebrahim Gilkalaye",
+        "Benny Pinkas",
+        "Peter Rindal"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用批量门限加密做加密内存池以缓解 MEV，无 LLM，对象是区块链交易排序。",
+      "abstract": "批量门限加密（BTE）让一组服务器联合解密大池中任意选定的密文子集，其余密文保持私密。BTE 是加密内存池的关键构件：交易在入块前保持加密，以减轻最大可提取价值（MEV）。本文给出基于树的新 BTE 构造，只用两个支持加法同态的积木：在密钥与消息空间上同态的对称加密，以及在消息空间上同态、可门限化的公钥加密。这两块可在 DDH、DCR、LWR 乃至 LWE（后量子）等假设下实例化。每条密文对应索引空间中的一个下标。作者实现了基于 DDH 的实例：在大小 1024 的小索引空间上聚合 1000 条消息后，每个服务器单线程约 41 毫秒，含 100-of-300 门限解密。还部分实现了基于 RLWE 的后量子实例，索引空间大小为 2^128，使下标碰撞概率可忽略。1024 条消息时每条密文约 0.89 MB，每台服务器单线程解密约 20 秒。",
+      "abstractEn": "Batched threshold encryption (BTE) enables a committee of servers to jointly decrypt any chosen subset of ciphertexts from a large pool, while all remaining ciphertexts stay private. BTE is a key building block for encrypted mempools, where transactions are encrypted until block inclusion to mitigate maximal extractable value (MEV). We give a new tree-based BTE construction from two simple building blocks which support additive homomorphism: a symmetric-key encryption scheme that is homomorphic over key and message space, and a thresholdizable public-key encryption scheme that is homomorphic over message space. These building blocks can be instantiated under a wide variety of assumptions including DDH, DCR, LWR and even LWE for post-quantum security. In our scheme, each ciphertext is associated with an index from an appropriate index space. We implement the DDH-based instantiation. Given an aggregated batch of 1,000 messages over a small 1024 sized index space, each server performs about 41 ms of single-thread computation, including a 100-of-300 threshold decryption. We also partially implement an RLWE-based post-quantum instantiation over a 2^128 sized index space for negligible collision probability among indices. A batch of 1024 messages uses approximately 0.89 MB per ciphertext and 20 seconds of single-thread decryption per server.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MEV",
+        "加密内存池",
+        "门限加密",
+        "排序"
+      ],
+      "url": "https://eprint.iacr.org/2026/2463",
+      "pdf": "https://eprint.iacr.org/2026/2463.pdf"
+    },
+    {
+      "id": "2026-2516",
+      "title": "Watermarking Proofs with Provenance-Binding ZK-SNARKs",
+      "authors": [
+        "Wenhao Wang",
+        "Fan Zhang",
+        "Charalampos Papamanthou"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给 ZK-SNARK 增加来源绑定以阻止证明预计算复用，无 LLM，对象是外包证明网络。",
+      "abstract": "外包证明服务、去中心化证明网络和证明市场给 ZK-SNARK 提出了新要求：需要用来源信息给证明加水印，例如证明者身份和请求时刻的新鲜随机数。身份记录谁应获得证明功劳，随机数把证明绑到特定请求，意在阻止证明者复用该请求产生之前做过的工作。关键安全要求是：即使攻击者以前生成过相同证明或做过预计算，针对新鲜来源生成证明时仍须付出与从头计算相当的新鲜工作。先前如 Succinct Network 把来源嵌进 Fiat–Shamir 挑战，但缺少严格定义与分析。本文证明该做法不安全，易受预处理攻击：对手可预先计算与来源无关的信息，随后降低为新鲜来源生成证明的代价，并在 KZG-PLONK 上实例化这些攻击。作者给出来源绑定 ZK-SNARK 的第一个形式化定义，并提出一种通用构造：给 BaseFold、FRI 这类基于编码的多项式承诺加上来源绑定，再与 Poly-IOP 编译得到来源绑定 ZK-SNARK，额外开销很小。",
+      "abstractEn": "The emerging ecosystem of outsourced proving services, decentralized prover networks, and prover marketplaces raises a new requirement for ZK-SNARKs: the need to watermark proofs with provenance information, such as the prover identity and a fresh request-time nonce. The prover identity records who should receive credit for the proof, while the nonce binds the proof to a particular request and is intended to prevent the prover from reusing work performed before that request was created. The key security requirement is that a prover must perform fresh work—comparable to computing the proof from scratch—when generating a proof for a fresh provenance, even if the attacker may have generated the same proofs before or performed precomputation. Prior attempts, such as Succinct Network, proposed embedding provenance information in the Fiat-Shamir challenges, though without a rigorous security definition or analysis. We show that this approach is not secure and is vulnerable to preprocessing attacks, in which an adversary can precompute provenance-independent information that can later be used to reduce the effort required to generate proofs for a fresh provenance. We instantiate these attacks against KZG-PLONK. To arrive at a secure construction, we propose the first formal definition for provenance-binding ZK-SNARKs to capture the above desired property. We present a generic construction that augments code-based polynomial commitments, such as BaseFold and FRI, with provenance binding. Compiling them with Poly-IOPs yields provenance-binding ZK-SNARKs. Our construction incurs minimal overhead.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "ZK-SNARK",
+        "证明市场",
+        "预处理攻击",
+        "来源绑定"
+      ],
+      "url": "https://eprint.iacr.org/2026/2516",
+      "pdf": "https://eprint.iacr.org/2026/2516.pdf"
+    }
+  ]
+}
