@@ -1,0 +1,218 @@
+{
+  "date": "2026-10-18",
+  "papers": [
+    {
+      "id": "2610.20521",
+      "title": "Tulva: Practical Asynchronous Threshold FHE",
+      "authors": [
+        "Valerio Cini",
+        "Antonio Guimarães",
+        "Russell W. F. Lai",
+        "Michał Osadnik",
+        "Ivy K. Y. Woo"
+      ],
+      "year": 2026,
+      "venue": "IEEE S&P 2027",
+      "abstractOneWord": "给全同态加密加上异步门限解密，并按隐私 EVM 场景估代价，无 LLM，对象是以太坊虚拟机上的门限解密。",
+      "abstract": "本文提出 Tulva，一套实用的门限全同态加密方案，用模块化方式给底层 FHE 方案配上异步门限解密。该方案同时满足三点：与几乎任意底层 FHE 方案兼容，密文只多一个随机标签；支持很宽的门限配置 (t,K) 以及次数至少为 256 的环，每个明文比特对应 6–25 比特部分解密；在标准 LWE 假设下，即使对挑战密文做部分解密询问也仍然安全。作者给出开源实现，测量门限解密性能，并按常见的隐私保护以太坊虚拟机（EVM）场景估计端到端代价。在 16-out-of-512 门限、密文已经过公开预处理的情况下，与秘密相关的部分解密和公开份额合并在普通硬件上分别只需 3.7 ms 和 0.5 ms。与目前最好的同步方案（Zyskind 等，CCS'25）相比，Tulva 把与密文无关、但需要交互的相关随机数准备，换成一次公开的、依赖密文的 0.5 秒预处理，在线阶段不再交互，同一台机器上的解密时间相当，并能支持 32 倍的总用户数。",
+      "abstractEn": "We present Tulva, a practical threshold FHE scheme which equips a base FHE scheme with an asynchronous threshold decryption mechanism in a modular way. Our scheme simultaneously (1) is compatible with virtually any base FHE scheme and leaves its ciphertexts unchanged apart from an appended random tag, (2) supports a wide range of threshold profiles (t,K) and ring degrees ≥ 256 with 6-25 bits partial decryption per plaintext bit, and (3) achieves security in the presence of partial decryption queries on challenge ciphertexts based on the standard LWE assumption. We provide an open-source implementation, benchmark its threshold decryption performance and evaluate the end-to-end costs for typical privacy-preserving Ethereum Virtual Machine (EVM) use cases. For 16-out-of-512 threshold and a publicly preprocessed ciphertext, computing secret-dependent partial decryption and public share combination requires only 3.7 ms and 0.5 ms, respectively, on commodity hardware. Compared with the state-of-the-art synchronous scheme [Zyskind et al., CCS'25], we replace their ciphertext-independent yet interactive preparation of secret-correlated randomness with a public, ciphertext-dependent 0.5 s preprocessing step, eliminate interaction in the online phase while maintaining similar decryption time on the same machine, and support 32× more total users.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限 FHE",
+        "异步解密",
+        "EVM",
+        "隐私计算"
+      ],
+      "url": "https://arxiv.org/abs/2610.20521",
+      "pdf": "https://arxiv.org/pdf/2610.20521.pdf"
+    },
+    {
+      "id": "2610.17374",
+      "title": "VulnBump: A Benchmark for Fixing Vulnerable Dependencies in Real Projects While Keeping the Build and Tests Green",
+      "authors": [
+        "Gabija Pasiunaite",
+        "Ryan McMorrow",
+        "Brian Clark",
+        "Liran Tal",
+        "Luke Tu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用编程智能体升级有漏洞的依赖，并在真实仓库上同时核验修复、构建和测试，对象是 Maven、npm、pip 等传统项目。",
+      "abstract": "软件成分分析（SCA）工具报出的有漏洞依赖，远多于团队实际修掉的：在 Snyk Open Source 的生产数据里，94% 的漏洞发现已有已知修复版本，但大约只有 10% 被处理。编程智能体有可能补上这个缺口，但还没有基准在真实、可运行、跨生态的项目上，用独立于智能体的方式评测“为修漏洞而升级”。本文提出 VulnBump：307 个升级任务，覆盖 43 个仓库、六种包管理器上的 2066 个可修复漏洞，分布与 Snyk 生产数据对齐。一次升级只有在全新容器里同时满足依赖能解析、复扫显示目标漏洞已修、项目能构建、原先通过的测试仍全部通过时才算通过。只采用 Snyk 推荐版本、不用智能体的基线通过率为 46.9%；同一模型（Claude Sonnet 5.5）下，Snyk 的 Evo Remediation Agent 为 90.2%，Claude Code 加上 Snyk 扫描为 77.5%，单独用 Claude Code 为 59.6%。两类失败方向相反：Claude Code 多半把漏洞留着，Evo Remediation Agent 的失败则多半把构建或测试弄坏。SCA 扫描器对智能体很关键：Snyk 的指引把 Claude Code 的通过率提高 17.9 个百分点；没有它时，Claude Code 常常停在仍被标为有漏洞的版本。但知道目标还不够：同样拿到 Snyk 结果时，Evo 专用框架仍比 Claude Code + Snyk 扫描高 12.7 个百分点。大型框架迁移对所有框架都很难。由于智能体让项目仍能工作的比例差不多，评测依赖升级的修复质量必须把漏洞是否修好、构建和测试放在一起核验。",
+      "abstractEn": "Software composition analysis (SCA) tools report far more vulnerable dependencies than teams fix: in Snyk Open Source production data, 94% of vulnerability findings have a known fixed version, yet only about 10% are resolved. Agentic coding tools could close this gap, but no benchmark evaluates them on vulnerability-driven upgrades in real, runnable projects across ecosystems, verified independently of the agent. We present VulnBump: 307 upgrade tasks covering 2,066 fixable vulnerabilities in 43 repositories across six package managers, matched to Snyk Open Source production vulnerability distributions. An upgrade passes only if, in a fresh container, dependencies resolve, a rescan shows the targeted vulnerabilities fixed, the project builds, and every previously passing test still passes. A non-agentic baseline that only applies Snyk's recommended version passes 46.9% of upgrades; with the same model (Claude Sonnet 5.5), Snyk's Evo Remediation Agent passes 90.2%, Claude Code + Snyk scan 77.5% and Claude Code unaided 59.6%. The agents fail in opposite ways: Claude Code mostly leaves the vulnerability in place, whereas most of Evo Remediation Agent's failures break the build or tests. An SCA scanner is a key tool for agents: Snyk's guidance raises Claude Code's PASS rate by 17.9 percentage points; without it, Claude Code often settles on a still-vulnerable version. Yet knowing the target is not enough: given the same Snyk findings, Evo Remediation Agent's purpose-built harness passes 12.7 points more than Claude Code + Snyk scan. Major framework migrations remain hard for all harnesses. Because the agents keep projects working at similar rates, evaluating remediation quality in dependency upgrades requires verifying the fix, the build and the tests together.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "依赖漏洞",
+        "编程智能体",
+        "SCA",
+        "漏洞修复"
+      ],
+      "url": "https://arxiv.org/abs/2610.17374",
+      "pdf": "https://arxiv.org/pdf/2610.17374.pdf"
+    },
+    {
+      "id": "2610.16426",
+      "title": "AuthGateBench: Benchmarking LLMs as Authorization Gate",
+      "authors": [
+        "Zhixiong Zhuang",
+        "Jin Jia",
+        "Zhiwei Shang",
+        "Ziyu Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大语言模型给编程智能体做授权门控评测，对象是 Claude Code 一类会执行高风险操作的编程智能体。",
+      "abstract": "自动批准系统把高风险操作交给分类器（通常是大语言模型）决定是否执行，从而让编程智能体在很少人工过问的情况下行动。Claude Code、Codex 等工具已经采用这种做法，但仍然会出现范围越权：智能体做出超出用户授权的操作。已有基准多针对恶意请求，在隐含策略下评拒绝。本文提出 AuthGateBench，据作者所知是第一个在良性请求下、按明确策略评测授权门控的基准。构造流程会生成对照样本：动作和轨迹相同，只改请求，标签在拦截与放行之间翻转，用来判断模型是在看上下文，还是只看动作本身。作者还检查辅助环境信号能否帮助决策。基准共 1400 条，覆盖从真实 Claude Code 事件抽出的五类失败模式。评测显示：准确率在不同失败模式上下降不均匀，模型过度依赖内部安全对齐；即使请求已经明确授权，模型仍会拦截大多数动作，说明决策不稳定、不是确定性规则。事后检索到的环境信号则能明显提高授权准确率。",
+      "abstractEn": "Automated approval systems let coding agents execute high-risk actions with minimal human oversight by delegating the authorization decision to a classifier, typically a large language model (LLM). Such systems, adopted in tools like Claude Code and Codex, remain vulnerable to failure modes such as scope escalation, where the agent takes actions exceeding what the user authorized. Existing benchmarks focus mainly on malicious requests, evaluating refusal under an implicit policy. We introduce AuthGateBench, the first policy-guided benchmark for authorization gating under benign requests. We implement a novel pipeline where an LLM generates contrast pairs with identical action and trajectory but differing request, flipping the label between block and allow. This allows us to assess whether models reason over context rather than the action alone. We further examine whether auxiliary environment signals can help models make better decisions. The resulting benchmark comprises 1,400 instances spanning five failure modes drawn from real-world Claude Code incidents. Evaluations show accuracy degrades unevenly across failure modes as models over-rely on internal safety alignment, and models still block most actions even when explicitly authorized, revealing unstable rather than deterministic decisions; retrospectively retrieved environment signals, however, substantially improve authorization accuracy.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "授权门控",
+        "编程智能体",
+        "范围越权",
+        "大语言模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.16426",
+      "pdf": "https://arxiv.org/pdf/2610.16426.pdf"
+    },
+    {
+      "id": "2026-2453",
+      "title": "Revisiting Witness-Succinct UC-lifting Compilers",
+      "authors": [
+        "Davide Li Calsi",
+        "Luigi Russo",
+        "Dominique Schröder",
+        "Federico Valbusa"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "指出一类 zkSNARK 的 UC 编译缺少安全条件并给出修复，无 LLM，对象是证明系统在组合下的安全性。",
+      "abstract": "零知识简洁非交互知识论证（zkSNARK）越来越多地嵌进更大的密码协议，因此组合下的安全性很关键。要通用地编译成通用可组合（UC）安全，需要直线、黑盒抽取，同时保持简洁并控制证明者开销。本文提出可验证可重构直线码（VRSC），把公开隐藏、基于副本的重构、绑定以及证明不可再随机化分开。这一抽象暴露了 Ganesh 等人（EUROCRYPT 2023）见证简洁 UC 编译器里缺少的安全要求：把已经公开的求值开口打乱，就能以不可忽略的概率得到一份新的可接受证明，且不破坏非外推性质，从而推翻其模拟论证。证明不可再随机化在证书层面刻画这种攻击。作者的构造用验证者强制的不相交求值域，阻止各次重复之间转移。文章按 VRSC 给出通用 UC 提升定理，并用配对给出实例，在经过认证的码字符号上做 Fischlin 式搜索。结构化 Reed–Solomon 编码和联合计算的 KZG 开口，把证书生成从二次降到关于见证长度 n 的 O_λ(n log n)。进入底层 SNARK 电路的只有线性时间的编码检查。据作者所知，这是第一个同时做到证明者额外开销准线性、相对见证长度只增加常数大小证明和常数验证工作的通用 UC 提升编译器。",
+      "abstractEn": "Zero-knowledge succinct non-interactive arguments of knowledge (zkSNARKs) are increasingly used within larger cryptographic protocols, making security under composition essential. Generic compilation to Universal Composability (UC) requires straight-line, black-box extraction while preserving succinctness and controlling prover cost. We introduce verifiable reconstructible straightline codes (VRSCs), a primitive that separates public hiding, transcript-based reconstruction, binding, and proof non-rerandomizability. This abstraction exposes a missing security requirement in the witness-succinct UC compiler of Ganesh et al. (EUROCRYPT 2023). Permuting previously revealed evaluation openings produces a fresh accepting proof with non-negligible probability without violating non-extrapolation, invalidating the claimed simulation argument. Proof non-rerandomizability captures this attack at the certificate level. Our construction prevents transfers between repetitions through verifier-enforced disjoint evaluation domains. We formulate a generic UC lifting theorem in terms of VRSCs and give a pairing-based instantiation using a Fischlin-style search over authenticated codeword symbols. Structured Reed--Solomon encoding and jointly computed KZG openings reduce certificate-generation work from quadratic to O_λ(n log n), where n is the witness size. Only a linear-time encoding check enters the underlying SNARK circuit. To our knowledge, this is the first generic UC lifting compiler that simultaneously achieves quasi-linear prover overhead and constant additional proof size and verification work with respect to the witness size.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkSNARK",
+        "UC 编译",
+        "组合安全",
+        "KZG"
+      ],
+      "url": "https://eprint.iacr.org/2026/2453",
+      "pdf": "https://eprint.iacr.org/2026/2453.pdf"
+    },
+    {
+      "id": "2026-2504",
+      "title": "Byzantine Broadcast in Õ(n²) Communication",
+      "authors": [
+        "Yuval Efron",
+        "Jovan Komatovic",
+        "Ling Ren"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把确定性拜占庭广播的通信量降到接近平方，无 LLM，对象是容忍任意多故障的共识广播协议。",
+      "abstract": "本文给出一个确定性的 n 方拜占庭广播协议，可在 t<n 个故障下保持安全，通信复杂度为 O(n² log⁴(n) λ)，轮数为 O(t)（λ 为安全参数），改进了 1983 年的 Dolev–Strong 协议。",
+      "abstractEn": "We present a deterministic n-party Byzantine broadcast protocol secure against t<n faults, with communication complexity O(n² log⁴(n) λ) and O(t) rounds (where λ is a security parameter), improving upon the seminal Dolev--Strong protocol from 1983.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "拜占庭广播",
+        "共识",
+        "通信复杂度",
+        "Dolev-Strong"
+      ],
+      "url": "https://eprint.iacr.org/2026/2504",
+      "pdf": "https://eprint.iacr.org/2026/2504.pdf"
+    },
+    {
+      "id": "2026-2481",
+      "title": "Polygero: Proximity Testing From Polynomial Challenges",
+      "authors": [
+        "Matteo Frigo",
+        "abhi shelat"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用多项式挑战做 Reed-Solomon 接近性测试并给出可靠性证明，无 LLM，对象是简洁证明系统。",
+      "abstract": "本文提出一种新的 Reed–Solomon 码接近性测试，可进入更高一致性区间，可靠性接近域的比特长度。该方向已有工作都用标量批处理：验证者为每个码字给一个标量挑战，证明者必须给出等价组合码字，验证者再在随机打开的列上检查。作者的主要观察是：改为给每个码字一个低次多项式挑战。他们证明，多项式挑战生成的低维空间在删掉少量坐标后变成最大距离可分（MDS），由此得到一种可利用的新接近性间隙。这一观察使接近性测试的可靠性证明变成更简单的计数论证，不再需要 Polishchuk–Spielman 引理或 Guruswami–Sudan 译码。同一技术还证明了受 Ligero 启发的 IOP 方案 Polygero 在唯一译码半径之外仍然可靠。经过递归，Polygero 产生的证明域元素个数对见证长度是对数，且与线性约束条数无关。它不要求有限域里有单位根，也不要求域外抽样。可靠性分析（含抽取器和递归组合）以及文中报告的参数表都在 Lean 中做了机器检查。",
+      "abstractEn": "We present a new proximity test for Reed--Solomon codes that admits a higher-agreement regime with soundness approaching the field's bit length. All prior work in this area [AHIV2017,BCIKS2020,BCHKS2025] uses the idea of scalar batching in which the verifier provides a scalar challenge for each codeword, and the prover must supply a codeword equivalent to the combination, and the verifier tests it at randomly opened columns. Our main insight is to instead use a low-degree polynomial challenge for each codeword. We prove that the low-dimensional spaces generated by polynomial challenges become maximum distance separable (MDS) after deleting a few coordinates, and this phenomenon leads to a new kind of proximity gap that we can exploit. This insight enables a simpler, in fact elementary counting proof for soundness of the proximity tests. We do not need the Polishchuk--Spielman lemma or Guruswami--Sudan decoding. The same technique proves soundness of Polygero, a Ligero-inspired IOP [AHIV17], beyond the unique-decoding regime. Through recursion, Polygero produces proofs with a number of field elements logarithmic in the witness size, independently of the number of linear constraints. It does not require roots of unity in the finite field or out-of-domain sampling. The soundness analysis, including the extractor and the recursive composition, and every reported parameter schedule are machine-checked in Lean.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "接近性测试",
+        "Reed-Solomon",
+        "IOP",
+        "证明系统"
+      ],
+      "url": "https://eprint.iacr.org/2026/2481",
+      "pdf": "https://eprint.iacr.org/2026/2481.pdf"
+    },
+    {
+      "id": "2610.16449",
+      "title": "CryptoFlowBench: Benchmarking Multi-Hop Reasoning on Blockchains for Cryptocurrency Fund Tracing",
+      "authors": [
+        "Runang He",
+        "Tongya Zheng",
+        "Jing Cao",
+        "Yucheng Ying",
+        "Shunyu Liu",
+        "Bingde Hu",
+        "Yang Gao",
+        "Zeyuan Hu",
+        "Jianrong Zhang",
+        "Mingli Song"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用带图工具的大模型智能体做链上多跳资金追踪，对象是加密货币非法资金流。",
+      "abstract": "假名账户和复杂的智能合约生态，让非法加密货币资金流很难追踪。现有图神经网络在区块链欺诈检测上表现不错，但静态的节点或边预测并不能自然推广到多跳资金追踪。现有追踪方法又多靠预先定好的启发式规则抓多跳关系，适应和推理能力有限。为此，作者提出 CryptoFlowBench：根据权威报告中的加密货币相关非法事件构造基准，包含从局部到多跳资金追踪的四项任务。这些任务对现有学习和启发式方法都很难，尤其是复杂多跳场景。作者进而提出 ChainSleuth，一个带图工具的智能体，迭代推理、调用图工具并更新追踪轨迹，从而按需取证、从错误路径里改回来。实验表明，没有任何基线能在全部四项任务上一直最好，局部欺诈检测和多跳资金追踪之间差距很大。ChainSleuth 在多跳任务上有明显提升，说明用智能体做图式推理有助于加密货币资金调查。",
+      "abstractEn": "Pseudonymous accounts and complex smart-contract ecosystems substantially hinder the tracing of illicit cryptocurrency fund flows. Existing Graph Neural Networks (GNNs) have achieved promising performance in blockchain fraud detection, yet their static node- or edge-level predictions do not naturally generalize to multi-hop fund tracing. Meanwhile, existing tracing methods mainly rely on predefined heuristics to capture multi-hop relationships, limiting their adaptive reasoning capabilities. To bridge this gap, we introduce CryptoFlowBench, a benchmark constructed from authoritative reports on cryptocurrency-related illicit incidents, with four tasks spanning local to multi-hop fund tracing. These tasks pose substantial challenges to existing learning- and heuristic-based methods, particularly in complex multi-hop scenarios. We therefore propose ChainSleuth, a graph-tool-augmented agent that iteratively reasons, invokes graph tools, and updates its tracing trajectory, enabling adaptive information acquisition and recovery from erroneous paths. Experiments show that no baseline consistently dominates all four tasks, revealing substantial gaps between local fraud detection and multi-hop fund tracing. ChainSleuth achieves notable improvements on multi-hop tasks, demonstrating the potential of agentic graph reasoning for cryptocurrency fund investigation.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "资金追踪",
+        "智能体",
+        "交易图",
+        "链上取证"
+      ],
+      "url": "https://arxiv.org/abs/2610.16449",
+      "pdf": "https://arxiv.org/pdf/2610.16449.pdf"
+    },
+    {
+      "id": "2610.18812",
+      "title": "The Geography of (Concurrent) Block Proposing",
+      "authors": [
+        "Ciamac C. Moallemi",
+        "Mallesh M. Pai",
+        "Dan Robinson",
+        "Christoph Schlegel"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析并发出块人如何选物理位置，以及这对审查抵抗的影响，无 LLM，对象是区块链出块与审查。",
+      "abstract": "区块链的韧性和审查抵抗，取决于验证者和出块人实际在哪里运行。本文研究这种选址的经济动机，分别讨论单个出块人和多个并发出块人。形式上，出块人先选位置，再在第一价格拍卖中竞争一个机会，该机会的共同价值由地理上分散的信息源驱动。单个出块人会最小化按方差加权的延迟，落在信息源的加权中位数，并与占优信息源共址。两个出块人时，双方同样早观察到的信息赚不到租金，每人的期望利润与自己比对手更早收到的信息的标准差成正比。选址博弈把双方都未观察到的方差当作序数势，因此加权双中位数问题的全局解是均衡。两个信息源时，无论其中一个多弱，两个出块人都会各占一个。出块人更多、信息源不少于出块人时，在常规出价下均衡位置互不相同。因此，多个并发出块人不仅限制任何单方对打包的控制：通过奖励独占信息而不是共享信息，它们会在经济上推动地理分散。",
+      "abstractEn": "The resilience and censorship resistance of a blockchain depend on where the validators and proposers of that blockchain physically operate. We study the economic incentives behind this location choice, both with a single proposer and with multiple concurrent proposers. Formally, we study a game where proposers first choose locations and then compete in a first-price auction for an opportunity whose common value is driven by information from geographically dispersed sources. A single proposer minimizes variance-weighted delay, locating at a weighted median of the sources and co-locating with any dominant one. By contrast, with two proposers, information both observe equally early earns no rent, and each proposer's expected profit is proportional to the standard deviation of the information it receives before its rival. We show that the location game admits the jointly unobserved variance as an ordinal potential, so global solutions of a weighted two-median problem are equilibria. With two sources, one proposer locates at each, however weak one is. With more proposers and at least as many sources, equilibrium locations are distinct under regular bidding. Multiple concurrent proposers thus do more than limit any single proposer's control over inclusion: by rewarding exclusive rather than shared information, they create an economic force toward geographic decentralization.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "审查抵抗",
+        "并发出块",
+        "地理分散",
+        "出块人"
+      ],
+      "url": "https://arxiv.org/abs/2610.18812",
+      "pdf": "https://arxiv.org/pdf/2610.18812.pdf"
+    }
+  ]
+}
