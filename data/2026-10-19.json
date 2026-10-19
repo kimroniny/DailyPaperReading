@@ -1,0 +1,323 @@
+{
+  "date": "2026-10-19",
+  "papers": [
+    {
+      "id": "2610.23035",
+      "title": "VulnSAGE: Adjudicating SAST Reports by Connecting LLM Reasoning to Program Structure",
+      "authors": [
+        "Jinbao Chen",
+        "Zixiang Zhou",
+        "Yu Zhang",
+        "Yihong Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型结合程序结构研判 SAST 告警，并在真实缺陷上生成可运行的 PoC，对象是 C/C++ 项目。",
+      "abstract": "静态应用安全测试（SAST）报告标出的操作是否安全，往往取决于项目上下文，维护者必须判断哪些报告对应真实缺陷。大语言模型能理解这类上下文，但要用它们研判告警，既需要拿到真正起决定作用、常常离报告行很远的代码，也需要程序分析能核对的判定依据。本文提出 VulnSAGE，一套把大模型推理和程序结构双向连起来的 SAST 告警研判系统。以报告为中心的切片器会收回被报告操作的依赖，以及解释这些依赖的程序结构，例如辅助函数作用的调用者对象。CLAIM 是一种告警判定中间表示，把模型的每次解释记成一条语义事实，并引用它所假设的程序关系。程序分析核对这些前提，裁决只依据前提成立的事实。两套机制共用一张程序图，模型可以引用读到的代码，检查器也可以查询这些引用。有静态支持的真阳性再用来指导概念验证生成和运行时复现。在覆盖五个漏洞族、来自四个语料的 187 条已标注报告上，VulnSAGE 拒绝了 97 条误报中的 89 条，保留了 90 个真实缺陷中的 85 个。在同一套 PoC 流程下，它的阳性裁决有 25 条能在运行时复现，而基于大模型的研判器 LLM4SA 只有 3 条。把它用到 GitHub 上星标最多的 200 个 C/C++ 项目、由五种 SAST 工具报出的 45440 条告警时，运行时复现了 104 个缺陷。维护者已回复的 26 个缺陷中确认了 24 个，其中包括 10 个此前未知的缺陷，其中 9 个已经修好。",
+      "abstractEn": "Static Application Security Testing (SAST) reports flag operations whose safety depends on project-specific context, and maintainers must decide which reports describe real defects. Large language models (LLMs) can interpret this context, but adjudicating a report with them requires the decisive code, which often lies far from the reported line, and a decision basis that program analysis can check. We present VulnSAGE, an adjudication system for SAST reports that connects LLM reasoning to program structure in both directions. Its report-centered slicer recovers the dependencies of the reported operation together with the program structure that explains them, such as the caller object on which a helper acts. CLAIM, an intermediate representation for report judgments, records each model interpretation as a semantic fact that cites the program relations it assumes. Program analysis checks these premises, and the verdict follows from the facts whose premises hold. Both mechanisms share a program graph, which lets the model cite the code it reads and lets the checker query those citations. Statically supported true positives then guide proof-of-concept generation and runtime reproduction. Across 187 labeled reports from four corpora covering five vulnerability families, VulnSAGE rejects 89 of 97 false alarms and retains 85 of 90 real defects. Under a common PoC procedure, 25 of its positive verdicts reproduce at runtime, compared with three for the LLM-based adjudicator LLM4SA. Applied to 45,440 alerts raised by five SAST tools on the 200 most-starred C/C++ projects on GitHub, it reproduces 104 defects at runtime. Maintainers have confirmed 24 of the 26 defects they have responded to, including ten previously unknown defects, nine of which are already fixed.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SAST 研判",
+        "大语言模型",
+        "C/C++",
+        "误报过滤"
+      ],
+      "url": "https://arxiv.org/abs/2610.23035",
+      "pdf": "https://arxiv.org/pdf/2610.23035.pdf"
+    },
+    {
+      "id": "2610.23685",
+      "title": "HardEval: An Execution-Verified Benchmark for AI-Driven Security Hardening and Compliance Remediation",
+      "authors": [
+        "Manohar Vellala",
+        "Soumya Banerjee",
+        "Sandip Roy",
+        "Ross Gore",
+        "Sachin Shetty"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型生成加固脚本，并在真实虚拟机上按 STIG/OVAL 核验是否真正修好，对象是 RHEL 操作系统配置。",
+      "abstract": "落实安全技术实施指南（STIG）仍然是很重的操作系统管理工作：每条自然语言安全要求都要翻译成精确、可持久的配置改动，覆盖 SSH 配置、认证策略、审计规则和内核参数。现有基准测不到模型能否在活系统上完成这件事。代码基准评的是没有持久系统状态的孤立程序，智能体基准又多盯应用，而不是操作系统配置。本文提出 HardEval，一套用实际执行来核验的、评测大模型辅助安全加固的基准。HardEval 取自未加固基线系统上会失败的 Red Hat Enterprise Linux 8 STIG 控制项。专家写的参考修复和开放漏洞与评估语言（OVAL）检查作为隐藏标准，从不展示给模型；每道题只说明必须达到的安全结果，不给实现方式。模型产出 Bash 脚本，在真实虚拟机上执行，再用对应的 OpenSCAP/OVAL 合规检查从失败打到通过。对十四种前沿和开源权重配置的评测显示，不同安全领域上的能力差距很大、也不均匀。反复出现的失败模式是：代码看起来像在做安全加固，却不满足精确的合规条件。对四种开源权重配置，多次运行的 Wilson 置信区间仍保持观察到的排序。HardEval 已公开。",
+      "abstractEn": "Implementing Security Technical Implementation Guide (STIG) controls remains a demanding operating-system administration task. Each natural-language security requirement must be translated into a precise and persistent configuration change. These changes span Secure Shell (SSH) configuration, authentication policy, audit rules, and kernel parameters. Existing benchmarks do not measure whether a model can perform this task on a live system. Code benchmarks evaluate isolated programs without persistent system state, while agent benchmarks largely focus on applications rather than operating-system configuration. In this paper, we introduce HardEval, an execution-verified benchmark for evaluating language-model-assisted security hardening. HardEval is built from Red Hat Enterprise Linux 8 STIG controls that fail on an unhardened baseline system. Expert-written reference remediations and Open Vulnerability and Assessment Language (OVAL) checks serve as hidden ground truth for grading; they are never shown to the model, and each task states only the required security outcome while withholding the implementation. The model produces a Bash script, which is executed on a live virtual machine and graded from fail to pass using the corresponding OpenSCAP/OVAL compliance check. Evaluation of fourteen frontier and open-weight configurations reveals large and uneven capability differences across security domains. A recurring failure mode is plausible security code that does not satisfy the exact compliance condition. For four open-weight configurations, multi-run Wilson confidence intervals preserve the observed ordering. HardEval is publicly available.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "系统加固",
+        "STIG",
+        "大语言模型",
+        "Linux"
+      ],
+      "url": "https://arxiv.org/abs/2610.23685",
+      "pdf": "https://arxiv.org/pdf/2610.23685.pdf"
+    },
+    {
+      "id": "2610.22943",
+      "title": "When Core-Network Elements Become Reachable: Field-Level Exploitability Analysis in Diameter",
+      "authors": [
+        "Wei Yi",
+        "Changlong Han",
+        "Xue Zhang",
+        "Qiao Zhang",
+        "Yi Chen",
+        "Jin Cao",
+        "Di Tang",
+        "Yulong Fu",
+        "Ben Niu",
+        "Hui Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型按专家分析纪律做 Diameter 字段级可利用性分析并生成 PoC，对象是蜂窝核心网信令。",
+      "abstract": "蜂窝核心网网元越来越多暴露在公网，Diameter 信令接口成了实际攻击面。大语言模型看起来适合做协议可利用性分析，但作者发现它们对 Diameter 的判断不可靠：可能偏离安全专家默认的分析纪律，也会在协议证据不完整时下结论。为此，本文提出 LENS，一套基于大模型、可靠做 Diameter 字段级可利用性分析的系统。LENS 同时用可利用性分析纪律和完成分析所需的协议证据来引导模型。它从已有利用报告里归纳分析纪律，又从分析失败里归纳取证指引，从而系统收集证据、评估可利用性，并在适用时生成概念验证攻击。实验表明，LENS 在四种大模型和多次重复运行上都较稳：平均召回率 94.00% 到 98.00%，精确率 78.73% 到 88.94%，准确率 84.00% 到 92.00%。在所考虑的威胁模型下，S6a 和 Cx 接口中超过 25% 的字段路径可被利用。作者进一步评估对实际实现的影响，发现 95 个此前未知的漏洞，其中 17 个在开源 EPC/IMS 实现里，78 个在商用部署里，可造成服务中断、信息泄漏、用户跟踪和加快耗电。把 LENS 用到另外 16 种覆盖蜂窝、网络、工业和主机内部系统的协议，又发现 118 个此前未知的漏洞，说明它有较强的可推广性。",
+      "abstractEn": "The increasing exposure of cellular core-network elements to public networks has turned Diameter signaling interfaces into a practical attack surface. While large language models (LLMs) show promise for protocol exploitability analysis, we find that their judgments on Diameter can be unreliable because they may deviate from the tacit analysis discipline followed by security experts and reach conclusions without considering complete protocol evidence. To address this challenge, we present LENS, an LLM-based system for reliable field-level Diameter exploitability analysis. LENS guides LLMs using both exploitability-analysis discipline and the protocol evidence needed for analysis. It infers analysis discipline from existing exploit writeups and evidence-collection guidance from exploitability-analysis failures, enabling systematic evidence collection, exploitability assessment, and proof-of-concept (PoC) attack generation when applicable. Our experiments show that LENS performs reliable analysis across four LLMs and repeated runs, achieving mean recall of 94.00% to 98.00%, precision of 78.73% to 88.94%, and accuracy of 84.00% to 92.00%. We find that more than 25% of field paths in the S6a and Cx interfaces are exploitable under the considered threat model. We further assess their impact on practical implementations and uncover 95 previously unknown vulnerabilities, including 17 in open-source EPC/IMS implementations and 78 in commercial deployments, causing service disruption, information leakage, subscriber tracking, and accelerated battery depletion. Applying LENS to 16 additional protocols spanning cellular, network, industrial, and host-internal systems uncovers 118 previously unknown vulnerabilities, demonstrating its strong generalizability.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Diameter",
+        "协议分析",
+        "大语言模型",
+        "核心网"
+      ],
+      "url": "https://arxiv.org/abs/2610.22943",
+      "pdf": "https://arxiv.org/pdf/2610.22943.pdf"
+    },
+    {
+      "id": "2610.18457",
+      "title": "Kairos: Transactional Security Enforcement at the System Boundary for LLM Agents",
+      "authors": [
+        "Kristoffer Hempel",
+        "Nils Loose",
+        "Lorenzo Cavallaro",
+        "Thomas Eisenbarth"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在系统隔离边界用策略和可推迟的判定预言机约束编程智能体的副作用，对象是会执行工具调用和 shell 的大模型智能体。",
+      "abstract": "大语言模型智能体正在进入软件开发生命周期，它们获得的能力让智能体可以按用户权限操作能碰到的任何资源。这种覆盖面既带来用处，也会被能操控智能体的攻击者用上。智能体摄入的任何内容都可能带着注入指令；模型又不能可靠区分指令和数据，因此间接提示注入应通过调解智能体产生的效果来缓解。这种调解有结构上的困难：合法工作和攻击的第一步在单次动作上看起来常常一样，真正把它们分开的证据出现在轨迹更后面，只做允许/拒绝的监视器不得不在证据凑齐前做决定。本文提出 Kairos，放在未修改、不透明智能体隔离边界上的引用监视器：工具调用、shell 命令和智能体写出的脚本，越过边界时都变成同样的文件和网络操作，因此无论智能体怎么表现，约束都成立。一份声明式策略说明哪些来源可信，据此确定性处理大部分效果，其余效果先挂起，智能体继续投机执行。权限有界的判定预言机（例如语言模型或人）再根据轨迹放行或拒绝被挂起的效果。在三个基准和三种智能体模型上，Kairos 在攻击成功率和可用性之间的权衡上优于已有防御。尤其在 AgentDojo 上，它把攻击成功率从 47.0% 降到 2.7%，良性任务可用性仍与未加防御的智能体相当。",
+      "abstractEn": "Large language model (LLM) agents are becoming an integral part of the software development lifecycle, and the capabilities granted to them allow an agent to act with the user's authority on any resource it can access. The reach that gives an agent its utility is equally available to an attacker who can steer it. Anything an agent ingests can carry an injected instruction, and since the model does not reliably distinguish instructions from data, indirect prompt injection should be mitigated by mediating the effects the agent produces. Such mediation faces a structural difficulty. Legitimate work and the first step of an attack often look alike when an individual action is observed, and what separates them lies later in the trace, so a monitor limited to allow and deny is forced to decide before the evidence accumulates. We present Kairos, a reference monitor at the isolation boundary of an unmodified, opaque agent, where a tool call, a shell command, and a script the agent writes all cross the boundary as the same file and network operations, so that confinement holds regardless of the agent's behavior. A declarative policy that states which sources are trusted decides most effects deterministically and defers the rest, which are held while the agent continues speculatively. A decision oracle with bounded authority, such as a language model or a human, releases or refuses each deferred effect on the trace. Across three benchmarks and three agent models, Kairos outperforms existing defenses in the trade-off between attack success and utility. In particular, on AgentDojo, it reduces attack success from 47.0% to 2.7% while its benign utility stays at the level of the undefended agent.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编程智能体",
+        "引用监视器",
+        "提示注入",
+        "系统边界"
+      ],
+      "url": "https://arxiv.org/abs/2610.18457",
+      "pdf": "https://arxiv.org/pdf/2610.18457.pdf"
+    },
+    {
+      "id": "2610.23233",
+      "title": "AgentLoupe: Kernel-Resident Semantic Causal Labels for AI Agent Observability",
+      "authors": [
+        "Yifei Bao",
+        "Ting Liu",
+        "Yuxin Ren",
+        "Ruizhe Huang",
+        "Likang Luo",
+        "Ziteng Xu",
+        "Yu Wang",
+        "Peng Jiang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用内核驻留标签把系统动作追溯到对应的大模型交互，用于安全审计，对象是会调工具的 AI 智能体和 Linux 内核。",
+      "abstract": "AI 智能体通过工具调用把用户意图变成系统动作。要做安全审计，必须准确把这些动作归因到触发它们的大模型交互；已有方法（如 AgentSight）在延迟执行和跨进程谱系行为上会失效。本文提出 AgentLoupe，一套对应用透明、基于 eBPF 的可观测工具。核心想法是把因果身份嵌进内核资源。AgentLoupe 用 eBPF 捕获 TLS 明文以解释大模型交互，并为每次交互分配一个内核驻留的语义标签。标签保存在 eBPF map 里，再跨进程和线程传播，并关联到文件、套接字等内核资源。当持久资源把上下文带到原谱系之外的独立进程时，这一设计仍能保住延迟的因果关联。实验显示 AgentLoupe 的平均观测开销低于 8%；案例研究确认它能把跨谱系的持久攻击追溯到最初的大模型交互。",
+      "abstractEn": "AI agents translate user intents into system actions via tool invocations. Accurately attributing these actions to their originating LLM interactions is essential for security auditing, yet existing methods, such as AgentSight, fail for delayed execution and cross-process-lineage behaviors. We present AgentLoupe, an application-transparent eBPF-based observability tool. The core insight of AgentLoupe is to embed causal identity into kernel resources. AgentLoupe employs eBPF to capture TLS plaintext to interpret LLM interactions, and assigns each a kernel-resident semantic label. It maintains labels in eBPF maps, then propagates this label across processes and threads, associates it with kernel resources such as files and sockets. When a persistent resource carries context to an independent process outside the original lineage, this design preserves the delayed causal association. Experiments show that the average observation overhead of AgentLoupe is below 8%, and case studies confirm AgentLoupe traces cross-lineage persistent attacks back to their originating LLM interactions.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能体审计",
+        "eBPF",
+        "内核",
+        "因果标签"
+      ],
+      "url": "https://arxiv.org/abs/2610.23233",
+      "pdf": "https://arxiv.org/pdf/2610.23233.pdf"
+    },
+    {
+      "id": "2610.23546",
+      "title": "Recall-Oriented Precise Binary-to-Source Function Matching",
+      "authors": [
+        "Junlin Li",
+        "Jianjun Huang",
+        "Wei You",
+        "Bin Liang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型筛选和复核二进制到源码的函数匹配，提高第三方组件识别，对象是剥离符号的二进制程序。",
+      "abstract": "二进制到源码的函数匹配通过识别复用的第三方代码来支持软件成分分析，但现有基于嵌入的方法把后续精炼限制在最初检索到的候选上。正确源函数若不在这个集合里，再怎么挑选或过滤现有候选也找不回来。内联还会把多个源函数合成一个二进制函数，让检索更难。本文提出 BScout，用来提高匹配精度并挖出更多匹配。BScout 用已有匹配的位置信息，给尚未解决的二进制函数补候选，把搜索扩到初始候选集之外，并用考虑组合的训练处理内联组合匹配。大语言模型用来选择和复核匹配，位置信息也用来过滤不一致的结果。实验表明 BScout 在二进制到源码函数匹配上有效，整体精确率、召回率和 F1 高于 BinaryAI 和 SBridge，分析代价可接受。尤其在大型剥离二进制上，BScout 比对照方法精确率高 32 个百分点，召回率约为它们的 2.9 倍。",
+      "abstractEn": "Binary-to-source function matching supports software composition analysis by identifying reused third-party code, but existing embedding-based approaches restrict subsequent refinement to initially retrieved candidates. When the correct source function is absent from this set, selecting or filtering the available candidates cannot recover the match. Inlining further complicates the retrieval by combining multiple source functions into one binary function. In this paper, we propose BScout to improve matching precision and uncover additional matches. BScout uses the positional information of existing matches to supplement candidates for unresolved binary functions, extending the search beyond the initial candidate set, and adopts composition-aware training to address the inlined composition matching. Large language models are adopted to select and review matches, while positional information also helps filter inconsistent results. Experiments show that BScout is effective in binary-to-source function matching. BScout achieves overall higher precision, recall and F1 scores than BinaryAI and SBridge with acceptable analysis costs. Particularly, on large stripped binaries, BScout outperforms the competitors with a precision increment of 32% and approximately 2.9 times the recall.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "软件成分分析",
+        "二进制匹配",
+        "大语言模型",
+        "第三方组件"
+      ],
+      "url": "https://arxiv.org/abs/2610.23546",
+      "pdf": "https://arxiv.org/pdf/2610.23546.pdf"
+    },
+    {
+      "id": "2610.18262",
+      "title": "Encrypted Skills Can Become New Security Exploits If AI Agents Know How to Decipher",
+      "authors": [
+        "Yan-Lun Chen",
+        "Pin-Yu Chen",
+        "Chia-Mu Yu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把恶意指令编码进技能文件，测试大模型智能体解码后是否执行，并检查技能扫描器是否漏报，对象是第三方 agent skill。",
+      "abstract": "第三方技能可能让大模型智能体接触被编码藏起来的恶意指令。本文提出密码技能注入（CSI）：把这类指令嵌进技能文件，让智能体解码并执行。作者在八种模型和 139 对注入任务上评估凯撒密码及分层变体，并把指令恢复和攻击成功分开统计。在缩短技能的主设置里，两类变体的攻击成功率最高分别达到 47.5% 和 40.3%。成功解码并不保证攻击成功，分层的效果也因模型而异。受测的技能扫描器很少标出被注入的技能。这些结果说明：把解码后、不可信的内容提升成可执行指令是有风险的。",
+      "abstractEn": "Third-party skills can expose LLM agents to malicious instructions hidden by encoding. We introduce Ciphered Skill Injection (CSI), which embeds such instructions in skill files for agents to decode and follow. We evaluate Caesar and layered variants across eight models and 139 injection-task pairs, separating instruction recovery from attack success. In the primary setting with shortened skills, the variants achieve attack success rates of up to 47.5% and 40.3%, respectively. Successful decoding does not guarantee attack success, and layering has model-dependent effects. The tested skill scanners rarely flag injected skills. These findings highlight the risk of promoting decoded, untrusted content into actionable instructions.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "技能注入",
+        "编程智能体",
+        "扫描漏报",
+        "编码指令"
+      ],
+      "url": "https://arxiv.org/abs/2610.18262",
+      "pdf": "https://arxiv.org/pdf/2610.18262.pdf"
+    },
+    {
+      "id": "2610.23656",
+      "title": "ABF-Bench: A Verifiable Benchmark for Agentic Blockchain Forensics",
+      "authors": [
+        "Xiaohang Yu",
+        "Hejia Geng",
+        "William Knottenbelt"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用必须引用账本记录的智能体做可核验的链上资金追踪评测，对象是跨链、混币和托管上的洗钱路径。",
+      "abstract": "区块链取证是对抗性的、开放的：洗钱者会拆分、兑换、跨链转移资金，在混币器或托管服务处切断轨迹，并随事件改变手法。调查人员必须跟着调整追踪。另一方面，公开账本不可篡改，每笔被记录的流动都公开可见，调查的很大一部分可以独立核验。本文提出 ABF-Bench，一套交互式基准，把有证据支撑的资金追踪做成可核验的智能体任务：每条声称的流动都必须引用智能体取回的账本记录。案例到任务的流水线在多条账本上构造提法清楚的任务：记录无法继续时，保守规则就停住追踪，每道题的参考图就是这些规则确定的答案。任务来自真实洗钱活动，组合了多跳转账、DeFi 兑换、跨链往返、托管和混币器入金，以及地址投毒。作者还提出围绕工作记忆的 ABF 智能体框架，并与通用智能体和固定顺序追踪器对比。该框架边召回率 75%，同一模型的 Codex 为 47%，Claude Code 为 10%；后者因过度自信丢召回：引用了自己并未取回的记录。与固定顺序追踪器相比，该框架在预算前期取证更快，并能认出对方会走过的未披露托管服务（89% 对 0%），保真度 98%。不过智能体往往过早停止，大任务上召回下降，最终召回仍低于最好的追踪器。除了暴露这些缺口，ABF-Bench 把区块链取证变成大模型智能体可核验的领域，给智能体打分的裁决也可以当训练信号。",
+      "abstractEn": "Blockchain forensics is adversarial and open-ended: money launderers split, swap, and bridge funds, cut their trail at mixers or custodial services, and change tactics from one incident to the next. Investigators must keep adapting their tracing in response. Yet the immutability of public ledgers preserves every recorded movement in public view, making much of the investigation independently verifiable. We introduce ABF-Bench, an interactive benchmark that makes evidence-backed fund tracing a verifiable agent task, in which every claimed movement must cite ledger records the agent retrieved. A case-to-task pipeline builds well-posed tasks across ledgers: conservative rules halt tracing wherever the records leave a continuation unresolved, and each task's reference graph is the answer those rules determine. Built from real laundering activity, the tasks combine multi-hop transfers, DeFi exchanges, cross-chain round trips, custodial and mixer deposits, and address poisoning. We also propose the ABF agent harness, built around a working memory, and evaluate it alongside general-purpose agents and fixed-order tracers. The harness reaches 75% edge recall, against 47% for Codex with the same model and 10% for Claude Code, which loses recall to overconfidence: it cites records it left unretrieved. Compared with fixed-order tracers, the harness acquires evidence faster than the best of them early in the budget and recognizes undisclosed custodial services that they walk past (89% vs. 0%), with 98% fidelity. However, agents tend to stop early and lose recall on larger tasks, which holds their final recall below the best tracer. Beyond exposing these gaps, ABF-Bench opens blockchain forensics to LLM agents as a verifiable domain, where the verdicts that score agents also offer potential training signals.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "链上取证",
+        "智能体",
+        "资金追踪",
+        "跨链"
+      ],
+      "url": "https://arxiv.org/abs/2610.23656",
+      "pdf": "https://arxiv.org/pdf/2610.23656.pdf"
+    },
+    {
+      "id": "2610.22508",
+      "title": "TCDA: Tunable Coded Distributed Arrays for Data Availability Sampling",
+      "authors": [
+        "Duc A. Tran",
+        "Dung Truong",
+        "Duy Le"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "给区块链数据可用性采样做可调编码的抗拜占庭网络层，无 LLM，对象是以太坊类 DAS。",
+      "abstract": "数据可用性采样（DAS）让区块链节点只下载区块的少量随机分片，就能核验数据是否可用。网络层必须及时把每个区块散发出去，好让验证者出证（PUT），还要存下来并按请求提供任意分片（GET）。无需信任的 DAS 必须在任意多拜占庭对等方下仍能工作。目前唯一有这个保证的设计是鲁棒分布式数组（RDA），靠全量复制做到：负责区块某一部分的每组节点都完整保存该部分，每组有一个诚实节点就够。代价是最终性关键路径上的 PUT 负载随网络增大且调不了，数据可能赶不上出证截止时间。编码是自然的补救，但编码层何时能对抗无界对手、代价和收益是多少，此前并不清楚。本文提出 TCDA，一种在诚实节点足够多（无论它们在哪）时可证明鲁棒的编码层，并带一个可调旋钮：每个节点保留多少分配到的数据。拧这个旋钮可以在 PUT/存储代价和 GET 代价之间权衡，可按数据类型设置，也可随诚实节点数量调整。按以太坊参数，对 32 MiB 区块、在推荐上行带宽下评估：RDA 在任何网络规模都赶不上出证截止时间；TCDA 可以从 868 个诚实节点调到测试的 40000 个都能赶上，每节点存储比复制少 1.7 到 32 倍，代价是每个样本大约 2.5 到 7.7 个来回，而不是大约一趟。",
+      "abstractEn": "Data availability sampling (DAS) lets blockchain nodes verify a block's data availability by downloading only a few random pieces of it. Its network layer must disseminate each block in time for validators to attest (PUT), store it, and serve any piece on request (GET). A trustless DAS must sustain any number of Byzantine peers. The only known design with this guarantee, Robust Distributed Arrays (RDA), achieves it by full replication: each group of nodes responsible for part of a block stores that part in full, so a single good node per group suffices. The price to pay is a PUT load on the critical path to finality that grows with the network and cannot be tuned, hence the data may not reach validators before the attestation deadline. Coding is the natural remedy, but it was not known when a coded layer remains robust against an unbounded adversary, what it costs, or what it gains. We propose TCDA, a coded layer that is provably robust given enough good nodes, wherever they lie, with a tunable knob: how much of its assigned data each node keeps. Turning the knob trades PUT and storage costs against GET cost. It can be set per data type and adjusted as the good-node population changes. At Ethereum's parameters, our evaluation for a 32 MiB block at the recommended uplink shows that RDA misses the attestation deadline at any network size, whereas TCDA can be tuned to meet it from 868 good nodes up to the 40,000 tested, storing 1.7 to 32 times less per node than replication, at the price of 2.5 to 7.7 round-trips per sample instead of about one.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "数据可用性",
+        "编码",
+        "拜占庭",
+        "以太坊"
+      ],
+      "url": "https://arxiv.org/abs/2610.22508",
+      "pdf": "https://arxiv.org/pdf/2610.22508.pdf"
+    },
+    {
+      "id": "2026-2494",
+      "title": "Speeding up Sumcheck using Algebraic Geometry",
+      "authors": [
+        "Rahul Dalal",
+        "Benedikt Bunz",
+        "Tamir Hemo",
+        "Ron D. Rothblum"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用代数几何构造保持二进制的乘法码，加快证明系统里最贵的 sumcheck 轮，无 LLM，对象是 zk 证明系统。",
+      "abstract": "Sumcheck 协议是现代证明系统里很常见的组件，用来证明低次多元多项式各点取值的和。理论上，sumcheck 已从多项式推广到任意乘法码（及其张量）：码字的逐点乘积仍落在相关的乘积码里。但实际系统几乎都只用多项式。对面向布尔电路、工作在二元域上的证明系统，这个选择有实际代价：两个二进制消息的 Reed–Solomon 乘积不再是二进制。于是证明者在 sumcheck 第一轮、也是最贵的一轮（所谓 univariate skip）里的工作会多出一个对数因子。本文给出一种基于代数几何、保持二进制的新的具体乘法码：两个已编码二进制消息的乘积仍是二进制消息。具体地，作者在 $\\mathbb{F}_{2^{128}}$ 上构造显式乘法码，把 64 比特消息映到长度为 222 的二进制乘积消息，乘积码的相对距离大于 $1-2^{-119}$。证明者在 sumcheck 里实际发送的那部分乘积消息，比实践中用的 Reed–Solomon 小三倍以上。该码来自 $\\mathbb{F}_2$ 上亏格 95、有 64 个有理点的曲线，由亏格 4 曲线的 $(\\mathbb{Z}/2)^3$ Artin–Schreier 覆盖得到。作者把所得协议（称为 AG skip）实现进 Flock 证明系统。对 $2^{32}$ 条约束，skip 轮加快 2.36 倍，原先证明者最贵的整段 zerocheck 加快 1.65 倍。",
+      "abstractEn": "The sumcheck protocol, a ubiquitous component of modern proof-systems, enables proving the sum of evaluations of a low-degree multivariate polynomial. In theory, sumcheck has been generalized from polynomials to (tensors of) any multiplication code, a code whose pointwise products of codewords lie in a related product code. All practical systems nonetheless specifically use polynomials. For proof-systems over binary fields that target Boolean circuits, this choice has a real cost: the product of two binary messages under Reed--Solomon is no longer binary. As a result, the prover's work in the first, and most expensive, round of sumcheck (the so-called univariate skip) grows by a logarithmic factor. We present a new concrete multiplication code based on algebraic geometry that is binary-preserving: the product of two encoded binary messages is again a binary message. Specifically, we construct an explicit multiplication code over F_2^128 that carries 64-bit messages to binary product messages of length 222, and whose product code has relative distance greater than 1-2^{-119}. The part of the product message that the prover actually sends in sumcheck is more than 3x smaller than with Reed--Solomon, as used in practice. The code comes from a genus-95 curve over F_2 with 64 rational points, built as a (Z/2)^3 Artin--Schreier cover of a genus-4 curve. We implemented the resulting protocol, which we call the AG skip, inside the Flock proof-system. For 2^32 constraints, it speeds up the skip round by 2.36x and the whole zerocheck, which was the prover's most expensive component, by 1.65x.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "sumcheck",
+        "zk 证明",
+        "代数几何",
+        "乘法码"
+      ],
+      "url": "https://eprint.iacr.org/2026/2494",
+      "pdf": "https://eprint.iacr.org/2026/2494.pdf"
+    },
+    {
+      "id": "2610.22451",
+      "title": "Capital Costs Protect the Network: Mining Gap Dynamics in Proof-of-Work Blockchains Under a Stochastic Mempool",
+      "authors": [
+        "Hasan Selçuk Kılıç",
+        "Nail Akar"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析工作量证明里交易费导致的挖矿空窗及其对活性的影响，无 LLM，对象是比特币类 PoW 网络。",
+      "abstract": "工作量证明区块链越来越依赖交易费来维持矿工参与，因为区块补贴在下降。一个直接结果是：一轮开始时矿工可能闲着，等到高费交易积够了才值得挖。这段空闲称为挖矿空窗（mining gap）。作者把高费交易积压建成两档费用市场下的 Lindley 型递归，并用其平稳分布刻画挖矿空窗。在比特币难度调整机制下，期望空窗随网上活跃算力严格增大；算力无限增大时，空窗会占满整轮。自由进入条件决定唯一的长期均衡算力。资本成本给均衡算力加上限，阻止空窗占满整轮。作者进一步刻画区块补贴、交易费和运营成本如何影响均衡算力和挖矿空窗。",
+      "abstractEn": "Proof-of-Work blockchains increasingly rely on transaction fees to keep miners engaged as block subsidies decline. An immediate outcome of this is that miners may sit idle at the start of a round until enough high-fee transactions accumulate in order to make mining worthwhile. This idle period is known as the mining gap. We model the high-fee transaction backlog as a Lindley-type recursion under a two-tier fee market and use its stationary distribution to characterize the mining gap. Under Bitcoin's difficulty-adjustment mechanism, the expected gap grows strictly with the hashpower active on the network and consumes the entire round as that hashpower grows without bound. A free-entry condition determines a unique long-run equilibrium hashpower. Capital cost caps the equilibrium hashpower and prevents the mining gap from occupying the entire round. We further characterize how the block subsidy, transaction fees, and operating cost shape the equilibrium hashpower and the mining gap.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "挖矿空窗",
+        "工作量证明",
+        "活性",
+        "交易费"
+      ],
+      "url": "https://arxiv.org/abs/2610.22451",
+      "pdf": "https://arxiv.org/pdf/2610.22451.pdf"
+    },
+    {
+      "id": "2610.18230",
+      "title": "Holding Agents Accountable with Verifiable Agent Insurance",
+      "authors": [
+        "Cheng Hua",
+        "Taro Tsuchiya",
+        "Nicolas Christin",
+        "Giulia Fanti"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用智能合约托管和可核验轨迹，在智能体违规后赔付用户，无 LLM 做检测方法，对象是链上的智能体保险。",
+      "abstract": "AI 智能体对很多任务有用，但经常以破坏性方式行为异常，例如删掉重要数据。已有工作多关注如何防止这种行为，本文考虑行为已经发生之后如何补救。作者提出可核验智能体保险（VAI）：智能体提供方用资金承诺一份程序化写明的策略清单，也就是智能体应当遵守的承诺。这些承诺和一笔资金托管一起写入不可篡改账本（例如区块链）上的智能合约，防止被改。用户若发现承诺被违反，可让核验方审查智能体执行轨迹；轨迹通过智能体框架共用的工具执行路径记录，不必给每个工具单独插桩。核验成立后，提供方托管资金赔给报告用户。作者在以太坊二层网络上实现了端到端的 VAI，并在三个主流智能体基准上评估覆盖率，其中两个基准被重新标注，得到任务级策略合规标签。目前许多智能体并不把用户授权和安全相关信息写成显式结构化对象，而是把核验违规所需的数据嵌在自然语言对话里。即便如此，VAI 仍能在三个基准里、含违规的运行中检出 42.2%。若让智能体显式输出这些对象，违规检出上升到 83.0% 的轨迹。作者认为，为提高可审计性，智能体应与安全策略一起设计，显式、结构化地记录用户授权和安全相关动作。",
+      "abstractEn": "While AI agents are useful for many tasks, they regularly misbehave in destructive ways, such as deleting important data. While prior work has focused on preventing such misbehavior, we consider how to recover after an agent misbehaves. We propose verifiable agent insurance (VAI), a framework for agent providers to commit financially to promises, a list of programmatically-specified policies that an agent is meant to follow. These promises are embedded in a smart contract on an immutable ledger (e.g., a blockchain) to prevent tampering, along with a monetary escrow. A user who detects a violation of committed promises can prompt a verifier to review agent execution traces, which are logged through the agent harness's shared tool-execution path, without instrumenting each tool separately. Upon verification of the violation, the agent provider's escrow funds are paid to the reporting user. We instantiate VAI as an end-to-end implementation on an Ethereum layer-2 network, and evaluate its coverage on three prominent agent benchmarks, two of which we re-annotated to obtain task-level policy-compliance labels. Currently, many agents do not emit user authorizations and security-relevant information as explicit, structured data objects -- rather, they embed the data needed to verify policy violations in natural language exchanges. Even so, VAI manages to detect violations in 42.2% of runs containing violations across three benchmarks. By augmenting agents to explicitly emit such objects, violation detection rises to 83.0% of traces. Our findings suggest that for improved auditability, agents should be co-designed with their security policies to emit explicit, structured records of user authorization and security-relevant actions.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "智能体保险",
+        "可核验",
+        "托管"
+      ],
+      "url": "https://arxiv.org/abs/2610.18230",
+      "pdf": "https://arxiv.org/pdf/2610.18230.pdf"
+    }
+  ]
+}
