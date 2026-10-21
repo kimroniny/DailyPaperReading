@@ -1,0 +1,264 @@
+{
+  "date": "2026-10-21",
+  "papers": [
+    {
+      "id": "2610.27871",
+      "title": "A Neuro-Symbolic Reasoning Engine for Compilation-Free Patch Presence Testing",
+      "authors": [
+        "Siyuan Li",
+        "Jiayi Zhou",
+        "Zhiyuan Xia",
+        "Weijie Wang",
+        "Yaowen Zheng",
+        "Weiran Tang",
+        "Hong Li",
+        "Hongsong Zhu",
+        "Shanqing Guo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用不编译的神经符号推理做补丁存在性检测，用了大模型，对象是源码和反编译伪代码。",
+      "abstract": "现代软件生态中的代码复用会让 1-day 漏洞扩散，带来明显安全风险。判断补丁是否已经存在很关键，但传统方法往往依赖脆弱的编译过程，可用性和准确率都有限。作者此前提出 Lares，这是第一个不编译的补丁存在性检测框架，把大语言模型和 SMT 求解器结合起来。不过 Lares 把大模型和 SMT 求解器当成两条并行决策通道：符号通道（Z3）只在 20% 的代码样例上成功，其余情况回退到神经通道（大模型）做最终裁决。让大模型当最终裁判，会把验证变成非正式、不确定的过程，容易出现幻觉，两条通道也无法互相加强。为此本文提出 SyLares，把不编译的补丁存在性检测改写成神经符号推理：大模型不再给出最终结论，而是作为神经特征提取器，理解异构源码和反编译伪代码，生成符合规范的 SMT-LIB 输入，再把最终的确定性判断交给符号求解器 Z3。这一“神经感知、符号裁决”的耦合由 Code2SMT 推理引擎实现，它把确定性语法解析与大模型驱动的代码规范化和符号对齐结合起来，使每个样例都归结为形式化等价查询，而不是不透明的大模型猜测。",
+      "abstractEn": "Code reuse in modern software ecosystems facilitates the spread of 1-day vulnerabilities, posing significant security risks. Determining if patches are present is crucial, but traditional methods suffer from limited usability and accuracy, often depending on a fragile compilation process. In our prior work, we introduced Lares, the first compilation-free framework for patch presence testing that combines large language models (LLMs) with SMT solvers. However, Lares treats the LLM and the SMT solver as two separate, parallel decision channels: the symbolic channel (Z3) succeeded in only 20% of code cases, and the remaining cases fell back to the neural channel (the LLM) for the final decision. Letting the LLM act as the final arbiter turns verification into an informal, non-deterministic process that is prone to hallucination errors, while the two channels never reinforce each other. To overcome these limitations, we propose SyLares, which reformulates compilation-free patch presence testing as neuro-symbolic reasoning. Instead of letting the LLM emit a final verdict, SyLares uses the LLM as a neural feature extractor that perceives heterogeneous source code and decompiled pseudocode and produces specification-compliant SMT-LIB inputs, and delegates the final, deterministic judgment to the symbolic Z3 solver. This neural-perceives, symbolic-decides coupling is realized by a Code2SMT reasoning engine that combines deterministic syntactic parsing with LLM-driven code normalization and symbol alignment, so that every case is reduced to a formal equivalence query rather than an opaque LLM guess.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "补丁检测",
+        "神经符号",
+        "漏洞复用",
+        "大语言模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.27871",
+      "pdf": "https://arxiv.org/pdf/2610.27871.pdf"
+    },
+    {
+      "id": "2610.27383",
+      "title": "AgenticVulHunter: Bringing Local Agentic Vulnerability Hunting to Your Terminal",
+      "authors": [
+        "Nishant Abhishek",
+        "Ping Charoenwet",
+        "Kla Tantithamthavorn"
+      ],
+      "year": 2026,
+      "venue": "APSEC 2026",
+      "abstractOneWord": "用本地开源权重大模型智能体做仓库级安全代码评审和漏洞定位，对象是软件仓库。",
+      "abstract": "尽早发现漏洞、避免其进入生产系统，对降低软件攻击风险很重要。但安全代码评审仍然困难，因为漏洞逻辑可能分散在仓库的不同文件中。近期 AgenticSCR 等方法表明，大模型智能体可以浏览仓库文件并利用安全知识改进安全评审。不过这些方法主要依赖外部商用大模型，并且一次会给智能体大量安全知识。于是出现一个问题：用本地部署的开源权重大模型，配合更聚焦、更相关的安全知识，能否同样做好智能体安全代码评审。本文提出 AgenticVulHunter，一种可在本地开源权重大模型上运行的智能体安全代码评审方法与工具。作者在 SCRBench 的 144 个漏洞样例上，用 Qwen3-Coder-30B 和 DeepSeek V3.1 Terminus 评估：同时看评审意见是否定位到漏洞位置、是否匹配漏洞类型、以及是否给出相关安全评论。AgenticVulHunter 在 Qwen3-Coder-30B 上准确率为 18.4%，在 DeepSeek V3.1 Terminus 上为 23.8%；作为对照，作者复现的 AgenticSCR 风格方法在 Qwen3-Coder-30B 上为 11.8%，AgenticSCR 使用 Claude Sonnet 4 时为 17.5%。",
+      "abstractEn": "Finding vulnerabilities early, before they can affect the production system, is important for reducing the risk of any software attacks. However, detecting vulnerabilities during secure code review is still difficult because the vulnerable code logic may depend on lines found across different repository files. Recent approaches such as AgenticSCR have shown that LLM agents can explore repository files and use security knowledge to improve secure code review. However, these approaches mainly rely on external commercial LLMs and can provide a large amount of security knowledge to the agent at once. This creates an important question of whether agentic secure code review can also be performed effectively using locally deployed open-weight LLMs with more focused and relevant security knowledge. In this paper, we propose AgenticVulHunter, an agentic secure code review approach and tool that can run with a locally deployed open-weight LLM. We evaluate AgenticVulHunter on 144 vulnerability cases from SCRBench using Qwen3-Coder-30B and DeepSeek V3.1 Terminus. We measure what percentage of generated review comments correctly identify the vulnerable location, match the vulnerability type, and provide a relevant security review comment together. AgenticVulHunter achieves an accuracy of 18.4% with Qwen3-Coder-30B and 23.8% with DeepSeek V3.1 Terminus, compared with 11.8% for our AgenticSCR-style reproduction using Qwen3-Coder-30B and 17.5% for AgenticSCR using Claude Sonnet 4.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞狩猎",
+        "安全评审",
+        "智能体",
+        "本地大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.27383",
+      "pdf": "https://arxiv.org/pdf/2610.27383.pdf"
+    },
+    {
+      "id": "2610.25133",
+      "title": "Many Repairs, One Direction: Steering Code Models Toward Safer Cryptographic API Use",
+      "authors": [
+        "Tianhe Lu",
+        "Sakuna Harinda Jayasundara",
+        "Eric Spero",
+        "Ewan Tempero",
+        "Robert Biddle",
+        "Giovanni Russello"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用表示转向降低大模型生成代码里的密码学 API 误用，对象是多语言应用程序代码。",
+      "abstract": "大模型生成代码中的密码学 API 误用会损害软件安全。现有方法多通过改模型参数或输入来提高代码安全性，但不同密码学 API 修复所对应的表示变化，能否支撑一种共用的、更安全的代码生成干预，仍缺少研究。本文构造了覆盖 4 种编程语言和 10 类密码学 API 误用的 48000 对匹配程序，每对只改指定 API 决策、保持编程任务不变。用安全版本的内部表示减去误用版本，得到修复向量。在 5 个模型上比较平均修复向量，发现它们按误用类别组织得比按语言更清楚。这些类别模式也支撑一种共用干预。作者提出 CrypSteer：先规范化修复差，再选出与各类修复对齐的主成分，得到一个共用方向。模型权重保持不变，在生成时把每个模型的这一共用方向加到内部激活上，跨语言和误用类别的目标安全率比不转向生成提高 5.28 到 15.00 个百分点。这些结果把密码学修复表示的共用结构，连到一种可复用的更安全代码生成干预上。",
+      "abstractEn": "Cryptographic API misuse in large language model-generated code can compromise software security. While many existing approaches improve code security by modifying model parameters or inputs, how representation changes associated with different cryptographic API repairs can support a shared intervention for safer code generation remains underexplored. To investigate this, we construct 48,000 matched program pairs across four programming languages and ten cryptographic API misuse categories. Each pair changes a specified API decision while preserving the programming task. Subtracting the misuse program's internal representation from its secure counterpart's gives a repair vector. Across five models, comparisons of mean repair vectors reveal stronger organization by misuse category than by language. These category-specific patterns also support a shared intervention. We introduce CrypSteer, which extracts a shared direction by normalizing repair differences and selecting a principal component aligned with repairs across misuse categories. With model weights fixed, adding one shared direction per model to its internal activations during generation improves aggregate target security rates by 5.28--15.00 percentage points over unsteered generation across languages and misuse categories. These findings connect the shared structure of cryptographic repair representations to a reusable intervention for safer code generation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "密码学 API",
+        "安全代码生成",
+        "表示转向",
+        "大语言模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.25133",
+      "pdf": "https://arxiv.org/pdf/2610.25133.pdf"
+    },
+    {
+      "id": "2610.27257",
+      "title": "When Models Know but Can't Linearly Say: Relational Encoding Limits Linear Vulnerability Classification in Code LLMs",
+      "authors": [
+        "Rui Melo",
+        "Andre Catarino",
+        "Claudia Mamede",
+        "Corina Pasareanu",
+        "Rui Abreu"
+      ],
+      "year": 2026,
+      "venue": "EMNLP Findings 2026",
+      "abstractOneWord": "分析代码大模型如何编码漏洞信息，以及线性分类为何不准，对象是 C 程序。",
+      "abstract": "大语言模型能够检测有漏洞的代码，但漏洞信息在其表示里如何编码仍不清楚。本文在 C 程序上分析 8 个参数量 6.7B 到 15B 的代码模型，使用 DELTASECOMMITS、SVEN 和 PRECISE-BUGS 三个数据集，在同一组表示上比较两项诊断任务：识别代码实例化了哪些模式，以及判断代码是否有漏洞。模型对第一项编码保真度很高。在所研究的成对 C 代码数据集和线性探测设置下，漏洞信息作为成对关系信号（代码 A 是否比代码 B 风险更高）更容易读取，而不是作为全局可分的类别标签。这一结构差异影响分类：模型能可靠地排出哪段代码风险更高，但在孤立样本上的标准分类器准确率有限，因为有漏洞样本和安全样本在表示空间中重叠。",
+      "abstractEn": "Large language models can detect vulnerable code, yet the form of vulnerability encoding in their representations remains unclear. We analyze 8 code models spanning 6.7B-15B parameters on C programs using three datasets (DELTASECOMMITS, SVEN, and PRECISE-BUGS), comparing two diagnostic tasks on the same representations: identifying what patterns the code instantiates, and determining whether it is vulnerable. Models encode the first with high fidelity. Under the studied paired C-code datasets and linear-probing setup, vulnerability information is more accessible as a paired relational signal-whether code A is riskier than code B-than as a globally separable categorical label. This structural difference has implications for classification: the model reliably ranks which code is riskier but standard classifiers on isolated samples achieve limited accuracy because vulnerable and secure samples form overlapping distributions in representation space.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞分类",
+        "代码大模型",
+        "线性探测",
+        "C 语言"
+      ],
+      "url": "https://arxiv.org/abs/2610.27257",
+      "pdf": "https://arxiv.org/pdf/2610.27257.pdf"
+    },
+    {
+      "id": "2610.24873",
+      "title": "The One-Pixel of Reasoning: One Truthful Relation Is Enough to Mislead LLM Agents",
+      "authors": [
+        "Jinwei Hu",
+        "Youcheng Sun",
+        "Yi Dong",
+        "Xiaowei Huang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用一句关系干预误导大模型智能体，评测包含漏洞检测，对象是漏洞检测智能体。",
+      "abstract": "一句话能否针对证据与结论之间的一条隐含依据，从而操纵智能体的信念？本文提出 one-relation attack（ORA），这是一种针对该推断关系的认知攻击。ORA 定位一条关键隐含依据，再用一句有来源依据的句子做单关系干预，限定这条依据并把智能体导向错误信念。在生物医学推断和漏洞检测上，对 18 个模型做 best-of-10 攻击，最初判断正确的答案被推翻的平均比例为：闭源模型 54.9%，开源权重模型 80.0%。攻击也可以在没有受害者反馈的情况下迁移，成对对照支持“瞄准”和“限定”这两个环节的作用。成功句子还能通过来源支持检查并逃避识别；在平衡压力测试中，多智能体辩论还会把团队错误率从 50.0% 提高到 59.5%。这些结果说明，隐含依据是操纵智能体信念的认知攻击面。",
+      "abstractEn": "Can one sentence manipulate an agent's belief by targeting a single implicit warrant linking evidence to a conclusion? In this paper, we introduce the one-relation attack (ORA), a novel cognitive attack on this inferential relation. ORA localizes a critical implicit warrant and performs a one-relation intervention using a single source-grounded sentence that qualifies this warrant and steers the agent toward an incorrect belief. Across eighteen models on biomedical inference and vulnerability detection, best-of-$10 attacks overturn initially correct answers at mean rates of 54.9% for proprietary and 80.0% for open-weight models. Attacks also transfer without victim feedback, and paired controls support the roles of targeting and qualification. Moreover, successful sentences can pass source-support checks and evade identification, and multi-agent debate raises team error from 50.0% to 59.5% in our balanced stress test. These findings establish implicit warrants as a cognitive attack surface for manipulating agents' beliefs.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "智能体攻击",
+        "推理干预",
+        "大语言模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.24873",
+      "pdf": "https://arxiv.org/pdf/2610.24873.pdf"
+    },
+    {
+      "id": "2610.23014",
+      "title": "QuarkShard: Decomposing Cross-Shard Requests into Single-Input Transactions",
+      "authors": [
+        "Changyu Duan",
+        "Zhixuan Fang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把跨分片请求拆成单输入交易，降低开销并增强对 MEV 和泛洪的防护，没有用大模型，对象是分片区块链。",
+      "abstract": "分片区块链通过把负载分到多个分片来提高可扩展性。其中，安全且高效地处理跨分片用户请求仍是关键挑战。传统分片协议把每个用户请求当作整体来执行以保持原子性，这会带来明显的分片内 BFT 执行开销和跨分片通信开销。本文提出 QuarkShard，它打破这一范式，使分片内和跨分片开销低于传统方法给出的下界。QuarkShard 把跨分片请求拆成单输入分片交易，每笔交易只需要在一个分片内做共识和处理，从而显著降低总处理开销。同时，通过精心设计的请求分解算法，QuarkShard 在执行过程中保证资金原子性或位置原子性。QuarkShard 还增强了分片系统对 MEV 攻击和泛洪攻击的安全性。在覆盖 4 个 AWS 区域的广域网上评估，QuarkShard 峰值吞吐达到每秒 1024k 请求，延迟低于 4 秒；基准对比显示，其最大吞吐分别达到 Kronos 和 2PC 的 210.7% 和 314.8%。",
+      "abstractEn": "Sharding blockchains enhance scalability by distributing the workload across multiple shards. Within sharding blockchains, securely and efficiently processing cross-shard user requests remains a pivotal challenge. Traditional sharding blockchain protocols execute cross-shard requests under a processing paradigm that treats each user request as a monolithic entity to preserve its atomicity, inherently introducing significant intra-shard BFT execution overhead and cross-shard communication overhead. We propose QuarkShard, a sharding protocol that breaks away from this traditional paradigm to achieve intra-shard and cross-shard overheads below the lower bounds imposed by conventional approaches. QuarkShard decomposes cross-shard requests into single-input-shard transactions, where each transaction requires consensus and processing within only a single shard, thereby substantially reducing total request processing overhead. Meanwhile, through a carefully designed request decomposition algorithm, QuarkShard guarantees fund atomicity or location atomicity during request execution. QuarkShard also enhances the security of blockchain sharding systems against MEV attacks and flooding attacks. Empirical evaluation across a wide-area network spanning four AWS regions demonstrates that QuarkShard achieves superior performance, attaining a peak throughput of 1024k requests per second with sub-4-second latency. Benchmark comparisons show that QuarkShard achieves up to 210.7% and 314.8% of the maximum throughputs of Kronos and 2PC, respectively.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "分片",
+        "跨分片",
+        "MEV",
+        "泛洪攻击"
+      ],
+      "url": "https://arxiv.org/abs/2610.23014",
+      "pdf": "https://arxiv.org/pdf/2610.23014.pdf"
+    },
+    {
+      "id": "2026-2545",
+      "title": "A Note on the Security of ECDSA with Presignatures or Biased Nonces",
+      "authors": [
+        "Geoffroy Couteau",
+        "Nikolaos Makriyannis"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "分析带预签名或偏置随机数的 ECDSA 变体安全性，没有用大模型，对象是钱包与分布式签名。",
+      "abstract": "多年来，为了加快分布式 ECDSA 签名，人们提出了多种 ECDSA 安全实验。这些实验并不已知能归约到标准 ECDSA 博弈；近期工作（Groth and Shoup, Eurocrypt 2022）表明，其中一些在与原始签名（直接签哈希摘要而不是预哈希消息）和加法密钥派生结合时是脆弱的。这些变体有的已经写进公开库，也被公司用在已部署产品中，但缺少可靠的安全基础。本文重新审视这些 ECDSA 替代工作模式的安全图景。主要结果是：其中一些正在实际使用的变体，在通用群模型和随机预言机模型下，其安全性等价于细粒度复杂性中关于 k-SUM 问题平均情况困难性的一个标准猜想。作者还基于细粒度复杂性猜想，对 Groth 和 Shoup 分析过的其他标准工作模式，给出通用群模型攻击运行时间的下界。总体来看，这些结果给出了 ECDSA 变体安全图景的完整图，并揭示了它与细粒度复杂性中新旧猜想之间的联系。",
+      "abstractEn": "Over the years, several ECDSA security experiments have been proposed to enable faster distributed ECDSA signing. These experiments are not known to reduce to the standard ECDSA game, and recent work (Groth and Shoup, Eurocrypt 2022) shows that some are vulnerable, especially when combined with raw signing (signing hash digests directly, rather than pre-hashed messages) and additive key derivation. Furthermore, several of these variants are implemented in public libraries and used by companies, sometimes in commercially deployed products, yet lack sound security foundations. In this note, we revisit the security landscape of these alternative modes of operation for ECDSA. As our main result, we show that the security of some of these variants, which are used in the wild, is equivalent in the generic group and random oracle model to a standard conjecture from fine-grained complexity on the average-case hardness of the k-SUM problem. We complement our study by proving lower bounds, conditioned on fine-grained complexity conjectures, on the running time of generic group model attacks against other standard modes of operation analyzed in (Groth and Shoup, Eurocrypt 2022). Overall, our results provide a complete picture of the security landscape of ECDSA variants, and reveal an elegant connection with (old and new) conjectures from the field of fine-grained complexity.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "ECDSA",
+        "预签名",
+        "钱包",
+        "阈值签名"
+      ],
+      "url": "https://eprint.iacr.org/2026/2545",
+      "pdf": "https://eprint.iacr.org/2026/2545.pdf"
+    },
+    {
+      "id": "2026-2554",
+      "title": "Concrete LDVR Attacks with Fewer Signers",
+      "authors": [
+        "Renas Bacho"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用更少签名者对阈值签名里的 LDVR 问题给出具体攻击，没有用大模型，对象是阈值签名。",
+      "abstract": "本文改进 Rodríguez García 和 Tessaro（ePrint 2026/2126）对低维向量表示（LDVR）问题的具体攻击参数；他们在规范评估点上的攻击需要 5020 个签名者。把他们的中国剩余定理构造与对多个挑战的广义生日搜索结合起来，作者在 Curve25519 标量域上得到一个需要 488 个签名者和 173 次腐蚀的具体攻击。在 64 批、每批 2^25 个挑战中，搜索为 6 个不同挑战找到了解。作者把搜索各阶段测得的计数与显式启发式模型的预测做了比较。对于对抗选择的评估点，作者基于 Rodríguez García 和 Tessaro 的二进制攻击，给出一种构造：在均匀预言机模型下，当 2≤n≤253 且 t_c=t 时，对每个预言机查询预算都达到最优 LDVR 成功概率。在 228 个签名者和 114 次腐蚀下，实现用 SHA-512 挑战找到成功子集，两次运行累计查询 3.6013 亿次，共耗时 168.60 秒。作者还给出一组 256 个评估点，在其上用 128 次腐蚀的高效子集搜索，对每个均匀挑战的成功概率至少为 51.92%。对规范评估点和对抗评估点，作者都分析了查询复杂度，并报告了实测和估计运行时间。",
+      "abstractEn": "We improve the concrete parameters of the attacks on the low-dimensional vector representation (LDVR) problem by Rodríguez García and Tessaro (ePrint 2026/2126), whose attack on canonical evaluation points uses 5,020 signers. By combining their Chinese remainder theorem construction with a generalized birthday search over many challenges, we obtain a concrete attack with 488 signers and 173 corruptions over the Curve25519 scalar field. In 64 batches of 2^25 challenges, the search finds solutions for six distinct challenges. We compare the counts measured at each stage of the search with predictions from an explicit heuristic model. For adversarially chosen evaluation points, we build on the binary attacks of Rodríguez García and Tessaro and give a construction that attains the optimal LDVR success probability for every oracle query budget when 2≤n≤253 and t_c=t in the uniform oracle model. At 228 signers and 114 corruptions, our implementation finds a successful subset using SHA-512 challenges after a cumulative total of 360.13 million queries across two runs, taking 168.60 seconds in total. We also give an explicit set of 256 evaluation points for which an efficient subset search attack using 128 corruptions succeeds with probability at least 51.92% per uniform challenge. For both canonical and adversarially chosen evaluation points, we analyze the query complexity and report measured and estimated running times.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "阈值签名",
+        "LDVR",
+        "签名攻击",
+        "Curve25519"
+      ],
+      "url": "https://eprint.iacr.org/2026/2554",
+      "pdf": "https://eprint.iacr.org/2026/2554.pdf"
+    },
+    {
+      "id": "2026-2534",
+      "title": "Circular Dragon: Optimal Adaptively Secure Distributed Randomness/Key Generation and Parallel Broadcast",
+      "authors": [
+        "Hanwen Feng",
+        "Yuan Lu",
+        "Tiancheng Mai",
+        "Qiang Tang"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出强自适应安全的公共硬币、DKG 和并行广播协议，没有用大模型，对象是共识与阈值密钥生成。",
+      "abstract": "本文给出第一个强自适应公共硬币协议：在 PKI 设置下（随机预言机模型和代数群模型，但没有可信分发者），在同步网络中达到最优韧性 t<n/2，并接近最优渐近：通信接近二次，轮数为对数，失败概率可忽略。该硬币协议还不假设内存擦除。其核心是一个专用分布式密钥生成（DKG）协议，在椭圆曲线群中产生秘密。这一公共硬币立刻蕴含第一个强自适应、最优韧性、且在没有可信分发者时通信低于三次方、轮数低于线性的拜占庭协议。作者还给出两个独立有意义的应用：一是在标准 PKI 下的强自适应并行广播，通信接近二次、轮数为对数，而已有低于三次方的方案至少需要线性轮数；二是面向域元素秘密的强自适应通用 DKG，与传统阈值方案（BLS、Schnorr、ElGamal）兼容，并改进了此前通信和轮数更高的结果。核心是一种称为 Circular Dragon 的新设计方法，它扩展了原本用于低于三次方通信但轮数为线性的 Dragon 方法，进一步降低了轮复杂度。",
+      "abstractEn": "We present the first strongly adaptive common coin protocol, under the PKI setup (in the random oracle model and the algebraic group model, yet with no trusted dealer), that (i) achieves the optimal resilience t<n/2 in synchronous networks, and (ii) attains near-optimal asymptotics: near-quadratic communication and logarithmic rounds, with negligible failure probability. Furthermore, the coin protocol assumes no memory erasure. At its core is a special-purpose distributed key generation (DKG) protocol that produces a secret in an elliptic-curve group. Our common coin immediately implies the first strongly adaptive and optimally resilient Byzantine Agreement with subcubic communication and sublinear rounds in the absence of a trusted dealer. Furthermore, we give two non-trivial applications of independent interest: (i) a strongly adaptive Parallel Broadcast under standard PKI with near-quadratic communication and logarithmic rounds, whereas all existing subcubic solutions require at least linear rounds; (ii) a strongly adaptive general-purpose DKG for field-element secrets, fully compatible with legacy threshold schemes (BLS, Schnorr, ElGamal). Our core is a new design methodology, which we call Circular Dragon. This extends the Dragon method that was originally developed for sub-cubic communication DKG protocols but with linear rounds, by further reducing the round complexity.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DKG",
+        "公共硬币",
+        "拜占庭共识",
+        "阈值签名"
+      ],
+      "url": "https://eprint.iacr.org/2026/2534",
+      "pdf": "https://eprint.iacr.org/2026/2534.pdf"
+    },
+    {
+      "id": "2610.26713",
+      "title": "Proof-of-Machine-Learning-Inference: Mining Knowledge, Not Hashes",
+      "authors": [
+        "Wan Ki Wong",
+        "Michele Ciampi",
+        "Rik Sarkar"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用机器学习推理代替哈希谜题做共识，并归约到 Bitcoin Backbone，没有把大模型当审计工具，对象是无许可链共识。",
+      "abstract": "比特币风格的工作量证明能保护无许可链，但大量计算花在除了延长链条之外没有其他用处的哈希谜题上。与此同时，生成式人工智能带来了对计算资源的大量需求，而这些资源往往只掌握在少数参与者手里。本文提出一种同时应对这两个问题的方案：Proof-of-ML-Inference（PoML），一种共识协议，矿工在共识算法中执行用户请求的机器学习推理。作者明确指出，要用机器学习推理安全地替换哈希工作需要哪些计算假设，形式化这些假设，并给出大语言模型和扩散模型满足这些假设的证据。随后把协议安全性归约到 Bitcoin Backbone 模型的安全性。最后用实验评估出块时间稳定性：在模拟环境中，PoML 的出块速率接近其标定的出块时间目标。",
+      "abstractEn": "Bitcoin-style Proof-of-Work (PoW) secures permissionless blockchains but spends substantial computation on hash puzzles which have no utility other than extending the chain. At the same time, we have seen that the rise of generative AI has created significant demand for computational resources that are unfortunately available only to a few players. We propose a solution that solves both problems at the same time. In particular, we present Proof-of-ML-Inference (PoML), a consensus protocol in which miners perform user-requested machine-learning inference as part of their consensus algorithm. We identify exactly what computational assumptions are needed for ML inference to safely replace hash work, formalize those assumptions, and give evidence that LLMs and diffusion models satisfy them. We then formally analyse the security of our protocol by reducing the security of our protocol to the security of the Bitcoin Backbone model. Finally, we empirically evaluate block-time stability, showing that, in a simulated environment, PoML maintains a block production rate close to its calibrated block-time target.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "有用工作量证明",
+        "Bitcoin Backbone",
+        "机器学习"
+      ],
+      "url": "https://arxiv.org/abs/2610.26713",
+      "pdf": "https://arxiv.org/pdf/2610.26713.pdf"
+    }
+  ]
+}
