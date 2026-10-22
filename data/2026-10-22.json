@@ -1,0 +1,260 @@
+{
+  "date": "2026-10-22",
+  "papers": [
+    {
+      "id": "2610.29456",
+      "title": "RegoMender: A Multi-agent Framework for Automated Rego Policy Repair",
+      "authors": [
+        "Ruijie Zhang",
+        "Huaxiao Yin",
+        "Li Hu",
+        "Fanqi Kong",
+        "Haozhe Liang",
+        "Shaoyin Cheng",
+        "Kun Zhang",
+        "Bibo Tu"
+      ],
+      "year": 2026,
+      "venue": "ASE 2026",
+      "abstractOneWord": "用多智能体修 Rego 策略并在真实 CVE 上评估，用了大模型，对象是云原生 Policy-as-Code。",
+      "abstract": "Policy-as-Code 已成为云原生系统的基础做法，但修复 Rego 策略仍然困难：语法严格、语义是声明式的，还要满足特定验证要求。现有自动程序修复方法主要面向主流语言，很难适配 Rego 的策略逻辑和修复流程，因此 Rego 策略修复仍靠人工试错。本文提出 RegoBench，这是第一个自动化 Rego 策略基准，包含 1159 个真实缺陷；并给出 RegoMender，一个由反馈驱动的多智能体框架。各智能体通过共享黑板和一组原子工具协作，动态执行补丁、重写或回滚，以处理复杂修复场景。在 RegoBench 上，RegoMender 的语法成功率为 82.9%，基于测试的语义成功率为 77.9%，比最强基线高 13.4%。其他方法在复杂场景上会下降，RegoMender 在单步和链式修复任务上都保持有效。它还能推广到 HCL 和 SQL，并在 132 个真实 CVE 漏洞上达到 86.4% 的修复率，说明其对安全场景有实际用处。",
+      "abstractEn": "Policy-as-Code (PaC) has emerged as a foundational paradigm in cloud-native systems. However, repairing Rego policies remains challenging due to their strict syntax, declarative semantics, and specific verification requirements. Existing automated program repair (APR) methods are mainly designed for mainstream languages and struggle to accommodate the unique policy logic and repair workflows of Rego. Thus, Rego policy repair remains a manual process driven by trial and error. To address this, we introduce RegoBench, the first automated Rego policy benchmark comprising 1,159 real-world defects, and propose RegoMender, a feedback-guided multi-agent framework. Collaborating via a shared blackboard and an atomic toolkit, RegoMender dynamically executes patching, rewriting, or rolling back, to resolve complex repair scenarios. Evaluated on RegoBench, RegoMender achieves syntactic and test-based semantic success rates of 82.9% and 77.9%, respectively, outperforming the strongest baseline by 13.4%. Unlike other approaches whose performance drops in complex scenarios, RegoMender maintains effectiveness across single-step and chained repair tasks. Furthermore, it generalizes strongly across HCL and SQL and achieves an 86.4% repair rate on 132 real-world CVE vulnerabilities, proving its robustness and practical utility for security.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "策略修复",
+        "多智能体",
+        "Rego",
+        "CVE"
+      ],
+      "url": "https://arxiv.org/abs/2610.29456",
+      "pdf": "https://arxiv.org/pdf/2610.29456.pdf"
+    },
+    {
+      "id": "2610.29155",
+      "title": "5uGUE: Agentic Hardware-in-the-Loop Fuzzing for 5G Devices and beyond",
+      "authors": [
+        "Guoqiang Hua",
+        "Sakshi Udeshi",
+        "Matheus Eduardo Garbelini",
+        "Daisuke Mashima",
+        "Sudipta Chattopadhyay"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型智能体做硬件在环无线模糊测试，对象是 5G 手机等商用设备。",
+      "abstract": "本文提出 5uGUE，这是一个由大语言模型驱动、带硬件在环的智能体，可对 5G 设备（如手机）做无线模糊测试。它把多步推理和工具调用结合起来，接入搜索、5G 协议分析、内存管理和测试用例执行等工具。智能体迭代生成测试用例、在目标上执行、收集运行时反馈，并据此调整模糊测试策略。作者在 5 款商用 5G 设备上、用 6 个大模型评估。5uGUE 最好的几轮共触发 167 次崩溃（141 次新崩溃、31 次独特崩溃），交互轮次为 60，总运行时间约 49 到 133 分钟。作为对照，现有最优基线 5GHOUL 在 150 分钟内只发现 13 次崩溃（10 次新崩溃、6 次独特崩溃）。总体看，接入大模型智能体后，崩溃发现量提高 12.8 倍，独特崩溃提高 5.2 倍。MediaTek 已确认其中两个高危新漏洞，并分配 CVE-2026-20525；UNISOC 确认了 7 次崩溃。为说明方法不绑定单一无线协议，作者只做很少代码改动就把它扩到 Bluetooth Classic，平均发现 6.4 次新崩溃和 1.6 次独特崩溃。结果表明，大模型智能体不仅能在软件在环设置里工作，也能在影响数十亿终端设备的专有硬件系统上做自主漏洞发现。",
+      "abstractEn": "In this paper, we present 5uGUE, a large language model (LLM)-driven hardware-in-the-loop agent, which enables the wireless fuzzing of 5G-enabled devices (such as mobile phones). 5uGUE combines multi-step reasoning with tool-assisted interaction and integrates into the fuzzing pipeline by leveraging specialized tools for internet search, 5G protocol analysis, memory management, and test-case execution. The agent iteratively generates test cases, executes them on targets, collects runtime feedback, and adaptively refines the fuzzing strategy. We evaluate 5uGUE on five commercial off-the-shelf (COTS) 5G devices across six LLMs. The best performing runs for 5uGUE trigger 167 crashes in total (141 novel and 31 unique) within 60 interaction turns (49 to 133 minutes total runtime). In contrast, the best runs for the state-of-the-art baseline (5GHOUL) discovers only 13 crashes in total (10 novel and 6 unique) within 150 minutes. Overall, by integrating LLM-driven agents, 5uGUE demonstrates significantly better crash discovery performance (12.8x total, 5.2x unique improvement). Notably, among the crashes discovered by 5uGUE, MediaTek has confirmed two new high-severity vulnerabilities, with one CVE assigned (CVE-2026-20525), while UNISOC confirmed seven crashes. Finally, to demonstrate that 5uGUE is agnostic to wireless protocols, we also extend it to Bluetooth Classic with only minimal code changes. In our evaluations, 5uGUE finds an average of 6.4 novel crashes and 1.6 unique crashes. In a nutshell, 5uGUE highlights that LLM agents are capable to operate effectively beyond software-in-the-loop settings, extending autonomous vulnerability discovery to the proprietary, hardware-bound systems that affect billions of end-user devices across multiple wireless protocols.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "模糊测试",
+        "5G",
+        "硬件在环",
+        "智能体"
+      ],
+      "url": "https://arxiv.org/abs/2610.29155",
+      "pdf": "https://arxiv.org/pdf/2610.29155.pdf"
+    },
+    {
+      "id": "2610.28802",
+      "title": "How Much Does the Harness Matter, and for Whom? A Multi-Model Study of Context in LLM-Driven Vulnerability Discovery",
+      "authors": [
+        "Ganni Galea Curmi",
+        "Ben Wilde"
+      ],
+      "year": 2026,
+      "venue": "CAMLIS 2026",
+      "abstractOneWord": "比较不同智能体外壳和上下文对大模型漏洞发现的影响，对象是当时尚未公开漏洞的生产代码库。",
+      "abstract": "智能体外壳对漏洞发现的影响有多大，这种影响是否取决于所用模型？作者用一套开源外壳，在一个扫描时漏洞尚未公开的生产代码库上，评估了 24 种模型与运行器组合。流程包括静态筛选、大模型调查、模型自复核、根因映射、独立源码审查，以及隔离的概念验证确认。在 265 个已确认安全根因中，规模最大的双次运行组合覆盖 60.4%，另有 14.3% 只被一个模型找到。没有任何单一组合覆盖全部发现。在四模型上下文实验中，从最小提示改到带 CodeQL 调用图的工程化提示后，较小和中档模型按严重度加权的产出提高 20% 到 86%，前沿模型只提高 2%。这一对比同时改了提示和上下文。把两者拆开后，工程化提示对四个模型都有帮助，而在该提示之上再加 CodeQL 上下文，只对最小的模型提高产出。在留出的 CyberGym 子集上，组合处理同样提高了目标召回。前沿模型误报率低，但不总是产出最高。更便宜的强模型能以低一个数量级的成本达到相近表现。这些结果支持按任务匹配模型、提示和上下文，并组合多种配置以扩大覆盖。",
+      "abstractEn": "How much does an agent harness affect vulnerability discovery, and does its value depend on the model? We study 24 model-runner configurations using an open-source harness on a production codebase whose vulnerabilities were non-public at scan time. The pipeline combines static screening, LLM investigation, model self-revalidation, root-cause mapping, independent source review, and isolated proof-of-concept confirmation. Across 265 confirmed security root causes, the largest two-run configuration covers 60.4%, while 14.3% are found by exactly one model. No single configuration covers all observed findings. In a four-model context experiment, moving from a minimal prompt to an engineered prompt with a CodeQL-derived call graph raises criticality-weighted yield by 20-86% for smaller and mid-tier models, compared with 2% for the frontier model. This comparison changes both prompt and context. Separating those effects shows that the engineered prompt improves yield for all four models, while adding CodeQL context beyond that prompt improves yield only for the smallest model. A held-out CyberGym subset shows the same direction of target-recall improvement for the combined treatment. Frontier models achieve low false-report rates but do not consistently achieve the highest yield. Strong lower-cost models can deliver similar performance at an order of magnitude lower cost. These results support matching models, prompts, and context to the task, and combining configurations for broader coverage.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞发现",
+        "智能体外壳",
+        "CodeQL",
+        "大语言模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.28802",
+      "pdf": "https://arxiv.org/pdf/2610.28802.pdf"
+    },
+    {
+      "id": "2610.29379",
+      "title": "Where AI Vulnerability Discovery Harnesses Go Quiet: Structural False Negatives and Hidden Vulnerabilities",
+      "authors": [
+        "Gadi Evron"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析漏洞发现外壳如何在模型之外丢掉真实漏洞，用了大模型，对象是开源漏洞扫描外壳。",
+      "abstract": "基于大语言模型的漏洞发现外壳，会因为外壳本身的构造而漏掉真实、可达的漏洞。选代码、过滤、存储和合并发现这些步骤，可能在模型运行之前或之后丢掉漏洞，这与模型能力无关，报告通常也不会提示发生过丢弃。这些丢弃来自工程选择和错误。它们会让漏洞继续不被发现；了解外壳规则的攻击者也可以借此故意藏漏洞。理解这些丢弃点，有助于做出能修复或披露丢弃、更难被绕过的外壳。作者从自己维护的 Knostic OpenAnt 和 raptor 出发，再看了 10 个开源外壳，标出 13 个丢弃点并整理成分类。用各外壳自己的代码，作者展示了一个会被 6 个外壳在模型看到代码前丢掉的文件，其中 5 个没有提示。文中把工程失败模式映射到这些丢弃点，并联系 Ptacek 和 Newsham 关于入侵检测规避的工作。文章还讨论了内容引导的裁决和提示注入，并给出让外壳准确报告分析范围的设计原则和测试。可靠性结论很可能也适用于漏洞研究和应用安全之外的其他大模型外壳；规避结论适用于攻击者能写或影响被检查代码的场合。作者还指出，本意是描述性的外壳实际上可能变成规定性的：用来描述典型代码和典型模型回复的规则，最后决定了什么会被分析，不符合的内容就被当成不存在或“没有漏洞”。",
+      "abstractEn": "LLM-based vulnerability discovery harnesses can miss real, reachable vulnerabilities because of how the harness around the model is built. Steps that select code, filter it, and store and merge findings can drop a vulnerability before or after the model runs, independently of the model's capability, and the report usually gives no sign that this happened. These drops come from engineering choices, and errors. They leave vulnerabilities undetected, and an attacker who knows the harness's rules can also use them to hide a vulnerability on purpose. Understanding these drops shows how to build harnesses that fix or disclose them and are harder to evade. Starting from the two harnesses we maintain, Knostic's OpenAnt and raptor, and then examining 10 additional open-source harnesses, we mapped 13 points where such drops occur and organized them into a taxonomy. Using each harness's own code, we show a single file that six harnesses dropped before their model saw its code, five of them without notice. We propose engineering failure patterns mapped to these drops, and relate them to Ptacek and Newsham's work on intrusion detection evasion. The paper also covers content-steered verdicts and prompt injection, and gives design principles and tests for harnesses that report accurately what they analyzed. The reliability findings likely apply to other LLM harnesses, beyond vulnerability research and application security, and the evasion findings apply wherever an attacker can write or influence the code being checked. We also argue that harnesses built to be descriptive can, in effect, be prescriptive. Rules written to describe typical code and typical model replies end up deciding what is analyzed, and anything that does not conform is treated as absent or as \"no vulnerability.\"",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞发现",
+        "漏报",
+        "智能体外壳",
+        "提示注入"
+      ],
+      "url": "https://arxiv.org/abs/2610.29379",
+      "pdf": "https://arxiv.org/pdf/2610.29379.pdf"
+    },
+    {
+      "id": "2610.29869",
+      "title": "Compaction Laundering: Provenance Destruction in Context-Compacting Coding Agents",
+      "authors": [
+        "Arshan Dabirsiaghi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "指出编码智能体压缩上下文时会毁掉消息来源，使伪造用户指令进入记忆，对象是开源编码智能体外壳。",
+      "abstract": "跑得足够久的编码智能体必须压缩上下文：总结对话、丢掉原文，再把摘要当作后续记忆。本文表明，在流行的开源编码智能体里，这一步是可利用的信任边界。把带类型的对话压成一段纯文本、只用 [User]: 这类文字标签标记消息的外壳，会在摘要器运行之前就在代码里毁掉消息来源。攻击者只要控制智能体读取的任何内容，就能伪造一条用户回合，压缩后仍被当成真实指令。在 5 个扁平化外壳（pi、opencode、Cline、Aider、OpenHands）上，伪造批准有 87% 到 100% 会洗进智能体记忆，上下文窗口最大约 90.8 万 token；在 4 个保留角色类型的外壳（Codex、Gemini CLI、Qwen Code、Continue）上，同样攻击成功率为 0。作者继续追到实际执行后果：一条被洗进去的长期批准，会让真实会跑工具的智能体在沙箱里执行攻击者控制的 curl | sh；在 live pi TUI 上端到端成功率约 50%，对照干净组为 0。同一通道还能把智能体计划从攻击者指定的禁看文件上引开，从而让代码审查看不到植入的后门。因为来源是在外壳代码里被确定性毁掉的，提示层防御无法恢复；作者测到一种代码层来源检查，能抓住 77% 的洗白，同时把 2% 的合法摘要内容降级。缺陷也可以在序列化处直接修：扁平化前转义角色标签。保留角色类型的外壳则完全避开了这个问题。",
+      "abstractEn": "Coding agents that run long enough must compact their context, summarizing the conversation, discarding the original, and carrying the summary forward as memory. We show that in popular open-source coding agents this step is an exploitable trust boundary. Harnesses that flatten the typed conversation into a single plain string, marking each message with a text label such as [User]:, destroy message provenance in code, before the summarizer runs. An attacker who controls anything the agent reads can forge a user turn that survives compaction as a genuine instruction. Across five flattening harnesses (pi, opencode, Cline, Aider, OpenHands) the forged approval launders into the agent's memory 87-100% of the time, up to a ~908,000-token context window; across four role-typed harnesses (Codex, Gemini CLI, Qwen Code, Continue) the identical attack succeeds 0% of the time. We follow the attack to executed consequences. A laundered standing approval drives real tool-running agents to execute attacker-controlled curl | sh in a sandbox, and end to end in the live pi TUI at ~50% against a 0% paired clean arm. The same channel reliably steers an agent's plan away from a file an attacker designates off-limits, which can blind a code review to a planted backdoor. Because the provenance is destroyed deterministically in harness code, no prompt-level defense can restore it; we measure a code-level provenance check that catches 77% of laundering while demoting 2% of legitimate summary content. The defect also has a straightforward fix at the serializer, escaping the role labels before flattening; the role-typed harnesses avoid it entirely by keeping messages role-typed.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "上下文压缩",
+        "来源伪造",
+        "代码审查"
+      ],
+      "url": "https://arxiv.org/abs/2610.29869",
+      "pdf": "https://arxiv.org/pdf/2610.29869.pdf"
+    },
+    {
+      "id": "2610.29230",
+      "title": "PQ-Vault: Provably Quantum-Safe Asset Custody for Unmodified Ethereum",
+      "authors": [
+        "Hassan Khodaiemehr",
+        "Khadijeh Bagheri",
+        "Chen Feng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为未改规则的以太坊设计可证明抗量子的资产托管，没有用大模型，对象是以太坊账户与金库合约。",
+      "abstract": "量子计算机可以恢复任何已在链上露出公钥的以太坊账户密钥。作者证明：任何不改以太坊规则的侧链或桥都保护不了这类账户，资金必须转入一个只依赖抗量子原语作为释放条件的合约。本文设计 PQ-Vault，这是一套面向未修改以太坊的托管系统，由该金库、一条检查点带紧凑证书的抗量子权益证明侧链，以及乐观争议协议组成。作者给出紧凑证书对抗量子攻击者的第一个安全证明，以及对应攻击：若沿用经典参数，保证会从 128 比特降到约 60 比特，一条简单规则可以恢复。作者还指出，哈希链权益证明里常见的种子更新规则会让攻击者引导所选槽位，并从拆分权益中获利；并给出一种选举，其引导收益和纳入延迟对量子攻击者可证明有界。用基于配对的 SNARK 压缩证书会破坏量子安全，因此改用只需一次签名检查的欺诈证明。对 65536 个验证者，一份证书约 0.8 MB，比全部签名小 260 倍，验证约 20 毫秒；金库接受检查点大约消耗 42 万 gas。",
+      "abstractEn": "A quantum computer could recover the key of any Ethereum account whose public key appears on chain. We prove that no sidechain or bridge that leaves Ethereum's rules unchanged can protect such accounts: their funds must move into a contract whose release condition relies only on quantum-safe primitives. We design PQ-Vault, a custody system for unmodified Ethereum combining this vault, a quantum-safe proof-of-stake sidechain whose checkpoints carry compact certificates, and an optimistic dispute protocol. We give the first security proof of compact certificates against quantum attackers and a matching attack: with classically chosen parameters, the guarantee falls from 128 to about 60 bits, and a simple rule restores it. We show that a common seed-update rule in hash-chain proof of stake lets an attacker steer chosen slots and profit from splitting its stake, and give an election whose steering gain and inclusion delay are provably bounded against quantum attackers. Since compressing certificates with a pairing-based SNARK breaks quantum security, we use fraud proofs that need a single signature check. For 65,536 validators, a certificate is 0.8 MB, 260 times smaller than all signatures, and verifies in about 20 ms; the vault accepts a checkpoint for about 420,000 gas.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "抗量子",
+        "资产托管",
+        "以太坊",
+        "紧凑证书"
+      ],
+      "url": "https://arxiv.org/abs/2610.29230",
+      "pdf": "https://arxiv.org/pdf/2610.29230.pdf"
+    },
+    {
+      "id": "2610.29497",
+      "title": "How Not to Be Censored: Inclusion Safety in Client-Led Consensus",
+      "authors": [
+        "Yackolley Amoussou-Guenou",
+        "Andrea Canidio"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "定义客户主导共识中的纳入安全性，让用户保证交易不被审查，没有用大模型，对象是区块链共识。",
+      "abstract": "区块链共识协议隐含地采用客户—服务器结构：验证者是唯一主动参与方，客户只提交交易并依赖验证者纳入。这一抽象掩盖了一个基本问题：客户要怎样做，才能保证自己的交易被及时纳入？本文引入一种客户主动参与的无领导者共识协议，并定义纳入安全性：保证客户的交易进入该纪元产出的部分区块，而每个漏掉它的区块都属于最终会被放弃的分叉。因为每笔交易都引用上一纪元的一个区块，客户会帮助选择存活分叉。于是有两条纳入路径：在一个纪元内到达足够多诚实副本，或跨纪元转发包含该交易的区块，直到对应分叉成为规范链。在同时覆盖同步和异步的一般模型中，客户连通性和副本连通性对纳入安全性可以互相替代：客户连通性好即可；客户连通性差时，只要诚实副本之间通信可靠，且客户至少到达其中一个，也能成立。但这种替代并不完美：当纳入安全性依赖副本连通性时，所需纪元要比客户连通性好时更长。",
+      "abstractEn": "Blockchain consensus protocols implicitly follow a client-server architecture: validators are the only active participants, while clients (i.e., users) merely submit transactions and rely on validators to include them. This abstraction obscures a fundamental question: what should a client do to guarantee the timely inclusion of its own transaction? We study this question by introducing a leaderless consensus protocol in which clients are active. We define inclusion safety: the guarantee that a client's transaction enters some of the blocks produced for an epoch, and that every block omitting it belongs to a fork that is eventually abandoned. Because every transaction carries a reference to a block of the previous epoch, clients help select the surviving fork. This yields two paths to inclusion: reaching sufficiently many honest replicas within an epoch, or relaying a block containing the transaction across epochs until the corresponding fork becomes canonical. In a generalized model spanning synchrony and asynchrony, the client's and the replicas' connectivity are substitutes for inclusion safety: it is achieved either if the client is well connected, or if the client is poorly connected but honest replicas communicate reliably, provided the client reaches at least one of them. However, the substitution is imperfect: when inclusion safety rests on the replicas' connectivity, it requires a longer epoch compared to when the client is well connected.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "审查",
+        "纳入安全",
+        "共识",
+        "无领导者"
+      ],
+      "url": "https://arxiv.org/abs/2610.29497",
+      "pdf": "https://arxiv.org/pdf/2610.29497.pdf"
+    },
+    {
+      "id": "2610.26295",
+      "title": "Pangolin: Efficient DAG-based BFT State-Machine Replication with TEE-Accelerated Commitment",
+      "authors": [
+        "Paul Franke-Bergmann",
+        "Maya Kuhlmann",
+        "Alexander Heß",
+        "Marc Leinweber",
+        "Rüdiger Kapitza",
+        "Hannes Hartenstein",
+        "Franz J. Hauck",
+        "Christian Berger"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "给出带 TEE 加速提交的 DAG 拜占庭状态机复制协议，没有用大模型，对象是 BFT 共识。",
+      "abstract": "当前许多拜占庭容错协议用有向无环图让副本并行提议请求块，以提高吞吐。但已有 DAG 设计主要停在原子广播层：通常没有高效的客户交互层，垃圾回收未说明或依赖可信外部存储，最低延迟设计还依赖可能在广域部署中被打破的时间假设。本文提出 Pangolin：它给出一种低延迟 DAG 原子广播层，并把它做成高效的状态机复制框架。为保持吞吐，客户把请求发给单个副本，并用紧凑执行证明高效验证回复。Pangolin 还给出新的 DAG 垃圾回收，即使在完全异步下也能限制内存。它利用可信执行环境，用 n ≥ 2f + 1 个副本容忍 f 个拜占庭故障，并显著加快顶点提交：广播已认证顶点只需一步通信，提交规则也经过调整，能更频繁、更早提交，同时不暴露硬币选出的锚点。这样 Pangolin 在异步下保持活性，同时超过最快的部分同步 DAG 协议。评估中，相对 Mysticeti 的平均延迟加速为 1.27 倍，最高 1.52 倍。",
+      "abstractEn": "Currently many Byzantine fault-tolerant (BFT) protocols use directed acyclic graphs (DAGs) to let replicas propose blocks of requests in parallel for improved throughput. Yet, the existing DAG-based designs mainly consider the atomic-broadcast layer: They typically do not describe an efficient client interaction layer, their garbage collection is either unspecified or relies on trusted external storage, and the lowest-latency designs rely on timing assumptions that may be violated in geo-distributed deployments. In this paper, we propose the Pangolin protocol: It introduces a novel low-latency DAG-based atomic broadcast layer and completes it into an efficient state-machine replication (SMR) framework. To preserve system throughput, clients issue requests to a single replica and verify replies efficiently via compact execution proofs. Furthermore, Pangolin introduces a new garbage-collection scheme for DAGs which bounds memory usage even under full asynchrony. Pangolin leverages trusted execution environments to tolerate f Byzantine faults with only n >= 2f + 1 replicas and accelerates vertex commitments significantly: Broadcasting certified vertices requires only a single communication step, and commit rules are refined to commit both frequently and early without revealing the coin-elected anchor. This way, Pangolin overtakes the fastest partially synchronous DAG protocols while being live under asynchrony: In our evaluation, Pangolin achieves an average 1.27x (up to 1.52x) latency speedup over Mysticeti.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "BFT",
+        "DAG",
+        "TEE",
+        "状态机复制"
+      ],
+      "url": "https://arxiv.org/abs/2610.26295",
+      "pdf": "https://arxiv.org/pdf/2610.26295.pdf"
+    },
+    {
+      "id": "2026-2566",
+      "title": "Fault-Induced Nonce Repetition in Threshold Lattice Signatures: A Reveal-Structure Criterion, Cross-Scheme Analysis, and Detection Boundaries",
+      "authors": [
+        "Yulong Meng"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "分析诚实设备物理故障如何让阈值格签名泄漏份额，没有用大模型，对象是阈值 ML-DSA。",
+      "abstract": "阈值 ML-DSA 被视为能去掉单点密钥风险的部署方式，NIST 阈值征集（IR 8214C）也吸引了不少方案。但已有安全分析通常假设协议参与方恶意或被攻破。对“诚实参与方设备上的物理故障”这一威胁，单方格签名已系统研究十多年，阈值方案据作者所知还没有系统评估。本文表明，一方由故障引起的跨会话样本重放会泄漏该方份额，RNG 状态回滚等机制就能触发。在 t-of-n 部署中，攻击者只需对 t 台设备做故障，就能恢复完整签名密钥，而每份签名单独检查都完全有效；带防护的随机数、承诺/会话绑定和失败即关的最终验证都不会被触发。作者在 Mithril（ePrint 2026/013，USENIX Security 2026）上做了端到端验证：两个实现版本、六组 (t,n) 配置、96/96 个统计扫描组都精确恢复，残差为 0，且不需要格基约化。仅从协调者可见副本恢复出的密钥，可以当场伪造一份通过实现里 FIPS 204 验证器的签名。作者进一步把攻击提升为类级判据：攻击面由揭示结构决定，也就是方案是否把各方响应揭示给攻击者可见的一方，而不是由随机数的分布性质决定。Quorus 的结构免疫来自不揭示，与均匀性无关。TALUS 可通过“跳过预处理一次性消耗”的双花路径被打破。Trilithium 的签名算法把 Server 的响应份额明文交给 Client，[TALUS] 把它标成内部均匀（I = 0），属于“统计免疫但故障脆弱”象限，攻击只需 1 台设备故障。原文证明中的模拟器消息以及 [Jarv26] 对该算法的原文照抄，是这一判定的证据。由此得到两个独立评价维度：统计轴 I 和可复现轴（揭示结构）。作者还设计了两层副本级检测：预警面在揭示哈希活性上告警，全语料 305/305 精确命中且无误报；全覆盖面运行与攻击共用的识别计算，在识别可行范围内不存在“攻击可用却检测不到”的窗口。对不完美故障，作者证明了全密钥恢复的阈值定律，并逐坐标验证。全部结论经过三条彼此独立的工具辅助分析路径核验。",
+      "abstractEn": "Threshold ML-DSA is regarded as a deployment model that eliminates single-point key risk, and the NIST threshold call (IR 8214C) has likewise attracted many proposals. Existing security analyses, however, generally assume malicious or compromised protocol participants. For the threat of \"physical faults in the devices of honest participants,\" single-party lattice signatures have been studied systematically for over a decade, whereas threshold schemes, to our knowledge, have not yet been systematically evaluated. We show that fault-induced cross-session sample replay by one party leaks that party's share, and that mechanisms such as RNG state rollback can trigger it. In a t-of-n deployment, the attacker need only fault t devices to recover the complete signing secret, while every signature is fully valid when examined individually; the hedged nonce, commitment/session binding, and fail-closed final verification all remain untriggered. We verify the attack end to end on Mithril (ePrint 2026/013, USENIX Security 2026): two implementation versions, six (t,n) configurations, and 96/96 statistical scan groups all achieve exact recovery, with residual error identically 0 and no lattice reduction. The secret recovered solely from the coordinator-visible transcript can be used to forge a signature on the spot that passes the implementation's FIPS 204 verifier. We further elevate the attack to a class-level criterion. The attack surface is determined by the reveal structure, that is, by whether the scheme reveals per-party responses to a party visible to the attacker, rather than by the distributional properties of the nonce. Quorus's structural immunity thus comes from non-reveal and is unrelated to uniformity. TALUS can be broken via a double-spend path in which \"one-time consumption of preprocessing is skipped\". Trilithium's signing algorithm hands the Server's response share to the Client in plaintext, and [TALUS] classifies it as internally uniform (I = 0), making it an instance of the \"statistically immune and fault-fragile\" quadrant; the attack requires only 1 device fault. The simulator message \"(ss, sid, [z']_S)\" in the original proof, together with [Jarv26]'s verbatim copy of this algorithm, is the evidence for this determination; see Appendix D for the evidence tier. This yields two independent evaluation dimensions: the statistical axis I and the reproducibility axis (reveal structure). Different design levers allow the two axes to take values independently. All three quadrants already have instances: (reveal, I > 0), (non-reveal, I = 0), and (reveal, I = 0). Two cases lie on the anti-diagonal, [Trilithium] and [Kao26]. We design detection as two layers of transcript-level checks. The early-warning surface alarms on reveal-hash liveness and achieves 305/305 exact hits over the full corpus with zero false positives. The full-coverage surface runs the identification computation shared with the attack; within the feasible range of identification, there is no window in which the attack is usable but undetectable. Section 6.1 explains the difference in alarm timing. For imperfect faults, we prove the threshold law for full-key recovery m* = (ℓ-1)N+⌈N/K⌉ and verify it coordinate by coordinate; for ML-DSA-44 the law gives 768+⌈256/K⌉, namely 896 at K=2 and 787 at K=14. This reveals the trade-off nature of K. All claims have undergone a tool-assisted verification workflow with three analysis paths that are independent of one another. The authors direct the workflow; Section 8.2 describes its execution mode and artifact disclosure.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "阈值签名",
+        "故障攻击",
+        "ML-DSA",
+        "份额泄漏"
+      ],
+      "url": "https://eprint.iacr.org/2026/2566",
+      "pdf": "https://eprint.iacr.org/2026/2566.pdf"
+    },
+    {
+      "id": "2026-2553",
+      "title": "Near-Optimal Early Stopping with Optimal Communication",
+      "authors": [
+        "Fatima Elsheimy",
+        "Simon Holmgaard Kamp",
+        "Julian Loss",
+        "Charalampos Papamanthou"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出接近最优早停轮数且通信最优的拜占庭协议，没有用大模型，对象是同步拜占庭共识。",
+      "abstract": "同时降低拜占庭协议的轮数和通信复杂度是长期问题。在同步设置下，早停协议希望终止轮数与一次执行中的实际腐蚀数 f≤t 成比例，而不是最坏阈值 t。已知这类协议的轮复杂度下界是 min{f+2, t+1}。已有协议要么轮数接近最优，要么通信低，很难两者兼得。Elsheimy、Loss 和 Papamanthou（ASIACRYPT 2024）对任意 0<ε<1 得到 (1+ε)f+O(1) 轮，通信为 O(n^4 f κ)。Lenzen 和 Sheikholeslami（PODC 2022）在 t<n/3 时达到渐近最优通信 O(n·t)，但需要 25f+13 轮。本文给出确定性同步拜占庭协议，在早停轮数和通信之间取得新折中。对 t<n/3 且无密码学设置，终止轮数为 f+O(√(f log f))，通信为最优的 O(n·t)（文中 √f 表示 √(f+1)，log f 表示 log(f+2)，以便 f=0 时有定义）。因此轮数的首项系数为最优的 1，附加项是次线性的。若允许通信稍高，附加项可降到 O(√f)，得到 f+O(√f) 轮和 O(n·t+f^2 log f) 通信。最后，对 t<n/2，在公钥基础设施和阈值签名下，得到 f+O(√f) 轮和 O(n·t·κ) 比特通信，其中 κ 是签名长度。",
+      "abstractEn": "Minimizing both the round and communication complexity of Byzantine agreement (BA) is a longstanding problem. In the synchronous setting, early stopping protocols aim to terminate in number of rounds that is proportional to the actual number f≤t of corruptions in an execution, rather than on the worst case threshold t. The lower bound on the round complexity for such protocols is known to be min{f+2, t+1} rounds. Existing protocols, however, achieve either round complexity close to the optimal bound or low communication complexity, but not both simultaneously. Elsheimy, Loss, and Papamanthou (ASIACRYPT 2024) obtain (1+ε)f+O(1) rounds for any 1>ε>0, with O(n^4 f κ) communication. In contrast, Lenzen and Sheikholeslami (PODC 2022) achieve asymptotically optimal O(n·t) communication for t<n/3, but with a 25f+13 number of rounds. In this work, we present deterministic synchronous Byzantine agreement protocols that achieve new tradeoffs between early stopping round complexity and communication. For t<n/3, without cryptographic setup, we obtain f+O(√(f log f)) termination rounds with optimal O(n·t) communication (here and throughout, √f denotes √(f+1) and log f denotes log(f+2), so that the bounds are well defined when f=0). Thus, our round complexity has the optimal leading coefficient of one, with a sublinear additive overhead. By allowing slightly higher communication, we reduce this overhead to O(√f), obtaining f+O(√f) rounds with O(n·t+f^2 log f) communication. Finally, for t<n/2, assuming a public key infrastructure and threshold signatures, we obtain f+O(√f) rounds with O(n·t·κ) bits of communication, where κ is the signature length.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "拜占庭协议",
+        "早停",
+        "通信复杂度",
+        "阈值签名"
+      ],
+      "url": "https://eprint.iacr.org/2026/2553",
+      "pdf": "https://eprint.iacr.org/2026/2553.pdf"
+    }
+  ]
+}
