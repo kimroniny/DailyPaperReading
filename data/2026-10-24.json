@@ -1,0 +1,136 @@
+{
+  "date": "2026-10-24",
+  "papers": [
+    {
+      "id": "10.1109-tdsc.2026.3746667",
+      "title": "SanCross: Secure Cross-Chain Transaction Protocol Via Sanitizable Adaptor Signature",
+      "authors": [
+        "Yuan Yao",
+        "Peng Jiang",
+        "Liehuang Zhu"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用可净化适配器签名构造安全跨链交易协议，没有用大模型，对象是跨链交易。",
+      "abstract": "本文提出 SanCross，用可净化适配器签名构造安全跨链交易协议。公开页面未能读到英文摘要，以上仅按标题概括。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链",
+        "适配器签名",
+        "交易协议"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3746667"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3746660",
+      "title": "Protected Exercise for Bridgeless Cross-Chain Options Without Upfront Holder Collateral",
+      "authors": [
+        "Zifan Peng",
+        "Jingyu Liu",
+        "Huaiyu Jia",
+        "Junhao Yang",
+        "Yingjie Xue",
+        "Xuechao Wang"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "提出无桥、持有人无需预付抵押的跨链期权行权保护，没有用大模型，对象是跨链期权。",
+      "abstract": "本文提出一种无桥跨链期权的受保护行权方式，持有人无需预先缴纳抵押。公开页面未能读到英文摘要，以上仅按标题概括。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链",
+        "期权",
+        "无桥协议"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3746660"
+    },
+    {
+      "id": "2610.29332",
+      "title": "Do Coding Agents Understand Why Systems Crash---and Why They Don't?",
+      "authors": [
+        "Chenxi Huang",
+        "Haonan Wang",
+        "Jinghe Zhang",
+        "Aleksandr Nogikh",
+        "Franjo Ivančić",
+        "Petros Maniatis",
+        "Eugene Wu",
+        "Kostis Kaffes",
+        "Junfeng Yang",
+        "Baishakhi Ray"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用配对源码干预评测编码智能体能否从源码判断输入会不会让系统崩溃，用了大模型，对象是 Linux 内核与 OSS-Fuzz 项目。",
+      "abstract": "编码智能体修真实漏洞的能力越来越强，但在 Linux 内核这类大型系统代码上仍然吃力。为了弄清原因，本文用崩溃推理来检验智能体如何理解这些代码里的执行过程：只看源码，判断给定输入会不会让系统崩溃。但判断对了并不等于真的理解了执行，因为它可能只是看到了可疑代码。本文提出源码干预：把只差一个提交的两棵源码树配成对，使得同一输入只在其中一棵树上崩溃，再看智能体是否更常在崩溃那棵树上预测会崩溃。在 SysRB（从 Linux 和 OSS-Fuzz 项目收集的 934 对）上，对四个编码智能体的实验有三点主要结论。第一，智能体偏向预测不会崩溃：很少误报，但漏掉很多真实崩溃，最好的智能体也漏掉四分之一以上。第二，找到决定崩溃结果的代码还不够：智能体常常判错其效果，尤其是崩溃发生在远离那段代码时。第三，只在会崩溃的代码上测试会误导：只是注意到可疑代码的智能体，会在两棵源码树上都预测崩溃，如果只看崩溃那棵树，就会被当成推理正确。这些结果说明，当前编码智能体还不能可靠地推理复杂系统代码中的执行，要测量这种能力，必须用配对评测。",
+      "abstractEn": "Coding agents are increasingly capable of fixing real-world bugs, yet they still struggle with large systems codebases such as the Linux kernel. To understand why, we test how agents reason about execution in these codebases through crash reasoning: predicting from source code whether a given input crashes the system. A correct prediction alone, however, does not establish this ability, since it may come from merely spotting suspicious code. In this paper, we propose source interventions: we pair source trees that differ by a single commit, so that the same input crashes only one of them, and test whether agents predict crashes more often on the crashing tree. Experiments with four coding agents on SysRB, our dataset of 934 such pairs from Linux and OSS-Fuzz projects, yield three main findings. First, agents are biased toward predicting no crash: they rarely raise false alarms but miss many real crashes, and even the best agent misses over a quarter of them. Second, locating the code that determines the crash outcome is not enough: agents often misjudge its effect, especially when the crash occurs far from that code. Third, testing only on crashing code is misleading: agents that merely notice suspicious code predict crashes on both source trees, which would look like correct reasoning on the crashing tree alone. Together, these findings indicate that current coding agents cannot yet reliably reason about execution in complex systems codebases, and that paired evaluation is necessary to measure this ability.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "Linux 内核",
+        "崩溃推理",
+        "模糊测试"
+      ],
+      "url": "https://arxiv.org/abs/2610.29332",
+      "pdf": "https://arxiv.org/pdf/2610.29332.pdf"
+    },
+    {
+      "id": "2610.31388",
+      "title": "Auditing the Hand-Written Inputs of Learned Access Control",
+      "authors": [
+        "Arsalan Jalil Sarghaleh",
+        "Mehdi Hazrati"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "审计学习式访问控制里人工或大模型写出的硬拒绝规则和路由图是否可靠，用了大模型，对象是 ABAC 访问控制策略。",
+      "abstract": "学习式访问控制通常架在两件手工构件后面：由小型可信护盾执行的硬拒绝集合，以及一张区域图，用来决定哪些请求由挖出的规则回答、哪些由学习器回答。只验证护盾或只测量学习器，都说明不了另一边。本文在五个公开的 ABAC Lab 策略上审计这两者。首先形式化硬拒绝的可靠性，并在最多 794,250 个元组的关系上穷尽检查。能忠实转写一条显式限制的子句，在四个抽取者（一名作者和三名盲测大模型抽取者）上仍有 0.50–0.70 的不可靠率，因为散文把限制限定在某一节，而授权关系是所有规则的析取：97% 的反例其实被其他规则授权。这些拒绝集合如果未经检查就上线，会扣下策略所授权内容的 16%–78%；经过核证则什么也不扣。空规则这种静默失败也会出现。其次，混合路由需要一类会弃权的两类规则集，而 ABAC 挖掘器并不产出这种规则；在两种最常见排序键下，对混合效果候选池按上限排序，在全部 24 个单元里都退化成单类问题。第三，对可加损失，混合相对学习器的效果可以分解为覆盖质量乘以规则-学习器风险对比，而且必须同时在错误不授权和错误授权两种损失上报告：在两个真实策略上，多数选择规则对两种损失给出相反结论，同时在两种损失上都有利的那条，只在一个策略、一种学习器配置和一段噪声水平上成立。发布的工件可以复现并核对文中每个数字。",
+      "abstractEn": "Learned access control is typically deployed behind two hand-built artefacts: a hard-deny set enforced by a small trusted shield, and a region map that decides which requests mined rules answer and which the learner answers. Verifying the shield or measuring the learner validates neither. We audit both on the five public ABAC Lab policies. First, we formalise hard-deny soundness and check it exhaustively over relations of up to 794,250 tuples. Clauses that faithfully transcribe an explicit restriction are unsound at rates of 0.50-0.70 across four elicitors - an author and three blind language-model elicitors - because prose scopes restrictions to a section while the grant relation is a disjunction over all rules: 97% of counterexamples are granted by other rules. Shipped unchecked, these deny sets would withhold 16-78% of everything the policies grant; certified, they withhold nothing. Vacuity, a second silent failure, also occurs. Second, hybrid routing needs a two-class, abstaining rule set that ABAC miners do not emit, and ranking a mixed-effect candidate pool under a cap is one-class in all 24 cells for the two commonest ranking keys. Third, for additive losses the hybrid-versus-learner effect factorises into covered mass times a rule-learner risk contrast that must be reported on both false-non-grant and false-permit loss: on two real policies, most selection rules give opposite verdicts on the two losses, and the one favourable on both holds for one policy, one learner configuration and a band of noise levels. A released artefact regenerates and checks every reported number.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "访问控制",
+        "ABAC",
+        "策略审计",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.31388",
+      "pdf": "https://arxiv.org/pdf/2610.31388.pdf"
+    },
+    {
+      "id": "2026-2581",
+      "title": "Post-Quantum Sublinear Lookup Arguments from Polynomial Preprocessing",
+      "authors": [
+        "Adarsh Basumata",
+        "Chaya Ganesh",
+        "Varun Narayanan",
+        "Sikhar Patranabis",
+        "Surbhi Shaw",
+        "Nitin Singh"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用多项式预处理和 Reed-Muller 接近性检验构造后量子亚线性查找论证，没有用大模型，对象是零知识证明系统。",
+      "abstract": "亚线性证明者时间的查找论证通常依赖双线性配对。唯一例外是 Campanelli 等人最近的工作（ePrint 2025/238）；但他们用通用 SNARK 来证明昂贵的预处理，这需要对密码学原语做非黑盒使用。因此，具有后量子安全性的实用亚线性查找仍然困难。本文给出第一批看起来具有后量子安全性、且不借助通用 SNARK 的亚线性查找论证，方法是多项式预处理，以及把 Reed-Muller 码的接近性检验改写进交互式预言证明（IOP）框架。出发点是一个带证明者侧预处理的知识可靠多项式承诺方案（PCS），建立在 Kedlaya-Umans 框架上。我们不在通用 SNARK 里证明昂贵的预处理计算，而是用 Reed-Muller 接近性检验和配套求值协议直接核验其输出。对大小为 N 的多项式，该方法给出多元和一元 PCS：预处理时间为 N^{1+ε} polylog(N)，在线证明者时间只有 polylog(N)，证明大小和验证仍是 polylog(N)。我们用这个 PCS 得到静态表大小为 N、查找次数 k ≪ N 的查找论证，在线证明者时间为 k·polylog(N)，验证和证明大小为 polylog(N)。进一步推广到可更新表：对大小为 k 的一批读写，摊还证明者时间为 O(k(N^ε + polylog(N)))，其中 ε ∈ (0,1)，证明大小和验证仍是 polylog(N)。这些查找论证底层的 IOP 满足逐轮（知识）可靠性，可在（量子）随机预言模型下编译成看起来具有后量子安全性、且设置透明的论证。",
+      "abstractEn": "Lookup arguments with sublinear prover time typically rely on bilinear pairings. The only exception is the recent work of Campanelli, Carrillo, Cascudo, Fiore, Francati, and Gennaro (ePrint 2025/238); however, they rely on general-purpose SNARKs to certify expensive preprocessing, which requires non-black-box usage of cryptographic primitives. Thus practical realizations of sublinear lookups with post-quantum security remain challenging. We develop the first plausibly post-quantum sublinear lookup arguments that avoid general-purpose SNARKs via polynomial preprocessing and a novel adaptation of proximity testing for Reed-Muller codes into the Interactive Oracle Proof (IOP) framework. Our starting point is a knowledge-sound polynomial commitment scheme (PCS) with prover-side preprocessing based on the Kedlaya-Umans framework. Rather than proving the expensive preprocessing computation inside a general-purpose SNARK, we directly certify its output using Reed-Muller proximity testing and an associated evaluation protocol. For polynomials of size N, our approach yields multivariate and univariate PCS with N^{1+ε} polylog(N) preprocessing and only polylog(N) online prover time, while retaining polylog(N) proof size and verification. We leverage this PCS to obtain a lookup argument for static tables of size N and k ≪ N lookups with k·polylog(N) online prover time and polylog(N) verification and proof size. We further extend the approach to updatable tables, obtaining O(k(N^ε+polylog(N))) amortized prover time for a k-sized batch of reads and writes, where ε ∈ (0,1). We retain polylog(N) proof size and verification. The IOPs underlying our lookup arguments satisfy round-by-round (knowledge) soundness, which can be compiled into plausibly post-quantum arguments in the (quantum) random oracle model with transparent setup.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "查找论证",
+        "零知识证明",
+        "后量子",
+        "多项式承诺"
+      ],
+      "url": "https://eprint.iacr.org/2026/2581",
+      "pdf": "https://eprint.iacr.org/2026/2581.pdf"
+    }
+  ]
+}
