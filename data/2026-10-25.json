@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-25",
+  "papers": [
+    {
+      "id": "2610.27784",
+      "title": "RELAY: Scaling Historical Build Restoration through Rule Reuse and Agentic Repair",
+      "authors": [
+        "Olivier Nourry",
+        "Yoshiki Higo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型归纳可复用的构建修复规则，失败案例再交给智能体，对象是 OSS-Fuzz 历史漏洞构建。",
+      "abstract": "漏洞评测集和软件工程研究都要能把历史版本重新构建出来。但构建过程依赖基础镜像、软件包等外部资源，这些资源会独立于源码发生变化。本文在 14159 个 OSS-Fuzz 案例上考察这种环境衰减，发现 69.7% 已无法完成重建和验证，且多数失败集中在少数几类反复出现的症状上，因此同一类失败可以诊断一次、复用修复。本文提出 Relay：先用大模型从代表性失败中归纳并验证确定性修复规则，之后复用规则时不再调用模型，规则解决不了的案例再交给逐例智能体。在人工引导和全自动两种规则归纳实验中，规则可完全自动生成，且在更少的构建次数下恢复的数量与逐例智能体相当；智能体也能恢复规则覆盖不到的案例。先套规则、再把剩余案例交给智能体的混合策略，恢复数量高于单独使用任一方法，成本也低于只用智能体。",
+      "abstractEn": "Vulnerability benchmarks and software engineering research depend on rebuilding historical software. Yet builds rely on external resources, such as base images and packages, that change independently of the source code. In this study, we examine this environment decay on 14,159 OSS-Fuzz cases. We find that 69.7% no longer complete reconstruction and verification, and that most failures share a small number of recurring failure symptoms. A recurring failure can therefore be diagnosed once and its repair reused. We present Relay, a hybrid framework that uses an LLM to derive and validate deterministic repair rules from representative failures, reuses them without model calls, and escalates cases unresolved by rules to a per-case agent. We evaluate Relay in human-guided and fully automated rule-derivation campaigns and compare it with a per-case agent approach. We find that rule derivation can be fully automated, and that reusable rules restore as many builds as per-case agents with fewer build executions. However, agents restore cases that the rules cannot. Our results show that a hybrid approach that applies rules first and escalates the remaining cases to an agent restores more builds than either approach alone and at a lower cost than using agents alone.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞评测",
+        "OSS-Fuzz",
+        "构建修复",
+        "智能体"
+      ],
+      "url": "https://arxiv.org/abs/2610.27784",
+      "pdf": "https://arxiv.org/pdf/2610.27784.pdf"
+    },
+    {
+      "id": "2610.30114",
+      "title": "The End of Consensus Research?",
+      "authors": [
+        "Clément Burgelin",
+        "Rachid Guerraoui",
+        "Zicong Hong",
+        "Yinan Hu",
+        "Anne-Marie Kermarrec",
+        "Rafael Pires",
+        "Rasmus Moorits Veski",
+        "Martijn de Vos"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用编码智能体发现并形式化验证新共识协议，同时找出已有协议漏洞，对象是地理复制状态机。",
+      "abstract": "共识是分布式计算的基本问题，也是状态机复制（SMR）的核心。尽管人类研究了数十年，实用的低延迟方案仍未完全解决，因为这需要同时处理协议知识、正确性推理、实现和实验评估。本文报告如何借助人工智能发现 A-greement：一种面向地理复制状态机的新共识协议，显著优于现有方案。在 6 组、每组 5 或 9 个副本的部署上取平均，相对最快基线，A-greement 把地理分布键值存储的平均延迟在写多负载上降低 12.2%、在读多负载上降低 33.3%，只读负载上与最快基线持平。该协议结合租约授权的本地读、领导者排序写的客户端直接学习，以及按键的固定法定人数快速写路径，并根据网络拓扑和工作负载选择副本角色与写路径，同时考虑写完成和读等待。发现过程的核心是 AI-greement：一个用于自主发现、实现、实验和验证候选协议的智能体框架。它集成了按概念组织、从已发表协议中探索共识机制的知识库，结构化协议开发的模块化实现骨架，以及带可复用安全定义、参考规约和证明的 Lean 验证框架。该框架用性能测量和故障注入反馈做迭代改进。AI-greement 本身也有独立价值：其 Lean 形式化发现了若干现有共识协议中此前未报告的漏洞，并说明领域专用框架如何把通用编码智能体变成有效的分布式计算研究工具。作者认为，搜索前、中、后仍需要人类共识专家：智能体改变的是研究者的角色，而不是结束共识研究。",
+      "abstractEn": "Consensus is a fundamental problem in distributed computing and at the core of state machine replication (SMR). Despite decades of active human research, discovering practical low-latency solutions to the problem is still open. This endeavor is very challenging since it requires combining protocol knowledge, correctness reasoning, implementation, and experimental evaluation. We report on how AI helped us discover A-greement, a new consensus protocol for geo-replicated state machines that significantly outperforms state-of-the-art solutions. Averaged across six deployments with 5 or 9 replicas, A-greement reduces the mean latency of a geo-distributed key-value store over the fastest baseline by 12.2% and 33.3% on write-heavy and read-heavy workloads, respectively, and matches the fastest baseline on read-only workloads. A-greement combines lease-authorized local reads, direct client learning for leader-ordered writes, and a fast fixed-quorum per-key write path. It selects replica roles and write paths according to network topology and workload, accounting for both write completion and read waiting. At the heart of our consensus discovery lies AI-greement, an agent harness for the “autonomous” discovery, implementation, experimentation, and verification of candidate protocols. AI-greement integrates (1) a concept-oriented protocol knowledge base that explores consensus mechanisms through published protocols, (2) a modular implementation skeleton that structures protocol development, and (3) a Lean-based verification framework with reusable safety definitions, reference specifications, and proofs. Our harness supports iterative design exploration, using performance measurements and fault-injection feedback to refine protocols. AI-greement is of independent interest, beyond A-greement. Its Lean formalization uncovers several previously unreported vulnerabilities in existing consensus protocols. AI-greement provides guidelines on how domain-specific harnesses can turn general-purpose coding agents into effective tools for (distributed) computing research. Yet we argue that human consensus experts remain essential before, during, and after the search: agents reshape the researcher’s role rather than end consensus research.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "共识协议",
+        "编码智能体",
+        "形式化验证",
+        "协议漏洞"
+      ],
+      "url": "https://arxiv.org/abs/2610.30114",
+      "pdf": "https://arxiv.org/pdf/2610.30114.pdf"
+    },
+    {
+      "id": "2026-2612",
+      "title": "Tritone: Pairwise Garbled Disputes for Multi-Party Proof Verification on Bitcoin",
+      "authors": [
+        "Oleksii Avramenko",
+        "Alessandro Baccarini",
+        "Torben Poguntke"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在不改比特币共识的前提下，用乐观争议验证 Groth16 证明以释放锁定资金，没有用大模型，对象是比特币桥。",
+      "abstract": "比特币脚本没有原生配对运算，难以直接高效验证 Groth16 证明。传统联邦桥用签名法定人数授权提现，一旦串谋就可以在没有有效证据的情况下放款。本文提出 Tritone：在一次性可信设置中固定 NP 关系后，由比特币强制执行 Groth16 证明的验证结果；锁定资金在固定的 N 个运营方中只要有一方诚实即可保持安全。验证是乐观且链下的，所有交易都符合当前中继策略，因此无需改共识即可在现网运行。Tritone 把双方 BABE 协议推广到固定的 N 方委员会，每一有序运营方对都有一个争议实例。切割选择用于防止恶意混淆电路生成方，Feldman 可验证秘密共享把候选之间的输入密钥关联起来。新的 Lamport-adaptor 部件迫使提出争议的验证方披露证明方已承诺的证明元素所选中的份额，补上 BABE 未说明的交易级绑定；披露的同一组份额即可解锁所有保留的候选。本文形式化了多方原语，证明协议可抵抗最多 N-1 个静态腐败的运营方，并给出完整的预签名交易图。Rust 实现显示：在比特币主网，若一名验证方在每个阶段都提出争议，证明候选方需发布 9607 vB、验证方需发布 18160 vB 协议交易；在 40 比特统计安全的本地评测中，每个争议实例的证明候选方可只保留约 112.83 MiB。Tritone 因此把对签名法定人数的信任替换为至少一个诚实运营方的假设，适用于按 Groth16 证明向运营方释放锁定比特币的场景，并以跨链桥为主要用例。",
+      "abstractEn": "Bitcoin Script lacks native pairing operations for efficient direct verification of Groth16 proofs. Conventional federated bridges instead authorize withdrawals through a signing quorum, whose collusion can release funds without valid evidence. We present the Tritone protocol, which lets Bitcoin enforce the outcome of verifying a Groth16 proof for an NP relation fixed in a one-time trusted setup, with the locked funds secure as long as one of a fixed set of N operators is honest. Verification is optimistic and off-chain, and every transaction is standard under current relay policy, so Tritone runs on Bitcoin today without consensus changes. Tritone generalizes the two-party BABE protocol to a fixed committee of N operators, with one dispute instance per ordered pair. Cut-and-choose protects against malicious garblers, while Feldman verifiable secret sharing correlates input keys across candidates. Our new Lamport-adaptor gadget forces a challenging verifier to disclose the shares selected by the prover's committed proof element, providing the transaction-level binding left unspecified by BABE. A single set of disclosed shares then unlocks all retained candidates. We formalize the multi-party primitive, prove the protocol secure against up to N-1 statically corrupted operators, and specify its complete pre-signed transaction graph. We implement Tritone in Rust. On Bitcoin mainnet, when one verifier disputes a claim at every stage, the prover-candidate posts 9,607 vB and the verifier 18,160 vB of protocol transactions. In local benchmarks at 40-bit statistical security, the prover-candidate of each dispute instance retains as little as 112.83 MiB. Tritone thus replaces trust in a signing quorum with a single-honest-operator assumption wherever locked bitcoin is released to an operator against a Groth16 proof, with Bitcoin bridges as our showcase.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "比特币桥",
+        "Groth16",
+        "乐观验证",
+        "阈值信任"
+      ],
+      "url": "https://eprint.iacr.org/2026/2612",
+      "pdf": "https://eprint.iacr.org/2026/2612.pdf"
+    }
+  ]
+}
