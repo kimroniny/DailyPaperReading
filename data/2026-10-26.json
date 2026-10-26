@@ -1,0 +1,324 @@
+{
+  "date": "2026-10-26",
+  "papers": [
+    {
+      "id": "2610.32876",
+      "title": "Trusting the Tool: Asymmetric Deference of LLM Vulnerability Auditors to Static-Analysis Evidence",
+      "authors": [
+        "ZhiHong Liu",
+        "Shuyao Gao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "测量大模型漏洞审计器对静态分析证据的不对称采信，对象是 C/C++ 漏洞函数。",
+      "abstract": "把大模型与静态分析串起来的流水线，会让模型把分析器输出当作证据来用，但模型能否区分真假证据、以及审视力度是否取决于证据声称什么，此前没有测量过。本文为 C/C++ 实现了一个过程内分析器，用来生成证明义务，并在六种只改注释的证据条件下审计 PrimeVul 中的漏洞函数与补丁函数，包括伪造「缺失检查已经存在」的保证，以及伪造「已补上的检查仍然缺失」的告警。研究覆盖 916 对、四个互不相交集合、四家厂商的 11 种模型配置，共 16572 次审计；模型均未训练或微调。真实证据几乎不提高准确率（+0.02）。虚假证据的作用不对称：相对同一操作上的真实注释，虚假保证最多把真实漏洞的检出率压低 19 个百分点，而虚假告警从未显著降低准确率，且被反驳得更多。在 7 个新模型上预先登记的复现实验确认：虚假保证比虚假告警更能把结论推向其声称（平均不对称 +0.16，95% 置信区间 +0.10 到 +0.24）。审计提示里的指令不能可靠降低这种采信；最好的一条也未能复现。把每条声称放到单独调用中核验，并展示被驳倒的声称，在预先指定的检验中把虚假保证下的准确率提高了 12 个百分点（p=0.002），真实证据下没有损失；第二个模型上的增益更小且不显著。因此流水线应在模型依赖工具保证之前先核验这些保证，研究也应按方向测量这种采信。",
+      "abstractEn": "Pipelines that combine large language models (LLMs) with static analysis let the model consume the analyser's output as evidence, but whether the model distinguishes true from false evidence, and whether its scrutiny depends on what the evidence claims, has not been measured. We built an intraprocedural analyser for C/C++ that produces proof obligations and audited vulnerable and patched functions from PrimeVul under six evidence conditions that differ only in the notes, including fabricated assurances that a missing check exists and fabricated alarms that an added check is missing. The study covers 916 pairs in four disjoint sets, eleven model configurations from four vendors and 16,572 audits; no model is trained or fine-tuned. True evidence barely improved accuracy (+0.02). False evidence acted asymmetrically: relative to true notes about the same operations, false assurances lowered the detection of real vulnerabilities by up to 19 points, whereas false alarms never significantly lowered accuracy and were disputed far more often. An internally registered replication on seven new models confirmed that false assurances move verdicts towards their claim more than false alarms do (mean asymmetry +0.16, 95% CI +0.10 to +0.24). Instructions in the audit prompt did not reliably reduce deference; the best one failed to replicate. Verifying each claim in a separate call and showing the refuted claims raised accuracy under false assurances by 12 points in a pre-specified test (p=0.002) without loss under true evidence; for a second model the gain was smaller and not significant. Pipelines should therefore verify a tool's guarantees before the model relies on them, and studies should measure deference in a direction-aware way.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞审计",
+        "静态分析",
+        "证据采信",
+        "C/C++"
+      ],
+      "url": "https://arxiv.org/abs/2610.32876",
+      "pdf": "https://arxiv.org/pdf/2610.32876.pdf"
+    },
+    {
+      "id": "2610.32345",
+      "title": "DeepAVR: Deep Analysis via Multi-Agent Collaboration for Automated Vulnerability Repair",
+      "authors": [
+        "Woorim Han",
+        "Hyunjun Kim",
+        "Brian Junekyu Lee",
+        "Kyeongmin Kim",
+        "Younghan Lee",
+        "Hyungon Moon",
+        "Yunheung Paek"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多智能体做端到端自动漏洞修复，对象是真实 C/C++ 漏洞。",
+      "abstract": "自动漏洞修复（AVR）要能自主分诊并修补软件安全缺陷。早期基于大模型的方法假定定位已经完美，只做补丁生成；近期端到端方法则试图直接从 sanitizer 日志修复。但当根因藏得很深——物理上远离崩溃点，或被相互依赖的错误掩盖——初始报告往往不够。本文提出 DeepAVR：一个端到端 AVR 多智能体框架，把中间修复结果转成结构化诊断反馈，做更深的分析。它把修复拆成故障定位、补丁生成、编译验证、安全验证、功能验证和补丁评审等角色，并在角色之间传递反馈，迭代改进定位与补丁假设。其中，补丁条件再定位把中间补丁的执行结果当作诊断信号，用来挖出隐藏根因；面向根因的补丁评审则在执行验证之外检查只治标、修不全的补丁。在真实 C/C++ 漏洞修复数据集 VulnLoc 上，DeepAVR 明显优于已有方法，为 92.3% 的漏洞生成了正确补丁。在 SAN2VULN 上的结果说明泛化较好，也能修训练时未见过的漏洞。",
+      "abstractEn": "Automated Vulnerability Repair (AVR) has emerged as a critical defense against software security flaws, aiming to triage and fix bugs autonomously. Early LLM-based approaches focused on patch generation under the assumption of perfect fault localization, while recent end-to-end methods attempt to repair vulnerabilities directly from sanitizer logs. However, these methods often fail when the root cause is deeply hidden--either physically distant from the crash site or logically masked by interdependent errors--making the initial report insufficient. We propose DeepAVR, a multi-agent framework for end-to-end AVR that performs deep analysis by transforming intermediate repair outcomes into structured diagnostic feedback. DeepAVR decomposes repair into specialized roles--Fault Localization, Patch Generation, Compile Validation, Security Validation, Functionality Validation, and Patch Review--and routes feedback across these roles to iteratively refine both localization and patch hypotheses. In particular, DeepAVR introduces patch-conditioned re-localization, which treats execution results from intermediate patches as diagnostic signals to uncover hidden root causes, and a root-cause-oriented patch review stage that detects symptom-level fixes and incomplete repairs beyond execution-based validation. Evaluation on the real-world C/C++ vulnerability repair dataset VulnLoc shows that DeepAVR significantly outperforms prior methods, generating correct patches for 92.3% of vulnerabilities. Furthermore, results on SAN2VULN demonstrate strong generalization, with DeepAVR effectively repairing vulnerabilities unseen during training.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "多智能体",
+        "故障定位",
+        "C/C++"
+      ],
+      "url": "https://arxiv.org/abs/2610.32345",
+      "pdf": "https://arxiv.org/pdf/2610.32345.pdf"
+    },
+    {
+      "id": "2610.31831",
+      "title": "Ulysses: A Security Harness For Synthesizing Verifiable Web Exploits",
+      "authors": [
+        "Aditya Oke",
+        "André Vicente Duarte",
+        "Rui Melo",
+        "Shubham Gandhi",
+        "Nachiket Kotalwar",
+        "Charmi Khandor",
+        "Danqing Wang",
+        "Carolyn Rosé",
+        "Lei Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多智能体合成可验证的网页漏洞利用，对象是真实 Web 应用。",
+      "abstract": "智能体怎样在任意软件仓库里自动发现安全漏洞？已有方法用大模型生成漏洞利用，但模型很难可靠核验自己写出的利用。本文提出 Ulysses：一个多智能体安全框架，为 Web 应用合成可验证的漏洞利用。它把候选漏洞发现转成已验证的可利用性证明，通过迭代探索利用假设，并依据独立观察到的执行效果确认成功。在 WebExploitGym（覆盖 25 个真实 Web 应用、5 种语言、7 个框架的可利用实例）上，Ulysses 为 10 个真实公告生成了已验证证明，还发现了 4 个此前未报告的可利用性证明。",
+      "abstractEn": "How can an AI agent automatically discover security vulnerabilities in any software repository? Existing approaches use LLMs to generate software vulnerability exploits. However, it is challenging for an LLM to reliably verify its own generated exploits. In this paper, we propose Ulysses, a multi-agent security harness to synthesize verifiable vulnerability exploits for web applications. Ulysses converts candidate vulnerability findings into verified Proofs of Exploitability by iteratively exploring exploit hypotheses and establishing success in independently observed execution effects. We evaluated Ulysses on WebExploitGym, a curated benchmark of exploitable instances from 25 real-world web applications that span 5 languages and 7 frameworks. Ulysses produces verified proofs for 10 of 25 real-world advisories. It also discovered 4 new proofs of exploitability that have never been previously reported.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Web漏洞",
+        "可利用性证明",
+        "多智能体",
+        "漏洞发现"
+      ],
+      "url": "https://arxiv.org/abs/2610.31831",
+      "pdf": "https://arxiv.org/pdf/2610.31831.pdf"
+    },
+    {
+      "id": "2610.31844",
+      "title": "SEMPRE: Semantic-Aware Protocol Reverse Engineering via Consistency-Driven Joint Optimization",
+      "authors": [
+        "Yihua Xu",
+        "Weijie Huang",
+        "Xiaofeng Wang",
+        "Hang Zhang",
+        "Binghui Wang",
+        "Yue Duan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型做语义感知的协议逆向，服务漏洞发现和恶意软件 C2 分析，对象是未文档化的通信协议。",
+      "abstract": "协议逆向（PRE）用来理解未文档化或专有通信格式，支撑漏洞发现、恶意软件 C2 分析和 IDS 特征生成等安全任务。现有 PRE 技术依赖脆弱的手写规则，对相邻字段的上下文依赖建模不足，遇到嵌套子协议的报文也常失败。本文提出 SEMPRE：一个全自动 PRE 框架，用细粒度动态程序分析支撑递归的大模型推理，替换临时启发式。它用污点流和循环轨迹引导大模型的思维树搜索，把报文切成字段并检测嵌套子载荷，得到层次化布局。随后推断每个字段的类型与角色，冻结高置信片段并在语义约束下重跑检测，迭代收紧边界，形成类似 EM 的过程，使结构与语义单调改进直至收敛。在覆盖主流协议的语料上，相对 6 个现有方法，结构还原优于所有基线（基线均低于 0.4），语义推断达到 0.72（BinPRE 为 0.13）。消融实验确认各部件的贡献，并对一个实际大规模僵尸网络做了案例研究。",
+      "abstractEn": "Protocol reverse engineering (PRE) is essential for understanding undocumented or proprietary communication formats, enabling security-critical tasks such as vulnerability discovery, malware C2 analysis, and IDS signature generation. However, existing PRE techniques rely on brittle hand-written rules, under-model contextual dependencies among neighboring fields, and often fail on messages with nested sub-protocols. We present SEMPRE, a fully automated PRE framework that replaces ad-hoc heuristics with recursive LLM reasoning grounded in fine-grained dynamic program analysis. SEMPRE uses taint-flow and loop traces to guide an LLM-driven tree-of-thought search that slices messages into fields while detecting nested sub-payloads, producing a hierarchical layout. It then infers each field's type and role and iteratively refines boundaries by freezing high-confidence segments and re-running detection under semantic constraints, yielding an EM-style procedure that monotonically improves structure and semantics until convergence. Evaluated on a broad corpus of mainstream protocols against six state-of-the-art (vs. <0.4 for all baselines) and 0.72 for semantic inference (vs. 0.13 for BinPRE). Ablations confirm the contribution of each component, and a case study on a prolific real-world botnet demonstrates practical utility.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "协议逆向",
+        "漏洞发现",
+        "污点分析",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.31844",
+      "pdf": "https://arxiv.org/pdf/2610.31844.pdf"
+    },
+    {
+      "id": "2610.32453",
+      "title": "Beyond Copying: Lifelong Smart Contract Security Task Construction via Protocol Mutation",
+      "authors": [
+        "Zifan Peng",
+        "Peng Huang",
+        "Jingyi Zheng",
+        "Yingjie Xue",
+        "Xuechao Wang",
+        "Xinlei He",
+        "Xia Hu",
+        "Dongrui Liu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用协议变异持续构造智能合约安全任务，避免智能体靠抄公开攻击过关。",
+      "abstract": "智能体可以检查代码并运行测试，用来支撑智能合约安全。SlowMist 统计更广泛的区块链生态损失约 386 亿美元。现有评测可能奖励背下来或抄来的答案，包括从公开链上交易恢复出的攻击代码。重建合约和校验任务也需要昂贵的人工。针对这些问题，本文提出 CONSTRAINTDIAL：通过协议变异终身构造智能合约安全任务的框架。它自动做本地合约重建，并用攻击执行来选择要改的调用或输入。执行检查引导修订，使原来的攻击失败，同时保留可利用性、安全目标和正常功能。新事件和审计发现进入同一流程。用 CONSTRAINTDIAL 从 203 个公开案例构造了 3045 个任务输入，覆盖检测、利用和补丁。相对只做重建，协议变异使带公开答案时的成功率在检测、利用和补丁上平均下降 10.9 个百分点，靠抄网上答案解出的任务比例下降 9.3 个百分点。",
+      "abstractEn": "AI agents can inspect code and run tests to support smart contract security. SlowMist reports about $38.6 billion in losses across the broader blockchain ecosystem. Existing evaluations can reward memorized or copied answers, including attack code recovered from public blockchain transactions. Reconstructing contracts and validating tasks also require costly manual effort. To address these issues, we propose CONSTRAINTDIAL, a framework for lifelong construction of smart contract security tasks via protocol mutation. It automates local contract reconstruction and uses attack execution to select changes to the required calls or inputs. Execution checks guide revisions that make the original attack fail while preserving exploitability, the security objective, and normal functionality. New incidents and audit findings enter the same procedure. With CONSTRAINTDIAL, we construct 3,045 task inputs from 203 public cases, covering detect, exploit, and patch. Compared with reconstruction alone, protocol mutation reduces success with supplied public answers by 10.9 percentage points on average across detect, exploit, and patch. The fraction of tasks solved by copying online answers falls by 9.3 points.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "安全评测",
+        "协议变异",
+        "智能体"
+      ],
+      "url": "https://arxiv.org/abs/2610.32453",
+      "pdf": "https://arxiv.org/pdf/2610.32453.pdf"
+    },
+    {
+      "id": "2026-2645",
+      "title": "Isotaxis: Optimal Asynchronous Byzantine Consensus with Ordering Linearizability",
+      "authors": [
+        "Vincent Gramoli",
+        "Zhenliang Lu",
+        "Qiang Tang",
+        "Pouriya Zarbafian",
+        "Xinrui Zhang"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在异步环境下实现带排序线性化的状态机复制，用来压 MEV 类排序操纵，没有用大模型。",
+      "abstract": "状态机复制（SMR）即使保证一致性和活性，仍可能被对手操纵交易顺序，例如 MEV 攻击。已有带顺序公平性的方案，如 Aequitas、Themis、SpeedyFair，常用依赖图，性能、容错或安全保证往往不理想。Pompē 提出排序线性化（OL），可能绕开这些缺点，但其保证只在网络条件较好时成立，网络延迟时顺序公平会被破坏，拜占庭故障下性能也会下降。异步环境下实现带 OL 的 SMR 仍是开放问题，已有协议要么做不到，要么牺牲 SMR 活性。本文提出 Isotaxis：带排序线性化的状态机复制，通信复杂度为 O(nℓ+λn²)，其中 n 是进程数、ℓ 是输入（交易）大小、λ 是安全参数。当 ℓ≥λn 时这是最优的，此前工作是立方通信。据作者所知，这是第一个在异步环境下达到排序线性化、同时具备最优通信复杂度和最优拜占庭容错的协议。作者实现了 Isotaxis，并在最多 100 台 EC2 c6a.2xlarge 实例上做了实验，结果显示在 4 到 100 个节点的各规模上，协议都稳定优于 Pompē。",
+      "abstractEn": "Despite ensuring both consistency and liveness, state machine replication (SMR) protocols remain vulnerable to adversaries that manipulate transaction order, causing, e.g., MEV attacks. To mitigate this, researchers have proposed new variants augmented with order-fairness. However, existing protocols that employ dependency graphs, such as Aequitas (Crypto 2020), Themis (CCS 2023), and SpeedyFair (NDSS 2024), often suffer from suboptimal performance, limited resilience, or weakened security guarantees. Pompē (OSDI 2020) introduced a novel ordering notion called ordering linearizability (OL) that may circumvent those drawbacks. However, its guarantee holds only under favorable network conditions, making the protocol vulnerable to order fairness violations during network delays and susceptible to performance degradation in the presence of Byzantine faults. Also, implementing SMR under OL remains an open challenge in asynchronous settings, as no known protocol achieves this without sacrificing liveness of SMR. In this paper, we present Isotaxis, a state machine replication with ordering linearizability; moreover, our protocol has communication complexity O(nℓ+λn²), where n is the number of processes, ℓ is the input (transaction) size, and λ is the security parameter. This is optimal when ℓ≥λn, while previous works have cubic communication. To the best of our knowledge, Isotaxis is the first protocol to achieve ordering linearizability in the asynchronous setting, especially one with optimal communication complexity and optimal Byzantine resilience. We implemented Isotaxis and conducted extensive experiments using up to 100 EC2 c6a.2xlarge instances. The experimental results show that our protocol robustly outperforms Pompē across all system scales, ranging from 4 to 100 nodes.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "MEV",
+        "排序公平",
+        "异步BFT"
+      ],
+      "url": "https://eprint.iacr.org/2026/2645",
+      "pdf": "https://eprint.iacr.org/2026/2645.pdf"
+    },
+    {
+      "id": "2610.32803",
+      "title": "Quantum Cadence: Post-Quantum Consensus with Multiple Concurrent Proposers",
+      "authors": [
+        "Mohammad Mussadiq Jalalzai",
+        "Tobias Klenze",
+        "Jovan Komatovic"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "提出不依赖聚合签名的后量子多提议者共识，没有用大模型，对象是高性能区块链。",
+      "abstract": "多数高性能区块链的共识用法定人数证书打包验证者签名。BLS 一类方案能把整个法定人数聚成一个短签名，证书因此很小。大规模量子计算机会打破这些方案，目前也没有聚合尺寸和聚合时间相当的后量子方案。没有聚合时，证书要为每个法定人数成员装一份较大的后量子签名，验证者再广播证书就会不可行，而这正是现代共识常要求的。本文提出 Quantum Cadence：一种带多个并发提议者的后量子共识，完全不用证书——每个验证者在自己收到的消息里数法定人数。其安全与活性甚至不依赖签名，签名只用来提供可追责。Quantum Cadence 建立在 Cadence 之上，用 Quantum Chorus 替换槽共识 Chorus，并保留 Chorus 的最优快路径延迟：传播后再两轮投票。快路径失败时，Quantum Chorus 运行 Coda，这是作者给出的无签名多方提议者拜占庭协定。文中还说明如何把调度 Cadence 槽的 Conductor 改到 Quantum Cadence。在 200 个验证者的模拟中，Quantum Chorus 延迟与 Chorus 相当，并随提议者数量扩展得更好。",
+      "abstractEn": "The consensus protocols of most high-performance blockchains use quorum certificates, which bundle the signatures of a quorum of validators. Signature schemes such as BLS can aggregate the signatures of a whole quorum into a single short signature, which keeps these certificates small. A large-scale quantum computer would break these schemes, and no post-quantum scheme with comparable aggregate size and aggregation time is known. Without aggregation, a certificate holds one large post-quantum signature per member of the quorum, so it becomes infeasible for each validator to broadcast certificates, as modern consensus protocols often require. We present Quantum Cadence, a post-quantum consensus protocol with multiple concurrent proposers that avoids certificates altogether: every validator counts quorums among the messages it has received itself. Its safety and liveness do not even depend on signatures, although we add signatures to obtain accountability. Quantum Cadence builds on Cadence and replaces its slot consensus, Chorus, with Quantum Chorus, which keeps the optimal fast-path latency of Chorus: dissemination followed by two rounds of votes. When its fast path fails, Quantum Chorus runs Coda, our signature-free Byzantine agreement for multiple proposers. We also outline how the Conductor, which schedules the slots of Cadence, can be adapted to Quantum Cadence. In simulations with 200 validators, Quantum Chorus has a latency comparable to that of Chorus and scales better with the number of proposers.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "后量子共识",
+        "多提议者",
+        "法定人数",
+        "拜占庭协定"
+      ],
+      "url": "https://arxiv.org/abs/2610.32803",
+      "pdf": "https://arxiv.org/pdf/2610.32803.pdf"
+    },
+    {
+      "id": "2610.31814",
+      "title": "SILMARILS-MV: Information-Theoretically Secure Multi-Verifier Signatures with Dealer-Free Key Issuance and Linear Aggregation for Permissioned Blockchains",
+      "authors": [
+        "Khadijeh Bagheri",
+        "Hassan Khodaiemehr",
+        "Chen Feng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为许可链设计信息论安全的多验证者签名与阈值公证，没有用大模型。",
+      "abstract": "许可链用计算安全签名认证交易、投票和法定人数证书，后量子替代方案会把共识流量放大几个数量级。已有信息论方案需要可信机构、量子信道、每次签名交互，或一次性密钥且传输有界。本文提出 SILMARILS-MV：一种多验证者无条件安全签名，签名是向量 α=A e(m)，每个验证者持有从虚拟锚点 Γ 导出的秘密泛函 c_i=Γ^T λ(x_i)，而无人学到 Γ。对抗腐化至多 ω 个验证者和任意签名者、并观察所有判定的无界对手，诚实验证者接受伪造或无效签名的概率至多为 Q/q+1/(q-1)，首项是紧的。方案强不可伪造、不可抵赖、可跨无界多跳转发，且可线性聚合。密钥由验证者通过 t<n/3 的完美安全 MPC 发放，无需广播。为了扩展，委员会自己签名：阈值公证下，最终性证书大小为常数 32(ω+1) 字节，每个验证者的发放成本不再依赖 n。仲裁验证密钥给客户端 32 字节签名，稳健再分配支持成员变更和份额刷新，验证者可事后加入。证书验证约 2.4 微秒。在 1000 个验证者的解析常态模型中，阈值公证每验证者每块认证流量为 71 KiB，对获准验证者比 ML-DSA-44 少 22 倍。在 100 个验证者的 Rust HotStuff 原型上，SILMARILS-MV 每秒提交交易数是 ML-DSA-44 的 2.8 倍，密码学 CPU 少 67 倍，蒙特卡洛攻击与界相符。",
+      "abstractEn": "Permissioned blockchains authenticate transactions, votes and quorum certificates with computationally secure signatures, and post-quantum replacements inflate consensus traffic by orders of magnitude. Information-theoretic alternatives have required a trusted authority, quantum channels, per-signature interaction, or single-use keys with bounded transfer. We present SILMARILS-MV, a multi-verifier unconditionally secure signature in which a signature is the vector α = A e(m) and each verifier holds a secret functional c_i = Γ^T λ(x_i) derived from virtual anchors Γ that nobody learns. Against unbounded adversaries corrupting up to ω verifiers and any signers, and observing every decision, an honest verifier accepts a forged or invalid signature with probability at most Q/q + 1/(q-1), a bound that is tight in its leading term. The scheme is strongly unforgeable, non-repudiable, transferable across unboundedly many hops, and linearly aggregatable. Keys are issued by the validators through perfectly secure MPC for t < n/3, without broadcast. To scale, we let the committee itself sign: in threshold notarization, finality certificates have constant size 32(ω+1) bytes and per-validator issuance cost no longer depends on n. Arbiter-verified keys give clients 32-byte signatures, robust redistribution supports membership changes and share refresh, and verifiers can be enrolled retroactively. A certificate verifies in 2.4 microseconds. In an analytic normal-case model at 1000 validators, threshold notarization needs 71 KiB of authentication traffic per validator per block, 22x less than ML-DSA-44 for admitted verifiers. In a Rust HotStuff prototype with 100 validators, SILMARILS-MV commits 2.8x more transactions per second than ML-DSA-44 with 67x less cryptographic CPU, and Monte-Carlo attacks match the bounds.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "许可链",
+        "阈值签名",
+        "信息论安全",
+        "最终性证书"
+      ],
+      "url": "https://arxiv.org/abs/2610.31814",
+      "pdf": "https://arxiv.org/pdf/2610.31814.pdf"
+    },
+    {
+      "id": "2026-2596",
+      "title": "ANNULAR: Post-Quantum Private Transactions from Isogenies with Recursive Batch Verification",
+      "authors": [
+        "Dustin Ray"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用同源原语和递归 STARK 做后量子屏蔽交易池，没有用大模型，对象是类似 Zcash 的私有支付。",
+      "abstract": "ANNULAR 是建立在同源原语上的屏蔽池。票据提交到 Merkle 树，用 nullifier 花费并隐藏金额，结构跟随 Zcash Sapling，但所有原语都是后量子的：花费由 Basso 等人的素数度 PRISM 签名授权，票据密文用 MIKE 非交互密钥交换派生密钥，每笔交易带一份在同源域上原生证明的 STARK。一个区块内的交易证明再折叠成一份递归证明。账本只需记录并验证这一份证明（426 KB，15 毫秒），无论批次多大，并同时检查每笔交易的两个签名。交易体在相同 memo 长度下与 Sapling 相当（512 字节 memo 时为 2685 字节对 2756 字节）；它在批次证明中的份额不到 500 字节。转向后量子原语通常会抬高资金池运行成本。作者认为后量子更换与扩容是互补的：用 STARK 做证明系统就可以折叠证明，用同源密钥则每笔交易数据仍然很小。成本转到发送方（16 核上证明约 1.4 秒）和每个批次的一个聚合方（单 GPU 上 1248 笔交易约 99 秒）。树中每份证明带 100 比特逐轮可靠性，批次在并界下约 90 比特；在 Fiat–Shamir 下这就是对手所需工作量。叶子电路的约束已在 Lean 4 中证明编码了花费语句，STARK 本身的可靠性仍依赖论文论证。方案主张依赖签名的存在不可伪造性，不依赖构造作者提出、尚未证明的强不可伪造性。",
+      "abstractEn": "ANNULAR is a shielded pool built on isogeny-based primitives. Notes are committed in a Merkle tree and spent by nullifier with hidden amounts, following the structure of Zcash's Sapling, but every primitive is post-quantum: spends are authorised by the prime-degree PRISM signature of Basso et al., note ciphertexts are keyed by the MIKE non-interactive key exchange, and each transaction carries a STARK proved natively over the isogeny field. The transaction proofs of a block are then folded into a single recursive proof. A ledger need record and verify only this one proof, 426 KB in 15 ms, whatever the batch holds, and check each transaction's two signatures alongside it. A transaction's body is the size of Sapling's at the same memo length (2,685 bytes against 2,756 with a 512-byte memo); its share of the batch proof adds under 500 bytes. A move to post-quantum primitives is generally expected to raise a pool's operating cost. We argue that the post-quantum change and the scaling change are complementary: with a STARK as the proof system, proofs fold, and with isogeny keys, the per-transaction data remains small. The cost moves to the sender, whose proof takes 1.4 s on sixteen cores, and to one aggregator per batch, which we measure: 1,248 transactions in 99 s on one GPU. Each proof in the tree carries 100 bits of round-by-round soundness and the batch about 90 under a union bound; under Fiat–Shamir that is the work an adversary needs. The constraints of the leaf circuit are proven in Lean 4 to encode the spend statement, while the soundness of the STARK itself rests on a paper argument. The scheme's claims rest on the signature's existential unforgeability; its strong unforgeability, argued by the construction's authors and not yet proved, is not relied on.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "后量子",
+        "屏蔽交易",
+        "STARK",
+        "同源密码"
+      ],
+      "url": "https://eprint.iacr.org/2026/2596",
+      "pdf": "https://eprint.iacr.org/2026/2596.pdf"
+    },
+    {
+      "id": "2026-2609",
+      "title": "SoK: Optimization Tools for the Hydra Multiplayer Channel",
+      "authors": [
+        "Maxim Jourenko",
+        "Mario Larangeira"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "系统整理双方支付通道工具能否用到 Hydra 多方通道，没有用大模型。",
+      "abstract": "区块链用共识把交易和数据写入不可变账本，但单位时间内能处理并上链的交易数量有限，这是扩容问题。二层协议把交易放到链下处理，共识只作安全备份，有可能把 n 笔交易压成账本上的 O(1) 笔。二层的基本构件是支付通道，较新的 Hydra（FC'21）则允许多方通道，不仅能支付，还能执行智能合约。已有大量工作提出二层工具和改进，但多数假定最初的双方支付通道设计，因此不清楚这些技术能在多大程度上用于 Hydra 式多方通道。本文：（1）综述已有双方通道协议及其上的工具，侧重讲清核心想法；（2）标出应为 Hydra 新做协议的用例；（3）分析 Hydra 的开放问题，列出相关工作，并建议哪些已有工具可以直接用，或作为后续研究的起点。",
+      "abstractEn": "Blockchain technology allows parties to use a consensus protocol to add transactions and data to a decentralized ledger that are immutable. However, the amount of transactions that can be processed within a consensus protocol and thus added to the ledger within a given time frame is limited. This is a scalability issue. Layer-2 protocols are a class of approaches that process transactions off-chain, i.e. without involvement of the consensus protocol, but allow usage of the consensus protocol as a backup for security. This potentially reduces the processing of n∈ℕ transactions to only O(1) transactions being committed to the ledger. The basic building blocks of Layer 2 protocols are Payment Channels, whereas newer protocols as Hydra (FC'21) allow for multi-party channels that are not limited to payments but can execute smart contracts, i.e. program code. There has been substantial research proposing tools and improvements to Layer 2 protocols, but most assume the original two party Payment Channel design. This makes it unclear to what degree existing techniques can be utilized with Hydra style multi-party channels. This work (1) presents a survey of such existing two party channel protocols and tools built on top of them. We use a didactic approach with a focus on explaining their core ideas. (2) This work identifies uses cases for which novel protocols for Hydra should be developed. (3) This work analyzes open problems for Hydra, lists relevant related work and proposes which existing tools can be used to address them or serve as a starting point for further research.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "支付通道",
+        "Hydra",
+        "二层协议",
+        "多方通道"
+      ],
+      "url": "https://eprint.iacr.org/2026/2609",
+      "pdf": "https://eprint.iacr.org/2026/2609.pdf"
+    },
+    {
+      "id": "2026-2598",
+      "title": "The Distributed Producer-Consumer Model Is All You Need: A Compiler for Asynchronous BFT",
+      "authors": [
+        "Liang Zhang",
+        "Binyang Hou",
+        "Zhengxuan Guo",
+        "Xiaohai Dai",
+        "Haibin Kan",
+        "Jiheng Zhang",
+        "Moti Yung"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用生产者-消费者模型编译异步 BFT 对象日志，没有用大模型，对象是拜占庭共识。",
+      "abstract": "构造异步拜占庭容错（BFT）协议，要在拜占庭故障和任意延迟消息下建立带全序的载荷可用性。许多 BFT 系统把载荷分发和协定分开，但常把组合绑到协议特定的选择或调度机制上。本文提出分布式生产者-消费者模型（DPCM）：一种事件驱动抽象，把针对载荷的认证可用性与不关心载荷的二元最终化分开。作者证明，只要生产者-消费者对满足文中接口，DPCM 就能把它编译成异步 BFT 对象日志。DPCM 批量最终化已认证高度，并对失败批次做确定性收窄，直到每个高度得到正常条目或有证据支撑的占位条目。其实例 Octopus 把并行一致广播生产者与批量异步二元协定（ABA）组合起来。为了性能，生产者在不等消费者决定的情况下认证块，并把载荷恢复留在协定路径之外。一条 ABA 可乐观最终化多个连续生产者列，失败则触发并行按行收窄，二分深度为对数。在八区域广域网、n∈{8,16,32}、每块 2200 笔交易的设置下，Octopus 无故障吞吐与 Dumbo-NG（CCS'22）相差不超过 6.5%。在测试的最大静默故障数下，n=8 和 n=16 时分别比 Dumbo-NG 高 25.9% 和 18.7%，n=32 时相差不超过 1%。n=16 和 n=32 时，Dumbo-NG 延迟是 Octopus 的 1.9 到 2.5 倍。在全部评测设置中，Octopus 吞吐是 Alea-BFT（NSDI'24）的 2.9 到 16.8 倍，后者延迟是 Octopus 的 2.4 到 15.2 倍。",
+      "abstractEn": "Building an Asynchronous Byzantine Fault Tolerant (BFT) protocol requires establishing payload availability with total order despite Byzantine faults and arbitrarily delayed messages. Although many BFT systems separate payload dissemination from agreement, they often couple their composition to protocol-specific selection or scheduling mechanisms. We present the Distributed Producer-Consumer Model (DPCM), an event-driven abstraction that separates payload-specific certified availability from payload-oblivious binary finalization. We prove that DPCM compiles any producer–consumer pair satisfying interfaces specified herein into an asynchronous BFT object log. DPCM batch-finalizes certified heights, deterministically refining failed batches until each height yields a normal or evidence-backed dummy entry. We instantiate DPCM as Octopus, which combines parallel consistent broadcast producers with batched asynchronous binary agreement (ABA). To achieve performance advantages, Octopus lets producers certify blocks without waiting for consumer decisions and keeps payload recovery off the agreement path. One ABA optimistically finalizes multiple consecutive producer columns, while failures trigger parallel row-wise refinement with logarithmic bisection depth. Across an eight-region WAN with n∈{8,16,32} and 2200-transaction blocks, Octopus remains within 6.5% of Dumbo-NG's (ACM CCS'22) fault-free throughput. With the maximum tested number of silent faulty parties, it outperforms Dumbo-NG by 25.9% and 18.7% at n=8 and n=16, respectively, and remains within 1% at n=32. At n=16 and n=32, Dumbo-NG's latency is 1.9--2.5× that of Octopus. Across all evaluated settings, Octopus achieves 2.9--16.8× the throughput of Alea-BFT (USENIX NSDI'24), whose latency is 2.4--15.2× that of Octopus.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "异步BFT",
+        "共识编译",
+        "最终化",
+        "载荷可用性"
+      ],
+      "url": "https://eprint.iacr.org/2026/2598",
+      "pdf": "https://eprint.iacr.org/2026/2598.pdf"
+    },
+    {
+      "id": "2026-2632",
+      "title": "Chosen Commitments and Certified Decoding Regions in the Adaptive Threshold Schnorr Attack",
+      "authors": [
+        "Hüseyin Eren Demirtaş",
+        "Oğuz Yayla"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给自适应阈值 Schnorr 伪造攻击加上所选承诺下的译码区域上界，没有用大模型。",
+      "abstract": "Crites 与 Stewart 把 N 方、阈值 τ 的阈值 Schnorr 签名上的自适应伪造攻击，归约到一次稀疏线性搜索预言机调用；他们证明这是对角缩放 Reed–Solomon 码的有界距离译码，稀疏答案（证人）指出要腐化的参与方。其分析对对手承诺背后的系数向量做均匀随机采样，并留下所选向量是否更好这个问题。本文界定：对手按该模板选用向量、且只在七条译码定理（三条 Reed–Solomon、四条折叠 Reed–Solomon）在各自假设下保证的半径所构成的区域内恢复证人时，成功概率如何。当承诺由已知系数向量在新的哈希挑战前固定时，攻击目标在固定该向量的历史条件下，是一条直线上的均匀点。对互异非零 Shamir 点，主定理表明：每条这样的直线上，至多有 M 个目标在预先固定的一组坐标/块重量区域内有证人，且每个区域允许的非零坐标少于 τ；M 只依赖 N、τ 和该集合。作者把至多做 Q 次新挑战、不做签名询问、在挑战前从历史中选系数向量并在之后保持、求解器不再做签名哈希询问的对手称为包装器。它只接受同一目标、同一表示、落在腐化上限内区域中的证人，拿到证人后才腐化并伪造然后停止。因此即使求解器能零成本恢复区域内全部证人，包装器成功概率至多为 QM/p，p 为群阶。在原攻击的六对 (N,τ) 上，由连续块划分构成的固定集合覆盖全部七个保证区域，且 M 低于 2^24；以域大小代理 p=2^252 计，经过 2^128 次挑战后界仍低于 2^{-100}。对均匀目标，这些区域内的证人概率有更小的界。对目标前固定的连续块划分上的折叠 Guruswami–Wang 与 Ashvinkumar–Habib–Srivastava 块区域，在多项式多方、指数大域且 τ/N 远离 0 时，该概率可忽略。这些结果也给所研究的译码定理做了分类。预言机难度、其他策略的成功，以及阈值 Schnorr 方案的自适应安全，仍然开放。",
+      "abstractEn": "Crites and Stewart reduce an adaptive forgery attack on threshold Schnorr signatures with N parties and threshold τ to one call to a sparse linear search oracle, which they show to be bounded distance decoding of a diagonally scaled Reed–Solomon code and whose sparse answer, a witness, names the parties to corrupt. Their analysis samples the coefficient vector behind the adversary's commitment uniformly at random and leaves open whether a chosen vector does better. We bound the success of an adversary that follows their template with a chosen vector and recovers witnesses only inside regions built from the radii that seven decoding theorems, three for Reed–Solomon and four for folded Reed–Solomon codes, certify under their own setup hypotheses. When the commitment is fixed through a known coefficient vector before a fresh hash challenge, the attack target is, conditional on the history that fixed the vector, a uniform point of a line. For distinct nonzero Shamir points, our main theorem shows that every such line contains at most M targets with a witness in a finite collection of coordinate and block weight regions fixed before the targets, each permitting fewer than τ nonzero coordinates, for an explicit integer M depending only on N, τ and the collection. We call the adversary the wrapper when it makes at most Q fresh challenges and no signing query, chooses each coefficient vector from its history before the challenge and keeps it afterwards, and lets its solvers make no further signature hash queries. It accepts only a witness of the same target and representation that lies in the regions of the collection within its corruption cap, corrupts parties only once it holds such a witness, and then forges from that witness and stops. Hence the wrapper succeeds with probability at most QM/p, with p the group order, even if its solvers recover every witness in the regions at no cost. On the six pairs (N,τ) of the original attack, fixed collections built from partitions into consecutive blocks contain all seven certified regions and have M below 2^{24}, so at the field size proxy p = 2^{252} the bound stays below 2^{-100} after 2^{128} challenges. For uniform targets we prove much smaller bounds on the witness probability in these regions. For the folded Guruswami–Wang and Ashvinkumar–Habib–Srivastava block regions on partitions into consecutive blocks fixed before the target, this probability is negligible for polynomially many parties, exponentially large fields and τ/N bounded away from zero. These results also classify the studied decoder theorems. The hardness of the oracle, the success of other strategies and the adaptive security of threshold Schnorr schemes are open.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "阈值签名",
+        "Schnorr",
+        "自适应伪造",
+        "钱包"
+      ],
+      "url": "https://eprint.iacr.org/2026/2632",
+      "pdf": "https://eprint.iacr.org/2026/2632.pdf"
+    }
+  ]
+}
