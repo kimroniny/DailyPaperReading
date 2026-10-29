@@ -1,0 +1,223 @@
+{
+  "date": "2026-10-29",
+  "papers": [
+    {
+      "id": "2610.34435",
+      "title": "CyberDual: AI Attackers versus AI Code Reviewers in Real Software Maintenance",
+      "authors": [
+        "Chenyuan Yang",
+        "Hwiwon Lee",
+        "Jongseong Kim",
+        "Yihan Yang",
+        "Dongjun Kim",
+        "Yinfang Chen",
+        "Lingming Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用攻击智能体在真实 C/C++ 开源库的维护提交里藏可利用漏洞，再用审查智能体做代码审查，看大模型审查能否在合并前拦住。",
+      "abstract": "开源项目已经开始让 AI 智能体审查新提交，但被审查的代码本身也可能来自 AI 攻击者。本文提出 CyberDual，用来评估这种双重角色：攻击智能体在广泛使用的开源项目真实维护工作中藏入可利用漏洞，审查智能体则尝试发现并修复。胜负由执行判定：在审查后的代码上重跑攻击者的概念验证（PoC）。每次攻击都是新的，维护窗口可按上游最新历史每季度重建。六个攻击者产生 1088 次有效攻击，三个审查智能体抓住了其中 85%–91%。但当攻击者把漏洞拆进真实上游提交时，大约六分之一的攻击位在审查后仍能打出可用利用。最强攻击者是开源权重模型：GLM 5.3 几乎从不拒答，在全部三个审查者都漏掉的 28 次攻击里占了 13 次。漏报时，Claude 审查者多半直接放行，GPT-6-Sol 则多半改错了位置；换一家厂商的审查者大约能补上 Claude 漏报的三分之二。除了排行榜，CyberDual 还有三种用途：用 PoC 执行给双方不可被报告刷分的奖励，从而用存活攻击训练更强审查者；用攻防分数一起做发布门槛；在新攻击者越过阈值时提醒已部署审查系统的团队——GLM 5.3 在 Claude Code 里已经能在 17% 的攻击位上把利用打过 Sonnet 5。",
+      "abstractEn": "Open-source projects now let AI agents review incoming code, but the code under review may itself come from an AI attacker. We present CyberDual, an arena for this dual role of AI: attacker agents hide an exploitable bug in real maintenance work on widely used open-source projects, and reviewer agents try to find and repair it. Execution decides each match: we rerun the attacker's proof of concept (PoC) on the code that comes out of review. Every attack is new, and the windows can be rebuilt each quarter from the latest upstream history. Three agentic reviewers catch 85-91% of 1,088 valid attacks from six attackers. Yet when the attacker spreads the bug over real upstream commits, about one in six attack slots still ends with a working exploit after review. The strongest attacker has open weights: GLM 5.3 almost never refuses, and its attacks make up 13 of the 28 that get past all three reviewers. When they miss, Claude reviewers mostly approve the attack, while GPT-6-Sol mostly repairs the wrong code; a reviewer from a second vendor catches about two thirds of a Claude reviewer's misses. Beyond a leaderboard, CyberDual has three uses. First, PoC execution gives both sides a reward that agent reports cannot game, so its surviving attacks can train reviewers against stronger attackers. Second, it can gate a release on both scores: Claude Sonnet 5 refuses one in five attack slots, yet attacks about as well as GPT-6-Sol, so refusal alone does not remove attack capability. Third, it can warn the teams behind a deployed reviewer when a new attacker crosses a threshold: GLM 5.3 in Claude Code already gets an exploit past Sonnet 5 in 17% of its attack slots.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "代码审查",
+        "智能体",
+        "漏洞植入",
+        "C/C++"
+      ],
+      "url": "https://arxiv.org/abs/2610.34435",
+      "pdf": "https://arxiv.org/pdf/2610.34435.pdf"
+    },
+    {
+      "id": "2610.34253",
+      "title": "NameTrap: Steering AI Coding Agents Toward Security Vulnerabilities via Variable Names",
+      "authors": [
+        "Chieh-Yuan Chang",
+        "Guan-Wei Chen",
+        "Chia-Yi Hsu",
+        "Chih Yang",
+        "Chia-Mu Yu",
+        "Chun-Ying Huang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "只改第三方 Python 文件里的标识符名称，诱导编码智能体写出指定 CWE 漏洞，对象是网上的 Python 代码和编码智能体。",
+      "abstract": "编码智能体会克隆仓库、安装软件包、阅读从网上拿到的源码，因此公开托管的代码会进入它们写代码时的上下文。本文表明，这段来自网页的上下文可以在没有任何显式指令的情况下被利用。NameTrap 是一种源码投毒攻击：只重命名第三方 Python 文件中的标识符，把编码智能体导向攻击者指定的 CWE 漏洞。攻击侧编码智能体按针对该 CWE 的命名约定迭代对齐标识符，并用本地补全探测确认改名后的文件会引出目标弱点；公开放出的诱饵既不含指令，也不含漏洞语句。作者在六个编码智能体、十个底层语言模型和四类漏洞（CWE-78、CWE-79、CWE-327、CWE-502）上评估。起点文件的干净版本从不会产生目标 CWE，仅改标识符后，六个智能体上的总体攻击成功率在 22.5% 到 56.0%，部分智能体–模型组合达到 75.0%，明显强于随机改名、中性改名和先前的标识符投毒攻击 XOXO。该攻击在繁体中文提示下仍然有效，并能在模型间迁移；安全提醒防御不能稳定阻止引入漏洞。三个基于 AI 的安全分析器和四个静态分析器都没有在投毒文件中报告目标弱点。这说明消费网页内容的智能体有一块被低估的攻击面：不受信任、托管在网上的代码里，看起来无害的变量名就能损害下游软件的安全性。",
+      "abstractEn": "AI coding agents routinely clone repositories, install packages, and read source code obtained from the Web, so publicly hosted code becomes part of the context that shapes the code they write. We show that this Web-borne context can be weaponized without any explicit instruction. We present NameTrap, a source-code poisoning attack that only renames identifiers in third-party Python files to steer AI coding agents toward attacker-targeted Common Weakness Enumeration (CWE) vulnerabilities. An attacker-side coding agent iteratively aligns identifiers with a CWE-specific naming convention and confirms through local probe completions that the renamed file elicits the target weakness, while the released bait contains neither instructions nor vulnerable statements. We evaluate NameTrap across six AI coding agents, ten underlying language models, and four vulnerability categories: CWE-78, CWE-79, CWE-327, and CWE-502. Starting from files whose clean versions never yield the targeted CWE, identifier-level manipulation achieves overall attack success rates of 22.5% to 56.0% across the six agents, reaching 75.0% for certain agent-model configurations, and substantially outperforms random renaming, neutral renaming, and the prior identifier-poisoning attack XOXO. The attack remains effective under Traditional Chinese prompts and transfers across models, while a security-reminder defense fails to consistently prevent vulnerability introduction. Moreover, three AI-based security analyzers and four static analyzers report none of the targeted weaknesses in the poisoned files. These findings expose an overlooked attack surface of agents that consume Web content: seemingly harmless variable names in untrusted, Web-hosted code can compromise the security of downstream software.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "标识符投毒",
+        "CWE",
+        "Python"
+      ],
+      "url": "https://arxiv.org/abs/2610.34253",
+      "pdf": "https://arxiv.org/pdf/2610.34253.pdf"
+    },
+    {
+      "id": "2610.34098",
+      "title": "Securing Agent-Generated Code with Its Own Development History",
+      "authors": [
+        "Prateek Kumar Rajput",
+        "Shahzeb Khan",
+        "El-Hacen Diallo",
+        "Yewei Song",
+        "Jacques Klein",
+        "Tegawendé F. Bissyandé"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用编码智能体自己的开发轨迹和符号级变更做安全审查与补丁核验，对象是智能体生成的拉取请求代码。",
+      "abstract": "编码智能体写的拉取请求可以通过项目测试套件，却漏掉防护条件或校验步骤。要找出缺失条件，审查者目前主要依赖对最终代码的静态分析。但智能体生成的改动带有人类提交没有的开发历史：轨迹记录了每次编辑和智能体自己陈述的假设，结构差分还能看出每个被改函数是如何演化的。本文提出 TRACER，把这段开发历史当作安全审查的证据。它按符号跟踪变更，把智能体记录的理由当作需要对照当前代码核验的断言，只有经过评估和功能验证才接受修复，并为每次被接受的修复附上后续改动必须满足的可执行检查。在 SusVibes 基准上，符号级跟踪能把含漏洞的符号放进审查范围的比例为 94.6%，而主扫描器告警只有 13.4%。用两个调查模型时，加入智能体理由的配置给出最多的已核验安全修复，同时保持功能；再叠加上 AST 历史并不能继续提高这个数字。漏斗分析标出了其余候选在哪一步丢掉。在结构生物学软件的研究中，修复记忆加上边界检查，让后续功能请求在十个任务里有九个成功且不再引入已修漏洞；只用功能反馈则四个成功，三个会把漏洞带回来。",
+      "abstractEn": "Pull requests written by coding agents can pass a project's test suite while omitting a guard or a validation step. To find the missing condition, a reviewer currently relies on static analysis of the final code. An agent-generated change, however, is accompanied by a development history that a human commit does not provide. The agent's trajectory records each edit together with the agent's stated assumptions, and structural differencing shows how each changed function evolved. We present TRACER, a workflow that uses this development history as evidence for security review. TRACER tracks changes at the symbol level, treats the agent's recorded rationale as claims to be verified against the current code, accepts a repair only after assessment and functional validation, and attaches to each accepted repair an executable check that later changes must satisfy. On the SusVibes benchmark, symbol-level tracking places the vulnerable symbol in the review scope for 94.6% of agent patches, compared with 13.4% for the primary scanner warning. With two investigator models, the configuration that includes the agent's rationale yields the largest number of verified security repairs while preserving functionality, and adding AST history to it does not increase that number. A funnel analysis identifies where the remaining candidates are lost. In a study of structural-biology software, the combination of repair memory and a boundary check allows a subsequent feature request to succeed in nine of ten tasks without reintroducing the repaired vulnerability, whereas functional feedback alone succeeds in four and reintroduces the vulnerability in three.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "代码审查",
+        "智能体轨迹",
+        "补丁核验",
+        "静态分析"
+      ],
+      "url": "https://arxiv.org/abs/2610.34098",
+      "pdf": "https://arxiv.org/pdf/2610.34098.pdf"
+    },
+    {
+      "id": "2610.34419",
+      "title": "MANTA: Unlocking DAG Flexibility in Asynchronous BFT",
+      "authors": [
+        "Mohan Yu",
+        "Chenlin Wu",
+        "Jianyu Niu",
+        "Cong Wang",
+        "Chenyuan Wu"
+      ],
+      "year": 2026,
+      "venue": "NSDI 2027",
+      "abstractOneWord": "放宽异步 DAG-BFT 每轮同步门槛，把提交所需连通性积到多轮，缩短异构广域网下的共识延迟，对象是区块链共识协议，无 LLM。",
+      "abstract": "基于 DAG 的 BFT 协议用并发出块和共享图上的引用作为共识证据，取代了单领导者提议路径。但在异构广域网里，现有设计会因掉队节点把轮次拖长、性能下降。根因是轮次推进太死：副本同步前进，必须先凑够上一轮的引用才能进入下一轮。本文提出灵活的 DAG 增长框架，用于异步 BFT 共识。关键观察是：引用法定人数对安全性和活性仍有必要，但不需要挡住每一轮推进；提交所需的连通性可以跨轮累积。在该框架下实现 MANTA：用灵活 DAG 增长放松轮次同步，并用灵活抛币更早触发领导者选举和最终确认。异构广域网实验显示，评估中延迟大约降低 30%–70%。",
+      "abstractEn": "DAG-based BFT protocols marked a shift in consensus design by replacing single-leader proposal paths with concurrent block proposals linked through a shared graph, where references encode consensus evidence. However, under heterogeneous wide-area networks (WANs), existing designs suffer from prolonged rounds and degraded performance due to straggler effects. The root cause is rigid round advancement: replicas move in synchronized rounds, waiting for enough references from the previous round before advancing. We propose a flexible DAG growth framework for asynchronous BFT consensus. Our key observation is that while reference quorums are necessary for safety and liveness, they need not block every round advancement. Instead, the connectivity required for commitment can be accumulated across rounds. Within the framework, we instantiate MANTA, which combines flexible DAG growth to advance by relaxing round synchronization and flexible coin to trigger leader election and finality earlier. Experiments on heterogeneous WAN deployments show that MANTA reduces latency by approximately 30%-70% in our evaluation.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "BFT",
+        "DAG共识",
+        "异步",
+        "广域网"
+      ],
+      "url": "https://arxiv.org/abs/2610.34419",
+      "pdf": "https://arxiv.org/pdf/2610.34419.pdf"
+    },
+    {
+      "id": "2610.36629",
+      "title": "Sybil-Proofness of Generalized Adaptive Clinching and Implications for Blockchain Mechanism Design",
+      "authors": [
+        "Chengkai Zhang",
+        "Yuhao Li",
+        "Elaine Shi",
+        "Mengqian Zhang",
+        "Lirong Xia",
+        "Qishen Han"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "证明自适应 clinching 在假身份拆分下仍抗 Sybil，并据此设计抗夹击的 AMM 机制，对象是链上做市合约，无 LLM。",
+      "abstract": "Dobzinski、Lavi 和 Nisan（FOCS'08）的自适应 clinching 拍卖是有预算约束竞拍者机制设计的基础工作，后来被推广到更丰富的市场设定。它有很强保证：帕累托最优，并且在不能虚报预算时，如实出价是占优策略。但许多真实环境里身份很容易伪造，还需要抵抗 Sybil 攻击。竞拍者把预算拆到多个假身份时，这些保证是否还成立，此前一直没解决。本文给出自适应 clinching 的一般框架，并证明它满足抗 Sybil 的激励相容：只要各身份申报预算之和不超过该竞拍者可强制执行的真实预算，拆成任意多个身份、任意报价都得不到额外好处。于是抗 Sybil 也成为自适应 clinching 的理想性质之一。工作动机来自去中心化金融里的自动做市商（AMM）。作者设计了一种新的 AMM 自适应 clinching 机制，在两方面扩展了经典方法：支持双边市场并防御双边策略，并允许供给函数随拍卖状态变化。其单边特例落在上述一般框架内；证明技术进一步表明，完整的双边机制同时满足抗 Sybil 激励相容和一种放宽的帕累托最优。结合已知不可能性结果和本文新证明的不可能性，作者认为这些保证已经接近能达到的最好结果。更一般地，这项工作把经典算法博弈论和当代去中心化区块链联系起来。",
+      "abstractEn": "The adaptive clinching auction of Dobzinski, Lavi, and Nisan (FOCS'08) is a cornerstone of mechanism design with budget-constrained bidders, and it has since inspired a broad range of extensions to substantially richer market settings. Adaptive clinching enjoys compelling guarantees: it is Pareto optimal, and truthful bidding is a dominant strategy whenever budgets cannot be overreported. In many real-world environments, however, identities are cheap to create, making resilience to Sybil attacks an additional requirement. Whether the guarantees of adaptive clinching survive when a bidder can split its budget across fake identities has remained open. We introduce a generalized framework for adaptive clinching and prove that it satisfies Sybil-robust incentive compatibility: a bidder cannot benefit from splitting into any finite number of identities with arbitrary value reports, provided their aggregate reported budget does not exceed the bidder's enforceable true budget. Sybil resilience thus joins the list of ideal properties of adaptive clinching. Our work is motivated by practical problems in decentralized finance, where automated market makers (AMMs) are among the most widely used applications. We design a new AMM mechanism that extends classical adaptive clinching in two ways: it supports a two-sided market and protects against two-sided strategies, and it allows the supply function to depend on the auction state. Its one-sided special case is captured by our generalized adaptive clinching framework, and our proof techniques show that the full two-sided mechanism simultaneously satisfies Sybil-robust incentive compatibility and a relaxed notion of Pareto optimality. We argue that these guarantees are essentially the best possible via impossibility results. More broadly, our work reveals new connections between classical algorithmic game theory and modern decentralized blockchains.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Sybil",
+        "AMM",
+        "MEV",
+        "机制设计"
+      ],
+      "url": "https://arxiv.org/abs/2610.36629",
+      "pdf": "https://arxiv.org/pdf/2610.36629.pdf"
+    },
+    {
+      "id": "2026-2604",
+      "title": "Balsamic: One-round Threshold UOV from GPU-Accelerated FHE",
+      "authors": [
+        "Jaehyung Kim",
+        "Charles Gouert",
+        "Jean-Luc Watson",
+        "G. Edward Suh"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用 GPU 加速全同态加密实现一轮阈值 UOV 签名，对象是钱包式阈值签名，无 LLM。",
+      "abstract": "通用阈值化器可以给出一轮阈值签名，但需要在全同态加密（FHE）下评估整个签名算法。本文提出 Balsamic：完整的同态 Unbalanced Oil and Vinegar（UOV）签名器，以及它在一轮阈值 UOV 签名上的应用。UOV 的短加盐目标哈希把加密工作量转到有限域线性求解，作者把它与硬币派生和哈希一起放进打包的离散 CKKS 电路。成对主元求解器在第一次主元归一化之前就选定两个主元，再用一次求逆和三次域运算做耦合更新。主元成功证书支持加密重试选择，而不需要残留求值。在 2-out-of-3 半诚实阈值 UOV 签名中，每次部分签名（在线阶段）在 NVIDIA RTX 6000 Ada 上约 10.7 秒，在 NVIDIA GB300 上约 7.77 秒，每次响应 5.25 MB。这些测量表明，完整同态签名可以成为一轮阈值签名的计算核心，而不需要中间打开或每次签名的交互预处理。",
+      "abstractEn": "Universal thresholdizers offer one-round threshold signatures, but require evaluating an entire signer under fully homomorphic encryption (FHE). We present Balsamic, a complete homomorphic Unbalanced Oil and Vinegar (UOV) signer and its application to one-round threshold UOV signature. UOV's short salted target hash shifts the encrypted workload to finite-field linear solving, which we integrate with coin derivation and hashing in a packed discrete-CKKS circuit. Our paired-pivot solver selects both pivots before first-pivot normalization, then applies their coupled update with one inversion stage per pair and cubic field work. Pivot-success certificates enable encrypted retry selection without residual evaluation. In 2-out-of-3 semihonest threshold UOV signing, each partial signing (online) takes 10.7 seconds on NVIDIA RTX 6000 Ada and 7.77 seconds on NVIDIA GB300, with 5.25 MB per response. These measurements demonstrate that complete homomorphic signing can provide the computational core of one-round threshold signatures without intermediate openings or per-signature interactive preprocessing.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "阈值签名",
+        "UOV",
+        "全同态加密",
+        "后量子"
+      ],
+      "url": "https://eprint.iacr.org/2026/2604",
+      "pdf": "https://eprint.iacr.org/2026/2604.pdf"
+    },
+    {
+      "id": "2026-2601",
+      "title": "Integer Coordinate Families and Threshold RSA Signatures for Any Prime Exponent",
+      "authors": [
+        "Shivansh Jaiswal",
+        "Somitra Sanadhya"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "构造任意素数指数的阈值 RSA 签名，并指出先前方案可伪造，对象是阈值签名，无 LLM。",
+      "abstract": "在 CT-RSA 2026 上，Ng 和 Lau 为指数 e=3 的阈值 RSA 签名引入了 (t,n)-整数坐标族，并用启发式搜索在 2≤t≤n≤9 找到了一些族。他们问这类族是否总存在、以及能否高效构造。本文对两个问题都给出肯定回答：证明 (t,n)-整数坐标族也是 (t+1,n)-整数坐标族；并给出多项式时间算法，为 t=2 且 2≤n<19 构造这类族。针对 Ng-Lau 的另一个问题，本文证明成对族的坐标有超多项式下界，并找出 n≤9 的最小族。Ng 和 Lau 还基于整数坐标族提出过阈值签名方案。本文指出该方案存在平凡伪造，证明也有缺陷，并给出修复后的方案 PiIC。最后提出整数秘密共享方案 PiZ，对每个素数 e 和每个 (t,n) 都适用，不依赖特殊坐标族。两个方案都在标准 RSA 假设下被证明是 TS-UF-CMA 安全的。",
+      "abstractEn": "At CT-RSA 2026, Ng and Lau introduced (t,n)-integer coordinate families for threshold RSA signatures with e=3, and found some families by heuristic search for 2≤t≤n≤9. They asked whether such families always exist and, if so, can they be constructed efficiently. We answer both of these questions positively. We prove that a (t,n)-integer coordinate family is also a (t+1,n)-integer coordinate family. We construct such families for t=2, and 2≤n<19, using a polynomial time algorithm in n and its output bit length. Answering another question raised in the Ng-Lau work, we prove super-polynomial lower bounds on coordinates of pairwise families. We also find the minimum families for n≤9. Ng and Lau proposed a threshold signature scheme based on integer coordinate families. We show that the Ng-Lau scheme admits trivial forgeries, and has a flawed proof. We give a repaired scheme PiIC which does not suffer from these issues. Finally, we propose an integer secret-sharing scheme PiZ that works for every prime e and every (t,n), without relying on any special coordinate family. We prove that both the schemes PiIC and PiZ are TS-UF-CMA secure under the standard RSA assumption.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "阈值签名",
+        "RSA",
+        "伪造攻击",
+        "秘密共享"
+      ],
+      "url": "https://eprint.iacr.org/2026/2601",
+      "pdf": "https://eprint.iacr.org/2026/2601.pdf"
+    },
+    {
+      "id": "2610.32210",
+      "title": "Tracing Money Laundering Across DeFi, Bridges, and Mixers on Ethereum",
+      "authors": [
+        "Huan Xing",
+        "Gaohe Jin",
+        "Bang Fu",
+        "Yue Li",
+        "Baoning Niu",
+        "Xing Fan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在以太坊上沿 DeFi、跨链桥和混币器追踪洗钱资金流，对象是链上服务，无 LLM。",
+      "abstract": "违法者会利用以太坊的流动性和多种链上服务，把 DeFi 协议、跨链桥和混币器串成多阶段流程来洗钱。现有反洗钱追踪方法难以在复杂交易里拆开底层资金路径，可能把后续追踪带偏；没有预先收集的桥信息就识别不出跨链意图；并把混币器当成一般出口服务，忽略混币后的洗钱流。本文提出 FPTracer，用于跨以太坊服务追踪违法资产。第一，基于上下文感知转账树（CATT）恢复单笔交易内部的资金路径，指导追踪和服务分析。第二，从资金流和执行证据中提取可区分特征，训练分类器识别带跨链意图的交易。第三，用上游洗钱网络中的证据分析混币后的潜在活动。在 20 个真实洗钱案例上，已知洗钱地址召回率 98.6%，目的地召回率 94.2%，均为对比中最高；识别出这些案例中所有已知跨链桥使用，并发现 30 处此前未报告的使用。在 18 个确认使用 Tornado Cash 的案例中，FPTracer 还能标出潜在提现侧活动，并在有公开报告的地方得到印证。",
+      "abstractEn": "Illicit actors exploit Ethereum's deep liquidity and diverse on-chain services to launder criminal proceeds by combining decentralized finance (DeFi) protocols, cross-chain bridges, and mixers in multi-stage processes. Existing anti-money laundering tracing methods fail to disentangle the underlying asset-flow paths in complex transactions, potentially misdirecting subsequent tracing; cannot identify cross-chain intent without pre-collected bridge information; and treat mixers as generic exit services, overlooking post-mixer laundering flows. We present FPTracer, a framework for tracing illicit assets across Ethereum services. First, we propose a method based on the Context-Aware Transfer Tree (CATT) to recover intra-transaction asset-flow paths, which guide accurate tracing and service analysis. Second, we extract discriminative features from asset-flow and execution-evidence perspectives and train a classifier to identify transactions with cross-chain intent. Third, we leverage evidence from the upstream laundering network to analyze potential post-mixer laundering activities. Evaluation on 20 real-world laundering cases demonstrates FPTracer's effectiveness. It achieves the highest recall for both known laundering addresses (98.6%) and destinations (94.2%). It identifies all known uses of bridges in these cases and uncovers 30 previously unreported ones. Among 18 cases with identified Tornado Cash usage, FPTracer can identify potential withdrawal-side activities, which are corroborated by public reports where available.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链桥",
+        "混币器",
+        "DeFi",
+        "资金追踪"
+      ],
+      "url": "https://arxiv.org/abs/2610.32210",
+      "pdf": "https://arxiv.org/pdf/2610.32210.pdf"
+    }
+  ]
+}
