@@ -1,0 +1,272 @@
+{
+  "date": "2026-10-30",
+  "papers": [
+    {
+      "id": "10.1109-tifs.2026.3746878",
+      "title": "Beyond Natural Language Perplexity: Detecting Dead Code Poisoning in Code Generation Datasets",
+      "authors": [
+        "Chi-Chien Tsai",
+        "Chia-Mu Yu",
+        "Ying-Dar Lin",
+        "Yu-Sung Wu",
+        "Wei-Bin Lee"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "针对代码大模型训练集里的死代码投毒，用按行困惑度找出异常行并清洗，对象是代码生成数据集。",
+      "abstract": "代码相关任务越来越多地使用大语言模型，其训练数据的安全性也因此受到关注。一类关键威胁是死代码投毒：把语法合法、功能上却多余的代码注入训练集，用来操纵模型行为。这类攻击会降低神经代码搜索系统的表现，使建议偏向或变得不安全。现有检测方法（例如按 token 计算困惑度）对死代码效果不好，因为程序语言有自身的结构和上下文特点。本文提出 DePA（Dead Code Perplexity Analysis），一种按行做检测和清洗、贴合代码结构的方法。DePA 利用代码行之间的上下文关系计算行级困惑度，再把各行困惑度与文件内的整体分布比较，标出异常行。在基准数据集上的实验表明，DePA 明显强于现有方法：检测 F1 提高 0.14–0.19，投毒片段定位精度提高 44%–65%，检测速度提高 0.62–23 倍，适合大规模清洗训练集。总体而言，DePA 针对死代码投毒的特殊难点，为保护代码生成模型训练数据的完整性提供了一种可用的做法。",
+      "abstractEn": "The increasing adoption of large language models (LLMs) for code-related tasks has raised concerns about the security of their training datasets. One critical threat is dead code poisoning, where syntactically valid but functionally redundant code is injected into training data to manipulate model behavior. Such attacks can degrade the performance of neural code search systems, leading to biased or insecure code suggestions. Existing detection methods, such as token-level perplexity analysis, fail to effectively identify dead code due to the structural and contextual characteristics of programming languages. In this paper, we propose DePA (Dead Code Perplexity Analysis), a novel line-level detection and cleansing method tailored to the structural properties of code. DePA computes line-level perplexity by leveraging the contextual relationships between code lines and identifies anomalous lines by comparing their perplexity to the overall distribution within the file. Our experiments on benchmark datasets demonstrate that DePA significantly outperforms existing methods, achieving 0.14-0.19 improvement in detection F1-score and a 44-65% increase in poisoned segment localization precision. Furthermore, DePA enhances detection speed by 0.62-23x, making it practical for large-scale dataset cleansing. Overall, by addressing the unique challenges of dead code poisoning, DePA provides a robust and efficient solution for safeguarding the integrity of code generation model training datasets.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "训练集投毒",
+        "代码生成",
+        "困惑度",
+        "数据集清洗"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3746878",
+      "pdf": "https://arxiv.org/pdf/2502.20246.pdf"
+    },
+    {
+      "id": "2610.39899",
+      "title": "ExploreRepair: Evidence-Specialized Agents for Vulnerability Repair under Information Constraints",
+      "authors": [
+        "Duc Manh Tran",
+        "Ratnadira Widyasari",
+        "Ivana Clairine Irsan",
+        "Huihui Huang",
+        "Ting Zhang",
+        "David Lo",
+        "Rahul Gopinath",
+        "Hong Jin Kang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在缺少准确漏洞分类或 PoV 测试时，用多个探索智能体协作做漏洞修复，对象是真实漏洞补丁基准。",
+      "abstract": "自动漏洞修复常常只能拿到不完整的漏洞信息：开发者可能没有准确的漏洞分类，也没有现成的漏洞证明（PoV）测试，却仍需要给出补丁。信息不足时，关键难点是在敲定补丁前探索对漏洞的多种合理解释。为此，本文提出 ExploreRepair：由一组探索智能体分别给出漏洞观察和修复实现，再加以调和。先让三个智能体各探索漏洞的一个维度，收集观察和具体实现；再由 Lesson Aggregator 与 Patch Aggregator 分别从观察和实现中合成补丁，最后由 Aggregator 在不使用基准反馈的情况下调和各方方案。在 PatchEval 上，ExploreRepair 搭配 GPT-5.6-Luna 和 DeepSeek-V4.1-Flash 的修复成功率分别为 39.6% 和 71.6%，比当前较强的 EvoRepair 高出 16.0 和 25.4 个百分点。在 VulnLoc+ 上成功率分别为 51.4% 和 62.9%，比 LoopRepair 不使用 PoV 测试的变体高出 20.0 和 17.1 个百分点。",
+      "abstractEn": "Automated vulnerability repair must often operate with incomplete vulnerability information: developers may lack an accurate vulnerability classification or a provided proof-of-vulnerability (PoV) test, yet still need to produce a repair. Without detailed information, a key challenge is to explore multiple plausible interpretations of the vulnerability before committing to a repair. To address this challenge, we propose ExploreRepair, a vulnerability repair framework that reconciles the vulnerability observations and repair implementations from a team of exploration agents. We first collect these observations and repair implementations from three agents, each tasked with exploring a specific dimension of the vulnerability. Then, a Lesson Aggregator and a Patch Aggregator independently synthesize repairs from these observations and concrete implementations before a final Aggregator reconciles their proposals without benchmark feedback. On PatchEval, ExploreRepair achieves repair success rates of 39.6% and 71.6% with GPT-5.6-Luna and DeepSeek-V4.1-Flash, respectively, exceeding EvoRepair, a state-of-the-art vulnerability repair approach, by 16.0 and 25.4 percentage points. On VulnLoc+, it achieves success rates of 51.4% and 62.9%, respectively, exceeding LoopRepair's variant without PoV tests by 20.0 and 17.1 percentage points.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "智能体",
+        "信息不完整",
+        "补丁合成"
+      ],
+      "url": "https://arxiv.org/abs/2610.39899",
+      "pdf": "https://arxiv.org/pdf/2610.39899.pdf"
+    },
+    {
+      "id": "2610.38617",
+      "title": "How Deterministic SAST and AI Security Agents Divide the Work: Coverage, Harness Policy and Cost in Snyk VulnBench 2.0",
+      "authors": [
+        "Liran Tal",
+        "Chris Liu",
+        "Charlotte Fereday",
+        "Sebastian Roth",
+        "Brian Clark"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在 Go / JavaScript / Python / Java 的 Web 应用上对比确定性 SAST 与 AI 安全智能体的漏洞覆盖、策略和成本。",
+      "abstract": "本文问的是：AI 编码智能体和 AI 安全脚手架能发现确定性静态应用安全测试（SAST）找不到的什么，又会漏掉 SAST 能抓住的什么。VulnBench 2.0 是一套基准，包含 20 个开源 Web 应用里 108 个手工整理、攻击者可到达的漏洞，语言覆盖 Go、JavaScript/TypeScript、Python 和 Java；其中 62 个跨文件。一条发现只有在攻击者可控源和危险汇点都定位到两行以内才计分。作者用同一套盲评协议评估九种落地配置：Snyk Code 静态分析器，Claude Code 的 /security-review 在三种模型和力度设置下（其中一种接 Snyk MCP 服务器），Codex Security 搭配 GPT-5.6 Luna、Terra 和 Sol，以及 DeepSec 扫描器的两种模型后端。Snyk Code 的宏召回率为 82.4%（108 个中的 89 个），Claude Code 用 Opus 5、xhigh 力度为 79.3%（85 个）；二者在 28 个漏洞上意见不一致，各占 16 和 12，还不足以分出高下。单独用哪一种都不够：合在一起覆盖 101/108，也是全部七种可比较配置的上限；AI 配置还报出至少 7 个参考集和 Snyk Code 都没有的真实漏洞。AI 引擎漏报什么，既取决于模型，也取决于脚手架：去掉 Claude Code 内置审查策略后，同一模型在该策略排除或限制的类别里，从匹配 16 个变成只匹配 9 个（补充实验覆盖 20 个应用中的 19 个）；Codex Security 搭配 GPT-5.6 Sol 在文件级定位到 80 个漏洞，行级只有 34 个；DeepSec 不靠模型的文件筛选只在 108 条流中的 56 条保住了文件。覆盖率和成本关系不紧。脚手架、测试夹具、参考集和全部运行数据均公开。",
+      "abstractEn": "We ask what AI coding agents and AI security harnesses find that deterministic static application security testing (SAST) does not, and what they miss that SAST catches. VulnBench 2.0 is a benchmark of 108 hand-curated, attacker-reachable vulnerabilities in 20 open-source web applications in Go, JavaScript/TypeScript, Python and Java; 62 flow across more than one file. A finding is credited only if it locates the vulnerability's attacker-controlled source and its dangerous sink, each within two lines. We evaluate nine productized configurations under one blind protocol: the Snyk Code static analyzer, Claude Code's /security-review with three model and effort settings (one with the Snyk MCP server), Codex Security with GPT-5.6 Luna, Terra and Sol, and the DeepSec scanner with two model backends. Snyk Code reached 82.4% macro recall (89 of 108) and Claude Code with Opus 5 at xhigh effort 79.3% (85 of 108); they disagree on 28 vulnerabilities, split 16 to 12, too few to tell them apart. Neither engine was sufficient alone: together they reached 101 of 108, the ceiling of all seven comparable configurations combined, and the AI configurations also reported at least seven real vulnerabilities that the reference set did not contain and Snyk Code did not report. What an AI engine misses depends on its harness as much as on its model: without Claude Code's built-in review policy, the same model matched 16 instead of 9 of the 20 vulnerabilities in the classes that policy excludes or restricts (supplementary run on 19 of 20 applications); Codex Security with GPT-5.6 Sol located 80 vulnerabilities at file level but 34 at line level; DeepSec's model-free file selection kept a file from only 56 of the 108 flows. Coverage and cost were only loosely related. The harness, fixtures, reference sets and all run data are public.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SAST",
+        "安全智能体",
+        "Web 应用",
+        "漏洞基准"
+      ],
+      "url": "https://arxiv.org/abs/2610.38617",
+      "pdf": "https://arxiv.org/pdf/2610.38617.pdf"
+    },
+    {
+      "id": "2610.38521",
+      "title": "Security Impact of Coding Agent's Memory Files",
+      "authors": [
+        "Thiago Santos de Moura",
+        "Selma Güler",
+        "Yannic Noller"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "研究 CLAUDE.md 一类项目记忆文件被恶意改写后，编码智能体是否会写出能过测试但不安全的代码。",
+      "abstract": "编码智能体在每次会话开始时会自动加载 CLAUDE.md 这类项目记忆文件，并当作可信的项目指导。任何人只要能改这个文件（例如通过拉取请求），就可以在不碰开发者提示的情况下影响智能体。本文将记忆文件视为不安全代码生成的攻击面，并问两件事：（1）恶意记忆文件会不会让智能体写出能过测试却有漏洞的代码；（2）智能体会不会向开发者说明这份文件影响了代码。针对 12 个 CWE 类别，作者各写了两份恶意记忆文件：一份把去掉防护检查说成工程最佳实践，一份直接要求去掉。在 36 个 SecRepoBench 任务上，对比 Claude Code（Sonnet 5.5）和 OpenCode（Qwen 3.8 27B、DeepSeek V4.1 Flash）有无这些文件。恶意文件使安全完成率变化在 -8 到 +6 个百分点，不同智能体和变体之间没有稳定规律。智能体对开发者如何提及该文件差别很大：Claude Code 大约三分之二的最终回复会点名该文件，OpenCode 几乎只在推理轨迹里提到，开发者看到的最终回复里很少出现。把文件标成攻击并不能可靠保护代码，这些智能体仍会生成有漏洞的代码。作者勾勒了后续需要做的更大规模评估，以及相应防御设计。",
+      "abstractEn": "Coding agents automatically load project memory files such as CLAUDE.md at the start of every session and treat them as trusted project guidance. Anyone who can change such a file, for example through a pull request, can therefore steer the agent without ever touching the developer's prompt. We study memory files as an attack surface for insecure code generation and ask (1) whether a malicious memory file makes agents produce code that passes its tests but is vulnerable, and (2) whether agents disclose to the developer that the file shaped their code. For each of 12 CWE classes, we crafted two malicious memory files, a qualified variant that presents removing defensive checks as engineering best practice and a forceful variant that demands it. We ran Claude Code (Sonnet 5.5) and OpenCode (Qwen 3.8 27B, DeepSeek V4.1 Flash) on 36 SecRepoBench tasks with and without these files. The malicious files changed the rate of secure completions by -8 to +6 percentage points, with no consistent pattern across agents or variants. Agents differ sharply in what they tell the developer about the file. Claude Code names it in about two thirds of its final messages, whereas OpenCode mentions it almost exclusively in its reasoning trace, not in the final message the developer reads. Flagging the file as an attack does not reliably protect the code, as such agents still generated vulnerable code. We outline the larger studies needed to quantify this risk across agents and to design defenses.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "记忆文件",
+        "不安全代码",
+        "CWE"
+      ],
+      "url": "https://arxiv.org/abs/2610.38521",
+      "pdf": "https://arxiv.org/pdf/2610.38521.pdf"
+    },
+    {
+      "id": "2610.37797",
+      "title": "Structured Security Explanations for Learning-Based Vulnerability Detection",
+      "authors": [
+        "Fares Trad",
+        "Yizhou Chen",
+        "Hung Viet Pham",
+        "Zeyu Sun",
+        "Gias Uddin"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用不见标签的大模型先写结构化程序行为说明，再交给监督模型做 C/C++ 函数级漏洞检测。",
+      "abstract": "软件漏洞检测仍然很难：现有方法要么依赖预先写好的分析规则，要么从代码和标签里隐式学习漏洞模式，要么让大语言模型直接做最终安全判断。结构化地描述与安全相关的程序行为，能否改进有监督检测，目前并不清楚。本文提出 VulnLens，一种带解释增强的框架，用于二进制场景下的 C/C++ 漏洞检测，并把程序行为分析与最终判定分开。一个不见标签的基于大模型的 Explainer 从七个固定视角检查每个函数：数据流、内存访问、对象生命周期、算术与类型行为、控制流、共享状态，以及外部资源访问。它收不到漏洞标签或 CWE 信息，只生成结构化说明。有监督的 Detector 再用顺序交叉注意力把源代码和说明合在一起。作者在由 PrimeVul 导出、覆盖十个 CWE 类别的数据集上评估 VulnLens，并在不重新训练的情况下迁移到 SecVulEval。在 526 个函数的 PrimeVul 测试集上，VulnLens 达到 75.5% 准确率和 77.2% F1，准确率比 DeepSeek V4 Pro 高 4.2 个百分点，F1 比 Gemini 2.5 Pro 高 2.2 个百分点。配对的说明比单独训练的纯代码检测器把 F1 提高 7.3 个百分点。在 SecVulEval 上，VulnLens 达到 66.4% 准确率和 65.8% F1，准确率和 F1 分别比 DeepSeek V4 Pro 高 7.6 和 20.0 个百分点，比 Gemini 2.5 Pro 高 16.6 和 7.8 个百分点。",
+      "abstractEn": "Software vulnerability detection remains difficult because existing approaches rely on predefined analysis rules, learn vulnerability patterns implicitly from code and labels, or use large language models (LLMs) to make the final security judgment. It remains unclear whether structured descriptions of security-relevant program behavior can improve supervised detection. We present VulnLens, an explanation-augmented framework for binary C/C++ vulnerability detection that separates program-behavior analysis from the final decision. A label-blind LLM-based Explainer examines each function from seven fixed perspectives: data flow, memory access, object lifetime, arithmetic and type behavior, control flow, shared state, and external-resource access. Without receiving vulnerability labels or CWE information, it generates structured explanations. A supervised Detector combines source code and explanations through sequential cross-attention. We evaluate VulnLens on a PrimeVul-derived dataset covering ten CWE categories and test transfer to SecVulEval without retraining. On the 526-function PrimeVul test set, VulnLens achieves 75.5% accuracy and 77.2% F1, exceeding DeepSeek V4 Pro by 4.2 percentage points in accuracy and Gemini 2.5 Pro by 2.2 points in F1. Matched explanations improve F1 by 7.3 points over a separately trained code-only detector. On SecVulEval, VulnLens achieves 66.4% accuracy and 65.8% F1, outperforming DeepSeek V4 Pro by 7.6 points in accuracy and 20.0 points in F1, and Gemini 2.5 Pro by 16.6 points in accuracy and 7.8 points in F1.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "C/C++",
+        "结构化解释",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.37797",
+      "pdf": "https://arxiv.org/pdf/2610.37797.pdf"
+    },
+    {
+      "id": "2610.35541",
+      "title": "The Agent in the Middle: How AI-Mediated Access Reshapes Web Vulnerability Exploitation",
+      "authors": [
+        "Ruozhao Yang",
+        "Jiongchi Yu",
+        "Ming Hu",
+        "Xiaofei Xie"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评估用户把任务交给 AI 智能体直接调后端时，现有 Web 漏洞是否仍然可被利用，对象是十二类 Web 应用。",
+      "abstract": "Web 服务越来越多地露出后端接口，让用户把任务交给 AI 智能体，智能体不再浏览网页，而是直接调用服务操作。这一变化会改变现有 Web 漏洞被利用的方式。本文用可执行基准 VELA 研究这些变化：覆盖十二个 Web 应用族的 44 个漏洞，保留有漏洞的后端，并从合法工作流导出面向智能体的接口。作者在多种接口配置下评估三个商用智能体，用受控对比把接口效应和智能体行为分开，并用独立判定器核验攻击结果。结果表明，在参考配置下，智能体能实现直接调用接口所能实现的每一次攻击，可利用性主要由接口决定：参考设计下 91% 的漏洞仍可被利用。接口限制可以通过去掉所需操作或限制输入控制来挡住部分攻击，但各类漏洞的保留率仍然偏高。参考配置下没有一例失败可归咎于智能体拒答或输入规范化；有一例智能体补上了攻击者漏掉的调用，从而完成攻击。在所测配置中，接口设计对可利用性的影响大于智能体选择：保留率可从 39% 变到 95%，而不同智能体最多差 4.5 个百分点；但一些更严的接口也会限制合法工作流。这项研究系统给出了智能体中介访问如何改写现有 Web 漏洞的实证结果，为后续 Web 架构设计提供了可度量的安全结果，以及降低攻击暴露与保留合法功能之间的取舍。",
+      "abstractEn": "Web services increasingly expose backend interfaces that let users delegate tasks to AI agents, which invoke service operations directly without navigating websites. This shift changes how existing Web vulnerabilities can be exploited. We investigate these changes through VELA, an executable benchmark covering 44 vulnerabilities across twelve Web application families. The benchmark preserves vulnerable backends and derives agent-facing interfaces from legitimate workflows. We evaluate three commercial agents across multiple interface configurations, using controlled comparisons to separate interface effects from agent behavior and independent oracles to verify attack outcomes. Our results show that the agent realizes every attack that direct interface invocation realizes in the reference configuration, so exploitability is set mainly by the interface: 91% of vulnerabilities remain exploitable under the reference design. Interface restrictions prevent some attacks by removing required operations or limiting input control, while retention remains high across vulnerability classes. No case-level loss in the reference configuration is attributed to agent refusal or input normalization, and in one case the agent completed an attack by supplying calls the attacker omitted. Across the tested configurations, interface design affects exploitability more than agent choice, moving retention from 39% to 95% against at most 4.5 points across agents, but some restrictive interfaces also limit legitimate workflows. Our study provides a systematic empirical account of how agent-mediated access reshapes existing Web vulnerabilities, grounding future Web architecture design in measured security outcomes and trade-offs between reducing attack exposure and preserving legitimate functionality in agent-facing services.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Web 漏洞",
+        "智能体接口",
+        "可利用性",
+        "基准"
+      ],
+      "url": "https://arxiv.org/abs/2610.35541",
+      "pdf": "https://arxiv.org/pdf/2610.35541.pdf"
+    },
+    {
+      "id": "2610.38489",
+      "title": "GI-RTL-Fuzz: Grammar-Informed RTL Generation with LLMs for End-to-End Differential Simulator Fuzzing",
+      "authors": [
+        "Ziyue Zheng",
+        "Zhi Qu",
+        "Yangdi Lyu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型按 BNF 文法覆盖生成 RTL 测试用例，差分模糊测试 Verilog 仿真器。",
+      "abstract": "寄存器传输级（RTL）仿真器是现代集成电路设计流程的基础，但和任何复杂软件一样，它们常有会损害仿真准确性的严重缺陷。为了系统压测这些工具，本文提出 GI-RTL-Fuzz：一个文法引导的模糊测试框架，用大语言模型生成高质量 RTL 测试用例。关键做法是用巴科斯-瑙尔范式（BNF）的文法覆盖信息引导大模型生成，从而探索复杂、很少被测到的语言特性。通过对不同 RTL 仿真器做差分测试，该框架在主流 Verilog 仿真器的静态检查和仿真结果中发现了大量此前未知的不一致。",
+      "abstractEn": "Register-Transfer Level (RTL) simulators are fundamental to modern IC design workflows, yet like any complex software, they frequently contain critical bugs that compromise simulation accuracy. To systematically stress-test these tools, we introduce GI-RTL-Fuzz, a grammar-informed fuzzing framework that leverages Large Language Models (LLMs) to generate high-quality RTL test cases. Our key innovation is guiding the LLM's generation process using Backus-Naur Form (BNF) grammar coverage information, enabling the exploration of complex and rarely-tested language features. By performing differential testing against different RTL simulators, our framework uncovered a significant number of previously unknown inconsistencies in both the linting process and simulation results of major Verilog simulators.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "模糊测试",
+        "RTL 仿真器",
+        "大模型",
+        "差分测试"
+      ],
+      "url": "https://arxiv.org/abs/2610.38489",
+      "pdf": "https://arxiv.org/pdf/2610.38489.pdf"
+    },
+    {
+      "id": "2610.37901",
+      "title": "Scan Before You Install: Detecting and Mitigating Local and Composite Vulnerabilities in Skills",
+      "authors": [
+        "Parth A. Gandhi",
+        "Avital Aviv",
+        "Prasanna N. Wudali",
+        "Yuval Elovici",
+        "Asaf Shabtai"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "扫描公开仓库里智能体 Skill 的本地漏洞和多 Skill 组合漏洞，并给出可验证的缓解。",
+      "abstract": "智能体 Skill 把自然语言指令、脚本和参考文件打包，供基于大模型的智能体加载后执行任务。Skill 可在用户授权下访问文件系统、外壳和网络，其中的弱点会导致不安全执行。现有扫描器主要针对恶意 Skill，而不是公共仓库里无意引入的漏洞，并且往往单独分析每个 Skill，忽略多 Skill 交互。为此，作者做了一个六模块扫描器：内容提取、本地分析、组合分析、验证、报告和缓解。本地分析负责发现良性 Skill 中的无意漏洞。在 SkillTrustBench 排行榜的 556 例子集上，召回率 95.90%，误报率 4.22%；在 MalSkillBench 的 1000 个均衡样本上 F1 为 0.947，超过 Cisco Skill Scanner、NVIDIA SkillSpector、AgentSkillsScanner 和 SkillSieve。在 GitHub 上星标最多的 75 个仓库的 1587 个 Skill 中，三位分析人员确认了 59 个发现里的 53 个（精度 89.8%），分布在 23 个仓库。作者为每类漏洞写了概念验证攻击，向维护者披露了 10 个中高危案例，并在其余案例上测试了缓解。组合分析通过共享资源、调用和由指令中介的交互对 Skill 依赖建模。在 SCR-Bench 上 F1 为 0.991（精度 98.7%，召回 99.6%），而随 CompoSkill 发布的三种 SkillsGuard 配置为 0.816–0.858。它在 GitHub 上找出两处组合问题，并用概念验证攻击确认。缓解模块建议替换 Skill、打补丁和改配置。对 55 个 GitHub 发现中的 47 个，缓解在全部试验中挡住了概念验证攻击，同时保留了所测的合法功能。",
+      "abstractEn": "An agent skill packages natural-language instructions, scripts, and reference files that an LLM-based agent loads for a task. Skills may access the file system, shell, and network under user-authorized permissions; weaknesses can lead to unsafe execution. Existing scanners primarily target malicious skills, not unintended vulnerabilities in public repositories, and analyze skills in isolation, overlooking multi-skill interactions. To address these gaps, we developed a six-module scanner: Content Extraction, Local Analysis, Composite Analysis, Validation, Reporting, and Mitigation. Local Analysis detects unintended vulnerabilities in benign skills. On a 556-case leaderboard subset of SkillTrustBench, it achieved 95.90% recall with a 4.22% false positive rate; on a balanced sample of 1,000 MalSkillBench skills, its F1 was 0.947, outperforming Cisco's Skill Scanner, NVIDIA's SkillSpector, AgentSkillsScanner, and SkillSieve. In 1,587 skills from the 75 most-starred GitHub repositories, three analysts confirmed 53 of 59 findings (89.8% precision) across 23 repositories. We developed proof-of-concept (PoC) attacks for each vulnerability, disclosed 10 medium- and high-severity cases to maintainers, and tested mitigations on the remaining cases. Composite Analysis models dependencies among skills through shared resources, invocations, and instruction-mediated interactions. On SCR-Bench, its F1 score was 0.991 (98.7% precision, 99.6% recall), versus 0.816-0.858 for three SkillsGuard configurations released with CompoSkill. It identified two composite findings on GitHub, validated by PoC attacks. The Mitigation module recommends skill substitution, patches, and configuration changes. For 47 of 55 GitHub findings, mitigations prevented PoC attacks in all trials while preserving tested legitimate functionality.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Skill 漏洞",
+        "智能体",
+        "组合分析",
+        "漏洞扫描"
+      ],
+      "url": "https://arxiv.org/abs/2610.37901",
+      "pdf": "https://arxiv.org/pdf/2610.37901.pdf"
+    },
+    {
+      "id": "2610.38621",
+      "title": "When LLM Architectures Meet Smart Contract Vulnerability Detection: a Replication Study",
+      "authors": [
+        "Gerardo Iuliano",
+        "Gabriele De Vito",
+        "Dario Di Nucci"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "复现并扩展基于大模型的智能合约漏洞检测实验，比较 Transformer、混合专家和类 RNN 等结构。",
+      "abstract": "智能合约是部署在区块链上的不可变程序，其中的漏洞会直接变成资金损失。近年检测工作越来越多依赖带精心设计提示的大语言模型。但已有证据几乎全来自 GPT 系列背后的稠密 Transformer，以及已经计划停用的模型快照，因此报告的行为究竟是大模型的一般性质，还是该设计的产物，仍然不清楚。本文对 Chen 等人关于基于大模型的智能合约漏洞检测的实证研究做了扩展复现：先在 GPT-4 上按原协议做基线复现，再做差异化复现，把协议跑到混合专家和类 RNN 的代表模型上，并尝试对状态空间模型做初步评估。精确复现确认了 Chen 等人的发现，包括他们在 GPT-4 上报告的高召回、低精度检测模式。但差异化复现表明，这一模式并不能在所评模型间均匀迁移。同一结构家族的模型也可能表现不同，说明单靠结构家族不足以预测检测画像。作者在 GPT-4 和 Gemma-3 上看到了同一类稠密 Transformer 画像，尽管参数量大约差两个数量级；而两条不同谱系的混合专家模型则表现出质上不同的行为，再次说明结构家族本身不足以预测检测画像。",
+      "abstractEn": "Smart contracts are immutable programs deployed on blockchain platforms, where vulnerabilities can translate directly into financial loss. Among the techniques proposed for their detection, recent work has relied increasingly on Large Language Models (LLMs) guided by carefully crafted prompts. However, the evidence accumulated so far rests almost entirely on the dense Transformer architecture behind the GPT line and on model snapshots already scheduled for deprecation, leaving open the question of whether the reported behaviors reflect a general property of LLMs or an artifact of that specific design. This paper presents an extended replication of the empirical study by Chen et al. on LLM-based smart contract vulnerability detection. We replicate the original protocol on GPT-4 as a baseline, followed by a differentiated replication, executing the protocol on representative models based on Mixture-of-Experts and RNN-like designs, together with an attempted preliminary evaluation of State Space Models. The exact replication confirms the findings of Chen et al., including the high-recall, low-precision detection pattern they report on GPT-4. Nevertheless, the differentiated replication shows that this pattern does not transfer uniformly across the evaluated models. Those from the same architectural family may also exhibit different behaviors, indicating that architectural family alone is insufficient to predict the resulting detection profile. We observe the same qualitative dense-Transformer profile in both GPT-4 and Gemma-3, despite a gap of roughly two orders of magnitude in parameter counts, whereas two Mixture-of-Experts models from different lineages exhibit qualitatively divergent behaviors, indicating that architectural family alone is insufficient to predict the detection profile.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "漏洞检测",
+        "复现研究",
+        "模型结构"
+      ],
+      "url": "https://arxiv.org/abs/2610.38621",
+      "pdf": "https://arxiv.org/pdf/2610.38621.pdf"
+    },
+    {
+      "id": "2610.36635",
+      "title": "Tight Characterizations of AMM Mechanism Design under Weak Efficiency",
+      "authors": [
+        "Chengkai Zhang",
+        "Lirong Xia",
+        "Elaine Shi",
+        "Mengqian Zhang",
+        "Qishen Han",
+        "Yuhao Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "证明在没有公平排序、只有抗审查的普通共识下，批量 AMM 无法同时做到激励相容和弱局部效率，对象是 MEV。",
+      "abstract": "矿工可提取价值（MEV）一直是区块链生态里的难题。区块构建者单方面控制交易的纳入和排序，可以从中获利，费用往往由用户承担。近期工作探索用共识辅助的机制设计来缓解 MEV：先由共识层给出通用保证，再由应用层机制用这些保证处理该应用特有的 MEV 问题。已有工作把这条路用在自动做市商（AMM）上。当共识层提供按到达时间排序的公平排序时，他们的机制可以同时满足激励相容（IC）和弱局部效率（wLE）。直观上，IC 排除用户和构建者有利可图的策略偏离；wLE 则保证执行后，任何愿按初始价格成交的订单，都不能再按结束时的边际价格与池子继续交易而获利。本文解决了先前工作留下的主要开放问题：在没有公平排序的普通共识（例如当前以太坊）下，IC 和 wLE 能否同时成立。作者证明：任何确定性、匿名的批量 AMM 都无法同时满足这两条。即使共识层保证抗审查、区块空间不受限，不可能性仍然成立，从而在去中心化机制设计里第一次把抗审查和公平排序分开。不可能性证明用到三种策略能力：制造女巫身份、虚报预算、虚报估值。结果也是紧的：从策略空间里去掉任意一种，就可以在抗审查下恢复可行性。对每种受限设定，作者都构造了同时满足 IC 和 wLE 的机制。",
+      "abstractEn": "Miner extractable value (MEV) poses a persistent challenge for blockchain ecosystems. It arises from the fact that a block builder can exploit its unilateral control over transaction inclusion and ordering to extract profit, potentially at users' expense. Recent work has explored consensus-aided mechanism design to mitigate MEV. This approach combines generic consensus-layer guarantees with application-layer mechanisms that use these guarantees to address application-specific MEV problems. Prior work exemplifies this approach for automated market makers (AMMs). When the consensus layer offers fair sequencing, which orders transactions according to their arrival times, their proposed mechanism achieves incentive compatibility (IC) and weak local efficiency (wLE). Informally, IC rules out profitable strategic deviations by users and builders. Meanwhile, wLE ensures that after execution, any order willing to trade at the initial price cannot benefit from further trade with the pool at the ending marginal price. In this work, we resolve the main open question left by prior works: whether IC and wLE can be achieved under plain consensus (e.g., current Ethereum) without fair sequencing. We prove that no deterministic, anonymous batch AMM can achieve both properties. The impossibility holds even when the consensus layer guarantees censorship resilience and block space is unlimited, establishing the first separation between censorship resilience and fair sequencing in the context of decentralized mechanism design. Our impossibility proof combines three strategic capabilities: creating Sybil identities, over-reporting budgets, and misreporting values. We further show the tightness of our impossibility result: removing any one from the strategy space restores feasibility under censorship resilience. Specifically, we construct a mechanism achieving IC and wLE for each restricted setting.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MEV",
+        "AMM",
+        "公平排序",
+        "激励相容"
+      ],
+      "url": "https://arxiv.org/abs/2610.36635",
+      "pdf": "https://arxiv.org/pdf/2610.36635.pdf"
+    }
+  ]
+}
