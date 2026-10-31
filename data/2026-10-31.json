@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-31",
+  "papers": [
+    {
+      "id": "2603.18740",
+      "title": "When AI Agrees Too Much: Manipulating Automated Code Review via Bias Injection",
+      "authors": [
+        "Georgios Alexopoulos",
+        "Nikolaos Alexopoulos",
+        "Diomidis Spinellis",
+        "Dimitris Mitropoulos"
+      ],
+      "year": 2026,
+      "venue": "ICSE 2027",
+      "abstractOneWord": "研究自动代码审查里大模型漏洞检测会被 PR 元数据带偏，从而把漏洞重新合进仓库，对象是真实项目上的 ACR 流水线。",
+      "abstract": "集成大语言模型的自动代码审查（ACR）系统越来越多地用在软件开发流程里，既可以当交互助手，也可以作为 CI/CD 里的自主智能体。本文研究基于大模型的漏洞检测在 ACR 中如何受到框架效应影响：判断时被信息的呈现方式压过语义内容。作者问的是，对手能否通过上下文偏置注入（精心编写 PR 元数据来左右 ACR 的安全判断）作为供应链攻击向量，针对真实 ACR 流水线。为此，先在五种框架条件下对 6 个大模型做大规模探索，确认框架效应在基于大模型的漏洞检测里是系统且普遍的现象。随后设计贴近现实的受控实验环境，在 20 个真实项目的 33 个 CVE 上评估两条常用 ACR 流水线（Claude Code 和 CodeRabbit），看它们对漏洞重新引入攻击有多容易中招。攻击策略有两种：一种是受已有工作启发的模板攻击，一种是新的大模型辅助精炼攻击。结果表明模板攻击无效甚至会反噬，因为直接带偏容易引起怀疑。精炼攻击则在 33 个案例中成功 32 个（97%），利用的是一种不对称：攻击者可以对审查流水线的本地副本反复打磨攻击，而防御方只有一次发现机会。总体来看，结果提醒不要过度依赖 ACR，并强调开发过程中需要人工把关和对贡献者的信任。",
+      "abstractEn": "Automated Code Review (ACR) systems integrating Large Language Models (LLMs) are increasingly adopted in software development workflows, ranging from interactive assistants to autonomous agents in CI/CD pipelines. In this paper, we study how LLM-based vulnerability detection in ACR is affected by the framing effect: the tendency to let the presentation of information override its semantic content in forming judgments. We examine whether adversaries can exploit this through contextual-bias injection (crafting PR metadata to bias ACR security judgments) as a supply-chain attack vector against real-world ACR pipelines. To this end, we first conduct a large-scale exploratory study across 6 LLMs under five framing conditions, establishing the framing effect as a systematic and widespread phenomenon in LLM-based vulnerability detection. We then design a realistic and controlled experimental environment, evaluating 33 CVEs across 20 real-world projects and two popular ACR pipelines (Claude Code and CodeRabbit), to assess the susceptibility of real-world ACR pipelines to vulnerability re-introduction attacks. We employ two attack strategies: a template-based attack inspired by prior related work, and a novel LLM-assisted refinement attack. We find that template-based attacks are ineffective and may even backfire, as direct biasing attempts raise suspicions. Our refinement attack, on the other hand, is successful in 32/33 (97%) cases, exploiting a fundamental asymmetry: attackers can iteratively refine attacks against a local clone of the review pipeline, while defenders have only one chance to detect them. Overall, our findings highlight the dangers of over-relying on ACR and stress the importance of human oversight and contributor trust in the development process.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "修订",
+        "自动代码审查",
+        "漏洞检测",
+        "供应链攻击"
+      ],
+      "url": "https://arxiv.org/abs/2603.18740",
+      "pdf": "https://arxiv.org/pdf/2603.18740.pdf"
+    },
+    {
+      "id": "2610.38799",
+      "title": "CARI: Cross-Boundary Adversarial Runtime Injection in Coding-Agent Workflows",
+      "authors": [
+        "Jie Fu",
+        "Shuang Wu",
+        "Ashish Kundu",
+        "Wendy Hui Wang",
+        "Yuan Hong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "证明编码智能体会把对端控制的运行时反馈当成调试指令执行，从而在本机越权，对象是多语言编码智能体与 Codex / Claude Code。",
+      "abstract": "编码智能体越来越多地开发、测试和集成由不同开发者、团队或服务分别拥有的软件组件。这带来一类新的攻击面：恶意或被攻陷的对端开发角色可以操纵正在开发软件里的一个在线组件（例如后端服务、测试夹具、CI 任务或部署服务），并影响另一角色的编码智能体为完成任务必须处理的运行时反馈。该组件有权报告自身状态，但对受害者的本地文件、凭证、外壳或开发环境没有行动权限。本文提出跨边界对抗运行时注入（CARI）：一种直接的运行时反馈注入设定，利用这种权限不匹配。攻击者不必显式攻破受害者的提示、模型、工具或本地环境，而是把恶意指令藏进由对端控制的开发组件产生的、与任务相关的运行时反馈里。受害者把这些反馈当成正常调试或恢复的一部分来解读，并可能把诊断建议转成本地未授权动作。作者据此实例化十种攻击，覆盖资源耗尽、信息暴露和开发状态操纵。在四种编程语言和五个能写代码的模型上，CARI 在 3000 次试验中成功 2845 次（94.8%）。对产品级编码智能体也成立：Codex 攻击成功率 61.3%，Claude Code 为 58.7%。相比之下，提示级防御存在安全与可用性的取舍：泛化警告无效，而明确策略能压住攻击，但会大量误拒合法动作。",
+      "abstractEn": "Coding agents increasingly develop, test, and integrate software whose components are owned by different developers, teams, or services. This exposes a distinct attack surface: a malicious or compromised peer development role can manipulate a live component of the software under development (e.g., a backend service, test harness, CI job, or deployment service) and influence the runtime feedback that another role's coding agent must process to complete its task. Although such a component has legitimate diagnostic authority to report its own state, it has no action authority over the victim's local files, credentials, shell, or development environment. We introduce Cross-Boundary Adversarial Runtime Injection (CARI), a direct runtime-feedback injection setting that exploits this authority mismatch. Rather than explicitly compromising the victim's prompt, model, tools, or local environment, the attacker covertly embeds malicious instructions in task-relevant runtime feedback produced by a peer-controlled development component. The victim then interprets that feedback as part of normal debugging or recovery, and may translate the diagnostic guidance into unauthorized victim-side actions. We instantiate ten different attacks based on CARI, spanning resource exhaustion, information exposure, and development-state manipulation. Across four programming languages and five code-capable models, CARI succeeds in 2,845/3,000 (94.8%) trials. Furthermore, CARI transfers effectively to product-level coding agents, achieving 61.3% attack success on Codex and 58.7% on Claude Code. By contrast, prompt-level defenses exhibit a security-utility trade-off: generic warnings are ineffective, whereas explicit policies suppress attacks but substantially over-refuse legitimate actions.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "运行时注入",
+        "CI",
+        "提示注入"
+      ],
+      "url": "https://arxiv.org/abs/2610.38799",
+      "pdf": "https://arxiv.org/pdf/2610.38799.pdf"
+    },
+    {
+      "id": "2610.37830",
+      "title": "Measuring Where Intent Gets Lost in Agentic Smart Contract Synthesis",
+      "authors": [
+        "Abhinav Goel",
+        "Agostino Capponi",
+        "Alfio Gliozzo",
+        "Chaitya Shah"
+      ],
+      "year": 2026,
+      "venue": "TheWebConf 2027",
+      "abstractOneWord": "用可执行对照检查智能体写出的智能合约是否符合意图，并发现先问清需求比事后自动修安全问题更有效，对象是智能合约合成。",
+      "abstract": "大模型智能体可以把一段白话说明变成能编译的代码，但代码是否按要求行事，很少用经过核验的工具来度量。本文在智能合约上研究这个问题：这类程序支撑 Web3 应用、负责转账，部署后不能改。作者从 600 个已有合约出发，让大模型为每个合约写说明，再度量实现保真度，即重放交易时生成合约与原合约行为一致的比例。测量上有三点发现：大模型评判、静态分析和基于大模型的测试器对人为植入的错误会失效；只根据函数名写的答案键就能抓住大多数常规错误；只给各系统共有的函数打分，或按每个合约改调用，会把漏写藏起来。在精确重放下，生成前提供的信息最重要。由读过原合约的模拟客户给出的回答，会让三族生成器的保真度提高 19 到 23 个百分点，这是对真实作者能提供多少信息的乐观估计；三到五个选得好的问题就能收回其中 60% 到 75%。生成之后的阶段最多再加约 1 个百分点，而自动安全修复循环会让保真度下降 12.8 个百分点。先问需求的流水线在 500 个留出合约上达到 72.9%，一次性生成是 53.9%，原流水线是 39.3%。工具、任务和分数均已公开。",
+      "abstractEn": "LLM agents can turn a plain-English description into code that compiles, but whether the code behaves as required is rarely measured with validated instruments. We study this for smart contracts, the programs behind Web3 applications that move funds and cannot be changed once deployed. Starting from 600 existing contracts, we have an LLM describe each and measure implementation fidelity, the share of replayed transactions on which a generated contract behaves like the original. Three findings concern measurement. LLM judges, static analysis and LLM-based testers fail on planted mistakes, an answer key written from function names alone catches most conventional ones, and scoring only the functions all systems share, or adapting calls to each contract, hides omissions. Under exact replay, information supplied before generation matters most. Answers from a simulated client that reads the original contract raise fidelity by 19 to 23 points for three generator families, an optimistic estimate of what real authors would provide, and three to five well-chosen questions recover 60 to 75% of that gain. Stages after generation add at most about one point, and an automated security-repair loop costs 12.8 points. An elicitation-first pipeline reaches 72.9% on 500 held-out contracts, against 53.9% for one-shot generation and 39.3% for the original pipeline. We release the harness, tasks and scores.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "智能体合成",
+        "意图保真",
+        "安全修复"
+      ],
+      "url": "https://arxiv.org/abs/2610.37830",
+      "pdf": "https://arxiv.org/pdf/2610.37830.pdf"
+    }
+  ]
+}
