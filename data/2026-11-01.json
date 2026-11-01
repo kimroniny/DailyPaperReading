@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-01",
+  "papers": [
+    {
+      "id": "2610.38524",
+      "title": "WebMaze: Defending Against LLM-Powered Web Scanners with Functionality-Coupled Deception",
+      "authors": [
+        "Pengfei Zeng",
+        "Changhua Luo",
+        "Penghui Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "针对用大模型做网页漏洞扫描的攻击方，在不改真实功能的前提下把扫描器引入诱饵页面，对象是 Web 应用。",
+      "abstract": "大语言模型让网页应用的漏洞扫描更有效，但也让攻击方更容易自动化地对网站发起攻击。本文研究如何在保持真实功能可用的前提下，把恶意的大模型网页扫描器引开。作者系统分析了六种基于大模型的扫描器，归纳它们如何收集信息，以及如何根据观察迭代选择下一步动作。据此提出 WebMaze：在真实页面中嵌入与功能绑定的陷阱，并由应用已有视图生成按视角定制的交互式诱饵世界。陷阱混在真实组件里，通向相互连接的诱饵页面，既维持扫描器继续探索，又不改动真实功能。在 12 个网页应用和三种大模型扫描器上，默认不告知诱饵机制时，每次运行中扫描器请求的不同页面平均有 93.0% 落在诱饵页。即使明确告知存在诱饵并要求避开，扫描器仍主要在诱饵世界里转。",
+      "abstractEn": "Large language models (LLMs) have enabled more effective vulnerability scanning of web applications. However, these capabilities also make it significantly easier for attackers to automate cyberattacks on the web. In this work, we investigate how to divert malicious LLM-based web scanning, with preservation of genuine functionality as a deployment requirement. We systematically study six LLM-based scanners and summarize how they gather information and iteratively select actions based on observations. Guided by the study, we then present WebMaze, a defense that preserves genuine application functionality while diverting LLM-based scanners to a generated decoy world. WebMaze embeds functionality-coupled traps in genuine pages and constructs view-tailored interactive decoy worlds from the application's existing views. The traps blend into genuine components and expose entry points to decoy worlds that sustain exploration through connected pages and interactions without changing genuine functionality. Across 12 web applications and three LLM-based scanners under the default no-disclosure setting, decoy pages account for an average of 93.0% of the distinct pages requested per run. This demonstrates that WebMaze effectively diverts scanners away from genuine application pages and into the generated decoy worlds. Even when explicitly informed about the decoy mechanism and instructed to avoid decoy pages, scanners continue to explore predominantly decoy pages.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "网页扫描",
+        "漏洞检测",
+        "诱饵防御",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.38524",
+      "pdf": "https://arxiv.org/pdf/2610.38524.pdf"
+    },
+    {
+      "id": "2610.37716",
+      "title": "Generation, Not Selection: LLM Proposals for Certified Access-Control Policy Mining",
+      "authors": [
+        "Gautam Kumar",
+        "Ravi Sundaram",
+        "Shamik Sural"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型按属性名语义提出访问控制规则，再交给有保证的组合选择器，对象是企业 ABAC 策略挖掘。",
+      "abstract": "基于属性的访问控制（ABAC）策略挖掘，是从访问日志里恢复一份紧凑、可审计的策略。它常被写成最小集合覆盖并用贪心求解，带有 s*(1+ln m) 的保证。但该保证有一个文献里没写明的前提：交给贪心的候选池必须包含最优规则。真正卡住的是生成而不是选择；现有生成器只按语法工作，只有当足够多的日志记录见证某条规则时才会把它提出来，因此恰恰漏掉填补长尾策略的稀有例外规则。本文将生成器换成语言模型：按属性名从语义上提出规则，同时保留组合选择器来承接保证。每条提议都对照已观察到的拒绝记录过滤，因此可靠性与提议机制无关；不可靠的提议者最多浪费候选，不会多放行。在两个企业域、各五次随机种子上，给语法挖掘器加上语义提议后，十次运行全部不差于原方法，其中七次严格更好：策略接近最优（9.2–9.6 条规则，对照 s*=9，原方法是 11.2–14.6），错误放行降到原来的四分之一到七分之一。用语义挖掘器完全替换语法挖掘器，只在见证稀少时更好。匿名化消融说明了机制：属性名变不透明后，模型能恢复的规则少了约三分之二，语法基线则不受影响；见证充足时这一代价消失。语义知识和日志证据是可以互相替代的。",
+      "abstractEn": "Attribute-Based Access Control (ABAC) policy mining---recovering a compact, auditable policy from an access log---is posed as minimum set cover and solved greedily, which enjoys an s*(1+ln m) guarantee. That guarantee is conditional on a precondition the literature never states: the candidate pool handed to greedy must contain the optimal rules. Generation, not selection, is the binding constraint, and existing generators are purely syntactic---they surface a rule only when enough log records witness it, so they fail on precisely the rare exception rules that fill a heavy-tailed policy. We replace the generator with a language model proposing rules semantically, from attribute names, and keep the combinatorial selector to carry the guarantee: every proposal is filtered against the observed denials, so soundness is independent of the proposal mechanism and an unreliable proposer can only waste candidates, never grant access. Over five seeds on each of two enterprise domains, adding semantic proposal to a syntactic miner dominates it on ten of ten runs---strictly better on seven---with near-optimal policies (9.2--9.6 rules against s*=9, versus 11.2--14.6) and false grants cut four- to sevenfold. Replacing the syntactic miner rather than augmenting it wins only where witnesses are scarce. An anonymization ablation isolates the mechanism: opaque attribute names cost two thirds of the model's rule recovery while leaving the syntactic baselines provably unmoved, and cost nothing where witnesses are plentiful. Semantic knowledge and log evidence are substitutes.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "访问控制",
+        "策略挖掘",
+        "ABAC",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.37716",
+      "pdf": "https://arxiv.org/pdf/2610.37716.pdf"
+    },
+    {
+      "id": "2610.37871",
+      "title": "ICALL-BENCH: Benchmarking LLM Interprocedural Reasoning in Binary Programs",
+      "authors": [
+        "Shenglong Yao",
+        "Zirui Liu",
+        "Xiangchi Yuan",
+        "Wenke Lee"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评测大模型和智能体能否在编译后的 C/C++ 程序里做跨过程推理，探针是间接调用目标恢复。",
+      "abstract": "已有基准表明，大模型在函数级二进制理解和端到端逆向任务上表现不错，但它们能否在编译后的程序里对跨过程语义做推理，仍不清楚。函数级基准几乎看不到跨函数关系；整程序基准又常按最终结果打分，而这些任务有时只靠局部线索就能做对，难以把跨过程推理与探索、工具使用、执行和检索分开。本文提出 ICALL-BENCH，用间接调用目标恢复作为可度量探针，直接评测大模型和智能体是否理解并推理二进制程序的跨过程语义。基准覆盖 50 个完整的真实 C/C++ 程序，跨多种复杂度与优化配置，平均每个程序 74,746 行代码、941 个函数。作者还设了三种分析制度：仅模型推理、带静态工具的智能体、以及可上网的开放世界智能体，用来看内在推理、主动收集信息和外部知识各自贡献多少。评估覆盖五个近期大模型及其对应智能体。结果显示模型之间差距很大，程序级可验证成功率从 23% 到 81%；信息更多并不一定更好，最难的例子上收益尤其有限，更深的跨过程推理仍是主要瓶颈。即便按乐观口径，也常出现可验证失败，说明稳健的二进制跨过程推理仍未解决。",
+      "abstractEn": "Recent benchmarks show that LLMs achieve strong performance in both function-level binary understanding and end-to-end binary reverse engineering tasks, but whether LLMs can reason over interprocedural semantics in compiled binaries remains unclear. Function-level benchmarks offer limited visibility into cross-function relationships, while whole-program benchmarks typically evaluate final outcomes of tasks that may be solvable from local clues alone, making it difficult to disentangle interprocedural reasoning from exploration, tool use, execution, and retrieval. To address this limitation, we introduce ICALL-BENCH, a benchmark that directly evaluates whether LLMs and agents can understand and reason over interprocedural semantics in binary programs, using indirect-call target recovery as a measurable probe. ICALL-BENCH covers 50 complete real-world C/C++ programs spanning different complexity levels and multiple optimization configurations, with an average of 74,746 lines of code and 941 functions per program. We further introduce three analysis regimes spanning model-only reasoning, static tool-augmented agents, and Internet-enabled open-world agents to examine how intrinsic reasoning, active information acquisition, and external knowledge each contribute to interprocedural binary analysis. We evaluate five recent LLMs and their corresponding agents. Our results reveal a wide separation across current models and agents, with program-level verifiable success rates ranging from 23% to 81%. They also show that greater information access does not consistently lead to better results, with particularly limited gains on the hardest cases, where deeper interprocedural reasoning remains the primary bottleneck. Uneven performance across models and frequent verifiable failures even under an optimistic evaluation indicate that robust binary interprocedural reasoning remains an open challenge.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "二进制分析",
+        "跨过程推理",
+        "间接调用",
+        "大模型评测"
+      ],
+      "url": "https://arxiv.org/abs/2610.37871",
+      "pdf": "https://arxiv.org/pdf/2610.37871.pdf"
+    },
+    {
+      "id": "2026-2684",
+      "title": "SoK: Multiple Concurrent Proposer Blockchains",
+      "authors": [
+        "Benjamin Marsh",
+        "Alejandro Ranchal-Pedrosa",
+        "Max Resnick"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "系统梳理多方并发提议如何拼进同一账本更新，并比较包容、排序和隐藏，无大模型，对象是 MCP 区块链。",
+      "abstract": "多方并发提议（MCP）协议让若干参与方同时为同一次账本更新贡献交易。这可以分散通信，并削弱单一提议者对交易包容与排序的控制，但好处取决于这些贡献如何被合并。本文给出一条从交易回执到提议形成、达成一致、数据恢复、排序、执行和状态最终性的共同架构。在此架构下区分四类直接 MCP：固定提议向量、选出的提议集合、持续提议流，以及因果提议 DAG；并与约束组装对比，即多方限制由一方组装的区块。在 39 种配置上，作者把针对特定交易的服务与协议的一致性和进展分开，并在明确端点上比较隐藏、排序、通信、吞吐和延迟。比较说明：只增加提议者并不能保证包容；隐藏并不能确定谁能最后反应；并行传播也不一定改善有用执行。文中还指出，要把独立提议权变成可靠的交易服务，需要哪些恢复、支付和组织假设。",
+      "abstractEn": "Multiple concurrent proposer (MCP) protocols let several parties contribute transactions to the same ledger update. They can distribute communication and reduce one proposer's control over inclusion and order, but these benefits depend on how the contributions are combined. We describe a common architecture from transaction receipt through proposal formation, agreement, data recovery, ordering, execution, and state finality. Within it, we identify four direct MCP families: fixed proposal vectors, selected proposal collections, persistent proposal streams, and causal proposal DAGs. We compare them with constrained assembly, where several parties restrict a block assembled by one party. Across 39 configurations, we distinguish agreement and progress from service for a particular transaction, and compare hiding, ordering, communication, throughput, and latency at explicitly named endpoints. The comparison shows why additional proposers alone do not guarantee inclusion, why hiding does not settle who can react last, and why parallel disseminations need not improve useful execution. It also identifies the recovery, payment, and organizational assumptions needed to turn independent proposal rights into reliable transaction service.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "并发提议",
+        "交易排序",
+        "共识",
+        "审查"
+      ],
+      "url": "https://eprint.iacr.org/2026/2684",
+      "pdf": "https://eprint.iacr.org/2026/2684.pdf"
+    },
+    {
+      "id": "2610.40558",
+      "title": "Power Adjusting Games Under Block-Dependent Pool Payout Schemes",
+      "authors": [
+        "Mustafa Doger",
+        "Sennur Ulukus"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在真实矿池结算规则下分析算力调整与扣块攻击的收益，无大模型，对象是比特币类矿池。",
+      "abstract": "已有工作对 PAW、T-PAW 等高级算力调整扣块攻击的分析，多建立在很少实际使用的全局重置比例方案（GRP）上。本文将包含 FAW 和 PAW 作为特例的 T-PAW，放到实践中的按块结算方案上分析：Pay-Per-Last-N-Shares（PPLNS）、按轮比例（PROP）和指数衰减（EXP）。作者用更新论证给出 PPLNS 的收益比，并用开放轮次的平稳携带过程给出 PROP 和 EXP 的收益比。进而提出 Power Adjusting Hopping（PAH）：任意规模的对手按本轮已积累的块工作量调整分给矿池的算力，但不扣块；并导出其在 PROP 和 EXP 下的收益比。结果表明 GRP 会按方案方向估错 T-PAW 收益：在 PROP 下最多高估一个数量级，在 EXP 的原 slush 衰减率下则低估。PROP 对 PAH 很脆弱；EXP 则有取舍：衰减慢会招来 PAH，衰减快会招来 T-PAW。PPLNS 最不脆弱：它对 PAH 免疫，并能减轻但不能消除 T-PAW。全部解析结果都用蒙特卡洛仿真核对过。",
+      "abstractEn": "Advanced power adjusting block withholding attacks such as PAW and T-PAW have been analyzed so far under a global-reset version of the proportional scheme (GRP), which is rarely used in practice. In this paper, we analyze T-PAW, which contains FAW and PAW as special cases, under the block-dependent payout schemes deployed in practice: Pay-Per-Last-N-Shares (PPLNS), round-based Proportional (PROP) and exponential-decay (EXP). We derive the revenue ratios analytically, by renewal arguments for PPLNS and through the stationary carry process of an open round for PROP and EXP. We further introduce Power Adjusting Hopping (PAH), where an adversary of any size adjusts its power allocation towards the pool according to the blockwork age of the round without withholding any block, and derive its revenue ratios under PROP and EXP. We show that GRP misestimates the T-PAW gain in a scheme-dependent direction: it overstates the gain under PROP up to an order of magnitude and understates it under EXP for the original slush decay rate. PROP is highly vulnerable to PAH, while EXP faces a trade-off: a slow decay invites PAH and a fast decay invites T-PAW. PPLNS is the least vulnerable scheme: it is immune to PAH and it mitigates, but does not eliminate, T-PAW. All analytical results are verified by Monte Carlo simulations.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "扣块攻击",
+        "矿池结算",
+        "算力调整",
+        "挖矿安全"
+      ],
+      "url": "https://arxiv.org/abs/2610.40558",
+      "pdf": "https://arxiv.org/pdf/2610.40558.pdf"
+    },
+    {
+      "id": "2026-2672",
+      "title": "Nenya: Efficient zkSNARKs for Integer Rings Z/2kZ via Reverse Multiplication-Friendly Embeddings",
+      "authors": [
+        "Tianyu Zhang",
+        "Nikita Borisov",
+        "Yupeng Zhang"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "提出在整数环 Z/2^kZ 上做原生运算的实用 zkSNARK，无大模型，对象是证明系统。",
+      "abstract": "零知识简洁非交互知识论证（zkSNARK）能用短证明、快验证和零知识隐私来证明计算正确。但现有方案大多只支持大素数域或其扩域上的算术。高层语言里常见的是 32 位、64 位定点整数，证明这类计算时开销很大。本文提出 Nenya，据称是第一个在整数环 Z/2^kZ 上支持原生算术的实用 SNARK。核心是把该环上的秩 1 约束系统（R1CS）经反向乘法友好嵌入（RMFE）归约到伽罗瓦环上的约束。作者还基于合适的纠错码设计多项式承诺，使承诺见证上的良构检查和打包旋转几乎不额外花钱，从而得到亚线性验证时间。实验上，对 32 位整数的数据并行计算、规模 2^25 的 R1CS，证明时间约 4.8 秒，比该环上此前最好的 SNARK 快四个数量级，只比同等约束数的域上 SNARK 慢 1.06 倍。一般计算的证明时间是 34.6 秒。对媒体来源工作流里按模 2^8 做的像素级图像变换，Nenya 比域上 SNARK 快 12 倍。",
+      "abstractEn": "Zero-knowledge succinct non-interactive arguments of knowledge (zkSNARKs) are powerful cryptographic tools for certifying the correctness of computations with short proofs, fast verification, and zero-knowledge privacy guarantees. However, most existing zkSNARK schemes support arithmetic only over finite fields defined by large primes or their extensions. This creates substantial overhead when proving computations written in high-level programming languages, which typically operate on fixed-width integer types such as 32-bit and 64-bit integers. In this paper, we introduce Nenya, the first practical SNARK scheme that supports native arithmetic over the integer ring Z/2^kZ. At the core of Nenya are new reductions from rank-1 constraint systems (R1CS) over Z/2^kZ to constraints over Galois rings via reverse multiplication-friendly embeddings (RMFEs). We also design a polynomial commitment scheme based on suitable classes of error-correcting codes, which supports well-formedness checks and packing rotations on committed witnesses essentially for free, resulting in sublinear verifier time. Experimental results demonstrate that Nenya achieves strong concrete performance. For a rank-1 constraint system of size 2^{25} for data-parallel computations over 32-bit integers, Nenya achieves a prover time of only 4.8 seconds. This is four orders of magnitude faster than the state-of-the-art SNARK scheme over Z/2^kZ, and only 1.06x slower than a SNARK over a field with the same number of constraints. For general computation, the prover time of Nenya is 34.6 seconds. Moreover, for proving pixel-level image transformations that arise in media-provenance workflows, such as filtering that operates natively modulo 2^8, Nenya proves the same computation 12x faster than a field-based SNARK.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkSNARK",
+        "整数环",
+        "证明系统",
+        "多项式承诺"
+      ],
+      "url": "https://eprint.iacr.org/2026/2672",
+      "pdf": "https://eprint.iacr.org/2026/2672.pdf"
+    }
+  ]
+}
