@@ -1,0 +1,307 @@
+{
+  "date": "2026-11-02",
+  "papers": [
+    {
+      "id": "2610.41181",
+      "title": "AgentShield: Fortifying Web Applications Against AI Agents and Agentic Browsers",
+      "authors": [
+        "Moiz Ali",
+        "Nafis Karim",
+        "Rownak Islam",
+        "Jyotirmay Chauhan",
+        "Dhruv Kuchhal",
+        "Jason Polakis"
+      ],
+      "year": 2026,
+      "venue": "IEEE S&P 2027",
+      "abstractOneWord": "评测并检测用大模型驱动的智能体浏览器，对象是 Web 应用的反自动化防御。",
+      "abstract": "大语言模型驱动的浏览器智能体正在改变网页自动化：它们能自主与网站交互并执行复杂流程。现有反机器人防御对这类系统是否有效，目前并不清楚。本文对主流智能体浏览器与常见反机器人机制做了系统实证评估，刻画它们的能力、局限，以及与人类行为的差异。结果显示，许多面向传统自动化的防御难以稳定识别自主的人工智能用户端。据此提出 AgentShield，一种针对智能体用户客户端「感知-推理-行动」循环的行为指纹框架。它利用逐步揭示内容的动态网页表单，采集细粒度交互遥测，从而暴露可区分人类用户与自主智能体的行为痕迹。作者还展示了一种名为「灭绝诱导策略漂移」的新攻击：反复阻止任务完成会让智能体放松自身防护并做出不安全行为。最后给出面向智能体弱点的防御性提示注入，用来抑制依赖内容抽取的新型自主网页滥用。结果表明，现有网页防御对智能体用户客户端不足，同时也可以做出针对这一代网页自动化的实用检测机制。",
+      "abstractEn": "LLM-powered browser agents are transforming web automation by autonomously interacting with websites and executing complex workflows. However, the effectiveness of existing anti-bot defenses against these systems remains unclear. We present a systematic empirical evaluation of modern agentic browsers against widely deployed anti-bot mechanisms, characterizing their capabilities, limitations, and behavioral differences from humans. Our results show that many defenses designed for traditional automation struggle to reliably detect autonomous AI-driven agents. Accordingly, we introduce AgentShield, a behavioral fingerprinting framework that targets the Perception-Reasoning-Action (PRA) loop underlying agentic user clients. By leveraging dynamic web forms that progressively reveal content and capture fine-grained interaction telemetry, AgentShield exposes behavioral artifacts that enable differentiation between human users and autonomous agents. We further demonstrate Extinction-induced Policy Drift (EPD), a novel attack in which repeated obstruction of task completion causes agents to relax their safeguards and engage in unsafe behaviors. Finally, we present defensive prompt injection techniques that exploit agent-specific weaknesses to mitigate emerging forms of autonomous web abuse that rely on content extraction. Our results highlight both the shortcomings of current web defenses against agentic user clients and the feasibility of practical detection mechanisms tailored to this new generation of web automation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "网页安全",
+        "智能体浏览器",
+        "行为指纹",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.41181",
+      "pdf": "https://arxiv.org/pdf/2610.41181.pdf"
+    },
+    {
+      "id": "2610.40721",
+      "title": "MetaVul: Agentic Harness Discovery for Vulnerability Detection",
+      "authors": [
+        "Ira Ceka",
+        "Arnav Garg",
+        "Ryan Lutz",
+        "Ting Zhang",
+        "Ratnadira Widyasari",
+        "Gail Kaiser",
+        "Baishakhi Ray"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用智能体自动搜索漏洞检测脚手架，对象是成对的漏洞函数与补丁函数。",
+      "abstract": "大模型智能体越来越多地用于自动漏洞检测，但要可靠地区分细微的安全相关修复和良性代码变化仍然很难。底层模型能力在提升，智能体的准确率却高度依赖脚手架：也就是包在大模型外面、规定工作流程的那层代码。现有脚手架通常是手写且固定的，难以根据评测反馈调整，在一个数据集或模型上的改进也不一定能迁到别处。本文提出 MetaVul，一个面向漏洞检测的脚手架自改进框架。它从带结构推理的种子脚手架出发，用基于工作流的优化循环，对照成对的漏洞函数与补丁函数迭代改脚手架，同时保留结构推理和裁决格式。每一轮都会检索历史脚手架及其轨迹、日志和指标，并返回一组帕累托最优脚手架。作者在多种架构上发现脚手架：用 202 对做优化，430 对未见数据做留出评测，并检查在一个模型上学到的脚手架能否迁到未参与优化的模型。在前沿模型和较小模型上，优化后的脚手架把成对漏洞检测提高最多 23.3 个百分点（验证集）和 25.8 个百分点（留出集）；用一个模型优化的脚手架迁到另一个模型时，留出集成对准确率仍能提高 14.7 个百分点。",
+      "abstractEn": "LLM agents are increasingly used to automate vulnerability detection, but reliable detection is challenging because agents must distinguish subtle, security-relevant fixes from benign code variation. While underlying LLM capability has improved significantly, the accuracy of the agent still depends heavily on the harness: the code that defines the scaffolding around the LLM. Harnesses are typically fixed, and largely hand-written, limiting adaptation to evaluator feedback. Additionally, when harnesses are static, improvements on one dataset or model may not transfer to others. To address these challenges, we introduce MetaVul, a self-improving framework for harness discovery in vulnerability detection. Starting from a seed structured reasoning scaffold, MetaVul uses a workflow-based optimization loop to iteratively refine the harness using feedback from paired vulnerable and patched functions, while preserving the structured reasoning and verdict format. At each iteration, it searches over the history of prior harnesses, with access to their trajectories, logs, and metrics, and it returns a set of Pareto-optimal harnesses. We apply MetaVul to discover agent harnesses for various architectures. A validation set (202 pairs) is used for optimization, while an unseen dataset (430 pairs) is kept as the held-out set. We test whether harnesses learned from one model transfer to others not seen during optimization. Results on both frontier and small LLMs show that the optimized harnesses improve pairwise vulnerability detection up to 23.3 percentage points on the validation set and up to 25.8 points on the held-out set with a Pareto-frontier harness. Harnesses learned with one model also transfer to others. We show that harnesses optimized with one model transfer to another, improving held-out pairwise accuracy by 14.7 points without further optimization.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "智能体脚手架",
+        "成对评测",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.40721",
+      "pdf": "https://arxiv.org/pdf/2610.40721.pdf"
+    },
+    {
+      "id": "2610.40753",
+      "title": "\"Shall We Approve?\" Consequence-Aware Approval for Autonomous Coding Agents",
+      "authors": [
+        "Weiheng Wu",
+        "Junkai Chen",
+        "Zhensu Sun",
+        "Jieke Shi",
+        "Yunbo Lyu",
+        "David Lo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用沙箱先跑命令再决定是否批准，约束编码智能体执行危险 shell 命令。",
+      "abstract": "编码智能体越来越依赖自动审批器来决定一条拟执行的 shell 命令能不能跑。现有审批器，从规则检查器、护栏模型到线上权限分类器，主要看请求和命令的文本。命令真正做什么，却取决于它调用的代码和当前工作区状态；只观察文件变化的系统，又把判断留给执行之后的智能体或人。本文提出 Caper：一种看后果再批准的机制。它先在快照沙箱里预执行每条命令，把有界的效果报告交给独立审批器，允许的命令再提交，被拦的命令回滚并给出智能体可据此行动的原因。与六个现有系统相比，Caper 在 SABER 上的有害结果率最低（6.7%，对照至少 14.8%）；在作者构造的、把有害行为藏进被调工具的 YoloFS-Ext 上为 7.8%（对照至少 35.3%），同时只挡住该基准里危险任务安全对照的 1.0%。",
+      "abstractEn": "Coding agents increasingly rely on automated approvers to decide whether a proposed shell command may run. Existing approvers, from rule-based checkers to guardrail models and deployed permission classifiers, base their decisions on the text of the request and command. Yet a command's behavior depends on the code it invokes and the state of the workspace, and systems that observe file changes leave the assessment to the agent or a human after execution. We present Caper, a consequence-aware approval mechanism that pre-executes each command in a snapshotted sandbox, provides an independent approver with a bounded report of its observed effects, commits allowed commands, and rolls back blocked ones with a reason the agent can act on. Compared with six existing systems, Caper achieves the lowest harmful-outcome rate on SABER (6.7% versus at least 14.8%) and YoloFS-Ext, a benchmark we build in which harmful behavior is hidden inside invoked tools (7.8% versus at least 35.3%), while blocking 1.0% of the safe twins of the dangerous tasks in YoloFS-Ext.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "命令审批",
+        "沙箱",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.40753",
+      "pdf": "https://arxiv.org/pdf/2610.40753.pdf"
+    },
+    {
+      "id": "2610.41800",
+      "title": "Reparo: Synthesizing and Validating Access Control Policies",
+      "authors": [
+        "Ayesha Binte Mostofa",
+        "Gehao Zhang",
+        "Sam Stern",
+        "Juan Zhai",
+        "Pubali Datta"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型从代码仓库证据合成并校验访问控制策略，对象是 Cedar、OpenFGA 和 Rego。",
+      "abstract": "为软件应用写出正确的访问控制策略很难，既要懂授权语言，也要摸清应用的授权需求。现有合成和挖掘方法假定有明确的授权输入和一份可信的参考策略。实际上，授权逻辑往往散落在代码、注释和文档里，而真实仓库里开发者写的策略又常常不完整、过时或不正确。本文提出 Reparo，一条有大模型辅助的访问控制策略合成、修复与校验流水线。它先收集仓库里关于授权意图的证据，再引导大模型生成初始策略，接着用官方策略语言校验工具找出并自动修复错误。语义校验则由另一台大模型根据同一批仓库证据构造行为预言机，即带期望允许或拒绝结果的具体授权请求，并在生成的策略上执行。作者在 390 条测试用例的统计抽样上人工评估了预言机。评测覆盖 228 个使用 Cedar、OpenFGA 或 Rego 的真实 GitHub 仓库：仓库原策略有 40.6%–55.7% 通不过语言校验工具，Reparo 修复后有效策略达到 99.0%–100%。与预言机的一致率在 OpenFGA 上为 98.2%–99.6%，Cedar 上为 82.0%–86.5%，Rego 上为 76.3%–80.2%；人工复核确认抽样用例中 91.5%–96.9% 正确。为一个仓库合成并校验策略大约五分钟，费用约 0.55–1.57 美元。这说明即使没有可靠的参考策略，仓库证据也能同时支撑策略合成和独立校验。",
+      "abstractEn": "Writing correct access control policies for software applications is difficult because it requires expertise in the authorization language and a thorough understanding of the application's authorization requirements. Existing synthesis and mining approaches assume explicit authorization inputs and a trusted reference policy. However, authorization logic is often distributed across code, comments, and documentation rather than captured in a single artifact, and developer-defined policies in real-world application repositories are often incomplete, outdated, or incorrect. We present Reparo, an LLM-aided pipeline for access control policy synthesis, repair, and validation. Reparo collects repository evidence for authorization intent and uses it to guide an LLM in generating an initial policy. It then uses official policy-language validation tools to identify and automatically repair errors. For semantic validation, a different LLM derives a behavioral oracle from the same repository evidence, consisting of concrete authorization requests with expected allow or deny decisions, which Reparo executes against the generated policy. We manually assess the oracle on a statistically sized sample of 390 test cases. We evaluate Reparo on 228 real-world GitHub repositories that use Cedar, OpenFGA, or Rego. In these repositories, 40.6-55.7% of the repository policies fail their language's validation tool, whereas Reparo produces 99.0-100% valid policies after repair. Agreement with the oracle is 98.2-99.6% for OpenFGA, 82.0-86.5% for Cedar, and 76.3-80.2% for Rego. Manual review confirms 91.5-96.9% of the sampled test cases as correct. Synthesizing and validating the policy for one repository takes about five minutes and costs $0.55-$1.57. These results show that repository evidence can support both access policy synthesis and independent validation, even when no reliable reference policy exists.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "访问控制",
+        "策略合成",
+        "代码仓库",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.41800",
+      "pdf": "https://arxiv.org/pdf/2610.41800.pdf"
+    },
+    {
+      "id": "2610.40735",
+      "title": "RiskyPy: Toward Model-Calibrated Prompt Generation for Joint Security and Functionality Evaluation of LLM-Generated Code",
+      "authors": [
+        "Zacharie Chenail-Larcher",
+        "Daniele Lunghi",
+        "Melissa Tessa",
+        "Quentin Stiévenart",
+        "Jacques Klein",
+        "Tegawendé F. Bissyandé",
+        "Florent Avellaneda",
+        "Naouel Moha"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "按模型能力自动生成同时评测功能与漏洞的代码生成数据集，对象是 Python。",
+      "abstract": "要评估「如何让大模型生成更安全的代码」，需要同时看安全性和功能性、并且贴合被测模型能力范围的数据集。现有基准制作成本高，通常也没有按选定的模型能力区间校准。本文提出 RiskyPy：一条自动流水线，用功能金丝雀和漏洞金丝雀生成按模型熟练度校准的安全向代码生成数据集。作者在 Python 上落地，覆盖 2025 年 CWE Top 25 中的 18 类弱点，得到 101 条提示。在 Qwen3-4B 和 Seed-Coder-8B 上的实验表明，生成任务在功能上仍可完成：57%–72% 的提示能产出可运行代码，但只有 5%–10% 的生成结果没有 Bandit 告警，从而为同时评估安全改进方法的安全性与功能性留出空间。",
+      "abstractEn": "Evaluating approaches that improve the security of LLM code generation requires datasets that jointly assess security and functionality and remain adapted to the capabilities of the models being studied. However, existing benchmarks are costly to produce and are generally not calibrated to a chosen range of model capabilities. We introduce RiskyPy, an automated pipeline that generates security-oriented code-generation datasets calibrated to model proficiency using functionality and vulnerability canaries. We instantiate RiskyPy for Python using domains covering 18 CWEs from the 2025 CWE Top 25, producing 101 prompts. Experiments on Qwen3-4B and Seed-Coder-8B show that the generated tasks remain functionally accessible, with 57-72% of prompts yielding functional code, while only 5-10% of generations are free of Bandit findings, leaving room for joint evaluation of security and functionality of security improvement approaches.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "代码生成",
+        "Python",
+        "CWE",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.40735",
+      "pdf": "https://arxiv.org/pdf/2610.40735.pdf"
+    },
+    {
+      "id": "2610.41191",
+      "title": "When AI Investigators Cannot Trust Their Tools: Conflict-Aware Evidence Verification for Cyber Threat Investigation",
+      "authors": [
+        "Yuchen Zhang"
+      ],
+      "year": 2026,
+      "venue": "WAITI @ ACSAC 2026",
+      "abstractOneWord": "在检测工具互相冲突或被污染时，校验大模型告警研判用的证据，对象是网络流量威胁调查。",
+      "abstract": "大模型智能体越来越多地靠组合多个检测工具的输出来研判安全告警，并默认这些工具可信。与以往研究「模型知识与上下文冲突」不同，本文关注工具之间的冲突：机器生成的证据互相矛盾或本身就错时会发生什么。在校正后的 CIC-IDS2017 上，四个异构检测器给出标签和置信度，作者再按威胁模型污染其中若干工具，改变污染数量、持续时间和错误输出的置信度。在 30 亿到 140 亿参数的开源大模型上，未校验的调查者很脆弱：四个检测器里污染一个，朴素准确率降到 0.50–0.72；污染三个则全部降到 0.13 或更低；仅诚实分歧就会让它们在最多 63% 的流上弃权。本文提出冲突感知证据校验（CAV）：等权投票并忽略自报置信度、证据冲突门控，以及用独立近邻信任检查来验证领先候选。提示在测试前冻结时，CAV-LLM 在所有污染条件下都优于朴素调查者，三个检测器被污染时达到 0.84–0.88（对照最高 0.08），对干净流量只在 0.4% 的情况下调用大模型。固定校验规则在多数工具未被污染时同样准或更准。若独立通道本身也有噪声，CAV 会继承其错误：两个或以上工具被污染时它仍领先，但最多一个被污染时，把该通道当作额外投票者更好。校验把信任从工具转到检查本身，而检查同样需要被测量和保护。",
+      "abstractEn": "LLM agents increasingly triage security alerts by combining the outputs of several detection tools, implicitly treating those tools as trustworthy. Unlike prior work on conflicts between a model's knowledge and its context, we study conflicts among the tools themselves: what happens when this machine-generated evidence is conflicting or wrong. On the corrected CIC-IDS2017 dataset, four heterogeneous detectors emit labels and confidences that we corrupt under a threat model varying the number of corrupted tools, the persistence of the corruption, and the confidence attached to wrong outputs. Across open-weight LLMs from 3B to 14B parameters, unverified investigators are fragile: one corrupted detector out of four lowers naive accuracy to .50-.72, three lower every unverified investigator to .13 or less, and honest disagreement alone makes them abstain on up to 63% of flows. We propose Conflict-Aware Evidence Verification (CAV), built from established components: an equal-weight vote that ignores reported confidences, an evidence-conflict gate, and an independent nearest-neighbour trust check that tests the leading candidates. With its prompt frozen before testing, CAV-LLM improves on the naive investigator in every corrupted condition, reaching .84-.88 with three corrupted detectors against at most .08, while calling the LLM on 0.4% of clean traffic. A fixed verification rule is as accurate or better unless most tools are corrupted. When we make the independent channel itself noisy, CAV inherits its errors: it stays ahead when two or more tools are corrupted, but adding the channel as an extra voter is better when at most one is. Verification thus moves trust from the tools to the check, which must be measured and protected in turn.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "告警研判",
+        "威胁调查",
+        "证据冲突",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.41191",
+      "pdf": "https://arxiv.org/pdf/2610.41191.pdf"
+    },
+    {
+      "id": "2610.41072",
+      "title": "LanG 2.0: Energy-Efficient Agentic AI for Semi-Automated Security Operations at Scale",
+      "authors": [
+        "Anes Abdennebi",
+        "Nadjia Kara",
+        "Laaziz Lahlou",
+        "Hakima Ould-Slimane"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用带结构保障的本地小模型智能体做威胁检测、证据关联和规则编写，对象是安全运营中心。",
+      "abstract": "安全运营中心需要把海量告警、日志和流量变成可信任、可负担的决策，才能发现隐藏威胁。本文提出 LanG 2.0：一个能检测威胁、关联证据并编写规则的智能体系统，用来检验在结构保障（而不是模型精度）提供保证时，本地小模型能否安全、便宜地替代前沿模型。系统包含以实体为锚的关联、规则变更的人工批准，以及防篡改账本。测试覆盖五个网络的八个流量数据集、真实 XDR 告警和多阶段活动。相对前代，活动关联精确率从 18.75% 升到 51.81%，规则接受率从最高 60.00% 升到 98.33%。相对 Claude Opus 5.5，用各网络正常流量打分来检测未见网络上的攻击时，F1 为 73.42% 且无误报，对照为 58.10% 且误报 49.00%，能耗至少低 650 倍。微调模型在告警分类和规则编写上统计上与之相当，能耗低 5.6 到 59 倍。该系统 6.4 分钟处理 333 万条记录，折合每小时超过 3000 万条；保障措施抵抗了提示注入、标签投毒和账本篡改，说明本地小模型可以负担得起、也足够安全地承担大部分安全运营检测。",
+      "abstractEn": "Security operations centers (SOCs) need to turn terabytes of alerts, logs and flows into trusted, affordable decisions to unveil hidden threats. We present LanG 2.0, an agentic system that detects threats, correlates evidence and writes rules, investigating whether small local models can replace frontier models affordably and safely when structural safeguards, not model accuracy, provide the guarantees. It incorporates entity-anchored correlation, human approval of rule changes and a tamper-evident ledger. Tests span eight flow datasets from five networks, real XDR alerts and multistage campaigns. Against its predecessor, campaign correlation precision rises from 18.75% to 51.81%, and rule acceptance from at most 60.00% to 98.33%. Against Claude Opus 5.5, scoring flows against each network's normal traffic detects attacks on unseen networks at 73.42% F1 without false positives, versus 58.10% with 49.00% false positives, for at least 650 times less energy. Finetuned models statistically match it on alert classification and rule writing for 5.6 to 59 times less energy. The work demonstrates LanG's practical scalability, processing 3.33 million records in 6.4 minutes, over 30 million hourly, and its safeguards resisted prompt injection, label poisoning and ledger tampering, so small local models can carry most SOC detection affordably and safely.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全运营",
+        "告警研判",
+        "规则生成",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.41072",
+      "pdf": "https://arxiv.org/pdf/2610.41072.pdf"
+    },
+    {
+      "id": "2610.40716",
+      "title": "Characterizing LLM Agent Behaviors in Module Shadowing Environments",
+      "authors": [
+        "Shuai Yang",
+        "Enmeng Lu",
+        "Jinyu Fan",
+        "Gongce Cao",
+        "Yu Chen",
+        "Jiawei Xie",
+        "Feifei Zhao",
+        "Zhangsheng Wang",
+        "Yongyu Jiang",
+        "Yi Zeng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评测编码智能体在模块阴影下是否执行不可信代码，对象是工作区里的 Python 导入。",
+      "abstract": "在不可信工作区里运行的大模型智能体，日常任务中有执行不可信代码的风险，但只看最终报告和工作区状态，往往无法可靠判断是否真的执行过。本文提出一个评测框架：从智能体轨迹中编码观察、推理、执行和回应行为，并与独立的环境记录对齐，从而重建执行历史并核验最终报告。作者把它用在模块阴影场景：导入时本地文件顶替受信任模块，从而在没有对抗提示的情况下执行不可信代码。15 个模型共 90 次试验中，直接阴影有 51% 触发了载荷，间接阴影有 87%。即使明确识别出阴影机制，也不等于能防住：有记录识别的 29 次试验里仍有 10 次跑了载荷。这些失败还常被最终报告漏掉：62 次触发试验里有 49 次结束时只字未提安全问题。有三份报告甚至否认执行过，其中一次独立日志记录了 19 次载荷执行。当智能体删除或覆盖载荷标记时，最终工作区状态也会掩盖先前执行（10 次触发试验）。结果表明，把行为编码和独立环境审计结合起来，才能严格、可核对地评测智能体安全。",
+      "abstractEn": "LLM agents operating in untrusted workspaces face the risk of untrusted code execution during routine tasks, yet final reports and workspace states alone cannot reliably establish whether execution occurred. We introduce an evaluation framework that codes observation, reasoning, execution, and response behaviors from agent trajectories and aligns them with independent environmental records to reconstruct execution histories and verify final reports. We apply this framework to module shadowing, in which a local file is loaded in place of a trusted module during import, enabling untrusted code execution without adversarial prompts. Across 90 trials with 15 models, the payload executed in 51% of direct shadowing trials and 87% of indirect shadowing trials. Even explicit recognition of the shadowing mechanism did not ensure prevention, as the payload ran in 10 of the 29 trials with recorded recognition. These failures were often omitted from final reports, as 49 of the 62 triggered trials ended without mention of the security issue. Three reports even denied execution, including one from a trial in which independent logs recorded 19 payload executions. Final workspace states also obscured prior execution when agents deleted or overwrote the payload marker in 10 triggered trials. These findings demonstrate that combining behavioral coding with independent environmental auditing enables rigorous and transparent evaluation of agent safety.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "模块阴影",
+        "不可信执行",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2610.40716",
+      "pdf": "https://arxiv.org/pdf/2610.40716.pdf"
+    },
+    {
+      "id": "2610.41153",
+      "title": "Who Swept My ETH? Uncovering EIP-7702-Based Ether Redirection Attacks on Ethereum",
+      "authors": [
+        "Ziwei Li",
+        "Tianwei Chen",
+        "Jiajing Wu",
+        "Zigui Jiang",
+        "Yuhong Nan",
+        "Yaobo Huang",
+        "Bowen Song",
+        "Zibin Zheng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析 EIP-7702 委托被滥用后自动转走以太币的攻击，对象是以太坊外部账户。",
+      "abstract": "EIP-7702 引入一种新交易类型，让主流兼容以太坊虚拟机的链上的外部账户可以临时把执行委托给任意合约代码。功能增强的同时，也带来一种新威胁：基于 EIP-7702 的以太币重定向攻击。攻击中，受害者被委托到恶意清扫合约，随后自动把打进来的以太币转到攻击者控制的地址。作为协议演进带来的新攻击形态，其机制和安全含义此前还缺少系统研究。本文首次形式化该攻击模型，并提出 SweeperHunter，用交易分析检测这类攻击。在以太坊主网引入 EIP-7702 后的前十个月交易中，作者识别出 4,668,209 次恶意委托、20,443 笔攻击交易和 508 个以太币清扫合约，构成首个该攻击数据集。从攻击者和受害者两侧分析后给出缓解建议。结果显示该攻击已经很普遍：观察到的委托里大约 70% 指向以太币清扫合约。受害者侧有效应对很少，超过 60 万个账户没有及时撤销或更新恶意委托，因而一直处于易受攻击状态。",
+      "abstractEn": "EIP-7702 introduces a new transaction type that allows Externally Owned Accounts (EOAs) on major EVM-compatible chains to delegate execution to arbitrary contract codes temporarily. While enhancing functionality, this mechanism facilitates a novel threat: the EIP-7702-Based Ether Redirection Attack (EERA). In such an attack, a victim is delegated to a malicious sweeper contract, which automatically redirects incoming ETH transfers to an address controlled by the attacker. As a nascent attack paradigm arising from protocol evolution, the underlying mechanisms and security implications of EERA remain systematically unexplored. To bridge this gap, we provide the first formal analysis of the EERA attack model and propose SweeperHunter, a framework that detects these attacks through transaction analysis. By evaluating transactions from the first ten months following the introduction of EIP-7702 on Ethereum mainnet, we have identified 4,668,209 malicious delegations, 20,443 attack transactions and 508 ETH sweeper contracts, forming the first EERA dataset. Finally, we analyze this attack from both attacker and victim perspectives, derive key insights, and propose corresponding mitigation strategies. We reveal the prevalence of EERA, as approximately 70% of the observed delegations point toward ETH sweeper contracts. Furthermore, we observe a notable lack of effective responses from victims; specifically, over 600,000 accounts failed to revoke or update their malicious delegations promptly, thereby remaining in a state of vulnerability. Our research is expected to facilitate understanding and mitigation of this emerging threat posed by EIP-7702.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "EIP-7702",
+        "账户抽象",
+        "以太坊",
+        "重定向攻击"
+      ],
+      "url": "https://arxiv.org/abs/2610.41153",
+      "pdf": "https://arxiv.org/pdf/2610.41153.pdf"
+    },
+    {
+      "id": "2610.41685",
+      "title": "A Failure Mode Taxonomy and Severity Model for Ethereum Smart Contracts",
+      "authors": [
+        "Fernando Richter Vidal",
+        "Naghmeh Ivaki",
+        "Nuno Laranjeiro"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "按部署后可观察的故障而不是底层漏洞，给以太坊智能合约建立失效模式分类和严重性分级。",
+      "abstract": "智能合约是区块链系统的核心组件，部署后不可改，失败往往是灾难性且不可逆的。已有工作主要分类漏洞、缺陷和攻击，合约一旦上线后可观察到的失败——也就是偏离预期行为或账本状态——却很少被单独对待。本文为以太坊智能合约设计并验证了一套失效模式分类，以及按可观察影响排序的严重性模型。作者以文献综述为输入，按 Nickerson 等人的分类构建方法得到失效模式及其维度，再在系统综述、OpenSCV 漏洞目录和检索截止之后报告的合约事件上做饱和检验。每种失效模式沿五个维度刻画：根因、被违反的安全属性、影响（记为主要、次要和其他）、受影响组件和性质，并给出面向可观察故障而非底层漏洞的标准名称。由此得到 CIPER 五级严重性模型，按可观察影响给失效模式分组。饱和检验没有产生新的失效模式或维度。这套分类提供了描述「合约失败时究竟做错了什么」的共用词汇，CIPER 再把该词汇与每种可观察结果的严重程度连起来。",
+      "abstractEn": "Smart contracts are a core component of blockchain systems, but their immutability makes failures in deployed code catastrophic and irreversible. Existing work classifies vulnerabilities, defects, and attacks, yet the observable failures of smart contracts, the deviations from intended behavior or the expected ledger state seen once a contract is deployed, have been largely disregarded. In this paper, we design and validate a failure mode taxonomy for Ethereum smart contracts, together with a severity model that ranks failures by their observable impact. Using a literature review as input, we follow the taxonomy development method of Nickerson et al. to derive the failure modes and their dimensions, and we subject the resulting taxonomy to a saturation exercise over a systematic literature review, the OpenSCV vulnerability catalog, and smart contract incidents reported after the search cutoff. Each failure mode is characterized along five dimensions, namely root cause, violated security property, impact (recorded as primary, secondary, and other), affected component, and nature, and is given a standardized name targeting the observable malfunction rather than the underlying vulnerability. From the taxonomy, we derive CIPER, a five-level severity model that groups failure modes by their observable impact. The saturation exercise produced no new failure modes or dimensions. The taxonomy offers a shared vocabulary for describing what smart contracts do wrong when they fail, and CIPER links that vocabulary to the severity of each observable outcome.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "失效模式",
+        "以太坊",
+        "严重性分级"
+      ],
+      "url": "https://arxiv.org/abs/2610.41685",
+      "pdf": "https://arxiv.org/pdf/2610.41685.pdf"
+    },
+    {
+      "id": "2610.41032",
+      "title": "An Incentive-Aligned Trust-Centric Coordination Layer for Heterogeneous Blockchain Interoperability",
+      "authors": [
+        "Saeed Moradi",
+        "Sara Rouhani"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在不改底层协议的前提下，用质押和声誉选择中继，保护许可链与公链之间的跨域互操作。",
+      "abstract": "许可链与公链之间的互操作，受不对称的隐私、信任和治理假设拖累。本文提出一种协调架构，把跨域信任管理和隐私执行从底层区块链协议里拆出来，无需改协议。框架把密码学不可关联机制与激励相容的中继选择结合起来，用按质押加权的参与和随时间累积的声誉，让经济投入与持续正确性对齐。作者形式化对抗模型，并推导跨域协调的安全与隐私性质，表明对女巫渗透、合谋和策略性质押集中具有稳健性。基于仿真的分析刻画了法定人数阈值、声誉记忆和匿名参数之间的关键权衡，说明参数调好时，可以在不降低响应性和激励稳定性的前提下实现保护隐私的协调。",
+      "abstractEn": "The interoperability between permissioned and public blockchains is hampered by asymmetric privacy, trust, and governance assumptions. We propose a coordination architecture that decouples cross-domain trust management and privacy enforcement from underlying blockchain protocols, requiring no protocol-level modifications. The framework integrates cryptographic unlinkability mechanisms with incentive-compatible relay selection, combining stake-weighted participation and temporally accumulated reputation to align economic commitment with sustained correctness. We formalize the adversarial model and derive security and privacy properties for cross-domain coordination, demonstrating robustness against Sybil infiltration, collusion, and strategic stake concentration. Simulation-based analysis characterizes key design trade-offs between quorum thresholds, reputation memory, and anonymity parameters, indicating that privacy-preserving coordination can be achieved without degrading responsiveness or incentive stability when parameters are properly tuned.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链",
+        "互操作",
+        "中继选择",
+        "女巫攻击"
+      ],
+      "url": "https://arxiv.org/abs/2610.41032",
+      "pdf": "https://arxiv.org/pdf/2610.41032.pdf"
+    }
+  ]
+}
