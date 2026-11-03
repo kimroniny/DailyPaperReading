@@ -1,0 +1,255 @@
+{
+  "date": "2026-11-03",
+  "papers": [
+    {
+      "id": "10.1145-3861065",
+      "title": "DRHL: Cross-Language Detection and Repair of Access Control Vulnerabilities via Hybrid Analysis and LLMs",
+      "authors": [
+        "Bing Zhang",
+        "Hongliang Liu",
+        "Rong Ren",
+        "Qian Wang",
+        "Jiadong Ren"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用混合分析和大模型跨语言检测并修复访问控制漏洞，对象是 PHP、Java、Python 和 Go 的 Web 应用。",
+      "abstract": "访问控制缺失会让未授权用户访问资源，风险很高。传统检测效率低、误报多；现有修复多靠人工、主要针对 PHP，成功率也不高。本文提出 DRHL：一套基于角色访问控制模型的跨语言自动检测与修复框架。它用动静结合分析构造混合站点导航图，映射角色、权限和页面，从而更准确地推断权限并生成针对性载荷，减少冗余和误报。修复时，它在句法和语义约束下从多语言应用中抽出访问控制片段，连同检测结果写入提示，引导大模型生成贴合上下文、风格一致的补丁。在 16 个 PHP、Java、Python 和 Go 的 Web 应用上，DRHL 检出全部 50 个独立确认的真实漏洞，仅 1 个误报、0 个漏报，并在三次尝试内修复其中 48 个。相对 ZAP 和 Burp Suite，平均代码覆盖分别高 3.89 和 9.77 个百分点，运行时间相当；专家对补丁在访问控制正确性、功能保持和代码质量上的正面评价占 94.68%。",
+      "abstractEn": "Broken Access Control (BAC) enables unauthorized resource access, posing critical risks. Traditional detection suffers from inefficiency and high false positives, while existing repairs are largely manual, PHP-centric, and low success rates. To address this, we propose DRHL, a cross-language framework for automated BAC detection and repair grounded in the Role-Based Access Control (RBAC) model. DRHL constructs a Hybrid Site Navigation Graph (HSNG) via dynamic-static analysis to map roles, permissions, and pages, enabling precise inference and targeted payload generation that curbs redundancy and false positives. For repair, it extracts access control snippets from multilingual applications under syntactic-semantic constraints and encodes them with detection results into prompts, guiding a Large Language Model (LLM) to generate context-aware, style-consistent patches across languages. Evaluations on 16 web applications across PHP, Java, Python, and Go show that DRHL detects all 50 independently established ground-truth vulnerabilities with only 1 FP and 0 FNs, and repairs 48 of them within three attempts. It also improves average code coverage over ZAP and Burp Suite by 3.89 and 9.77 percentage points, respectively, at comparable runtime, while 94.68% of expert patch-quality ratings are positive across Access-Control Correctness, Functionality Preservation, and Code Quality.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "访问控制",
+        "漏洞修复",
+        "Web应用",
+        "大模型"
+      ],
+      "url": "https://doi.org/10.1145/3861065",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3861065"
+    },
+    {
+      "id": "2611.02957",
+      "title": "Cyber-JEV: Matched Contrastive Fine-Tuning of Language Models for Fast Source-Code Vulnerability Triage",
+      "authors": [
+        "Zhuyi Zhao",
+        "Shengjie Yuan",
+        "Shengyu Wang",
+        "Kang Wei",
+        "Wang Yang",
+        "Wenchao Xu",
+        "Fushuo Huo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型对比微调给函数打漏洞分数，对象是源代码函数与修复提交。",
+      "abstract": "像 Jev 这类单次打分模型会给每个代码函数一个漏洞概率，安全团队可以据此给大量函数排序，而不必生成文字解释。给开源权重模型做这项训练，数据是瓶颈。同时带有漏洞和无漏洞标签的基准，一旦去掉与测试相关的样本，剩下的漏洞函数很少；更大的公开漏洞记录又几乎只有漏洞函数。把两类数据混在一起，数据来源就会泄露标签；只在有标签数据上训练，模型又常常把修复后的函数打得比漏洞原函数更高。本文提出 Cyber-JEV：一种用修复提交把这些记录做成对比组的微调方法。每组包含一个漏洞函数、它的补丁版本，以及最多两个同一文件中未改动的函数，让模型看到真正去掉缺陷的那次改动。同一个模型同时学两件事：在有标签参考数据上做函数分类，以及把组内漏洞函数排在其他成员之上。测试时输入一个函数，输出一个漏洞分数。在 7270 个函数的测试基准上，五个微调后的 Qwen3.5-4B 模型集成得到 ROC 曲线下面积 0.814，对照 Jev 1.13 的 0.743。以 Jev 的 4031 条告警为审阅预算，它漏掉 322 个漏洞函数中的 16 个，而不是 39 个。相对只在参考数据上训练，它在三组真实修复上把漏洞版本排在补丁版本之上的比例高 14.8 到 29.2 个百分点。这类分数可以在固定预算下，给一次拉取请求或一次发布里改动过的函数排序。",
+      "abstractEn": "Single-pass scoring models such as Jev give each code function a vulnerability probability, so that security teams can rank many functions for review without generating written explanations. Training an open-weight model for this task is limited by data. Benchmarks with both vulnerable and non-vulnerable labels keep few vulnerable functions once examples related to the test data are removed, while larger public vulnerability records mostly contain vulnerable functions only. Mixing the two lets the data source predict the label, and training on the labeled data alone leaves a model that often scores a fixed function above its vulnerable original. We present Cyber-JEV, a fine-tuning method that uses fix commits to turn these records into comparison groups. Each group holds a vulnerable function, its patched version and up to two unchanged functions from the same file, so the model sees the change that removed a recorded defect. One shared model learns two tasks: classifying functions from the labeled reference data, and ranking the vulnerable function above the other members of its group. At test time the input is one function and the output is a vulnerability score. On a test benchmark of 7,270 functions, an ensemble of five fine-tuned Qwen3.5-4B models reaches an area under the receiver operating characteristic curve of 0.814, compared with 0.743 for Jev 1.13. With the 4,031 alerts of Jev as the review budget, it misses 16 of 322 vulnerable functions instead of 39. Compared with training on the reference data alone, it ranks the vulnerable version above the patched version 14.8 to 29.2 percentage points more often on three sets of real fixes. Such scores can order the changed functions of a pull request or a release for review under a fixed budget.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞研判",
+        "源代码",
+        "对比微调",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.02957",
+      "pdf": "https://arxiv.org/pdf/2611.02957.pdf"
+    },
+    {
+      "id": "2611.00138",
+      "title": "Kerkoporta: Injecting Structured-Output Backdoors in Reasoning Coding Agents",
+      "authors": [
+        "Georgios Syros",
+        "Blake Bullwinkel",
+        "Alina Oprea",
+        "Cristina Nita-Rotaru",
+        "Amanda Minnich",
+        "Xiaodong Liu",
+        "Giorgio Severi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "向推理编码智能体注入结构化输出后门，触发后执行攻击者指定的工具调用。",
+      "abstract": "现有大模型后门攻击主要发生在对话场景，风险止于自由文本输出。智能体会在用户机器上执行动作和命令，从而突破这一边界。本文针对智能体编码场景中的推理模型，提出结构化输出后门：触发词可以放在智能体上下文的任意位置，模型就会发出攻击者指定的工具调用，由脚手架执行，直接破坏系统的机密性、完整性或可用性。作者提出 Kerkoporta：构造高质量投毒样本，用监督微调注入后门，再用轻量强化学习补回效用损失。评测覆盖经过充分后训练的开源权重模型，以及专有和开源脚手架，重点放在编码任务，因为它使用广、任务跨度长。攻击成功率最高 96.2%，可以配置成跨脚手架泛化，也可以绑定到单一目标。投毒后的模型在标准效用基准上甚至能超过干净基线，给受害者采用这些模型的直接动机。结果表明，大模型后门在现代编码智能体上会造成严重安全影响，并刻画了在这种场景下插入既有效又隐蔽的后门所需的投毒方法。",
+      "abstractEn": "Existing large language model (LLM) backdoor attacks operate primarily in chat settings, where the risk is bounded by free-form text outputs. AI agents remove that bound by performing actions and executing commands on the user's machine. We introduce structured-output backdoor attacks against reasoning models in agentic coding settings. A trigger placed anywhere in the agent's context causes the model to emit an attacker-chosen tool call, which the harness executes, directly compromising the system's confidentiality, integrity, or availability. We present Kerkoporta, a methodology that constructs high-quality poison samples, injects the backdoor via supervised fine-tuning, and recovers utility loss with lightweight reinforcement learning. We evaluate on modern, heavily post-trained open-weight models across proprietary and open-source harnesses, focusing on coding for its wide adoption and long-horizon task structure. The attack reaches success rates of up to 96.2% and can be configured to generalize across harnesses or bind to a single target. The resulting models can outperform the clean baseline on standard utility benchmarks, giving victims a direct incentive to adopt them. Overall, we demonstrate that LLM backdoors can have critical security impacts in the context of modern coding agents, and we characterize the poisoning methodology required to insert backdoors that are both effective and stealthy in this setting.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码智能体",
+        "后门",
+        "工具调用",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.00138",
+      "pdf": "https://arxiv.org/pdf/2611.00138.pdf"
+    },
+    {
+      "id": "2611.02527",
+      "title": "When Neither Side Confirms: Destructive Tool Approval Across MCP Servers and Hosts",
+      "authors": [
+        "Junwei Yao",
+        "Zike Yang",
+        "Zhijun Wang",
+        "Yongxi Zhou",
+        "Wenbo Ye"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "从源码统计 MCP 服务端和宿主对破坏性工具是否落实人工确认，对象是智能体工具调用。",
+      "abstract": "大模型智能体通过模型上下文协议（MCP）调用会删除数据或转移资金的工具。规范要求有人可以拒绝工具调用，但机制被拆开：服务端可以给工具加标注，或通过宿主向用户提问（elicitation）；宿主应用再决定要不要弹出确认。本文从源码测量两边。在官方 MCP 注册表的 1000 个仓库样本中，估计 90% 的破坏性工具没有服务端确认（95% 置信区间 82%–95%）；多数会提问的服务端，在宿主无法转达问题时会继续执行，或退回到模型自己就能设置的标志。41 个常见开源宿主和智能体 SDK 里，32 个默认没有审批步骤，其中 25 个应用里有 16 个如此。把规则抽取器标出的破坏性工具样本与这些应用配对后，60.7% 的配对默认没有强制人工批准。在四个智能体 SDK 上，五个低成本模型中有四个在 960 次试验里执行了注入的删除，共 479 次。如果宿主对所有未标注只读或非破坏性的工具都提问，这些配对中未批准的比例会降到 5.4%；若只普遍支持 elicitation，仍剩 56.7%。因此应用应配置审批。",
+      "abstractEn": "LLM agents call tools that delete data or move money through the Model Context Protocol (MCP). The specification asks for a human who can deny tool calls but splits the mechanism between the server, which can annotate a tool or ask the user through the host (elicitation), and the host application, which decides whether to prompt. We measure both sides from source code. In a 1,000-repository sample of the official MCP registry, an estimated 90% of destructive tools (95% CI 82-95) have no server-side confirmation, and most servers that elicit proceed, or fall back to a flag the model can set, when the host cannot relay the question. Of 41 popular open-source hosts and agent SDKs, 32 have no approval step by default, including 16 of 25 applications. Pairing sampled destructive tools flagged by a rule-based extractor with these applications, 60.7% of pairs have no enforced human approval by default. Through four agent SDKs, four of five low-cost models executed an injected deletion in 479 of 960 runs. If hosts prompted for every tool not annotated read-only or non-destructive, the unapproved share of these pairs would fall to 5.4%; universal elicitation support would leave 56.7%. Applications should therefore configure approval.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MCP",
+        "工具审批",
+        "智能体",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.02527",
+      "pdf": "https://arxiv.org/pdf/2611.02527.pdf"
+    },
+    {
+      "id": "2611.01976",
+      "title": "Beyond Prompt Injection: The Tool Update Gap in LLM Agent Security",
+      "authors": [
+        "Shiyu Kan",
+        "Yue Qi",
+        "Yufei Han",
+        "Xinjian Luo",
+        "Guojun Xiong",
+        "Xiaofeng Gao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析工具更新后智能体不再复核安全性的供应链漏洞，对象是 Gemini CLI、Codex 和 Claude Code。",
+      "abstract": "基于大模型的智能体越来越依赖外部工具来调用服务、访问网页资源。这些工具会随软件更新而变化，智能体框架却可能在实现改动后仍继续信任它们，不再重新验证安全性。这种工具更新缺口构成智能体系统的供应链漏洞：更新后的工具代码在模型上下文窗口之外执行，嵌在更新里的恶意功能可以绕过只看模型可见交互的防御，使智能体暴露于现有上下文内防御很难处理的隐蔽、持久威胁。为系统研究这一威胁，本文提出 ETUDE：把恶意功能嵌进原本良性工具的更新，在保留合法功能的同时得到被攻陷的工具。与基于提示的攻击不同，ETUDE 完全在模型上下文之外运作，不需要对抗指令，从而绕过只限制模型可见内容的防御。作者在三类代表性攻击负载和七个常用商业与开源智能体框架上评测，包括 Gemini CLI、Codex CLI 和 Claude Code。结果显示 ETUDE 攻击成功率 97.6%，合法任务完成率仍有 95.9%。现有防御对这一威胁保护不足。这说明当前智能体安全实践有一个根本盲区：对工具建立的信任，在实现更新后并不一定仍然成立。",
+      "abstractEn": "Large language model based agents increasingly rely on external tools to invoke services and interact with web resources. These tools can evolve through software updates, yet agentic frameworks may continue trusting them without re-verifying their safety after implementation changes. This tool update gap creates a supply-chain vulnerability in agentic systems: because updated tool code executes outside the LLM's context window, malicious functionality embedded in tool updates can bypass defenses centered on model-visible interactions, leaving agents exposed to stealthy, persistent threats that existing in-context defenses can hardly address. To thoroughly investigate this threat, we introduce ETUDE (Exploiting Tool Updates for Direct Execution), an attack that embeds malicious functionality into updates of initially benign tools to produce compromised tools, while preserving their legitimate tool functionality. Unlike prompt-based attacks, ETUDE operates entirely outside the LLM's context and requires no adversarial instructions, thereby bypassing defenses restricted to model-visible content. We evaluate ETUDE across three representative attack workloads and seven widely used commercial and open-source agentic frameworks, including Gemini CLI, Codex CLI, and Claude Code. The results show that ETUDE achieves a 97.6% ASR while maintaining a 95.9% legitimate task completion rate. We further examine existing defenses and find that they provide insufficient protection against this threat. These findings expose a fundamental blind spot in current agent security practices: trust established for a tool does not necessarily remain valid after its implementation updates.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "工具供应链",
+        "编码智能体",
+        "MCP",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.01976",
+      "pdf": "https://arxiv.org/pdf/2611.01976.pdf"
+    },
+    {
+      "id": "2611.02530",
+      "title": "AMLBench: A Real-Incident Benchmark for Agentic Blockchain Anti-Money Laundering",
+      "authors": [
+        "Qishuang Fu",
+        "Hang Zheng",
+        "Yuchen Lei",
+        "Yuexin Xiang",
+        "Qin Wang",
+        "Yuanzhe Zhang",
+        "Shiping Chen",
+        "Andreas Deppeler",
+        "Joseph Liu",
+        "Ziyao Liu",
+        "Tsz Hon Yuen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型智能体从有限线索追链上资金，对象是以太坊反洗钱案件。",
+      "abstract": "在公开链上追踪非法资金目前仍主要靠人工。资金跨账户转移并发生资产兑换后，会与其他流入混在一起，需要反复查询和专家判断。大模型智能体有望自动化这一过程，但从有限线索重建与案件相关的转账网络，能力仍不清楚。本文提出 AMLBench：基于 24 个真实案件和 505 万条以太坊转账记录的反洗钱基准。每个案件中，智能体从有限线索出发，通过可组合的交易查询和资金流分析工具探索这些转账记录，决定追查哪些账户和分支。最终追踪结果对照案件标注评估，工具交互日志则揭示智能体如何发现并选择相关转账，以及资源成本。作者还实现了 AMLAgent，结合资金追踪指引和查询反馈来动态引导调查决策。用 GPT-6 Astra 时，AMLAgent 在 24 个真实案件上的转账级精确率宏平均为 80.82%，查询覆盖率为 84.73%。对大规模 Bybit 案件的进一步分析表明，即使提交精确率相近，不同模型在转账保留和 token 用量上仍有明显差异。AMLBench 为同时评估追踪结果和调查过程提供了可复现基准。",
+      "abstractEn": "Tracing illicit funds on public blockchains remains largely manual. As funds move across accounts and undergo asset conversions, they become mixed with other inflows, requiring repeated queries and expert judgment to trace. Large language model (LLM) agents offer a way to automate this process, but their ability to reconstruct case-related transfer networks from limited clues remains unclear. To bridge this gap, we present AMLBench, an anti-money laundering (AML) benchmark built from 24 real-world cases and 5.05 million Ethereum transfer records. For each case, agents start from limited clues and explore these transfer records through composable transaction-query and fund-flow analysis tools, deciding which accounts and branches to pursue. The final tracing results are evaluated against case annotations, while tool interaction logs reveal how agents discover and select relevant transfers and at what resource cost. We also develop AMLAgent, which integrates fund-tracing guidance and query feedback to dynamically guide investigative decisions. With GPT-6 Astra, AMLAgent achieves macro averages of 80.82% transfer-level precision and 84.73% query coverage across 24 real-world cases. Further analysis of the large-scale Bybit case reveals substantial differences in transfer retention and token usage across models, even with similar submission precision. AMLBench establishes a reproducible benchmark for evaluating both tracing outcomes and investigative processes, laying the groundwork for more reliable and efficient autonomous AML investigations.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "反洗钱",
+        "资金追踪",
+        "以太坊",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.02530",
+      "pdf": "https://arxiv.org/pdf/2611.02530.pdf"
+    },
+    {
+      "id": "2611.00587",
+      "title": "Price is Only the Symptom: Understanding and Analyzing Economic-State Manipulation Vulnerabilities in DeFi",
+      "authors": [
+        "Hao Wu",
+        "Haijun Wang",
+        "Xiapu Luo",
+        "Ming Fan",
+        "Ting Liu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把 DeFi 经济状态操纵从价格扭曲扩展到协议记账和 AMM 一致性，并评测现有检测方法。",
+      "abstract": "经济状态操纵已成为去中心化金融的重要安全威胁，并造成大量资金损失。已有研究多把它写成价格操纵，关注可观察的价格扭曲，却忽略对经济状态完整性的底层破坏。本文对 DeFi 中的经济状态操纵（ESM）漏洞做了系统实证研究。作者整理了 276 起真实攻击和 91 条 Code4rena 审计发现，据此给出面向成因的分类：四个主类、十一个子类。分析表明，ESM 漏洞超出常规价格操纵，常涉及协议内部记账、AMM 状态一致性和执行时约束被破坏。作者还检查了六项已有工作的评测数据集：虽然覆盖 6 到 10 个子类，分布仍被少数操纵机制主导。随后在该数据集上系统评测七种代表性检测方法，覆盖有限，表现最好的方法也只识别出 50.4% 的真实攻击。通过对漏报和误报的分析，作者指出根本限制来自依赖预定义攻击模式、对经济状态语义推理不足，以及可利用性校验不完整。这些发现为更可泛化的 ESM 漏洞检测提供了实证依据。",
+      "abstractEn": "Economic-state manipulation has emerged as a significant security threat to decentralized finance (DeFi), causing substantial financial losses. Existing studies predominantly characterize these attacks as price manipulation, focusing on observable price distortions while overlooking underlying violations of economic-state integrity. We conduct a comprehensive empirical study of Economic-State Manipulation (ESM) vulnerabilities in DeFi. We first curate a diverse dataset comprising 276 real-world attacks and 91 Code4rena audit findings. Based on these cases, we develop a cause-oriented taxonomy comprising four primary categories and eleven subcategories. Our analysis reveals that ESM vulnerabilities extend beyond conventional price manipulation, frequently involving violations of protocol-internal accounting, AMM state consistency, and execution-time constraints. We further investigate the evaluation datasets of six existing studies and find that, although they cover 6-10 vulnerability subcategories, their distributions remain dominated by limited manipulation mechanisms. Furthermore, we systematically evaluate seven representative detection approaches on our dataset. Our results reveal limited coverage, with the best-performing approach identifying only 50.4% of real-world attacks. Through an analysis of false negatives and false positives, we identify fundamental limitations arising from reliance on predefined attack patterns, insufficient reasoning about economic-state semantics, and incomplete exploitability validation. These findings provide empirical insights for developing more generalizable ESM vulnerability detection techniques.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DeFi",
+        "价格操纵",
+        "漏洞检测",
+        "智能合约"
+      ],
+      "url": "https://arxiv.org/abs/2611.00587",
+      "pdf": "https://arxiv.org/pdf/2611.00587.pdf"
+    },
+    {
+      "id": "2611.01587",
+      "title": "Attack Patterns in Cross-chain Bridges: A Trust-based Empirical Analysis",
+      "authors": [
+        "Ishraq Samiha",
+        "Yasir Rahman",
+        "Rahma Mukta"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "按被破坏的信任假设给跨链桥真实攻击分类，对象是存款、中继、验证等环节。",
+      "abstract": "多链生态扩张后，跨链桥成为在独立区块链之间转移资产和信息的关键组件。多组件架构、跨链信任假设以及资产集中，使它们面临多样的安全威胁。本文基于 2022 年 1 月至 2026 年 8 月 48 起有证据支持的真实事件，对跨链桥攻击做经验研究。作者提出一套基于行为的攻击模式架构，包含六种破坏信任的攻击模式，每种由攻击者主要破坏的信任假设定义：证明伪造、逻辑利用、事件注入、经济状态操纵、凭证夺取和基础设施劫持。架构再把这些模式映射到跨链桥的五个功能域：存款、中继、验证、执行，以及治理与运维，从而把「如何破坏信任假设」和「被破坏的信任边界在哪里」分开。48 起事件对应 26.76 亿美元的桥相关总损失，最大的十起占 92.4%。按主损失口径，证明伪造和凭证夺取占全部损失的 86.2%，验证域与治理运维域占 93.9%。这一集中由少数超大事件驱动，但换成其他损失口径或重分类边界案例后仍然成立。把攻击者做什么与他们针对的桥功能和安全假设连起来，这套架构为跨链桥威胁建模提供了实证基础。",
+      "abstractEn": "The rapid growth of multiple blockchain ecosystems has made cross-chain bridges essential for transferring assets and information across independent blockchains. Their multi-component architectures, cross-chain trust assumptions, and concentration of valuable assets expose them to diverse security threats. This paper presents an empirical study of cross-chain bridge attacks based on 48 evidence-supported real-world incidents from January 2022 to August 2026. We propose a behaviour-based attack pattern architecture comprising six trust-violation attack patterns, each defined by the primary trust assumption violated by the attacker: Proof Forgery, Logic Exploitation, Event Injection, Economic-State Manipulation, Credential Seizure, and Infrastructure Hijacking. The architecture further maps these patterns to five functional domains of cross-chain bridges: Deposit, Relay, Verification, Execution, and Governance and Operations, separating how a trust assumption is violated from where the compromised trust boundary lies. The 48 incidents correspond to $2.676 billion in gross bridge-specific losses, with the ten largest incidents accounting for 92.4% of total losses. Measured on the primary loss basis, Proof Forgery and Credential Seizure make up 86.2% of all losses, and the Verification and Governance and Operations domains hold 93.9%. A handful of very large incidents drives this concentration, yet it still holds when we switch to other loss bases or reclassify the boundary cases. By tying what attackers do to the bridge functions and security assumptions they target, the architecture gives threat modelling for cross-chain bridges an empirical footing.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链桥",
+        "攻击模式",
+        "信任假设",
+        "经验研究"
+      ],
+      "url": "https://arxiv.org/abs/2611.01587",
+      "pdf": "https://arxiv.org/pdf/2611.01587.pdf"
+    },
+    {
+      "id": "2611.00839",
+      "title": "Intent-Bound Authorization for Cryptocurrency Withdrawals Under Backend Compromise",
+      "authors": [
+        "Toqeer Ali Syed",
+        "Asadullah Abdullah Khan",
+        "Ali Akrama"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在后端被攻破时，用意图绑定和一次性额度限制加密货币提现签名。",
+      "abstract": "币安对 2026 年 10 月攻击的初步说明提出一个单靠密钥保护回答不了的托管问题：当攻击者控制了有权请求签名的服务时，提供方如何阻止未授权提现？本文提出意图绑定提现授权协议（IWAP）。签名前，独立执行层检查客户意图、精确交易效果、新鲜的工作负载证据，以及已提交的一次性支出预留。管理操作走另一条授权路径。作者给出协议的信任假设，并给出意图保持、抗重放和固定周期暴露上界的有条件论证。Python 参考监视器用 Ed25519 认证合成记录，用 SQLite 序列化预留。它拒绝 1200 条负面请求，接受 3000 条合法合成请求，并在 20 次试验中每次 64 个并发尝试下保住 100 单位预算。故意攻破意图权威时，恶意请求会通过，但独立预算仍限制已批准的暴露。该研究评估的是规范化策略模型，不是币安的基础设施或已部署的托管平台。贡献是一条明确的授权边界，以及对这条边界的可复现测试。",
+      "abstractEn": "Binance's preliminary account of its October 2026 attack raises a custody question that key protection alone cannot answer: how can a provider prevent unauthorized withdrawals when an attacker controls a service permitted to request signatures? We propose the Intent-Bound Withdrawal Authorization Protocol (IWAP). Before signing, independent enforcement checks customer intent, exact transaction effects, fresh workload evidence, and a committed single-use spending reservation. Administrative actions use a separate authorization path. We specify the protocol's trust assumptions and give conditional arguments for intent preservation, replay resistance, and a fixed-epoch exposure bound. A Python reference monitor authenticates synthetic records with Ed25519 and serializes reservations with SQLite. It rejects 1,200 negative requests, accepts 3,000 valid synthetic requests, and preserves a 100-unit budget under 64 concurrent attempts in each of 20 trials. When the intent authority is deliberately compromised, malicious requests pass, but the independent budget still limits admitted exposure. The study evaluates a normalized policy model, not Binance's infrastructure or a deployed custody platform. Its contribution is an explicit authorization boundary and reproducible tests of that boundary.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "托管",
+        "提现授权",
+        "钱包",
+        "签名重放"
+      ],
+      "url": "https://arxiv.org/abs/2611.00839",
+      "pdf": "https://arxiv.org/pdf/2611.00839.pdf"
+    }
+  ]
+}
