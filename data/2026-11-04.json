@@ -1,0 +1,186 @@
+{
+  "date": "2026-11-04",
+  "papers": [
+    {
+      "id": "2611.04196",
+      "title": "DoGNAVY-Exploit: Harnessing Parallel Open-Weight Agents for Stage-Aware Vulnerability Exploitation",
+      "authors": [
+        "Yuxuan Wang",
+        "Dadi Guo",
+        "Weijie Guo",
+        "Zikai Xu",
+        "Chen Lu",
+        "Yizhe Zhuang",
+        "Peng Huang",
+        "Yuejin Xie",
+        "Guopeng Lin",
+        "Xuangan Xiao",
+        "Shipei Qu",
+        "Dongrui Liu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用开源权重的多代理框架把已知漏洞做成可运行利用，对象是 Web 应用、用户态程序、V8 和 Linux 内核。",
+      "abstract": "前沿大模型代理可以把已知漏洞做成可运行利用，但成本高，且常因可能被滥用而限制访问。开源权重模型更易获得，却很难在很长的利用链上保持进展，也常常不能在正确阶段、正确上下文里用上相关安全知识，从而选不出有希望的攻击方向。为此，本文提出 DoGNAVY-Exploit：一套多代理框架，核心是两件事：按阶段拆解并逐步给出专家知识，以及分层调度加并行探索。它用可配置里程碑，把长程利用改成短而可验证的能力跃迁，并且只提供当前阶段需要的知识。在每个里程碑内，规划器提出多条攻击路线，执行器并行试探，控制器只在运行时证据支持时才接受进展。共享的结构化记忆汇总已验证事实、产物、回放步骤和失败路线，让后续阶段能接着用。在受控基准上，搭配 GLM-5.2 时，Cybench 的 Pass@1 为 97.5%，CVE-Bench 上零日 97.5%、一日 100%。在 ExploitGym 上，GLM-5.2 解出 79 题、GLM-5.3 解出 157 题，对应的公开 Claude Code 基线分别是 39 和 130。消融实验表明，分阶段调度、专家知识、并行探索和记忆都能明显提高开源权重代理的利用能力。",
+      "abstractEn": "Frontier LLM agents can turn known vulnerabilities into working exploits, but are costly and often access-restricted due to their potential for malicious use. Open-weight models offer a more accessible alternative, but struggle to maintain progress across long exploitation chains. They also often fail to apply relevant security knowledge at the appropriate stage and in the right context to identify and evaluate promising attack directions. To address these limitations, we propose DoGNAVY-Exploit, a multi-agent harness built around two complementary designs: stage-aware decomposition with progressive expert knowledge disclosure, and hierarchical orchestration with parallel exploration. Specifically, DoGNAVY-Exploit uses configurable milestones to recast long-horizon exploitation as short, verifiable capability transitions and provides only the knowledge relevant to each stage. Within each milestone, a hierarchical architecture separates strategic planning from parallel execution: a planner proposes diverse attack routes, executors test them concurrently, and a controller accepts progress only when supported by runtime evidence. A shared structured memory consolidates verified facts, artifacts, replay steps, and failed routes across branches, allowing agents to build on collective progress and carry validated knowledge into subsequent milestones. In controlled benchmark environments, DoGNAVY-Exploit with GLM-5.2 achieves 97.5% Pass@1 on Cybench, and 97.5% zero-day and 100% one-day Pass@1 on CVE-Bench. On ExploitGym, it solves 79 tasks with GLM-5.2 and 157 with GLM-5.3, while the corresponding public Claude Code baselines solve 39 and 130 tasks, respectively. Ablation results further demonstrate that the stage-aware orchestration, expert knowledge, parallel exploration, and memory designs can substantially improve the exploitation capabilities of open-weight agents.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞利用",
+        "多代理",
+        "Linux内核",
+        "开源权重模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.04196",
+      "pdf": "https://arxiv.org/pdf/2611.04196"
+    },
+    {
+      "id": "2611.02605",
+      "title": "StateFence: Task-State Protection Against Evidence-Chain Contamination in Blue-Team LLM Agents",
+      "authors": [
+        "Haowen Dai",
+        "Alejandro Guerra-Manzanares"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用任务状态防护阻止提示注入污染蓝队大模型的研判链路，对象是 SOC 告警、工单和威胁指标。",
+      "abstract": "间接提示注入会给安全运营中心（SOC）里的蓝队大模型代理带来特殊风险。恶意指令可以藏在遥测、工单、检索结果或记忆里，再经过告警研判、事件摘要、响应建议和威胁指标（IOC）提取，变成看起来合理的中间结论。我们把这种失效称为受保护任务状态的证据链污染。难点随任务而变：同一段可疑字符串，对摘要来说可能是恶意控制文本，对 IOC 提取却是必要证据。为此，我们提出 StateFence：一套按任务保护状态的评估与防御框架，把严重级别标签、事件叙述、响应策略和 IOC 集合当作受保护状态。它把间接提示注入映射成显式、隐蔽、多跳和持续的 SOC 证据攻击，记录可观察的传播轨迹，并按被攻击的状态选择防御。在受控 SOC 案例和公开 SOC 验证案例上，StateFence 降低了攻击成功率，减少了证据被污染后才出现的失败，同时保持任务效果，并避免因过滤与任务不匹配而丢掉指标。结果表明，可靠的蓝队大模型代理需要在不可信证据下保住任务关键状态。",
+      "abstractEn": "Indirect prompt injection creates a distinctive risk for blue-team Large Language Model (LLM) agents in Security Operations Centers (SOCs). Malicious instructions can be embedded in telemetry, tickets, retrieval results, or memory and then propagate through alert triage, incident summarization, response recommendation, and Indicator of Compromise (IOC) extraction as locally plausible intermediate decisions. We characterize this failure mode as evidence-chain contamination of protected task state. The main challenge is task dependent: a suspicious string may be malicious control text for summarization but essential evidence for IOC extraction. To address this challenge, we propose StateFence, a task-aware evaluation and defense framework that treats severity labels, incident narratives, response policies, and IOC sets as protected states. StateFence maps indirect prompt-injection attacks into explicit, stealth, multi-hop, and persistent SOC evidence attacks, records observable propagation traces, and routes defenses according to the attacked state. Across controlled SOC cases and public-SOC validation cases, StateFence lowers attack success and reduces failures that appear only after evidence is poisoned, while preserving task utility and avoiding the indicator loss caused by task-mismatched filtering. Our findings indicate that robust blue-team LLM agents require mechanisms that preserve task-critical state under untrusted evidence.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "告警研判",
+        "提示注入",
+        "SOC",
+        "蓝队代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.02605",
+      "pdf": "https://arxiv.org/pdf/2611.02605"
+    },
+    {
+      "id": "2611.03575",
+      "title": "VeriHarm-Bench: Measuring Harmful Success in LLM Coding Agents Verifiably",
+      "authors": [
+        "Wei-Lin Chen",
+        "Zhepei Wei",
+        "Xinyu Zhu",
+        "Yu-Min Tseng",
+        "Tzu-Han Lin",
+        "Yu Meng"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可执行测试衡量编程代理在完成任务时是否改坏权限或文件，对象是带 shell 的编程代理与本地系统。",
+      "abstract": "大模型编程代理越来越多地带着 shell 权限工作，可以写脚本、移动文件、改权限、改系统配置。问题是：代理可能完成用户目标，同时造成未要求的伤害，例如删掉无关文件、削弱访问控制、损坏数据；而且这发生在良性输入上，并不需要越狱。这种失效很危险，因为任务看起来成功，用户会以为代理行为正确，副作用就被忽略。我们称之为有害成功：既完成了预定的良性任务，又造成了未要求的伤害。现有任务成功指标看不到伤害，现有安全评测又往往只看伤害结果。本文提出 VeriHarm：自动构造可程序验证的基准，直接测量有害成功。它只对编程任务做最小改动以引出副作用，同时保持任务本意，再合成可执行的伤害测试，与原有正确性测试一起同时评估对错和伤害。前沿代理（含 GPT-5.6-Sol 和 Claude-Opus-5）在 VeriHarm-Bench 上平均任务正确率 95%，但安全成功率（完成任务且不触发指定伤害）平均只有 37%。这说明任务成功常常和未要求的伤害同时出现，只看任务成功会明显低估编程代理的安全风险。",
+      "abstractEn": "Large language model (LLM) coding agents increasingly operate with shell access, allowing them to write scripts, move files, alter permissions, and modify system configurations. However, an agent may achieve a user's goal while causing unintended harm, such as deleting unrelated files, weakening access controls, or corrupting data, in response to benign inputs without explicit jailbreaking. This failure mode is particularly important because apparent task success may reassure users that an agent behaved correctly, causing harmful side effects to go unnoticed. We call this harmful success: the agent successfully completes the intended benign task while simultaneously causing unintended harm. Despite its importance, harmful success is difficult to measure because conventional task-success metrics overlook harmful behaviors, while existing safety evaluations are often designed solely to assess harmful outcomes. We introduce VeriHarm, an automatic framework for constructing programmatically verifiable benchmarks that directly measure harmful success. VeriHarm minimally perturbs coding tasks to elicit unintended harmful behavior while maintaining the benignity of the task and preserving the original task objective. It then synthesizes executable harm tests that, together with the original task-correctness tests, evaluate both task accuracy and harmful outcomes. Frontier agents, including GPT-5.6-Sol and Claude-Opus-5, achieve an average task accuracy of 95% on our curated VeriHarm-Bench, yet still struggle to complete tasks safely: their safe success rate, the fraction of tasks completed successfully without triggering the designated harm, averages only 37%. These results suggest that successful task completion can frequently coexist with unintended harm, and that task-success metrics alone may substantially understate the potential safety risks of coding agents.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编程代理",
+        "访问控制",
+        "副作用",
+        "安全评测"
+      ],
+      "url": "https://arxiv.org/abs/2611.03575",
+      "pdf": "https://arxiv.org/pdf/2611.03575"
+    },
+    {
+      "id": "2611.04411",
+      "title": "TxBench: A Benchmark of Attack Transactions and Evidence-Backed Negatives on Seven EVM Chains",
+      "authors": [
+        "Tamer Abdelaziz",
+        "Karim Ali"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "给七条 EVM 链上的攻击交易和有证据的负样本建基准，方法本身不用大模型，对象是智能合约交易。",
+      "abstract": "评估恶意智能合约交易检测器时，各论文往往自建数据集。正样本来自事件追踪库，引用里混着攻击、准备步骤和从未上链的交易；或者直接用检测器自己的输出，评估就变成循环论证。负样本则是普通交易。共享基准需要：正样本的执行过程本身能证明攻击，负样本也使用攻击所用的机制，而且两类标签都不能由检测器决定。本文提出 TxBench：覆盖七条 EVM 链的攻击交易与有证据负样本，以及构造它的五步流程。流程收集 BlockSec 事件库或 EVM Hack Registry 引用的每笔交易，把弱点映射到 OWASP SCWE，再用公开数据重建执行。一笔被引用的交易只有在执行中从他人处抽走价值、与已核实的来源陈述一致、并有独立旁证时，才算有效攻击。负样本从攻击附近的链上流量抽样，只有正面证据能确认其合法时才保留。在 1850 笔被引交易中，TxBench 接受 602 起事件的 1012 笔攻击，合计 8.681 亿美元：846 笔合约利用、166 笔密钥失陷。预先固定规则的盲审确认抽查的 100 笔攻击中 98 笔成立（加权 97.7%），100 笔负样本全部成立。作为对照，四个零样本大模型阅读匿名化轨迹时精度尚可，但最多只找到 0.43 的攻击，且找不到任何密钥失陷，说明检测器仍有很大改进空间。",
+      "abstractEn": "Researchers evaluate detectors of malicious smart-contract transactions on datasets that each paper assembles anew. Their positives come from incident trackers, whose citations mix attacks with setup steps and transactions that never ran, or from a detector's own output, which makes the evaluation circular; their negatives are ordinary transactions. A shared benchmark needs positives whose own execution shows the attack and negatives that use the attacks' mechanisms, with no detector deciding either label. We present TxBench, a benchmark of attack transactions and evidence-backed negatives on seven EVM chains, with the five-step pipeline that builds it. The pipeline collects every transaction that BlockSec's incident library or the EVM Hack Registry cites, maps its weakness to OWASP's SCWE taxonomy, and rebuilds its execution from free data sources. A cited transaction qualifies as a valid TxBench attack only if it extracts value from others during execution, is consistent with all verified source claims, and is independently linked to the reported incident by corroborating evidence. Negative examples are sampled from each chain's traffic near the attacks and retained only when positive evidence confirms their legitimacy. Of 1,850 cited transactions, TxBench accepts 1,012 attacks from 602 incidents, worth USD 868.1 million: 846 contract exploits and 166 key compromises. A blind review under rules fixed in advance confirms 98 of 100 sampled attacks (97.7% weighted) and all 100 sampled negatives. As baselines, four zero-shot LLMs reading anonymized traces are precise but find at most 0.43 of the attacks and no key compromise, leaving ample room for better detectors.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "合约利用",
+        "交易基准",
+        "EVM",
+        "DeFi攻击"
+      ],
+      "url": "https://arxiv.org/abs/2611.04411",
+      "pdf": "https://arxiv.org/pdf/2611.04411"
+    },
+    {
+      "id": "2611.04701",
+      "title": "Proving the Wrong Program: Miscompilations as a Threat to zkVM Guarantees",
+      "authors": [
+        "Hui Xuan Tan",
+        "Stefanos Chaliasos",
+        "Alastair F. Donaldson"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "实证研究编译错误会让 zkVM 证明错误程序，并用大模型代理找回触发用例，对象是 SP1、Jolt 及 Rust/LLVM 工具链。",
+      "abstract": "零知识虚拟机（zkVM）让不可信证明者能让验证者相信：一段程序（通常是编译到 RISC-V 的 Rust）被正确执行。证明覆盖的是编译后的二进制，因此一次误编译可以让正确的 zkVM 给出有效证明，而计算内容与开发者源码不同。本文首次在生产级 zkVM（SP1 和 Jolt）上实证考察误编译对 zkVM 保证的威胁。我们收集了 88 个已知 rustc 和 LLVM 误编译及其 Rust 复现；其中 124 个只以 LLVM IR 报告的 LLVM 缺陷，有 60 个由大模型代理找回了 Rust 触发条件。许多缺陷会传到 zkVM：88 个里有 48 个让访客在 SP1 上提交错误输出，46 个在 Jolt 上如此，两边共同的 rustc 缺陷有 15 个。未能复现的多数从未到达 zkVM 目标上的出错代码，例如需要指令集扩展。现有访客程序很少被意外命中：10 个流行 SP1 项目的 13 个访客中，能编译的 552 对访客-缺陷里，有 447 对在有缺陷和无缺陷编译器下得到字节相同的二进制，其余 105 对代码相同或在我们跑过的输入上结果一致。但能向访客贡献代码的攻击者可以故意触发这些缺陷。每个项目大约 40 美元，大模型代理就能找到看起来像普通优化、保持源码行为、却暴露已知缺陷的补丁，覆盖 20 个项目中的 11 个、366 对项目-缺陷中的 12 对。其中 4 例访客提交了错误输出，包括一个以太坊客户端拒绝合法区块；另外 8 例在合法输入上失败。审阅或形式化验证 zkVM 或访客源码都抓不到这种补丁，因为两者都是对的。zkVM 项目因此应把编译器视为可信基的一部分，并跟踪所用工具链上的已知缺陷。",
+      "abstractEn": "A zero-knowledge virtual machine (zkVM) lets an untrusted prover convince a verifier that a program, typically Rust compiled to RISC-V, ran correctly. The proof covers the compiled binary, so a miscompilation can make a correct zkVM produce a valid proof of a computation that differs from the developer's source code. We present the first empirical study of miscompilation as a threat to zkVM guarantees, on two production zkVMs, SP1 and Jolt. We assemble 88 known rustc and LLVM miscompilations with Rust reproducers, using an LLM agent to recover Rust triggers for 60 of 124 LLVM bugs that were reported only as LLVM IR. Many of the bugs carry over to zkVMs: 48 of the 88 make a guest commit a wrong output on SP1 and 46 on Jolt, including the same 15 rustc bugs on both. Most bugs that do not reproduce never reach the faulty code on the zkVM's target, for example because they need an instruction-set extension. Existing guest programs are rarely affected by accident. Across 13 guests of 10 popular SP1 projects, the buggy and the fixed compiler produce byte-identical binaries in 447 of the 552 guest-bug pairs that build, and the other 105 pairs have the same code or agree on every input we ran. An attacker who contributes code to a guest, however, can trigger these bugs on purpose. For about $40 per project, an LLM agent found patches that look like ordinary optimisations, preserve the behaviour of the guest's source, and expose a known bug in 12 of 366 project-bug pairs, across 11 of 20 projects. In four cases the guest commits a wrong output, including an Ethereum client that rejects a valid block, and in the other eight it fails on a valid input. Reviewing or formally verifying the zkVM or the guest's source cannot catch such a patch, because both are correct. zkVM projects should therefore treat their compiler as part of their trusted base and track the known bugs of the toolchain they build with.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkVM",
+        "误编译",
+        "RISC-V",
+        "证明系统"
+      ],
+      "url": "https://arxiv.org/abs/2611.04701",
+      "pdf": "https://arxiv.org/pdf/2611.04701"
+    },
+    {
+      "id": "2026-2717",
+      "title": "Verifiable Data on Bitcoin: FlatMerkle Commitments, Refutable Proofs, and FlatChecks",
+      "authors": [
+        "Sergio Demian Lerner"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在 Bitcoin 上发布可验证数据并用可反驳证明做争议，不用大模型，对象是 Bitcoin 轻客户端与 BitVM 式验证。",
+      "abstract": "我们给出一种在 Bitcoin 上发布数据、并在 Bitcoin 上针对可能说谎的发布者验证这些数据性质的方法。数据是 FlatMerkle 文件：一种结构化字节串，普通 SHA-256 即可支持对数级包含证明和对数级格式错误证明；它放在交易的 annex 中，或者以约四倍代价放在输出里（可由 Bitcoin Core 转发）。我们证明：发布者的普通 Taproot 签名在合适的签名哈希类型下，把发布者绑定到已发布数据；争议时用一次 SHA-256 压缩加签名检查即可认证，不用 annex 时则需三次压缩。关于数据的声明、以及关于这些声明的声明，以两种格式作为证明消息发布：明文编码可整条揭开来反驳；带轨迹的编码在每一层存储验证器输出，任何假消息最多揭开五个元素即可反驳。格式由权衡挑战字节与发布字节的代价模型决定，并由公开上下文固定，因此同一条消息不能按两种格式解读；关于声明的声明链在四个逻辑元素处结束。一场争议因此变成几十次 SHA-256 压缩和每次承诺一次 Schnorr 验证——对 Bitcoin Script 仍然太大，但足以用交互式二分、BitVM2 式分块脚本或混淆电路来裁决。同一技术可验证任何局部可反驳的验证器：每次拒绝都由对规范轨迹中少数几个字的单次检查见证。在 FlatCheck 中，证明者只发布证明；轨迹（验证器中间值）仅在挑战者要求时才发布，随后争议只检查他点名的那一次检查。当验证器拆成若干组、每组只读证明的几个部分时，一次挑战只强制公开一组的轨迹。我们给出两个例子：一个玩具二层（签名转账），512 笔一批的声明约 12200 vbyte；以及在 Bitcoin 上验证 Bitcoin 头链的轻客户端，一个 2016 个头的难度调整周期声明约 45200 vbyte。对局部检查的争议分别约 37500 和 49200 vbyte，对格式错误轨迹分别约 77100 和 99800 vbyte，与组数无关。验证 STARK 证明是另一项应用。我们还去掉了 FlatMerkle 必须是二的幂次大小、否则需要填充的限制。",
+      "abstractEn": "We give a method to publish data on Bitcoin and to verify properties of that data on Bitcoin itself, against a publisher who may lie. The data is a FlatMerkle file – a structured byte string whose ordinary SHA-256 supports logarithmic inclusion proofs and logarithmic proofs of malformation – placed in a transaction's annex or, at four times the cost but relayable by Bitcoin Core, in an output. We show that the publisher's ordinary Taproot signature, with a suitably chosen signature-hash type, binds the publisher to the published data in a form that a dispute can authenticate with a single SHA-256 compression plus the signature check, or with three compressions when no annex is used. Claims about the data, and claims about such claims, are published as proof messages in two formats: a plain encoding, refuted by revealing it whole, and a traced encoding that stores the verifier's output after each level, so that any false message is refuted by revealing at most five of its elements. The format, chosen by a cost model that weighs challenge bytes against published bytes, is fixed by public context so that no message can be read in two formats; chains of claims about claims settle at four logical elements. A dispute thus reduces to a few dozen SHA-256 compressions and one Schnorr verification per commitment – too large for Bitcoin Script, but small enough to adjudicate with an interactive bisection game, a chunked script in the manner of BitVM2, or a garbled circuit. The same technique verifies any locally refutable verifier, one whose every rejection is witnessed by a single check over a few words of a canonical trace. In a FlatCheck, the prover publishes only the proof; the trace, the verifier's intermediate values, is published only if a challenger asks for it, and the dispute then examines the single check he names. When the verifier splits into groups that each read a few parts of the proof, a challenge forces the trace of one group only. We give two examples: a toy L2 of signed transfers, whose 512-transfer batches cost 12,200 vbytes to claim, and a Bitcoin header-chain light client verified on Bitcoin itself, which claims a retarget period of 2,016 headers in 45,200 vbytes; a dispute over a local check costs about 37,500 and 49,200 vbytes, and one over a malformed trace about 77,100 and 99,800, independently of the number of groups. Verifying STARK proofs is another application. We also remove FlatMerkle's restriction to power-of-two sizes without padding.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Bitcoin",
+        "轻客户端",
+        "BitVM",
+        "Merkle承诺"
+      ],
+      "url": "https://eprint.iacr.org/2026/2717",
+      "pdf": "https://eprint.iacr.org/2026/2717.pdf"
+    },
+    {
+      "id": "2026-2702",
+      "title": "The Authentication Complexity of Byzantine Consensus",
+      "authors": [
+        "Kecheng Shi"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "刻画拜占庭共识要多少初始认证才能达到给定容错，不用大模型，对象是同步网络中的广播与共识协议。",
+      "abstract": "拜占庭广播和拜占庭协议是分布式计算的基本问题，也是安全多方计算的构件。在 n 方完全同步网络、信道能识别直接发送者时，经典结果说明认证如何改变对 t 个拜占庭故障的容错。没有预先认证的公钥时，两项任务当且仅当 n>3t 才可能。有完整公钥基础设施（PKI）时，广播可容忍任意 t<n，协议当且仅当 n>2t 才可能。这些阈值留下很大空隙：达到给定故障界到底需要多少初始认证，其分布又如何影响可行性？我们允许每一方的指定公钥验证密钥预先只对其他方的任意子集认证，用有向认证图 G 表示这一设置：边 x→y 当且仅当 y 是 x 的验证者，即 x 的指定公钥一开始就对 y 认证。每条边计一个单位，认证复杂度定义为：在所有能完成所需任务和容错的设置与协议中，初始绑定的最小总数。协议执行中可以再建立认证，不增加初始代价。我们对支持协议的初始认证设置给出紧的图刻画，包括每一方只知道自己的初始密钥表、并不获知认证图的情形。对 2t<n≤3t 且 r=n-2t，协议的认证复杂度为 Θ(min{n²,(n²/r)ln(en/r)})，并给出多项式本地计算的协议。在 n=2t+1 时，广播需要 Ω(n ln² n / ln ln n) 个初始认证，并有用 O(n^{3/2}√ln n) 个初始认证的构造；在这一阈值上，协议还需要完整 PKI。出乎意料的是，即使 t=n/2+o(n)，广播仍有低于二次的认证复杂度。对每个固定故障比例 α∈(1/2,1)，其认证复杂度为 Θ_α(n²)。我们还给出最大容错下广播的精确认证复杂度：容忍 t=n-1 个故障，binom(n,2)-1 个初始认证充分且必要。",
+      "abstractEn": "Byzantine broadcast and Byzantine agreement are fundamental problems in distributed computing and building blocks for secure multiparty computation. In complete synchronous networks of n parties with channels identifying the immediate sender, classical results establish how authentication changes resilience to t Byzantine faults. Without initially authenticated public keys, both tasks are possible if and only if n>3t. With a complete public-key infrastructure (PKI), broadcast tolerates every t<n, and agreement is possible if and only if n>2t. These thresholds leave a substantial gap: how much initial authentication is necessary for a given fault bound, and how does its distribution affect feasibility? We study this question by allowing each party's designated public verification key to be initially authenticated to any subset of the other parties. We represent this setup by a directed authentication graph G whose vertices are parties, with an edge x→y exactly when y is a verifier of x: that is, x's designated public verification key is initially authenticated to y. We count each edge as one unit and define authentication complexity as the minimum total bindings over all setups and protocols achieving the required task and fault tolerance. Protocols may establish further authentication during execution without adding initial cost. We give a tight graph characterization of the initial authentication setups that support agreement, including when each party knows only its own initial key table and is not given the authentication graph. For 2t<n≤3t and r=n-2t, we show that agreement has authentication complexity Θ(min{n²,(n²/r)ln(en/r)}) and give a protocol with polynomial local computation. At n=2t+1, broadcast requires Ω(n ln² n / ln ln n) initial authentications, and has a construction using O(n^{3/2}√ln n) initial authentications. At this threshold, we also show a complete PKI setup is necessary for agreement. Surprisingly, broadcast has subquadratic authentication complexity even when t=n/2+o(n). For every fixed fault fraction α∈(1/2,1), we show its authentication complexity is Θ_α(n²). We also determine the exact authentication complexity of broadcast at maximum resilience: binom n 2 − 1 initial authentications suffice and are necessary to tolerate t=n−1 faults.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "拜占庭共识",
+        "认证复杂度",
+        "PKI",
+        "容错"
+      ],
+      "url": "https://eprint.iacr.org/2026/2702",
+      "pdf": "https://eprint.iacr.org/2026/2702.pdf"
+    }
+  ]
+}
