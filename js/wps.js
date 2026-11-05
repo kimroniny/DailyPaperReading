@@ -18,22 +18,35 @@ function sheetById(sheetId) {
   return WPS_SHEETS.find((sheet) => sheet.id === sheetId) || null;
 }
 
+function refBib(item) {
+  const authors = Array.isArray(item.authors) ? item.authors.filter(Boolean).join(", ") : "";
+  const year = item.year ? String(item.year) : "";
+  const title = String(item.title || "").trim();
+  const venue = String(item.venue || "").trim();
+  const bits = [];
+  if (authors && year) bits.push(`${authors} (${year}).`);
+  else if (authors) bits.push(`${authors}.`);
+  else if (year) bits.push(`(${year}).`);
+  if (title) bits.push(title.endsWith(".") ? title : `${title}.`);
+  if (venue) bits.push(venue.endsWith(".") ? venue : `${venue}.`);
+  return bits.join(" ");
+}
+
+function publishedDate(item) {
+  const added = String(item.addedOn || "");
+  return /^\d{4}-\d{2}-\d{2}$/.test(added) ? added : "";
+}
+
 function paperToWpsPayload(paper) {
   const item = paper || {};
-  const year = item.year ? String(item.year) : "";
-  const authors = Array.isArray(item.authors) ? item.authors.filter(Boolean).join(", ") : "";
-  const topics = Array.isArray(item.topics) ? item.topics.filter(Boolean).join(", ") : "";
   return {
     title: item.title || "",
+    source: item.venue || "",
+    "ref-bib": refBib(item),
     url: item.url || "",
     pdf_url: item.pdf || "",
     abstract: item.abstract || item.abstractEn || "",
-    published_date: item.addedOn || year,
-    authors,
-    venue: item.venue || "",
-    year,
-    topics,
-    one_line: item.abstractOneWord || "",
+    published_date: publishedDate(item),
   };
 }
 
