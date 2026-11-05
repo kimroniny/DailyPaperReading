@@ -1,6 +1,4 @@
-// kdocs 智能表格的自动化回调不返回跨域响应头。
-// application/json 会先发预检，浏览器会拦下真正的 POST。
-// text/plain 属于简单请求，JSON 正文仍会被回调收下。
+// 和 ArxivDailyBlockchain 的 webhook_utils 一样：POST，正文是 JSON，Content-Type 为 application/json。
 const WPS_SHEETS = [
   {
     id: "security",
@@ -55,13 +53,40 @@ async function postPaperToWps(paper, options) {
   const sheet = sheetById(settings.sheetId);
   if (!sheet) throw new Error("unknown sheet");
   const fetchImpl = settings.fetch || fetch;
-  const response = await fetchImpl(settings.webhookUrl || sheet.webhookUrl, {
-    method: "POST",
-    mode: "no-cors",
-    headers: { "Content-Type": "text/plain;charset=UTF-8" },
-    body: JSON.stringify(paperToWpsPayload(paper)),
-  });
-  return response;
+  const url = settings.webhookUrl || sheet.webhookUrl;
+  const body = JSON.stringify(paperToWpsPayload(paper));
+  const retries = settings.retries == null ? 3 : settings.retries;
+  let lastError = null;
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    try {
+      const response = await fetchImpl(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body,
+      });
+      if (response && typeof response.text === "function" && response.type !== "opaque") {
+        const text = await response.text();
+        let data = null;
+        try {
+          data = JSON.parse(text);
+        } catch (error) {
+          data = null;
+        }
+        if (data && data.code !== 0) {
+          const failure = new Error(data.message || "导入失败");
+          failure.wps = data;
+          throw failure;
+        }
+      }
+      return response;
+    } catch (error) {
+      lastError = error;
+      const retryable = !(error instanceof TypeError) && !(error && error.wps);
+      if (!retryable || attempt === retries) break;
+      await new Promise((resolve) => setTimeout(resolve, 1000 * attempt));
+    }
+  }
+  throw lastError;
 }
 
 const PaperWps = { WPS_SHEETS, sheetById, paperToWpsPayload, postPaperToWps };

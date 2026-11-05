@@ -62,23 +62,23 @@ describe("WPS webhook payload", () => {
     assert.equal(paperToWpsPayload({ title: "DoGNAVY-Exploit", topics: ["C"] }).sheet, undefined);
   });
 
-  it("posts JSON as text/plain to the chosen sheet", async () => {
+  it("posts JSON in the request body like ArxivDailyBlockchain", async () => {
     const calls = [];
     const paper = { title: "A paper", url: "https://example.test/a", pdf: "https://example.test/a.pdf" };
     const response = await postPaperToWps(paper, {
       sheetId: "mechanism",
       fetch: async (url, init) => {
         calls.push({ url, init });
-        return { type: "opaque" };
+        return { status: 200 };
       },
     });
 
-    assert.equal(response.type, "opaque");
+    assert.equal(response.status, 200);
     assert.equal(calls.length, 1);
     assert.equal(calls[0].url, WPS_SHEETS.find((sheet) => sheet.id === "mechanism").webhookUrl);
     assert.equal(calls[0].init.method, "POST");
-    assert.equal(calls[0].init.mode, "no-cors");
-    assert.equal(calls[0].init.headers["Content-Type"], "text/plain;charset=UTF-8");
+    assert.equal(calls[0].init.headers["Content-Type"], "application/json");
+    assert.equal(calls[0].url.includes("?"), false);
     const body = JSON.parse(calls[0].init.body);
     assert.deepEqual(Object.keys(body), [
       "title",
@@ -90,6 +90,17 @@ describe("WPS webhook payload", () => {
       "published_date",
     ]);
     assert.equal(body.title, "A paper");
+    await assert.rejects(
+      () =>
+        postPaperToWps(paper, {
+          sheetId: "mechanism",
+          fetch: async () => ({
+            type: "basic",
+            text: async () => JSON.stringify({ code: 1, message: "登录状态失效，请重新开启流程或重新登录" }),
+          }),
+        }),
+      /登录状态失效/
+    );
     await assert.rejects(() => postPaperToWps(paper, { fetch: async () => ({}) }), /unknown sheet/);
   });
 });

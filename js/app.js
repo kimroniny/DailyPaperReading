@@ -356,7 +356,7 @@
         wpsBox.querySelectorAll(".wps-failed").forEach((node) => node.remove());
         const failed = document.createElement("span");
         failed.className = "wps-hint wps-failed";
-        failed.textContent = "导入失败，重试";
+        failed.textContent = error && error.wps ? error.message : "导入失败，重试";
         wpsBox.appendChild(failed);
       }
     }
