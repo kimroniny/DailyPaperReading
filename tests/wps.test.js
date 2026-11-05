@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
-const { paperToWpsPayload, postPaperToWps, WPS_SHEETS } = require("../js/wps.js");
+const { paperToWpsPayload, postPaperToWps, WPS_SHEETS, importedSheets, markPaperImported } = require("../js/wps.js");
 
 describe("WPS webhook payload", () => {
   it("maps a reading card onto the seven WPS columns", () => {
@@ -60,6 +60,27 @@ describe("WPS webhook payload", () => {
       "https://www.kdocs.cn/chatflow/api/v2/func/webhook/3LfkQm1zsMlk0kjIiSjbYZNKZOi"
     );
     assert.equal(paperToWpsPayload({ title: "DoGNAVY-Exploit", topics: ["C"] }).sheet, undefined);
+  });
+
+  it("remembers which sheets a paper was imported to", () => {
+    const memory = {
+      value: null,
+      getItem() {
+        return this.value;
+      },
+      setItem(key, value) {
+        this.value = value;
+      },
+    };
+    assert.deepEqual(importedSheets("2611.04196", memory), []);
+    markPaperImported("2611.04196", "mechanism", memory);
+    markPaperImported("2611.04196", "security", memory);
+    markPaperImported("2611.04196", "security", memory);
+    assert.deepEqual(
+      importedSheets("2611.04196", memory).map((sheet) => sheet.label),
+      ["区块链安全防控", "区块链机制设计"]
+    );
+    assert.deepEqual(importedSheets("other", memory), []);
   });
 
   it("posts JSON in the request body like ArxivDailyBlockchain", async () => {
