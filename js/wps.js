@@ -1,8 +1,22 @@
 // kdocs 智能表格的自动化回调不返回跨域响应头。
 // application/json 会先发预检，浏览器会拦下真正的 POST。
 // text/plain 属于简单请求，JSON 正文仍会被回调收下。
-const WPS_WEBHOOK_URL =
-  "https://www.kdocs.cn/chatflow/api/v2/func/webhook/3CFQc9h2RqjHFUMbY1KKJ73qi2I";
+const WPS_SHEETS = [
+  {
+    id: "security",
+    label: "区块链安全防控",
+    webhookUrl: "https://www.kdocs.cn/chatflow/api/v2/func/webhook/3LfZ9hJlK36xtwAXso5YrkinA1V",
+  },
+  {
+    id: "mechanism",
+    label: "区块链机制设计",
+    webhookUrl: "https://www.kdocs.cn/chatflow/api/v2/func/webhook/3LfkQm1zsMlk0kjIiSjbYZNKZOi",
+  },
+];
+
+function sheetById(sheetId) {
+  return WPS_SHEETS.find((sheet) => sheet.id === sheetId) || null;
+}
 
 function paperToWpsPayload(paper) {
   const item = paper || {};
@@ -25,8 +39,10 @@ function paperToWpsPayload(paper) {
 
 async function postPaperToWps(paper, options) {
   const settings = options || {};
+  const sheet = sheetById(settings.sheetId);
+  if (!sheet) throw new Error("unknown sheet");
   const fetchImpl = settings.fetch || fetch;
-  const response = await fetchImpl(settings.webhookUrl || WPS_WEBHOOK_URL, {
+  const response = await fetchImpl(settings.webhookUrl || sheet.webhookUrl, {
     method: "POST",
     mode: "no-cors",
     headers: { "Content-Type": "text/plain;charset=UTF-8" },
@@ -35,7 +51,7 @@ async function postPaperToWps(paper, options) {
   return response;
 }
 
-const PaperWps = { WPS_WEBHOOK_URL, paperToWpsPayload, postPaperToWps };
+const PaperWps = { WPS_SHEETS, sheetById, paperToWpsPayload, postPaperToWps };
 
 if (typeof module === "object" && module.exports) {
   module.exports = PaperWps;

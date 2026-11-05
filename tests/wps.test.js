@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
-const { paperToWpsPayload, postPaperToWps, WPS_WEBHOOK_URL } = require("../js/wps.js");
+const { paperToWpsPayload, postPaperToWps, WPS_SHEETS } = require("../js/wps.js");
 
 describe("WPS webhook payload", () => {
   it("maps a reading card onto the sheet fields used by ArxivDailyBlockchain", () => {
@@ -45,28 +45,44 @@ describe("WPS webhook payload", () => {
     assert.equal(payload.authors, "");
   });
 
-  it("posts JSON as text/plain so the browser can reach kdocs", async () => {
-    const calls = [];
-    const response = await postPaperToWps(
-      { title: "A paper", url: "https://example.test/a", pdf: "https://example.test/a.pdf" },
-      {
-        fetch: async (url, init) => {
-          calls.push({ url, init });
-          return { type: "opaque" };
-        },
-      }
+  it("lists the two named sheets and keeps the paper fields free of a sheet flag", () => {
+    assert.deepEqual(
+      WPS_SHEETS.map((sheet) => [sheet.id, sheet.label]),
+      [
+        ["security", "区块链安全防控"],
+        ["mechanism", "区块链机制设计"],
+      ]
     );
+    assert.equal(
+      WPS_SHEETS[0].webhookUrl,
+      "https://www.kdocs.cn/chatflow/api/v2/func/webhook/3LfZ9hJlK36xtwAXso5YrkinA1V"
+    );
+    assert.equal(
+      WPS_SHEETS[1].webhookUrl,
+      "https://www.kdocs.cn/chatflow/api/v2/func/webhook/3LfkQm1zsMlk0kjIiSjbYZNKZOi"
+    );
+    assert.equal(paperToWpsPayload({ title: "DoGNAVY-Exploit", topics: ["C"] }).sheet, undefined);
+  });
+
+  it("posts JSON as text/plain to the chosen sheet", async () => {
+    const calls = [];
+    const paper = { title: "A paper", url: "https://example.test/a", pdf: "https://example.test/a.pdf" };
+    const response = await postPaperToWps(paper, {
+      sheetId: "mechanism",
+      fetch: async (url, init) => {
+        calls.push({ url, init });
+        return { type: "opaque" };
+      },
+    });
 
     assert.equal(response.type, "opaque");
     assert.equal(calls.length, 1);
-    assert.equal(calls[0].url, WPS_WEBHOOK_URL);
+    assert.equal(calls[0].url, WPS_SHEETS.find((sheet) => sheet.id === "mechanism").webhookUrl);
     assert.equal(calls[0].init.method, "POST");
     assert.equal(calls[0].init.mode, "no-cors");
     assert.equal(calls[0].init.headers["Content-Type"], "text/plain;charset=UTF-8");
-    assert.deepEqual(JSON.parse(calls[0].init.body), paperToWpsPayload({
-      title: "A paper",
-      url: "https://example.test/a",
-      pdf: "https://example.test/a.pdf",
-    }));
+    assert.equal(JSON.parse(calls[0].init.body).title, "A paper");
+    assert.equal(JSON.parse(calls[0].init.body).sheet, undefined);
+    await assert.rejects(() => postPaperToWps(paper, { fetch: async () => ({}) }), /unknown sheet/);
   });
 });

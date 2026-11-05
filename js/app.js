@@ -1,7 +1,7 @@
 (function () {
   const { filterPapers, sortPapers, uniqueTopics, uniqueYears, uniqueVenues } = window.PaperFilter;
   const { mergeDayFiles, groupPapersByDate, groupDaysByMonth, pickVisibleDay } = window.PaperCatalog;
-  const { postPaperToWps } = window.PaperWps;
+  const { postPaperToWps, WPS_SHEETS } = window.PaperWps;
   let papers = [];
 
   const state = {
@@ -315,25 +315,60 @@
       links.appendChild(anchor);
     });
 
+    const wpsBox = document.createElement("div");
+    wpsBox.className = "wps-box";
+
+    function showSheetChoices() {
+      wpsBox.replaceChildren();
+      const hint = document.createElement("span");
+      hint.className = "wps-hint";
+      hint.textContent = "导入到";
+      wpsBox.appendChild(hint);
+      WPS_SHEETS.forEach((sheet) => {
+        const choice = document.createElement("button");
+        choice.type = "button";
+        choice.className = "ghost wps-choice";
+        choice.textContent = sheet.label;
+        choice.addEventListener("click", () => sendToSheet(sheet, choice));
+        wpsBox.appendChild(choice);
+      });
+    }
+
+    async function sendToSheet(sheet, choice) {
+      const buttons = [...wpsBox.querySelectorAll("button")];
+      buttons.forEach((button) => {
+        button.disabled = true;
+      });
+      const original = choice.textContent;
+      choice.textContent = "导入中…";
+      try {
+        await postPaperToWps(paper, { sheetId: sheet.id });
+        wpsBox.replaceChildren();
+        const done = document.createElement("p");
+        done.className = "wps-done";
+        done.textContent = `已导入到 ${sheet.label}`;
+        wpsBox.appendChild(done);
+      } catch {
+        buttons.forEach((button) => {
+          button.disabled = false;
+        });
+        choice.textContent = original;
+        wpsBox.querySelectorAll(".wps-failed").forEach((node) => node.remove());
+        const failed = document.createElement("span");
+        failed.className = "wps-hint wps-failed";
+        failed.textContent = "导入失败，重试";
+        wpsBox.appendChild(failed);
+      }
+    }
+
     const importWps = document.createElement("button");
     importWps.type = "button";
     importWps.className = "ghost wps-import";
     importWps.textContent = "导入 WPS";
-    importWps.addEventListener("click", async () => {
-      if (importWps.disabled) return;
-      importWps.disabled = true;
-      importWps.textContent = "导入中…";
-      try {
-        await postPaperToWps(paper);
-        importWps.textContent = "已导入";
-      } catch {
-        importWps.disabled = false;
-        importWps.textContent = "导入失败，重试";
-      }
-    });
-    links.appendChild(importWps);
+    importWps.addEventListener("click", showSheetChoices);
+    wpsBox.appendChild(importWps);
 
-    els.dialogBody.replaceChildren(meta, title, authors, oneLabel, oneBody, label, body, toggle, tags, links);
+    els.dialogBody.replaceChildren(meta, title, authors, oneLabel, oneBody, label, body, toggle, tags, links, wpsBox);
     els.dialog.showModal();
     els.dialogClose.focus();
   }
