@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
-const { paperToWpsPayload, postPaperToWps, WPS_WEBHOOK_URL } = require("../js/wps.js");
+const { paperToWpsPayload, postPaperToWps, WPS_SHEETS, webhookUrlForSheet } = require("../js/wps.js");
 
 describe("WPS webhook payload", () => {
   it("maps a reading card onto the sheet fields used by ArxivDailyBlockchain", () => {
@@ -45,28 +45,38 @@ describe("WPS webhook payload", () => {
     assert.equal(payload.authors, "");
   });
 
-  it("posts JSON as text/plain so the browser can reach kdocs", async () => {
-    const calls = [];
-    const response = await postPaperToWps(
-      { title: "A paper", url: "https://example.test/a", pdf: "https://example.test/a.pdf" },
-      {
-        fetch: async (url, init) => {
-          calls.push({ url, init });
-          return { type: "opaque" };
-        },
-      }
+  it("adds the chosen sheet while leaving the paper fields in place", () => {
+    const paper = { title: "DoGNAVY-Exploit", topics: ["C"] };
+    assert.deepEqual(
+      WPS_SHEETS.map((sheet) => sheet.id),
+      ["A", "C", "C-chain"]
     );
+    assert.equal(paperToWpsPayload(paper, "A").sheet, "A");
+    assert.equal(paperToWpsPayload(paper, "C").sheet, "C");
+    assert.equal(paperToWpsPayload(paper, "C-chain").sheet, "C-chain");
+    assert.equal(paperToWpsPayload(paper, "C").topics, "C");
+    assert.equal(paperToWpsPayload(paper, "C").title, "DoGNAVY-Exploit");
+    assert.equal(webhookUrlForSheet(WPS_SHEETS[2]).endsWith("?sheet=C-chain"), true);
+  });
+
+  it("posts JSON as text/plain to the chosen sheet", async () => {
+    const calls = [];
+    const paper = { title: "A paper", url: "https://example.test/a", pdf: "https://example.test/a.pdf" };
+    const response = await postPaperToWps(paper, {
+      sheetId: "C",
+      fetch: async (url, init) => {
+        calls.push({ url, init });
+        return { type: "opaque" };
+      },
+    });
 
     assert.equal(response.type, "opaque");
     assert.equal(calls.length, 1);
-    assert.equal(calls[0].url, WPS_WEBHOOK_URL);
+    assert.equal(calls[0].url, webhookUrlForSheet(WPS_SHEETS.find((sheet) => sheet.id === "C")));
     assert.equal(calls[0].init.method, "POST");
     assert.equal(calls[0].init.mode, "no-cors");
     assert.equal(calls[0].init.headers["Content-Type"], "text/plain;charset=UTF-8");
-    assert.deepEqual(JSON.parse(calls[0].init.body), paperToWpsPayload({
-      title: "A paper",
-      url: "https://example.test/a",
-      pdf: "https://example.test/a.pdf",
-    }));
+    assert.equal(JSON.parse(calls[0].init.body).sheet, "C");
+    await assert.rejects(() => postPaperToWps(paper, { fetch: async () => ({}) }), /unknown sheet/);
   });
 });
