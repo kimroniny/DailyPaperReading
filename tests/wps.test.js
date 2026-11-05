@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const { paperToWpsPayload, postPaperToWps, WPS_SHEETS } = require("../js/wps.js");
 
 describe("WPS webhook payload", () => {
-  it("maps a reading card onto the sheet fields used by ArxivDailyBlockchain", () => {
+  it("maps a reading card onto the seven WPS columns", () => {
     const payload = paperToWpsPayload({
       id: "2611.04196",
       title: "DoGNAVY-Exploit",
@@ -21,28 +21,26 @@ describe("WPS webhook payload", () => {
 
     assert.deepEqual(payload, {
       title: "DoGNAVY-Exploit",
+      source: "arXiv",
+      ref_bib: "Yuxuan Wang, Dadi Guo (2026). DoGNAVY-Exploit. arXiv.",
       url: "https://arxiv.org/abs/2611.04196",
       pdf_url: "https://arxiv.org/pdf/2611.04196",
       abstract: "中文摘要",
       published_date: "2026-11-04",
-      authors: "Yuxuan Wang, Dadi Guo",
-      venue: "arXiv",
-      year: "2026",
-      topics: "C",
-      one_line: "一句话",
     });
   });
 
-  it("falls back to the English abstract and the year when the card is sparse", () => {
+  it("falls back to the English abstract and leaves the date empty without a collection day", () => {
     const payload = paperToWpsPayload({
       title: "Only English",
       abstractEn: "English abstract",
       year: 2024,
     });
     assert.equal(payload.abstract, "English abstract");
-    assert.equal(payload.published_date, "2024");
+    assert.equal(payload.published_date, "");
     assert.equal(payload.pdf_url, "");
-    assert.equal(payload.authors, "");
+    assert.equal(payload.source, "");
+    assert.equal(payload.ref_bib, "(2024). Only English.");
   });
 
   it("lists the two named sheets and keeps the paper fields free of a sheet flag", () => {
@@ -81,8 +79,17 @@ describe("WPS webhook payload", () => {
     assert.equal(calls[0].init.method, "POST");
     assert.equal(calls[0].init.mode, "no-cors");
     assert.equal(calls[0].init.headers["Content-Type"], "text/plain;charset=UTF-8");
-    assert.equal(JSON.parse(calls[0].init.body).title, "A paper");
-    assert.equal(JSON.parse(calls[0].init.body).sheet, undefined);
+    const body = JSON.parse(calls[0].init.body);
+    assert.deepEqual(Object.keys(body), [
+      "title",
+      "source",
+      "ref_bib",
+      "url",
+      "pdf_url",
+      "abstract",
+      "published_date",
+    ]);
+    assert.equal(body.title, "A paper");
     await assert.rejects(() => postPaperToWps(paper, { fetch: async () => ({}) }), /unknown sheet/);
   });
 });
