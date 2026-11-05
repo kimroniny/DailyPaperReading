@@ -12,8 +12,45 @@ const WPS_SHEETS = [
   },
 ];
 
+const WPS_IMPORT_KEY = "dailypaperreading.wps-imports";
+
 function sheetById(sheetId) {
   return WPS_SHEETS.find((sheet) => sheet.id === sheetId) || null;
+}
+
+function importStore(storage) {
+  if (storage) return storage;
+  return typeof localStorage !== "undefined" ? localStorage : null;
+}
+
+function readImportMap(storage) {
+  const store = importStore(storage);
+  if (!store) return {};
+  try {
+    const parsed = JSON.parse(store.getItem(WPS_IMPORT_KEY) || "{}");
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    return parsed;
+  } catch (error) {
+    return {};
+  }
+}
+
+function importedSheets(paperId, storage) {
+  const map = readImportMap(storage);
+  const saved = Array.isArray(map[paperId]) ? map[paperId] : [];
+  const ids = new Set(saved);
+  return WPS_SHEETS.filter((sheet) => ids.has(sheet.id));
+}
+
+function markPaperImported(paperId, sheetId, storage) {
+  if (!paperId || !sheetById(sheetId)) return importedSheets(paperId, storage);
+  const store = importStore(storage);
+  const map = readImportMap(store);
+  const ids = importedSheets(paperId, store).map((sheet) => sheet.id);
+  if (!ids.includes(sheetId)) ids.push(sheetId);
+  map[paperId] = WPS_SHEETS.filter((sheet) => ids.includes(sheet.id)).map((sheet) => sheet.id);
+  if (store) store.setItem(WPS_IMPORT_KEY, JSON.stringify(map));
+  return importedSheets(paperId, store);
 }
 
 function refBib(item) {
@@ -89,7 +126,15 @@ async function postPaperToWps(paper, options) {
   throw lastError;
 }
 
-const PaperWps = { WPS_SHEETS, sheetById, paperToWpsPayload, postPaperToWps };
+const PaperWps = {
+  WPS_SHEETS,
+  WPS_IMPORT_KEY,
+  sheetById,
+  importedSheets,
+  markPaperImported,
+  paperToWpsPayload,
+  postPaperToWps,
+};
 
 if (typeof module === "object" && module.exports) {
   module.exports = PaperWps;
