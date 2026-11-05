@@ -1,0 +1,248 @@
+{
+  "date": "2026-11-05",
+  "papers": [
+    {
+      "id": "2611.06294",
+      "title": "A.S.E 2.0: Understanding How Repository Context Impacts the Security of LLM-Generated Code",
+      "authors": [
+        "Jiongchi Yu",
+        "Keke Lian",
+        "Junqing Wang",
+        "Zhikang Fan",
+        "Zhaoxuan Li",
+        "Yongheng Huang",
+        "Ziming Zhao",
+        "Dong Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用真实 CVE 仓库基准衡量仓库上下文会不会让大模型写出可被利用的代码，对象是开源项目里的安全敏感代码。",
+      "abstract": "大模型编程助手和代理在写代码前会先拼一份仓库上下文。对安全敏感代码来说，这份上下文决定了模型看到的是项目里的防护（例如鉴权检查），还是可以模仿的不安全代码。但现有上下文构造几乎只为功能正确服务，安全代码基准又把上下文当成固定输入，因此仓库上下文如何影响生成代码的安全性仍不清楚。我们构建 CASE-Bench：145 个仓库级任务，来自 51 个项目中的真实 CVE。每个任务在 Docker 中运行，有功能测试和双向验证过的概念验证利用，并标注了仓库里强化或削弱该安全属性的代码。用 CASE-Bench，我们比较了 13 种上下文构造方法和 6 种对照，覆盖 6 个大模型，还改动单个上下文元素，并分析编程代理的轨迹。结果是：面向功能的上下文最多把功能通过率提高 8.2 个百分点，安全通过率最多只提高 3.7 个百分点；拿掉一条防护最多让安全通过率下降 8.1 个百分点，而插入一条不安全范例会让「功能正确但可被利用」的代码增加 6.3 个百分点；编程代理只在 27%–36% 的轨迹里看到相关防护。这些结果可指导面向安全的上下文构造和安全代码评测。",
+      "abstractEn": "Large language model (LLM) coding assistants and agents construct a repository context before generating code. For security-sensitive code, this context decides whether the model sees the project's safeguards (e.g., authorization checks) or insecure code to imitate. However, context construction is designed almost exclusively for functional correctness, and secure-code benchmarks treat the context as fixed, so how repository context affects the security of generated code remains unclear. We construct CASE-Bench, a benchmark of 145 repository-level tasks from real CVEs in 51 projects. Each task runs in Docker, has functional tests and a proof-of-concept exploit validated in both directions, and is annotated with the repository code that enforces or undermines its security. Using CASE-Bench, we compare 13 context construction methods and six controls with six LLMs, edit single context elements, and analyze coding-agent trajectories. We find that functionality-oriented context raises the functional pass rate by up to 8.2 percentage points (pp) but the secure pass rate by at most 3.7 pp, withholding a safeguard lowers the secure pass rate by up to 8.1 pp, while one inserted insecure exemplar raises correct-but-exploitable code by 6.3 pp, and coding agents observe the relevant safeguard in only 27-36% of trajectories. These findings inform security-aware context construction and secure-code evaluation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "生成代码安全",
+        "仓库上下文",
+        "CVE基准",
+        "编程代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.06294",
+      "pdf": "https://arxiv.org/pdf/2611.06294"
+    },
+    {
+      "id": "2611.06257",
+      "title": "Analysis of Local Open-Weight LLM Agents on Vulnerability-Reproduction Tasks",
+      "authors": [
+        "Jorge García-Carrasco",
+        "Javier Sanchis",
+        "Álvaro Navarro",
+        "Alejandro Maté",
+        "Juan Trujillo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评估单卡开源权重大模型代理能否根据漏洞描述做出崩溃输入，对象是 CyberGym 里的真实软件构建。",
+      "abstract": "能放进一块消费级 GPU 的开源权重语言模型，能做的任务越来越多；它们的价值在于可以在本地跑，不必把代码送到托管服务。漏洞复现——把漏洞描述变成能让有漏洞构建崩溃的输入——很适合这类模型：它更接近测试生成而不是读懂代码，而且必须对着可执行构建跑，而不是只读源码。为评估现有模型能否完成这件事，我们在十个 CyberGym 漏洞复现任务上，评估了十二种本地模型配置，覆盖三代、两种架构和三种量化，每种配置跑三次、同一套 harness，并公开全部产物。结果显示：每种配置（小到 4B）都能解掉六个较容易任务中的大多数，配置差异只出现在剩下四个任务上；更难的任务需要 27B。成对比较时，量化没有改变模型能解哪些题，但改变了到达解的速度；混合专家模型用更少墙钟时间拿到同样分数。我们还看了代理轨迹：几乎每次运行（包括失败）都会点出有漏洞的函数并给出正确假设，解与未解的分界在于这个假设会不会变成可工作的输入。",
+      "abstractEn": "Open-weight language models that fit on a single consumer GPU are becoming capable on a growing range of tasks, and they matter because they can run locally without sending the code to a hosted service. Vulnerability reproduction, turning a vulnerability description into an input that crashes the vulnerable build, is a natural target for them, since it is an automated analysis task closer to test generation than to code comprehension and it runs against a build that must be executed rather than read. In order to assess whether current models can perform it, we evaluate twelve configurations of local models, spanning three generations, two architectures and three quantization levels, on ten CyberGym vulnerability-reproduction tasks, three runs each under one harness, and release the full artefact. We show that every configuration, down to the 4B model, solves most of the six easier tasks, and configurations separate only on the remaining four. For the harder tasks, the 27B model is required. Quantization did not change what the models solved in any matched pair, but it changed how fast they got there, and the mixture of experts reached the same scores in less wall clock. We also examine the agent trajectories. Almost every run we examined, including those that fail, names the vulnerable function and states the correct hypothesis, and what separates a solved task from an unsolved one is whether that hypothesis becomes a working input.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞复现",
+        "开源权重模型",
+        "测试生成",
+        "CyberGym"
+      ],
+      "url": "https://arxiv.org/abs/2611.06257",
+      "pdf": "https://arxiv.org/pdf/2611.06257"
+    },
+    {
+      "id": "10.1016-j.cose.2026.105208",
+      "title": "Evaluating security and inclusivity in LLM-generated code",
+      "authors": [
+        "Bilal Naqvi",
+        "Waleed Shahid",
+        "Janne Parkkila",
+        "Hammad Afzal"
+      ],
+      "year": 2026,
+      "venue": "Computers & Security",
+      "abstractOneWord": "用不同详细程度的包容性说明，评估大模型生成的口令恢复代码是否满足安全和包容性，对象是认证与口令恢复服务。",
+      "abstract": "网络安全的人因研究有进展，但包容性、尤其是神经多样性相关问题仍很少被讨论。本文考察大模型能否在安全系统和服务的开发中，生成同时考虑包容性的代码。研究使用两个用户故事，每个故事设三种实验条件，包容性说明从第一种完全不写，到第三种写得很细。每种条件下，大模型都要按给定需求生成代码产物。为降低单次随机性，每种条件重复生成十次。生成的代码先由六个不同大模型按量表独立打分；量表打分最高的产物再交给十名包容性专家和十名安全专家评估，安全评估还辅以自动化工具的静态和动态分析。结果表明，说明写得越细，大模型生成代码的包容性越好。用混合效应模型比较后，包容性评估上人类与大模型没有统计显著差异，安全评估则有显著差异。这些发现对把大模型纳入安全软件开发有启发：需求写到多细很重要，人类评估者和大模型评估者在评判生成代码时也各有所长。",
+      "abstractEn": "Despite developments in the human aspects of cybersecurity, inclusivity concerns, particularly related to neurodiversity, remain largely unexplored. This paper examines the role that Large Language Models (LLMs) can play in generating code that integrates inclusivity concerns in the development of security systems and services. To do so, a study was conducted using two user stories, each comprising three experimental cases that varied in the level of inclusivity specification from no specification in the first case to a detailed specification in the third. During each case, the LLM was tasked to generate a code artifact that implemented the specified requirements. Furthermore, ten repeated code generations were performed in each case to minimize the impact of run-to-run stochastic variation. The generated code artifacts were then subjected to independent evaluations by six different LLMs using a rubric-based assessment. The highest-scoring artifacts based on the rubric-based LLM evaluations were subsequently evaluated by ten inclusivity and ten security experts, and the security assessment was further complemented by static and dynamic analysis using automated tools. The results indicate that greater specification detail is associated with improved inclusivity in LLM-generated code. Statistical comparisons using mixed-effects models revealed no statistically significant differences between human and LLM-based evaluations for inclusivity, whereas a significant difference was observed for security assessments. The findings have implications for research on integrating LLMs within secure software development contexts by highlighting the role of specification details and complementary strengths of human and LLM evaluators for assessing LLM-generated code.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "生成代码安全",
+        "认证",
+        "OWASP",
+        "包容性"
+      ],
+      "url": "https://doi.org/10.1016/j.cose.2026.105208"
+    },
+    {
+      "id": "2611.03555",
+      "title": "MCP Tool Poisoning in Agentic AI Frameworks: A Cross-Framework Measurement Study",
+      "authors": [
+        "Farooq Shaikh",
+        "Biagio Montaruli"
+      ],
+      "year": 2026,
+      "venue": "AISec 2026 @ CCS",
+      "abstractOneWord": "实测 12 个代理框架对 MCP 工具投毒的抵抗力，对象是把工具描述原样送进大模型的代理运行时。",
+      "abstract": "Model Context Protocol（MCP）让代理框架把语言模型接到外部工具提供者，但其设计会把攻击者可控内容（工具描述、schema 字段、响应数据）不经校验直接送进模型上下文。已有基准衡量模型是否听从被投毒指令，但往往不确认工具是否真的执行，也不隔离框架层对防御的贡献，更不记录厂商问责情况。本文给出首次带真实工具执行的跨框架 MCP 工具投毒测量。一套 25 类根因分类把已有分类（Invariant Labs、MCPTox、OWASP MCP03、MSB、AgentDojo、ETDI、CSA）统一到全部协议入口；开源工具 mcpvenom 在 12 个框架、18 个模型和 45 个攻击场景上驱动 9720 格易感矩阵，并用金丝雀 HTTP 回执独立确认是否发生外泄。总体攻击成功率为 22.9%（2113 个易感格），分三档证据：派出攻击者工具调用（64.9%）、确认接触攻击者端点（23.0%）、核实密钥外泄（12.1%）；1259 份转录经人工核对。观察到的抵抗都来自模型层：九个核心框架的成功率聚在 23%–26%（卡方 3.30，p=0.91），没有框架实现有意防御；个别框架属性会碰巧缓解，例如 Pydantic AI 拒绝重名工具（16.6% ASR）、AG2 的执行器约束（4.6%）。按推荐做描述字段正则扫描，45 个场景里能挡住 20 个，125 条良性描述上假阳性 7.2%，所以只扫元数据只是部分控制。模型 ASR 从 0.4%（Claude Fable 5）到 49.7%（Amazon Nova Pro）。我们对十二个框架做了代码审计，确认没有有意的工具投毒防御；向四家厂商提交的五次协同披露全部被拒，说明代理安全在栈的哪一层都没有人认领。",
+      "abstractEn": "The Model Context Protocol (MCP) enables agentic AI frameworks to connect language models to external tool providers, yet its design carries attacker-controlled content, spanning tool descriptions, schema fields, and response data, directly into model context without validation. Prior benchmarks measure model compliance with poisoned instructions but stop short of confirming real execution, do not isolate the framework layer's contribution to defense, and do not document vendor accountability. We present the first cross-framework measurement of MCP tool poisoning with real tool execution. A 25-class root-cause taxonomy unifies prior classifications (Invariant Labs, MCPTox, OWASP MCP03, MSB, AgentDojo, ETDI, CSA) across all protocol entry points, and an open-source tool (mcpvenom) drives a 9,720-cell susceptibility matrix across 12 frameworks, 18 models, and 45 attack scenarios, with a dual oracle that independently confirms exfiltration via canary HTTP receipt. The overall attack success rate is 22.9% (2,113 vulnerable cells) across three evidence tiers: dispatched attacker tool call (64.9%), confirmed network contact with the attacker endpoint (23.0%), and verified secret exfiltration (12.1%); verdicts were validated by hand across 1,259 transcripts. All observed resistance is model-level: across the tested configurations, nine core frameworks cluster within 23 to 26% (chi-squared=3.30, p=0.91), with no framework implementing intentional defense, though incidental framework properties do provide mitigation in specific cases: duplicate-tool-name rejection in Pydantic AI (16.6% ASR) and executor constraints in AG2 (4.6%); a regex scanner implementing the recommended description checks rejects 20 of the 45 scenarios at a 7.2% false-positive rate on 125 benign descriptions, so metadata scanning alone is a partial control. Model ASR ranges from 0.4% (Claude Fable 5) to 49.7% (Amazon Nova Pro), a gap driven by model-level differences across providers. Claude Opus 4.8 is vulnerable in only 8 of 530 cells (1.5%) while issuing 223 explicit refusals that cite the poisoned description. Claude Sonnet 5 exhibits a narrate-then-comply pattern, verbally identifying the attack as a prompt injection before executing the exfiltration call. Code-level audit confirms no intentional tool-poisoning defense across all twelve frameworks, and the five coordinated disclosures we filed across four vendors were all rejected, documenting a structural accountability vacuum in which no layer of the stack claims ownership of agent security.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MCP",
+        "工具投毒",
+        "代理框架",
+        "提示注入"
+      ],
+      "url": "https://arxiv.org/abs/2611.03555",
+      "pdf": "https://arxiv.org/pdf/2611.03555"
+    },
+    {
+      "id": "2611.01585",
+      "title": "StateGate: A Behavioral-Fidelity Prompt Optimization Method for Long-Chain LLM Agents",
+      "authors": [
+        "Shicheng Huang",
+        "Cai Fu",
+        "Jianqiang Lyu",
+        "Yifan Zhang",
+        "Xianmao Ji"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把提示里的约束变成外部确定性运行时的符号门，用来保证长链代理真正做完漏洞发现步骤，对象是安全领域的漏洞发现任务。",
+      "abstract": "长链大模型代理在复杂任务上常出现行为退化：提示写全了，步骤却没有执行全。现有做法有三个问题。第一，约束绑在文本载体上，自然语言约束句一删，约束力就没了。第二，执行过程缺少独立校验，判断所用证据往往由执行方自己提供，自我指涉的验证会失效。第三，补救方案难以泛化，写死的机制换任务就用不了。本文提出 StateGate：一种提示优化方案，把语义约束变成由外部确定性运行时强制执行的符号门。把约束内容和生效载体拆开后，长链任务既能保持行为保真，又不丢掉提示的约束力。具体地，我们提出去重、泛化、外置、文本转门控四种压缩策略及对应决策链，使提示可以按原则符号化；再设计状态文件、校验器和编排器三件套，把判断权和执行权彻底分开；并形式证明符号约束是否被遵守与上下文长度无关。最后在安全领域的漏洞发现任务上验证：StateGate 达到 100% 执行闭环，并能准确做漏洞检测。",
+      "abstractEn": "Currently, long-chain LLM agents commonly suffer from behavioral degradation in complex tasks, where prompts are written in full but steps are not executed in full. To address this issue, existing approaches face three major challenges. First, constraints are strongly bound to their textual carriers; once natural-language constraint sentences are removed, their binding force vanishes. Second, the execution process lacks independent verification, as the evidence for judgment is often supplied by the executing party itself, leading to the failure of self-referential validation. Third, existing remediation schemes are difficult to generalize, and hard-coded mechanisms cannot be transferred across tasks. In this paper, we propose StateGate, a novel prompt-optimization scheme that transforms semantic constraints into symbolic gates enforced by an external deterministic runtime. By decoupling the content of a constraint from its carrier of efficacy, StateGate achieves behavioral fidelity in long-chain tasks without losing the binding force of the prompt. Specifically, we first propose four independent compression strategies (deduplication, generalization, externalization, and text-to-gating) together with their corresponding decision chains, enabling principled prompt symbolization. Second, we design a three-component architecture consisting of a state file, a validator, and an orchestrator, which thoroughly separates judgment authority from execution authority. Third, we formally prove that the compliance of symbolic constraints is independent of context size. Finally, we validate the framework on a vulnerability-discovery task in the security domain; the results show that StateGate achieves 100% execution closure and accurate vulnerability detection.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞发现",
+        "长链代理",
+        "提示优化",
+        "行为保真"
+      ],
+      "url": "https://arxiv.org/abs/2611.01585",
+      "pdf": "https://arxiv.org/pdf/2611.01585"
+    },
+    {
+      "id": "2026-2749",
+      "title": "Shielded Bitcoin: Private Transfers on the Bitcoin L1",
+      "authors": [
+        "Clara Shikhelman",
+        "Mikhail Komarov",
+        "Aleksei Moskvin"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在不改 Bitcoin 共识的前提下，用零知识证明在一层上做隐蔽转账，不用大模型，对象是 Bitcoin 一层与钱包密钥。",
+      "abstract": "本文提出 Shielded Bitcoin：一种直接在 Bitcoin 一层做隐私转账的协议，不改 Bitcoin 共识。设计借鉴 Zcash 和更早的隐蔽票据系统：价值以加密票据持有，花费用公开 nullifier 标记，有效性用零知识证明建立。与 Zcash 不同，Shielded Bitcoin 不引入专用共识链：全部协议数据发在 Bitcoin 上，转账有效性由 PIPEs v2 强制，隐蔽状态通过对已接受转账按 Bitcoin 顺序做确定性重放来重建。在元协议转账层，Shielded Bitcoin 是非托管的：花费权留在用户控制的钱包密钥里（密钥封在密文中），索引器和重放层都拿不到花费用户票据的权限。一次隐蔽转账不公开金额、发送方、接收方和在转账图中的位置，同时每一步加密状态迁移的有效性仍可公开验证。隐蔽状态（票据树、nullifier 集合、块级根历史）全部在链下维护：任意两个正确实现重放同一段 Bitcoin 历史，就会得到相同协议状态，无需协调。本文定义了转账模型、票据结构、由密文导出的票据叶子、nullifier 规则、交易绑定、重放语义和发布假设。资金如何转入和转出隐蔽系统（peg-in / peg-out）属于更大系统，不在本文范围。",
+      "abstractEn": "This paper introduces Shielded Bitcoin, a protocol for private transfer of Bitcoin directly on the Bitcoin L1, requiring no changes to Bitcoin consensus. Its design borrows from the architecture of Zcash and earlier shielded-note systems: value is held as encrypted notes, spends are marked by public nullifiers, and validity is established by zero-knowledge proofs. Unlike Zcash, Shielded Bitcoin introduces no dedicated consensus chain: all protocol data is published on Bitcoin, transfer validity is enforced through PIPEs v2, and shielded state is reconstructed by deterministic replay of accepted transfers in Bitcoin order. At the metaprotocol transfer level, Shielded Bitcoin is non-custodial: spending authority remains with user-controlled wallet keys encrypted in a ciphertext, and neither indexers nor the replay layer receive authority to spend user notes. A shielded transfer does not publicly reveal its amount, sender, receiver, and place in the transfer graph, while keeping the validity of every encrypted state transition publicly verifiable. Shielded state, comprising the note tree, nullifier set, and block-level root history, is maintained entirely off-chain: any two correct implementations replaying the same Bitcoin history derive identical protocol state without coordination. The paper defines the transfer model, note structure, ciphertext-derived note leaves, nullifier rules, transaction binding, replay semantics, and publication assumptions. Peg-in and peg-out, the mechanisms by which value enters and exits the shielded transfer system, belong to the broader system and fall outside the scope of this paper.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Bitcoin",
+        "零知识证明",
+        "隐私转账",
+        "nullifier"
+      ],
+      "url": "https://eprint.iacr.org/2026/2749",
+      "pdf": "https://eprint.iacr.org/2026/2749.pdf"
+    },
+    {
+      "id": "2026-2755",
+      "title": "Blockchain-Anchored Proactive Refresh for Dynamic Threshold Services",
+      "authors": [
+        "Seunghyun Cho",
+        "Jaeyeon Lee",
+        "Myeongjun Kim",
+        "Hyunseok Jeong",
+        "Young-Sik Kim"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用区块链账本锚定阈值份额的主动刷新，堵住中止刷新造成的密钥泄露，不用大模型，对象是动态委员会阈值服务。",
+      "abstract": "长期运行的阈值服务必须给部署后加入的参与者发份额，对移动敌手做刷新，并让刷新期间离线的参与者补上错过的更新。我们证明：只按已提交的 epoch 计算暴露是不够的——一次中止的刷新如果已经公布候选更新令牌，即使没有任何已提交 epoch 超出腐败预算，也可能泄露密钥。为消掉这种暴露，我们按更细的状态给安全性编号，覆盖已提交 epoch 和中止尝试。每个状态的预算约束所有其本地材料或公开更新记录来自该状态的参与者，并由一条只追加、中止也不回滚的持久发布账本来强制。固定的经销商委员会把加密更新记录锚定到区块链 blob 存储，离线参与者无需联系经销商即可非交互恢复；链上还有交互式二分争议协议，确定性地把错误记录归到责任方。核心密码学结果是对真实生成转录做显式的分布保持平移，从而在不把底层子协议理想化的前提下，证明经销商状态泄露后的主动保密性和过去份额不可伪造。端到端 Rust 实现在 EVM 链上对最多 1280 名参与者做了完整生命周期基准，显示亚秒级群体恢复和可接受的 gas 开销。",
+      "abstractEn": "A long-lived threshold service must issue shares to participants that join after deployment, refresh them against a mobile adversary, and allow participants offline during a refresh to recover missed updates. We show that charging exposure solely to committed epochs is fundamentally insufficient: an aborted refresh attempt that publishes candidate update tokens can reveal the secret even if no committed epoch exceeds its corruption budget. To eliminate this exposure leakage, we index security by fine-grained states covering both committed epochs and aborted attempts. Each state's budget bounds all participants whose local material or public update records originate from that state, enforced via an append-only, durable release ledger that is never rolled back upon abort. A fixed dealer committee anchors encrypted update records in blockchain blob storage, enabling non-interactive recovery for offline participants without contacting dealers, while an interactive bisection dispute protocol deterministically attributes faulty records on chain. Our core cryptographic result is an explicit distribution-preserving shift of the actual generation transcript, establishing proactive secrecy and past-share unforgeability after dealer-state disclosure without idealizing the underlying subprotocols. An end-to-end Rust implementation benchmarks complete lifecycles across up to 1,280 participants on an EVM chain, demonstrating sub-second group recovery and practical gas costs.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "主动刷新",
+        "移动敌手",
+        "区块链锚定"
+      ],
+      "url": "https://eprint.iacr.org/2026/2755",
+      "pdf": "https://eprint.iacr.org/2026/2755.pdf"
+    },
+    {
+      "id": "2026-2732",
+      "title": "MuCPay: Breaking the Quadratic Bottleneck in Scriptless Multi-Party Oracle-Based Conditional Payments",
+      "authors": [
+        "Yaning Wang",
+        "Na Wang",
+        "Chuan Li",
+        "Yongda Zhang",
+        "Junsong Fu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用哈希绑定的适配器多重签名，把多方预言机条件支付从二次降到近线性，不用大模型，对象是 Bitcoin Taproot 结算。",
+      "abstract": "由真实世界事件触发的预言机条件支付支撑着去中心化金融应用。但若大量独立双边部署，对 n 方和 N 种结果需要 Θ(Nn²) 次结果授权和 Θ(n²) 个结算签名。为超出两方设定，我们提出 MuCPay：一种多方预言机条件支付协议，把链下签名份额降到 Θ(Nn)、链上结算签名只要一次，并在 Bitcoin 上做 BIP340 兼容的无脚本结算。核心是哈希绑定适配器多重签名（HB-AMS），把各方的条件授权聚成紧凑的联合预签名。单 nonce 结构和哈希绑定适配器使其能高效做多方预签。与 Double-Layer AMS（EuroS&P'26）不同，HB-AMS 在聚合公钥下产出标准 BIP340 签名，可直接走 Taproot 密钥路径结算。在静态腐败且有一名诚实签名者时，我们在所述代数随机预言机模型下证明并发新消息不可伪造（CUF）和抗提前结算（ES）。对 128 方、16 种结果，完整本地准备的中位耗时实用；协议准备相对 VweTS（NDSS'23）和 ParaSwap（USENIX'25）的原生画像投影分别约为后两者工作量的 1.67×10⁴ 分之一和 5.05×10⁵ 分之一。结算只用一个 64 字节签名，而模型中的独立 DLC 部署需要 281.5 倍交易 vbyte。结果表明多方预言机条件支付可以实用、可扩展。",
+      "abstractEn": "Oracle-based conditional payments triggered by real-world events support decentralized finance applications. However, dense independent bilateral deployments require Theta(Nn^2) outcome authorizations and Theta(n^2) settlement signatures for n parties and N outcomes. To go beyond two-party settings, we propose MuCPay, a multi-party oracle-based conditional payment protocol combining (i) Theta(Nn) off-chain signing shares with one on-chain settlement signature and (ii) BIP340-compatible scriptless settlement on Bitcoin. At its core, MuCPay introduces hash-bound adaptor multi-signatures (HB-AMS) that aggregate parties' conditional authorizations into a compact joint pre-signature. Its single-nonce structure and hash-bound adaptor integration enable efficient multi-party pre-signing. Unlike Double-Layer AMS (EuroS&P'26), HB-AMS produces a standard BIP340 signature under an aggregate public key, enabling direct Taproot key-path settlement. Under static corruption with one honest signer, we prove concurrent new-message unforgeability (CUF) and early-settlement resistance (ES) under our stated algebraic random-oracle model. For 128 parties and 16 outcomes, median complete local preparation is practical. For protocol preparation, native-profile projections place VweTS (NDSS'23) and ParaSwap (USENIX'25) work at 1.67e4 and 5.05e5 times MuCPay's, respectively. Settlement uses one 64-byte signature, while the modeled independent-DLC deployment requires 281.5x as many transaction vbytes. These results demonstrate practical, scalable multi-party oracle-based conditional payments.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "预言机",
+        "适配器签名",
+        "Bitcoin",
+        "条件支付"
+      ],
+      "url": "https://eprint.iacr.org/2026/2732",
+      "pdf": "https://eprint.iacr.org/2026/2732.pdf"
+    },
+    {
+      "id": "2026-2709",
+      "title": "Private Accounts Without O(N) Work Through a Hybrid State Model",
+      "authors": [
+        "Philipp Gackstatter",
+        "François Garillot",
+        "Marti Górny",
+        "Adrian Hamelink",
+        "Al Kindi",
+        "Philippe Laferrière",
+        "Robin Salen",
+        "Brian Seong",
+        "Bobbin Threadbare"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把账户可编程性和本地花费验证拆开，让隐私合约不必对全局状态做线性更新，不用大模型，对象是 Ethereum 二层 Miden。",
+      "abstract": "保护隐私的智能合约有扩展问题。在账户余额向量设计里，要隐藏哪些账户变了，每笔交易就必须对全局状态做不可区分的更新，于是验证者每做一笔隐私转账都要付出与账户数成线性的工作。UTXO 系统用本地花费验证避开这一点，却没有同样的账户式编程模型。我们认为常见的「账户对 UTXO」说法把状态表示和执行模型混在一起了，这两件事可以分开选。Ethereum 二层 Miden 把它们拆开：用持久账户提供可编程性，用异步票据做价值转移，用客户端证明做执行。验证者验证证明并更新承诺，既不重放交易，也不访问未涉及的状态。结果是一个带隐私转账和隐私计算的账户平台，同时把验证者每笔交易的工作保持在账户数的对数级。",
+      "abstractEn": "Privacy-preserving smart contracts face a scalability problem. In account-balance-vector designs, hiding which accounts changed requires that every transaction perform an indistinguishable update over the global state, so validators pay work linear in the number of accounts for every private transfer. UTXO systems avoid this by validating local spends, but do not provide the same account-style programming model. We argue that the usual \"account vs. UTXO\" framing conflates state representation and execution model, two choices that can be made separately. Miden, an Ethereum Layer 2, separates them. It uses persistent accounts for programmability, asynchronous notes for value transfer, and client-side proving for execution. Validators verify proofs and update commitments without re-executing transactions or accessing uninvolved state. The result is an account-based platform with private transfers and private computation, while keeping validator work per transaction logarithmic in the number of accounts.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "隐私合约",
+        "zk",
+        "Miden",
+        "客户端证明"
+      ],
+      "url": "https://eprint.iacr.org/2026/2709",
+      "pdf": "https://eprint.iacr.org/2026/2709.pdf"
+    }
+  ]
+}
