@@ -83,7 +83,7 @@ describe("WPS webhook payload", () => {
     assert.deepEqual(importedSheets("other", memory), []);
   });
 
-  it("posts JSON in the request body like ArxivDailyBlockchain", async () => {
+  it("posts the JSON body without a browser preflight", async () => {
     const calls = [];
     const paper = { title: "A paper", url: "https://example.test/a", pdf: "https://example.test/a.pdf" };
     const response = await postPaperToWps(paper, {
@@ -98,7 +98,8 @@ describe("WPS webhook payload", () => {
     assert.equal(calls.length, 1);
     assert.equal(calls[0].url, WPS_SHEETS.find((sheet) => sheet.id === "mechanism").webhookUrl);
     assert.equal(calls[0].init.method, "POST");
-    assert.equal(calls[0].init.headers["Content-Type"], "application/json");
+    assert.equal(calls[0].init.mode, "no-cors");
+    assert.equal(calls[0].init.headers["Content-Type"], "text/plain;charset=UTF-8");
     assert.equal(calls[0].url.includes("?"), false);
     const body = JSON.parse(calls[0].init.body);
     assert.deepEqual(Object.keys(body), [

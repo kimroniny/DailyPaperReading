@@ -1,4 +1,6 @@
-// 和 ArxivDailyBlockchain 的 webhook_utils 一样：POST，正文是 JSON，Content-Type 为 application/json。
+// 正文仍是那 7 个字段的 JSON。
+// 网页里如果用 application/json，浏览器会先发一个空的预检，WPS 会把它当成一次没有正文的调用，按钮就会直接失败。
+// text/plain 不会触发预检，JSON 还是放在请求体里。
 const WPS_SHEETS = [
   {
     id: "security",
@@ -98,7 +100,8 @@ async function postPaperToWps(paper, options) {
     try {
       const response = await fetchImpl(url, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
         body,
       });
       if (response && typeof response.text === "function" && response.type !== "opaque") {
