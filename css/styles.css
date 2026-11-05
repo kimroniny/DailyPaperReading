@@ -535,11 +535,6 @@ dialog::backdrop {
   font-size: 0.88rem;
 }
 
-.wps-choice.is-suggested {
-  border-color: var(--wax);
-  color: var(--wax);
-}
-
 .wps-import:disabled,
 .wps-choice:disabled {
   cursor: default;

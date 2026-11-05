@@ -317,7 +317,6 @@
 
     const wpsBox = document.createElement("div");
     wpsBox.className = "wps-box";
-    const matchedSheets = new Set(paper.topics || []);
 
     function showSheetChoices() {
       wpsBox.replaceChildren();
@@ -328,7 +327,7 @@
       WPS_SHEETS.forEach((sheet) => {
         const choice = document.createElement("button");
         choice.type = "button";
-        choice.className = "ghost wps-choice" + (matchedSheets.has(sheet.id) ? " is-suggested" : "");
+        choice.className = "ghost wps-choice";
         choice.textContent = sheet.label;
         choice.addEventListener("click", () => sendToSheet(sheet, choice));
         wpsBox.appendChild(choice);
