@@ -133,6 +133,7 @@ select:focus,
 .row:focus-visible,
 .date-link:focus-visible,
 .ghost:focus-visible,
+.wps-import:focus-visible,
 .dialog-close:focus-visible {
   outline: 2px solid var(--wax);
   outline-offset: 2px;
@@ -516,6 +517,15 @@ dialog::backdrop {
 
 .dialog-links a {
   color: var(--wax);
+}
+
+.wps-import {
+  margin-left: auto;
+}
+
+.wps-import:disabled {
+  cursor: default;
+  opacity: 0.72;
 }
 
 @media (max-width: 720px) {

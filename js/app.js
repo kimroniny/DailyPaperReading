@@ -1,6 +1,7 @@
 (function () {
   const { filterPapers, sortPapers, uniqueTopics, uniqueYears, uniqueVenues } = window.PaperFilter;
   const { mergeDayFiles, groupPapersByDate, groupDaysByMonth, pickVisibleDay } = window.PaperCatalog;
+  const { postPaperToWps } = window.PaperWps;
   let papers = [];
 
   const state = {
@@ -313,6 +314,24 @@
       anchor.textContent = text;
       links.appendChild(anchor);
     });
+
+    const importWps = document.createElement("button");
+    importWps.type = "button";
+    importWps.className = "ghost wps-import";
+    importWps.textContent = "导入 WPS";
+    importWps.addEventListener("click", async () => {
+      if (importWps.disabled) return;
+      importWps.disabled = true;
+      importWps.textContent = "导入中…";
+      try {
+        await postPaperToWps(paper);
+        importWps.textContent = "已导入";
+      } catch {
+        importWps.disabled = false;
+        importWps.textContent = "导入失败，重试";
+      }
+    });
+    links.appendChild(importWps);
 
     els.dialogBody.replaceChildren(meta, title, authors, oneLabel, oneBody, label, body, toggle, tags, links);
     els.dialog.showModal();
