@@ -42,7 +42,7 @@ function paperToWpsPayload(paper) {
   return {
     title: item.title || "",
     source: item.venue || "",
-    "ref-bib": refBib(item),
+    ref_bib: refBib(item),
     url: item.url || "",
     pdf_url: item.pdf || "",
     abstract: item.abstract || item.abstractEn || "",

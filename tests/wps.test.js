@@ -22,7 +22,7 @@ describe("WPS webhook payload", () => {
     assert.deepEqual(payload, {
       title: "DoGNAVY-Exploit",
       source: "arXiv",
-      "ref-bib": "Yuxuan Wang, Dadi Guo (2026). DoGNAVY-Exploit. arXiv.",
+      ref_bib: "Yuxuan Wang, Dadi Guo (2026). DoGNAVY-Exploit. arXiv.",
       url: "https://arxiv.org/abs/2611.04196",
       pdf_url: "https://arxiv.org/pdf/2611.04196",
       abstract: "中文摘要",
@@ -40,7 +40,7 @@ describe("WPS webhook payload", () => {
     assert.equal(payload.published_date, "");
     assert.equal(payload.pdf_url, "");
     assert.equal(payload.source, "");
-    assert.equal(payload["ref-bib"], "(2024). Only English.");
+    assert.equal(payload.ref_bib, "(2024). Only English.");
   });
 
   it("lists the two named sheets and keeps the paper fields free of a sheet flag", () => {
@@ -83,7 +83,7 @@ describe("WPS webhook payload", () => {
     assert.deepEqual(Object.keys(body), [
       "title",
       "source",
-      "ref-bib",
+      "ref_bib",
       "url",
       "pdf_url",
       "abstract",
