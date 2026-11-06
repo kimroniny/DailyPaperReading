@@ -1,0 +1,321 @@
+{
+  "date": "2026-11-06",
+  "papers": [
+    {
+      "id": "10.1109-tifs.2026.3750726",
+      "title": "PentestEval: Benchmarking LLM-based Penetration Testing with Modular and Stage-Level Design",
+      "authors": [
+        "Ruozhao Yang",
+        "Mingfei Cheng",
+        "Gelei Deng",
+        "Tianwei Zhang",
+        "Junjie Wang",
+        "Xiaofei Xie"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "用分阶段基准评测大模型做渗透测试的能力，对象是 12 个真实可利用场景。",
+      "abstract": "渗透测试对评估和加强系统面对真实威胁的安全很重要，但传统流程高度依赖人工、需要专家、难以规模化。大模型给自动化带来了机会，但现有用法多是简单提示，没有任务分解或领域适配，表现为不可靠的黑盒，也难以看清模型在渗透测试各阶段的能力。为此我们提出 PentestEval，据我们所知是第一个按六个分解阶段评估大模型的渗透测试基准：信息收集、弱点汇集与过滤、攻击决策、利用生成与修订。PentestEval 把专家标注的标准答案与全自动评测流水线结合，覆盖 12 个真实可利用场景中全部阶段的 346 个任务。我们对 9 个常用大模型做阶段级评测，总体表现偏弱，各阶段短板不同。端到端流水线成功率只有 31%；现有系统如 PentestGPT、PentestAgent、VulnBot 也有类似问题，在本基准设定下自主代理成功率尤其低。这说明可靠的自主渗透测试需要更强的结构化推理和更细的阶段诊断。PentestEval 为后续细粒度阶段评测提供了基础。",
+      "abstractEn": "Penetration testing is essential for assessing and strengthening system security against real-world threats, yet traditional workflows remain highly manual, expertise-intensive, and difficult to scale. Although recent advances in Large Language Models (LLMs) offer promising opportunities for automation, existing applications rely on simplistic prompting without task decomposition or domain adaptation, resulting in unreliable black-box behavior and limited insight into model capabilities across penetration testing stages. To address this gap, we introduce PentestEval, the first comprehensive benchmark for evaluating LLMs across six decomposed penetration testing stages: Information Collection, Weakness Gathering and Filtering, Attack Decision-Making, Exploit Generation and Revision. PentestEval integrates expert-annotated ground truth with a fully automated evaluation pipeline across 346 tasks covering all stages in 12 realistic vulnerable scenarios. Our stage-level evaluation of 9 widely used LLMs reveals generally weak performance and distinct limitations across the stages of penetration-testing workflow. End-to-end pipelines reach only 31% success rate, and existing LLM-powered systems such as PentestGPT, PentestAgent, and VulnBot exhibit similar limitations, with the evaluated autonomous agents showing particularly low success rates under our benchmark settings. These findings highlight that reliable autonomous penetration testing requires stronger structured reasoning and fine-grained stage-level diagnosis. PentestEval provides the foundational benchmark needed for future research on fine-grained, stage-level evaluation, paving the way toward more reliable LLM-based automation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "渗透测试",
+        "大模型评测",
+        "利用生成",
+        "阶段诊断"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3750726",
+      "pdf": "https://arxiv.org/pdf/2512.14233"
+    },
+    {
+      "id": "10.1109-tifs.2026.3750757",
+      "title": "From Miscontextion to Misconceptions: Rethinking LLM-Based Vulnerability Detection through Context-Rich Evaluation",
+      "authors": [
+        "Yue Li",
+        "Xiao Li",
+        "Hao Wu",
+        "Minghui Xu",
+        "Yue Zhang",
+        "Xiuzhen Cheng",
+        "Fengyuan Xu",
+        "Sheng Zhong"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "用带执行与数据流上下文的评测框架，重新衡量大模型做漏洞检测的效果，对象是覆盖 99 个 CWE 的真实程序对。",
+      "abstract": "大模型已成为自动漏洞检测的常用工具，这与它们在代码生成、修复和开发流程中的表现有关。但仍有一个问题：大模型是否真能有效发现真实世界漏洞？现有评测多限于孤立函数或文件，忽略理解真实漏洞所需的执行与数据流上下文，容易得出误导性结论和站不住的理由，削弱既有研究的可信度。本文挑战社区里三条常见看法：大模型（i）不可靠，（ii）对补丁不敏感，（iii）随模型规模提升已经见顶。我们认为这些看法是评测缺少上下文造成的。为此我们提出 CORRECT（Context-Rich Reasoning Evaluation of Code with Trust），把上下文系统纳入基于大模型的漏洞检测评测。我们构建了 2000 对漏洞–补丁程序、覆盖 99 个 CWE，并评估四个系列共 13 个大模型。框架同时收集二分类预测和自然语言理由，再用大模型评审加以核验。结果推翻了上述误解：给足上下文后，先进大模型表现明显更好（例如在关键 CWE 上准确率 67%、F1 超过 70%），精度接近 0.8。多数误报来自推理错误而非分类错误；模型和测试时放大能提高表现，但也带来收益递减和召回上的取舍。我们还发现当前检测系统的新问题，例如泛化有限和过度思考带来的偏差。",
+      "abstractEn": "Large Language Models have become promising tools for automated vulnerability detection, supported by their success in code generation, repair, and integration into developer workflows. Yet a key question remains: Are LLMs truly effective at detecting real-world vulnerabilities? Current evaluations, typically limited to isolated functions or files, neglect the broader execution and data-flow context essential for understanding real vulnerabilities. This leads to misleading conclusions and flawed rationales, reducing the reliability of prior studies. Therefore, in this paper, we challenge three widely held community beliefs: that LLMs are (i) unreliable, (ii) insensitive to code patches, and (iii) performance-plateaued across model scales. We argue that these beliefs are artifacts of context-deprived evaluations. To address this, we propose CORRECT (Context-Rich Reasoning Evaluation of Code with Trust), a new evaluation framework that systematically integrates contextual data into LLM-based vulnerability detection. We build a dataset of 2,000 vulnerable–patched program pairs across 99 CWEs and evaluate 13 LLMs from four model families. Our framework elicits both binary predictions and natural-language rationales, further validated with LLM-as-a-judge methods. Our findings overturn existing misconceptions. When provided with sufficient context, state-of-the-art LLMs achieve substantially better performance (e.g., 67% accuracy and an F1 score above 70% on key CWEs), with precision nearing 0.8. We show that most false positives stem from reasoning errors rather than misclassification, and that while model and test-time scaling improve performance, they introduce diminishing returns and trade-offs in recall. Finally, we uncover new flaws in current LLM-based detection systems, such as limited generalization and overthinking biases.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "上下文评测",
+        "CWE",
+        "大模型"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3750757"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3750908",
+      "title": "Lich: Towards Practical Vulnerability Detection with LLM-Assisted Causal Graph Learning",
+      "authors": [
+        "Sicong Cao",
+        "Xiaobing Sun",
+        "Le Yu",
+        "Liping Han",
+        "Mingzhe Hu",
+        "Di Wu",
+        "Fu Xiao",
+        "Minhui Xue"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用大模型辅助因果图学习做实用漏洞检测，对象是传统软件中的漏洞代码。",
+      "abstract": "本文提出 Lich，把大模型辅助和因果图学习结合起来，面向更接近实用场景的漏洞检测。公开网页上读不到英文摘要，这里只根据标题和作者主页上的论文条目写中文说明，不补充未公开的实验数字。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "因果图",
+        "大模型",
+        "图学习"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3750908"
+    },
+    {
+      "id": "10.1109-tifs.2026.3750710",
+      "title": "RHINO: Guided Reasoning for Mapping Network Logs to Adversarial Tactics and Techniques with Large Language Models",
+      "authors": [
+        "Fanchao Meng",
+        "Jiaping Gui",
+        "Yunbo Li",
+        "Yue Wu"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "用分阶段大模型推理，把网络日志映射到 ATT&CK 战术与技术，对象是 NIDS 告警研判。",
+      "abstract": "现代网络入侵检测系统会产生大量语义破碎的底层告警，需要人工才能对应到高层对抗行为。现有自动化里，规则方法难适应新变种，机器学习方法缺少上下文，把战术–技术映射当成句法匹配而不是推理。大模型在网络安全里有潜力，但初步实验表明，现有基于大模型的方法常会编造技术–战术对，或因单步分类给出脱离上下文的映射。我们提出 RHINO，把基于大模型的攻击分析拆成三个阶段：（1）行为抽象，把原始日志转成带上下文的叙述；（2）在 ATT&CK 战术空间上做分区推断，对照 MITRE ATT&CK 知识由行为证据生成候选技术；（3）知识约束的精炼，用官方 MITRE 定义交叉核对，减少编造。我们在 DAPT2020、CICIDS2017、IoT23 三个基准上，用 ChatGPT-4o、Gemini 2.5 Flash、Claude Sonnet 4 和 DeepSeek V3 四个骨干模型评估。在覆盖 11 种技术、带场景说明的单标签设定下，RHINO 微平均 top-1 准确率 87.34%，宏平均 63.77%，分别比最强基线高 16.78 和 13.60 个百分点。结果表明，结构化的大模型推理可以把底层网络观察转成高层对抗行为。",
+      "abstractEn": "Modern Network Intrusion Detection Systems (NIDS) generate vast volumes of low-level alerts that remain semantically fragmented, requiring labor-intensive manual correlation with high-level adversarial behaviors. Existing automation, namely rule-based systems and machine learning classifiers, has critical limitations: rule-based approaches fail to adapt to novel attack variations, while machine learning methods lack contextual awareness and treat tactic-technique (TT) mapping as syntactic matching rather than reasoning. Although Large Language Models (LLMs) show promise in cybersecurity, preliminary experiments reveal that existing LLM-based methods frequently hallucinate technique-tactic pairs or produce decontextualized mappings due to single-step classification. We introduce RHINO, a framework that decomposes LLM-based attack analysis into three structured phases: (1) behavioral abstraction, translating raw logs into contextualized narratives; (2) partitioned inference over the ATT&CK tactic space, generating candidate techniques by evaluating behavioral evidence against MITRE ATT&CK knowledge; and (3) knowledge-grounded refinement, cross-referencing predictions with official MITRE definitions to reduce hallucinations. We evaluate RHINO on three benchmarks (DAPT2020, CICIDS2017, IoT23) across four backbone models (ChatGPT-4o, Gemini 2.5 Flash, Claude Sonnet 4, and DeepSeek V3). Under a scenario-documented single-label formulation covering 11 distinct techniques, RHINO achieves an average top-1 accuracy of 87.34% under micro-averaging and 63.77% under macro-averaging, surpassing the strongest baseline by 16.78 and 13.60 points respectively. These results show that structured LLM reasoning can effectively translate low-level network observations into high-level adversarial behaviors.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "告警研判",
+        "ATT&CK",
+        "NIDS",
+        "大模型推理"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3750710",
+      "pdf": "https://arxiv.org/pdf/2510.14233"
+    },
+    {
+      "id": "2611.06135",
+      "title": "SBVUL: Statement-Based Vulnerability Detection",
+      "authors": [
+        "Martin Pinzger",
+        "Katharina Stengg",
+        "Christian Macho",
+        "Stefan Schöberl",
+        "Víctor Mayoral Vilches"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用两阶段大模型代理在语句级定位可利用点，对象是 C/C++ 函数。",
+      "abstract": "近期不少漏洞检测方法用大模型把函数标成有漏洞或无漏洞，真正可利用的语句仍要开发者自己找。这些方法在指标上有提升，但仍难区分真实世界里有漏洞的函数和打过补丁的函数。本文提出 SBVul，一种在 C/C++ 函数里检测可利用语句的代理方法。第一阶段，一个大模型代理查看函数及其仓库，标出候选语句。第二阶段，另一个代理分析每个候选的控制流和数据流，确认、排除或标为不确定。我们为 PrimeVul Paired 测试集中的 200 对样本手工核对了可利用语句，并用开源权重模型 Qwen 3.8、DeepSeek V4.1 Flash 以及 Anthropic 的 Sonnet 5.5 和 Opus 5.5 跑 SBVul。第一阶段能在 56%–77% 的有漏洞函数中找到标准答案语句，第二阶段在 26%–73% 的情况下确认该语句，且理由能被大模型评审接受。但所有模型也会在 23%–61% 的已打补丁函数里确认候选。综合有漏洞和已打补丁函数，最高语句级精度是 Opus 5.5（xhigh）的 0.315，召回 0.605。在函数级，Opus 5.5 的 SBVul 正确分类 42.0% 的函数对，此前最好方法报告为 33.8%。",
+      "abstractEn": "Many recent approaches for vulnerability detection use large language models (LLMs) to classify functions as vulnerable or benign, leaving developers to locate the exploitable statements. Furthermore, while these approaches have shown performance improvements, they still fall short in distinguishing vulnerable from patched real-world functions. This paper presents SBVul, an agentic approach that detects exploitable statements in C/C++ functions. In Phase 1, an LLM agent explores the function and its repository and identifies candidate statements. In Phase 2, a second agent analyzes the control and data flow of each candidate and confirms it, rules it out, or marks it uncertain. We created a manually verified ground truth of exploitable statements for 200 pairs of the PrimeVul Paired test set and ran SBVul with the open-weight models Qwen 3.8 and DeepSeek V4.1 Flash and Anthropic's Sonnet 5.5 and Opus 5.5. Phase 1 identifies ground-truth statements in 56--77% of the vulnerable functions, and Phase 2 confirms such a statement with an explanation accepted by an LLM judge in 26--73%. However, all models also confirm candidates in 23--61% of the patched functions. Across vulnerable and patched functions, the highest statement-level precision is 0.315 at a recall of 0.605 obtained with Opus 5.5 (xhigh). At the function level, SBVul with Opus 5.5 classifies 42.0% of the pairs correctly, compared with 33.8% reported for the best previous approach.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "语句级检测",
+        "C/C++",
+        "代理",
+        "PrimeVul"
+      ],
+      "url": "https://arxiv.org/abs/2611.06135",
+      "pdf": "https://arxiv.org/pdf/2611.06135"
+    },
+    {
+      "id": "2611.07611",
+      "title": "A Gingerbread House for LLM Agents: Source-Planned Honeypots That Lure Autonomous Attackers into an Isolated Shadow",
+      "authors": [
+        "Seungdeok Roh",
+        "Seokjun Ryu",
+        "Sohee Park",
+        "Daeseon Choi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型根据源码规划蜜罐，把自主攻击代理的利用请求转到隔离影子副本，对象是带真实 CVE 的 Web 应用。",
+      "abstract": "大模型代理利用 Web 漏洞的速度可能快于打补丁。针对这类代理的欺骗，以往多是把它们从仍可到达的真实目标上引开。我们研究另一种安排：防守侧大模型根据应用源码规划静态蜜罐，路由器把已确认攻击者的后续请求（包括可工作的利用）全部转到隔离的影子副本。我们比较无防护、该静态方案，以及再加大模型运行时应答和更多路由规则的增强配置，用基准自带评分器看真实目标，ARTEX 实验还看影子副本。在 CVE-Bench 的 40 个严重任务上，静态方案把 Claude Opus 4.8 的真实沦陷从 26/40 降到 5/40，把 ARTEX 攻击框架从 20/40 降到 0/40（31 次有效运行）。在设计时未用过的 20 个新任务上，ARTEX 从 15/20 降到 0/20。约一半欺骗组运行里，ARTEX 的利用在影子上成功而真实目标完好：防护是把可工作的利用挪走，而不是拦住它；剩余风险在确认前仍打到真实目标的请求。ARTEX 在 120 个欺骗组任务中有 30 次把植入的假秘密当成真的上报，其中 5 次在同一报告里把另一项标成诱饵。两种欺骗配置在真实沦陷已为零时，其余结果没有显著差异，该比较也不能单独分离应答器的作用。",
+      "abstractEn": "LLM agents can exploit web vulnerabilities fast enough that patching may come too late. Deception against such agents has mostly lured them away from a real target that stays reachable. We study a different arrangement: an LLM defender plans a static honeypot from the application's source, and a router sends every later request of a client it confirms as an attacker, including a working exploit, to an isolated shadow copy. We compare no defence, this static plan, and an augmented configuration with a runtime LLM responder and further router rules, graded by the benchmark's own grader on the real target and, for ARTEX, also on the shadow. On the 40 critical CVE-Bench tasks the static plan cut real compromise from 26/40 to 5/40 for Claude Opus 4.8 and from 20/40 to 0/40 (31 valid runs) for the ARTEX attack framework. On 20 new tasks not used in the design, ARTEX went from 15/20 to 0/20. In about half of the deception-arm runs ARTEX's exploit succeeded on the shadow while the real target stayed intact: the defence moved a working exploit rather than stopping it, and the remaining risk lies in requests that reach the real target before confirmation. ARTEX reported a planted fake secret as genuine on 30 of the 120 deception-arm tasks, five times in a report that labelled another item a decoy. With ARTEX's real compromise at zero in both deception configurations, they did not differ significantly on the remaining outcomes, a comparison that does not isolate the responder.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "蜜罐",
+        "Web漏洞",
+        "攻击代理",
+        "CVE-Bench"
+      ],
+      "url": "https://arxiv.org/abs/2611.07611",
+      "pdf": "https://arxiv.org/pdf/2611.07611"
+    },
+    {
+      "id": "2611.03772",
+      "title": "RuntimeTickets: Source-Grounded Security Obligations for Agent Skills",
+      "authors": [
+        "Kuiyi Gao",
+        "Xue Liu",
+        "Bowei He"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型提出、运行时无模型门控来强制 Skill 安全义务，对象是第三方 Agent Skill 的外发与数据暴露。",
+      "abstract": "第三方 Agent Skill 能扩大自主代理的能力，但恶意 Skill 可能把数据暴露或输出篡改藏进看起来正常的流程。只读 Skill 说明或只批工具权限，都无法判断执行是否满足用户的安全要求。我们提出 RuntimeTickets，在 Skill 运行时强制并审计这些要求。我们从已发布的恶意 Skill 数据集导出风险模型，并构造对抗–良性 Skill 对。大模型根据任务的交付约定提出该任务的安全义务；每条义务引用它所对应的 Skill 行，票据只会收紧主机批准的动作，不会放宽。运行时门在转发前检查每次外发的接收方、对象和数量，可信监视器在观察范围内记录效果。票据把这些检查和观察关联到本次 Skill 运行已批准的义务，确定性解码器把票据状态变成可治理的数据流并核验每条义务。强制和解码都不经过语言模型，因此 Skill 注入的文本可以改提案，但不能改决定是否放行的规则。我们在三个未改动的代理框架的网络出口边界上评估 RuntimeTickets，对照生产级 Skill 扫描器和运行时基线（含由 AgentBound 导出的允许名单和 SkillGuard）。RuntimeTickets 消掉了现有 Skill 防护的两类失败：漏过（放行恶意 Skill）和误杀（拦住良性 Skill），漏过率和误杀率均为 0.0%，扫描器则两边都会错。RuntimeTickets 把已批准要求连到可核验的执行证据，为安全、可审计地部署第三方 Skill 提供共同基础。",
+      "abstractEn": "Third-party Agent Skills extend what an autonomous agent can do, but a malicious Skill can hide data exposure or output manipulation inside a legitimate workflow. Neither reading a Skill's description nor granting it tool permissions tells whether its execution meets the user's security requirements. We introduce RuntimeTickets, a protocol that enforces and audits these requirements while a Skill runs. From released malicious-Skill datasets we derive a risk model and build adversarial-benign Skill pairs. From the task's delivery contract, a language model proposes security obligations for that task. Each obligation cites the Skill lines it answers, and the ticket tightens the host's approvals into fine-grained allowed actions but never loosens them. A runtime gate checks the recipient, object and amount of every outbound send before forwarding it, and trusted monitors record the effects within their observation scope. The ticket links these checks and observations to the approved obligations of each Skill run, and a deterministic decoder turns the ticket's status into governable data flows and verifies each obligation. Neither enforcement nor decoding involves a language model, so text injected by a Skill can change the proposal but never the rule that decides a send. We evaluate RuntimeTickets at the network egress boundary of three unmodified agent frameworks against production Skill scanners and runtime baselines, among them an AgentBound-derived allow-list and SkillGuard. RuntimeTickets eliminated both failure modes of current Skill defenses, overlook (malicious Skills let through) and overkill (benign Skills blocked): its overlook rate was 0.0% and its overkill rate 0.0%, while the scanners erred on both sides. RuntimeTickets ties approved requirements to verifiable execution evidence and offers a common foundation for the safe and auditable deployment of third-party Skills.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Agent Skill",
+        "运行时门控",
+        "安全义务",
+        "供应链"
+      ],
+      "url": "https://arxiv.org/abs/2611.03772",
+      "pdf": "https://arxiv.org/pdf/2611.03772"
+    },
+    {
+      "id": "10.1109-tifs.2026.3750734",
+      "title": "AuditCT: Decentralized and Efficient Identity Traceability Scheme for Monero Transactions",
+      "authors": [
+        "Yuan Chang",
+        "Yinbin Miao",
+        "Tom H. Luan",
+        "Yinuo Li",
+        "Jinkai Zheng",
+        "Zhou Su"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "提出面向门罗币交易的去中心化身份可追溯方案，不用大模型，对象是 Monero 交易身份审计。",
+      "abstract": "本文提出 AuditCT，一种面向门罗币交易的去中心化、高效身份可追溯方案。公开网页上读不到英文摘要，这里只根据标题写中文说明，不补充未公开的构造细节或实验数字。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门罗币",
+        "身份追溯",
+        "隐私币",
+        "审计"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3750734"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3750245",
+      "title": "Vanguard: Pipelining Proof-of-Stake Consensus for Speed and Fairness",
+      "authors": [
+        "Runing Yang",
+        "Fukang Wu",
+        "Dawei Xu",
+        "Tianyi Fu",
+        "Kai Bu",
+        "Kui Ren"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "把权益证明共识流水线化，提高吞吐并改善交易选择公平，对象是 PoS 区块链。",
+      "abstract": "权益证明长期被当作比工作量证明更省能源的区块链共识。但按现有设计原则看，速度和公平各有根本限制。其一，它把交易验证与出块处理串在一起，每个块还要做两遍，既有冗余又缺并行，速度有上限。其二，它优先收高手续费交易，低手续费交易会长时间等待甚至饿死。速度和公平上的这些问题会赶走部分用户、降低节点活跃。本文提出流水线权益证明，把交易验证单拆出来，与其他共识步骤并行以提高速度；交易选择则同时考虑手续费和排队时间。据此实现的 Vanguard 是据作者所称首个流水线权益证明协议。与当时最好的 Casper FFG 相比，Vanguard 交易吞吐约高 2.7 倍，测得的确认延迟约低 1.9 倍，节点活跃约高 2.2 倍，同时保持最终性安全边界，并加强交易选择控制。它对无利害攻击和贿赂攻击的稳健性也可以提高。",
+      "abstractEn": "Proof-of-Stake (PoS) has long been the leading energy-efficient alternative to conventional Proof-of-Work (PoW)-driven blockchain consensus. By investigating its design principles, however, we reveal two fundamental limitations in speed and fairness. First, it sequentially binds transaction verification with block processing and enforces it twice per block. The existence of such redundancy and the lack of parallelism leads to an inevitable barrier of speed. Second, it prioritizes admission of transactions with high transaction fees for profit. This leads to long delays or even starvation for low-fee transactions. Both limitations in speed and fairness may push away certain users and reduce node activeness. In this paper, we propose a pipelined PoS consensus protocol to strive for speed and fairness. We single out transaction verification and parallelize it with other consensus operations to harness speed. Furthermore, to improve transaction-selection fairness, we prioritize transactions using a combinatorial factor over both transaction fee and queuing time. We accordingly implement Vanguard as the first pipelined PoS consensus protocol. In comparison with the state-of-the-art Casper FFG, Vanguard yields a 2.7× higher transaction throughput, a 1.9× lower measured confirmation latency, and a 2.2× greater node activeness, yet retains the finality-safety boundary while strengthening transaction-selection control. It can also improve robustness against nothing-at-stake and bribery attacks.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "权益证明",
+        "共识",
+        "流水线",
+        "公平排序"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3750245"
+    },
+    {
+      "id": "10.1109-tifs.2026.3750727",
+      "title": "SLVC-DIDA: Signature-less Verifiable Credential-based Issuer-hiding Authentication for Decentralized Identity",
+      "authors": [
+        "Tianxiu Xie",
+        "Keke Gai",
+        "Jing Yu",
+        "Yuan Lu",
+        "Liehuang Zhu",
+        "Bin Xiao"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "用无签名可验证凭证和发行方成员证明做去中心化身份认证，不用大模型，对象是 DID 多方认证。",
+      "abstract": "去中心化身份相对传统身份管理有若干优势，例如更强调用户自主。可验证凭证常被用来在多个实体间做基于 DID 的访问控制。但现有 DID 方案一般依赖分布式公钥基础设施，会带来上下文信息推断、密钥暴露和发行方数据泄漏等问题。本文首次提出一种隐藏发行方、保护隐私的 DID 多方认证模型，并配以无签名可验证凭证方案 SLVC-DIDA。该方案用哈希和发行方成员证明，避免依赖签名密钥，支持通用的零知识多方 DID 认证，无需额外技术拼装。我们采用新的零知识电路保持发行方集合匿名，从而在可公开验证的同时，用基于 Merkle 树的可验证凭证列表保护身份属性隐私。由于不再依赖公钥基础设施，SLVC-DIDA 可以实现去中心化、用户自主的 DID 认证。实验进一步评估了方案的有效性和实用性。",
+      "abstractEn": "As an emerging paradigm in digital identity, Decentralized Identity (DID) appears advantages over traditional identity management methods in a variety of aspects, e.g., enhancing user-centric online services and ensuring complete user autonomy and control. Verifiable Credential (VC) techniques are used to facilitate decentralized DID-based access control across multiple entities. However, existing DID schemes generally rely on a distributed public key infrastructure that also causes challenges, such as context information deduction, key exposure, and issuer data leakage. To address the issues above, this paper proposes a issuer-hiding and privacy-preserving DID multi-party authentication model with a signature-less VC scheme, named SLVC-DIDA, for the first time. Our proposed scheme avoids the dependence on signing keys by employing hashing and issuer membership proofs, which supports universal zero-knowledge multi-party DID authentications, eliminating additional technical integrations. We adopt a novel zero-knowledge circuit to maintain the anonymity of the issuer set, thereby enabling public verification while safeguarding the privacy of identity attributes via a Merkle tree-based VC list. Furthermore, by eliminating reliance on a Public Key Infrastructure (PKI), SLVC-DIDA enables decentralized and self-sovereign DID authentication. Our experiments further evaluate the effectiveness and practicality of SLVC-DIDA.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "去中心化身份",
+        "可验证凭证",
+        "零知识",
+        "发行方隐藏"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3750727",
+      "pdf": "https://arxiv.org/pdf/2501.11052"
+    },
+    {
+      "id": "2611.08108",
+      "title": "Post-Quantum Authentication of IoT Data on Ethereum: Signatures, the Calldata Floor, and Device-Signed Merkle Roots",
+      "authors": [
+        "Ming-Fong Sie"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "测量物联网记录在以太坊上做抗量子认证的 gas 成本，不用大模型，对象是以太坊锚定与设备签名。",
+      "abstract": "今天部署的现场设备，在量子计算机可能打破其签名时往往还在产数据，因此把物联网数据锚定到区块链的系统现在就需要抗量子认证路径。我们在现行执行规则下测量其在以太坊上的成本，包括 EIP-7623 的 calldata 下限和 EIP-7825 的交易上限，以及 Glamsterdam 升级计划中的 calldata 重新计价。我们结合设备侧对 ML-DSA、Falcon、SLH-DSA、LMS 和 XMSS 的测量、开源 Solidity 验证器的复现成本、新的符合标准的 LMS/HSS（SHA-256 与 SHA-256/192）验证器，以及在 Osaka 规则 EVM 上的完整交易，分别按今天的验证器和拟议预编译计价。三个结果较突出。即使有 ML-DSA 预编译，每条记录单独签名的成本仍是 ECDSA 的 8.7 倍，因为定价由 calldata 下限而不是验证本身决定。当每台设备对 100 条记录的 Merkle 根签名时，今天可用的标准 LMS 验证器大约每条记录 3350 gas，同一设计下 ECDSA 约 245 gas；该方案不受计划中重新计价影响，而受下限约束的设计最多会贵约 1.9 倍。若采用拟议预编译，ML-DSA-44 每条记录约 1031 gas，ECDSA 与 ML-DSA 的混合签名只多 2.5%。因此，只要批处理延迟和所选变体的数据可用性符合应用，抗量子设备认证可以在不改协议的情况下部署到以太坊。",
+      "abstractEn": "Field devices deployed today will still be producing records when quantum computers may break their signatures, so systems that anchor IoT data on blockchains need a post-quantum (PQ) authentication path now. We measure its cost on Ethereum under the current execution rules, including the EIP-7623 calldata floor and the EIP-7825 transaction cap, and under the calldata repricing scheduled for the Glamsterdam upgrade. We combine device-side measurements of ML-DSA, Falcon, SLH-DSA, LMS and XMSS, reproduced costs of open-source Solidity verifiers, a new standard-compliant LMS/HSS verifier for SHA-256 and SHA-256/192, and complete transactions on an Osaka-rule EVM, priced with today's verifiers and with proposed precompiles. Three results stand out. Signing every record costs 8.7 times as much as ECDSA even with an ML-DSA precompile, because the calldata floor rather than verification sets the price. When each device signs a Merkle root over 100 records, a standard LMS verifier available today costs about 3,350 gas per record, against 245 gas for ECDSA in the same design, and it is unaffected by the scheduled repricing, which raises floor-bound designs by up to 1.9 times. With the proposed precompiles, ML-DSA-44 costs 1,031 gas per record, and a hybrid ECDSA and ML-DSA signature adds only 2.5%. Post-quantum device authentication is therefore deployable on Ethereum without protocol changes, provided that the latency of batching and the data-availability properties of the chosen variant fit the application.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "以太坊",
+        "抗量子签名",
+        "物联网锚定",
+        "calldata"
+      ],
+      "url": "https://arxiv.org/abs/2611.08108",
+      "pdf": "https://arxiv.org/pdf/2611.08108"
+    },
+    {
+      "id": "2026-2771",
+      "title": "Can Fully Homomorphic Encryption on Public Blockchains Protect Sensitive Medical Consultations? A Security and Privacy Assessment",
+      "authors": [
+        "Nizamuddeen Shahruddeen"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "评估公链全同态加密能否保护敏感问诊，并指出混淆代理与解密权限可转授，对象是以太坊 fhEVM 合约。",
+      "abstract": "因担心暴露而推迟治疗的情况并不少见，但数字医疗服务又经常暴露用户数据和元数据。全同态加密现在允许公链上的智能合约保存加密数据，解密由合约规则控制。本文评估这种方式能否保护敏感问诊。我们给出 ConfidentialCare 原型，基于 Zama 的 fhEVM 和以太坊 Sepolia 测试网：患者症状在浏览器加密，只有授权医生可以解密。我们通过元数据检查、访问控制测试和攻击实验评估了三个版本，问 FHE 保护了什么、患者数据访问能否被控制。问诊内容在所有测试中保持机密，设计也不收集姓名、邮箱或账户。但链上公开元数据会暴露哪个钱包找了哪位医生、科室、时间和大致消息长度；一旦钱包与患者对应上，这段历史会永久暴露。我们还发现，获得访问权的医生可以再分享患者的加密数据：既可以通过应用合约里的混淆代理缺陷（已修复），也可以直接通过 fhEVM 的访问控制列表；撤回访问或关闭问诊都去不掉这份权限。基于限时、可撤销委托的重新设计阻止了再分享，Zama 线上服务对撤销和过期立即生效。在 Sepolia 上，Zama 的密钥管理服务在没有有效委托时拒绝解密，六次试验中撤销都在同一区块内生效。结论是：FHE 保护患者披露的内容，但不保护就医这一事实和上下文；在 fhEVM 里，解密权限同时也是分享权限。",
+      "abstractEn": "People seeking care for stigmatised conditions often delay treatment because they fear exposure, yet digital health services routinely expose user data and metadata. Fully homomorphic encryption (FHE) now allows smart contracts on public blockchains to hold encrypted data whose decryption is governed by contract rules. This paper assesses whether this approach can protect sensitive medical consultations. We present ConfidentialCare, a prototype built on Zama's fhEVM and the Ethereum Sepolia testnet, in which patients' symptoms are encrypted in the browser and only an authorised doctor may decrypt them. We evaluated three versions of the system through metadata inspection, access-control tests and attack experiments, asking what FHE protects and whether access to patient data can be controlled. Consultation content remained confidential in all tested cases, and the design collects no names, emails or accounts. However, public on-chain metadata revealed which wallet consulted which doctor, the doctor's specialty, when, and the approximate length of each message, and this history would be exposed permanently if the wallet were ever linked to the patient. We also found that a doctor granted access could re-share a patient's encrypted data, both through a confused-deputy flaw in the application contract, which we fixed, and directly through fhEVM's access control list, and that neither withdrawing access nor closing a consultation removed it. A redesign based on time-limited, revocable delegation prevented re-sharing, and Zama's live service enforced its revocation and expiry immediately. On Sepolia, Zama's key-management service refused decryption without a valid delegation, and revocation took effect within the same block in all six trials. We conclude that FHE protects what patients disclose, but not the fact or context of seeking care, and that in fhEVM a permission to decrypt is also a permission to share.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "全同态加密",
+        "智能合约",
+        "访问控制",
+        "混淆代理"
+      ],
+      "url": "https://eprint.iacr.org/2026/2771",
+      "pdf": "https://eprint.iacr.org/2026/2771.pdf"
+    }
+  ]
+}
