@@ -546,6 +546,10 @@ dialog::backdrop {
   color: var(--sage);
 }
 
+.wps-mark {
+  font-size: 0.82rem;
+}
+
 .wps-import:disabled,
 .wps-choice:disabled {
   cursor: default;
