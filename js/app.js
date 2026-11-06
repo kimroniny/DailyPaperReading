@@ -325,6 +325,42 @@
     const wpsBox = document.createElement("div");
     wpsBox.className = "wps-box";
 
+    function paintWpsBox() {
+      const already = importedSheets(paper.id);
+      const doneIds = new Set(already.map((sheet) => sheet.id));
+      wpsBox.replaceChildren();
+      if (already.length) {
+        const done = document.createElement("p");
+        done.className = "wps-done";
+        done.textContent = `已导入到 ${already.map((sheet) => sheet.label).join("、")}`;
+        wpsBox.appendChild(done);
+      }
+      const importWps = document.createElement("button");
+      importWps.type = "button";
+      importWps.className = "ghost wps-import";
+      importWps.textContent = already.length ? "再次导入" : "导入 WPS";
+      importWps.addEventListener("click", showSheetChoices);
+      wpsBox.appendChild(importWps);
+      const pending = WPS_SHEETS.filter((sheet) => !doneIds.has(sheet.id));
+      if (!pending.length) return;
+      const hint = document.createElement("span");
+      hint.className = "wps-hint";
+      hint.textContent = "已在表里";
+      wpsBox.appendChild(hint);
+      pending.forEach((sheet) => {
+        const markOnly = document.createElement("button");
+        markOnly.type = "button";
+        markOnly.className = "ghost wps-mark";
+        markOnly.textContent = `只标记 ${sheet.label}`;
+        markOnly.addEventListener("click", () => {
+          markPaperImported(paper.id, sheet.id);
+          renderGrid();
+          paintWpsBox();
+        });
+        wpsBox.appendChild(markOnly);
+      });
+    }
+
     function showSheetChoices() {
       const done = new Set(importedSheets(paper.id).map((sheet) => sheet.id));
       wpsBox.replaceChildren();
@@ -351,13 +387,9 @@
       choice.textContent = "导入中…";
       try {
         await postPaperToWps(paper, { sheetId: sheet.id });
-        const saved = markPaperImported(paper.id, sheet.id);
-        wpsBox.replaceChildren();
-        const done = document.createElement("p");
-        done.className = "wps-done";
-        done.textContent = `已导入到 ${saved.map((item) => item.label).join("、")}`;
-        wpsBox.appendChild(done);
+        markPaperImported(paper.id, sheet.id);
         renderGrid();
+        paintWpsBox();
       } catch (error) {
         buttons.forEach((button) => {
           button.disabled = false;
@@ -371,19 +403,7 @@
       }
     }
 
-    const already = importedSheets(paper.id);
-    if (already.length) {
-      const done = document.createElement("p");
-      done.className = "wps-done";
-      done.textContent = `已导入到 ${already.map((sheet) => sheet.label).join("、")}`;
-      wpsBox.appendChild(done);
-    }
-    const importWps = document.createElement("button");
-    importWps.type = "button";
-    importWps.className = "ghost wps-import";
-    importWps.textContent = already.length ? "再次导入" : "导入 WPS";
-    importWps.addEventListener("click", showSheetChoices);
-    wpsBox.appendChild(importWps);
+    paintWpsBox();
 
     els.dialogBody.replaceChildren(meta, title, authors, oneLabel, oneBody, label, body, toggle, tags, links, wpsBox);
     els.dialog.showModal();
