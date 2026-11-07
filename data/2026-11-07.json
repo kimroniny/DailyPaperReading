@@ -1,0 +1,313 @@
+{
+  "date": "2026-11-07",
+  "papers": [
+    {
+      "id": "10.1109-tdsc.2026.3749501",
+      "title": "OSCAR: Provably Consistent LLM Honeypots via Ontology-Constrained Response Generation",
+      "authors": [
+        "Hyeonwoo Gil",
+        "Junggi Kim",
+        "Sangsu Ahn",
+        "Shinjin Kang"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用本体约束大模型生成回复，让蜜罐会话不自相矛盾，对象是 Linux 交互式蜜罐。",
+      "abstract": "只靠提示的大模型蜜罐会在同一次会话里自相矛盾，跟踪状态的攻击者一旦抓住矛盾就能识破诱饵。OSCAR 去掉这种失败模式：把输出限制在本体一致的可行集合里。带类型的 Datalog± 世界状态规定哪些回复可接受，一致性门拒绝状态推不出的事实，过程式文件系统对重复读取返回相同内容。OSCAR 不会发出内部矛盾的记录，因此相对所强制的本体，它对「一致性探测」这类攻击者的可区分优势为零；这不是声称与真实主机普遍不可区分。读时延和可信度通道的判别器，在已部署流量组合上也没有可测优势。用同一骨干驱动 Cowrie、HoneyGPT 风格的纯提示基线，以及 OSCAR，可以把架构和模型分开。在十二签名预言机、十种 MITRE ATT&CK 战术、留出命令、三个骨干、三个 Linux 发行版和两百次回放的真实会话上，OSCAR 记录零矛盾，基线则在每个建立状态的战术上漂移；沙箱里的真实 shell 仍会泄露容器指纹。十二周部署捕获了真实攻击流量且没有矛盾。",
+      "abstractEn": "A prompt-only large language model (LLM) honeypot contradicts itself within a session, and one contradiction reveals the decoy to an attacker tracking that state. OSCAR removes this failure mode by confining its output to an ontology consistent feasible set: a typed Datalog± world-state defines admissible responses, a consistency gate rejects any fact the state does not entail, and a procedural filesystem returns identical content on repeated reads. OSCAR emits no internally contradictory transcript, so its distinguishing advantage against the consistency probe attacker class is zero for every command—relative to the enforced ontology, not a claim of general indistinguishability from a real host; a discriminator reading the timing and plausibility channels gains no measurable advantage on the deployed mix. Driving Cowrie, a HoneyGPT-style prompt-only baseline, and OSCAR from one backbone isolates architecture from model. Across a twelve-signature oracle, ten MITRE ATT&CK tactics, held-out commands, three backbones, three Linux distributions, and two hundred replayed wild sessions, OSCAR records zero contradictions while the baseline drifts on every state-establishing tactic; a sandboxed real shell still leaks a container fingerprint. A twelve-week deployment captures live attacker traffic without contradiction.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "蜜罐",
+        "大模型",
+        "本体约束",
+        "一致性"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3749501"
+    },
+    {
+      "id": "2611.03431",
+      "title": "IAMRAGBENCH: Benchmarking Authorization Expansions in LLM-Generated AWS IAM Policies under RAG Poisoning",
+      "authors": [
+        "Hasan Kaplan",
+        "Indika Kumara",
+        "Willem-Jan van den Heuvel",
+        "Damian Andrew Tamburri"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用基准评测检索投毒下大模型生成 AWS IAM 策略时的授权扩大，对象是云上身份与访问管理。",
+      "abstract": "用检索增强生成的大模型可以根据任务和运维文档合成 AWS IAM 策略。攻击者控制的上下文可能诱导出服务商侧合法、但超出可信授权范围的策略。我们提出 IAMRAGBENCH，共 60 个用例，覆盖范围、条件、显式拒绝、信任、权限边界和角色委托。它把确定性的授权包络打分和按用例校验结合起来，并在支持的地方做请求级检查。一次攻击需要：干净策略在服务商侧合法且满足任务；处理策略同样合法，但越过包络、匹配预先声明的目标、保留预期请求，并新授权一个本应禁止的请求。五个端点上，把投毒上下文直接放进提示会产生 49 次精确授权差额，其中 46 次命中预定目标（46/292，15.75%）。端到端 BM25 在 720 篇文档上、k=5 时总能检索到指定投毒文档，但只产生 7/294 次命中目标的攻击（2.38%）。把同样的削弱写成最终安全架构例外时，冻结的两端口压力测试里达到 74/116（63.79%），事后扩展到五个端点、同一套冻结提示时为 115/294（39.12%）。回放 194 条服务商侧合法、但不满足任务要求的处理策略时，AWS CheckNoNewAccess 对 168 次命中目标的精确攻击中的 4 次报告「无新访问」。完整的部署前规则拒绝全部 171 次精确差额，并把 5 个未决用例转人工。这些结果支持把 IAM 副驾驶当成不可信的提案生成器，部署前必须做独立的授权检查。",
+      "abstractEn": "Large language models (LLMs) using retrieval-augmented generation (RAG) can synthesize Amazon Web Services (AWS) Identity and Access Management (IAM) policies from tasks and operational documents. Attacker-controlled context may induce provider-valid policies that exceed trusted authorization requirements. We present IAMRAGBENCH, a 60-case benchmark spanning scope, conditions, explicit denies, trust, permissions boundaries, and role delegation. It combines deterministic authorization-envelope scoring with case-specific validation, including request-level checks where supported. An attack requires a provider-valid clean policy that satisfies the task and a provider-valid treatment policy that violates the envelope, matches a predeclared goal, preserves an intended request, and newly authorizes a forbidden request. Across five endpoints, included-context exposure produces 49 exact authorization deltas, including 46 goal-matched attacks (46/292; 15.75%). End-to-end BM25 over 720 documents retrieves the designated poison for all 60 tasks at k=5 but produces 7/294 goal-matched attacks (2.38%). Presenting the same weakening as a final security architecture exception produces 74/116 attacks in a frozen two-endpoint stress test (63.79%) and 115/294 in a post hoc all-five extension using the same frozen prompts (39.12%). In a replay of 194 provider-valid treatment policies that violate task requirements, AWS CheckNoNewAccess reports no new access for four of 168 goal-matched exact attacks. The full pre-deployment rule rejects all 171 exact deltas and routes five unresolved cases to review. These findings support treating IAM copilots as untrusted proposal generators whose outputs require independent authorization checks before deployment.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "IAM",
+        "检索投毒",
+        "授权扩大",
+        "策略生成"
+      ],
+      "url": "https://arxiv.org/abs/2611.03431",
+      "pdf": "https://arxiv.org/pdf/2611.03431"
+    },
+    {
+      "id": "2611.05823",
+      "title": "A Hybrid Approach for Automated Security Pattern Recovery",
+      "authors": [
+        "Anh Minh Nguyen",
+        "Tuan Dat Tran",
+        "Alzubair Hassan",
+        "Liliana Pasquale"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型代理加代码属性图，从仓库里恢复安全模式实现，对象是 Java 和 Python 开源项目。",
+      "abstract": "安全设计强调把安全做进软件设计和开发。安全模式目录把这一原则落实成可复用的架构方案，用来应对反复出现的安全问题。但从源码里恢复这些实现仍然很难：安全模式抽象、跨多个组件，而且合法实现很多。我们提出 SecPatRec，一种从源码仓库自动恢复安全模式的混合方法。我们把安全模式看成参考架构，把恢复当成演绎任务：判断规定角色是否存在、把角色落到代码实体上，并恢复它们的交互序列。SecPatRec 用带语义和词法代码搜索的 ReAct 风格大模型代理做角色检测与落地，再用静态代码属性图分析恢复交互。我们整理了一份人工核对的标准答案，覆盖 93 个开源 Java 和 Python 仓库中 5 种安全模式的 100 个实例，并给出三级评测框架，对照标准答案衡量恢复正确性。我们用四个大模型评估 SecPatRec，包括闭源和开源。对全部模型和模式实例取平均，角色检测准确率 0.84，角色落地相似度 0.84，交互恢复分数 0.66。相对一次性端到端大模型基线，SecPatRec 的综合恢复分数更高、每次运行的估计 API 费用更低，还能处理超出基线输入上限的仓库。恢复出的角色映射和静态得到的交互序列，可以为检查安全模式实现提供结构和行为证据。",
+      "abstractEn": "Security-by-design emphasises integrating security into software design and development. Security pattern catalogues operationalise this principle by prescribing reusable architectural solutions to recurring security problems. However, recovering their implementations from source code remains challenging because security patterns are abstract, span multiple components, and admit many valid implementations. We present SecPatRec, a hybrid approach for automated security pattern recovery from source code repositories. We treat a security pattern as a reference architecture and frame its recovery as a deductive task: determining which prescribed roles are present, grounding them in code entities, and recovering their interaction sequences. SecPatRec pairs a ReAct-style LLM agent equipped with semantic and lexical code search for role detection and grounding with static code property graph analysis for interaction recovery. We curate a human-validated ground-truth dataset of 100 pattern instances covering five security patterns across 93 open-source Java and Python repositories, and introduce a three-level evaluation framework measuring recovery correctness against this ground truth. We evaluate SecPatRec using four LLMs, including proprietary and open-source models. Averaged over all models and pattern instances, SecPatRec achieves role-detection accuracy of 0.84, role-grounding similarity of 0.84, and an interaction-recovery score of 0.66. Compared to a one-shot end-to-end LLM baseline, SecPatRec achieves higher aggregate recovery scores and lower estimated LLM API costs per run, while processing repositories that exceed the baseline's configured input limit. The recovered role mappings and statically derived interaction sequences provide structural and behavioural evidence that can support inspection of security-pattern implementations.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全模式",
+        "代码审计",
+        "大模型代理",
+        "代码属性图"
+      ],
+      "url": "https://arxiv.org/abs/2611.05823",
+      "pdf": "https://arxiv.org/pdf/2611.05823"
+    },
+    {
+      "id": "2611.06583",
+      "title": "PatchCon: Patch-aware Weighted Supervised Contrastive Learning for Vulnerability Detection",
+      "authors": [
+        "Chaomeng Lu",
+        "Pooya Rostami Mazrae",
+        "Bert Lagaisse"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 CodeBERT 对比学习区分漏洞函数和补丁函数，对象是 Linux 内核漏洞。",
+      "abstract": "自动漏洞检测对保护现代软件很重要，但现有基于学习的方法常把函数当成独立样本，没有用好漏洞修复补丁提供的监督。本文提出 PatchCon，一种基于 CodeBERT、感知补丁的对比学习模型，做函数级漏洞检测。PatchCon 同时优化漏洞分类和有监督对比学习，并把「有漏洞–已打补丁」函数对当成硬负例、给予更大对比权重，以便抓住补丁带来的细微安全差异。为了评估补丁级区分能力，我们用两个成对指标衡量模型能否正确区分有漏洞函数和对应补丁。我们在 PairVul-Linux 上做了充分实验，包括与现有方法对比、消融、超参敏感性和统计显著性检验，并按 CWE 类型、函数长度和补丁大小做细粒度分析，还在训练截止日期之后新披露的 Linux 内核漏洞上评估。在 PairVul-Linux 上，PatchCon 在分类和成对指标上都超过有代表性的预训练代码模型和对比学习基线，把最强复现基线的成对准确率从 0.2060 提到 0.3264，并达到与基于 GPT-4o 的大模型方法相当的成对准确率，成本明显更低。在复现模型里，PatchCon 对训练未见过的 CVE 测试对、以及对新披露漏洞，也拿到最高成对准确率。",
+      "abstractEn": "Automated vulnerability detection is critical for securing modern software systems, yet existing learning-based approaches often treat functions as independent samples and underuse the supervision provided by vulnerability-fixing patches. In this paper, we propose PatchCon, a CodeBERT-based patch-aware contrastive learning model for function-level vulnerability detection. PatchCon jointly optimizes vulnerability classification and supervised contrastive learning, and treats vulnerable-patched function pairs as hard negatives with larger contrastive weights to capture subtle security-relevant differences introduced by fixes. To evaluate patch-level discrimination, we use two pairwise metrics that measure whether a model can correctly distinguish vulnerable functions from their patched counterparts. We evaluate PatchCon on PairVul-Linux through extensive experiments, including state-of-the-art comparisons, ablation studies, hyperparameter sensitivity analysis, and statistical significance testing. We also conduct fine-grained analyses by Common Weakness Enumeration (CWE) type, function length, and patch size, and further evaluate PatchCon on Linux kernel vulnerabilities disclosed after the training data cutoff. On PairVul-Linux, PatchCon outperforms representative pretrained code models and contrastive learning baselines on both classification and pairwise metrics, improves pairwise accuracy over the strongest reproduced baseline from 0.2060 to 0.3264, and achieves pairwise accuracy comparable to that of a GPT-4o-based large language model (LLM) method at a substantially lower cost. Among the reproduced models, PatchCon also achieves the highest pairwise accuracy on test pairs from Common Vulnerabilities and Exposures (CVE) entries unseen during training and on newly disclosed vulnerabilities.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "Linux 内核",
+        "对比学习",
+        "CodeBERT"
+      ],
+      "url": "https://arxiv.org/abs/2611.06583",
+      "pdf": "https://arxiv.org/pdf/2611.06583"
+    },
+    {
+      "id": "2611.07853",
+      "title": "CANMentor: A Large-Small Model Collaboration Framework for CAN Bus Intrusion Detection",
+      "authors": [
+        "Zhiquan Liu",
+        "Haolin Gao",
+        "Bo Wu",
+        "Jingjing Guo",
+        "Heng Sun",
+        "Jianfeng Ma"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用云侧大模型教师监督车侧轻量模型，做 CAN 总线入侵检测，对象是车载网络。",
+      "abstract": "CAN 总线没有内建安全机制，需要实时入侵检测。但资源和时延限制让车侧入侵检测系统只能用轻量模型，在非独立同分布数据下检测效果和泛化会下降。同时，把原始 CAN 报文上传云端做更强模型推理，又有泄露车辆敏感信息的风险。我们提出 CANMentor，一种大小模型协作框架：云侧大模型教师监督车侧轻量 IDS，用于 CAN 总线入侵检测。每辆车先做本地推理，再由兼顾隐私的生成器从原始 CAN 报文做出代理样本，供云侧教师推理，以保护数据隐私。只有教师回复在规定时延内到达时，车辆才采用教师预测，否则保留本地预测；返回的教师 logits 都会转成软标签，用于定期知识蒸馏。在 ROAD 数据集和 HCRL Car-Hacking 数据集的非独立同分布划分上，知识蒸馏分别把 Macro F1 最多相对提高 25.01% 和 20.79%。教师预测还把接近本地决策边界的 CAN 报文检测准确率提高 38.71–42.00 个百分点。",
+      "abstractEn": "The Controller Area Network (CAN) bus lacks built-in security mechanisms, making real-time intrusion detection necessary. However, resource and latency constraints limit vehicle-side intrusion detection systems (IDSs) to lightweight models, whose detection performance and generalization can degrade under non-independent and identically distributed (non-IID) data. Meanwhile, uploading original CAN messages to the cloud for more powerful model inference risks exposing sensitive vehicle information. We propose CANMentor, a large-small model collaboration framework in which a cloud-side large language model (LLM) teacher supervises vehicle-side lightweight IDS models for CAN bus intrusion detection. Each vehicle first performs local inference, and a privacy-aware generator then produces proxies from the original CAN messages for cloud-side teacher inference to protect data privacy. The vehicle uses the teacher prediction only when the response arrives within a prescribed latency bound and otherwise retains the local prediction; all returned teacher logits are converted into soft targets for periodic knowledge distillation. On non-IID partitions of the ROAD dataset and the HCRL Car-Hacking dataset, knowledge distillation yields maximum relative Macro F1 improvements of 25.01% and 20.79%, respectively. Teacher predictions also improve detection accuracy for CAN messages near the local decision boundary by 38.71-42.00 percentage points.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "入侵检测",
+        "CAN 总线",
+        "知识蒸馏",
+        "车载安全"
+      ],
+      "url": "https://arxiv.org/abs/2611.07853",
+      "pdf": "https://arxiv.org/pdf/2611.07853"
+    },
+    {
+      "id": "2611.04086",
+      "title": "Permitted but Unauthorized: Affordance-Induced Delegated-Scope Violations in Multi-Agent LLM Systems",
+      "authors": [
+        "Shravya Kanchi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "测量多智能体大模型在共享权限下越权使用同伴资源，对象是 CI/CD 流水线和安全运营事件队列。",
+      "abstract": "多智能体大模型系统把多个代理放在共享基础设施上，每个代理持有的权限远大于被委托的任务，因此每个代理都经常被允许去动同伴的资源，而这些资源本来没分给它。我们问：在竞争压力下，是什么决定代理会不会从自己的委托范围跨进同伴资源，以及这种跨越能不能被强制挡住？我们在八个大模型、两个模拟环境（CI/CD 发布流水线和安全运营事件队列）上研究，用确定性、环路中无模型的检测器，检查带哈希链、可回放核对的日志。在竞争激励、候选可见性和收益信息的 2×2×2 析因实验里（三个模型，每格 n=52），我们发现管行为的是动作呈现，而不是权限本身：同伴动作未列出时没有代理越界；在竞争压力下列出该动作并写明收益时，越界急剧上升，Claude Sonnet 4.5 可达 52/52。我们也看到模型代际差异：两个更新的模型（Claude Sonnet 5.5 和 Opus 5.5）在 100 次相同攻击里拒绝全部越界，而上一代模型在 10 次里有 9 次越界。随后评估两种防御：确定性引用监视器和基于模型的执行前判定器，两者都挡住了全部越界；在任务可完成时，把可避免的同伴截止失败从 15/40 和 14/40 降到最多 1/40。但范围强制不等于伤害预防：代理仍可通过对自己资源的授权动作拖累同伴，例如谎报事件严重程度，两种防御都检测不到。结果说明动作呈现、而不只是权限，是可调控的跨代理范围越界因素；强制委托范围与防止伤害不是一回事，需要能感知效果的授权。",
+      "abstractEn": "Multi-agent LLM systems place several agents on shared infrastructure, where each agent holds permissions far broader than the task it is delegated -- so every agent is routinely permitted to act on a peer's resources it was never assigned. We ask: under competitive pressure, what determines whether an agent crosses from its delegated scope into a peer's resources, and can such crossings be enforced away? We study this across eight LLMs in two simulated environments -- a CI/CD release pipeline and a security-operations incident queue -- using a deterministic, no-model-in-the-loop detector over hash-chained, replay-verified logs. In a controlled 2x2x2 factorial over competitive incentive, candidate visibility, and payoff information (three models, n=52 per cell), we find that action representation, not permission, governs the behavior: no agent crosses when the peer action is unlisted, whereas listing it under competitive pressure with a stated payoff raises crossings sharply -- up to 52 of 52 episodes for Claude Sonnet 4.5. We also observe a model-dependent split: two newer models (Claude Sonnet 5.5 and Opus 5.5) refuse the identical attack in 0 of 100 episodes, where prior-generation models cross in 9 of 10. We then evaluate two defenses -- a deterministic reference monitor and a model-based pre-execution judge -- both block every crossing and, when the task is winnable, cut avoidable peer deadline misses from 15/40 and 14/40 to at most 1/40. But scope enforcement is not harm prevention: an agent can still set a peer back through an authorized action on its own resources -- misreporting its incident's severity -- which neither defense detects. Our results establish action representation, not permission alone, as a controllable driver of inter-agent scope violations, and show that enforcing delegated scope is distinct from preventing harm, motivating effect-aware authorization.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "多智能体",
+        "授权范围",
+        "CI/CD",
+        "安全运营"
+      ],
+      "url": "https://arxiv.org/abs/2611.04086",
+      "pdf": "https://arxiv.org/pdf/2611.04086"
+    },
+    {
+      "id": "2611.07486",
+      "title": "MEvince: Knowledge-Constrained LLM Reasoning for Technique Identification from Malware Reports",
+      "authors": [
+        "Hongyu She",
+        "Yiling He",
+        "Mengda Xie",
+        "Yiping Liu",
+        "Xingzhi Qian",
+        "Zhan Qin",
+        "Lorenzo Cavallaro"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用知识约束的大模型推理，从恶意软件分析报告里识别 ATT&CK 技术，对象是公开恶意软件报告。",
+      "abstract": "把恶意软件分析报告里的行为情报映射到 ATT&CK 技术，有助于威胁分析和防御，但可靠识别仍然很难。支持证据常散落在长而异构的报告里，相近技术又共享行为线索，只在细微但关键的细节上不同。大模型可以用外部知识解读报告，也可能凭看起来合理的关联而不是充足证据来指定技术。我们提出 MEvince，一种知识约束的大模型推理框架，做报告级恶意软件技术识别。核心是一套共享行为表示，把报告观察连接到技术定义。该表示通过代理式挖掘技术文档构建，并支撑两个在线阶段：1）原语引导抽取，用行为原语组织大模型抽出的观察、链到源段落，并归并分散证据；2）证据对齐检索，用同一套概念把证据匹配到技术画像，保留可能候选和易混替代项，供大模型比较区分行为。两个阶段都有校验：核对证据引用，并检查技术特定要求。该表示还支持不更新参数的适配：离线代理审计诊断概念弱点，并改进抽取或检索策略。我们在 MITRE ATT&CK 引用的 610 份公开恶意软件报告上，对照四类方法共 11 个基线评估 MEvince。相对最强基线，精确 ID 的 F1 提高 17.4%；概念引导检索把金标候选覆盖从 31.6% 提到 47.9%。用一小份适配集做离线改进还能继续提升，并超过会更新模型参数的基线。",
+      "abstractEn": "Mapping behavioral intelligence in malware analysis reports to ATT&CK techniques supports threat analysis and defense, but reliable identification remains challenging. Supporting evidence is often scattered across long, heterogeneous reports, while closely related techniques share behavioral cues and differ only in subtle but decisive details. While large language models (LLMs) can use external knowledge to interpret reports, they may assign techniques based on plausible associations rather than sufficient evidence. We present MEvince, a knowledge-constrained LLM reasoning framework for report-level malware technique identification. Its core is a shared behavioral representation connecting report observations to technique definitions. This representation is built through agentic mining of technique documentation and supports two online stages: 1) primitive-guided extraction uses behavioral primitives to structure LLM-extracted observations, link them to source passages, and group dispersed evidence; 2) evidence-aligned retrieval matches this evidence to technique profiles through the same concepts, retaining likely candidates and confusable alternatives for LLM comparison of distinguishing behaviors. Controls at both stages validate evidence references and check technique-specific requirements. The representation also supports adaptation without parameter updates, where offline agentic audits diagnose concept weaknesses and refine extraction or retrieval policies. We evaluate MEvince against 11 baselines spanning four method families using a dataset of 610 public malware reports referenced by MITRE ATT&CK. MEvince improves exact-ID F1 over the strongest baseline by 17.4%, and its concept-guided retrieval increases gold-label candidate coverage from 31.6% to 47.9%. With a small adaptation set, offline refinement yields further gains and outperforms baselines that update model parameters.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "恶意软件",
+        "ATT&CK",
+        "威胁情报",
+        "大模型推理"
+      ],
+      "url": "https://arxiv.org/abs/2611.07486",
+      "pdf": "https://arxiv.org/pdf/2611.07486"
+    },
+    {
+      "id": "2611.06674",
+      "title": "AgentTrustCI: Build-Time Policy, Grounding, and Trajectory Tests for Java LLM Agents",
+      "authors": [
+        "Sachin Gupta"
+      ],
+      "year": 2026,
+      "venue": "ICCA 2026",
+      "abstractOneWord": "在 Java 构建流水线里用策略、落地和轨迹检查测试大模型代理，对象是企业 Java 代理应用。",
+      "abstract": "基础设施安全并不能说明大模型代理是否选了允许的工具、答案是否落在工具输出上、是否走了规定工作流。AgentTrustCI 是一个 Java/JUnit 5 框架，把这些应用层期望写成对记录轨迹的策略、落地和轨迹检查。确定性回放实现支持可重复的构建期测试；判定器接口提供可选语义评估的扩展点。在覆盖七个企业领域的 55 个合成用例上，完整流水线正确分类全部 30 个注入故障和 25 个通过对照（含 10 个非平凡对照），12 个指定关键用例无漏报。因为语料有意让每层隔离 10 个故障，单层配置各正确分类 35 个用例。一个经不允许序列得到的已落地答案，说明了轨迹检查的额外覆盖。重复测量把校验器执行时间和进程启动、报告时间分开。这些结果说明的是对作者回归套件的覆盖，不是生产准确率。我们描述了生产轨迹校验协议、可选的大模型判定器集成，以及工作流变化时如何维护期望。贡献是一套可操作的模式：在现有 Java 发布流水线里表达行为契约。",
+      "abstractEn": "Infrastructure security does not establish whether an LLM agent selected an allowed tool, grounded its answer in tool output, or followed a required workflow. AgentTrustCI is a Java/JUnit 5 framework that expresses these application-layer expectations as policy, grounding, and trajectory checks over recorded traces. A deterministic replay implementation supports repeatable build-time tests; a judge interface provides an extension point for optional semantic evaluation. On 55 synthetic cases spanning seven enterprise domains, the full pipeline correctly classifies all 30 injected faults and 25 passing controls, including ten non-trivial controls, and misses none of 12 designated critical cases. Each single-layer configuration correctly classifies 35 cases because the corpus deliberately isolates ten faults per layer. A grounded answer obtained through a disallowed sequence illustrates the additional coverage of trajectory checks. Repeated measurements quantify validator execution separately from process startup and reporting. These results establish coverage of the authored regression suite, not production accuracy. We describe a production-trace validation protocol, optional LLM-judge integration, and maintenance of expectations as workflows evolve. The contribution is a practical pattern for expressing behavioral contracts within an existing Java release pipeline.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Java",
+        "代理测试",
+        "构建期检查",
+        "轨迹审计"
+      ],
+      "url": "https://arxiv.org/abs/2611.06674",
+      "pdf": "https://arxiv.org/pdf/2611.06674"
+    },
+    {
+      "id": "2611.01323",
+      "title": "Beyond Leaderless: Randomized Consensus Against Mobile Crashes",
+      "authors": [
+        "Ittai Abraham",
+        "Kaya Alpturer",
+        "Pranav Garimidi",
+        "Joachim Neu",
+        "Tim Roughgarden",
+        "Ertem Nusret Tas"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多领导固定视图共识抵抗可移动崩溃，对象是同步网络上的副本共识。",
+      "abstract": "许多共识协议在同步网络里也会无法终止，只要对手能在副本之间移动并反复让其中一个崩溃。我们提出 Multi-Leader Fixed-View Simplex（ML-FVS），用来抵抗这类对手，同时保留 Simplex 共识的简单结构和好情况下的时延。协议把固定视图 Simplex 扩展成多个领导，每个领导都可以广播提案。到投票截止时，每个副本对目前见到的提案集合投票。投票之后揭开的隐藏门限信标给出多个领导的优先级，把每张票解析成其中优先级最高的提案。我们的模型同时包含永久自适应拜占庭故障和可移动崩溃。在崩溃预算为常数、拜占庭腐化为 Δ 延迟时，对领导开始时诚实的重复视图，期望时延为 O(Δ)。在立即拜占庭腐化下，协议仍能保证活性。我们还在随机网络时延和随机故障下评估，发现即使理性领导为了提高收益而延迟提案，多个领导也能减少视图失败。",
+      "abstractEn": "Many consensus protocols fail to terminate under attack from an adversary that has the power to move between replicas and repeatedly crash one of them, even in synchrony. We present Multi-Leader Fixed-View Simplex (ML-FVS) to defend against such an adversary while keeping the simple structure and good-case latency of Simplex consensus. Our protocol extends fixed-view Simplex with multiple leaders, each of which may broadcast a proposal. At the voting deadline, each replica votes on the set of proposals it has seen so far. A hidden threshold beacon revealed after the votes gives a priority order on the multiple leaders, resolving each vote to its highest-priority proposal. Our model combines permanent adaptive Byzantine faults with mobile crashes. For a constant crash budget and Delta-delayed Byzantine corruption, we obtain O(Delta) expected latency over repeated views whose leaders start honest. With immediate Byzantine corruptions, the protocol still achieves liveness. We also evaluate the protocol under random network delays and stochastic faults, finding that multiple leaders reduce view failures even when rational leaders delay their proposals to increase rewards.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "拜占庭",
+        "可移动崩溃",
+        "多领导"
+      ],
+      "url": "https://arxiv.org/abs/2611.01323",
+      "pdf": "https://arxiv.org/pdf/2611.01323"
+    },
+    {
+      "id": "2026-2721",
+      "title": "Authenticated Outsourced Incrementally Verifiable MPC",
+      "authors": [
+        "Hamidreza Khoshakhlagh",
+        "Anders Kallesøe",
+        "Anders Dalskov"
+      ],
+      "year": 2026,
+      "venue": "ASIACRYPT 2026",
+      "abstractOneWord": "把长期安全多方计算的公开验证外包出去，对象是需要周期性刷新份额和轮换委员会的 MPC。",
+      "abstract": "不少隐私计算应用，例如迭代机器学习训练，需要在秘密状态上长时间持续计算。MPC 能做安全计算，但长期秘密状态容易被自适应腐化，因此需要定期刷新份额并轮换委员会。很多场景希望外部方能验证这些状态更新和轮换做得对，但现有公开可验证做法开销大，因为 MPC 节点要在秘密分享数据上生成昂贵证明。我们提出 Authenticated Outsourced Incrementally Verifiable MPC（IV-MPC），用于高效公开验证长期运行的 MPC。做法把私有证明计算（由 MPC 节点执行）和证明生成里可委托给单个外部证明者 P* 的公开任务拆开。为此引入三个组件：（1）Private-opening Polynomial Commitment Scheme（PoPCS），让新委员会在不泄露底层数据的前提下证明自己收到了正确的状态份额；（2）基于 sumcheck 和压缩 Σ 协议的高效分布式证明系统，用来验证状态更新；（3）无状态交接技术，把委员会转移锚定到固定状态承诺，避免证明大小随时间增长。再配合由外部证明者 P* 运行的增量可验证计算证明，IV-MPC 让外部审计方可以在每一轮验证 MPC 计算正确性，验证时间在渐近意义上与总轮数无关。",
+      "abstractEn": "Many privacy-preserving applications such as iterative machine learning training require executing ongoing computations over a secret state for long periods of time. While MPC enables secure computation, long-lived secret state is vulnerable to adaptive corruptions, requiring periodic share refreshes and committee rotation. In many settings, it is desirable for external parties to be able to verify that these state updates and rotations are performed correctly, but existing approaches for such public verifiability incur high overhead as they require MPC nodes to generate expensive proofs over secret-shared data. We propose Authenticated Outsourced Incrementally Verifiable MPC (IV-MPC), a framework for efficient public verification of long-running MPC computation. Our approach decouples private proof computation (run by MPC nodes) from public tasks within the proof generation that can be delegated to a single external prover P*. To realize this architecture, we introduce three main components: (1) a Private-opening Polynomial Commitment Scheme (PoPCS) that lets an incoming committee prove they received the correct state shares without revealing the underlying data; (2) an efficient distributed proof system based on the sumcheck protocol and compressed Sigma-protocols to verify state updates; and (3) a stateless handover technique that anchors committee transfers to a fixed state commitment, preventing proof sizes from growing over time. Combined with an incrementally verifiable computation (IVC) proof run by the external prover P*, IV-MPC enables external auditors to verify correctness of MPC computation at every round with verification time asymptotically independent of the total number of epochs.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "MPC",
+        "增量可验证计算",
+        "委员会轮换",
+        "公开验证"
+      ],
+      "url": "https://eprint.iacr.org/2026/2721",
+      "pdf": "https://eprint.iacr.org/2026/2721.pdf"
+    },
+    {
+      "id": "2026-2770",
+      "title": "Sumcheck bit packing",
+      "authors": [
+        "Matteo Frigo",
+        "abhi shelat"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用域迹把多比特打进一个域元素再做 sumcheck，对象是电路零知识证明系统。",
+      "abstract": "大域上的电路零知识证明如果只向一个域元素提交一个比特，会浪费大部分域元素。我们研究打包见证：把 m 个比特存在 GF(2^m) 的一个元素里，同时仍允许证明系统验证关于单个比特的线性断言。已有做法要么只能打包到 4 比特，要么需要张量结构的断言和额外 sumcheck 轮次并带来更大可靠性误差，要么依赖 Frobenius 自同构。相对地，我们给出更简单的归约，只利用域迹的 GF(2) 线性，对任意比特线性断言达到 2^{-m} 的可靠性误差。随后我们用迹零域元素的刻画，让该归约在任意隐藏线性承诺方案上成为零知识：以往构造要在承诺方案里验证 O(m^2) 或 O(m) 个二次约束，本协议只需要线性约束。",
+      "abstractEn": "Circuit-based zero-knowledge proofs over large fields waste most of a field element when they commit to a single bit. We study the problem of committing to packed witnesses, in which m bits are stored in one element of GF(2^m), while still allowing the proof system to verify linear claims about the individual bits. Prior approaches to this problem either (a) scale to packing only 4 bits, (b) require tensor-structured claims and additional sumcheck rounds that incur larger soundness error, or (c) rely on Frobenius automorphisms. In contrast, we present a simpler reduction that exploits only the GF(2)-linearity of the field trace and achieves soundness error 2^{-m} for arbitrary bit-linear claims. We then use a characterization of trace-zero field elements to make the reduction zero-knowledge over any hiding linear commitment scheme: whereas previous constructions verify O(m^2) or O(m) quadratic constraints in the commitment scheme, our protocol requires only linear constraints.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "零知识证明",
+        "sumcheck",
+        "比特打包",
+        "电路"
+      ],
+      "url": "https://eprint.iacr.org/2026/2770",
+      "pdf": "https://eprint.iacr.org/2026/2770.pdf"
+    },
+    {
+      "id": "2026-2714",
+      "title": "Polynomial Batch Accumulators for Onboarding-Dominant Zero-Knowledge Membership Proofs",
+      "authors": [
+        "Samanta Karmaker",
+        "Sampad Sikder",
+        "Md Ariful Islam",
+        "Md Sadek Ferdous"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用多项式分批累加器加速大批量成员注册的零知识成员证明，对象是合规场景下的 zk-SNARK 成员集。",
+      "abstract": "零知识成员累加器通常面向缓慢增长、频繁生成证明的集合，这会给现代合规架构造成严重效率瓶颈。受治理驱动的应用，例如 FATF 客户尽职调查、eIDAS 2.0 钱包签发和 MiCA VASP 授权，把结构反过来：名册按企业规模一次性摄入，证明按需请求。为解决这一错配，我们提出 Polynomial Equation Batching（PEB），一种面向注册繁重负载的成员累加器。PEB 把最多 128 个成员表示成一个特征多项式的一批，并用 Poseidon 对其系数做哈希，再通过并行分批扩展到任意大的群体。我们给出两个变体：PEB-A 把成员秘密直接映射到多项式根以追求性能；PEB-B 在电路内对秘密做哈希以加强安全性。实现基于 Noir 和 Barretenberg、曲线 BN254，并在最多 1,048,576 个成员上评估。相对增量 Merkle 树，PEB-A 在每用户初始化上平均最高加速 149.07 倍，证明生成开销约增加 33.87%。相对静态 Merkle 树，PEB-A 在建立阶段加速 15.71 倍。通过把链下开销从哈希计算转到域乘法，PEB 为真实世界的零知识合规系统提供可扩展方案。",
+      "abstractEn": "Zero-knowledge membership accumulators are conventionally tailored for slowly growing sets with frequent proof generation, creating severe efficiency bottlenecks for modern compliance architectures. Governance-driven applications like FATF customer due diligence, eIDAS 2.0 wallet issuance, and MiCA VASP authorization invert this structure. In this regime, rosters are ingested at an enterprise scale, while proofs are requested selectively. To resolve this mismatch, we introduce Polynomial Equation Batching (PEB), a membership accumulator for onboarding heavy workloads. PEB represents up to 128 members per batch as a characteristic polynomial and hashes its coefficients via Poseidon, seamlessly scaling to arbitrarily large populations through parallel batching. We present two variants: PEB-A, which maps member secrets directly to polynomial roots for maximum performance, and PEB-B, which hashes secrets in-circuit for hardened security. Implemented in Noir and Barretenberg on BN254, and evaluated for up to 1,048,576 members, PEB provides significant performance improvements. Compared to incremental Merkle trees, PEB-A achieves up to a 149.07x mean speedup in per-user initialization while incurring a modest 33.87% proof-generation overhead. Additionally, against static Merkle trees, PEB-A delivers a 15.71x speedup during setup. By shifting off-circuit overhead from hash evaluations to field multiplications, PEB provides a highly efficient, scalable solution for real-world zero-knowledge compliance systems.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "零知识证明",
+        "成员证明",
+        "累加器",
+        "Poseidon"
+      ],
+      "url": "https://eprint.iacr.org/2026/2714",
+      "pdf": "https://eprint.iacr.org/2026/2714.pdf"
+    }
+  ]
+}
