@@ -1,0 +1,329 @@
+{
+  "date": "2026-11-08",
+  "papers": [
+    {
+      "id": "10.1145-3816704",
+      "title": "PoCo: Agentic Proof-of-Concept Exploit Generation for Smart Contracts",
+      "authors": [
+        "Vivi Andersson",
+        "Sofia Bobadilla",
+        "Harald Hobbelhagen",
+        "Martin Monperrus"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用大模型代理从审计描述生成可执行 PoC 利用，对象是 Solidity 智能合约。",
+      "abstract": "智能合约处在强对抗环境中，漏洞可能造成重大资金损失，因此需要安全审计。审计里，概念验证（PoC）利用很关键：它能向相关方证明所报告的漏洞真实、可复现、可处理。但手工写 PoC 耗时、易错，还常被紧张的审计进度卡住。我们提出 PoCo，一个智能体框架，能根据审计人员用自然语言写的漏洞描述，自动生成可执行的 PoC 利用。PoCo 以 Reason–Act–Observe 循环与一组代码执行工具交互，自主生成 PoC。产出的利用可在 Foundry 测试框架中完整执行，便于写进审计报告或其他安全工具。我们在 23 份真实漏洞报告上评估 PoCo。PoCo 稳定优于零样本和固定工作流基线，能生成格式正确、逻辑正确的 PoC。结果表明，智能体框架能明显降低智能合约审计中高质量 PoC 的工作量。本文为智能合约安全社区提供了可落地的经验。",
+      "abstractEn": "Smart contracts operate in a highly adversarial environment, where vulnerabilities can lead to substantial financial losses. Thus, smart contracts are subject to security audits. In auditing, proof-of-concept (PoC) exploits play a critical role by demonstrating to the stakeholders that the reported vulnerabilities are genuine, reproducible, and actionable. However, manually creating PoCs is time-consuming, error-prone, and often constrained by tight audit schedules. We introduce PoCo, an agentic framework that automatically generates executable PoC exploits from natural-language vulnerability descriptions written by auditors. PoCo autonomously generates PoC exploits in an agentic manner by interacting with a set of code-execution tools in a Reason–Act–Observe loop. It produces fully executable exploits compatible with the Foundry testing framework, ready for integration into audit reports and other security tools. We evaluate PoCo on a dataset of 23 real-world vulnerability reports. PoCo consistently outperforms the Zero-shot and Workflow baselines, generating well-formed and logically correct PoCs. Our results demonstrate that agentic frameworks can significantly reduce the effort required for high-quality PoCs in smart contract audits. Our contribution provides actionable knowledge for the smart contract security community.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "PoC利用",
+        "智能体",
+        "审计"
+      ],
+      "url": "https://dl.acm.org/doi/10.1145/3816704",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3816704"
+    },
+    {
+      "id": "10.1145-3830237",
+      "title": "Package Hallucinations as Phantoms in Open Source Software Supply Chains: An Empirical Security Analysis",
+      "authors": [
+        "Zhe Huang",
+        "Chaoge Liu",
+        "Zhi Wang",
+        "Xiang Cui",
+        "Xiao Deng",
+        "Mengyang Xu"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "实测大模型幻觉包名在 npm 供应链里的投毒风险，并用代理做防护，对象是开源 npm 包。",
+      "abstract": "在代码生成任务中，大模型经常推荐并不存在的软件包，即包名幻觉。这可能带来安全风险：攻击者可以注册这些假包，再用于供应链攻击。为检验现实中是否可行，本文对这一威胁做了系统实证研究。我们从八个主流大模型中抽出 107 个幻觉包名，并在六个月内上传到 npm 仓库。结果表明风险真实存在：35.2% 的安装来自开发者，多数首次交互发生在注册后两周内。名称相似度分析还显示，25.2% 的幻觉名称与已有 npm 包的绝对编辑距离不超过 1，构成直接的拼写抢注风险。在我们的评测设置里，带工具的生成（具体是联网搜索）并不能缓解这一威胁，反而会因上下文污染把幻觉持续率从 11.2% 抬到 17.3%。在 npm 上，整场攻击活动估计只需约 496 美元，比传统供应链攻击容易得多，却仍能造成投毒效果。为应对这一新威胁，我们设计了自主防护代理 NymGuard：实时检测幻觉包、抢先注册以挡住恶意使用，并维护公开预警清单。完整实现已开源。",
+      "abstractEn": "In code generation tasks, large language models (LLMs) frequently recommend nonexistent software packages, referred to as package hallucinations. This may pose a security risk, as attackers could register these fake packages and exploit them in supply chain attacks. To investigate the real-world feasibility, this article conducts a systematic empirical study of this potential threat. We extracted 107 hallucinated packages from eight prominent LLMs and uploaded them to the npm registry over 6 months. The results demonstrate a tangible risk: 35.2% of package installations are attributed to developers, with most initial interactions occurring within a 2-week window post-registration. A name similarity analysis further reveals that 25.2% of hallucinated names fall within an absolute edit distance of ≤ 1 from existing npm packages, posing a direct typosquatting risk. In our evaluated setting, tool-augmented generation, specifically using web search, fails to mitigate this threat. Instead, it significantly amplifies hallucination persistence from 11.2% to 17.3% through context contamination. In the npm registry, the entire attack campaign costs only an estimated $496, making it far more accessible than traditional supply chain attacks yet capable of enabling poisoning effects. To mitigate this emergent threat, we design an autonomous defense agent: NymGuard. It provides a proactive defense by automating the real-time detection of hallucinated packages, their preemptive registration to block malicious use, and the maintenance of a public warning registry. The full implementation has been open sourced and is available on GitHub (https://github.com/xiaoye798/Package-Hallucination-Research).",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "包名幻觉",
+        "供应链",
+        "npm",
+        "防护代理"
+      ],
+      "url": "https://dl.acm.org/doi/10.1145/3830237",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3830237"
+    },
+    {
+      "id": "10.1145-3801149",
+      "title": "VulRTex: A Reasoning-Guided Approach to Identify Vulnerabilities from Rich-Text Issue Report",
+      "authors": [
+        "Ziyou Jiang",
+        "Mingyang Li",
+        "Guowei Yang",
+        "Lin Shi",
+        "Junjie Wang",
+        "Qing Wang"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用大模型推理从富文本 Issue 里识别漏洞相关报告，对象是开源软件社区。",
+      "abstract": "开源软件里存在漏洞，发现它们的开发者可能会提交 Issue 报告来描述细节。安全人员需要花很多时间从社区里手工找出与漏洞相关的报告，这段时间差可能被攻击者利用。已有自动方法主要看文字描述，缺少对富文本信息的综合分析。本文提出 VulRTex，用推理引导、结合富文本信息来识别与漏洞相关的 Issue。它先用大模型的推理能力，基于历史 Issue 准备漏洞推理库；再检索相关案例生成推理指导，引导大模型对目标 Issue 的富文本做推理分析。我们在 973,572 条 Issue 上评测。数据不平衡时，VulRTex 在识别漏洞相关 Issue 和预测 CWE 编号上表现最好，相对最佳基线 F1 高 11.0%，AUPRC 高 20.2%，Macro-F1 高 10.5%，耗时约为推理基线的一半。VulRTex 还在 2024 年 GitHub Issue 中、10 个代表性开源项目上识别出 30 个新出现的漏洞，其中 11 个已分配 CVE 编号。",
+      "abstractEn": "Software vulnerabilities exist in Open Source Software (OSS), and the developers who discover these vulnerabilities may submit Issue Reports (IRs) to describe their details. Security practitioners need to spend a lot of time manually identifying vulnerability-related IRs from the community, and the time gap may be exploited by attackers to harm the system. Previously, researchers have proposed automatic approaches to facilitate identifying these vulnerability-related IRs, but these works focus on textual descriptions but lack the comprehensive analysis of IR's rich-text information. In this article, we propose VulRTex, a reasoning-guided approach to identify vulnerability-related IRs with their rich-text information. In particular, VulRTex first utilizes the reasoning ability of the Large Language Model (LLM) to prepare the Vulnerability Reasoning Database with historical IRs. Then, it retrieves the relevant cases from the prepared reasoning database to generate reasoning guidance, which guides the LLM to identify vulnerabilities by reasoning analysis on target IRs' rich-text information. To evaluate the performance of VulRTex, we conduct experiments on 973,572 IRs, and the results show that VulRTex achieves the highest performance in identifying the vulnerability-related IRs and predicting CWE-IDs when the dataset is imbalanced, outperforming the best baseline with +11.0% F1, +20.2% AUPRC, and +10.5% Macro-F1 and 2× lower time cost than baseline reasoning approaches. Furthermore, VulRTex has been applied to identify 30 emerging vulnerabilities across 10 representative OSS projects in 2024's GitHub IRs, and 11 of them are successfully assigned CVE-IDs, which illustrates VulRTex's practicability.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞识别",
+        "Issue报告",
+        "大模型推理",
+        "CWE"
+      ],
+      "url": "https://dl.acm.org/doi/10.1145/3801149",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3801149"
+    },
+    {
+      "id": "10.1145-3811034",
+      "title": "Arash: Token-Efficient LLM-Assisted Crash Root Cause Analysis in Fuzz Driver Generation",
+      "authors": [
+        "Maoyi Xie",
+        "Kaixuan Li",
+        "Jingquan Ge",
+        "Wei Ma",
+        "Yuqiang Sun",
+        "Ziqiao Kong",
+        "Cen Zhang",
+        "Dongge Liu",
+        "Oliver Chang",
+        "Yang Liu"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用大模型辅助根因分析，区分模糊测试驱动崩溃是库缺陷还是 API 误用，对象是 C/C++ 库与 OSS-Fuzz。",
+      "abstract": "模糊测试驱动生成提高了现代模糊测试的覆盖率和自动化程度。但一个持续存在的问题是：生成驱动里的很多崩溃来自错误的 API 使用，而不是真正的库缺陷。因此需要根因分析，把真正的库缺陷和驱动引入的崩溃分开。现有驱动生成系统缺少专门的根因分析，而代表性的统计根因方法（如 Aurora、Racing、OptRCA）常假设第一次可观察分叉就是真正原因，实践中往往抓不住故障语义。本文提出 Arash，把语义检查和省 token 的代码切片结合起来，对模糊测试驱动崩溃做精确、高效的根因分析。它包含两部分：（1）面向模糊测试驱动的检查器，抓住驱动里两类主要 API 误用（属性相关和范围相关崩溃），并把这些违例与崩溃轨迹对应起来；（2）参数引导的代码切片，只保留与崩溃参数相关的语句，降低 token 消耗和上下文噪声。我们在多样的驱动崩溃语料上实现并评估 Arash。召回率为 85.3%，能处理其他工具都失败的案例，诊断准确率比当前最好方法高 52.6%。相对消费窗口内原始代码的大模型基线，平均少用 46.8% token；相对检索完整栈帧函数的检索增强基线，少用 24.5%。接入 OSS-Fuzz-Gen 后，Arash 已确认 30 个真正的库缺陷，其中 1 个分配了 CVE-2024-9143。",
+      "abstractEn": "Fuzz driver generation (FDG) has improved coverage and automation in modern fuzzing. Yet a persistent challenge remains: many crashes in generated drivers stem from incorrect API usage rather than genuine library defects. Consequently, root cause analysis (RCA) becomes essential for distinguishing true library bugs from driver-induced crashes. However, existing FDG systems lack dedicated RCA capabilities, whereas statistical RCA methods, representative of recent top-tier works (e.g., Aurora, Racing, and OptRCA), rely on simplifying assumptions, such as treating the first observable divergence as the true cause, which often fail to capture the underlying fault semantics in practice. In this article, we propose Arash, an RCA framework for fuzz driver crashes that couples semantic checking with token-efficient code slicing to enable precise and efficient analysis. Arash introduces two complementary components: (i) Fuzz Driver-Oriented Checker, which captures two dominant classes of API misuse in the fuzz driver, namely property- and extent-related crashes, and correlates these violations with crash traces and (ii) Parameter-Guided Code Slicing, which reduces token consumption and contextual noise by preserving only statements relevant to parameters involved in the crash. We implement and evaluate Arash across a diverse corpus of fuzz driver crashes. Arash achieves a recall rate of 85.3%, successfully analyzing cases that all other tools fail to handle, and outperforms the current state-of-the-art by 52.6% in diagnostic accuracy. Moreover, Arash is highly token efficient, achieving an average token reduction of 46.8% relative to a large language model (LLM) baseline that consumes windowed raw code context and 24.5% relative to a retrieval-augmented LLM baseline that retrieves full stack-frame functions. Integrated into OSS-Fuzz-Gen, so far 30 genuine library bugs identified by Arash have been confirmed by developers, including one assigned a CVE (CVE-2024-9143), demonstrating its substantial real-world impact in large-scale fuzzing workflows.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "模糊测试",
+        "根因分析",
+        "OSS-Fuzz",
+        "大模型"
+      ],
+      "url": "https://dl.acm.org/doi/10.1145/3811034",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3811034"
+    },
+    {
+      "id": "10.1145-3814615",
+      "title": "LLM-Triaged Vulnerability Analysis for Compiled DNNs",
+      "authors": [
+        "Minghui Li",
+        "Yang Li",
+        "Changchun Yin",
+        "Mingwei Li",
+        "Liming Fang"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用大模型对编译后的深度网络做有证据约束的漏洞研判，对象是 TVM 生成的 DNN 可执行文件。",
+      "abstract": "TVM 这类编译工具链已成为部署深度神经网络的常规底座，但优化后的可执行文件也会暴露攻击者可利用的结构。现有缓解多半做成全局复合防御，有效但代价高，因为它会处处打乱对性能关键的规律性。我们提出 VulnSketch，据我们所知是首个由大模型驱动的编译 DNN 漏洞分析系统，并把漏洞分析表述成有证据边界、可审计、可执行的形式。VulnSketch 从 TVM TIR 抽出最小证据接口（MEI），按分割、规律性、提升三条攻击面对每个算子位置打分，只把模糊的灰色位置交给有界的大模型研判；研判必须引用 MEI 字段，并给出预先批准、保持语义的调度旋钮。每条提议都在编译器合法性守卫下执行，只有单步微验证确认它在优先攻击面上按预期移动时才接受。在五类代表性攻击上，小预算下算子级重合高（前 5% 召回 0.71–0.80，前 10% 召回 0.84–0.91），全局排序质量也高（AUROC 0.85–0.89，AUPRC 0.51–0.62）。应用经过微验证的旋钮后，攻击成功率下降 33–38%，恢复足迹下降 38–40%。默认灰色暴露下，每条已验证说明的摊销耗时为 5.9 秒。",
+      "abstractEn": "Compiler toolchains such as TVM are now a standard substrate for deploying deep neural networks, but the optimized executables also expose structures that attackers can leverage. Existing mitigations are commonly applied as a global composite defense, which is effective yet costly because it disrupts performance-critical regularity everywhere. We present VulnSketch, the first LLM-driven vulnerability analysis system for compiled DNNs, and introduce an evidence-bounded formulation of vulnerability analysis that is both auditable and actionable. VulnSketch extracts a Minimal Evidence Interface (MEI) from TVM TIR, scores each operator location along three attacker-aligned vulnerability faces (Segmentation, Regularity, and Lifting), and routes only ambiguous gray locations to bounded LLM triage that must cite MEI fields and propose a pre-approved, semantics-preserving schedule knob. Every proposal is executed under compiler-side legality guards and accepted only if a single micro-validation confirms the expected one-step movement on the prioritized face. Across five representative attacks, VulnSketch attains strong operator-level overlap at small budgets (top 5% recall 0.71–0.80; top 10% recall 0.84–0.91) and high global ranking quality (AUROC 0.85–0.89; AUPRC 0.51–0.62). Applying micro-validated knobs causally reduces attack success by 33–38% and recovered footprint by 38–40%. Operationally, VulnSketch yields 5.9 seconds amortized per verified note under default gray exposure.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编译器",
+        "DNN",
+        "漏洞研判",
+        "TVM"
+      ],
+      "url": "https://dl.acm.org/doi/10.1145/3814615",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3814615"
+    },
+    {
+      "id": "10.1145-3769676",
+      "title": "Large Language Models for Cyber Security: A Systematic Literature Review",
+      "authors": [
+        "Hanxiang Xu",
+        "Shenao Wang",
+        "Ningke Li",
+        "Kailong Wang",
+        "Yanjie Zhao",
+        "Kai Chen",
+        "Ting Yu",
+        "Yang Liu",
+        "Haoyu Wang"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "系统综述大模型在网络安全中的用途与缺口，对象覆盖漏洞检测、恶意软件分析和入侵检测。",
+      "abstract": "大模型的快速发展为包括网络安全在内的多种应用提供了新机会。网络威胁的规模和复杂度在上升，人们越来越需要能自动检测漏洞、分析恶意软件并响应攻击的智能系统。本综述全面回顾大模型在网络安全中的应用（LLM4Security）。我们广泛收集了超过 4 万篇相关论文，并系统分析了来自安全与软件工程顶会顶刊的 185 篇，试图给出大模型如何用于网络安全各类问题的整体图景。分析得到几点结论。第一，大模型正用于越来越广的安全任务，包括漏洞检测、恶意软件分析和网络入侵检测。第二，我们分析了编码器、编码器–解码器和仅解码器等不同架构在各安全方向上的使用趋势。第三，适应网络安全的技术越来越复杂，包括精细微调、提示设计和外部增强。一个显著趋势是基于大模型的自主代理，从单任务执行转向编排多步安全工作流。此外，训练和评测所用数据集往往有限，需要更全面的数据，也可用大模型做数据增强。最后，我们讨论主要挑战和后续方向，包括更可解释的模型、应对大模型自身的安全风险，以及主动防御的潜力。本综述给出 LLM4Security 的现状，并标出若干有希望的研究方向。",
+      "abstractEn": "The rapid advancement of Large Language Models (LLMs) has opened up new opportunities for leveraging AI in a variety of application domains, including cybersecurity. As the volume and sophistication of cyber threats continue to grow, there is an increasing need for intelligent systems that can automatically detect vulnerabilities, analyze malware, and respond to attacks. In this survey, we conduct a comprehensive review of the literature on the application of LLMs in cybersecurity (LLM4Security). By comprehensively collecting over 40K relevant papers and systematically analyzing 185 papers from top security and software engineering venues, we aim to provide a holistic view of how LLMs are being used to solve diverse problems across the cybersecurity domain. Through our analysis, we identify several key findings. First, we observe that LLMs are being applied to an expanding range of cybersecurity tasks, including vulnerability detection, malware analysis, and network intrusion detection. Second, we analyze application trends of different LLM architectures (such as encoder-only, encoder-decoder, and decoder-only) across security domains. Third, we identify increasingly sophisticated techniques for adapting LLMs to cybersecurity, such as advanced fine-tuning, prompt engineering, and external augmentation strategies. A significant emerging trend is the use of LLM-based autonomous agents, which represent a paradigm shift from single-task execution to orchestrating complex, multi-step security workflows. Furthermore, we find that the datasets used for training and evaluating LLMs are often limited, highlighting the need for more comprehensive datasets and the use of LLMs for data augmentation. Finally, we discuss the main challenges and opportunities for future research, including the need for more interpretable models, addressing the inherent security risks of LLMs, and their potential for proactive defense. Overall, our survey provides a comprehensive overview of the current state-of-the-art in LLM4Security and identifies several promising directions for future research. We believe that the insights and findings presented in this survey will contribute to the growing body of knowledge on the application of LLMs in cybersecurity and provide valuable guidance for researchers and practitioners working in this field.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "综述",
+        "漏洞检测",
+        "恶意软件",
+        "安全代理"
+      ],
+      "url": "https://dl.acm.org/doi/10.1145/3769676",
+      "pdf": "https://dl.acm.org/doi/pdf/10.1145/3769676"
+    },
+    {
+      "id": "2611.03854",
+      "title": "Towards Effective Fuzzing of EDK2 Components",
+      "authors": [
+        "Datta Manikanta Sri Hari Danduri",
+        "Connor Everett Glosner",
+        "Aravind Machiry"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用静态分析加大模型生成 harness，把 edk2 启动协议重托管到用户态做模糊测试，对象是 UEFI 固件。",
+      "abstract": "保护引导加载程序对建立现代系统的可信计算基很关键。TianoCore 的 edk2 是事实上的 UEFI 引导加载程序，部署很广，但近来被指出含有大量高危漏洞。已有方法要么盯着启动后接口，要么依赖沉重的模拟，限制了可扩展性、吞吐，以及对启动阶段组件的覆盖。我们提出 Metis，一种自动模糊测试 edk2 协议（即启动时接口）的技术：把它们重托管成用户态程序。关键认识是：有效的模糊测试不仅要打协议接口，还要打依赖交互，因为依赖也是输入通道。Metis 用基于直接依赖组件重托管（DCR）的策略，为依赖构造语义上有意义的 mock，从而在所有通道上可控地注入输入。它还结合静态分析和大模型引导的合成，生成并改进模糊测试 harness。我们在 Host Based Firmware Analyzer（HBFA）框架上实现 Metis，并在覆盖 162 个协议的 60 个驱动上评估。覆盖率为 73.1%，约为当前最好的 edk2 模糊测试技术 FuzzUEr 的 1.7 倍，并发现 137 个此前未知的缺陷。我们已报告其中 26 个，包括 12 个可远程触发；所报告漏洞均已被厂商确认。",
+      "abstractEn": "Securing bootloaders is critical to establishing the trusted computing base of modern systems. TianoCore's edk2, the de facto UEFI-based bootloader, is widely deployed but has recently been shown to contain numerous high-severity vulnerabilities. Existing approaches either focus on post-boot interfaces or rely on heavyweight simulation, limiting their scalability, throughput, and coverage of boot-time components. We present Metis, an automated technique for fuzzing edk2 protocols (i.e., boot-time interfaces) by rehosting them as user-space applications. Our key insight is that effective fuzzing must exercise not only protocol interfaces but also their dependency interactions, which serve as additional input channels. Metis employs a Direct-dependency Component Rehosting (DCR)-based strategy to construct semantically meaningful mocks for dependencies, enabling controlled input injection across all channels. It further leverages a hybrid approach combining static analysis and Large Language Model (LLM)-guided synthesis to generate and refine fuzzing harnesses. We implement Metis on the Host Based Firmware Analyzer (HBFA) framework and evaluate it on 60 drivers covering 162 protocols. Metis achieves 73.1% coverage, approximately 1.7 times higher than FuzzUEr, the state-of-the-art edk2 fuzzing technique, and discovers 137 previously unknown bugs. We have already reported 26 of them, including 12 that are remotely triggerable, and all reported vulnerabilities have been acknowledged by the vendors.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "固件",
+        "模糊测试",
+        "UEFI",
+        "harness生成"
+      ],
+      "url": "https://arxiv.org/abs/2611.03854",
+      "pdf": "https://arxiv.org/pdf/2611.03854"
+    },
+    {
+      "id": "2611.06477",
+      "title": "Towards Early Warning of Real-World Vulnerabilities: An Evidence-Aware Decoupled Method for CVSS Vector Prediction Based on Unstructured Disclosures",
+      "authors": [
+        "Jianhong Ma",
+        "Wenhao Li",
+        "Xixing Li",
+        "Chenyu Yan",
+        "Haowen Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型推理和轻量分类，从非正式披露文本提前预测 CVSS 向量，对象是入库前的漏洞通告。",
+      "abstract": "从开源情报里尽早评估 CVSS 向量，可以缩短首次公开披露和 NVD 正式打分之间的空档。现有预测器主要在标准化的后期描述上训练，面对嘈杂、不完整的入库前报告会变差。我们提出漏洞披露生命周期模型 PARSE，以及早期评估框架 VPre，建立在两级「证据感知解耦」上。第一级是安全证据筛选，在报告级和句子级把与安全相关的证据从早期嘈杂报告中分开。第二级是按证据匹配路由：根据验证集测量，把八个 CVSS 指标的预测拆成分散证据类和显式证据类，分别配针对性预测器：前者用大模型推理，后者用轻量监督分类。在 VPre-Bench 的 5581 份报告、851 份留出测试上，VPre 的平均绝对误差为 0.7239，比复现的 BERT-Small-NVD 早期迁移基线低 44.7%；全基准上成对时间戳显示，平均比正式打分早 38 天（观察范围 21–60 天）。在 38:1 的 PARSE-Triage 噪声设置下，STDU 的报告级筛选精确率 0.98、召回 1.00、F1 0.99。消融支持两级解耦都有贡献。",
+      "abstractEn": "Early assessment of Common Vulnerability Scoring System (CVSS) vectors from Open Source Intelligence (OSINT) can reduce the delay between initial public disclosure and official National Vulnerability Database (NVD) scoring. Existing predictors, trained mainly on standardized late-stage descriptions, degrade on noisy and incomplete pre-NVD reports. We introduce PARSE, a vulnerability-disclosure lifecycle model, and VPre, an early assessment framework built on two-level Evidence-Aware Decoupling. Decoupling Level I, Security-Evidence Screening, separates security-relevant evidence from noisy early reports at the report and sentence levels. Decoupling Level II, Evidence-Matched Routing, decouples the prediction task of the eight CVSS metrics into a scattered-evidence class and an explicit-evidence class based on validation-set measurements, matching each with a targeted predictor: large-language-model reasoning for the former, lightweight supervised classification for the latter. On the 851-report held-out test split of the 5,581-report VPre-Bench, VPre achieves a mean absolute error of 0.7239 -- 44.7% below the reproduced BERT-Small-NVD early-transfer baseline; paired timestamps across the full benchmark show an average 38-day lead before official scoring (observed range 21-60 days). Under the 38:1 PARSE-Triage noise setting, STDU's report-level screening reaches 0.98 precision, 1.00 recall, and 0.99 F1. Controlled ablations support the contributions of both decoupling levels.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CVSS",
+        "漏洞评级",
+        "开源情报",
+        "大模型推理"
+      ],
+      "url": "https://arxiv.org/abs/2611.06477",
+      "pdf": "https://arxiv.org/pdf/2611.06477"
+    },
+    {
+      "id": "2611.08229",
+      "title": "Escalate or Close: How Fast-Tier Models Handle Held-Out Web Attack Families in Two-Tier Triage",
+      "authors": [
+        "Maciej Kisielewicz",
+        "Michał Kędziora",
+        "Ngoc Thanh Nguyen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "比较快层语言模型与监督检测器对未见过 Web 攻击族的升级或关闭决策，对象是两层 Web 请求研判。",
+      "abstract": "在两层研判里，快模型处理大多数 Web 请求，其余升级给慢层，因此被快层关闭的攻击再也不会被检查。我们把七个攻击族分别完全留出训练、校准和阈值，把载荷拼进真实浏览流量的参数里，比较零样本决策模型（对有类型的问题返回概率）、监督检测器、本地语言模型、OWASP Core Rule Set 和异常基线。在已知攻击族上训练的检测器，可能把大量未见过的攻击族判成很有把握的良性：超过 10 次训练中，ModernBERT 把 37% 到 60% 的留出路经遍历判到 0.05 以下，在 5% 良性预算内只升级其中 50% 到 81%；同一类请求在训练见过遍历时几乎全部会升级。Jev 和 Clef 两个托管决策模型的预算决策不依赖留出族，在同一预算内对每个族至少升级 97.6%，但未公开的训练数据里可能已包含这些公开攻击族。对近期利用的测试需要控制请求形态：Jev 会升级 37% 的良性孪生请求（把攻击换成合法值后的利用请求），而在较旧利用上训练的检测器学到的是扫描器请求长什么样。用 Jev 的概率做引导搜索，300 次查询内能让 43% 的留出攻击越过 Jev，但 Jev 的回答不稳定：再问一次，这些请求在 60% 的回答里会被升级。",
+      "abstractEn": "In two-tier triage a fast model decides most web requests and escalates the rest to a slow tier, so an attack the fast tier closes is never examined. We hold each of seven attack families out of training, recalibration and thresholds, splice the payloads into parameters of real browsing traffic, and compare zero-shot decision models, which return a probability for a typed question, with supervised detectors, a local language model, the OWASP Core Rule Set and an anomaly baseline. Detectors trained on the known families can give much of a held-out family a confident benign verdict: over 10 training runs, ModernBERT gives 37% to 60% of held-out path traversal a probability below 0.05 and escalates only 50% to 81% of it within a 5% benign budget, against nearly all of the same requests when traversal is known. Jev and Clef, two hosted decision models whose budget decisions do not depend on the held-out family, escalate at least 97.6% of every family within the same budget, but their undisclosed training data may contain these public families. Tests on recent exploits need controls for request shape: Jev escalates 37% of benign twins (exploit requests with the attack replaced by legitimate values), and detectors trained on older exploits learn what scanner requests look like. A search guided by Jev's probability gets 43% of held-out attacks past Jev within 300 queries, but Jev's answers vary: asked again, it escalates those requests in 60% of its answers.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Web攻击",
+        "告警研判",
+        "语言模型",
+        "漏报"
+      ],
+      "url": "https://arxiv.org/abs/2611.08229",
+      "pdf": "https://arxiv.org/pdf/2611.08229"
+    },
+    {
+      "id": "2611.02788",
+      "title": "Rethinking Neural Decompilation: Candidate Selection as the Hidden Bottleneck",
+      "authors": [
+        "Felix Mächtle",
+        "Gautham Sriram",
+        "Manjil Neupane",
+        "Nils Loose",
+        "Thomas Eisenbarth"
+      ],
+      "year": 2026,
+      "venue": "ICICS 2026",
+      "abstractOneWord": "分析大模型反编译的候选生成与选择瓶颈，对象是混淆二进制与安全审计。",
+      "abstract": "逆向混淆二进制是恶意软件分析和软件安全审计的核心任务。基于大模型的神经反编译器，在恢复代码的可读性和功能保真上已优于 Ghidra、IDA Pro 这类启发式工具，但最佳样本表现和实际单次输出准确率之间仍有明显差距，混淆时更明显。我们从候选生成和候选选择来看这个差距。用 LLM4Decompile 架构，我们显示真实 token 平均有 95.6% 的位置落在模型 top-5 下一 token 预测里；多样本解码在 HumanEval-Decompile 上 pass@100 达到 93%，说明正确重建通常已经在采样空间里。随后我们评估「先生成再选择」流水线，对每个输入的 100 个候选用文本、句法、嵌入、共识和似然选择器排序。负困惑度是 HumanEval-Decompile 上最强的静态选择器（73.3% pass@1），执行引导选择在 ExeBench 上几乎补上与 oracle 的差距（86.3% pass@1）。再在我们新发布的、含 362,647 个 OLLVM 混淆样本的 ExeBench-Obfuscated 上微调一个 epoch，同一流水线把混淆二进制的 pass@1 提到 88.8%，直接反驳了「已发布的 LLM4Decompile 检查点不适合混淆输入」的先前说法。",
+      "abstractEn": "Reverse engineering obfuscated binaries is a core task in malware analysis and software security auditing. While neural decompilers based on Large Language Models (LLMs) have improved the readability and functional fidelity of recovered code over heuristic tools such as Ghidra and IDA Pro, a substantial gap remains between best-sample performance and practical single-output accuracy, particularly under code obfuscation. We study this gap through the lens of candidate generation and candidate selection. Using the LLM4Decompile architecture, we show that ground-truth tokens lie within the model's top-five next-token predictions in 95.6% of positions on average and that multi-sample decoding reaches a pass@100 of 93% on HumanEval-Decompile, indicating that correct reconstructions are typically already present in the model's sampling space. We then evaluate a generate-then-select pipeline that ranks 100 candidates per input with text-, syntax-, embedding-, consensus-, and likelihood-based selectors. Negative perplexity emerges as the strongest static selector on HumanEval-Decompile (73.3% pass@1), while execution-guided selection nearly closes the oracle gap on ExeBench (86.3% pass@1). Combined with one epoch of fine-tuning on our newly released ExeBench-Obfuscated dataset containing 362,647 obfuscated OLLVM samples, the same pipeline increases the pass@1 rate for obfuscated binaries to 88.8%, directly contradicting prior claims that released LLM4Decompile checkpoints are unsuitable for obfuscated inputs.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "反编译",
+        "二进制",
+        "混淆",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.02788",
+      "pdf": "https://arxiv.org/pdf/2611.02788"
+    },
+    {
+      "id": "2611.03509",
+      "title": "Attacking P2P Networks: Liveness Attacks on the GossipSub and DOG Gossip Protocols",
+      "authors": [
+        "Jiaheng Li",
+        "Anton Paramonov",
+        "Yann Vonlanthen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析 GossipSub 和 DOG 闲话协议的活性攻击，不使用大模型，对象是以太坊与 CometBFT 的 P2P 传播层。",
+      "abstract": "对等网络是以太坊这类大型去中心化系统的通信层，上层协议的正确性依赖闲话层把消息送到诚实节点。我们研究两种闲话协议在「只破坏活性」对手下的稳健性：对手的目标是阻止诚实节点收到新消息，而不伪造、篡改或作废任何消息。对以太坊使用的发布–订阅协议 GossipSub，我们证明：对手用常数个地理分布节点，并保持固定的时延优势，就能接管「首次消息送达」这一对等评分项，并把常数比例的节点从诚实 mesh 中隔开。我们在地理模型下分析该攻击，处理随机对等和出站连接机制，并说明在现实 churn 下隔离可以维持。对为 CometBFT 设计的交易传播协议 DOG，我们先给出简单反例：路由过滤即使没有故障或拜占庭参与者也会切断传播图；再给出实用攻击：单个物理节点用常数个身份和合法动作，就能关掉所有转发路由，把全网隔开，只留下发布者到邻居的直接送达。我们在模拟网络中验证攻击，并分析代价、假设和可能的缓解。",
+      "abstractEn": "Peer-to-peer (P2P) networks form the communication layer of large decentralized systems such as Ethereum, and the correctness of higher-level protocols depends on the gossip layer delivering messages to honest nodes. We study the robustness of two gossip protocols against adversaries whose only goal is to violate liveness, that is, to prevent honest nodes from receiving fresh messages, without forging, altering, or invalidating any message. For GossipSub, the publish-subscribe protocol used by Ethereum, we show that an adversary operating a constant number of geographically distributed nodes with a fixed latency advantage can take over the \"First Message Deliveries\" peer-scoring term and separate a constant fraction of nodes from the honest mesh. We analyze the attack under a geographical model, address the random-peer and outbound-connection mechanisms, and show that the separation can be maintained under realistic churn. For DOG, a transaction-dissemination protocol designed for CometBFT, we first give simple counterexamples in which route filtering disconnects the dissemination graph even without failures or Byzantine participants, and then present a practical attack that uses only a single physical node with a constant number of identities and legitimate actions to disable every forwarding route, separating the full network while allowing only direct publisher-to-neighbor delivery. We verify the attack in a simulated network and analyze its cost, assumptions, and possible mitigations.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "以太坊",
+        "GossipSub",
+        "活性攻击",
+        "P2P"
+      ],
+      "url": "https://arxiv.org/abs/2611.03509",
+      "pdf": "https://arxiv.org/pdf/2611.03509"
+    },
+    {
+      "id": "2026-2754",
+      "title": "A note on zero-knowledge ring switching",
+      "authors": [
+        "Andrei Kochergin"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把 Diamond 与 Posen 的环切换做成零知识，不使用大模型，对象是特征 2 上的证明系统。",
+      "abstract": "我们把 Diamond 和 Posen 的环切换技术做成零知识，解决了文献中留下的一个问题。在二元域 F_{2^n} 上，该技术使用 n-1 个辅助掩码和 n-1 个二次约束，由底层承诺方案以零知识方式检查。",
+      "abstractEn": "We make the ring-switching technique of Diamond and Posen zero knowledge, resolving a problem left open in the literature. Over F_{2^n}, our technique uses n-1 auxiliary masks and n-1 quadratic constraints, checked in zero knowledge by the underlying commitment scheme.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "零知识",
+        "环切换",
+        "证明系统",
+        "特征2"
+      ],
+      "url": "https://eprint.iacr.org/2026/2754",
+      "pdf": "https://eprint.iacr.org/2026/2754.pdf"
+    }
+  ]
+}
