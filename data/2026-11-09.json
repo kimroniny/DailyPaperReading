@@ -1,0 +1,162 @@
+{
+  "date": "2026-11-09",
+  "papers": [
+    {
+      "id": "2611.06629",
+      "title": "Does Frontier AI Strengthen Cyber Defense? Evidence from Project Glasswing",
+      "authors": [
+        "Thomas Mosk"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用前沿大模型找软件漏洞，对照有无提前使用权的厂商披露与利用情况，对象是大型科技公司代码。",
+      "abstract": "攻防双方都在抢同一批软件缺陷。本文利用 Project Glasswing 的上线：一小部分美国大型科技公司提前获得 Claude Mythos Preview（专门用来找软件漏洞的模型），观察前沿 AI 如何影响防守方、外部研究者和攻击者。基于全部公开披露的漏洞，有使用权的公司相对没有使用权的中俄科技公司，披露量增加一倍以上，高影响漏洞披露约多 150%，修复速度与以前相当。随着这些公司自己找到更多缺陷，靠漏洞赏金卖发现的外部研究者，在这些公司代码里报出的漏洞大约减半，同时更多地去报其他公司的漏洞，并没有退出市场。没有证据表明攻击者利用了多出来的这些漏洞：披露后一个月内被利用的比例下降约三分之二，主要是因为披露时已经在被利用的比例更低，被利用的绝对数量没有上升。前沿 AI 帮助防守方在攻击者利用之前发现并修复更多缺陷，但限制发放范围会让不同国家公司之间的软件安全出现不对称。",
+      "abstractEn": "Defenders and attackers race to find the same software flaws. I use the launch of Project Glasswing, which gave a small group of large US tech firms early access to Claude Mythos Preview, a model for finding software vulnerabilities, to study how access to frontier AI affects defenders, external researchers, and attackers. Using the universe of publicly disclosed vulnerabilities, I find that firms with access more than doubled their disclosures relative to Chinese and Russian tech firms without access, disclosed about 150 percent more high-impact vulnerabilities, and fixed reported flaws as quickly as before. As treated firms found more flaws themselves, external researchers, who sell their findings through bug bounties, reported about half as many vulnerabilities in treated firms' code and more in other firms' code, without leaving the market. There is no evidence that attackers exploited the additional vulnerabilities: the share exploited within a month of disclosure fell by about two thirds, mainly because a smaller share was already exploited when disclosed, while the number exploited did not change. Frontier AI helped defenders find and fix more flaws before attackers exploited them, but its restricted release creates an asymmetry in software security between firms in different countries.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞发现",
+        "大模型",
+        "攻防不对称",
+        "漏洞披露"
+      ],
+      "url": "https://arxiv.org/abs/2611.06629",
+      "pdf": "https://arxiv.org/pdf/2611.06629"
+    },
+    {
+      "id": "2611.09808",
+      "title": "Agents on the Patch Path: Mining AI-Associated Security Remediation in GitHub Security Advisories",
+      "authors": [
+        "Claudio Segal",
+        "Paulo Segal",
+        "Hudson Silva Borges",
+        "Paulo Silveira",
+        "Daniel S. Menasché",
+        "Eduardo Santana de Almeida",
+        "Felipe de Sant'Anna Paixão",
+        "Joanna C. S. Santos",
+        "Anton Kocheturov",
+        "Gaurav Srivastava",
+        "Raphael Machado"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "挖 GitHub 安全通告里编码代理参与补丁的证据，并看审查时延，对象是真实仓库的漏洞修复。",
+      "abstract": "自主编码代理越来越多地参与软件开发，但它们在真实安全修复里的参与情况仍不清楚。我们调查已审核 GitHub Security Advisories（GHSA）所引用提交中，编码代理介入的可观察证据，刻画相关漏洞，并对照通告披露路径看审查时延。我们做了一套本地 Git 挖掘流水线，通过已知代理账号、提交说明里的明确署名、仓库指令文件和代理配置产物来识别代理证据。把这些发现和 GHSA 引用的提交连起来后，得到 189 个仓库里 469 条有效候选通告，其中 448 条有直接署名，21 条只有仓库级证据。出现最多的工具家族是 Claude，其次是 Copilot 和 Cursor。我们再用精确的路径—时延分解，把审查时延和其他通告及历史基线比较。相对同一月份发布的通告，候选通告的平均审查滞后略长，主要来自路径内部时延，而不是披露路径构成。相对历史基线，平均审查滞后明显更短，路径构成和路径内部时延都有贡献。结果表明，编码代理介入已经能在数百条安全通告和仓库里观察到，其中包括高危和严重漏洞。通过区分直接署名和仓库级采用证据，并把路径构成效应与路径内部时延分开，我们对 GHSA 审查流程里与代理相关的修复给出了实证刻画。",
+      "abstractEn": "Autonomous coding agents are increasingly involved in software development, but their participation in real-world security remediation remains poorly understood. We investigate observable evidence of coding-agent involvement in commits referenced by reviewed GitHub Security Advisories (GHSAs), characterize the associated vulnerabilities, and examine review timing in relation to advisory disclosure routes. We develop a local-Git mining pipeline that identifies agent evidence through known agent accounts, explicit commit-message attribution, repository instruction files, and agent configuration artifacts. Linking these findings to GHSA-referenced commits yields 469 valid candidate advisories across 189 repositories, including 448 with direct attribution and 21 supported only by repository-level evidence. Claude is the most frequently observed tool family, followed by Copilot and Cursor. We further compare review timing against other advisories and historical baselines using an exact route--timing decomposition. Relative to advisories published in the same months, candidate advisories exhibit a modestly longer mean review lag, primarily associated with within-route timing rather than disclosure-route composition. Compared with a historical baseline, they exhibit substantially shorter mean review lags, with both route composition and within-route timing contributing to the difference. These findings demonstrate that coding-agent involvement is already observable across hundreds of security advisories and repositories, including high- and critical-severity vulnerabilities. By distinguishing direct attribution from repository-level adoption evidence and separating route-composition effects from within-route timing differences, we provide an empirical characterization of agent-associated remediation in the GHSA review pipeline.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码代理",
+        "安全修复",
+        "GHSA",
+        "补丁"
+      ],
+      "url": "https://arxiv.org/abs/2611.09808",
+      "pdf": "https://arxiv.org/pdf/2611.09808"
+    },
+    {
+      "id": "2611.08768",
+      "title": "Conflux: Preventing Privilege Escalation with Principal Contexts and System-Level Evaluation",
+      "authors": [
+        "Raya Buckley",
+        "Christian Schroeder de Witt"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在系统层按主体来源交集权限，防止大模型代理越权，对象是带工具调用的 LLM 代理。",
+      "abstract": "大模型代理会把多个主体的信息合在一起再对外行动。我们把权限提升（PE）形式化成系统层安全目标：只有影响该行动的每个主体都允许，行动才能执行。模型层防御仍是概率性的，所以强制必须放在模型判断之外。我们提出 Conflux，一种主体上下文防御。其内核 ITES 根据溯源和组织已有访问控制系统推导权限，并对每个产生影响的主体做权限交集。我们证明一条有条件的权限约束定理：在完全中介、溯源不洗白、决策上下文已知且非空、权限检查新鲜、以及行动绑定这些前提下，内核不会放行相对任何已记录影响主体而言构成权限提升的行动。定理覆盖已表示的值影响片段；来自工具、分支、接收方或计划步骤选择的控制影响，仍是待 refinement 的义务。Conflux 在内核上扩展了独立策略端口、参数感知授权、披露、同意、委托、限制和暴露规划。我们描述两个系统层评估器。SLED 是黑盒评估器：在有界范围内穷举探索声明的有限防御模型。SLED-V 是白盒评估器：对照安全和溯源性质检查可序列化中间表示。证据是有界且部分的。附录报告保留的 AgentDojo、SLED 和 SLED-V 结果，以及这些运行的限度。本文任何结果都不是无界的部署保证。",
+      "abstractEn": "LLM agents combine information from multiple principals while acting externally. We formalise privilege escalation (PE) as the system-level security objective: an action may proceed only if every principal that influenced it would allow it. Model-level defences remain probabilistic, so enforcement must sit outside model judgement. We present Conflux, a principal-context defence. Its kernel, ITES, derives authority from provenance and the organisation's existing access-control system and intersects the permissions of every influencing principal. We prove a conditional authority-confinement theorem: under complete mediation, no-laundering provenance, a known non-empty decision context, fresh permission checks, and action binding, the kernel admits no action that escalates privilege with respect to any recorded influencing principal. The theorem covers the represented value-influence fragment; control influence from tool, branch, recipient, or plan-step selection remains a refinement obligation. Conflux extends the kernel with independent policy ports, argument-aware authorisation, disclosure, consent, delegation, restriction, and exposure planning. We describe two system- level evaluators. SLED is a black-box evaluator: it exhaustively explores a declared finite model of a defence up to a bound. SLED-V is a white-box evaluator: it checks a serialisable intermediate representation against security and provenance properties. The evidence is bounded and partial. The appendix reports retained AgentDojo, SLED, and SLED-V results, including the limits of those runs. No result in this paper is an unbounded deployment guarantee.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "权限提升",
+        "访问控制",
+        "LLM代理",
+        "溯源"
+      ],
+      "url": "https://arxiv.org/abs/2611.08768",
+      "pdf": "https://arxiv.org/pdf/2611.08768"
+    },
+    {
+      "id": "2611.09161",
+      "title": "GreyZone: Production-quality Agentic Application Threats",
+      "authors": [
+        "Ruoyu Zhou",
+        "Shuyao Jiang",
+        "Haifeng Ruan",
+        "Abhik Roychoudhury"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可验证的安全策略违规评估自动红队服务，对象是编码、银行等生产级代理应用。",
+      "abstract": "代理正部署到编码、银行和商务等领域。它们能调用工具并改变应用状态，因此安全测试对可靠上线很重要。虽然已有多种对抗测试研究代理安全，但扎根于生产代理环境的基准仍然很少。我们提出 GreyZone，用来评估自动红队服务对抗真实代理应用的能力。和 AgentDojo 这类主要评估被测代理在攻击下表现的基准不同，GreyZone 评估服务能否生成并投递攻击，造成经过核验的安全策略违规。我们选择独立开发、开源、带访问权限、机密性和行动授权安全边界的代理应用。这些应用暴露多样攻击面，包括多智能体交互和多模态输入。评估放在保留生产相关工作流的应用环境里，并独立核验结果，以支持自动代理安全测试研究。我们给出两个初步案例：用 Promptfoo 打 Letta Code 和 Clawith，观察攻击投递、代理行为和核验结果。我们发布该基准，包括各应用的被测代理和攻击面，供后续研究代理测试方法。",
+      "abstractEn": "Agents are increasingly deployed across domains such as coding, banking, and commerce. Their ability to invoke tools and change application state makes security testing important for reliable deployment. Although agent security has been studied through various adversarial testing approaches, benchmarks grounded in production agent environments remain limited. We introduce GreyZone, a benchmark for evaluating automated red-teaming services against real-world agent applications. Unlike benchmarks such as AgentDojo, which primarily evaluate subject agents under attack, GreyZone evaluates services' ability to generate and deliver attacks that cause verified security-policy violations. We select independently developed, open-source agent applications with security boundaries concerning access permissions, confidentiality, and action authorization. These applications expose diverse attack surfaces, including those arising from multi-agent interactions and multimodal inputs. By grounding evaluation in application environments that preserve production-relevant workflows and independently verifying outcomes, GreyZone supports research on automated agent security testing. Specifically, we present two preliminary case studies using Promptfoo on Letta Code and Clawith to examine attack delivery, agent behavior, and verified outcomes. We release the benchmark, including subject agents and attack surfaces for each application, to support further research on agent testing methods.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "代理安全",
+        "红队",
+        "基准",
+        "策略违规"
+      ],
+      "url": "https://arxiv.org/abs/2611.09161",
+      "pdf": "https://arxiv.org/pdf/2611.09161"
+    },
+    {
+      "id": "2611.09307",
+      "title": "Wake 5: A Python Framework for Solidity Testing, Fuzzing, and Static Analysis",
+      "authors": [
+        "Josef Gattermayer",
+        "Michal Převrátil"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "提出 Solidity 测试、模糊测试和静态分析框架，并用大模型代理写 harness、审计 Go 代码，对象主要是智能合约。",
+      "abstract": "智能合约模糊测试器在吞吐上可差一个数量级，构造输入的方式也不同，但已有比较很少把这两件事分开。我们提出开源 Python 框架 Wake 5，用于 Solidity 测试、模糊测试和静态分析，并用它定位有状态智能合约模糊测试的瓶颈。Wake 5 用进程内 EVM（revm）替换连到外部节点的 JSON-RPC，并通过 Model Context Protocol（MCP）服务器把静态分析提供给语言模型代理。在 Daedaluzz 迷宫基准（153 个可达断言，守卫常量低于 2^32）上，Wake 5 每秒执行 29,931 笔交易，与 Foundry（30,186）相当，是 Echidna（2,600）的 11.5 倍。但在八小时战役里，三个工具的中位数分别停在 75、71 和 70 个断言，并集达到 93。我们表明 Wake 的整数生成器把 51% 的概率质量放在 2^32 以下；浅层断言耗尽后，限制每个工具的是生成器先验而不是吞吐。由语言模型代理写的 harness 用约束求解器推导输入，在 Wake 上跑的五次战役都打到全部 153 个断言，用时 33 到 79 分钟。在生产 Go 代码库的代理审计消融里，静态分析工具对三个模型的召回都没有提高，精确率都提高了，语言模型成本最多增加 12.7%。我们讨论相关预言机和非确定性完成，并认为模糊测试器的角色正在从搜索转向执行。",
+      "abstractEn": "Smart-contract fuzzers differ by an order of magnitude in throughput and by design in how they construct inputs, yet published comparisons rarely separate the two. We present Wake 5, an open-source Python framework for Solidity testing, fuzzing and static analysis, and use it to locate the binding constraint of stateful smart-contract fuzzing. Wake 5 replaces the JSON-RPC connection to an external node with an in-process EVM (revm) and exposes its static analysis to language-model agents through a Model Context Protocol (MCP) server. On the Daedaluzz maze benchmark (153 reachable assertions, guard constants below 2^32), Wake 5 executes 29,931 transactions per second, on par with Foundry (30,186) and 11.5x faster than Echidna (2,600). In eight-hour campaigns, however, the three tools plateau at medians of 75, 71 and 70 assertions, and their union reaches 93. We show that Wake's integer generator places 51% of its probability mass below 2^32 and that, once shallow assertions are exhausted, the generator prior rather than throughput bounds every tool. A harness written by a language-model agent, which derives inputs with a constraint solver, reached all 153 assertions in each of five campaigns executed by Wake, in 33 to 79 minutes. A complementary ablation in an agentic audit of a production Go codebase found that static-analysis tools improved recall for none of three models, raised precision for all three, and increased language-model cost by up to 12.7%. We discuss correlated oracles and non-deterministic completion, and argue that the fuzzer's role is shifting from search to execution.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "模糊测试",
+        "Solidity",
+        "静态分析"
+      ],
+      "url": "https://arxiv.org/abs/2611.09307",
+      "pdf": "https://arxiv.org/pdf/2611.09307"
+    },
+    {
+      "id": "2026-2807",
+      "title": "FirstSwap: Pre-Consensus Trade Approvals for Decentralized Market Design",
+      "authors": [
+        "William Diamond",
+        "Fatima Elsheimy",
+        "Dahlia Malkhi",
+        "Geoff Ramseyer",
+        "Srivatsan Sridhar"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "提出共识前成交确认的去中心化交易所，限制出块者排序，无大模型，对象是 DEX 与验证者。",
+      "abstract": "去中心化交易所通常要等区块最终确认，交易者才有执行保证。这段时间里外部价格在动，交易者会故意推迟提交，出块者还能影响打包和排序。我们提出 FirstSwap，一种建立在恒定函数做市商定价曲线上的 DEX：交易者在共识前就能拿到预批准，保证在其提交的价格限制内被纳入并执行，最终排序由限价决定，而不是由出块者决定。我们在结合拍卖理论和 CEX-DEX 套利的经济模型里展示预批准的好处。当 CEX 价格缓慢变化时，FirstSwap 给更早的交易者更好的价格，抑制故意推迟，社会福利和 AMM 流动性提供者收益都高于批量拍卖。当 CEX 价格突然跳变时，FirstSwap 比公平排序有更高福利、更小的 AMM 亏损。核心难点是在没有共识的情况下快速给出预批准。我们提出去中心化的按比例可接纳协议：每个验证者只在每个价格上预留一部分可用流动性。交易者与验证者法定人数一轮消息即可获得批准。出人意料的是，即使拜占庭验证者可以任意批准交易，我们仍证明所有经法定人数认证的交易合在一起是可接纳的，并能在限价内执行。该协议还可以自然扩展到买卖单在区块最终确认前互相预批准。",
+      "abstractEn": "Decentralized exchanges typically give traders no execution guarantee until a block is finalized. In the meantime, external prices move, traders strategically delay submission, and block producers can influence inclusion and ordering. We introduce FirstSwap, a DEX built on a constant-function market maker pricing curve that gives traders an early pre-approval before consensus, guaranteeing inclusion and execution within their submitted price limit, with final ordering determined by limit prices rather than by a block producer.\n\nWe demonstrate the benefits of trade pre-approvals in an economic model combining auction theory with CEX-DEX arbitrage. When the CEX price changes gradually, FirstSwap rewards earlier traders with better prices, discouraging strategic delay and yielding higher social welfare and gains to AMM liquidity providers than a batch auction. When the CEX price jumps abruptly, FirstSwap yields higher welfare and smaller AMM losses than fair ordering.\n\nThe central challenge is delivering fast trade pre-approvals without consensus. We introduce a decentralized, scaled admissibility protocol under which each validator reserves only a fraction of the available liquidity at every price. A trader obtains approval in a single round of messages with a quorum of validators. Somewhat surprisingly, despite Byzantine validators who may approve trades arbitrarily, we show that all quorum-certified trades are jointly admissible and execute within their limits.  Our protocol extends naturally to a setting where buy and sell orders can be pre-approved against each other before a block is finalized.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "DEX",
+        "MEV",
+        "交易排序",
+        "共识"
+      ],
+      "url": "https://eprint.iacr.org/2026/2807",
+      "pdf": "https://eprint.iacr.org/2026/2807.pdf"
+    }
+  ]
+}
