@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-10",
+  "papers": [
+    {
+      "id": "2611.11455",
+      "title": "Coding Agents Propagate Vulnerabilities in Code Bases",
+      "authors": [
+        "Chenhao Sun",
+        "Niels Mündler-Sasahara",
+        "Mark Vero",
+        "Martin Vechev"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "发现编码代理会把仓库里已有漏洞当成模板写进新代码，对象是后端应用和 C/C++ 项目。",
+      "abstract": "基于大模型的编码代理已经被广泛用来写生产软件。人们知道它们偶尔会写出带漏洞的代码，但还没有人系统看过：仓库里已有的漏洞，会不会随着代理不断提交而扩散。本文补上这一点：已有漏洞会不会、以及如何让代理在新代码里写出同类漏洞。我们先在 96 个任务上评估：仓库里已有其他应用，要求代理再实现一个新的后端应用。然后在真实 C/C++ 项目里做 20 对仓库级补全任务，每题都要求补上对内存安全关键的代码。两种设置里，邻居代码不安全时，代理更容易写出带漏洞的代码。后端生成任务中，不安全邻居会让「既正确又安全」的实现平均少 3.4%；C/C++ 仓库级任务里，安全上下文和不安全上下文的差距平均达到 35.4%。提示它跟现有代码风格走，会加重扩散；提示它注意安全，会减轻扩散，但两种提示都拦不住。让代理解释实现选择时，76.5% 的情况它把原因归到跟了另一处代码，尽管 69.9% 的情况它其实能看出自己引入了漏洞。说明代理会不加挑选地把已有漏洞当模板。代理写的生产代码越来越多、人工审查越来越少时，如果漏洞不持续修干净，仓库安全会越来越差。",
+      "abstractEn": "LLM-based coding agents are widely used to develop critical production software. Even though coding agents are known to occasionally write vulnerable code, there has not been any investigation into how code base vulnerabilities evolve over time under coding agent contributions. In this work, we close this gap by investigating whether and how vulnerabilities in existing code lead coding agents to introduce similar vulnerabilities in the code they write. We first evaluate coding agents on 96 tasks that require implementing a new backend application in a repository where other applications already exist. Second, we investigate repository-level code generation on 20 pairs of tasks in real C/C++ projects. In each task, the agent is asked to complete code critical to memory safety. We find that in both settings, insecure existing code leads to agents writing vulnerable code more often. In backend generation, insecure neighbors reduce the share of correct and secure implementations by 3.4% on average, and in C/C++ repository-level coding, the average gap between secure and insecure contexts reaches 35.4%. Prompting to follow existing code-style or to be careful about security increases, respectively decreases, how strongly agents propagate vulnerabilities, but neither stops them. When asked to explain their implementation choices, coding agents attribute them to following another code site in 76.5% of cases, even though they recognize the introduced vulnerability in 69.9% of cases. These findings show that agents use existing vulnerabilities as templates for new ones indiscriminatorily, turning each contribution into an opportunity to introduce more vulnerabilities. As such, as agents write a growing share of production code under decreasing human review, code bases can increasingly degrade in security if security vulnerabilities are not thoroughly fixed continuously.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码代理",
+        "漏洞扩散",
+        "C/C++",
+        "内存安全"
+      ],
+      "url": "https://arxiv.org/abs/2611.11455",
+      "pdf": "https://arxiv.org/pdf/2611.11455"
+    },
+    {
+      "id": "2611.12572",
+      "title": "Text2NGAC: a multi-LLM pipeline for NGAC policy extraction with mutation-based verification",
+      "authors": [
+        "Ayesha Habib",
+        "Huixiang Zhang",
+        "Dan Zhu",
+        "Waiz Haider"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多个大模型从自然语言抽出访问控制图，并用变异测试校验，对象是真实策略文档。",
+      "abstract": "访问控制策略用自然语言写，执行时却是形式模型。把它们翻译成 NIST 下一代访问控制图，至今没有完整方案：已有系统只覆盖模型的一部分，而且抽出的图都没有校验。我们提出一套多模型流水线：先消歧再抽取，拿不准的句子交给多模型合议，再用五种策略校验结果图；校验器本身用受控变异测试衡量效果。据我们所知，这是第一个能从真实策略文档抽出全部四类关系（关联、禁止、事件-响应义务、指派）的系统。评估有三点。校验器在 918 个注入变异上检出 99.7%，结构上的失败开放故障全部检出；漏掉的故障类按安全后果加权，而不是搁着不看。抽出的图可以真正执行：一份语料的图不经修改就能载入 NIST 参考实现，重现图所蕴含的全部 55 个访问判定，并端到端触发一条抽出的义务。在四份真实语料的 714 句评分句子上，抽取的精确元组匹配准确率达到 97.3% 到 99.6%，明显高于三个复现基线；改写探测和语义重打分用来约束对措辞变化的敏感度。报告的准确率依赖措辞和基准，对抗输入不在校验器保证之内，预期用法是抽取加结构校验，再交给专家审。论文附带完整的两层可复现产物。",
+      "abstractEn": "Access-control policies are written in natural language but enforced as formal models, and translating them into NIST Next Generation Access Control (NGAC) graphs remains unsolved: prior systems cover only subsets of the NGAC model, and none verify the graphs they extract. We present Text2NGAC, a pipeline of cooperating large language models that disambiguates each sentence before extraction, escalates uncertain sentences to a multi-model ensemble, and checks the resulting graph with a five-strategy verifier whose own effectiveness is measured by controlled mutation testing. To our knowledge it is the first system to extract all four NGAC relationship types - associations, prohibitions, event-response obligations, and assignments - from real-world policy documents. Three results anchor the evaluation. The verifier detects 99.7% of 918 injected mutants and every structural fail-open fault, and the fault classes it misses are characterized and weighted by security consequence rather than left unexamined. The extracted graphs are enforceable: one corpus's graph loads unmodified into the NIST reference implementation, which reproduces all 55 access decisions the graph entails and fires an extracted obligation end-to-end. Extraction reaches 97.3-99.6% exact-tuple-match accuracy on the 714 scored sentences of four real corpora, far above three reproduced baselines on matched metrics, and paraphrase probes with semantic re-scoring bound the pipeline's sensitivity to rewording. Reported accuracy is wording- and benchmark-specific, adversarial input is outside the verifier's guarantees, and the intended deployment is extraction plus structural verification feeding expert review. A complete two-tier reproducibility artifact accompanies the paper.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "访问控制",
+        "大模型",
+        "策略抽取",
+        "变异测试"
+      ],
+      "url": "https://arxiv.org/abs/2611.12572",
+      "pdf": "https://arxiv.org/pdf/2611.12572"
+    },
+    {
+      "id": "2611.11721",
+      "title": "Decalage: Uncovering the Gap Between Model-Generated Reasoning and Actual Code Implementation in Small Language Models",
+      "authors": [
+        "Saif Uddin Mahmud",
+        "Afsana Tasnim",
+        "Ahmed Ryan",
+        "Md Rayhanur Rahman"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "给小参数代码模型加安全提示后，推理里安全词变多，但生成的 C++ 代码只部分跟上。",
+      "abstract": "代理式代码生成常常先让模型写推理，再写代码。为了更安全，常见做法是在提示里加一条安全指令。我们测这条指令对小参数语言模型的作用，这类模型可以本地、低成本运行。四个 15 亿到 30 亿参数的开源代码模型，根据十一份公开需求文档的 166 个小节生成 C++，一次用普通提示，一次用安全提示。安全提示让涉及校验、资源处理和威胁的推理占比翻倍以上，而且没有证据表明这种上升在带安全内容的需求里更大。代码只部分跟着变。在既有函数体又有推理的函数里，能被我们词法测试认出检查的比例从 23% 升到 39%，但仍有超过四分之一是空壳，编译通过率仍然低；推理里提到检查的函数，一半或更多实际代码里没有对应检查。两轮编译反馈修复后，仍有超过 80% 的小节不可用；在能用的代码上，静态检查器和一次试探性的有界模型检测都分不出两种提示。两名标注者的人工核对支持空壳比例，也支持推理变化的方向。对小模型来说，安全指令会大范围改推理，只部分改代码，所以不能信任推理，而要把推理和代码对照检查。",
+      "abstractEn": "Agentic code generation often asks a model to explain its reasoning before it writes code, and a common way to make such a workflow safer is to add a security instruction to the prompt. We test what that instruction does in small language models, which are attractive because they run locally and cheaply. Four open code models of 1.5B to 3B parameters generate C++ from 166 sections of eleven public requirements documents, once with a general prompt and once with a secure prompt. The secure prompt more than doubles the share of reasoning about validation, resource handling and threats, and we find no evidence that the rise is larger for requirements with security content. The code changes only in part. Among functions with a body and reasoning, the share with a check that our lexical test recognises rises from 23% to 39%, but more than a quarter of the functions remain stubs, compile rates stay low, and half or more of the functions whose reasoning mentions a check contain no such check. Two rounds of compiler-feedback repair leave more than 80% of sections unusable, and neither cppcheck nor an exploratory ESBMC run separates the prompts on the usable code. A hand check by two annotators supports the stub measure and the direction of the reasoning result. For small models, a security instruction changes the reasoning broadly but the code only in part, so the reasoning should be checked against the code rather than trusted.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全提示",
+        "代码生成",
+        "C++",
+        "小模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.11721",
+      "pdf": "https://arxiv.org/pdf/2611.11721"
+    },
+    {
+      "id": "2611.12252",
+      "title": "Lessons Not Learned: Why Cross-Chain Bridges Keep Losing Billions the Same Way",
+      "authors": [
+        "Mohsen Ahmadvand",
+        "Piotr Dobaczewski",
+        "Camille Bouzerand"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "梳理跨链桥失窃原因并给出可上链打分的安全姿势量表，对象是跨链桥部署。",
+      "abstract": "跨链桥被盗已经造成数十亿美元损失，而且常常不是因为代码漏洞。我们整理 2021 到 2026 年的跨链桥攻击，2023 年以来报告损失里，88% 来自安全姿势失败，也就是人员、代码、控制和链下基础设施怎么搭；这些失败几乎都是旧问题再犯。代码审计抓不到这类失败，所以我们提出一套桥安全评估量表。它根据链上证据给每次部署打分，出现致命风险时硬封顶打到最低。如果同一代币的多次部署共用一份储备，代币只和最弱的那次部署一样安全。对谁也没料到的攻击，我们说明限速和紧急停止仍能把损失卡住。我们做了一个分析器，把量表用到已部署的桥上并监视变化，还有一个代理式分析器，可以对任意桥跑同样的检查。运营方知道该修什么，用户可以比较桥。按我们的量表去落实控制，桥被盗损失会从 35.2 亿美元降到 3300 万美元，大约少 105 倍。",
+      "abstractEn": "Bridge hacks have cost billions, often without exploiting a code bug. In the cross-chain bridge hacks we catalogue from 2021 to 2026, failures of security posture, meaning how a bridge's people, code, controls and off-chain infrastructure are set up, account for 88% of reported losses since 2023, and nearly all repeat earlier failures. Code audits cannot catch these failures, so we propose a bridge security assessment rubric. It scores each bridge deployment from on-chain evidence, and a hard cap drops the score to the lowest value when a fatal risk is present. A token is only as safe as its weakest deployment if all its deployments share one backing. For attacks nobody anticipated, we show that rate limits and an emergency stop still bound the loss. We build an analyzer that applies the rubric to deployed bridges and monitors them for changes, and an agentic analyzer that runs the same checks on any bridge. Operators learn what to fix, and users can compare bridges. Our rubric's controls cut bridge hack losses 105-fold, from $3.52B to $33M.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链桥",
+        "安全姿势",
+        "限速",
+        "紧急停止"
+      ],
+      "url": "https://arxiv.org/abs/2611.12252",
+      "pdf": "https://arxiv.org/pdf/2611.12252"
+    },
+    {
+      "id": "2611.11682",
+      "title": "A Decentralized Quantum-Resistant Notary Scheme for Blockchain Interoperability with a Novel Dynamic Trust Model",
+      "authors": [
+        "Koosha Esmaeilzadeh Khorasani",
+        "Saeed Moradi",
+        "Sara Rouhani"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "提出抗量子的去中心化公证方案和动态信任模型，无大模型，对象是区块链互操作。",
+      "abstract": "区块链互操作需要在异构网络之间做安全、可靠的交互。现有公证方案有两个问题：抗不了量子计算，信任管理又太死。针对第一点，本文提出去中心化、抗量子的框架，把后量子密钥封装和数字签名与对称加密合在一起：认证和不可否认用非对称密码，批量加密交给对称方案。在最高每秒 270 笔的并行负载下，这套混合设计和椭圆曲线方案的端到端性能差距平均不到 6%，峰值时收敛到 0.2% 以内。第二点用动态信任模型处理：根据验证者行为方差推出自适应折扣因子，不用固定阈值或多阶段配置；再用可调的动态性因子控制灵敏度。我们在对抗条件下跑了 200 个周期，提出的模型能检出并惩罚基线模型罚得不够的作恶。结果表明抗量子的区块链互操作在工程上做得到，这套信任机制也比现有做法更灵活、更能扛攻击。",
+      "abstractEn": "Blockchain interoperability is essential for enabling secure and reliable interactions across heterogeneous networks. However, existing notary schemes face two key issues: quantum vulnerability and rigid trust management. To address the first issue, this paper proposes a decentralized, quantum-resistant framework integrating post-quantum primitives ML-KEM and ML-DSA alongside AES-256, optimizing performance by using asymmetric cryptography for authentication and non-repudiation, and delegating bulk encryption to symmetric schemes. Under parallel loads of up to 270 transactions per second, this hybrid design reduces the end-to-end performance gap between the post-quantum and elliptic-curve approaches to under 6% on average, converging to within 0.2% at peak load. The second issue is handled by a dynamic trust model that uses Popoviciu's inequality to derive an adaptive discount factor based on variance in a Verifier's behavior, removing the need for fixed thresholds or multi-stage configuration, while a tunable dynamicity factor enables control over system sensitivity. We evaluated the trust model over 200 epochs under adversarial conditions, where the proposed model detects and responds to misbehavior that the baseline model fails to penalize adequately. These results demonstrate that quantum-resistant blockchain interoperability is practically achievable, with the proposed trust mechanism offering greater adaptability and resilience than existing approaches.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "跨链互操作",
+        "公证",
+        "后量子",
+        "信任模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.11682",
+      "pdf": "https://arxiv.org/pdf/2611.11682"
+    }
+  ]
+}
