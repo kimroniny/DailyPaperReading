@@ -1,0 +1,332 @@
+{
+  "date": "2026-11-11",
+  "papers": [
+    {
+      "id": "2611.11720",
+      "title": "ShadowBench-MCP: Measuring Shadow Invocations in MCP-Style Tool Routing",
+      "authors": [
+        "Eyhab Al-Masri",
+        "Wenjun Yang"
+      ],
+      "year": 2026,
+      "venue": "USENIX Security 2026",
+      "abstractOneWord": "用大模型路由工具时，同任务改写请求会让代理绕过校验和审计，对象是 MCP 式工具调用与软件供应链工作流。",
+      "abstract": "大模型代理越来越多地充当工具、API 和软件供应链工作流的路由器，因此真正有安全含义的模型输出往往是执行路径，而不只是生成的文本。本文研究影子调用：请求在任务上保持不变，却让大模型路由器选上风险更高的执行路径，可能跳过校验、来源、暂存、脱敏或审计，尽管请求本身并没有要求做恶意动作。作者提出 ShadowBench-MCP，用任务保持（TPSS）、操作压力（OPSS）和路径几何漂移（RGAS）分开度量，并合成执行前的 SODS 分数。在针对 Groq 托管 qwen/qwen3-32b 路由器的策略消融中，120 次路由决策形成 96 对原始/变体比较，覆盖六类安全敏感工作流。效率优先路由的影子调用率 29.2%，安全工具跳过率 26.7%；策略感知路由分别降到 4.2% 和 1.7%，影子调用相对减少 85.7%。执行前信号区分影子路径的 ROC AUC 最高 0.94。作者强调这是单路由器上的早期证据，说明路由层安全效应依赖策略，并不声称存在普遍漏洞。",
+      "abstractEn": "LLM agents increasingly act as routers for tools, APIs, and software-supply-chain workflows, making an execution path - rather than generated text alone - a security-relevant model output. We study shadow invocation: a task-preserving request variant that causes an LLM router to select a riskier execution path, potentially skipping validation, provenance, staging, redaction, or audit controls even though the request does not ask for a malicious action. We introduce ShadowBench-MCP, a benchmark and metric suite that separates task preservation (TPSS), operational pressure (OPSS), and route-geometric drift (RGAS), and combines them in the pre-execution SODS score. In a focused policy-ablation study using a Groq-hosted qwen/qwen3-32b router, 120 routing decisions yield 96 original-versus-variant comparisons across six security-sensitive workflows. Efficiency-first routing produces a 29.2% shadow-invocation rate and 26.7% safety-tool skip rate. Policy-aware routing reduces these to 4.2% and 1.7%, respectively, corresponding to an 85.7% relative reduction in shadow invocations. Pre-execution signals distinguish shadow routes with ROC AUC up to 0.94. These results are early, single-router evidence of a policy-dependent routing-layer security effect, not a claim of universal vulnerability.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MCP",
+        "工具路由",
+        "影子调用",
+        "供应链"
+      ],
+      "url": "https://arxiv.org/abs/2611.11720",
+      "pdf": "https://arxiv.org/pdf/2611.11720"
+    },
+    {
+      "id": "10.1109-tifs.2026.3751567",
+      "title": "ELSA: Efficient Lightweight Graph Modeling with LLM-Enhanced Supervision for Ethereum Attack Transaction Detection",
+      "authors": [
+        "Ming Fang",
+        "Jiajing Wu",
+        "Zhiying Wu",
+        "Zigui Jiang",
+        "Qing Xia",
+        "Zibin Zheng"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "用大模型 refining 函数注释当监督信号，做轻量交易图检测以太坊攻击交易。",
+      "abstract": "近年来，各类攻击交易成为以太坊生态中破坏性最大的安全威胁之一，造成大量资金损失。攻击交易的动态过程复杂，基于学习的检测方法往往要用结构很重的模型，建模开销大；同时攻击样本稀缺，监督不足，检测效率和效果都受限制。本文提出 ELSA：用大模型增强监督的高效轻量图建模，检测以太坊攻击交易。首先基于函数调用轨迹设计交易图结构，用轻量方式刻画交易行为，提高建模效率。其次，针对攻击标签稀缺，从交易触发的第一个函数的注释构造监督信号，再用大模型 Qwen2.5-Coder:7B 精炼注释，得到更高质量的监督并提升检测效果。实验表明，与现有最好方法相比，ELSA 把训练时间、轨迹存储占用和每个区块的数据采集时间分别降到大约 15%、4% 和 13%。在全监督和少样本设置下，整体 AUC 分别比现有最好方法高 0.03 和 0.02。",
+      "abstractEn": "In recent years, various attack transactions have become one of the most destructive security threats in the Ethereum ecosystem, causing significant financial losses. The complex dynamics of attack transactions often require learning-based detection methods to employ structurally complex models, resulting in substantial modeling overhead. Meanwhile, scarce attack samples provide limited supervision, constraining both detection efficiency and effectiveness. To address these problems, this paper proposes an Efficient Lightweight graph modeling with large language model (LLM)-enhanced Supervision for Ethereum Attack transaction detection (ELSA). First, to improve the efficiency of modeling transaction dynamics, ELSA designs a transaction graph structure based on function call traces. This structure enables lightweight modeling of transaction behavior and improves model efficiency. Second, to address the lack of supervision caused by scarce attack labels, ELSA constructs supervisory signals from the comment of the first function triggered by a transaction. ELSA further introduces the large language model Qwen2.5-Coder:7B to refine the comment. The refined comment provides high-quality supervision and improves detection performance. Experimental results show that, compared with state-of-the-art methods, ELSA reduces training time, trace storage footprint, and per-block data collection time to approximately 15%, 4%, and 13% of the SOTA level, respectively. Under fully supervised and few-shot settings, the proposed method improves the overall AUC by 0.03 and 0.02 absolute points, respectively, compared with state-of-the-art methods.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "以太坊",
+        "攻击交易",
+        "大模型监督",
+        "交易图"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3751567",
+      "pdf": "https://doi.org/10.1109/tifs.2026.3751567"
+    },
+    {
+      "id": "2611.13041",
+      "title": "Code-Grounded Agentic Explanations for Static Analysis Vulnerability Findings",
+      "authors": [
+        "Oshando Johnson",
+        "Ranjith Krishnamurthy",
+        "Rohith Kumar Shanmuganathan",
+        "Goran Piskachev",
+        "Eric Bodden"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用代理只解释、不改判定，给 IntelliJ 里的静态分析漏洞告警做接地说明。",
+      "abstract": "静态应用安全测试（SAST）能较早报出漏洞，判定基于规则、可审计。但开发者经常因为看不懂而直接关掉告警。大模型可以补上解释，可如果连检测也交给模型，静态分析的可审计性就没了。本文把检测留在分析器，只把解释交给模型。先做了 20 人的预研用户研究和 19 名从业者工作坊，得到五条需求，据此重设计开源 IntelliJ IDEA 插件 SAFE：它能解释任何以 SARIF 报告的分析器结果。解释按需分层，绑到报告的数据流上，并把单次提示后端换成必须先查阅仓库和触发规则再回答的代理。24 人的受试内交叉实验拿它和前一版对比。系统可用性量表从 77.3 升到 85.0。解释质量里提升最大的是可操作性，也是前两轮研究里最弱的一项；正确修复的几率提高到 2.6 倍。研判准确率和每条告警耗时没有可区分差异，作者把它读成信息不足，而不是等价。信任这一项没有动，收尾访谈表明接地让告警更好懂，但并不更好信。参与者还划出一条需求里没料到的边界：希望工具负责发现和解释，由他们来判断和动手。",
+      "abstractEn": "Static application security testing (SAST) tools surface vulnerabilities early and their verdicts are rule-based and auditable. Yet developers routinely dismiss findings they cannot interpret. Large language models can supply the missing explanation, but designs that also hand the model the detection give up the auditability that makes static analysis defensible. We keep detection with the analyser and give the model only the explaining. A preliminary user study with 20 participants and a workshop with 19 practitioners yielded five requirements. Guided by these we redesigned SAFE, an open-source IntelliJ IDEA plugin that explains findings from any analyser reporting in the Static Analysis Results Interchange Format. It tiers explanations by demand, ties them to the reported data flow, and replaces the single-prompt backend with an agent that must consult the repository and the rule that fired before answering. A within-subjects crossover experiment with 24 participants compared the redesign against its predecessor. Perceived usability rose from 77.3 to 85.0 on the System Usability Scale. Actionability gained most among the explanation-quality items, the aspect both earlier studies flagged as weakest, and the odds of a correct remediation were 2.6 times higher. Triage accuracy and time per finding were indistinguishable, which we read as uninformative rather than as equivalence. Trust was the one measure that did not move, and the closing interviews indicate that grounding made findings easier to understand rather than easier to believe. Participants also drew a boundary no requirement anticipated, wanting the tool to find and explain while they judge and apply.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SAST",
+        "漏洞解释",
+        "IntelliJ",
+        "编码代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.13041",
+      "pdf": "https://arxiv.org/pdf/2611.13041"
+    },
+    {
+      "id": "2611.10776",
+      "title": "SIExBench: A Benchmark for Automated Repair of Sensitive Information Exposure",
+      "authors": [
+        "Mingming Zhang",
+        "Xu Wang",
+        "Jian Zhang",
+        "Dihao Fan",
+        "Xiangxin Meng",
+        "Chunming Hu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型评估自动修复敏感信息暴露缺陷，对象是 Python 和 Java 仓库。",
+      "abstract": "现代软件经常处理凭证、个人记录和其他敏感信息。敏感信息暴露（SIEx）缺陷会让未授权方拿到这些信息，造成往往不可逆的泄露。已有工作多在检测，很少修底层缺陷；现有仓库级问题修复基准也不针对这类缺陷。本文提出 SIExBench，据作者所知是第一个专门做 SIEx 缺陷自动修复的基准。它包含来自 64 个常用 Python 和 Java 仓库的 161 个可执行验证实例，每条都有问题报告、有缺陷的仓库快照、开发者补丁、可执行的暴露与回归测试，以及缺陷刻画。作者用三个大模型评估六套修复系统，共 18 种配置，分析总体效果、按缺陷特征的表现和失败机制。最强配置只解决 39.1% 的实例，40.4% 的实例 18 种配置全部失败。更重要的是，62.1% 的失败尝试会产出合法补丁，但敏感信息仍然暴露，说明不彻底去掉暴露路径是核心难点。系统经常生成看起来合理、也改到相关代码的补丁，却没有关掉所有暴露路径。因此有效修复必须保证通向敏感信息暴露的相关路径都被关上。SIExBench 为系统评估和推进 SIEx 缺陷自动修复提供了基础。",
+      "abstractEn": "Modern software systems routinely process credentials, personal records, and other sensitive information. A sensitive information exposure (SIEx) defect makes such information accessible to an unauthorized actor and can cause serious and often irreversible disclosure. However, prior research has focused largely on detecting such exposures rather than repairing the underlying defects, and existing repository-level issue-resolution benchmarks do not specifically target this defect class. We present SIExBench, to our knowledge the first benchmark dedicated to automated repair of SIEx defects. SIExBench contains 161 execution-verified instances from 64 widely used Python and Java repositories, each with an issue report, buggy repository snapshot, developer patch, executable exposure and regression tests, and defect characterization. We evaluate six repair systems with three LLMs, yielding 18 configurations, and systematically analyze their overall effectiveness, performance across defect characteristics, and failure mechanisms. The strongest configuration resolves only 39.1% of the instances, while 40.4% remain unresolved by all 18 configurations. More importantly, 62.1% of unsuccessful attempts produce a valid patch that still leaves sensitive information exposed, making incomplete exposure removal a central challenge. Systems often generate plausible patches and modify relevant code without fully eliminating the exposure, indicating that effective repair must ensure that all relevant paths to sensitive-information exposure are closed. Overall, SIExBench provides a foundation for systematically evaluating and advancing automated repair of sensitive information exposure defects.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "敏感信息暴露",
+        "自动修复",
+        "Python",
+        "Java"
+      ],
+      "url": "https://arxiv.org/abs/2611.10776",
+      "pdf": "https://arxiv.org/pdf/2611.10776"
+    },
+    {
+      "id": "2611.10723",
+      "title": "CyberBinGym: Can AI Agents Turn Binary Patches into Real Exploits?",
+      "authors": [
+        "Lambang Akbar Wijayadi",
+        "Zhaoqi Xiao",
+        "Zhun Wang",
+        "Hongwei Li",
+        "Wenbo Guo",
+        "Heng Yin",
+        "Zhenkai Liang",
+        "Dawn Song"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "让 AI 代理对比打过补丁和未打补丁的二进制，看能否还原并利用真实漏洞。",
+      "abstract": "安全修复通常以编译后的更新到达用户，部署延迟会让未打补丁的系统继续暴露。在这段窗口里，对比打过补丁和未打补丁的二进制，有可能看出如何利用漏洞，把防御更新变成攻击者可用的信息。现有基准测不到这种能力：它们给出源码、用人写的题目，或只测二进制理解而不要求利用。本文提出 CyberBinGym，包含来自 53 个常用项目真实漏洞的 100 道题，覆盖六类漏洞和三种分析复杂度。代理拿到去掉符号的漏洞二进制和补丁二进制，没有源码也没有漏洞说明，必须结合静态和动态分析还原并利用漏洞。评估分开看：用差分崩溃测试衡量漏洞还原，用拿到 flag 衡量端到端利用，并用轨迹审计排除刷分。最强代理在 88% 的题目上还原出目标漏洞，在 20% 的题目上完成利用。在匹配的 20 题子集上，提供补丁二进制会把利用率从 10% 提到 25%；打开常规二进制加固后，它仍能利用此前成功的 20 题中的 2 题。说明当前代理能在受控环境里把已发布的二进制补丁变成可工作的利用，尽管利用仍不稳定。这会降低针对未打补丁软件的门槛，压缩防御方的有效响应窗口，更需要及时部署补丁。",
+      "abstractEn": "Security fixes usually reach users as compiled updates, but deployment delays leave unpatched systems exposed. During this window, comparing patched and unpatched binaries can reveal how to exploit a vulnerability, turning a defensive update into actionable information for attackers. Existing benchmarks do not measure this capability: they expose source code, rely on human-crafted challenges, or evaluate binary comprehension without requiring exploitation. We introduce CyberBinGym, a benchmark containing 100 tasks derived from real vulnerabilities in 53 widely used projects, spanning six vulnerability families and three levels of analysis complexity. Agents receive stripped vulnerable and patched binaries without source code or vulnerability information, and must combine static and dynamic analysis to recover and exploit the vulnerability. Evaluation separately measures vulnerability recovery through differential crash testing and end-to-end exploitation through flag retrieval, with trajectory audits to reject reward hacking. The strongest evaluated agent recovers the target vulnerability in 88% of tasks and exploits it in 20%. Providing the patched binary raises its exploit rate from 10% to 25% on a matched 20-task subset; with standard binary hardening enabled, it still exploits two of its 20 previously successful tasks. These results demonstrate that current agents can turn released binary patches into working exploits in a controlled setting, although exploitation remains unreliable. These capabilities lower the barriers to targeting unpatched software and compress defenders' effective response window, increasing the urgency of timely patch deployment.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "二进制",
+        "补丁对比",
+        "漏洞利用",
+        "AI代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.10723",
+      "pdf": "https://arxiv.org/pdf/2611.10723"
+    },
+    {
+      "id": "2611.13684",
+      "title": "BypassGym: A Benchmark for Evaluating AI Agents' Endpoint Defense Evasion Capabilities",
+      "authors": [
+        "Weifeng Yuan",
+        "Zifan Chen",
+        "Yucheng Zhang",
+        "Feng Dong",
+        "Peng Gao",
+        "Haoyu Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "让大模型代理在真实 Windows 和 EDR 上生成加载器，评估端点防御绕过能力。",
+      "abstract": "人工智能代理越来越多地自动做网络安全任务，也包括进攻。网上攻击频繁，端点检测与响应（EDR）是关键防线，但 AI 代理能不能绕过它还不清楚。已有基准评估大模型代理在渗透测试和漏洞发现上的进攻能力，却几乎不测防御规避：代理能不能写出一个程序，执行载荷却不被已部署的 EDR 拦截或终止。本文提出 BypassGym，据作者所知是第一个在真实端点上系统评估这种能力的基准。给定命令与控制（C2）shellcode，代理必须生成并编译加载器，让载荷执行且不被拦住。补充的规避知识技能提供领域知识，用于对比有无这类输入。BypassGym 建在 Proxmox VE 上，评估环境在虚拟机里跑真实 Windows 和 EDR 产品，并把结构化检测反馈回给代理。作者用 5 个轻量模型后端，对 6 款 EDR 和 3 种载荷评估，发现即便这些简单模型也能提交成功样本：DeepSeek-V4.1 Flash 在 18 次运行中成功 17 次，Bitdefender 只让 15 次中的 5 次通过。这些结果系统测量了当前 AI 代理的端点防御规避能力，也标出防御方需要继续查的地方。",
+      "abstractEn": "Artificial intelligence agents increasingly automate cybersecurity tasks, including offensive operations. Frequent attacks across the web make endpoint detection and response (EDR) a critical defense, but whether AI agents can evade it remains unclear. Benchmarks evaluate the offensive capabilities of large language model (LLM) agents in areas such as penetration testing and vulnerability discovery. One important capability that these benchmarks do not address is defense evasion, specifically whether an agent can develop a program that executes a payload without being blocked or terminated by a deployed EDR. We introduce BypassGym, to our knowledge the first benchmark to systematically evaluate this capability on real endpoints. Given command-and-control (C2) shellcode, an agent must generate and compile a loader that executes the payload without being blocked or terminated. A supplementary evasion knowledge skill provides domain knowledge and supports comparisons with and without this input. BypassGym is built on Proxmox VE(PVE), so the evaluation environment runs real Windows systems and EDR products inside virtual machines and returns structured detection feedback to the agent. We evaluate 5 lightweight model backends against 6 EDR products and 3 payloads, and find that even these simple models generate successful submissions, with DeepSeek-V4.1 Flash reaching 17/18 successful runs and Bitdefender allowing only 5 of 15 runs to pass. These results provide a systematic measurement of current AI agents' endpoint defense evasion capabilities and identify areas for defenders to investigate.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "EDR",
+        "端点防御",
+        "AI代理",
+        "Windows"
+      ],
+      "url": "https://arxiv.org/abs/2611.13684",
+      "pdf": "https://arxiv.org/pdf/2611.13684"
+    },
+    {
+      "id": "2611.10947",
+      "title": "Validating AI-Discovered Cloud Threats on Live Infrastructure: A Multi-Model, Multi-Cloud Study",
+      "authors": [
+        "Nicholas Pecka",
+        "Lotfi Ben Othmane",
+        "Renee Bryce"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多代理发现云威胁并自动合成利用，再在 AWS、GCP、Azure 上做非破坏性验证。",
+      "abstract": "云基础设施威胁建模缺少对 AI 发现威胁的实证校验。本文给出三阶段方法：多代理威胁发现、自动利用合成、非破坏性现场验证，并把它用到三个商业基础模型、两套云架构上，每条威胁都在发现它的那朵云（AWS、GCP 或 Azure）上本地验证。233 条 AI 发现的威胁里，103 条确认、34 条否定（精确率 75.2%，95% 置信区间 [67.3, 81.7]）；44 条是有条件的（点名机制不成立，但另一条路径能造成等价影响），52 条无法判定。多模型发现靠的是覆盖面而不是一致意见：三个模型合在一起确认的威胁是最好单模型的 2.2 倍，精确率相当；被多个模型同时报出的威胁，确认率并不高于单模型。假阳性不是架构特有的：它们断言了部署里并不存在的访问或系统状态。事先标成可观察配置的威胁，干净解决的比例高于多步行为威胁（72.5% 对 51.6%），后者更多是有条件的，说明模型更容易认错利用机制，而不是认错底层弱点。只要配上实证校验，AI 辅助发现可以实际进入安全工作流。",
+      "abstractEn": "Cloud infrastructure threat modeling lacks empirical validation of AI-discovered threats. We present a three-phase methodology of multi-agent threat discovery, automated exploit synthesis, and non-destructive live validation, and apply it to three commercial foundation models on two cloud architectures, validating each threat natively on the cloud (AWS, GCP, or Azure) it was discovered against. Of 233 AI-discovered threats, 103 were confirmed and 34 refuted (75.2% precision, 95% CI [67.3, 81.7]); 44 were conditional (the named mechanism refuted but an equivalent impact shown through another path) and 52 indeterminate. Multi-model discovery helped through breadth, not agreement: the three models together found 2.2x the confirmed threats of the best single model at comparable precision, while threats reported by several models were confirmed no more often than single-model ones. False positives were not architecture-specific: they asserted access or system state the deployment did not have. Threats coded in advance as observable configuration resolved cleanly more often than multi-step behavioral threats (72.5% vs. 51.6%), which were more often conditional, suggesting that models more often misidentify the exploitation mechanism than the underlying weakness. AI-assisted discovery is a practical input to security workflows when paired with empirical validation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "云安全",
+        "威胁建模",
+        "多代理",
+        "利用验证"
+      ],
+      "url": "https://arxiv.org/abs/2611.10947",
+      "pdf": "https://arxiv.org/pdf/2611.10947"
+    },
+    {
+      "id": "2611.13960",
+      "title": "From Attack Surface to Defense Architecture: Compositional Security for Agentic Coding Harnesses",
+      "authors": [
+        "Simon Hegelich",
+        "Bardh Prenkaj",
+        "Habiba Sarhan",
+        "Morteza Shahrezaye",
+        "Kolja Hegelich",
+        "Christian Montag",
+        "Ralf Schneider",
+        "Erik Cambria"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "给编码代理套件做权限与污点组合监控，防止注入指令后调用 bash、curl 变成落地攻击。",
+      "abstract": "AI 编码套件把语言模型接到 shell、文件系统和网络套接字上，套件本身就成了自动化的就地取材平台：一旦对手把指令注入检索到的内容，bash、curl、find 这类两用二进制就变成载荷。作者认为智能体系统的安全是认知架构和权限组合的结构属性，而不是单个模型的涌现属性。静态正则黑名单漏掉结构性规避，用大模型当法官的护栏延迟高，还会过度拦截正常工作。本文提出 ActiveSecHarness，一种围绕「智能与权限分离」的神经符号引用监视架构。它包括：(1) 四个信任与权限环上类似 Macaroon 的 HMAC 能力令牌；(2) 二维乘积污点格与工作区来源账本，防止秘密在磁盘上洗白；(3) 确定性的 0 环操作系统/工具护栏；(4) 字节码证书、分视界审计日志、自愈安全测试生成，以及自适应 UserWikiManager。在 252 条夹具（120 攻击、120 良性、12 条杀伤链）上，本地大模型法官（qwen3:4b）以 142.3 毫秒延迟拒绝 98.3% 的良性工作；0 环在 12.7 微秒内达到攻击拦截率 1.000、假阳性 0.000，快约 11200 倍。多步轨迹消融里，无状态策略漏掉 12 条杀伤链中的 4 条，粗糙布尔污点挡住 83.3% 的良性工作流；二维乘积格每步约 20 微秒，攻击拦截率 1.000、假阳性 0.000。",
+      "abstractEn": "AI coding harnesses couple language models to shells, filesystems, and network sockets, turning the harness into an automated Living-off-the-Land (LotL) platform: once an adversary injects instructions into retrieved content, dual-use binaries such as bash, curl, and find become the payload. We argue that security in agentic systems is a structural property of the cognitive architecture and permission composition rather than an emergent property of individual models. Static regex blacklists miss structural evasions, whereas LLM-as-a-Judge guardrails incur high latency while over-blocking benign work. We present ActiveSecHarness, a neurosymbolic reference-monitor architecture built around Separation of Intelligence and Authority. It combines (1) Macaroon-inspired HMAC capability tokens across four Trust and Authority Rings, (2) a 2D product taint lattice and a workspace provenance ledger that prevents secret laundering across disk, (3) deterministic Ring-0 OS/tool guards, and (4) bytecode certificates, split-horizon audit logs, self-healing security test synthesis, and an adaptive UserWikiManager. Across N=252 fixtures (120 attack, 120 benign, 12 kill chains), a live local LLM judge (qwen3:4b) refuses 98.3% of benign work at 142.3 ms latency, whereas Ring 0 achieves ABR=1.000 and FPR=0.000 in 12.7 us (11,200x faster). In a multi-step trajectory ablation, an oracle Conseca-style stateless policy misses 4/12 kill chains (ABR=0.667) and coarse Boolean taint blocks 83.3% of benign workflows, while our 2D product lattice achieves ABR=1.000 and FPR=0.000 at about 20 us per step.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编码套件",
+        "权限隔离",
+        "污点分析",
+        "就地取材"
+      ],
+      "url": "https://arxiv.org/abs/2611.13960",
+      "pdf": "https://arxiv.org/pdf/2611.13960"
+    },
+    {
+      "id": "2611.06373",
+      "title": "Reassessing Dataset Quality and Fine-Tuning Practices for Vulnerability Detection on PrimeVul dataset",
+      "authors": [
+        "Norbert Sándor Szolnoki",
+        "Gábor Antal"
+      ],
+      "year": 2026,
+      "venue": "EASE 2026",
+      "abstractOneWord": "用 CodeBERT 等代码模型在 PrimeVul 上大规模微调，发现漏洞检测信号弱、数据标注有噪声。",
+      "abstract": "近期研究在 PrimeVul 等基准上对预训练代码语言模型做有监督微调，报告了不错的自动漏洞检测结果。本文对这一设置下的模型表现和数据集质量做大规模实证评估。作者系统微调三个常用编码器（CodeBERT、GraphCodeBERT、UniXCoder），覆盖五种不平衡处理策略、大范围超参搜索和多种随机种子，共 770 次独立训练。结果很一致。F1 和 ROC-AUC 等常规指标偶尔看起来有提升，但安全关键、考虑校准的指标讲的是另一回事：马修斯相关系数接近零，预测概率校准差，在严格假阳性约束下假阴性率很高。不平衡处理、阈值优化和事后校准都恢复不出有意义的判别信号。作者还评估了 PrimeVul 的数据质量，发现有漏洞函数和已修复函数语义差别极小、提交级标注引入噪声等结构问题。这表明按本文方法，当前形态的 PrimeVul 很难支撑可靠的软件工程 AI 漏洞检测。研究强调需要更稳健的数据集设计、更好的评估协议，以及重新考虑面向安全关键任务的微调做法。",
+      "abstractEn": "Recent studies report promising results from supervised fine-tuning of pre-trained code language models for automated vulnerability detection on benchmarks such as PrimeVul. In this paper, we present a large-scale empirical evaluation of both model performance and dataset quality in this setting. We systematically fine-tune three widely used encoder models (CodeBERT, GraphCodeBERT, and UniXCoder) across five imbalance mitigation strategies, extensive hyperparameter sweeps, and multiple random seeds, resulting in 770 independent training runs. Our results reveal a consistent pattern. While standard metrics such as F1 and ROC-AUC occasionally suggest improvements, security-critical and calibration-aware measures tell a different story. Matthews Correlation Coefficient remains near zero, predicted probabilities are poorly calibrated, and evaluation under strict false-positive constraints reveals high false-negative rates. Neither imbalance handling, threshold optimization, nor post-hoc calibration recovers a meaningful discriminative signal. We also conduct a data quality assessment of the PrimeVul benchmark and identify structural issues such as minimal semantic differences between vulnerable and fixed functions, and annotation noise introduced by commit-level labeling. These findings suggests that the PrimeVul dataset, in its current form, presents significant challenges for reliable AI-based vulnerability detection in software engineering with the methodologies we used. Our study highlights the need for more robust dataset design, improved evaluation protocols, and rethinking of fine-tuning practices for security-critical tasks.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "PrimeVul",
+        "数据集质量",
+        "代码模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.06373",
+      "pdf": "https://arxiv.org/pdf/2611.06373"
+    },
+    {
+      "id": "2026-2838",
+      "title": "DKG: A Dual-Layer Knowledge Graph and LLM Co-Driven Framework for Fully Automated Side-Channel Analysis of Cryptosystems",
+      "authors": [
+        "Wenquan Zhou",
+        "An Wang",
+        "Yaoling Ding",
+        "Jiakun Li",
+        "Jingqi Zhang",
+        "Liehuang Zhu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用知识图谱加大模型代理，自动对智能卡、FPGA、MCU 上的密码实现做侧信道密钥恢复。",
+      "abstract": "密码算法支撑从支付智能卡、手机安全飞地到工业控制器的海量设备，但其物理实现可能漏出密钥。非建模侧信道分析用来评估这种泄漏能否恢复密钥，端到端做完仍然高度依赖专家。大模型代理已经能自动化许多领域的复杂流程，但可靠的密钥恢复需要专门的侧信道知识，而这些知识散落在技术文献里。本文提出 DKG：双层知识图谱与大模型共同驱动的密钥恢复代理框架。作者给出面向侧信道的第一种图模式：上层是配置组件，下层是诊断策略，两层用跨层关系连接。大模型驱动的三步抽取流水线（定位与改写、三元组抽取、知识融合）从原始技术文档建图，无需人工标注；运行时检索到的知识驱动闭环自主攻击流程。图来自 166 篇技术文档，含 1334 个实体和 1813 条关系。在覆盖 AES、DES、SM4，以及智能卡、FPGA、MCU 的八个数据集上，DKG 配 DeepSeek-V3.2 的端到端密钥恢复成功率 97.5%，文本检索增强的 ReAct-RAG 只有 68.8%。在 DeepSeek-V3.2、GLM-5、Qwen3.5 三个开源权重骨干上，平均成功率 93.3%。据作者所知，这是第一个能在多样实现上稳定做到端到端自动密钥恢复的框架。自动流水线让图可以随新文献增长，双层组织也为扩展到更多侧信道技术打下基础。",
+      "abstractEn": "Cryptographic algorithms underpin billions of devices, from payment smartcards to smartphone secure enclaves and industrial controllers. Yet their physical implementations risk leaking secret keys. Non-profiled side-channel analysis (SCA) evaluates whether such leakage enables key recovery, but executing it end-to-end remains expert-intensive. Large language model (LLM) agents now automate complex workflows across many domains, yet reliable key recovery requires specialized SCA knowledge that must be extracted and organized from scattered technical literature. In this paper, we propose DKG, a dual-layer knowledge graph and LLM co-driven key-recovery agent framework. We introduce the first graph schema designed specifically for SCA: an upper layer of configuration components and a lower layer of diagnostic strategies, joined by cross-layer relationships. An LLM-driven three-step extraction pipeline (Locate & Rewrite, Triple Extraction, and Knowledge Fusion) builds the graph from raw technical documents without manual annotation, and at runtime the retrieved knowledge drives a closed-loop autonomous attack workflow. Built from a corpus of 166 technical documents, the graph contains 1,334 entities and 1,813 relationships. On eight datasets covering AES, DES, and SM4 across smartcards, FPGAs, and MCUs, DKG with DeepSeek-V3.2 achieves a 97.5% end-to-end key-recovery success rate. By comparison, ReAct-RAG, a text-retrieval-augmented agent, achieves only 68.8%. Across the open-weights backbones DeepSeek-V3.2, GLM-5, and Qwen3.5, DKG achieves an average success rate of 93.3%. To the best of our knowledge, DKG is the first framework to achieve consistent end-to-end automated key recovery across diverse implementations. Its automated pipeline lets the graph grow with new literature, and its dual-layer organization provides a basis for extending DKG to additional SCA techniques.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "侧信道",
+        "知识图谱",
+        "大模型代理",
+        "密钥恢复"
+      ],
+      "url": "https://eprint.iacr.org/2026/2838",
+      "pdf": "https://eprint.iacr.org/2026/2838.pdf"
+    },
+    {
+      "id": "2611.13342",
+      "title": "Early Rug Pull Detection on Solana",
+      "authors": [
+        "Saba Heydaridoost",
+        "Kasra Kashani",
+        "Mohammad Mowlavi Sorond",
+        "Behnam Bahrak"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在代币上线后十几分钟内，用转账图判断 Solana 新币是不是 rug pull，不用大模型。",
+      "abstract": "帮助用户发现和交易新上线加密代币的 Web3 平台，包括发射台、去中心化交易所界面、钱包和代币分析站点，必须在合法性还不清楚时评估代币。在 Solana 上，发币成本低，代币用标准程序而不是每币一份自定义合约，rug pull 可能在几分钟内完成，因此有效预警只能依赖很短的历史。图神经网络已经改善了 EVM 链上的 rug pull 检测，但在分钟级决策点上，转账结构相对非图模型有没有额外预测价值、以及这种价值如何随历史变长而变化，仍不清楚。作者从 SolRPDS 抽 2700 个代币，从 Birdeye 收集一分钟级行情、从 Solana RPC 收集转账。操作定义上，rug pull 要求代币创建后名义 24 小时内出现流动性抽走、价格崩盘且流动性持续枯竭。所有特征只用每个预测截止时刻及之前的信息。观察窗口取 12.5、35.5 和 93 分钟，事先按已发表的 Solana rug pull 存活分布选定，并把每个代币表示成时序转账图。前 12.5 分钟里，rug 和非 rug 图在规模、密度、互惠性和接收方中心化上已经不同。作者用相同的代币级和图摘要特征、在相同样本上对比 GNN 和匹配的非图模型。固定一组在三个窗口都能观察到的代币，用来把更长观察的效应和代币群体变化分开。结果可用于 Web3 界面上对新上线 Solana 代币做早期预警。",
+      "abstractEn": "Web3 platforms that help users discover and trade newly launched crypto tokens, including launchpads, decentralized-exchange (DEX) interfaces, wallets, and token-analytics sites, must assess tokens before their legitimacy is clear. On Solana, where token creation is inexpensive and tokens use standard programs rather than custom per-token smart contracts, rug pulls can unfold within minutes. Effective warnings must therefore rely on limited histories. Although graph neural networks (GNNs) have improved rug-pull detection on EVM chains, it remains unclear whether transfer structure adds predictive value over non-graph models at minute-scale decision points, and how that value changes as history accumulates. We study 2,700 tokens sampled from SolRPDS, collecting one-minute market histories from Birdeye and token transfers from Solana RPC. We define a rug pull operationally by requiring a liquidity drain, price collapse, and persistent liquidity depletion over a nominal 24-hour period after token creation. All features use only information available at or before each prediction cutoff. We evaluate observation windows of 12.5, 35.5, and 93 minutes, selected in advance from the published lifespan distribution of Solana rug pulls, and represent each token as a temporal transfer graph. Within the first 12.5 minutes, rug-pull and non-rug graphs already differ in size, density, reciprocity, and receiver-side centralization. We compare GNNs against matched non-graph models using the same token-level and graph-summary features on identical samples. A fixed panel of tokens observed in all three windows further isolates the effect of longer observation from changes in token population. Our findings inform the design of early-warning mechanisms for newly launched Solana tokens in Web3 interfaces.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Solana",
+        "rug pull",
+        "转账图",
+        "早期预警"
+      ],
+      "url": "https://arxiv.org/abs/2611.13342",
+      "pdf": "https://arxiv.org/pdf/2611.13342"
+    },
+    {
+      "id": "2026-2809",
+      "title": "Pastel: Single Secret Leader Election with Private Weights",
+      "authors": [
+        "Jung Hee Cheon",
+        "Kevin Choi",
+        "Intak Hwang",
+        "Jaehee Kang",
+        "Alireza Kavousi",
+        "Junho Lee",
+        "Yongdong Yeo"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "为权益证明链设计带私有权重的单秘密领导者选举，并实现可验证的零知识证明，不用大模型。",
+      "abstract": "单秘密领导者选举（SSLE）协议在保密前提下从 n 方中选出恰好一名领导者，只有当选者自己知道自己赢了，直到公开宣布并就任。受权益证明区块链启发（权益以加密或承诺形式存放以保护隐私），作者设计并实现了第一个带私有权重的 SSLE 协议。各方当选概率按权益加权，且这些权重保密。已有方案在同一设置下只能做概率选举（期望一名领导者，但可能是零个或多个）。要保住隐私，公开可验证就特别重要，协议才实际可靠。本文协议对恶意对手安全，并给出具体实现。作者具体实现了所需的零知识证明，因此端到端恶意安全不依赖罚没，尽管罚没仍可用作性能优化。作者还观察到：在没有私有权重（无权重或权重公开）的设置里，已有 SSLE 要么有恶意安全实现，要么抗量子，但不能两者兼得；本协议两者都做到。",
+      "abstractEn": "A single secret leader election (SSLE) protocol allows an election of exactly one leader among n parties in a secrecy-preserving manner, where only the elected leader knows it has won until it publicly announces and claims leadership. Motivated by proof-of-stake blockchains where stakes are stored in an encrypted or committed form for the sake of privacy, we design and implement the first SSLE protocol with private weights. Each party's probability of winning an election in our protocol is weighted by stake, and these weights are private. Prior schemes in the literature only allow probabilistic (i.e. expectation of one but can be zero or many leaders) elections in the same setting. Preserving privacy also means public verification is paramount in order for a protocol to be practically reliable. In this respect, our protocol achieves security against malicious adversaries with a concrete implementation. In particular, we concretely implement the needed zero-knowledge proofs and thus do not rely on slashing (financial penalties) to achieve end-to-end malicious security, though slashing can still serve as a performance optimization. Along the way, we observe that previous SSLE protocols in a setting without private weights (either unweighted or with public weights) are either maliciously secure with implementation or post-quantum secure but not both, while our protocol achieves both.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "SSLE",
+        "权益证明",
+        "领导者选举",
+        "零知识证明"
+      ],
+      "url": "https://eprint.iacr.org/2026/2809",
+      "pdf": "https://eprint.iacr.org/2026/2809.pdf"
+    }
+  ]
+}
