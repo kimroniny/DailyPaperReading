@@ -1,0 +1,268 @@
+{
+  "date": "2026-11-12",
+  "papers": [
+    {
+      "id": "10.1109-tdsc.2026.3751693",
+      "title": "DPFuzz: Dynamic-Static Branch Distance and Branch Priority-Driven Fuzzing for Smart Contract",
+      "authors": [
+        "Yingbiao Yao",
+        "Enrui Xu",
+        "Yang Zhang",
+        "Yuhan Gao",
+        "Yaoqi Sun"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "不用大模型，用分支优先级和动静态距离做智能合约模糊测试，对象是 Solidity 合约。",
+      "abstract": "随着区块链智能合约的广泛使用，复杂、依赖状态的执行路径上的漏洞会严重威胁用户资产和系统可信。现有模糊测试工具常均匀分配资源、生成无效交易序列，对深层分支的引导也有限。本文提出 DPFuzz，用分支优先级和动静态分支距离驱动智能合约模糊测试。DPFuzz 按归一化后的分支复杂度、安全重要性和运行时覆盖分配资源，根据写后读依赖构造与状态相关的交易序列，并把动态操作数反馈与静态控制流距离结合起来引导种子。在每个合约内部，调度器对分支分数做归一化，并在每个调度周期后更新分配，把有限测试预算导向难覆盖且安全敏感的分支。在三个互补数据集上的实验表明：相对 ConFuzzius、sFuzz 和 IR-Fuzz，Dataset 1 上小合约和大合约的分支覆盖平均分别提高 11.2% 和 14.4%；Dataset 2 上检出 173 个真阳性，比 IR-Fuzz 多 46 个；Dataset 3 的 200 个真实合约上精确率 95.04%、召回率 97.10%。",
+      "abstractEn": "With the widespread adoption of blockchain smart contracts, vulnerabilities in complex, state-dependent execution paths pose serious risks to user assets and system trustworthiness. Existing fuzzers often allocate resources uniformly, generate ineffective transaction sequences, and provide limited guidance toward deep branches. We propose DPFuzz, a smart contract fuzzing framework driven by branch priority and dynamic-static branch distance. DPFuzz assigns resources according to normalized branch complexity, security importance, and runtime coverage, constructs state-relevant transaction sequences from read-after-write dependencies, and combines dynamic operand feedback with static control-flow distance for seed guidance. Within each contract, the scheduler normalizes branch scores and updates allocations after every scheduling cycle, directing the finite testing budget toward difficult and security-sensitive branches. Experiments on three complementary datasets show DPFuzz's effectiveness. Compared with ConFuzzius, sFuzz, and IR-Fuzz, it improves branch coverage on Dataset 1 by an average of 11.2% and 14.4% for small and large contracts, respectively. On Dataset 2, DPFuzz detects 173 true positives, 46 more than IR-Fuzz. On 200 real-world contracts from Dataset 3, it achieves 95.04% precision and 97.10% recall, showing its practical applicability.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "模糊测试",
+        "分支覆盖",
+        "Solidity"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3751693",
+      "pdf": "https://doi.org/10.1109/tdsc.2026.3751693"
+    },
+    {
+      "id": "10.1109-tifs.2026.3751578",
+      "title": "Bridging Programmability, Efficiency, and Bounded Trust: A Hybrid Privacy-Preserving Smart Contract Framework",
+      "authors": [
+        "Youheng Wang",
+        "Rujia Li",
+        "Zhaoyang Xie",
+        "Kaikai Feng",
+        "Qingjie Chen",
+        "Yang Gao",
+        "Sisi Duan"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "不用大模型，把 TEE 和链上密码学认证结合起来做隐私保护智能合约，对象是 Solidity 合约。",
+      "abstract": "隐私保护智能合约把链上计算从透明执行扩展到机密应用，让互不信任的各方能在私有输入上共同计算合约逻辑。现有设计大致分两类：基于可信硬件的系统可编程性好、性能接近非机密计算，但必须信任硬件；密码学系统对硬件信任更低，但性能通常差很多。本文提出混合框架，把可信硬件和密码学技术结合起来，既保持通用可编程性，又降低对可信硬件的依赖。具体来说，TEE 执行智能合约，但需要对计算做认证；加密计算结果的证明上链，区块链再用同态加密等密码学方法认证计算并聚合结果。这样，经 TEE 的机密合约既高效又可通用编程，且不必被完全信任；链上密码学部分只做认证和聚合，开销不高。作者形式化了系统模型和安全目标，并在通用可组合框架下证明正确性。在 Intel SGX 和 Solidity 上的实现与评估表明，相对非机密计算，性能几乎没有下降。",
+      "abstractEn": "Privacy-preserving smart contracts (PPSCs) extend blockchain computation from transparent execution to confidential applications, enabling mutually distrustful parties to jointly compute contract logic on private inputs. Existing PPSC designs can be categorized into two main paradigms: trusted hardware-based systems and cryptographic systems. Trusted hardware-based systems provide general programmability and the performance is usually close to non-confidential computation, but the hardware has to be trusted. In contrast, cryptographic systems require much lower trust on the hardware but the performance is usually much lower. In this paper, we propose a hybrid PPSC framework that combines trusted hardware with cryptographic techniques, achieving both general programmability and reduced reliance on trusted hardware. Specifically, the TEE executes the smart contracts, but needs to authenticate the computation. A proof of the encrypted computational results is sent on-chain, and the blockchain authenticates the computational and aggregates the computational results using cryptographic approaches such as homomorphic encryption. In this way, the confidential smart contract via TEE is both efficient and general programmable, without being trusted. Meanwhile, the on-chain cryptographic approach does not introduce high overhead as it only authenticates and aggregates the results. We formalize the system model and security goals, and prove the correctness using the Universal Composability framework. Our implementation and evaluation on Intel SGX as the trusted hardware and Solidity as the smart contract show that our approach achieves nearly no degradation on the performance compared to non-confidential computation.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "隐私合约",
+        "TEE",
+        "同态加密",
+        "Solidity"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3751578",
+      "pdf": "https://eprint.iacr.org/2026/498.pdf"
+    },
+    {
+      "id": "10.1145-3859488",
+      "title": "Ensuring Gas Optimisation Correctness by Behavioural Equivalence",
+      "authors": [
+        "Manoel Villarim",
+        "Juliano Iyoda",
+        "Márcio Cornélio",
+        "Alexandre Mota"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "不用大模型，用 Certora 证明 gas 优化后的合约行为仍等价，对象是 Solidity 与 AAVE V3。",
+      "abstract": "以太坊智能合约执行会消耗 gas，因此 gas 优化是开发中的重要问题。已有多种优化技术，但应用后可能改变合约行为，破坏正确性或引入漏洞。本文提出形式化验证框架，保证优化后的合约与原文行为等价。方法用 Certora Prover 机械化正确性检查：从目录中选一条变换规则，应用到 Solidity 合约，再在 Certora 中验证。若优化破坏等价性，反例用于诊断和修正。为便于落地，作者整理了 31 条省 gas 变换规则，每条都有形式化模式、示例以及用于自动验证的 Certora 规约。编目录时发现，此前发表的两条优化在 Solidity 0.8.0 及以上需要更新。案例研究针对广泛使用的 AAVE V3 DeFi 协议，用基于精化的方法形式证明优化版本与原文行为等价。框架并非完全自动，但大部分可机械化。结果表明，把形式化验证和 gas 优化策略结合起来，对真实智能合约是可行且有效的。",
+      "abstractEn": "Gas consumption has a financial impact on executing Ethereum smart contracts, making gas optimisation an essential development concern. Although several optimisation techniques exist, applying them can alter contract behaviour, compromising correctness or introducing vulnerabilities. This work introduces a formal verification framework to ensure that gas-optimised contracts remain behaviourally equivalent to their originals. Our approach relies on the Certora Prover to mechanise correctness checking: a transformation rule is selected from our catalogue, applied to a Solidity contract, and verified in Certora. If an optimisation violates equivalence, counterexamples guide a diagnosis and correction. To support practical adoption, we compiled a catalogue of 31 gas-saving transformation rules, each featuring a formal pattern and an example alongside a Certora specification for automated verification. Building this catalogue revealed that two previously published optimisations require updates for Solidity 0.8.0 or superior. To evaluate practical applicability, we conducted a case study on the widely-adopted AAVE V3 DeFi protocol, applying our refinement-based methodology to formally prove the behavioural equivalence of optimised versions against the original. Although not fully automated, the framework is mostly mechanisable. Our results demonstrate that combining formal verification with gas-optimisation strategies is both feasible and effective for real-world smart contracts.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "gas 优化",
+        "形式化验证",
+        "Certora",
+        "AAVE"
+      ],
+      "url": "https://doi.org/10.1145/3859488",
+      "pdf": "https://doi.org/10.1145/3859488"
+    },
+    {
+      "id": "10.1016-j.cose.2026.105236",
+      "title": "vEcho: From passive verification to proactive discovery through evidence-grounded vulnerability auditing",
+      "authors": [
+        "Jiancheng Huang",
+        "Mingcheng Jiang",
+        "Zhengzhu Xie",
+        "Jiangfei Wang",
+        "Nan Fang",
+        "Guang Cheng",
+        "Xiaoyan Hu",
+        "Hua Wu"
+      ],
+      "year": 2026,
+      "venue": "Computers & Security",
+      "abstractOneWord": "用大模型做有证据的漏洞审计和主动发现，对象是 Java 项目上的静态分析告警。",
+      "abstract": "静态应用安全测试工具误报率高，告警疲劳会占用审计资源。近期用大模型当过滤器的工作改进有限：这些方法把大模型当成被动、无状态的分类器，缺少项目级上下文，也无法从分析中学习以发现未知的类似漏洞。本文提出 vEcho，把大模型从被动过滤器变成能学习、记忆和推理的虚拟安全专家。核心推理引擎配有开发者工具套件，做有上下文的深度验证。更重要的是引入回声式漏洞传播（EVP）：在模拟人类学习的认知记忆模块驱动下，vEcho 从已验证漏洞学习，主动推断未知的类似缺陷，从被动验证转向主动发现。在 CWE-Bench-Java 上，相对最强基线 IRIS，vEcho 检出率 65%，相对提高 41.8%（IRIS 为 45.83%）；同时把误报率降到 59.78%，相对 IRIS 的 84.82% 降低 28.3%。此外，vEcho 在数据集记录的 120 个漏洞之外又主动找出 37 个已知漏洞，并在开源项目中发现 51 个此前未知的 0-day。",
+      "abstractEn": "Static Application Security Testing (SAST) tools often suffer from high false positive rates, leading to alert fatigue that consumes valuable auditing resources. Recent efforts leveraging Large Language Models (LLMs) as filters offer limited improvements; however, these methods treat LLMs as passive, stateless classifiers, which lack project-wide context and the ability to learn from analyses to discover unknown, similar vulnerabilities. In this paper, we propose vEcho, a novel framework that transforms the LLM from a passive filter into a virtual security expert capable of learning, memory, and reasoning. vEcho equips its core reasoning engine with a robust developer tool suite for deep, context-aware verification. More importantly, we introduce a novel Echoic Vulnerability Propagation (EVP) mechanism. Driven by a Cognitive Memory Module that simulates human learning, EVP enables vEcho to learn from verified vulnerabilities and proactively infer unknown, analogous flaws, achieving a paradigm shift from passive verification to active discovery. Extensive experiments on the CWE-Bench-Java dataset demonstrate vEcho's dual advantages over the state-of-the-art baseline, IRIS. Specifically, vEcho achieves a 65% detection rate, marking a 41.8% relative improvement over IRIS's 45.83%. Crucially, it simultaneously addresses alert fatigue by reducing the false positive rate to 59.78%, a 28.3% relative reduction from IRIS's 84.82%. Furthermore, vEcho proactively identified 37 additional known vulnerabilities beyond the 120 documented in the dataset, and has discovered 51 novel 0-day vulnerabilities in open-source projects.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SAST",
+        "误报过滤",
+        "漏洞发现",
+        "Java"
+      ],
+      "url": "https://doi.org/10.1016/j.cose.2026.105236",
+      "pdf": "https://arxiv.org/pdf/2603.01154"
+    },
+    {
+      "id": "2611.10394",
+      "title": "Crustify: Repository-Level Generation of Safe Rust Bindings with LLM Agents and Coverage-Guided Testing",
+      "authors": [
+        "Marius Momeu",
+        "Marius Arvinte",
+        "Cory Cornelius",
+        "Koushik Sen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型代理生成安全 Rust 绑定，并用覆盖引导测试查未定义行为，对象是 libgit2 和 ffmpeg 等 C 库。",
+      "abstract": "把 C 代码包进安全的 Rust 接口，可以让 Rust 应用在完成迁移前不必写 unsafe。但这类绑定费时且容易出错：内部使用编译器不检查的 unsafe 代码，一处错误就可能引入未定义行为，目前大多靠手写。本文提出 Crustify，用代理协同翻译，为仓库级 C 库生成安全 Rust 绑定。它把目标的类型和符号排成按依赖分波、波内可并行的批次，由代理并发绑定。代理推导每个指针和类型的所有权与生命周期约定，用覆盖引导的等价性和未定义行为测试（在 sanitizer 和 Miri 下）检查绑定，并审查每一波。作者还贡献三个工具：ffibox（C/Rust 互操作原语，镜像 Box/Arc/Vec，从不对 C 可能别名的内存形成引用）、Wavefront（神经符号静态分析，按依赖排序，包括强制转换和类型擦除指针隐藏的依赖）、ffimap（基于 rustc，刻画绑定暴露的 unsafe 面）。在有一名开发者参与的情况下，Crustify 在约 51.9 和 58.9 小时内分别为 libgit2 和 ffmpeg 的 41.9% 和 42.8% 公开 API 生成了安全绑定。面向消费者的接口上，公开函数中 unsafe 分别只占 1.6% 和 0.4%，签名带裸指针的分别只占 0.1% 和 0.6%。测试覆盖 Rust 代码的 98.92% 和 99.07%，以及 libgit2 的 45.95% 和 ffmpeg libavutil 的 67.20%；审查代理修复了 8 处和 13 处可从 Rust 触发的未定义行为缺陷。据作者所知，这是首次自动为 C 库生成安全 Rust 绑定的工作。",
+      "abstractEn": "Wrapping C code in a safe Rust interface lets Rust applications use it without writing unsafe code, until the code itself is migrated to Rust. Such bindings are tedious and error-prone to write, however: their internals use unsafe code that the Rust compiler does not check, so a single mistake can introduce undefined behavior (UB), and they have so far been written mostly by hand. We present Crustify, an agentic co-translator that generates safe Rust bindings for repository-level C libraries. Crustify schedules a target's types and symbols into dependency-ordered waves of independent batches that agents bind concurrently. Its agents derive the ownership and lifecycle contract of every pointer and type they wrap, check each binding with coverage-guided equivalence and UB tests under sanitizers and Miri, and review every wave. They build on three tools that we contribute: (a) ffibox, Rust primitives for C/Rust interop that mirror Box, Arc, and Vec for C objects without ever forming a reference to memory that C may alias; (b) Wavefront, a neuro-symbolic static analyzer that orders a target's items by their dependencies, including those that casts and type-erased pointers hide; and (c) ffimap, a rustc-based analysis that maps the unsafe surface of bindings. On libgit2 and ffmpeg, with one developer in the loop, Crustify generated safe bindings for 41.9% and 42.8% of their public APIs in about 51.9 and 58.9 hours. On the interface consumers are expected to use, only 1.6% and 0.4% of the bindings' public functions are unsafe, and only 0.1% and 0.6% have a raw pointer in their signature. Their tests cover 98.92% and 99.07% of the Rust code and 45.95% and 67.20% of libgit2 and of ffmpeg's libavutil, and the reviewers fixed 8 and 13 defects that caused UB reachable from Rust. To our knowledge, this is the first work to automate the generation of safe Rust bindings for C libraries.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Rust 绑定",
+        "内存安全",
+        "编码代理",
+        "C 库"
+      ],
+      "url": "https://arxiv.org/abs/2611.10394",
+      "pdf": "https://arxiv.org/pdf/2611.10394"
+    },
+    {
+      "id": "2611.10157",
+      "title": "BACGUARD: Fact-Grounded Runtime Mitigation of Broken Access Control",
+      "authors": [
+        "Moses Ndebugre"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用确定性数据库事实为主、语言模型兜底，在反向代理上拦截失效访问控制，对象是 Web 应用。",
+      "abstract": "失效访问控制自 2021 年起一直是 OWASP Top Ten 首位，主要因为授权要在应用层落实。传统机制把权限、角色或所有权写在应用逻辑里，对照关系数据库；漏检或错检外部系统发现不了。本文提出 BACGUARD，作为反向代理，为未经修改的应用强制授权。它从会话存储中的已认证用户数据和关系模式中的对象所有权重建授权关系，判断用户能否访问资源，并实时拦截未授权请求。与现有方法不同，BACGUARD 的授权基于数据库 join，不易伪造。多数请求由确定性规则判定；只有访问控制违规只体现在响应数据里（例如跨用户数据泄漏）时，才用语言模型做兜底。在六个应用（含已知漏洞）上的评估表明，确定性规则与语言模型结合的方法挡住了全部测试攻击，误报率低于 0.7%。Web 应用防火墙等对照方法效果更差、干扰也更大。作者认为主要贡献是在应用外部重建授权事实，即使应用本身有缺陷也能强制执行。",
+      "abstractEn": "Broken Access Control (BAC) has been the foremost category in the OWASP Top Ten since 2021, primarily due to the challenges in enforcing authorization at the application layer. Traditional mechanisms depend on logic embedded in the application, referencing relational database information such as permissions, roles, or ownership. However, missing or incorrect checks can go undetected by external systems, leaving applications vulnerable. This paper presents BACGUARD, a reverse proxy designed to enforce authorization for unmodified applications. BACGUARD reconstructs authorization relations by leveraging authenticated user data from session stores and object ownership from relational schemas. It evaluates whether users are permitted to access resources and blocks unauthorized requests in real time. Unlike existing approaches, BACGUARD bases its authorization on database joins, making the system resilient to forgery. For most requests, decisions are made deterministically. In cases where access control violations are only apparent in response data, such as cross-user data leakage, a language model is used as a fallback. Evaluations on six applications, including those with known vulnerabilities, demonstrate that BACGUARD's hybrid deterministic and language model-based approach blocks all tested attacks with a false-positive rate below 0.7%. Competing solutions like Web Application Firewalls are less effective and more disruptive. The results highlight BACGUARD's primary contribution: the external reconstruction of authorization facts, enabling robust enforcement even when the application itself is flawed.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "失效访问控制",
+        "反向代理",
+        "Web 应用",
+        "语言模型兜底"
+      ],
+      "url": "https://arxiv.org/abs/2611.10157",
+      "pdf": "https://arxiv.org/pdf/2611.10157"
+    },
+    {
+      "id": "2611.10830",
+      "title": "The Devil Wears Markdown: Detecting Malicious Intent Hidden in AI Agent Skill Instructions through Hybrid Static, Dynamic, and Agentic Analysis",
+      "authors": [
+        "Thanh M. Truong-Le",
+        "Amber Bennoui",
+        "Hoang-Ly Nguyen",
+        "Gia-Thang Ho",
+        "Thai-Minh Truong",
+        "Duc-Ly Vu"
+      ],
+      "year": 2026,
+      "venue": "AIDC @ ACSAC 2026",
+      "abstractOneWord": "用静态、沙箱和大模型推理检测 agent skill 里的恶意意图，对象是 Claude Code 一类技能包。",
+      "abstract": "代理式 AI 生态越来越依赖可复用的 agent skill：可执行代码、自然语言指令、配置和外部工具集成混在一起。恶意意图可以分散在指令、代码、元数据和运行时行为里，单点告警很难解释，从而带来软件供应链风险。作者在 140 个 skill 的留出测试集（80 恶意、60 良性）上评估三个开源扫描器，包括 Cisco Skill Scanner 开/关可选大模型分析器。Cisco 默认配置召回率 0.91，但 60 个良性样本中有 33 个误报；启用 Qwen3:8B 的大模型配置召回率 0.85，误报 40 个。随后提出把静态发现、带安全约束的沙箱证据和大模型推理结合起来评估恶意意图的框架，追踪发现来源并跨层关联证据。在同一推理后端的证据消融中，给 skill 内容推理加上动态证据后 F1 从 0.70 升到 0.85；再结合静态和动态证据，F1 到 0.89，60 个良性样本中只有 5 个误报。动态证据贡献最大。完整流水线检出 80 个恶意 skill 中的 68 个，准确率 0.88、精确率 0.93、召回率 0.85，召回率与 Cisco Skill Scanner 加大模型相当，误报从 40 降到 5。该系统级比较并未分离模型或架构效应。",
+      "abstractEn": "Agentic AI ecosystems increasingly rely on reusable agent skills that combine executable code, natural-language instructions, configuration artifacts, and external tool integrations. These hybrid artifacts create software supply-chain risks because malicious intent may be distributed across instructions, code, metadata, and runtime behavior, making isolated alerts difficult to interpret. We evaluate three open-source scanners on a held-out test set of 140 skills comprising 80 malicious and 60 benign samples, including Cisco Skill Scanner with and without its optional LLM analyzer. The default Cisco configuration achieves a recall of 0.91 with 33 false positives among the 60 benign skills, while the LLM-enabled configuration using Qwen3:8B achieves a recall of 0.85 with 40 false positives. We then present a framework that combines static findings, safety-constrained sandbox evidence, and LLM-based reasoning to assess malicious intent. The framework tracks the origins of findings and relates evidence across analysis layers. In a within-system evidence-source ablation using the same reasoning backend, adding dynamic evidence to skill-content reasoning increases F1 from 0.70 to 0.85. Combining static and dynamic evidence further increases F1 to 0.89, with five false positives among 60 benign skills. Dynamic evidence provides the largest observed improvement. The Full Pipeline detects 68 of 80 malicious skills, achieving 0.88 accuracy, 0.93 precision, and 0.85 recall. It matches the observed recall of Cisco Skill Scanner with LLM while reducing false positives from 40 to five. This system-level comparison does not isolate model or architecture effects.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "agent skill",
+        "供应链",
+        "恶意意图",
+        "沙箱"
+      ],
+      "url": "https://arxiv.org/abs/2611.10830",
+      "pdf": "https://arxiv.org/pdf/2611.10830"
+    },
+    {
+      "id": "2026-2855",
+      "title": "DetTreeChain: Parallel Block Production on an N-ary Block Tree with Bounded Lane Divergence",
+      "authors": [
+        "Mahesh Karri",
+        "Nikhileswara Rao Sulake"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "不用大模型，用有界车道分叉的 N 叉块树并行出块，对象是工作量证明区块链共识。",
+      "abstract": "Nakamoto 风格区块链一次只往单链追加一个块，提高出块率会增加分叉、削弱安全性。本文提出 DetTreeChain：最多 N 个块并行产生，之后不再合并或重排。块组成 N 叉树，每个块的槽位由父块和所在车道决定。本地推导的 Parent Queue Pool 只允许连续两个父块接收子块，因此车道之间最多相差一个父块；车道内连续块的链接使每条车道成为哈希链。交易按花费内容路由（这里是花费锁定脚本的哈希），因此不同车道的块不会冲突，向其他车道付款也不需要跨车道协议。规则与共识算法无关。工作量证明下矿工自选车道，掌握超过总哈希 1/(N+1) 的对手可以超过一条车道。Rust 原型 25 分钟运行中，六个节点收敛到相同的树和难度目标，槽位填充率 65%，与预测的 63% 接近。在延迟为车道间隔 5% 的仿真中，同等出块率的单链浪费的工作量是 2 到 8 条车道的 1.7 到 3.3 倍，不过节点也更常持有后来被丢弃的块。在可重建花费脚本的比特币交易中，约 95% 的输入留在同一车道，多半因为只花费一个输出。",
+      "abstractEn": "Nakamoto-style blockchains append one block at a time to a single chain, and raising the block rate increases forking and weakens security. We present DetTreeChain, a ledger in which up to N blocks are produced in parallel and placed without later merging or reordering. Blocks form an N-ary tree in which each block's slot follows from its parent and its lane. A locally derived Parent Queue Pool lets only two consecutive parents receive children, so lanes never drift more than one parent apart, and links between consecutive blocks of a lane make each lane a hash chain. As in several earlier designs, transactions are routed by what they spend, here a hash of the spent locking scripts, so blocks of different lanes cannot conflict and payments to other lanes need no cross-lane protocol. The rules are consensus-agnostic. Under proof of work, miners choose their lane, and an adversary with more than 1/(N+1) of the total hash power can outpace one lane. In a 25-minute run of our Rust prototype, six nodes converged on identical trees and difficulty targets, and 65% of slots were filled against 63% predicted. In simulation with delays of 5% of the lane interval, a single chain at the same block rate wasted 1.7 to 3.3 times as much work as 2 to 8 lanes, although nodes more often held later-discarded blocks. Among Bitcoin transactions whose spent scripts could be rebuilt, about 95% kept their inputs in one lane, mostly because they spend a single output.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "并行出块",
+        "分叉",
+        "工作量证明"
+      ],
+      "url": "https://eprint.iacr.org/2026/2855",
+      "pdf": "https://eprint.iacr.org/2026/2855.pdf"
+    },
+    {
+      "id": "2611.13252",
+      "title": "Splitting for Stability: a Modified Reward Scheme for Transaction-Fee-Only Regimes",
+      "authors": [
+        "Eric Brigham",
+        "Baigang Chen",
+        "Nicholas Hopper"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "不用大模型，用奖励拆分抑制费用时代的压价分叉，对象是比特币工作量证明激励。",
+      "abstract": "随着比特币区块补贴下降，矿工收入会越来越依赖交易费。在费用主导的制度里，赢家通吃的奖励结构会激励压价出块和基于分叉的挖矿策略，导致不稳定、吞吐下降。为防止这种不稳定，本文提出奖励拆分：获胜出块者拿 alpha 份额，其余分给其他矿工；这既激励在奖励更高的前块上继续挖，也保留产出高奖励块的激励。分析给出一步 Function-Fork 偏离的局部盈利条件，说明胜方奖励、败方补贴和诚实算力如何共同决定压价是否划算。仿真给出诚实行为压过基于分叉偏离的参数区域；即使分叉占优，学到的也是所研究策略里最不激进的一种。结果表明，合适的拆分参数可以降低压制激进分叉所需的诚实参与比例。最后，修改后的奖励方案似乎没有加重 selfish mining。作者认为，在费用时代的工作量证明里，重新分配奖励有望缓解费用驱动的分叉激励，同时不引入更强的 selfish mining。",
+      "abstractEn": "As Bitcoin's block subsidy declines over time, miner revenue will come to depend increasingly on transaction fees. In fee-dominated regimes, winner-take-all reward structures can create incentives for undercutting and fork-based mining strategies, leading to instability and reduced transaction throughput. To prevent this instability, we propose a reward-splitting mechanism in which the winning block producer receives an alpha-portion of the block reward, while the rest is distributed among other miners; this incentivizes mining on previous blocks with higher rewards, while preserving the incentive to produce blocks with high rewards. We evaluate the proposed reward structure through analysis and simulation. Our analysis derives a local profitability condition for one-step Function-Fork deviations, showing how the winner-side reward, loser-side subsidy, and honest hash power jointly determine whether undercutting is profitable. Simulations show parameter regions in which honest behavior dominates fork-based deviations. In the cases where forking becomes dominant, the learned strategy is the least aggressive variant studied. The analysis and simulations suggest that suitable reward-splitting parameters can reduce the honest participation needed to suppress aggressive forking strategies relative to the winner-take-all structure studied in prior work. Finally, we show that the modified reward scheme does not appear to worsen selfish mining incentives. Together, these results suggest that reward redistribution can mitigate fee-driven fork incentives without introducing stronger selfish mining incentives, providing a possible direction for incentive design in fee-era proof-of-work systems.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "比特币",
+        "交易费",
+        "分叉激励",
+        "selfish mining"
+      ],
+      "url": "https://arxiv.org/abs/2611.13252",
+      "pdf": "https://arxiv.org/pdf/2611.13252"
+    },
+    {
+      "id": "2611.12636",
+      "title": "BioBind: Binding Biometric Deduplication to Zero-Knowledge Authentication",
+      "authors": [
+        "Taotao Wang",
+        "Xiaoxiao Wu",
+        "Shengli Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "不用大模型，把链下去重和零知识认证绑到同一次采集，对象是去中心化生物特征身份与智能合约签发。",
+      "abstract": "去中心化应用的生物特征身份系统需要能抵抗重复注册、并支持私有且可公开验证认证的凭证。采集和大规模私有去重在链下，智能合约授权签发和使用；这些阶段跨越不同信任域，正确判定只覆盖被检查的输入和图库快照。没有绑定和状态检查时，并发注册可能凭正确判定签发重复凭证，被替换的输入也可能授权无关凭证。本文提出 BioBind：四条后端接口条件把去重查询、图库插入和签发承诺绑定到同一次采集向量，认证图库变更，并要求最终化时有有效的唯一性判定。加密实例使用绑定请求、过期会话拒绝和委员会确认的迁移。采集绑定的零知识认证把凭证使用关联到已注册模板，以及绑定到挑战的、设备产生的新探针。在明确的采集、后端和密码学假设下，给出有条件的多会话组合论证。用 LFW 人脸特征的原型拒绝了所测的组合攻击；不可链接认证电路约 31445 个约束、约 305000 gas。等公开字段基线量化了可验证匹配的代价：见证加证明中位数 1.989 秒对设备可信匹配的 1.119 秒。加密注册的单独测试完成三次各 16384 次注册的历史，检查点无解码错误。生物特征精度限制了人级唯一性：在 Bosphorus 库上，合作受试者改变外观时，在工作阈值下有 1.8% 的重新注册逃过去重。完整后端集成仍待完成。",
+      "abstractEn": "Biometric identity systems for decentralized applications need credentials that resist repeated enrollment and support private, publicly verifiable authentication. Capture and large-scale private deduplication run off chain while smart contracts authorize issuance and use; these stages span distinct trust domains, and a correct verdict covers only the checked inputs and gallery snapshot. Without binding and state checks, concurrent enrollments can issue duplicate credentials from correct verdicts, while substituted inputs can authorize unrelated credentials. We present BioBind, a protocol whose four backend interface conditions bind the deduplication query, gallery insertion and issued commitment to one captured vector, authenticate gallery transitions, and require a sound uniqueness verdict valid at finalization. Its encrypted instance uses bound requests, stale-session rejection and committee-confirmed migration. Capture-bound zero-knowledge authentication links credential use to the enrolled template and a fresh device-originated probe bound to the challenge. We give a conditional multi-session composition argument under explicit capture, backend and cryptographic assumptions. A prototype using LFW face features rejects the tested composition attacks; its unlinkable authentication circuit uses 31,445 constraints and about 305,000 gas. An equal-public-field baseline quantifies the cost of verifiable matching: witness-plus-proving medians are 1.989 s versus 1.119 s with device-trusted matching. Separate tests of encrypted enrollment complete three histories of 16,384 registrations without decoding errors at the tested checkpoints. Biometric accuracy bounds person-level uniqueness: on the Bosphorus database, cooperative subjects who change appearance evade deduplication in 1.8% of re-enrollment attempts at the operating threshold. Full backend integration remains open.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "零知识",
+        "生物特征",
+        "智能合约",
+        "去重"
+      ],
+      "url": "https://arxiv.org/abs/2611.12636",
+      "pdf": "https://arxiv.org/pdf/2611.12636"
+    }
+  ]
+}
