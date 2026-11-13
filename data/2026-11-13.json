@@ -1,0 +1,191 @@
+{
+  "date": "2026-11-13",
+  "papers": [
+    {
+      "id": "2611.17123",
+      "title": "Preserve the Vulnerability, Break the Alert: Testing the Robustness of CodeQL Taint Tracking with Natural Rewrites",
+      "authors": [
+        "Zhezhen Cao",
+        "Weiyuan Ding",
+        "Bowen Xu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型做保留漏洞的自然改写，测试 CodeQL 污点跟踪漏报，对象是 JavaScript 与 npm 漏洞。",
+      "abstract": "静态应用安全测试（SAST）工具如 CodeQL 常作为持续集成和代码审查里的安全门，这道门也可以反过来读。先前报出的告警在一次改动后消失时，开发者和周边工具往往认为漏洞已经没了。只有分析器对「漏洞仍在」的改动足够稳健，这个推断才成立。本文针对 CodeQL 的 JavaScript 污点跟踪，用保留漏洞的自然改写来测这种稳健性。大模型只看到 CodeQL 暴露的告警、不知道其实现，把报告流上的一个函数改写成看起来像维护改动的版本；人工审计和对照实验确认漏洞还在、告警却没了。在 172 条 CodeQL 能检出的真实 npm 漏洞流上，每条做三次改写，有 26.2% 的告警被消掉，每消掉一条大约 0.51 美元。同样的生成器若只被要求重构这些函数、不知道告警，一条也消不掉。所有消掉告警的改写都落到库建模边界上的七个缺口之一，70 条里有 64 条穿过 CodeQL 已经建模过的 API。最大的缺口是 WHATWG URL 构造函数：污点会传到 URL 的 query，却传不到 pathname。这个边界不只属于 CodeQL。74% 的消告警改写也能消掉另一套独立污点分析器，53% 能同时逃过三套分析器。因此，一次看起来普通的改动后告警消失，并不是漏洞已修复的有力证据；这些缺口给 SAST 开发者指出了具体修补目标；污点分析器的评价除了检出率，还应当看对自然改写的稳健性。",
+      "abstractEn": "Static application security testing (SAST) tools such as CodeQL serve as security gates in continuous integration and code review, and a gate is also read in reverse. When a previously reported alert disappears after a change, developers and the tools around them often take the vulnerability to be gone. That inference holds only if the analyzer is robust to changes that keep the vulnerability. We test this robustness for CodeQL's JavaScript taint tracking with natural, vulnerability-preserving rewrites. A large language model, given only the alert CodeQL exposes and no knowledge of its implementation, rewrites one function along a reported flow as a plausible maintenance change, and we verify by manual audit and controlled experiments that the flaw survives and the alert does not. On 172 flows that CodeQL detects in real npm vulnerabilities, three rewrites per flow silence 26.2% of them, at about USD 0.51 per silenced flow. The same generator, asked only to refactor the same functions with no knowledge of the alert, silences none of them. Every silencing rewrite traces to one of seven gaps at the library-modeling boundary, and 64 of the 70 rewrites cross a gap inside an API CodeQL already models. The largest is the WHATWG URL constructor, which propagates taint to a URL's query components but not to its pathname. The boundary is not specific to CodeQL. 74% of the silencing rewrites also silence an independently built taint analyzer, and 53% escape three analyzers combined. A disappearing alert after an ordinary-looking change is therefore weak evidence that a vulnerability has been fixed, the gaps point SAST developers to narrow and concrete repair targets, and robustness to natural rewrites belongs alongside detection rate in how taint analyzers are evaluated.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CodeQL",
+        "污点跟踪",
+        "漏报",
+        "JavaScript"
+      ],
+      "url": "https://arxiv.org/abs/2611.17123",
+      "pdf": "https://arxiv.org/pdf/2611.17123"
+    },
+    {
+      "id": "2611.14963",
+      "title": "GHA-SmellFix: Taking Action with Agentic LLMs for Detecting and Refactoring GitHub Actions Workflow Smells",
+      "authors": [
+        "Anderson Uchôa",
+        "Jhefferson Souza",
+        "Emanuel Ávila",
+        "Gabriel Silva",
+        "Kevin Lira",
+        "Hui Sun",
+        "Nelson Araújo",
+        "Arthur Cordeiro",
+        "Rohit Gheyi",
+        "Wesley Assunção"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用代理式大模型检测并重构 GitHub Actions 工作流异味，对象是 CI/CD YAML。",
+      "abstract": "持续集成和持续交付工作流是软件项目里的关键产物。在 GitHub Actions 中，它们用 YAML 写出构建、测试、发布、部署和安全自动化。这些工作流里会有影响安全、可靠性、可维护性或运行稳定的配置异味。已有方法多为规则驱动，规则难写也难改，通常只报告发现、不给修复。代理式大模型流水线可以把有上下文的检测、变换选择和补丁生成合在一起。专门的代理可以只在检测为阳性时才做重构，从而少做无用改动；但拆开成多个代理究竟是提高效果，还是主要改变开销，并不清楚。本文提出 GHA-SmellFix，用代理式大模型流水线检测并重构 GitHub Actions 工作流异味。比较两种设计：Joint 由一个代理同时检测和重构；Decomposed 由不同代理先检测再重构。作者把已有目录中的 19 种异味落实成明确的检测标准、重构预期、排除规则和安全检查，并整理了 1710 对（工作流，异味）真值。用四个大模型（GPT-5.4-nano、Gemini 3.5 Flash、Claude Haiku 4.5、DeepSeek V4 Flash）在 570 对抽样上评估。结果表明，拆开并不普遍提高补丁质量，主要好处是控制何时尝试生成补丁：对容易漏检异味的模型有帮助，也可以靠门控减少开销。一旦异味被正确检出，干净重构通常有效，端到端瓶颈主要在检测。但误报会触发对执行相关构造的无用改动。落地的 CI/CD 代理因此需要可靠的弃权，以及面向构造的校验，而不能只靠生成补丁。",
+      "abstractEn": "Continuous integration and continuous delivery workflows are key artifacts in software projects. In GitHub Actions, they encode build, test, release, deployment, and security automation in YAML. These workflows contain configuration smells affecting security, reliability, maintainability, or operational stability. Existing approaches are mostly rule-based, with rules hard to create and evolve, and typically report findings without fixes. Agentic LLM pipelines can combine contextual detection, transformation selection, and patch generation. Specialized agents can gate refactoring on positive detection verdicts, potentially avoiding unnecessary changes, but it is unclear whether decomposition improves effectiveness or mainly changes overhead. We present GHA-SmellFix, an agentic LLM pipeline for detecting and refactoring GitHub Actions workflow smells. We compare two designs: Joint, where one agent detects and refactors, and Decomposed, where separate agents detect and then refactor. We operationalize 19 smells from an existing catalog with explicit detection criteria, refactoring expectations, exclusion rules, and safety checks, and curate a ground truth of 1,710 (workflow, smell) pairs. We evaluate the designs with four LLMs (GPT-5.4-nano, Gemini 3.5 Flash, Claude Haiku 4.5, and DeepSeek V4 Flash) on 570 sampled pairs. Results show that decomposition does not universally improve patch quality; its main benefit is controlling when patch generation is attempted. It helps models prone to missing smells and can reduce overhead by gating patches. Once a smell is correctly detected, clean refactoring is generally effective, making detection the main end-to-end bottleneck. However, false positives can trigger unnecessary edits to execution-relevant constructs. Practical CI/CD agents thus need reliable abstention and construct-aware validation alongside patch generation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "GitHub Actions",
+        "CI/CD",
+        "工作流异味",
+        "编码代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.14963",
+      "pdf": "https://arxiv.org/pdf/2611.14963"
+    },
+    {
+      "id": "2611.11340",
+      "title": "Agentic Attribution of Cloud Resource Ownership",
+      "authors": [
+        "Tiltan Gilat",
+        "Gal Engelberg",
+        "Ariel Zadok",
+        "Leon Goldberg"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型代理从工单、代码历史和审计日志推断云资源责任人，好把安全告警送到该修的人，对象是 AWS 资源。",
+      "abstract": "安全工具会在云环境里报出各类发现，现在也有 AI 代理去调查和排序。发现最终还是人来收：它必须送到负责修的人，以及对该资源负责的人。归属（ownership）就是决定「该找谁」的组织上下文。有记录时，它多半是人手写进配置管理库或 owner 标签的，不持续维护就会过时；账号是共用的，基础设施又大量由自动化创建。这些知识散落在工单、代码历史、审计日志和身份目录里，还按各组织自己的习惯编码。要恢复它有四个难点：信号分散、没有权威源；承载信号的习惯因组织而异；找到责任人往往要多跳；与资源相关的人，关系强弱也不一样。作者把归属定义成一组实体（人或团队），每个实体按五种由强到弱的模式与资源相关。他们给出一套代理式归属架构：不靠事先声明，而是从这些记录里推导。离线给组织画像，得到经过检验的信号程序和一份归属剧本；在线时由协调代理和并行调查代理给每项资源做归属，置信度由规则计算。在一个组织里 50 类 AWS 资源共 100 项上，把该架构的候选与未 priming 的通用代理的候选放在一起，并对照记录核验每条证据。架构加权召回率 92.1%、加权精确率 86.6%，通用代理为 54.8% 和 77.4%，覆盖单位成本约为后者的 0.55 倍。差距主要来自那些实际在建设和改资源、但没有显式 owner 的人，要靠工单和代码历史才能找到。",
+      "abstractEn": "Security tools raise findings across cloud environments, and AI agents now investigate and prioritize them. A finding is still resolved by people: it has to reach the people responsible for fixing it and accountable for the resource it concerns. Ownership is the organizational context that decides who that is. Where recorded, it is declared by hand in configuration management databases or owner tags and goes stale unless kept current; accounts are shared, and automation creates much of the infrastructure. The knowledge sits in work records, code history, audit logs and identity directories, encoded in each organization's own conventions. Recovering it poses four challenges: the signal is scattered across sources, none of them authoritative; the conventions that carry it differ between organizations; reaching an owner takes multi-hop links; and those related to a resource differ in the strength of their relation. We define ownership as a set of entities, people or teams, each related to the resource by one of five patterns ordered by strength. We present a reference architecture for agentic ownership attribution that derives ownership from these records instead of declaring it: it profiles an organization offline into tested signal procedures and an ownership playbook, then attributes each resource with a coordinator agent and parallel investigators, with confidence computed by rules. On 100 resources of 50 Amazon Web Services (AWS) resource types in one organization, we pool the architecture's candidates with those of an unprimed general-purpose agent and verify every evidence piece against the records. The architecture reaches 92.1% weighted recall and 86.6% weighted precision, against 54.8% and 77.4%, at 0.55 times the agent's cost per unit of coverage. The difference lies in people who build and change resources without an explicit owner, found through work records and code history.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "云安全",
+        "告警归属",
+        "AWS",
+        "编码代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.11340",
+      "pdf": "https://arxiv.org/pdf/2611.11340"
+    },
+    {
+      "id": "2611.15847",
+      "title": "SoK: Design Choices in Tendermint BFT Consensus",
+      "authors": [
+        "Sanaz Taheri-Boshrooyeh",
+        "Yahya Hassanzadeh-Nazarabadi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "不用大模型，按设计选择整理 Tendermint / CometBFT 共识及其安全性质，对象是权益证明链共识。",
+      "abstract": "Tendermint 是能容忍拜占庭故障的共识协议，先由 Tendermint Core 实现，现在由 CometBFT 实现。这些引擎用应用区块链接口（ABCI）把共识和复制应用分开，因此同一引擎可以服务许多独立的权益证明链。已有不少工作改协议机制，从投票传播、出块提议到奖励分配；据作者所知，还没有综述把该协议和这些工作当成一个家族来看，更宽的综述也不以 Tendermint 为主题。本文按设计选择描述基线，也就是从其原始描述里整理出来的协议。每一项选择都是一个决定，例如投票如何传播、提议者如何轮换，基线靠这些决定在其故障和时序模型下提供安全性、活性或其他性质。作者按「改了或换了哪项设计选择」「加强或削弱了哪些性质」「结果是否需要更强模型」给每篇工作分类。再往上一层，把这些工作的方案归到基线里几条反复出现的关切：性能、验证者可问责、以及对可被利用信息的保护。对每条关切，归纳其常见策略。这些关切和策略一起刻画了 Tendermint 家族目前的研究状况。策略留白的地方，作者在明确的故障和时序模型下提出未解决问题。",
+      "abstractEn": "Tendermint is a consensus protocol that tolerates Byzantine faults, implemented first by the Tendermint Core engine and now by CometBFT. Realizing the protocol's separation of agreement from execution, the Application Blockchain Interface (ABCI) of these engines keeps consensus apart from the replicated application, so one engine can serve many independent proof-of-stake chains. A sustained body of research proposes changes that span the protocol's mechanisms, from vote dissemination to block proposal and reward distribution, yet to our knowledge no survey studies the protocol and these works as one family, and broader surveys do not take Tendermint as their subject. We describe the baseline, the protocol as consolidated from its original descriptions, by its design choices. Each is a decision, such as how votes spread or how proposers rotate, through which the baseline provides safety and liveness or another property under its fault and timing model. We classify each work by the design choice it renegotiates, that is, modifies or replaces, by the properties it strengthens or weakens, and by whether its result needs a stronger model. Taking a broader perspective on that classification, we group the surveyed works' solutions into a few threads of concern in the baseline, namely its performance, the accountability of its validators, and the protection of exploitable information. For each thread, we identify the recurring strategies that their approaches follow. Together, these threads and strategies describe the current state of research on the Tendermint family. Where the strategies leave gaps, we pose future directions, each as an open question under an explicit fault and timing model.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Tendermint",
+        "共识",
+        "CometBFT",
+        "权益证明"
+      ],
+      "url": "https://arxiv.org/abs/2611.15847",
+      "pdf": "https://arxiv.org/pdf/2611.15847"
+    },
+    {
+      "id": "2611.14916",
+      "title": "CuEVM: Scaling Smart Contract Execution on GPUs",
+      "authors": [
+        "Nhut-Minh Ho",
+        "Tien Tuan Anh Dinh",
+        "Quang Trung Ta",
+        "Fredrik Svantes",
+        "Xiaokui Xiao",
+        "Beng Chin Ooi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "不用大模型，在 GPU 上做语义完整的 EVM 执行，并据此做智能合约模糊测试，对象是以太坊合约。",
+      "abstract": "以太坊区块链上的智能合约每天处理价值数十亿美元的交易。它们运行在以太坊虚拟机（EVM）上，而 EVM 按顺序执行交易。这种执行模型会成为性能瓶颈，尤其是在交易很多的新负载上，例如安全测试。本文提出 CuEVM：在 GPU 上原生实现、语义完整的 EVM 执行引擎，把交易执行当成大规模并行数据处理。它用新的数据结构和面向 GPU 的调度来加速执行。与先前把合约转译出去、很多操作仍依赖宿主机 CPU 的工作不同，CuEVM 在 GPU 上原生支持完整 EVM 语义。它通过了全部 Ethereum VMTests，以及 96.2% 的完整执行测试套件。在一块消费级 GPU 上，CuEVM 每秒可执行超过 800 万次 ERC-20 转账，比已有基线最多高出约两个数量级。作者在 CuEVM 上做了智能合约模糊测试器 CuEVM-fuzz。该模糊测试器每秒可完成超过一百万次端到端执行，比当时最好的 CPU 基线和 GPU 基线分别高约 23 倍和 4.8 倍。",
+      "abstractEn": "Smart contracts on Ethereum blockchain process transactions worth billions of US dollars daily. They run on top of Ethereum Virtual Machine (EVM) which executes transactions sequentially. This execution model creates a performance bottleneck, especially for new blockchain workloads with large numbers of transactions, such as security testing. We present CuEVM, a GPU-native and semantically complete EVM execution engine that treats transaction execution as a massively parallel data processing problem. It employs novel data structures and GPU-aware scheduling to accelerate execution. Unlike prior works that transpile the contract and rely on a host CPU for many operations, CuEVM supports complete EVM semantics natively on the GPU. It passes 100% of the Ethereum VMTests and 96.2% of the full execution-test suite. On a single commodity GPU, CuEVM executes over 8 million ERC-20 transfers per second, outperforming existing baselines by up to two orders of magnitude. We build a smart contract fuzzer, called CuEVM-fuzz, on top of CuEVM. The fuzzer achieves over a million end-to-end executions per second, up to 23x and 4.8x higher than the state-of-the-art CPU-based and GPU-based baselines, respectively.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "EVM",
+        "GPU",
+        "模糊测试",
+        "智能合约"
+      ],
+      "url": "https://arxiv.org/abs/2611.14916",
+      "pdf": "https://arxiv.org/pdf/2611.14916"
+    },
+    {
+      "id": "2026-2810",
+      "title": "QUASI: Post-Quantum Quorum Attestation of Pre-Validated Statements",
+      "authors": [
+        "Maksym Ioffe",
+        "Dahlia Malkhi"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "不用大模型，用哈希和纠错做法定人数对预验证语句的可公开验证证明，对象是无签名共识与 SNARK 聚合。",
+      "abstract": "本文提出一类新协议 QUASI，让一组参与方就能对一条已经验证过的语句做出可公开验证的证明。面向法定人数系统，QUASI 让这些参与方向外部实体证明该语句有效。出人意料的是，每一方不必给整条语句签名：只认证一小部分符号，法定人数就能为整体背书。一个简单的确定性构造说明这做得到。QUASI 只靠哈希和纠错，每方贡献小，生成和验证开销低，聚合也不依赖 SNARK。主要贡献是一个随机化构造：相对完整的基于哈希的签名，每方贡献大小以及生成、验证的哈希计算都降到十分之一以下。QUASI 是通用原语，用途不止一种。两个主要场景是：给无签名共识做外部证明，让客户端能验证关于已提交状态的语句；以及作为基于 SNARK 的聚合的预处理，把 QUASI 省下的开销和简洁证明压缩叠在一起。",
+      "abstractEn": "We present QUASI, a newly conceived class of protocols that enable a group of parties to produce a publicly verifiable attestation about a pre-validated statement. Designed for quorum-based systems, QUASI enables parties to attest to external entities that the statement is valid. Surprisingly, each party need not sign the entire statement: authenticating only a small subset of symbols suffices for the quorum to attest to the whole. A simple deterministic construction illustrates this possibility. Built purely from hashing and error correction, QUASI achieves small per-party contributions and low attestation generation and verification costs, without relying on SNARKs for aggregation. Our main contribution is a randomized construction achieving reductions of more than 10x in per-party contribution size and hash computations for generation and verification, compared with full hash-based signatures. QUASI is a generic primitive supporting diverse applications. Two principal use cases are external attestation for signature-free consensus, enabling clients to verify statements about committed state; and preprocessing for SNARK-based aggregation, compounding QUASI's savings with succinct-proof compression.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "法定人数",
+        "共识",
+        "后量子",
+        "SNARK"
+      ],
+      "url": "https://eprint.iacr.org/2026/2810",
+      "pdf": "https://eprint.iacr.org/2026/2810.pdf"
+    },
+    {
+      "id": "2026-2834",
+      "title": "Undine: Distributed Extendable Merkle Tree Storage with Private Retrieval and Efficient Reconfiguration",
+      "authors": [
+        "Nicolas Alhaddad",
+        "Harry Eldridge",
+        "Julia Guskind",
+        "Eran Tromer",
+        "Mayank Varia"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "不用大模型，把可扩展 Merkle 树做成可私有检索的分布式存储，对象是透明日志与屏蔽区块链资金池。",
+      "abstract": "透明日志、公钥目录和屏蔽区块链资金池的客户端需要认证地访问一棵不断变化的 Merkle 树，又不能整棵存下来，也不能暴露自己打开了哪条记录。随着数据增长，以及参与方加入、离开、改份额或作恶，存储和查询应当分到相互独立的服务器上。本文提出 Undine：把分布式 Merkle 树编码和从各自维护的分片做私有检索结合起来。维护者可以自己选、并高效调整所存分片大小，在存储量和客户端重建认证数据所需的回复条数之间做权衡。维护者还能做带认证的更新和追加，写代价大约是被改 Merkle 节点数的两倍。Undine 用 Merkle 树节点的线性编码，把存储和检索负载均分到维护者，并配上直接作用在这些线性编码分片上的私有信息检索（PIR）。对多条记录的 Merkle 路径上重复出现的节点，它避免重复存储和计算，使 PIR 回复只需对树值做与已填充前缀线性相关的工作。记录大小随前缀增长调整，以平衡查询和回复大小。客户端对照 Merkle 根验证，不必对各个 PIR 数据库做承诺。计算查询隐私对任意合谋都成立。在 PIR 后端正确性误差范围内，只要诚实回复足够及时、公开时序固定、且没有依赖回复的后续查询，Undine 也能抵抗选择性失败泄漏。作者评估了 UndineLog：Undine 与 YPIR 结合的只追加实现。在高度 50 的稀疏 Merkle 树上，前缀 4GiB、非空 32 字节叶子、重建门限 64 时，维护者单核约 100ms 回复；客户端可处理 192 条回复并在 380ms 内重建经验证的打开，即使其中 64 条被篡改。扩到 1TiB、门限 256 时，维护者约 1.13s 应答。现有屏蔽资金池可以在不改共识的情况下使用该服务。",
+      "abstractEn": "Clients of transparency logs, public-key directories, and shielded blockchain pools require authenticated access to an ever-changing Merkle tree, without storing it in full or revealing which entry they open. We seek to distribute storage and query work across independent servers as the data grows and participants join, leave, change their shares, or misbehave. We present Undine, which combines a distributed Merkle tree encoding with private retrieval from independently-maintained fragments. Maintainers can choose and efficiently adjust the size of their stored fragments, to offer a flexible tradeoff against the number of maintainer replies needed for authenticated data reconstruction by clients. Maintainers can also perform authenticated updates and appends, at a write cost of just twice the number of modified Merkle nodes. Undine uses a linear encoding of the Merkle tree nodes to divide evenly the storage and retrieval load across maintainers. This is combined with a private information retrieval (PIR) protocol that operates directly over the linearly-encoded fragments. Undine avoids repeated storage and computation for nodes shared by Merkle paths across records, producing the same PIR replies with work over tree values linear in the filled prefix. Record sizes adapt as the prefix grows to balance query and reply sizes. Clients verify against the Merkle root, without commitments to individual PIR databases. Computational query privacy holds against any coalition. Undine is also secure against selective-failure leakage (i.e., deductions from acceptance), up to the PIR backend's correctness error, given enough timely honest replies, fixed public timing, and no reply-dependent follow-up. We evaluate UndineLog, our append-only implementation of Undine combined with YPIR. On a height-50 sparse Merkle tree with a 4GiB prefix of nonempty 32-byte leaves and a reconstruction threshold of 64, a maintainer replies in 100ms (single-core); a client can process 192 replies from maintainers and reconstruct a verified opening in 380ms, even with 64 corrupted replies. Scaled up to 1TiB and 256 threshold, a maintainer answers in 1.13s. Existing shielded pools can use this service without consensus changes.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Merkle 树",
+        "PIR",
+        "屏蔽资金池",
+        "透明日志"
+      ],
+      "url": "https://eprint.iacr.org/2026/2834",
+      "pdf": "https://eprint.iacr.org/2026/2834.pdf"
+    }
+  ]
+}
