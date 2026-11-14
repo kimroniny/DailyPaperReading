@@ -1,0 +1,304 @@
+{
+  "date": "2026-11-14",
+  "papers": [
+    {
+      "id": "2611.16693",
+      "title": "MobileProbe: Adaptive Security Evaluation of Mobile Agents via Trajectory-Aware Injection",
+      "authors": [
+        "Yingbin Jin",
+        "Ji'an Wang",
+        "HaoYang Chai",
+        "Hanjun Luo",
+        "Li Hu",
+        "Xinfeng Li",
+        "Huadi Zheng",
+        "PeiZhao Hu",
+        "Qingqing Ye",
+        "Haibo Hu"
+      ],
+      "year": 2026,
+      "venue": "NDSS 2027",
+      "abstractOneWord": "用轨迹感知的环境注入评估手机图形界面代理的安全，对象是移动应用上的大模型代理。",
+      "abstract": "手机图形界面代理会读屏幕、替用户操作应用，完成购物、发消息等多步任务。代理按屏幕内容行动，攻击者可以把恶意指令嵌进普通界面，从而改走它的动作。作者把这类威胁叫环境注入攻击。已有基准把手工载荷钉在固定任务的固定步骤上，有两个问题：载荷绑死在一个应用的一个任务，换场景就要重做；同一任务代理可能走不同路径，没走到注入页就会被记成安全，覆盖不足，容易低估风险。本文提出 MobileProbe，按轨迹做自适应红队评估。它先自动渗透找出攻击者可控的内容面，再沿代理轨迹定位脆弱决策点，并用经过代理过滤的进化循环迭代改写有上下文的载荷。作者构造了 83 个长程攻击实例，覆盖 12 个移动应用，并按机密性、完整性、可用性标注攻击目标。在三种有代表性的代理架构上，MobileProbe 的攻击成功率高于人工撰写、零样本大模型和先前迁到移动场景的自动红队基线。它可以作为上线前的审计工具，系统找出漏洞，给移动代理的加固提供依据。",
+      "abstractEn": "Mobile GUI agents read the screen of a phone and operate apps on a user's behalf to complete multi-step tasks such as online shopping or messaging. Because the agent acts on whatever the screen shows, an attacker can embed malicious instructions into ordinary UI content and redirect its actions. We refer to this threat as environmental injection attack (EIA). Existing benchmarks measure this risk by pinning hand-crafted payloads to a fixed step of a fixed task. This approach faces two limitations. First, each payload is bound to one task in one app and does not transfer without manual redesign. Second, agents given the same task may follow different routes, so an agent that never reaches the injected page is recorded as safe without being tested. This insufficient test coverage can cause fixed-point benchmarks to underestimate the security risk of deployed mobile agents. In this work, we propose MobileProbe, a trajectory-aware red-teaming framework that evaluates mobile agents adaptively. MobileProbe discovers attacker-controllable content surfaces through automated pentesting, localizes vulnerable decision points along the agent's trajectory, and iteratively refines context-aware payloads through a surrogate-filtered evolutionary loop. We construct a benchmark of 83 long-horizon attack instances spanning 12 mobile applications. Each is annotated with a Confidentiality, Integrity, or Availability (CIA) attack goal to cover the principal categories of security threats facing mobile agents. On three representative agent architectures, MobileProbe attains higher attack success rates than human-written, zero-shot LLM, and prior automated red-teaming baselines adapted to the mobile domain. MobileProbe can serve as a pre-deployment auditing tool to systematically uncover vulnerabilities and inform security hardening of mobile agents.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "移动代理",
+        "环境注入",
+        "红队评估",
+        "Android"
+      ],
+      "url": "https://arxiv.org/abs/2611.16693",
+      "pdf": "https://arxiv.org/pdf/2611.16693"
+    },
+    {
+      "id": "2611.11104",
+      "title": "Tracing MCP Security Vulnerabilities: Constructing and Analyzing an MCP Security Vulnerability Dataset",
+      "authors": [
+        "Xu He",
+        "Sagar Patel",
+        "Shu Wang"
+      ],
+      "year": 2026,
+      "venue": "IEEE S&P Workshops 2026",
+      "abstractOneWord": "从 CVE 整理并分析模型上下文协议漏洞数据集，对象是对接大模型的 MCP 服务器与工具。",
+      "abstract": "模型上下文协议（MCP）是把大模型接到外部数据和工具上的核心协议，很快成了代理系统里的关键接口。生态扩大后，公开漏洞也在增加，形成一块软件安全攻击面。但 MCP 漏洞信息分散、噪声大，很难系统研究。本文从 CVE 披露里整理出一份 MCP 漏洞数据集。从 2026 年 2 月前检索到的 119 条相关记录出发，滤掉无关条目，得到 24 条经过核验的 MCP 漏洞快照。过滤方法专门处理了缩写歧义，抽样排除审计的评分者一致性为 96.7%，同时留住了公开通告里已知的高危 MCP 案例。在这份快照上，87.5% 的核验漏洞是严重或高危，注入和路径遍历占 66.7%。作者还归纳了输入校验不足、访问控制不够、协议层安全缺口等反复出现的问题。通过六个代表性案例说明常见利用方式，并映射到可落地的防护。数据集、复现工具和持续维护流程一并公开，供后续测量、评测和防护研究使用。",
+      "abstractEn": "As a core protocol for integrating large language models (LLMs) with external data sources and tools, the Model Context Protocol (MCP) has quickly become a key interface in emerging AI agent systems. As the MCP ecosystem expands, reported vulnerabilities have also increased, creating a growing software-security attack surface. However, MCP vulnerability information remains scattered, noisy, and difficult to study systematically. This paper addresses that gap by constructing a curated MCP vulnerability dataset from CVE disclosures. Starting from 119 MCP-related records retrieved through February 2026, we filter unrelated cases out and obtain a validated snapshot of 24 MCP vulnerabilities. Our filtering methodology explicitly addresses acronym ambiguity and achieves 96.7% inter-rater agreement on a sampled exclusion audit while retaining all known high-severity MCP cases identified in public advisories. Using this initial dataset snapshot, we find that 87.5% of validated vulnerabilities are Critical or High severity, and that injection and path traversal vulnerabilities account for 66.7% of cases. We further identify recurring issues involving insufficient input validation, inadequate access control, and protocol-level security gaps. Through six representative case studies, we illustrate common exploitation patterns and map them to practical defenses. We release the dataset, reproducibility tooling, and a sustainable maintenance workflow as a foundation for future MCP security measurement, benchmarking, and defense research.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MCP",
+        "漏洞数据集",
+        "注入",
+        "路径遍历"
+      ],
+      "url": "https://arxiv.org/abs/2611.11104",
+      "pdf": "https://arxiv.org/pdf/2611.11104"
+    },
+    {
+      "id": "2611.16565",
+      "title": "Look Here, Then Decide: Small Decision Models in a Harness Find Memory-Safety Vulnerabilities at Scale on Commodity GPUs",
+      "authors": [
+        "Tim De Wachter",
+        "Kyryl Volkov",
+        "Myrto Eleftheria Gkogkou",
+        "Mathieu Huysman"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用小型决策模型和确定性定位器在普通 GPU 上大规模找内存安全漏洞，对象是开源 C/C++ 项目。",
+      "abstract": "作者问：小型开源权重决策模型能不能在规模上支撑开源软件的漏洞发现，外围系统又必须提供什么。这类模型一次前向传播回答一个有类型的问题，返回各允许答案的分数而不是文本。配套框架选出广泛打包的 C/C++ 项目，用确定性的不完整修复挖掘器和形状定位器决定往哪看。40 亿参数的开源决策模型 Intern-Decision-4B 给每个候选函数打分。分数用来排队列，而不是直接接受或拒绝，部分队列只设一个很低的可达分数门槛。搜索不用前沿大模型。模型单独很弱：区分有漏洞和良性函数的 AUC 为 0.73，但把有漏洞函数和它自己的补丁分开只有 0.56。它更适合给候选排序。在 75 个公开 CVE、且这些项目里没有本次发现的案例上，被修函数进入该仓库前 25 名的比例是 21%，是同一队列随机排序的 1.4 倍。召回主要受定位器看哪限制。在本次活动自己的队列上，模型排序比随机把 7.5 倍的已确认发现放进前 10，这是带选择偏差的观测上限。三台 GB10 上，框架以每小时 900 到 1100 个仓库的速度搜了 4000 多个项目，确认 187 个内存安全发现；按最坏 CVSS v3.1，12 个严重、148 个高危、23 个中危、4 个低危。决策步骤在一台 GB10 上每秒 4.4 次，消费级 RTX 4090 上每秒 9.8 次，分数一致。小型决策模型靠优先级支撑漏洞发现，确定性分析和核验仍然必要。已确认发现正按协调披露发给维护者。",
+      "abstractEn": "We ask whether small, open-weight decision models can support vulnerability discovery in open-source software at scale and what the surrounding system must provide. These models answer a typed question in one forward pass, returning scores for the permitted answers rather than text. Our harness selects widely packaged C and C++ projects and uses deterministic incomplete-fix miners and shape localizers to decide where to look. Intern-Decision-4B, a 4B-parameter open-weight decision model, then scores every candidate function. The scores rank the queues rather than accept or reject candidates, apart from a low reach-score floor that some queues kept. The search uses no frontier model. Alone, the model is weak: it separates vulnerable from benign functions with AUC 0.73, but a vulnerable function from its own patch with only 0.56. It is more useful for ordering candidates. On 75 public CVEs from projects without any of our findings, the fixed function reached its repository's top 25 in 21% of cases, 1.4 times as often as under random order of the same queues. Recall is bounded mainly by where the localizers look. On the campaign's own queues the model's order placed 7.5 times more confirmed findings in the top 10 than random order, an observed, selection-biased upper bound. On three GB10 systems, the harness searched more than 4,000 projects at 900-1,100 repositories per hour. The campaign confirmed 187 memory-safety findings; by worst-case CVSS v3.1, 12 are critical, 148 high, 23 medium and 4 low. The decision step runs at 4.4 decisions per second on one GB10 and 9.8 on a consumer RTX 4090 gaming PC, with matching scores. A small decision model supports vulnerability discovery through prioritization, while deterministic analysis and verification remain essential. All confirmed findings are being disclosed to maintainers under coordinated disclosure before publication.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "内存安全",
+        "漏洞发现",
+        "C/C++",
+        "决策模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.16565",
+      "pdf": "https://arxiv.org/pdf/2611.16565"
+    },
+    {
+      "id": "2611.15596",
+      "title": "Bug Finding With Agentic Symbolic Execution",
+      "authors": [
+        "George Granberry",
+        "Wolfgang Ahrendt",
+        "Andy Gordon",
+        "Moa Johansson"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用编码代理给符号执行补断言和环境模型来找缺陷，对象是 Python Web 应用。",
+      "abstract": "CrossHair 这类工具里的符号执行很能找缺陷，但有两道门槛：人手给代码写断言成本高，以及要给 Python 之外的执行环境（例如外部数据库）建模。为同时跨过这两道，作者设计了一套代理式框架，把符号执行工具 CrossHair 和编码代理编排在一起。无需人工介入，它给仓库插断言，为数据库合成带约束的符号环境，跑符号执行，再为每个报告的缺陷构造具体测试作证据。评估覆盖 11 个流行开源 Python Web 应用（Zulip、NetBox、Apache Superset 等）共 1156044 行代码。有合成环境时，CrossHair 能执行 5406 个带契约函数中的 81%，没有时只有 4.5%。流水线共找到 1050 个缺陷，每个都能在未改动的应用上用测试复现，其中 221 个来自 CrossHair；同一大模型只做代码检查会漏掉其中 312 个。两类缺陷不同：CrossHair 多为校验仍放行的输入域边角崩溃，例如空串、缺字段、异常字符；检查则多为输出错误。因此符号执行可以补上基于检查的找缺陷。",
+      "abstractEn": "Symbolic execution, in tools such as CrossHair for Python, is a powerful technique for finding bugs, but two barriers hinder its adoption: the human effort of annotating code with assertions, and the need to model the execution environment outside Python, such as an external database. To overcome both, we design an agentic harness that orchestrates the symbolic execution tool CrossHair together with an AI coding agent. Without human intervention, it instruments a repository with assertions, synthesizes a constraint-aware symbolic environment for the database, runs symbolic execution, and constructs a concrete test as evidence for each bug it reports. We evaluate our harness on 1,156,044 lines of Python code over 11 popular open-source Python web applications (Zulip, NetBox, Apache Superset, and others). With the synthesized environment, CrossHair executes 81% of the 5,406 contracted functions, against 4.5% without it. Our pipeline finds 1,050 bugs, each reproduced by a test against the unmodified application, 221 of them by CrossHair, and 312 of them are missed by a baseline in which the same LLM inspects the code. The two find different kinds of bugs: CrossHair's are mostly crashes on input-domain corner cases that validation admits, such as empty strings, missing fields and unusual characters, while inspection's are mostly bugs that produce wrong output. Our framework thus lets symbolic execution supplement inspection-based bug finding.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "符号执行",
+        "编码代理",
+        "Python",
+        "缺陷发现"
+      ],
+      "url": "https://arxiv.org/abs/2611.15596",
+      "pdf": "https://arxiv.org/pdf/2611.15596"
+    },
+    {
+      "id": "2611.16588",
+      "title": "CrossPloit: A Benchmark for Cross-Version PoC Migration in Python Web Applications",
+      "authors": [
+        "Hung Nguyen-Huu",
+        "Nguyen Anh Tuan",
+        "Ting Zhang",
+        "Yue Liu",
+        "Chengran Yang",
+        "Lwin Khin Shar",
+        "Eng Lieh Ouh",
+        "David Lo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型代理把已知漏洞利用迁到未列入影响范围的旧版本，对象是 Python Web 应用。",
+      "abstract": "漏洞库里的影响版本范围决定了扫描器、补丁流水线和应急人员把哪些部署当成有漏洞，但这些范围经常不全，有漏洞的发行版会被静默当成安全。要审计它们，需要可执行证据：给定某个已列出版本的概念验证利用，证明同一漏洞也能在更早、未列出的版本上触发。这种跨版本利用迁移要同时做源码分析、环境修复和基于执行的核验。本文提出 CrossPloit，包含 Python Web 生态里 45 个 CVE 的 127 个迁移实例。每个实例有钉死版本的容器、参考利用和针对该漏洞的判定器；两套校验器确认观察到的效果来自已披露漏洞。构造过程确认四个数据库的影响版本列表漏掉了 149 个先前有漏洞版本，其中 127 个需要迁移。在 18 种代理配置（九个模型、两套框架）上，最好的配置解决了 58.3% 的实例，改造后的轨迹引导基线只有 8.7%。攻击向量变化特别难：没有配置能解决超过 37.9% 的这类实例。解决率更高时，剩余失败里漏掉接口的比例更低、执行不完整的比例更高。在一种配置下，不给参考利用和环境说明，解决率从 50.4% 降到 15.0%，说明所附参考包有用。CrossPloit 用基于执行的方式测量少报的暴露面，以及它的枚举能自动化到什么程度。",
+      "abstractEn": "Affected-version ranges in vulnerability databases decide which deployments scanners, patching pipelines, and incident responders treat as vulnerable, yet these ranges are often incomplete, so vulnerable releases are silently treated as safe. Auditing them requires executable evidence: given a proof-of-concept (PoC) exploit for a listed version, show that the same vulnerability can be triggered on an earlier, unlisted version. This cross-version PoC migration combines source-code analysis, environment repair, and execution-based verification. We introduce CrossPloit, a benchmark of 127 migration instances across 45 CVEs in the Python web ecosystem. Each instance includes a version-pinned container, a reference PoC, and a vulnerability-specific oracle; two validators check that the observed effect arises from the disclosed vulnerability. Benchmark construction confirms 149 vulnerable prior versions absent from the affected-version lists of four databases, 127 of which require migration. Across 18 agent configurations (nine models and two harnesses), the best configuration resolves 58.3% of instances, compared with 8.7% for an adapted trace-guided baseline. Attack-vector shifts are particularly difficult: no configuration resolves more than 37.9% of these instances. Higher resolve rates are associated with a smaller share of missed-API failures and a larger share of incomplete executions among the remaining failures. In one configuration, withholding the reference PoC and its environment specification reduces resolve rate from 50.4% to 15.0%, highlighting the value of the supplied reference package. CrossPloit provides an execution-based measurement of under-reported exposure and of how far its enumeration can be automated.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "概念验证",
+        "版本范围",
+        "Python Web",
+        "编码代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.16588",
+      "pdf": "https://arxiv.org/pdf/2611.16588"
+    },
+    {
+      "id": "2611.14946",
+      "title": "LOHRE: Execution-Grounded Type Recovery via LLM-Orchestrated Hybrid Analysis",
+      "authors": [
+        "Hao Jiang",
+        "Yujie Yang",
+        "Tao Li",
+        "Chenhui Cui",
+        "Liangfeng Xu",
+        "Chengjie Liu",
+        "Weiping Wen",
+        "Rubing Huang",
+        "Tsong Yueh Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型编排混合分析、靠执行否证用户定义类型布局，服务二进制安全分析，对象是剥离符号的二进制。",
+      "abstract": "给剥离符号的二进制函数写文档、做安全分析，需要从机器码恢复函数接口和用户定义类型布局。已有基于大模型的方法有两个限制：缺少基于执行的校验，发现不了与真实内存布局不一致的推断类型；没有直接调用关系的函数之间，共享类型的证据也可能被漏掉。本文提出大模型编排的混合逆向框架 LOHRE，把推断出的类型当成可证伪假说，对着程序执行来检验。它用「假设—校验—修正」循环，通过对基线输入和变异输入做成对动态切片仿真来测候选布局。为降低处理冗长执行历史的开销，执行深度启发式把成对轨迹压成执行深度差，并附上被测字段的观测用途摘要。跨函数知识库汇总相容的类型假说和字段级置信度，用来指导测试和修正。作者在 RealType 的四个优化级别和一份 Windows 远程过程调用数据集上评估。四个优化级别上用户定义类型结构准确率平均 57.85%，Windows 远程过程调用上为 35.6%，优于所评静态基线。关掉动态校验后，准确率分别降到 19.28% 和 9.2%；去掉跨函数知识库则降到 41.03% 和 10.0%。用完整执行轨迹替换压缩反馈会降低恢复准确率，同时令牌用量增加到 3.7 倍、运行时间增加到 3.0 倍。结果表明，基于执行的校验、紧凑反馈和跨函数证据有助于又准又省地恢复用户定义类型。",
+      "abstractEn": "Documenting stripped binary functions for security analysis requires recovering function interfaces and user-defined type (UDT) layouts from machine code. Existing large language model (LLM)-based methods face two limitations: they lack execution-based validation to detect inferred UDTs inconsistent with actual memory layouts, and may overlook evidence about shared UDTs across functions without direct call relationships. We present LLM-Orchestrated Hybrid Reverse Engineering (LOHRE), a framework that treats inferred UDTs as falsifiable hypotheses and tests them against program execution. LOHRE uses a hypothesize-validate-refine loop to test candidate layouts through paired dynamic slice emulation of baseline and mutated inputs. To reduce the cost of processing lengthy execution histories, the Execution-Depth Heuristic (EDH) compresses paired traces into an execution-depth difference and a summary of the tested field's observed uses. A cross-function knowledge base aggregates compatible UDT hypotheses and field-level confidence scores to guide testing and hypothesis refinement. We evaluate LOHRE on RealType at four optimization levels and a Windows remote procedure call (RPC) dataset. LOHRE achieves an average UDT Structural accuracy of 57.85% across RealType's four optimization levels and 35.6% on Windows RPC, outperforming the evaluated static baselines. Disabling dynamic validation reduces accuracy to 19.28% on RealType and 9.2% on Windows RPC. Removing the cross-function knowledge base reduces accuracy to 41.03% on RealType and 10.0% on Windows RPC. Replacing EDH's compressed feedback with full execution traces reduces recovery accuracy while increasing token use by 3.7 times and runtime by 3.0 times. These results indicate that execution-based validation, compact feedback, and cross-function evidence contribute to accurate and efficient UDT recovery.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "二进制逆向",
+        "类型恢复",
+        "混合分析",
+        "安全分析"
+      ],
+      "url": "https://arxiv.org/abs/2611.14946",
+      "pdf": "https://arxiv.org/pdf/2611.14946"
+    },
+    {
+      "id": "2611.15506",
+      "title": "KernelAudit: Contract-Aware Auditing of Validators for LLM-Generated GPU Kernels",
+      "authors": [
+        "Ziyuan Li",
+        "Zihe Song",
+        "Xiaofang Qi",
+        "Wei Yang",
+        "Tao Xie"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "按任务契约独立审计大模型生成 GPU 内核的校验器，对象是 GPU 内核候选及其验收器。",
+      "abstract": "用大模型生成 GPU 内核，效果高度依赖校验器：它按任务契约接受或拒绝候选，结果会进入奖励、候选选择和加速比声明。现有校验器有不少问题，例如漏掉禁止的库调用而误接受，或把允许的库调用判成禁止而误拒绝（库使用约束写在任务契约里）。为评估校验器相对给定契约的质量，作者提出独立审计：先按契约模型的三个维度（语义正确、实现完整、测量完整）给候选标通过或失败，再拿这些标签对照校验器的判定。语义正确用对照校准的压力测试，在合法输入上检查输出；实现完整用对照与候选的执行轨迹判断具体库使用；测量完整用计时检查所报运行时间是否覆盖算完所需的全部时间。该方法用于评估六个校验器和来自七个语料（含构造对照）的 716 个候选。结果表明六个现有校验器都有不可忽略的误拒率；审计预言机给出的候选标签与人工判断高度一致。",
+      "abstractEn": "The effectiveness of generating GPU kernels driven by a large language model (LLM) is highly dependent on the quality of the used validator (used to accept or reject a generated kernel candidate against the contracts of the given kernel-generation task), whose results inform reward assignment, candidate selection, and speedup claims during kernel generation. However, an existing validator suffers from various limitations, e.g., wrongly accepting a candidate due to missing its forbidden library use or wrongly rejecting a candidate due to determining its permitted library use as forbidden (constraints on library uses are stated in the task contracts). To assess the quality of a validator against the given task contracts, we propose an independent-audit approach for the validator by (1) construction of audit oracle: labeling a candidate as PASS or FAIL based on three separate dimensions in our proposed contract model (i.e., semantic correctness, implementation integrity, and measurement integrity) and (2) auditing of the validator against the audit oracle: comparing the labels of the candidate against the validation results produced by the validator. For semantic correctness, reference-calibrated stress tests check output correctness on valid inputs for a candidate. For implementation integrity, reference and candidate execution traces are used to determine specific library uses. For measurement integrity, timing checks assess whether the reported runtime reflects the full time needed to complete the candidate's computation. We apply our approach to assess the quality of six validators and 716 candidates from seven corpora, including constructed controls. The evaluation results show that our approach helps assess the existing six validators to have nontrivial false-reject rates. There is high-degree agreement between the candidate labels produced by our audit oracle and human judgments.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "GPU 内核",
+        "代码审计",
+        "校验器",
+        "生成代码"
+      ],
+      "url": "https://arxiv.org/abs/2611.15506",
+      "pdf": "https://arxiv.org/pdf/2611.15506"
+    },
+    {
+      "id": "2611.13406",
+      "title": "Stinging the Swarm: Extracting Attacker Intelligence from a Twin-Controller OT Honeypot",
+      "authors": [
+        "Canyon Grey Dell'Omo",
+        "Joao Pedro de Carvalho Voltani"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用工业控制器镜像蜜罐拦截大模型代理攻击并提取情报，对象是现场总线工控设备。",
+      "abstract": "自主语言模型代理可以经现场总线驱动工业控制器，按机器速度、成群探测工厂。本文提出 Talos，这道在线门在毫秒级判定发向控制器的每个代理请求，把判定为敌意的代理转到设备级仿真诱饵——真实工厂的镜像孪生——攻击在那里无害继续，并被读作情报。作者用完整流水线（检测、隔离、镜像、提取）评估了 2400 个自主攻击代理，四个档各 600 个，隐蔽程度从完全不藏到明确不披露加训练过的掩护故事。任一档都没有写操作到达真实工厂：门挡住破坏路径，设备级包络检查托底；未映射寄存器一律拒绝，同时仍允许安全方向的停机命令。各档判定都由模型驱动、没有推理超时，回应了「设备上小判定器会超时」的常见质疑。流水线还能读攻击者。作者沿「攻击有多执着」和「披露有多少」两个轴看到行为结构，并表明四个区域里有三个有捕获通道： 强硬、沉默的攻击者升级最多，在镜像上被读；顺从、话多的攻击者在隔离前就会向诊断表单自报身份；只有偏执、低产出区域两边都抗。身份字段是自写的掩护故事，但非自愿痕迹——自报工具链指纹和自己列出的目标寄存器——会在群体里累积成高置信画像，即使代理被明确要求保持沉默。门、镜像和框架以 Apache 2.0 发布，并带一套合成设备族。",
+      "abstractEn": "Autonomous language-model agents can drive industrial controllers over fieldbus protocols, probing a plant at machine speed and in coordinated swarms. We present Talos, an inline gate that judges every agent request to a controller in milliseconds and routes agents it flags as hostile to a device-faithful decoy -- a mirror twin of the real plant -- where their attack continues harmlessly and is read for intelligence. We evaluate the full pipeline (detect -> quarantine -> mirror -> extract) against 2,400 autonomous attacker agents, 600 in each of four tiers that escalate the attacker's effort to stay hidden, from no concealment to an explicit non-disclosure rule and a trained cover story. No write reached the real plant in any tier: the gate denies the damage path and a device-level envelope check backstops it, while unmapped registers are denied without exception and the gate still permits safe-direction stop commands. Decisions are model-driven in every tier with no inference timeouts, closing a common objection to small on-device judges. Beyond blocking, the pipeline reads the attacker. We find a behavioral structure along two axes -- how persistently an agent attacks and how much it discloses -- and show that the system has a capture channel for three of the four resulting regions: hardened, silent attackers escalate most and are read on the mirror; compliant, talkative attackers volunteer their identity to a diagnostic form before they are ever quarantined; only the paranoid, low-yield region resists both. Attacker identity fields are self-authored cover stories, but involuntary tells -- the self-reported toolchain fingerprint and the attacker's own list of targeted registers -- accumulate across the swarm into a high-confidence profile drawn from agents under explicit orders to stay silent. The gate, mirror, and harness are released under Apache 2.0 with a synthetic device family.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "工控安全",
+        "蜜罐",
+        "攻击情报",
+        "语言模型代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.13406",
+      "pdf": "https://arxiv.org/pdf/2611.13406"
+    },
+    {
+      "id": "2611.12386",
+      "title": "Say Shibboleth: Fingerprinting the LLMs and Harnesses Behind Agentic Attacks",
+      "authors": [
+        "Dario Pasquini",
+        "Reworr",
+        "Giuseppe Ateniese",
+        "Manish Bhatt",
+        "Sergej Epp"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用口令陷阱蜜罐从遥测指纹识别代理式网络攻击背后的大模型和框架，对象是进攻型编码代理。",
+      "abstract": "本文研究代理式网络攻击的指纹识别，目标是从遥测里可靠推断攻击者配置，例如大模型版本和框架。作者提出口令陷阱：模块化蜜罐服务，用来引出代理攻击者的可区分行为。陷阱把获取代理想要的资源，变成必须进行有信息量的交互，从而引出模型声明和特征写法，而不要求提示注入成功。为指纹识别框架，作者给出间接探测框架特有执行行为的通用机制。这些探针揭示框架如何在工具输出里遮掩秘密、如何强制命令时限、如何调度工具调用，只利用后续请求里可见的效果。声明与行为推断合在一起，能在 15 个候选模型中以平均 90% 的第一名准确率区分；行为分类器在留出的框架或任务族上评估。在四个框架的另一组实验里，固定探针规则以 92% 的准确率识别正确框架。即使被要求隐瞒身份，代理在声明变得没有信息之后，仍会留下有用的行为证据。",
+      "abstractEn": "We study the fingerprinting of agentic cyberattacks. Our objective is to reliably infer information about the attacker's configuration, such as LLM version and harness, from telemetry. To achieve this, we introduce a technique we call shibboleth traps: modular honeypot services designed to elicit discriminative behaviors from agentic attackers. The traps make informative interactions a condition for obtaining resources the agent seeks, eliciting model declarations and characteristic writing without requiring a successful prompt injection. To achieve harness fingerprinting, we introduce general mechanisms to indirectly probe peculiar execution behaviors of harnesses. These probes reveal how a harness masks secrets in tool output, enforces command time limits, and schedules tool calls, using only the effects visible in subsequent requests. We show that combined declarative and behavioral inference distinguishes among 15 candidate models with an average 90% top-1 accuracy, with behavioral classifiers evaluated on held-out harnesses or task families. In a separate experiment across four harnesses, fixed probe rules identify the correct harness with 92% accuracy. When instructed to conceal their identity, agents still leave useful behavioral evidence even as their declarations become uninformative.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "指纹识别",
+        "蜜罐",
+        "代理攻击",
+        "框架识别"
+      ],
+      "url": "https://arxiv.org/abs/2611.12386",
+      "pdf": "https://arxiv.org/pdf/2611.12386"
+    },
+    {
+      "id": "2026-2868",
+      "title": "Bulletproofs are Optimal: Lower Bounds for Vector Commitments from Fiat-Shamir in Pairing-Free Groups",
+      "authors": [
+        "Marian Dietz",
+        "Emanuele Giunta"
+      ],
+      "year": 2026,
+      "venue": "CRYPTO 2026",
+      "abstractOneWord": "不用大模型，在无配对素数阶群上证明向量承诺/Bulletproofs 类证明的长度下界，对象是零知识证明系统。",
+      "abstract": "向量承诺允许各方承诺一个有序向量，之后在任意位置做简洁打开。在明文（已知阶、无配对）素数阶群里，目前最好的构造都把广义 Pedersen 承诺和内积论证合在一起，包括 Bootle 等人（EUROCRYPT 2016）和 Bünz 等人（S&P 2018）以及后续改进。它们的证明都是对数个群元素，并具有可延展、子向量打开、透明建立等性质。但在明文离散对数设定里打破对数障碍一直很难。这与配对友好群或未知阶群形成对照，那些设定里承诺和打开都是常数大小的构造已超过十年。本文研究这一限制对基于素数阶群的构造是否本质。具体地，作者在 Maurer 通用群模型里，对交互式公共硬币成员证明的累加器（比向量承诺更弱，因而结果更一般）给出新下界。推论是：在该设定下至少发生其一：承诺超常数大小；打开证明含对数个群元素；打开证明长度接近线性。下界还延伸到直接蕴含累加器或向量承诺的原语，包括多项式/函数承诺和内积论证。",
+      "abstractEn": "Vector Commitments allow parties to commit to an (ordered) vector and to later succinctly open it at any desired position. In plain (i.e., known order and pairing-free) prime-order groups, all state-of-the-art constructions rely on the combination of a generalized Pedersen commitment and an inner product argument. This includes the celebrated constructions of Bootle et al. (EUROCRYPT 2016) and Bünz et al. (S&P 2018), and subsequent improvements. All of these achieve proofs consisting of logarithmic group elements, and further provide useful properties including malleability, subvector opening and transparent setup. However, breaking the logarithmic barrier in the plain discrete logarithm setting has proven to be a hard problem. This is in stark contrast with other settings, e.g. from pairing-friendly groups or groups of unknown order, where constructions with constant-size commitment and openings have been known for over a decade. In this work we investigate whether this limitation is inherent to constructions based on prime-order groups. Specifically we prove new lower bounds for any accumulator (a weaker object than vector commitments, thus making our result more general), with interactive public-coin membership proof in Maurer's Generic Group Model. An implication of our result is that in such setting at least one of the following must occur: (i) the commitment has super-constant size; (ii) the opening proof contains logarithmically many group elements; (iii) the opening proof has length nearly linear in the vector length. Our bound further extends to primitives that directly imply accumulators/vector commitments including polynomial/functional commitments and inner product arguments.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "Bulletproofs",
+        "向量承诺",
+        "零知识证明",
+        "下界"
+      ],
+      "url": "https://eprint.iacr.org/2026/2868",
+      "pdf": "https://eprint.iacr.org/2026/2868.pdf"
+    },
+    {
+      "id": "2026-2877",
+      "title": "Toward Efficient Post-Quantum Bitcoin Bridges",
+      "authors": [
+        "Stephen Duan",
+        "Vanhger Pham",
+        "Blake Hou",
+        "Ethan Zhu",
+        "Jingping Yin"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "不用大模型，把基于哈希的 STARK 验证器乱码化以便在比特币上做抗量子桥，对象是 BitVM 风格的比特币桥。",
+      "abstract": "BitVM 风格协议在链下把证明验证器乱码化，从而在比特币上验证简洁证明。争议时上链的是证明本身：一次性密钥下的比特、认证这些比特的脚本，以及把它们绑到交易上的签名。现有设计乱码椭圆曲线 SNARK 验证器，量子对手可以打破。本文目标是抗量子替代：基于哈希的 STARK 验证器，乱码后喂入基于哈希的一次性密钥，验证器全程不用数论假设；代价是证明大得多，本文测量并降低这笔链上数据。作者用自由异或器件把 Ziren 的基于 WHIR 的 STARK 证明完整验证器编译成布尔电路，覆盖二元塔算术和 Blake3。实现使用 Ziren 的二元域证明阶段和窄递归。对最终递归 WHIR 证明验证器，电路代价分析给出 2.180 亿个非自由门和 564552 个输入比特，对应 3.49 GB 乱码表。用翻译后的 Winternitz 密钥发布该输入的交易，一套密钥的总虚拟大小为 426 万虚拟字节。",
+      "abstractEn": "BitVM-style protocols verify succinct proofs on Bitcoin by garbling a proof verifier off-chain. What reaches the chain in a dispute is the proof itself: its bits under one-time keys, the scripts that authenticate them and the signatures that bind them to transactions. Existing designs garble elliptic-curve SNARK verifiers, which a quantum adversary breaks. Our goal is a post-quantum alternative: a hash-based STARK verifier, garbled and fed with hash-based one-time keys, with no number-theoretic assumption anywhere in the verifier; its price is a far larger proof, and this paper measures and reduces that on-chain data. We compile the complete verifier for WHIR-based STARK proofs from Ziren into a Boolean circuit using free-XOR gadgets for binary-tower arithmetic and Blake3. Our implementation uses Ziren's binary-field proof stage and narrow recursion. For the final recursive WHIR-proof verifier, our circuit-cost analysis gives 218.0M non-free gates and 564,552 input bits, corresponding to 3.49 GB of garbled tables. The transactions publishing that input with translated Winternitz keys have a total virtual size of 4.26 million virtual bytes (MvB) for one key set.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "比特币桥",
+        "STARK",
+        "抗量子",
+        "BitVM"
+      ],
+      "url": "https://eprint.iacr.org/2026/2877",
+      "pdf": "https://eprint.iacr.org/2026/2877.pdf"
+    }
+  ]
+}
