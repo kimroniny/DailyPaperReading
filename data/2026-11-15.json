@@ -1,0 +1,233 @@
+{
+  "date": "2026-11-15",
+  "papers": [
+    {
+      "id": "10.1145-3859370",
+      "title": "Generating Mitigations for Downstream Projects to Neutralize Upstream Library Vulnerability",
+      "authors": [
+        "Zirui Chen",
+        "Puhua Sun",
+        "Xing Hu",
+        "Xin Xia",
+        "Xiaohu Yang"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "在升不了依赖、也读不到库源码时，用大模型生成并验证下游项目的漏洞缓解补丁，对象是依赖第三方库的传统软件。",
+      "abstract": "第三方库能避免开发者重复实现已有功能，但库里的漏洞会连带到依赖它的项目。没有补丁版本、或下游项目锁死了版本时，升级依赖做不到；库源码不可得时，直接修漏洞也很难。现有的自动漏洞修复和自动程序修复都处理不了这种情况。因此，在既没有源码也没有可用补丁时，尽快给下游项目做缓解，才能挡住可能的攻击。已有工具在通用性和功能安全上都不理想。漏洞一公开，Lumen 先从公开渠道检索明确的变通做法，再按漏洞复现行为补上生成的策略，组成候选池。随后选出合适策略，自动收集该仓库的上下文，并自适应地生成经过验证的缓解补丁。作者在 94 个漏洞、474 个受影响函数上评估：成功缓解 393 个函数，成功率 82.91%，在基于利用的评估中明显优于改造后的基线。消融实验分别看了策略组合、策略选择和仓库级上下文收集的贡献。后续实验还表明，Lumen 能缓解基础模型知识截止日期之后才公开的漏洞。",
+      "abstractEn": "Third-party libraries are essential in software development as they prevent the need for developers to recreate existing functionalities. However, vulnerabilities within these libraries pose significant risks to dependent projects. Upgrading dependencies is infeasible when no patched version is available or when downstream projects have strict version constraints. Moreover, repairing the vulnerability proves challenging when the source code of the library is inaccessible. State-of-the-art automatic vulnerability repair and automatic program repair methods both fail to address this issue. Therefore, mitigating library vulnerabilities without access to source code or available patches is crucial for a swift response to potential security attacks. Existing tools encounter challenges concerning generalizability and functional security. Upon vulnerability disclosure, Lumen prepares a pool of candidate mitigation strategies by retrieving explicit workarounds from public sources and supplementing the pool with generated strategies based on vulnerability reproduction behavior. Lumen then selects a suitable strategy, autonomously gathers repository-specific context, and adaptively generates a validated mitigation patch. We evaluate Lumen on 474 impacted functions associated with 94 vulnerabilities. Lumen successfully mitigates 393 functions, achieving a success rate of 82.91%, which substantially outperforms the adapted baseline in blocking vulnerability reproduction under our exploit-based evaluation. Additionally, our ablation study evaluates the contributions of strategy composition, strategy selection, and repository-level context collection. Further evaluations show that Lumen can mitigate vulnerabilities disclosed after the knowledge cutoff of the base model.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞缓解",
+        "第三方库",
+        "下游补丁",
+        "大模型"
+      ],
+      "url": "https://doi.org/10.1145/3859370"
+    },
+    {
+      "id": "10.1109-tifs.2026.3753307",
+      "title": "Compile-Time Backdoor Neutralization via LLM-Guided Localized Edits",
+      "authors": [
+        "Minghui Li",
+        "Yang Li",
+        "Liming Fang"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "用大模型在编译器中间表示上做受限局部改写，清除编译阶段重新显形的后门，对象是 TVM 等深度学习编译器。",
+      "abstract": "TVM 这类深度学习编译器要把神经网络高效部署到多种硬件上，已经成了关键环节。近期工作指出一个严重问题：对手可以在训练时埋下后门，再靠编译把隐藏行为重新写进最终可执行文件。这类攻击利用保持语义的编译变换，把触发效果转到算子级产物上，既能做干净标签触发，也能躲开常规防护。已有办法多半靠规则改写或静态扰动，对编译期后门没有对准。本文提出 CBN：不重新训练，专门对付编译引入的后门。这类后门会在激活边界附近表现为局部数值偏移。CBN 在编译器中间表示上做局部改写，由运行时探针和大模型给出的、取自有限编辑词表的方案来引导。作者设计了约束大模型输出的合法性模式、执行有预算变换规则的校验器，以及用探针证据修复失败方案的反馈环。在 7 个 ONNX-Zoo 模型和 5 个商用大模型上，CBN 把 DCL-BD 的平均攻击成功率从 30.1% 降到 1.9%，每个被测模型都不超过 3%，主审计中干净标签不一致为 0，平均推理延迟开销 2.0%、最高 3.5%。在 ONNX Runtime 上的小规模试验把平均攻击成功率从 30.0% 降到 2.7%；StableHLO/XLA 原型实现了四类编辑中的三类，构建成功率为 97.8%，说明跨中间表示可行。",
+      "abstractEn": "Deep learning compilers such as TVM have become essential in deploying neural networks with high efficiency across diverse hardware. However, recent studies reveal a critical vulnerability: adversaries can embed backdoors during training and rely on compilation to re-materialize the hidden behavior in the final executable. Such attacks exploit semantics-preserving compiler transformations that transfer the trigger effect into operator-level artifacts, enabling clean-label triggers and evading conventional defenses. Existing solutions lack precise counter-measures against compile-time backdoors, primarily due to their reliance on rule-based rewrites or static perturbations. In this paper, we present CBN, a dedicated defense framework for compilation-induced backdoors whose effect is exposed as a localized numerical shift near an activation boundary, without retraining. CBN performs localized rewriting at the compiler-IR level, guided by runtime probes and LLM-proposed plans drawn from a finite edit vocabulary. We introduce a legality-aware schema that constrains LLM outputs, a validator that enforces budgeted transformation rules, and a feedback loop that repairs broken plans through probe-based evidence. Across seven ONNX-Zoo models and five commercial LLMs, CBN reduces mean DCL-BD attack success from 30.1% to 1.9%, keeps every evaluated model below 3%, produces zero clean-label mismatches in the principal defended-build audit, and incurs 2.0% mean and at most 3.5% inference-latency overhead. A small ONNX Runtime pilot reduces mean ASR from 30.0% to 2.7%, while a StableHLO/XLA prototype implements three of the four edit classes with 97.8% build success and provides cross-IR feasibility evidence.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编译器后门",
+        "TVM",
+        "局部改写",
+        "大模型"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3753307"
+    },
+    {
+      "id": "2611.15302",
+      "title": "Browser Immune System (BIS): Innate and Adaptive Threat Detection in the Browser with a Cybersecurity Transformer",
+      "authors": [
+        "Víctor Mayoral-Vilches",
+        "Eduardo Worrel"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用量化后的网络安全 Transformer 在浏览器里做页面威胁判定，对象是 Chrome/Firefox 上的网页，方法是本地大模型而不是云端扫描。",
+      "abstract": "关于网页的安全判断最好在页面所在的浏览器里做，数据还没离开本机。本文提出浏览器免疫系统 BIS：这是一个扩展，用完全跑在用户 GPU 上的网络安全 Transformer 筛导航；背后的模型叫 alias-web，从双机制网络安全 Transformer（CT0）出发，在公开的 alias3-micro 上加了上下文类别传感器，量化到 4 比特后编译成 2.44 GB 的 WebGPU 图，参数量 40 亿。alias-web 是该模型类型化决策模式（System 1）在浏览器里的首次落地，补齐了导出图里缺的标记 token 映射、完整指针头和最终归一化。它在笔记本 GPU 上大约 150 毫秒回答一个有类型的安全问题；同一套权重需要时能以每秒 10.5 个 token 生成解释。BIS 把模型当免疫系统：先天响应是每一页对每个威胁类问一次 System 1；适应性响应是 System 2 文本，只在用户追问时解释判定。在 BISBENCH-8 上（8 个合成站点，其中 6 个执行真实但无害的恶意行为，2 个是对抗对照），BIS 在 7/8 个站点给出预期的页面判定，两个对照都通过，类级 micro-F1 为 0.71，扫描一页要 0.9 到 6.4 秒，在抽样之间以及 Chrome 与 Firefox 上判定一致。单变量诊断把基准里的两处错误追到模型看到的内容；对 11 个真实公开页面的初扫显示，七个问题里有两个会在普通脚本和登录表上给出肯定，真实网上的特异性仍是未解决问题。作者报告了全部错误、从研究检查点做到可运行扩展之间的工程障碍，以及现有证据还支撑不了什么。",
+      "abstractEn": "Security decisions about a web page are best made where the page is: in the browser, before anything leaves the machine. We present the Browser Immune System (BIS), a browser extension that screens navigation with a cybersecurity transformer running entirely on the user's GPU, and alias-web, the model that powers it: a 4B-parameter model that starts from the dual-regime cybersecurity transformer (CT0), extends its public release alias3-micro with a context-category sensor, and is quantised to 4 bits and compiled to a 2.44 GB graph for WebGPU. alias-web is the first in-browser realisation of that model's typed decision mode, System 1, with its official pieces: the marker-token mapping, the complete pointer head and the final normalisation that the exported graph omits. It answers a typed security question in about 150 ms on a laptop GPU, and the same weights generate explanations at 10.5 tokens/s on demand. BIS treats the model as an immune system: an innate response, one System 1 question per threat class, runs on every page; an adaptive response, System 2 text, explains a verdict only when the user asks. On BISBENCH-8, eight synthetic sites of which six execute real but harmless malicious behaviour and two are adversarial controls, BIS returns the expected page verdict on 7/8 sites with both controls green and a class-level micro-F1 of 0.71, scans a page in 0.9 to 6.4 s, and gives identical verdicts across samples and across Chrome and Firefox. Single-variable diagnostics trace both benchmark errors to what the model was shown and, with a first pass over eleven real public pages, show that two of the seven questions answer yes on ordinary scripts and login forms: specificity on the real web is the open problem. We report every error, the engineering obstacles between a research checkpoint and a working extension, and what the evidence does not yet support.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "浏览器",
+        "威胁检测",
+        "Transformer",
+        "WebGPU"
+      ],
+      "url": "https://arxiv.org/abs/2611.15302",
+      "pdf": "https://arxiv.org/pdf/2611.15302"
+    },
+    {
+      "id": "2611.12155",
+      "title": "StealthyPoison: Manipulating LLM Agent Behavior through Procedural Poisoning of Third-Party Skills",
+      "authors": [
+        "Jingfen Qiao",
+        "Rui Li",
+        "Shuaiqun Pan",
+        "Olga Gadyatskaya",
+        "Andrew Yates",
+        "Evangelos Kanoulas"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "向第三方技能里注入隐蔽的决策规则，操纵大模型代理完成错误任务，对象是公开技能注册表和编程代理工作流。",
+      "abstract": "大模型代理越来越多从公开注册表拉取第三方技能，并按其步骤完成用户任务。这种依赖让攻击者可以通过污染技能来改代理行为。但明目张胆的恶意指令容易被检测抓住。本文提出 StealthyPoison：一种隐蔽的流程投毒，改掉技能里决定对错的规则，让任务结果出错，同时保住对外宣称的功能和正常执行外观。已有知识污染往往针对已知问答对来写毒内容；StealthyPoison 则从公开的第三方技能出发，构造可复用的有毒流程，不需要真实用户请求，也不需要标准答案。为了让有毒流程泛化到未见过的请求，它先从目标技能合成请求，再用代理代理跑干净版本，得到伪参考。这些参考和代理执行反馈用来迭代改写载荷，专门改决策关键规则。为了让有毒技能比良性替代更容易被检索选中，攻击还会用独立生成的请求描述去加强检索元数据。作者在 566 个合格目标技能、5244 条请求、超过 26000 条注册表条目上评估。相对 HotFlip 和 GCG，有毒技能进 top-1 提高了 13.6%。载荷只用一个代理模型的反馈来构造，原样迁移到三个留出的受害模型仍然有效，并在由 Opus 4.8 驱动的 Claude Code 工作流里打出端到端成功。防御评估还表明，这些载荷大多能躲开 SkillSpector 和 GPT-5.4-mini。",
+      "abstractEn": "LLM agents increasingly retrieve third-party skills from public registries and follow their procedures to complete user tasks. This reliance allows attackers to manipulate agent behavior by poisoning the skills. However, overtly malicious instructions can provide explicit signals for detection. We present StealthyPoison, a stealthy procedural poisoning attack that corrupts a skill's decision-critical rules to induce incorrect task outcomes while preserving its advertised functionality and normal execution. Unlike prior knowledge corruption attacks that craft poisoned content for known target question-answer pairs, StealthyPoison constructs reusable poisoned procedures from a publicly available third-party skill, without access to actual user requests or their ground-truth answers. To make the poisoned procedure generalize to unseen requests, it first synthesizes requests from the target skill and executes its clean version using a surrogate agent to obtain pseudo-references. These references and surrogate execution feedback guide the iterative refinement of payloads that alter decision-critical rules. To increase the likelihood that the poisoned skill is retrieved and selected over benign alternatives, the attack augments the poisoned skill's retrieval metadata with independently generated request descriptions. We evaluate StealthyPoison on 566 eligible target skills and 5,244 requests against more than 26,000 registry entries. It improves top-1 poisoned-skill placement by 13.6% relative to both HotFlip and GCG. Constructed using feedback from a single surrogate model, the procedural poisoning payloads transfer effectively and without modification to three held-out victim models and achieve end-to-end attack success in a Claude Code workflow powered by Opus 4.8. The defense evaluation further shows that most of these payloads evade detection by both SkillSpector and GPT-5.4-mini.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "技能投毒",
+        "代理安全",
+        "Claude Code",
+        "注册表"
+      ],
+      "url": "https://arxiv.org/abs/2611.12155",
+      "pdf": "https://arxiv.org/pdf/2611.12155"
+    },
+    {
+      "id": "2611.11539",
+      "title": "PRISM: Causal Counterfactual Minimization of Agent Tool Privileges via Information Bottleneck Role Induction",
+      "authors": [
+        "Yang Luo",
+        "Qingni Shen",
+        "Tairui Wang",
+        "Jiajun Li",
+        "Zhonghai Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用因果反事实和信息瓶颈给大模型代理划最小工具权限，对象是走 MCP 拿到全套工具的代理。",
+      "abstract": "角色工程的对象从人类用户转到大模型代理。代理经模型上下文协议（MCP）一次拿到全部工具权限，会出现过度授权。本文提出 PRISM。它把“某个工具对某任务是否必要”写成可干预的因果命题，在沙箱里做结构化干预，学一个反事实必要性模型。再用信息瓶颈把轨迹压成离散隐变量，按率失真曲线的拐点决定角色个数。最后把裁剪写成双层 Stackelberg 博弈，由生成流网络抽样一批接近最优的方案。在 AgentDojo、τ-bench 和 ToolEmu 三个公开基准上，PRISM 把每个角色授权的工具数压缩了 78.3%，任务成功率为 78.2%，反事实必要性准确率为 88.7%，爆炸半径降到 15.9%。",
+      "abstractEn": "This paper shifts the object of role engineering from human users to large language model (LLM) agents, and proposes PRISM to address the over-authorization that arises when an agent obtains full tool privileges through the Model Context Protocol (MCP). PRISM formulates whether a tool is necessary for a task as an intervenable causal proposition, and applies structured interventions in a sandbox to learn a counterfactual necessity model. It then compresses trajectories into discrete latent variables through an information bottleneck, and determines the number of roles from the knee of the rate-distortion curve. Finally, it formalizes pruning as a bilevel Stackelberg game, in which a generative flow network samples diverse near-optimal solutions. On three public benchmarks, AgentDojo, τ-bench and ToolEmu, PRISM compresses the number of authorized tools per role by 78.3%, attains a task success rate of 78.2%, reaches a counterfactual necessity accuracy of 88.7%, and lowers the blast radius to 15.9%.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "MCP",
+        "最小权限",
+        "工具授权",
+        "代理"
+      ],
+      "url": "https://arxiv.org/abs/2611.11539",
+      "pdf": "https://arxiv.org/pdf/2611.11539"
+    },
+    {
+      "id": "2611.11305",
+      "title": "Least-Privilege Auditing of Agent Tool Calls with Intent Graphs and Reasoning-Guided Escalation",
+      "authors": [
+        "Doron Shavit"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用意图图和大模型推理升级，审计代理的工具调用是否超出用户目标，对象是会调工具的大模型代理。",
+      "abstract": "会调用工具的大模型代理面临间接提示注入：藏在工具输出里的指令，可能让代理去调用户从没要求的接口。本文给出一种运行时审计：每个任务用一次大模型调用，从用户目标和部署侧工具目录导出可执行的意图图，再用完全确定性、不再调用大模型的循环核对每一次工具调用（中位耗时 5.7 微秒）。另外两处机制用来保住可用性。查用户自己状态的调用可以绕过审计，因为攻击的危害出在写入或外发那一步。仍被标出的调用交给推理守卫升级，思路接近 START 这类工具集成推理模型：守卫只看到目标、计划、不含工具输出的调用历史，以及被标出的那次调用，并可用受限的 Python 表达式工具核对事实。当前一个代理在基线上没有攻击成功，端到端验证仍未完成。",
+      "abstractEn": "LLM agents that call tools are exposed to indirect prompt injection: instructions hidden in tool outputs can steer an agent into calls the user never asked for. We present a runtime audit that derives an executable intent graph from the user's objective and the deployment's tool catalog with one LLM call per task, and checks every tool call against it with a deterministic loop that makes no LLM call (median 5.7 microseconds per call). Two further mechanisms recover utility. Lookups of the user's own state bypass the audit, because the harm of an attack lies in its write or outward step. The calls that remain flagged are escalated to a reasoning guardian, in the spirit of tool-integrated reasoning models such as START: a reasoning model that sees only the objective, the plan, the call history without tool outputs, and the flagged call, and can verify facts with a restricted Python-expression tool. A current agent showed no baseline attack success, so end-to-end validation remains open.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "工具调用",
+        "意图图",
+        "最小权限",
+        "提示注入"
+      ],
+      "url": "https://arxiv.org/abs/2611.11305",
+      "pdf": "https://arxiv.org/pdf/2611.11305"
+    },
+    {
+      "id": "2611.16311",
+      "title": "What Does It Cost to Force-Close a Lightning Channel? Evidence from 974,000 Channel Closes, 2018-2026",
+      "authors": [
+        "Saurabh Kumar"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用链上近百万次通道关闭度量闪电网络强制关闭的手续费和超时风险，对象是 Bitcoin Lightning，无大模型。",
+      "abstract": "比特币闪电支付网络里，不能协商关闭的通道要把资金退回链上，靠预先签好的交易，手续费和等待落在运营商头上。这套手续费设计正在被换掉：Bitcoin Core 31.0 去掉了锚点通道依赖的内存池规则，闪电规范在 2026 年 5 月改成零手续费承诺。旧设计在不同手续费环境下到底花多少钱，一直没有跨时期的度量。作者追踪 2018 年 1 月到 2026 年 10 月每一笔公开通道关闭和每一次强制关闭，共 973581 次，并跟到每个输出被花费。另一套链上索引核验了能对上的 698476 次公开关闭。手续费暴涨并没有带来强制关闭潮。暴涨当周及随后一周的强制关闭，是前四周的 0.97 倍；普通周之后这个比值是 1.02。强制关闭的手续费是协商关闭的 2 到 6 倍，还会把关闭方余额锁几天，只有在低手续费年份才划得来。手续费高时，未完成支付会暴露：2023 年有 18.2% 的 HTLC 超时交易在到期 40 个块之后才确认。但 2021 年以来转发节点只丢了 38 笔支付，而且每笔的原像已经在链上。锚点输出在手续费暴涨时减少了迟到超时（20.6% 对 30.5%），可是通道所有者很少用它去追加承诺费，第三方扫到的大部分被矿工拿走。零手续费承诺只能省下锚点机制 12% 的区块空间；该不该上，应看手续费暴涨时支付能不能尽快了结。",
+      "abstractEn": "Bitcoin's Lightning payment network returns the funds of a channel that cannot close cooperatively through pre-signed transactions whose fees and delays fall on its operators. That fee design is being replaced: Bitcoin Core 31.0 removed the mempool rule anchor channels relied on, and the Lightning specification adopted zero-fee commitments in May 2026. What the old design costs has never been measured across fee regimes. We trace every public channel close and every force close on-chain from January 2018 to October 2026, 973,581 closes, and follow each output to its spend. A separate chain index confirms all 698,476 public closes we could compare. Fee spikes did not bring a wave of force closes. Force closes in a spike week and the next were 0.97 times the four weeks before, against 1.02 after ordinary weeks of the same years. A force close costs 2-6 times a cooperative close in fees and locks the closer's balance for days, which outweighs the fees only in low-fee years. When fees are high, pending payments are exposed: in 2023, 18.2% of HTLC timeouts confirmed more than 40 blocks after expiry. Yet since 2021, forwarding nodes lost only 38 payments, each with the preimage already on-chain. Anchor outputs cut late timeouts in fee spikes (20.6% against 30.5%), yet owners rarely bump commitments with them, and miners take most of what third parties sweep. Zero-fee commitments would save only 12% of the anchor mechanism's block space; they should be judged by how promptly payments resolve when fees spike.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "闪电网络",
+        "强制关闭",
+        "HTLC",
+        "手续费"
+      ],
+      "url": "https://arxiv.org/abs/2611.16311",
+      "pdf": "https://arxiv.org/pdf/2611.16311"
+    },
+    {
+      "id": "2026-2863",
+      "title": "Affine Combiners for Reed-Solomon Proximity Gaps",
+      "authors": [
+        "Alessandro Chiesa",
+        "Guy Weissenberg",
+        "Eylon Yogev",
+        "Kai Zhe Zheng"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用仿射组合器收紧 Reed-Solomon 接近性间隙的可靠性界，对象是 STARK 等证明系统里的低度测试，无大模型。",
+      "abstract": "Reed-Solomon 接近性间隙给“用随机组合来测接收字”的协议提供可靠性保证。对有限域 F_q 上长度为 n 的码，经典标量组合器在唯一译码区间里误差是 O(n/q)，靠近 Johnson 半径时已知界更大。本文用仿射组合器得到更小的误差界：把两个接收字 f、g 合成 f(x)+(α+βx)g(x)，其中 α、β 是 F_q 上独立均匀元素。在输出次数界 d=ρn、固定 ρ∈(0,1) 且 0<η<1-√ρ、码长 n 足够大时，作者证明互相关一致（MCA）在阈值 A=⌈(√ρ+η)n⌉ 处允许丢掉一个坐标，误差为 O_{ρ,η}(1/q + n²/q²)。结果对任意有限域上的任意求值点集成立，包括素域和二元扩域。一致阈值可以靠近 Johnson 阈值，超出唯一译码。当 q≥n² 时，误差是 O_{ρ,η}(1/q)，与标量组合器差一个渐近因子 n：作者证明在同一一致阈值、同样丢掉一个坐标时，标量组合器最坏 MCA 误差是 Ω_{ρ,η}(n/q)。若不允许丢掉坐标，仿射组合器最坏误差也是 Ω_{ρ,η}(n/q)。因此要保住本文的保证，必须允许丢掉一个坐标；相对标准 MCA，这个放松最多让保证的公共一致比例少 1/n。作者还把结果扩到子域网格上的 k 元 Reed-Muller 码：固定 ρ、η、k，n 足够大且 q≥n^{k+1} 时，MCA 误差为 O_{ρ,η,k}(q^{-k})，丢掉的坐标数为 n^{1-1/k}。",
+      "abstractEn": "Reed-Solomon proximity gaps establish soundness guarantees for protocols that test received words through random combinations. For length-n codes over F_q, classical scalar combiners achieve error O(n/q) in the unique-decoding regime, with larger known bounds near the Johnson radius. We prove smaller error bounds using affine combiners, which combine two received words f,g as f(x)+(α+βx)g(x), where α,β are independent uniform elements of F_q. For output degree bound d=ρn, fixed ρ∈(0,1) and 0<η<1-√ρ, and sufficiently large block length n, we prove mutual correlated agreement (MCA) with one coordinate of agreement loss at threshold A=⌈(√ρ+η)n⌉, with error O_{ρ,η}(1/q + n²/q²). The result holds over arbitrary evaluation domains in every finite field, including prime and binary extension fields. The agreement threshold can approach the Johnson threshold, beyond unique decoding. For q≥n², our error is O_{ρ,η}(1/q), an asymptotic factor-n separation from scalar combiners: we prove that their worst-case MCA error is Ω_{ρ,η}(n/q) at the same agreement threshold and with the same one-coordinate loss. We also prove that affine combiners incur worst-case error Ω_{ρ,η}(n/q) when no agreement loss is allowed. Thus one coordinate of agreement loss is necessary for our guarantee; this relaxation of standard MCA reduces the guaranteed common agreement fraction by at most 1/n. We also extend the result to k-variate Reed-Muller codes on subfield grids, obtaining MCA error O_{ρ,η,k}(q^{-k}) for fixed ρ,η,k, sufficiently large n, and q≥n^{k+1}, with agreement loss n^{1-1/k}.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "接近性间隙",
+        "Reed-Solomon",
+        "STARK",
+        "可靠性"
+      ],
+      "url": "https://eprint.iacr.org/2026/2863",
+      "pdf": "https://eprint.iacr.org/2026/2863.pdf"
+    },
+    {
+      "id": "2026-2870",
+      "title": "BMRaccoon: Blind Multi-Signatures from Lattices",
+      "authors": [
+        "Keerthi Aiswarya Varshini",
+        "Kanchan Bisht",
+        "Palkesh Jain",
+        "Maria Francis",
+        "R. Kabaleeshwaran"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出格上抗量子的盲多签名，供多方一起签发紧凑匿名令牌，对象是去中心化签发和钱包式多签，无大模型。",
+      "abstract": "盲多签名允许用户在多个签名人共同参与下，对一条隐藏消息得到紧凑签名，可用来去中心化地签发匿名令牌。本文提出 BMRaccoon：据作者所知是第一个基于格的抗量子盲多签名，两轮签名协议在并发会话下可证安全，签名在语法上与 Raccoon 兼容，验证密钥是各签名人验证密钥之和。作为构件，作者给出第一个基于 Raccoon 的多签名 MRaccoon，并在随机预言机和知晓密钥（KOSK）模型下，基于代数 one-more MISIS（AOM-MISIS）和 MSIS 假设证明强不可伪造。模块化安全分析把 BMRaccoon 的 one-more 不可伪造直线归约到 MRaccoon 的强不可伪造，把用户的盲化贡献建模成验证密钥为零的辅助签名人。作者还证明了对恶意共谋签名人的盲性。在最多 2^32 次签名会话、32 个签名人的具体实例中，签名大约 67 KB，验证密钥大约 15 KB。",
+      "abstractEn": "Blind multi-signatures (BMS) allow a user to obtain a compact signature on a hidden message through the joint participation of multiple signers, providing a basis for decentralized issuance of anonymous tokens. We present BMRaccoon, the first lattice-based post-quantum BMS construction, with a two-round signing protocol secure under concurrent sessions and signatures syntactically compatible with Raccoon under the sum of the signers' verification keys. As a building block, we introduce MRaccoon, the first Raccoon-based multi-signature and prove its strong unforgeability under the Algebraic One-More MISIS (AOM-MISIS) and MSIS assumptions in the random oracle and knowledge-of-secret-key (KOSK) model. Our modular security analysis establishes one-more unforgeability of BMRaccoon via a straight-line reduction to the strong unforgeability of MRaccoon, modelling the user's blinding contribution as an auxiliary signer with a zero verification key. We additionally prove blindness against malicious, colluding signers. For up to q_s = 2^{32} signing sessions and n = 32 signers, our concrete instantiation yields signatures of approximately 67 KB and verification keys of approximately 15 KB.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "盲多签名",
+        "格密码",
+        "抗量子",
+        "匿名令牌"
+      ],
+      "url": "https://eprint.iacr.org/2026/2870",
+      "pdf": "https://eprint.iacr.org/2026/2870.pdf"
+    }
+  ]
+}
