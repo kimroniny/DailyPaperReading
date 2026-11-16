@@ -1,0 +1,326 @@
+{
+  "date": "2026-11-16",
+  "papers": [
+    {
+      "id": "10.1109-tdsc.2026.3753398",
+      "title": "ASSET: Adaptor Signatures with Secret Extractability",
+      "authors": [
+        "Yiwen Shi",
+        "Jianghong Wei",
+        "Jin Li",
+        "Zheli Liu",
+        "Fuchun Guo",
+        "Willy Susilo",
+        "Xiaofeng Chen"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "提出只有签名者能从适配器预签名和完整签名里抽出秘密见证的 Schnorr 构造，对象是无可信第三方的公平交换，无大模型。",
+      "abstract": "适配器签名让签名者用一个命题 Y 生成预签名，任何人拿着合法见证 y 就能恢复完整签名，签名者也可以从预签名和完整签名里抽出见证。它适合无可信第三方的公平签名交换。但原定义是公开可抽取：谁都能从这两份签名里抽出见证。因此不适合公平数据交换——那种场合见证 y 本身就是密钥。为克服这一点，本文先定义新原语 ASSET（带秘密可抽取性的适配器签名），保证只有签名者能从两份签名里抽出见证。随后给出基于 Schnorr 的具体构造。该设计在标准假设下达到更强安全性质，预签名长度与已有基于 Schnorr 的适配器签名相同。作者做了理论分析和实现评测。",
+      "abstractEn": "Adaptor signatures allow signers to generate pre-signatures using a statement Y, and anyone with a valid witness y can recover the full signature, while the signer can extract the witness from the pre-signature and full signature. Adaptor signatures are a promising primitive for fair exchange of signatures without a trusted third party. However, this notion was defined with public extractability, under which anyone can extract the witness from the two signatures. Therefore, it is not suitable for fair data exchange where the witness y serves as a secret key. To overcome this limitation, we first introduce a new primitive named Adaptor Signatures with Secret Extractability (ASSET), which ensures that only the signer can extract the witness from the two signatures. Furthermore, we propose a concrete ASSET construction based on the Schnorr signature scheme. Our design achieves a strong security property under standard assumptions, while maintaining the same pre-signature size as existing Schnorr-based adaptor signatures. To demonstrate its practicality, we provide a theoretical analysis and an implementation evaluation.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "适配器签名",
+        "Schnorr",
+        "公平交换",
+        "秘密抽取"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3753398"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3752634",
+      "title": "Trustworthy Traffic Analysis via Large Language Models",
+      "authors": [
+        "Yan Qiao",
+        "Junjie Wang",
+        "Shuangshuang Ding",
+        "Fenglin Yan",
+        "Kaiwen Jiang",
+        "Zhenchun Wei",
+        "Kun Xie"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用多参数自回归大模型做流量矩阵补全、预测和异常检测，对象是受监管、不能直接共享原始数据的运营商网络。",
+      "abstract": "流量矩阵对网络管理很重要，但它的分散流转受监管和数据主权约束，原始数据很难共享，缺失也很多。已有基于学习的流量矩阵恢复方法不够可信：要么单阶段生成、泛化差，要么跨尺度参数互相干扰、忽略多尺度特征。为了给安全合规的数据流转打基础，本文提出 MPA-LLM：基于多参数自回归大模型的可信流量分析与重建框架。它借鉴由粗到细的认知过程，用大模型按步自回归地细化流量矩阵，并用解耦的分辨率重建去掉参数干扰，使多方协作下的恢复过程更透明、可审计。动态按需机制在统一多任务框架里同时支持高精度补全、预测和异常检测。实验显示 MPA-LLM 在多项流量矩阵分析任务上明显优于已有方法；即使只给 5%–10% 的快照、甚至在未见过的网络上没有任何先验，表现仍然稳定。可复现实验代码已公开。",
+      "abstractEn": "The Traffic Matrix (TM) is vital for network management; however, its decentralized circulation faces strict regulatory and data sovereignty constraints, restricting raw data sharing and causing massive data missingness. Existing learning based TM recovery methods lack trustworthiness: they either adopt a single-stage generation paradigm that lacks generalization ability, or suffer from cross-scale parameter interference and ignore multi-scale features. To build a secure and compliant data circulation infrastructure, we propose MPA-LLM, a trustworthy traffic analysis and reconstruction framework based on a Multi Parameterized Autoregressive Large Language Model. Inspired by the coarse-to-fine human cognitive process, MPA-LLM deploys LLMs to incrementally refine the TM through a step-wise autoregressive mechanism. It also employs a decoupled resolution reconstruction framework to eliminate parameter interference, rendering TM recovery highly transparent, auditable, and reliable for multi-party collaboration. Furthermore, a dynamic on demand mechanism maintains a unified multi-task framework and simultaneously supports high-precision TM imputation, forecasting, and anomaly detection tasks. Extensive experiments show that MPA-LLM significantly outperforms state-of-the-art methods on multiple TM analysis tasks. Furthermore, it maintains strong performance whether given only limited TM knowledge (e.g., 5%–10% TM snapshots) or no prior knowledge at all on unseen networks. The reproducible experimental code is available at https://github.com/Labman-Wangjunjie/MPA-LLM.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "流量矩阵",
+        "异常检测",
+        "大模型",
+        "网络管理"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3752634"
+    },
+    {
+      "id": "10.1016-j.cose.2026.105237",
+      "title": "SEAL: An integral methodology for evaluating the security of agentic LLMs",
+      "authors": [
+        "I. Gosálvez-White",
+        "P. García-Teodoro",
+        "R. Magán-Carrion"
+      ],
+      "year": 2026,
+      "venue": "Computers & Security",
+      "abstractOneWord": "给出带工具调用的智能体大模型安全评测方法，用自动化红队和结构化基准测机密性、完整性和可用性，对象是 agentic LLM。",
+      "abstract": "把大模型当成智能体系统来用，会带来超出传统提示交互的安全风险。本文提出 SEAL：一套生成对抗评测数据、并给带工具调用能力的大模型做安全基准测试的完整方法。它把 PyRIT 的自动化红队（生成对抗提示）和 Promptfoo 的结构化基准结合在一起，在受控的推理时设置下评测，不需要改训练过程，也不依赖外部护栏。评测覆盖三种对抗策略，分别对应机密性、完整性和可用性：直接工具注入、系统提示外泄，以及带语义拒绝服务效果的间接提示注入。作者还评估了按层加硬系统提示的语义纵深防御。实验表明 SEAL 适合做智能体大模型的内在安全评测。若干商业模型和较大开源模型在部分维度上更稳，但这一规律并不覆盖所有模型和攻击策略。更一致的发现是：鲁棒性和运行可用性之间存在明显权衡。",
+      "abstractEn": "The adoption of large language models (LLMs) as agentic systems introduces security risks that extend beyond traditional prompt-based interactions. This paper presents SEAL, an integral methodology for generating adversarial evaluation datasets and benchmarking the security of LLMs with tool-calling capabilities. Our methodology integrates automated red teaming through PyRIT for adversarial prompt generation and Promptfoo for structured benchmarking under controlled inference-time settings, without requiring training-time modifications or external guardrails, providing a unified evaluation workflow. The evaluation covers three adversarial strategies intended to measure confidentiality, integrity, and availability: direct tool injection, system prompt exfiltration, and indirect prompt injection with semantic denial-of-service (SDoS) effects. We further assess a semantic defense-in-depth strategy based on progressively hardened system prompts. Through extensive experimentation, we demonstrate the effectiveness of SEAL for intrinsic security evaluation of agentic LLMs. Across the evaluated models, several commercial and larger open-source systems tend to exhibit greater security stability in specific dimensions, although this pattern is not uniform across all evaluated models and attack strategies. A more consistent finding is a critical trade-off between robustness and operational availability.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能体安全",
+        "工具调用",
+        "红队评测",
+        "大模型"
+      ],
+      "url": "https://doi.org/10.1016/j.cose.2026.105237"
+    },
+    {
+      "id": "2611.18293",
+      "title": "PrivacyPR: A Dataset of Real-World Privacy Fixes for Benchmarking Privacy-Aware Code Review",
+      "authors": [
+        "Hua Yang",
+        "Aditya Bhardwaj",
+        "Shidong Pan",
+        "Bowen Xu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用真实 GitHub 隐私修复拉取请求评测编程智能体能不能抓住隐私缺陷，对象是传统软件仓库。",
+      "abstract": "编程智能体越来越多地做代码审查，但它们能不能抓住 GDPR 这类法规要求软件避开的隐私缺陷，目前几乎没有系统评测。一个原因是：很少有数据集把真实隐私缺陷、已被接受的修复和审查上下文连在一起。本文提出 PrivacyPR：来自 1469 个仓库、4131 条已合并 GitHub 拉取请求的数据集，时间跨度是 2018 年 6 月到 2024 年 1 月。每条记录包含提交、diff、审查讨论，以及大模型生成的隐私相关性、修复类型和 GDPR 原则标签。数据集提供 1169 条高置信隐私修复和 1643 条非修复拉取请求；Verified 是人工核对的 250+250 划分，Small 是 100+100 的评测子集。在 Verified 上，两位标注者认可了大模型 72% 的 GDPR 原则标注。评测框架会把修复回退，重新引入缺陷。在 Small 上，两个编程智能体在通用审查提示下只检出 42%–51% 的缺陷；明确要求检查隐私时升到 88%–91%，同时把 11%–15% 的非修复拉取请求标成有问题。说明编程智能体能检出隐私缺陷，但效果高度依赖审查意图，并且会误报。数据、代码和评测框架已公开。",
+      "abstractEn": "Coding agents increasingly review code, yet whether they catch the privacy defects that laws such as the GDPR require software to avoid remains largely untested, partly because few datasets connect real privacy defects to their accepted fixes and review context. We present PrivacyPR, a dataset of 4,131 merged GitHub pull requests (PRs) from 1,469 repositories, created between June 2018 and January 2024. Each PR includes its commits, diffs, review discussion, and LLM-generated labels for privacy relevance, fix type, and GDPR principles. PrivacyPR provides 1,169 high-confidence privacy fixes and 1,643 non-fix PRs, together with Verified, a manually checked split of 250 privacy fixes and 250 non-fix PRs, and Small, a 100 + 100 subset for evaluation. On Verified, both annotators endorsed 72% of the LLM's GDPR-principle assignments. Beyond supporting empirical study of how privacy defects arise and are fixed, PrivacyPR provides a benchmark for privacy-aware code review on real, developer-accepted fixes. Its evaluation harness reverts each fix to reintroduce the defect. On Small, two coding agents detect only 42-51% of defects under a generic review prompt, but 88-91% when explicitly asked to check privacy, while flagging 11-15% of non-fix PRs. These results show that privacy defects can be detected by coding agents, but that detection depends strongly on review intent and comes with false alarms. Data, code, reviews, judge verdicts, and an extensible evaluation harness are publicly available at https://doi.org/10.5281/zenodo.23744765.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "隐私缺陷",
+        "代码审查",
+        "编程智能体",
+        "GitHub"
+      ],
+      "url": "https://arxiv.org/abs/2611.18293",
+      "pdf": "https://arxiv.org/pdf/2611.18293"
+    },
+    {
+      "id": "2611.18036",
+      "title": "C-to-Rust Translation Validation at the LLVM IR Level via AI-Assisted Refinement Proof",
+      "authors": [
+        "Eunsu Kim",
+        "Sukyoung Ryu",
+        "Jaemin Hong"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用智能体自动生成 Rocq 精化证明，在 LLVM IR 上验证 C 到 Rust 的翻译，对象是遗留 C 程序。",
+      "abstract": "把 C 代码迁到 Rust 有助于加固遗留软件，但现有翻译器不能保证 Rust 程序保持 C 程序的行为。基于规则的翻译器和基于大模型的翻译器都没有形式化验证；已有正确性检查多半是测试或有界检查，覆盖不了所有执行。本文提出 R2C2：在 Rocq 里证明 Rust 程序是 C 程序的精化，即 Rust 侧的每一种行为在 C 侧也都存在。两边没有同一套形式语义，因此作者对编译到 LLVM 中间表示后的两个程序证明精化。为处理 C 和 Rust 数据表示的差异，他们引入通过抽象值关联两边表示的公共抽象，并在抽象值上规定库函数行为。精化证明做成一串精化关系：只有一条与具体程序有关、在验证时证明，其余对所有程序预先证明。证明构造由智能体自动完成；Rocq 负责检查，因此不必信任这些智能体。作者在先前 C-to-Rust 翻译验证基准里的 519 个由大模型翻译的 C 程序上评测：R2C2 不限制执行次数就证明了 486 个翻译正确，并发现 3 个错误翻译，给出了已有翻译验证工具找不到的反例。作者还在一个小型真实图像压缩库上做了案例研究，展示如何处理文件操作。",
+      "abstractEn": "Migrating C codebases to Rust is a promising approach to securing legacy software, but existing translators do not guarantee that a translated Rust program preserves the behavior of the C program. Neither rule-based nor large language model (LLM)-based translators have been formally verified, and existing approaches to checking translation correctness are limited to testing and bounded checks, which cannot reason about all possible executions. In this work, we present R2C2, which validates C-to-Rust translation by proving in Rocq that the Rust program refines the C program, i.e., every behavior on the Rust side is also a behavior on the C side. Since no formal semantics defines the behaviors of C and Rust programs in the same terms, we prove refinement between the two programs compiled to the LLVM intermediate representation (LLVM IR). In addition, to resolve the discrepancies between the data representations of C and Rust, we introduce a common abstraction that relates two corresponding representations through an abstract value, and specify the behavior of each library function over abstract values. We construct the refinement proof as a chain of refinement relations, where only one relation is program-specific and proved at validation time, while the others are proved for all programs in advance. Proof construction is automated by AI agents, and since Rocq checks the proofs, the agents need not be trusted. We evaluate R2C2 on LLM translations of 519 C programs drawn from a benchmark suite used in prior work on C-to-Rust translation validation. R2C2 proves the translations of 486 programs correct without bounding their executions and discovers three incorrect translations, providing valid counterexamples that existing translation validation tools cannot find. We also conduct a case study on a small real-world image compression library and demonstrate how R2C2 can handle file operations.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C到Rust",
+        "翻译验证",
+        "形式化证明",
+        "智能体"
+      ],
+      "url": "https://arxiv.org/abs/2611.18036",
+      "pdf": "https://arxiv.org/pdf/2611.18036"
+    },
+    {
+      "id": "2611.17534",
+      "title": "I2C-GRPO: Insight Importance Checklist for Reinforcement Learning in a Multi-Agent DDoS Alert Triage Workflow",
+      "authors": [
+        "Eyal Zloof",
+        "Shaun Shuster",
+        "Aviram Zilberman",
+        "Chen Frydman",
+        "Inderjeet Singh",
+        "Andrés Murilo",
+        "Asaf Shabtai",
+        "Yuval Elovici",
+        "Rami Puzis"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用专家大模型清单给中间调查步骤打奖励，训练多智能体做 DDoS 告警研判，对象是网络安全告警工作流。",
+      "abstract": "大模型智能体越来越多地用于证据不完整的调查任务，例如安全告警研判。但这类任务很难做强化学习：中间步骤没有可核验标签，完整推演成本高，结果奖励又稀疏。本文提出 I2C-GRPO：给中间调查步骤用的清单式奖励。每个决策点上，一组专家大模型提出调查动作，抽出原子取证要点，再由另一个三模型排序组按重要性排序。奖励模型检查候选动作覆盖了哪些已排序要点，并按共识加权打分。动作不必真正执行就能打分，因此奖励是预期调查价值的代理；训练退化成在固定调查前缀上的一步上下文赌博机。从软计算角度看，该奖励是加性模糊测度，排序指数权重相当于有序加权平均算子。作者在固定的多智能体 DDoS 告警研判工作流里训练开源 Qwen3-4B 研判智能体，训练数据是 DARPA 2000 LLDOS 1.0，测试数据是独立的 CSE-CIC-IDS2018 DDoS 流量。三个训练种子上平均 F1 为 0.869，比均匀要点权重和 DIVA 分别高 5.9 和 9.7 个百分点，误报率 4.9%，而 GPT-5-mini 为 16.4%。结论仅限于 DDoS 告警研判；代码和数据将公开。",
+      "abstractEn": "Large language model (LLM) agents are increasingly used for investigative tasks over incomplete evidence, such as cybersecurity alert triage, but reinforcement learning (RL) for such tasks is difficult: intermediate steps have no verifiable labels, rollouts are costly, and outcome rewards are sparse. We propose Insight Importance Checklist (I2C)-GRPO, a checklist reward for intermediate investigation steps. For each decision point, a panel of expert LLMs proposes investigative actions, their atomic forensic insights are extracted, and a separate three-model ranker panel orders the insights by importance. A reward model checks which ranked insights a candidate action targets and returns their consensus-weighted coverage. Because actions are scored without being executed, the reward is a proxy for expected investigative value, and training reduces to a one-step contextual bandit over fixed investigation prefixes. From a soft-computing perspective, the reward is an additive fuzzy measure whose rank-exponent weights act as an ordered weighted averaging (OWA)-type operator; one exponent sets its orness, i.e., how strongly the reward concentrates on the top of the judges' consensus. We train an open-weight Qwen3-4B Triage Agent within a fixed multi-agent Distributed Denial of Service (DDoS) alert-triage workflow on DARPA 2000 LLDOS 1.0 and test it on an independent CSE-CIC-IDS2018 DDoS trace. Across three training seeds, the agent reaches a mean F1-score of 0.869, 5.9 and 9.7 points above uniform insight weights and DIVA, and a false-positive rate of 4.9% versus 16.4% for GPT-5-mini. Within the weighting family, false positives fall only at the highest-orness weighting evaluated. All claims are limited to DDoS alert triage; the code, task contexts, and ranked insight dataset will be released.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "告警研判",
+        "DDoS",
+        "多智能体",
+        "强化学习"
+      ],
+      "url": "https://arxiv.org/abs/2611.17534",
+      "pdf": "https://arxiv.org/pdf/2611.17534"
+    },
+    {
+      "id": "2611.11971",
+      "title": "Harness Matters: Measuring and Dissecting Security Resilience in Web Agents",
+      "authors": [
+        "Xinyi Wu",
+        "Jiagui Chen",
+        "JiaYi Dong",
+        "Geng Hong",
+        "Xudong Pan",
+        "Jiarun Dai",
+        "Mingxuan Liu",
+        "Min Yang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "量化网页智能体执行框架对安全结果的影响，对象是浏览器里的 Web Agent 执行层。",
+      "abstract": "网页智能体把大模型从文本生成扩展到真实网页交互，依赖执行框架去理解用户目标、感知页面、规划动作，并把模型决定落到浏览器操作上。已有工作认识到智能体安全不只取决于后端模型，但执行框架如何定量影响网页智能体安全，测量仍然不够。作者把网页智能体执行框架抽象成四阶段工作流：目标理解、页面感知、推理规划、动作执行。基于该抽象，他们构建可扩展评测框架 WebTrap Farm，覆盖三类攻击：恶意用户提示、恶意提示注入、欺骗性网页设计。为避免把安全性和任务能力混在一起，他们用成对的可用性校准任务，把真正的防御行为和能力不足分开。评测显示现有网页智能体执行框架仍容易被典型攻击打中，有些不安全行为在没有明确攻击内容时也会出现，说明框架自身就有安全失败。统计分析进一步表明，执行框架和后端模型都会显著影响安全结果。作者还定位了防御行为出现在工作流的哪一阶段，并指出更安全的设计机制。结论是：网页智能体执行框架是重要安全边界，防御不能只盯模型。",
+      "abstractEn": "Web agents extend LLMs from text generation to real-world web interaction by relying on execution harnesses that interpret user goals, perceive webpages, plan actions, and ground model decisions into browser operations. While prior work has recognized that agent security depends on more than the backend model alone, how harness design quantitatively shapes web-agent security remains insufficiently measured. To systematically study web-agent harness security, we first characterize web-agent harnesses as a four-stage execution workflow covering goal interpretation, webpage perception, reasoning and planning, and action execution. Based on this abstraction, we build WebTrap Farm, a systematic and extensible evaluation framework covering three representative attack categories: malicious user prompts, malicious prompt injection, and deceptive web design. To avoid conflating security with task capability, we use paired usability calibration tasks to separate genuine defensive behavior from capability limitations. Our evaluation shows that existing web-agent harnesses remain vulnerable to typical attacks, with some unsafe behaviors occurring even without explicit attack content, revealing harness-intrinsic security failures (RQ1). Statistical analysis further shows that both harness and backend model significantly affect security outcomes, indicating that deployed-agent security is jointly shaped by the harness and backend model (RQ2). Finally, we localize where defensive behavior emerges across workflow stages and identify more secure design mechanisms, providing actionable guidance for building more robust web agents (RQ3). These findings highlight the web-agent harness as an important security boundary and motivate moving beyond model-centric defenses toward harness-level security design.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "网页智能体",
+        "执行框架",
+        "提示注入",
+        "浏览器"
+      ],
+      "url": "https://arxiv.org/abs/2611.11971",
+      "pdf": "https://arxiv.org/pdf/2611.11971"
+    },
+    {
+      "id": "2611.14945",
+      "title": "Auriga: Harness-Governed LLM Agents for Effective Throughput Optimization in Execute-Order-Validate Permissioned Blockchains",
+      "authors": [
+        "Xiao Zhang",
+        "Tianyang Wang",
+        "Fangtao Gu",
+        "Haoxiang Sun",
+        "Puwei Wang",
+        "Jinchuan Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用受控多智能体大模型调参，并从智能合约抽出读写集以避免冲突，对象是 Hyperledger Fabric 这类先执行后排序的许可链。",
+      "abstract": "有效吞吐量等于原始吞吐量乘交易成功率，决定 Hyperledger Fabric 这类先执行后排序许可链的有用容量。已有工作要么调配置提高原始吞吐量，需要多次昂贵的重新部署；要么控制冲突提高成功率，却要在执行后修补，还改内核。少数联合方法只调一小部分参数，解决冲突仍依赖改内核。本文提出 Auriga：不改内核，用样本高效的大模型引导配置搜索和执行前冲突预防，同时优化这两个因素。受控多智能体架构协调大模型做参数探索、饱和感知评测和经验沉淀，由执行框架控制工具和记忆访问，并保留终止权。交易调度方面，大模型离线从智能合约抽出符号 AST 模板；运行时调度器不执行交易就能预测读写集，并把交易划分成无冲突组。在三个基准、冲突率高达 70% 时，Auriga 相对默认 Fabric 把有效吞吐量提高最多 6.0 倍，相对最强基线提高 2.0 倍。调参智能体还发现了未文档化的参数依赖。消融实验表明两个子系统各自有贡献。",
+      "abstractEn": "Effective throughput, the product of raw throughput and transaction success rate, determines the useful capacity of Execute-Order-Validate blockchains such as Hyperledger Fabric. Most prior work either tunes configurations to raise raw throughput, requiring many costly redeployments, or controls conflicts to raise the success rate, repairing them only after execution with kernel modifications. The few joint approaches tune only a small set of parameters and still rely on kernel changes to resolve conflicts. To address these challenges, we present Auriga, a non-invasive framework that jointly optimizes both factors through sample-efficient LLM-guided configuration search and pre-execution conflict prevention. A harness-governed multi-agent architecture coordinates LLM agents for parameter exploration, saturation-aware evaluation, and experience consolidation, with the harness controlling tool and memory access and retaining termination authority. For transaction scheduling, an LLM extracts symbolic AST templates from smart contracts offline. At runtime, the scheduler predicts read-write sets without executing them and partitions transactions into conflict-free groups. Across three benchmarks and conflict rates up to 70%, Auriga improves effective throughput by up to 6.0 times over default Fabric and 2.0 times over the strongest baseline. The tuning agent also discovers undocumented parameter dependencies, and ablation studies show the independent contributions of both subsystems.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "许可链",
+        "智能合约",
+        "冲突预防",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.14945",
+      "pdf": "https://arxiv.org/pdf/2611.14945"
+    },
+    {
+      "id": "2611.18449",
+      "title": "Deterministic ECDSA on secp256k1: the RFC 6979 assumption, a counterexample, and the state of deployed implementations",
+      "authors": [
+        "Ilia Prosianoi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "厘清 RFC 6979 确定性 ECDSA 真正依赖的安全假设，并审计 31 个 secp256k1 实现，对象是比特币和以太坊钱包签名，无大模型。",
+      "abstract": "RFC 6979 用由签名密钥 x 作密钥的 HMAC_DRBG 导出 ECDSA 随机数 k。本文抽出它真正依赖的假设 A*：在公钥 Q=xG 已知时，用 F_x() 作随机数的签名抄本，应与均匀随机数的抄本不可区分。A* 就够了，它既不是 HMAC 的伪随机函数安全，也不是 F_x 的带辅助输入伪随机函数安全。作者给出反例：一个在标准假设下仍是伪随机函数的构造，却能从一次签名泄露 x；对保持 HMAC 证明里用到的伪随机和双伪随机性质的压缩函数，未改动的 RFC 6979 同样如此。A* 与带辅助输入伪随机在两个方向上都不蕴涵。理想压缩函数下，A* 可从离散对数问题紧归约得到；与 x 独立的随机数密钥可以去掉该假设。HMAC 秘密消息块相对均匀分布的偏差在 secp256k1 上约为 2^{-127.65}，在 P-256 上为 2^{-32}，在 brainpoolP256r1 上为 0.336。对 31 个 secp256k1 实现的审计发现：28 个默认做确定性签名且不加熵；libsecp256k1 在 0.2.0 之前偏离 bits2octets 的原始消息处理，仍残留在 NBitcoin、dcrd 和 btcec v2 里。作者还给出未被测试的 h≥n 分支测试向量。",
+      "abstractEn": "RFC 6979 derives the ECDSA nonce as k = F_x(h), with F_x HMAC_DRBG keyed by the signing key x. We isolate the assumption its security rests on, A*: at known public key Q = xG, the signing transcript under nonces F_x() is indistinguishable from the transcript under uniform nonces. A* suffices, and it is neither PRF security of HMAC nor auxiliary-input PRF security (AI-PRF) of F_x. A function F'(x, h) = P_Ext(xG)(h) is a PRF under standard assumptions yet leaks x from one signature; the same holds for unmodified RFC 6979 over a compression function that keeps the PRF and dual-PRF properties used in proofs of HMAC, given a collision-resistance premise. A* and AI-PRF are separated in both directions. A* does not imply AI-PRF if the one-bit hidden number problem is hard. Conversely, in the standard model: any AI-PRF can be modified so that it stays one while two chosen-digest signing queries reveal x; under DDH with one public random point, or decisional square Diffie-Hellman without it, there is an AI-PRF whose key is recovered from signatures on two ordinary hashed messages; and a third function, under PRF security and DLP, violates A* while the scheme stays unforgeable. With an ideal compression function, A* follows tightly from DLP in the presence of a randomized-ECDSA signing oracle, and a nonce key independent of x removes the assumption. The secret HMAC message block is 2^{-127.65} from uniform on secp256k1, 2^{-32} on P-256 and 0.336 on brainpoolP256r1. An audit of 31 secp256k1 implementations finds that 28 sign deterministically without added entropy and that the raw-message deviation from bits2octets of libsecp256k1 before 0.2.0 survives in NBitcoin, dcrd and btcec v2. Low-R grinding needs no assumption beyond A*, and every nonzero Fourier coefficient of the low-R nonce set is below 2^{-116.9} unconditionally. We give test vectors for the untested h >= n branch.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "ECDSA",
+        "钱包签名",
+        "secp256k1",
+        "确定性随机数"
+      ],
+      "url": "https://arxiv.org/abs/2611.18449",
+      "pdf": "https://arxiv.org/pdf/2611.18449"
+    },
+    {
+      "id": "2611.17184",
+      "title": "Omakase: Execution Congestion Control through Conflict-Graph Integration in Multi-Proposer Blockchain",
+      "authors": [
+        "Dakai Kang",
+        "Ray Neiheiser",
+        "Alberto Sonnino",
+        "Eleftherios Kokoris Kogias",
+        "Mohammad Sadoghi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在多提议者区块链里用冲突图整合和乐观并发控制做执行拥塞控制，对象是以太坊主网交易并行执行，无大模型。",
+      "abstract": "多提议者协议把共识吞吐量推高之后，交易执行成了区块链的主要瓶颈。一层链并行执行要么悲观（Solana、Sui），要求事先声明状态访问并把争用交易串行化；要么乐观（Aptos、Sei、Monad），运行时解依赖，争用高时会级联中止。两者都按块隔离处理，块间并行用不上，多数核心闲着。本文提出 Omakase：结合预执行、块间冲突图整合和图感知乐观并发控制。副本用空闲核心只预执行自己提议的块，把预测工作摊到并发提议者上。为每块建冲突图并找出热点资源后，贪心调度器把同一轮提交的各块图整合起来，只有轻量平衡启发式预计能提高并行度时才保留整合。图感知乐观执行器按依赖顺序接纳交易：预测图准确时消灭中止，不准确时减少重执行。在 15000 个以太坊主网块（约 240 万笔交易）和可配置争用的合成负载上，Omakase 相对顺序执行加速 2.47 倍。相对把整轮当成一个乐观窗口的最强对照，平均吞吐相当，但高争用时更稳，因为整合限制了在途乐观工作量。整合有开销，但与跨轮执行重叠后，验证者流水线里测到的开销有 94% 被挡住。",
+      "abstractEn": "As multi-proposer protocols push consensus throughput, transaction execution has become the dominant bottleneck in blockchains. Layer-1 blockchains parallelize execution either pessimistically (Solana, Sui), requiring upfront state-access declarations and serializing contended transactions, or optimistically (Aptos, Sei, Monad), resolving dependencies at run time but suffering cascading aborts under contention. Both treat blocks in isolation, leaving inter-block parallelism unexploited and most cores idle. We introduce Omakase, a parallel execution framework that combines pre-execution, inter-block conflict-graph integration, and graph-aware Optimistic Concurrency Control (OCC). Replicas use idle cores to pre-execute only the blocks they propose, spreading prediction work across concurrent proposers. After building per-block conflict graphs and identifying their hot resources, a greedy scheduler integrates graphs across the blocks committed in a round, keeping an integration only when a lightweight balance heuristic predicts a parallelism gain. A graph-aware OCC executor then runs the integrated graph, admitting transactions in dependency order, which eliminates aborts when the predicted graph is exact and reduces re-executions when it is not. On 15,000 Ethereum mainnet blocks (~2.4M transactions) and synthetic workloads with configurable contention, Omakase reaches a 2.47x speedup over sequential execution, well above single-block OCC and graph-aware baselines. Against the strongest alternative, which runs the whole round as one optimistic window, Omakase matches mean throughput but is markedly more stable under high contention, because integration bounds how much optimistic work is in flight: this is the congestion control of our title. Integration is not free, but overlapping it with execution across rounds hides 94% of its measured cost in the validator pipeline.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "多提议者",
+        "并行执行",
+        "冲突图",
+        "以太坊"
+      ],
+      "url": "https://arxiv.org/abs/2611.17184",
+      "pdf": "https://arxiv.org/pdf/2611.17184"
+    },
+    {
+      "id": "2026-2890",
+      "title": "Byzantine Agreement with Signature Tokens",
+      "authors": [
+        "Yuval Efron",
+        "Mahimna Kelkar",
+        "Saachi Mutreja",
+        "Tim Roughgarden"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给各方有限个签名令牌后，部分同步拜占庭协议可以突破经典三分之一故障上界，对象是共识协议，无大模型。",
+      "abstract": "本文研究量子密码在分布式共识里的能力与限度，具体是部分同步下的拜占庭协议：每一方有有限 k 个签名令牌。经典结果只在故障方少于三分之一时可解。作者证明带签名令牌的协议可以越过这个下界，并给出对最多 (2^{k+1}-1)/(2^{k+2}-1) 比例故障仍安全的协议。特别地，当 k=Θ(log n) 时，该协议在诚实多数下就能完成部分同步拜占庭协议。反过来，作者证明要得到这一结果，签名令牌必须是 Ω(log n) 个。对 k=1，协议达到的 3/7 故障阈值是最优的。",
+      "abstractEn": "We investigate the power and limitations of quantum cryptography in distributed consensus protocols. Specifically, we study the fundamental problem of Byzantine Agreement in partial synchrony, in a setting in which each party has access to a finite number k of signature tokens. Classically, this problem is solvable only when less than one-third of the parties can be faulty (Dwork, Lynch, Stockmeyer 1988). We prove that protocols with signature tokens can bypass this lower bound by designing a protocol that remains secure against up to a (2^{k+1}-1)/(2^{k+2}-1)-fraction of faults. In particular, with k=Θ(log n), where n denotes the number of parties, our protocol solves Byzantine Agreement in partial synchrony assuming only an honest majority. Conversely, we prove that Ω(log n) signature tokens are necessary for such a result. Finally, for k=1, we prove that the fault-tolerance threshold of 3/7 achieved by our protocol is the best possible.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "拜占庭协议",
+        "共识",
+        "签名令牌",
+        "部分同步"
+      ],
+      "url": "https://eprint.iacr.org/2026/2890",
+      "pdf": "https://eprint.iacr.org/2026/2890.pdf"
+    },
+    {
+      "id": "2026-2880",
+      "title": "Sum-Checking SmallWood: Smaller Hash-Based Zero-Knowledge Arguments",
+      "authors": [
+        "Thibauld Feneuil",
+        "Killian Provin",
+        "Matthieu Rivain"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用 sum-check 缩小基于哈希的零知识论证体积，对象是电路、哈希和格上陈述的证明系统，无大模型。",
+      "abstract": "基于哈希的零知识论证只依赖哈希函数，抗量子假设保守，因此很有吸引力。VOLE-in-the-Head 证明对很小的见证最紧凑，Merkle 树方法在见证变大后更好。后一区间里，近期 SmallWood 在见证长度 2^6 到 2^{16} 上证明最小。本文提出 SmallWood+：用基于 sum-check 的协议进一步缩小证明。沿 Longfellow ZK 的思路，用基于哈希的零知识论证去包装 sum-check 协议的验证，作者形式化了 Sum-Check Verification Constraint System，覆盖分层电路上的 GKR 和 R1CS 的 sum-check。随后给出把这类实例编译成线性承诺和/或多线性多项式承诺上零知识论证的通用编译器，并用 SmallWood 高效实例化。过程中还给出隐藏多线性扩展、零知识环切换，以及改进的 GKR 电路展平。应用到分层算术电路、哈希函数和基于格的陈述时，证明体积达到基于哈希零知识论证的新最好结果：证明 1 次和 100 次 Keccak 置换分别约 18 KB 和 63 KB，此前最好约为 29 KB 和 127 KB。",
+      "abstractEn": "Hash-based zero-knowledge (ZK) arguments are particularly attractive for their conservative post-quantum security, relying only on cryptographic hash functions. While VOLE-in-the-Head proofs, based on GGM trees, are the most compact for very small witnesses, Merkle-tree-based approaches take over for larger ones. In this regime, the recent SmallWood scheme achieves the smallest proof sizes for witness sizes ranging from 2^6 to 2^{16}. In this work, we present SmallWood+, an enhanced variant of SmallWood that leverages sum-check-based protocols to further reduce proof sizes. Following the paradigm of Longfellow ZK, where a hash-based ZK argument is used to wrap the verification of a sum-check-based protocol, we formalize the notion of Sum-Check Verification Constraint System (SVCS), which captures a broad class of such protocols, including GKR for layered circuits and the sum-check protocol for R1CS. We then design generic compilers transforming SVCS instances into ZK arguments from linear commitment schemes and/or multilinear polynomial commitment schemes, which we efficiently instantiate from SmallWood. Along the way, we develop tools of independent interest: hiding multilinear extensions, which make a multilinear evaluation of the committed witness safe to reveal in the small-field regime, a zero-knowledge version of the ring-switching protocol, and an improved circuit-flattening technique for GKR. Applied to (layered) arithmetic circuits, hash functions, and lattice-based statements, our constructions establish new state-of-the-art proof sizes for hash-based ZK arguments - for instance, 18 KB and 63 KB to prove 1 and 100 Keccak permutations, against 29 KB and 127 KB for the best previous schemes.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "零知识",
+        "sum-check",
+        "哈希证明",
+        "电路"
+      ],
+      "url": "https://eprint.iacr.org/2026/2880",
+      "pdf": "https://eprint.iacr.org/2026/2880.pdf"
+    }
+  ]
+}
