@@ -1,0 +1,264 @@
+{
+  "date": "2026-11-17",
+  "papers": [
+    {
+      "id": "10.1145-3861081",
+      "title": "Fine-Grained Reasoning Enhanced Vulnerability Patch Generation with Multi-View Fix Knowledge",
+      "authors": [
+        "Miaomiao Shao",
+        "Yuxin Ding",
+        "Guoqing Zhu",
+        "Cuiyun Gao",
+        "Yang Xiao"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "用大模型结合细粒度修复推理路径和多视角修复知识，给 C/C++ 漏洞生成补丁。",
+      "abstract": "深度学习发展很快，已经出现很多大模型，在各类代码生成任务上表现不错。但在漏洞补丁生成上，现有方法还有两个关键不足：一是推理能力有限，很难刻画细粒度的修复逻辑；二是对修复知识用得不够，几乎不考虑漏洞意图。为此，本文提出 FraMe：把细粒度推理路径和多视角修复知识结合起来，增强基于大模型的漏洞补丁生成。FraMe 有两个模块。第一步收集逐步修复推理路径：抽出详细的漏洞–修复上下文，构造增强提示模板，让模型生成逐步推理路径，从而抓住细粒度修复逻辑。第二步用漏洞知识图里的多视角修复知识来刻画漏洞意图、补全代码语义，便于选出有效的 few-shot 示例，让大模型生成更准确的补丁。作者在常用的真实 C/C++ 漏洞数据集上评测。FraMe 稳定优于已有提示方法和非大模型方法；在 beam size 为 10 时，Correct 指标比最好基线高 9.4%。源代码和数据集已公开。",
+      "abstractEn": "With the rapid advancement of deep learning, numerous large language models (LLMs) have been developed, achieving remarkable performance across a wide range of code generation tasks. However, in the domain of vulnerability patch generation, existing approaches suffer from two critical limitations: (1) limited reasoning capability, which hampers the modeling of fine-grained fix logic; and (2) insufficient utilization of fix knowledge, with minimal consideration of vulnerability intent. To address these challenges, we propose FraMe, a novel automated approach that integrates Fine-grained reasoning paths with Multi-view fix knowledge to enhance LLM-based vulnerability patch generation. FraMe consists of two modules: stepwise fix-reasoning path collection and multi-view knowledge augmented patch generation. The first module extracts detailed vulnerability–fix context and constructs augmented prompt templates to generate stepwise fix-reasoning paths, enabling the model to capture fine-grained fix logic. The second module leverages multi-view fix knowledge from a vulnerability knowledge graph to model vulnerability intent and supplement code semantics, thereby facilitating the selection of effective few-shot examples and enabling the LLM to generate more accurate patches. We evaluated FraMe on a widely used real-world C/C++ vulnerability dataset. Experimental results demonstrate that FraMe consistently outperforms both existing prompting methods and non-LLM-based techniques, achieving an improvement of 9.4% in the Correct metric at a beam size of 10 compared with the best baseline. The source code and datasets are available at https://github.com/VulDet/FraMe .",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "补丁生成",
+        "大模型",
+        "C/C++"
+      ],
+      "url": "https://doi.org/10.1145/3861081"
+    },
+    {
+      "id": "2611.20827",
+      "title": "ProcReverser: Multi-Agent Black-Box Microarchitectural Reverse Engineering for Processor Vulnerability Analysis",
+      "authors": [
+        "Guanqi Lyu",
+        "Decheng Qiu",
+        "Guangyang Zhang",
+        "Fei Zhao",
+        "Zhaojun Lu",
+        "Jiaji He",
+        "Yongqiang Lyu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多智能体系统做黑盒微架构逆向，分析 RISC-V 处理器上与 Spectre 相关的漏洞条件。",
+      "abstract": "处理器实现细节拿不到时，黑盒微架构逆向可以帮助安全研究者找出与漏洞相关的硬件条件。但给每款处理器设计实验、写测试程序、分析结果，手工成本很高。本文提出 ProcReverser：一套多智能体系统，用执行反馈改进实验计划和测试程序，再从测量结果里识别微架构性质。作者围绕 Spectre 类攻击相关的硬件机制，构造了一套性质识别任务，覆盖推测执行、分支预测、访存依赖和缓存行为。评测对象是玄铁 C910、gem5 RISC-V O3 CPU 模型和 SiFive P550。ProcReverser 在 C910 上的 Pass@1 / Pass@5 为 81.3% 和 93.8%，在 gem5 O3 上为 83.0% 和 100.0%；在 P550 上进一步刻画了任务套件覆盖的微架构性质。结果表明，自动微架构逆向可以帮助做处理器漏洞分析和防御评估。",
+      "abstractEn": "When processor implementation details are unavailable, black-box microarchitectural reverse engineering helps security researchers identify hardware conditions related to security vulnerabilities. However, this process requires substantial manual effort to design experiments, develop test programs, and analyze results for each processor. We present ProcReverser, a multi-agent system that automates this process. ProcReverser uses execution feedback to improve experimental plans and test programs and identifies microarchitectural properties from measurements. We develop a comprehensive suite of property identification tasks focused on hardware mechanisms relevant to Spectre-class attacks, covering speculative execution, branch prediction, memory dependence, and cache behavior. We evaluate ProcReverser on the XuanTie C910, the gem5 RISC-V O3 CPU model, and the SiFive P550. ProcReverser achieves Pass@1 and Pass@5 scores of 81.3% and 93.8%, respectively, on C910, and 83.0% and 100.0% on gem5 O3. On the SiFive P550, ProcReverser further characterizes microarchitectural properties covered by the proposed task suite. These findings highlight the potential of automated microarchitectural reverse engineering to support processor vulnerability analysis and defense evaluation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "微架构逆向",
+        "Spectre",
+        "多智能体",
+        "RISC-V"
+      ],
+      "url": "https://arxiv.org/abs/2611.20827",
+      "pdf": "https://arxiv.org/pdf/2611.20827"
+    },
+    {
+      "id": "2611.19719",
+      "title": "Found, but Not Fixed : From Software Vulnerability Discovery to Fixes with Iterative LLM Pipelines",
+      "authors": [
+        "Youssef Gamal",
+        "Mohamad Fakih",
+        "Halima Bouzidi",
+        "Rahul Dharmaji",
+        "Gustavo Quiros Araya",
+        "Oluwatosin Ogundare",
+        "Mst Ayesha Siddika",
+        "Mohammad Abdullah Al Faruque"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用迭代大模型流水线修复真实软件里的漏洞函数，对象是带 CVE 的实际代码。",
+      "abstract": "尽管已经有不少检测工具和 AI 助手，软件漏洞仍然是严重威胁。检测有进展，但随后的代码修复仍是主要瓶颈：手工修又慢又贵，还容易引入二次回归。本文研究：迭代的大模型流水线能不能给真实代码里的漏洞函数做可靠自动修复。作者提出一个通用框架，用多阶段反馈环发挥大模型的推理能力。他们在 GPT-4o、GPT-5.1、Gemini 3 Flash 等模型上做了对比，表明这条流水线可以达到较高质量的代码修复。评测框架、微调权重和实验数据集已公开。",
+      "abstractEn": "Software vulnerabilities persist as a critical threat despite the deployment of sophisticated detection tools and AI assistants. While detection has advanced, the subsequent code repair phase remains a primary bottleneck; manual intervention is inherently slow, costly, and prone to introducing secondary regressions and issues. In this paper, we investigate whether an iterative, LLM-based pipeline can provide a robust solution for the automated repair of vulnerable functions in real-world code. We propose a generalized framework that leverages the reasoning capabilities of Large Language Models (LLMs) through a multi-stage feedback loop. We benchmark this approach against state-of-the-art models, including GPT-4o, GPT-5.1, and Gemini 3 Flash, demonstrating that such a pipeline can achieve high-quality code repair. To support the broader security community, we provide our evaluation framework, fine-tuned weights, and comprehensive experimental dataset on our website: https://sites.google.com/view/llm4cve",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "CVE",
+        "大模型",
+        "迭代流水线"
+      ],
+      "url": "https://arxiv.org/abs/2611.19719",
+      "pdf": "https://arxiv.org/pdf/2611.19719"
+    },
+    {
+      "id": "2611.18754",
+      "title": "KernelArmor: End-to-End Agentic System for Establishing Memory and Thread Safety for CUDA",
+      "authors": [
+        "Bodhisatwa Chatterjee",
+        "Mohamed Tarek Ibn Zaid",
+        "Sana Damani",
+        "Siva Kumar Sastry Hari",
+        "Christos Kozyrakis"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用智能体大模型生成标注，再配合 SMT 验证器检查 CUDA 内核的内存安全和线程安全。",
+      "abstract": "优化过的 CUDA 内核可以通过测试，但仍可能留下细微的内存和并发缺陷。本文提出 KernelArmor：一个智能体框架，用大模型生成标注，再配合扩展后的 SMT 验证器，在显式契约下建立内存安全和线程安全。它能处理 tensor core、打包访存、warp 同步、异步拷贝和库调用等高级 CUDA 特性，并返回源码级诊断，指导验证和修复。在 740 个实例、1370 个生产级 CUDA 内核上，它在 78.6% 的实例里报告了潜在缺陷，并为 11.4% 建立了安全性，检出覆盖优于对比工具：cuCatch 内存安全缺陷全部找到，范围内的 cuHadron 竞态也全部找到。接入智能体优化循环后，77 条轨迹都能产出通过验证的内核，同时保留无约束几何平均加速的 99%。",
+      "abstractEn": "Optimized CUDA kernels can pass testing while retaining subtle memory and concurrency bugs. We present KernelArmor, an agentic framework that combines LLM-generated annotations with an extended SMT verifier to establish memory and thread safety under explicit contracts. KernelArmor can reason about kernels with advanced CUDA features, such as tensor cores, packed accesses, warp synchronization, asynchronous copies, and library calls, returning source-level diagnostics to guide verification and repair. Across 740 instances containing 1,370 production-grade CUDA kernels, it reports potential bugs in 78.6% of instances and establishes safety for 11.4%, outperforming the evaluated state-of-the-art tools in detection coverage, identifying 100% of cuCatch memory-safety bugs and all in-scope cuHadron races. Integrated into an agentic optimization loop, KernelArmor produces verified kernels in all 77 trajectories while retaining 99% of the unconstrained geometric-mean speedup.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CUDA",
+        "内存安全",
+        "形式化验证",
+        "智能体"
+      ],
+      "url": "https://arxiv.org/abs/2611.18754",
+      "pdf": "https://arxiv.org/pdf/2611.18754"
+    },
+    {
+      "id": "2611.19465",
+      "title": "VAST: Compiling Grounded Vulnerability Scenarios into Verifiable, Multi-Step Environments for Evaluating LLM Red-Team Agents",
+      "authors": [
+        "Zhen Wan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把带 CVE 的漏洞场景编译成可验证环境，用来评测大模型红队智能体，对象是 Linux/Docker 服务。",
+      "abstract": "评测大模型安全智能体需要可复现的环境：工作流难度可调，失败原因可诊断。本文提出 VAST（Verifiable Adversarial Scenario Training & Evaluation）：一个声明式靶场编译器，把漏洞场景和编译器引入的工作流加固层分开。经过代码和 AST 审计后，主基准保留 109 条种子边（其中 45 条有严格的上游 CVE 标注）、72 个家族标识、81 种主题配置和 1387 个实例。在 TopicServer 编译层上，对 10 个机制家族、90 个实例做预算对齐的提示对比：glm-5.3、grok-4.7 和 deepseek-v4-pro 在只给契约或泛化提示时分别只完成 12/90 和 14/90；给出完整工作流协议后升到 76/90。在另一套 ranges_v2 账本上，6 个非 TopicServer 工作流和多容器 Docker/Linux 栈共 126 局，完成 88/126（69.8%）。对异步 Redis worker 链接的干预实验显示：公开已安装 worker 模块后，18 局从 0 全部完成。最后在 Qwen2.5-Coder-7B-Instruct 上比较 LoRA 配方，Header-Recovery SFT 好于 Golden SFT 和 Base。",
+      "abstractEn": "Evaluating Large Language Model (LLM) security agents requires reproducible environments whose workflow difficulty can be varied and whose failures can be diagnosed. We present VAST (Verifiable Adversarial Scenario Training & Evaluation), a declarative range compiler separating vulnerability scenarios from a compiler-introduced workflow-hardening layer. Following a post-hoc code and AST audit across all topics, the main benchmark retains 109 seed edges (45 with strict upstream CVE annotations), 72 family identifiers (62 under shared-HMAC relay grouping), 81 topic configurations (76 core plus 5 bounded execution models), and 1,387 instances (359 canonical four-gate-revalidated specs plus 1,028 seed variants) in a 42:39 partition. On the TopicServer compiler stratum, a budget-matched 270-episode prompt contrast across 10 compiled mechanism-family clusters (30 P2/P3/P4 instances, 40 turns, temperature 0.0) shows that glm-5.3, grok-4.7, and deepseek-v4-pro solve 12/90 instances under contract_only and 14/90 under generic_hint (cluster sign p=1.00), whereas supplying the shared workflow protocol in full_guide lifts completion to 76/90 (28/30, 23/30, 25/30; cluster sign p<=0.00391). On the separate ranges_v2 ledger, a 126-episode evaluation across 6 non-TopicServer workflows and multi-container Docker/Linux stacks solves 88/126 (69.8%) (28/42, 31/42, 29/42), while an 18-episode intervention on asynchronous Redis worker chaining (v2_02) lifts solves from 0/18 to 18/18 (100%) in 4-6 turns when installed worker modules are disclosed in GET /sched/directory. Finally, a three-seed (s in {42, 1024, 2025}) LoRA recipe comparison on Qwen2.5-Coder-7B-Instruct across 37 lineage-disjoint families (231 episodes on 33 held-out instances) yields 0/33 for Base, 1.67 +/- 2.89 / 33 for Golden SFT, and 4.67 +/- 2.31 / 33 for Header-Recovery SFT, with all solves on v2_03.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "红队智能体",
+        "漏洞场景",
+        "靶场评测",
+        "CVE"
+      ],
+      "url": "https://arxiv.org/abs/2611.19465",
+      "pdf": "https://arxiv.org/pdf/2611.19465"
+    },
+    {
+      "id": "2611.21331",
+      "title": "TRIAGE-CPG: A Cross-Model Study of Budgeted Static Malware Triage with Large Language Models",
+      "authors": [
+        "Paul-Andrei Sava",
+        "Alexander Küchler",
+        "Daniel Kowatsch",
+        "Bernhard Grill",
+        "Jennifer Pullman",
+        "Yanick Fratantonio",
+        "Luca Invernizzi"
+      ],
+      "year": 2026,
+      "venue": "AISec 2026",
+      "abstractOneWord": "用大模型智能体在固定预算下阅读反编译函数，对 Windows PE 样本做恶意软件静态研判。",
+      "abstract": "研判未知二进制时，分析人员要决定放行良性、标成恶意，还是升级做更深分析。大模型可以读反编译代码来帮忙，但一个二进制可能有成百上千个函数，全部交给大模型并不现实。本文把静态研判写成有预算的证据采集：看大模型会检查哪些函数，以及如何在放行、检出和升级之间权衡。作者实现 TRIAGE-CPG：在反编译二进制的代码属性图上跑固定流水线。先用无大模型的启发式选种子函数，再由智能体在固定预算下扩充证据档案，最后给出良性 / 可疑 / 恶意判定和一份行为报告。评测覆盖 8 个闭源和开源权重模型、1000 个 Windows PE 样本（测试集 600），协议统一为零样本。最高分模型大约只分析每个二进制约 40 个函数（平均约 1000 个），严格平衡准确率为 0.805，研判平衡准确率（tBA）为 0.855：标出 65% 恶意软件，再升级 12%，并放行 94% 良性样本。不同模型策略差很大：高特异性模型升级队列小而准，召回导向模型则大范围升级或标记。闭源和开源模型都分布在这个谱上。结果表明没有普适部署配置，模型选择本身就决定了有限静态证据下的放行 / 标记 / 升级权衡。",
+      "abstractEn": "When triaging unknown binaries, security analysts must decide which samples to clear as benign, flag as malicious, or escalate for deeper analysis. Large Language Models (LLMs) could support these decisions by interpreting decompiled code, but a binary can contain hundreds or thousands of functions, making exhaustive LLM analysis impractical. We study how current LLMs behave when static triage is formulated as budgeted evidence acquisition: which functions they inspect and how they trade off benign clearance, malware detection, and escalation. To enable a controlled comparison, we implement TRIAGE-CPG, a fixed pipeline over a code property graph (CPG) of a decompiled binary. An LLM-free heuristic selects seed functions, an agent expands the resulting evidence dossier under a fixed budget, and a reporting stage produces a benign, suspicious, or malicious verdict together with a behavioral report. We evaluate eight closed-source and open-weight models on 1,000 Windows PE binaries, using a 600-sample test split and the same zero-shot protocol for every model. We assess the ternary verdicts under both a strict binary reading and triage balanced accuracy (tBA), which credits malware that is flagged or escalated and benign samples only when cleared. After analyzing about 40 of a mean 1,000 functions per binary, the highest-scoring model reaches a strict balanced accuracy of 0.805 and a tBA of 0.855, flagging 65% of malware, escalating another 12%, and clearing 94% of benign samples. The models implement different triage policies: high-specificity models produce small, malware-rich escalation queues, whereas recall-oriented models escalate or flag much more broadly. Both closed-source and open-weight models appear across this spectrum. Our results identify no universal deployment configuration: model choice itself determines the clear/flag/escalate trade-off under limited static evidence.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "恶意软件研判",
+        "二进制",
+        "大模型",
+        "代码属性图"
+      ],
+      "url": "https://arxiv.org/abs/2611.21331",
+      "pdf": "https://arxiv.org/pdf/2611.21331"
+    },
+    {
+      "id": "2026-2831",
+      "title": "Twisted Towers: Fully Costed Special Tower NFS Attacks on BLS12-381 and BN254",
+      "authors": [
+        "Gautam Botrel"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "完整计价对 BLS12-381 和以太坊 BN254 的特殊塔数域筛攻击，评估配对曲线离散对数安全，无大模型。",
+      "abstract": "BLS12-381 常被说成“126 比特安全”，BN254 则是“大约 100 比特”。这两个数字都是对目标群 F_{p^{12}}^* 上特殊塔数域筛（STNFS）的估计，而且都只数抽象运算，整段攻击的若干阶段被略掉了。本文改用完整账本：关系收集、余因子分解、过滤、线性代数、两条离散对数以及所有失败，都按机器指令计价。在明确列出的启发式下，完整攻击对 BLS12-381 执行 2^127.5 条指令，对以太坊使用的 BN254 执行 2^103.2 条，成功概率高于 0.998。对 BLS12-381，这比同样计价的曲线上 Pollard rho 低 9.6 比特，目标群明显更弱；也比补全标准组件后的已发表设计成本（2^137.3 指令）低 9.8 比特。对 BN254，结果确认了公认安全级别，并给出具体含义。方法有三点：扭曲塔把符号对称变成四阶对称，关系和理想按四元轨道出现；每个关系只计一次，并在基本域上筛；筛法围绕复用组织。每种技术先对一般 (6,2) 特殊塔陈述，再实例化到这两条曲线。没有跑全尺寸实验；最终设计假设最多 2^112 字节存储且成本模型不计存储费；两条曲线的实际安全不变。本文相对初稿有实质修订：补上以太坊参数的 BN254，并改正过滤与线性代数中的错误。",
+      "abstractEn": "BLS12-381 is commonly said to offer \"126 bits\" of security and BN254 \"about 100 bits\". Both figures are estimates of the special tower number field sieve (STNFS) in the target group F_{p^{12}}^*, and both count abstract operations in models that leave out whole phases of the attack. We replace them by complete ledgers in which every step is priced in machine instructions: relation collection, cofactorisation, filtering, linear algebra, both individual logarithms and all failures. Under explicitly listed heuristics, a complete attack executes 2^{127.5} instructions for BLS12-381 and 2^{103.2} for the BN254 curve used in Ethereum, with success probability above 0.998. For BLS12-381 this is 9.6 bits below Pollard's rho on the curve counted the same way, where operation counts suggested one bit: the target group is clearly the weaker side. It is also 9.8 bits below what the published design costs when it is completed with standard components and charged in full (2^{137.3} instructions, level with rho). For BN254 our figure confirms the accepted level and gives it a concrete meaning. The method rests on three ideas and on a systematic reduction of the work per sieved cell. First, a twisted tower: a unit c of the sextic base field with c σ(c)=-1 turns the usual sign symmetry into a symmetry of order four that acts as a Frobenius power, so that relations and ideals come in orbits of four and the linear system has Gaussian-integer entries. Second, counting each relation once: coefficient-cube estimates count unit multiples of a relation as distinct; for the published BLS12-381 design only 2^{-2.8} of the counted relations are distinct, and we sieve a fundamental domain instead. Third, a sieve organised around reuse: only the harder side is sieved, tiny primes are handled by batch arithmetic, and the hits of a prime ideal are replayed from lists shared by all slices. A product-form linear algebra and a planned descent complete the method. Each technique is stated for a general special pair of tower shape (6,2) and then instantiated on the two curves. Nothing was run at full size; the final designs assume up to 2^{112} bytes of storage, which the cost model does not charge; and the practical security of both curves is unchanged.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "修订",
+        "BN254",
+        "BLS12-381",
+        "数域筛"
+      ],
+      "url": "https://eprint.iacr.org/2026/2831",
+      "pdf": "https://eprint.iacr.org/2026/2831.pdf"
+    },
+    {
+      "id": "2026-2883",
+      "title": "Early-Stopping Dishonest Majority Broadcast with Optimal Round Complexity",
+      "authors": [
+        "Renas Bacho",
+        "Kecheng Shi"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出不诚实多数下轮数最优的早停拜占庭广播协议，对象是共识广播，无大模型。",
+      "abstract": "早停广播协议的终止轮数取决于实际被腐蚀的参与方数量 f≤t，而不是最坏上界 t<n。Loss 和 Nielsen（Eurocrypt 2024）给出了对任意 t<n 都成立的协议，在多项式通信和普通 PKI 下于 O(min{f²+1, t+1}) 轮终止。另一方面，Choi、Choi、Liu 和 Zikas（ePrint 2026/1878）最近证明：每当 n+f<2 min{t, n-2} 时，f+3 轮是必要的，这个条件覆盖不诚实多数的很大一块。此前即使允许指数通信，也不知道这个下界能不能达到。本文给出一个确定性早停广播协议：对任意 t<n，每个诚实方都在 min{f+3, t+1} 轮内输出并终止。协议基于指数信息收集（EIG）图，通信是指数级的；工作在带理想签名的普通 PKI 模型下，可抗强自适应对手。因此，在所述下界适用的范围内，终止轮复杂度是最优的。",
+      "abstractEn": "Early-stopping broadcast protocols guarantee termination as a function of the number f≤t of parties actually corrupted in an execution, rather than of the worst-case bound t<n. Loss and Nielsen (Eurocrypt 2024) gave such a protocol for every t<n, terminating within O(min{f²+1,t+1}) rounds, with polynomial communication and from a plain public-key infrastructure (PKI). In the other direction, Choi, Choi, Liu, and Zikas (ePrint 2026/1878) recently proved a stopping lower bound which implies that f+3 rounds are necessary whenever n+f<2 min{t,n-2}, a condition that covers a broad part of the dishonest-majority regime. It has remained open whether this bound can be attained, even at the cost of exponential communication. In this work, we present a deterministic early-stopping broadcast protocol in which every honest party outputs and terminates within min{f+3,t+1} rounds for every t<n. The protocol is built from exponential information gathering (EIG) graphs and incurs exponential communication. It works in the plain PKI model with idealized signatures and is secure against a strongly adaptive adversary. Its stopping round complexity is therefore optimal throughout the stated range of the lower bound.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "拜占庭广播",
+        "早停",
+        "不诚实多数",
+        "轮复杂度"
+      ],
+      "url": "https://eprint.iacr.org/2026/2883",
+      "pdf": "https://eprint.iacr.org/2026/2883.pdf"
+    },
+    {
+      "id": "2026-2853",
+      "title": "ASCENT: Algebraic Structured Compilation of Exact Norms for Succinct Lattice Proofs",
+      "authors": [
+        "Lizhen Zhang",
+        "Shang Gao",
+        "Bin Xiao"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把格证明里的精确范数约束编译成简洁代数关系，对象是简洁证明系统，无大模型。",
+      "abstract": "范数上界是格密码里的语义约束：只满足模方程不够，见证还必须满足规定的短向量界。现有范数归约要么引入松弛，要么依赖通用来和检验，笔录开销随见证长度增长。本文提出一个面向精确 ℓ₂ 范数约束的知识归约编译器。它把已承诺格见证上的原始范数语言，编译成只含承诺打开、张量结构的见证–公开内积，以及放宽可接受短界的窄结构化关系。精确范数可靠性在归约内部强制，剩下的证明义务是结构化代数关系。编译器只增加与见证长度 N 无关的 O(1) 证明者到验证者通信量（按环元素和域元素计），验证者工作量为 O(log N)。同一技术也可扩展成更广二次关系（含 R1CS 类电路）的折叠机制。在 128 比特安全下，精确范数归约的笔录约 27.69KB，R1CS 折叠应用约 27.75KB，大约比 LatticeFold+ 小 3–4 倍，比 SALSAA 小 2–3 倍，并接近 Cyclo 的紧凑估计。",
+      "abstractEn": "Norm bounds are semantic constraints in lattice cryptography: satisfying the modular equations is not enough unless the witness also satisfies the prescribed shortness bound. Existing norm reductions either introduce slack, or rely on general sumcheck style machinery whose transcript cost grows with the witness length. We introduce a reduction-of-knowledge compiler for exact ℓ₂-norm constraints. It compiles the original norm language for a committed lattice witness into a narrow structured relation consisting only of commitment-opening constraints, tensor-structured witness-public inner-product claims, and relaxed admissible shortness bounds. Exact norm soundness is enforced inside the reduction, so the remaining proof obligation is structured and algebraic. The compiler adds only O(1) prover-to-verifier communication, measured in ring and field elements, independent of the witness length N, and requires only O(log N) verifier work. The same techniques can also extend to a folding mechanism for broader quadratic relations, including R1CS-type circuits. At 128-bit security, our concrete estimates give transcripts of about 27.69KB for exact norm reduction and 27.75KB for the R1CS folding application. This is about 3–4× smaller than LatticeFold+, about 2–3× smaller than SALSAA, and remains close to the compact estimates reported for Cyclo.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "格证明",
+        "范数约束",
+        "简洁证明",
+        "折叠"
+      ],
+      "url": "https://eprint.iacr.org/2026/2853",
+      "pdf": "https://eprint.iacr.org/2026/2853.pdf"
+    },
+    {
+      "id": "2611.20782",
+      "title": "Baryonic Keys and the Inheritance of Crypto-Assets: Revisiting the Tales From the Crypt Protocol",
+      "authors": [
+        "Frédéric Prost"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用物理可测、份数固定的密钥改进链上加密资产继承协议，并分析审查和假警报攻击，无大模型。",
+      "abstract": "加密资产继承有一个结构性障碍：所有权就是知道密钥，密钥要么随持有人消失，要么必须事先分享。Tales From the Crypt Protocol（TFCP）解决了其中一块：由区块链分布式、保护隐私地确认死亡。本文用一种新原语重新考虑它。重子密钥是一种物理对象：比特只能通过测量得到，从不数字化存储，并且恰好有 n 份拷贝，n 既不是 0 也不是无界。作者定义该原语，给出基于复制微裂纹浮雕的候选实例，并说明限度：数字化一份拷贝很慢且可发现篡改，但不是不可能。还概述了其他用途，从后量子预共享密钥到拜占庭协议的公共硬币。随后给出 TFCP 的威胁模型，回顾适用的攻击模型，指出它能抗什么、不能抗什么。提出的 TFCP-B 要求解密遗嘱同时需要登记员之间的共享秘密和重子密钥的响应；继承人用哈希承诺领取份额，事先不需要密钥或钱包。TFCP-B 去掉了串通登记员造成的匿名性损失，并挡住若干假警报攻击。它消不掉浅账户攻击，审议期内仍暴露在交易审查下，并对托管方和读取设备引入新假设。安全论证是非形式的，物理数字是设计估计。",
+      "abstractEn": "The inheritance of crypto-assets faces a structural obstacle: ownership is the knowledge of a key, so the key either disappears with its owner or has to be shared beforehand. The Tales From the Crypt Protocol (TFCP) addressed one part of the problem, the distributed and privacy-preserving acknowledgment of a death by a blockchain. We revisit it with a new primitive. A baryonic key is a physical object from which bits are obtained only through a measurement, are never stored digitally, and which exists in exactly n copies, where n is neither zero nor unbounded. We define the primitive, outline a candidate instantiation based on a replicated micro-fractured relief, and state its limits: digitising a copy is slow and tamper-evident, not impossible. We also outline other uses of the primitive, from post-quantum pre-shared keys to common coins for Byzantine agreement. We then give a threat model for TFCP, review the attack models of the literature that apply to it, and show where it resists and where it does not. We propose TFCP-B, in which decrypting the will requires both a secret shared among registrars and the response of a baryonic key, and in which heirs claim their share through hash commitments, without any prior key or wallet. We detail each change from TFCP to TFCP-B, with its rationale and its price. TFCP-B removes the anonymity loss caused by colluding registrars and blocks several false-alarm attacks. It does not remove the shallow-account attack, remains exposed to transaction censorship during the deliberation period, and introduces new assumptions on custodians and reading devices. The security arguments are informal and the physical figures are design estimates.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "钱包继承",
+        "密钥管理",
+        "审查",
+        "区块链"
+      ],
+      "url": "https://arxiv.org/abs/2611.20782",
+      "pdf": "https://arxiv.org/pdf/2611.20782"
+    }
+  ]
+}
