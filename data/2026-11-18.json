@@ -1,0 +1,267 @@
+{
+  "date": "2026-11-18",
+  "papers": [
+    {
+      "id": "10.1145-3861341",
+      "title": "How Safe Are AI-Generated Patches? A Large-scale Study on Security Risks in LLM and Agentic Automated Program Repair on SWE-bench",
+      "authors": [
+        "Amirali Sajadi",
+        "Kostadin Damevski",
+        "Preetha Chatterjee"
+      ],
+      "year": 2026,
+      "venue": "TOSEM",
+      "abstractOneWord": "在 SWE-bench 真实 GitHub 议题上评估大模型和编程 agent 自动修复会引入多少漏洞。",
+      "abstract": "大模型和 agent 框架越来越多地用于自动程序修复等开发任务。已有工作指出大模型生成代码存在安全风险，但多数研究只看合成、简化或孤立任务。本文基于 SWE-bench 中两万多条 GitHub 议题，对大模型生成补丁做大规模安全分析。评测对象包括开发者手写补丁、两个独立大模型（Llama 3.3 Instruct-70B 和 GPT-5.4 nano），以及四个 agent 框架（OpenHands、AutoCodeRover、HoneyComb 和 SWE-agent）。作者还分析了与不安全补丁相关的代码、议题和项目层面因素。在本文的 SWE-bench 设置下，Llama 3.3 在训练集和测试集上共引入 135 个经人工确认的漏洞，同一批议题的开发者补丁只有 12 个。在测试集上，GPT-5.4 nano 引入 3 个漏洞，开发者补丁为 2 个。四个 agent 框架也都会引入漏洞；OpenHands 保留数量最高，11 个议题实例上共 44 个漏洞。漏洞更常出现在改动范围更大、议题信息更不具体的情况。结果表明，自动修复系统需要同时考虑生成代码和议题上下文的主动风险评估。",
+      "abstractEn": "Large language models (LLMs) and agentic frameworks are increasingly used for development tasks such as automated program repair (APR). Prior work has identified security risks in LLM-generated code, but most studies focus on synthetic, simplified, or isolated tasks. We present a large-scale security analysis of LLM-generated patches using 20,000+ GitHub issues from SWE-bench. We evaluate developer-written patches, two standalone LLMs (Llama 3.3 Instruct-70B and GPT-5.4 nano), and four agentic frameworks (OpenHands, AutoCodeRover, HoneyComb, and SWE-agent). We also analyze code, issue, and project-level factors associated with insecure patches. Under our evaluated SWE-bench setup, Llama 3.3 introduced 135 manually confirmed vulnerabilities across the train and test sets, compared with 12 in developer-written patches for the same issues. On the SWE-bench test set, GPT-5.4 nano introduced 3 vulnerabilities compared with 2 in developer patches. All four evaluated agentic frameworks also introduced vulnerabilities. OpenHands had the highest retained count, with 44 vulnerabilities across 11 issue instances. Vulnerabilities are associated with broader code modifications and with issues missing specific information. These results suggest that APR systems require proactive risk assessment methods that consider both generated code and issue context.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "补丁安全",
+        "自动修复",
+        "大模型",
+        "SWE-bench"
+      ],
+      "url": "https://doi.org/10.1145/3861341"
+    },
+    {
+      "id": "2611.22519",
+      "title": "Missing Security-Fix Backporting for GitHub Actions Workflows",
+      "authors": [
+        "Chengyan Ma",
+        "Jieke Shi",
+        "Ruidong Han",
+        "Weifeng Sun",
+        "Yuqing Niu",
+        "Yunbo Lyu",
+        "Zhou Yang",
+        "David Lo"
+      ],
+      "year": 2026,
+      "venue": "ICSE 2027",
+      "abstractOneWord": "用神经符号方法和大模型回退，把 GitHub Actions 工作流的安全修复回移植到发行分支。",
+      "abstract": "GitHub Actions 已是该平台上主流的 CI/CD 工具，但工作流安全维护负担很重：维护者常在默认分支打上补丁，发行分支和维护分支却仍带着同一漏洞，下游项目还会继续用这些分支构建。把已知修复搬到这些已经分叉的分支上，也就是回移植，实际很少做。本文第一次用大规模实证研究量化这个缺口。作者从公开的 GitHub Actions 工作流历史中挖掘 1,903,191 次修改工作流的提交，用静态扫描器 zizmor 对比提交前后，在 24,238 个项目中识别出 69,865 次安全修复，并检查每个发行分支是否带走了修复。缺口很普遍：474,490 个被审计的发行分支里，有 224,392 个仍脆弱；有意回移植又少又慢，78,907 个默认分支已修复的案例中，只有 19,476 个可确认为可能的回移植，中位滞后 243 天。为此作者提出 WorkflowBP，这是第一个面向 GitHub Actions 工作流的自动安全修复回移植方法。它采用神经符号路线：把默认分支上的修复编译成领域表示 Workflow Semantic Patch（WSP），再按作业和步骤的内容而不是位置匹配，应用到各个分叉分支；对确定性引擎处理不了的高度分叉案例，再用大模型合成 WSP。在研究中的 12,000 个未打补丁的真实工作流文件上，WorkflowBP 能产出经扫描器确认的回移植，比例为 67.9%。作者还向真实项目提交了 176 个带 WorkflowBP 回移植的 issue，其中 44 个已被确认或合入。",
+      "abstractEn": "GitHub natively supports workflow automation through GitHub Actions, now the dominant CI/CD tool on the platform. Yet keeping these workflows secure remains an ongoing burden: maintainers often patch a vulnerability on the default branch but leave the same flaw on the release and maintenance branches that downstream consumers continue to build from. Carrying a known fix onto these divergent branches, called backporting, is rarely done, and this paper presents the first large-scale empirical study quantifying the resulting gap. From a public corpus of GitHub Actions workflow histories, we mine 1,903,191 workflow-modifying commits, scan each before and after with the static scanner zizmor to identify 69,865 security fixes across 24,238 projects, and audit every release branch to check whether each fix was carried over. The gap is pervasive: 224,392 of 474,490 audited release branches remain vulnerable, and deliberate backporting is rare and slow, with only 19,476 of 78,907 already-fixed branches confirmed as plausible backports at a median lag of 243 days. We thus design WorkflowBP, the first technique for automated security-fix backporting of GitHub Actions workflows. WorkflowBP takes a neuro-symbolic approach: it compiles a default-branch fix into a domain-specific representation called the Workflow Semantic Patch (WSP) and applies it to each divergent branch by matching jobs and steps based on their content rather than their position, while an LLM synthesizes the WSP for the most divergent cases the deterministic engine cannot resolve. On 12,000 real unpatched workflow files from our study, WorkflowBP produces a scanner-checked backport for 67.9%. We further submit 176 issues with WorkflowBP-generated backports to real-world projects, 44 of which have been confirmed or fixed by developers.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全修复回移植",
+        "GitHub Actions",
+        "大模型",
+        "CI/CD"
+      ],
+      "url": "https://arxiv.org/abs/2611.22519",
+      "pdf": "https://arxiv.org/pdf/2611.22519.pdf"
+    },
+    {
+      "id": "2611.22888",
+      "title": "Stopping Is Not the Limit: Understanding and Eliciting Agent Capability in Long-Horizon Vulnerability Exploitation",
+      "authors": [
+        "Deokhyung Kang",
+        "Minjae Gwon",
+        "Sangdon Park"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "研究大模型 agent 在已知软件漏洞上写可运行利用时为何过早停止，并提出上下文管理方法继续挖能力。",
+      "abstract": "漏洞利用评测看的是语言模型 agent 能否从已知软件缺陷写出可运行的利用。测试时按顺序加大计算预算可以提高利用效果，但更大预算并不保证持续探索：agent 常常预算还没用完就停了。停下来之后如果继续跑会发生什么，现有工作很少看。作者在 ExploitBench 上用 DeepSeek-V4-Flash-0731 和 MiMo-V2.6-Pro 研究这个问题。他们发现第一次给出停止回复之后，仍能拿到额外的已验证收益，但跑得越久收益越弱。他们归纳出两种低效续跑模式：同一上下文里停止回复的比例上升；以及摘要里保留“做不到”的判断时，会更早停止。为检验上下文管理能否再挖出能力，他们提出 SCoRe：在停止扎堆时压缩上下文，并把这些判断标成尚未证实。SCoRe 比基于摘要的续跑和其他上下文管理基线更能提高已验证能力。配上 SCoRe，MiMo 在 2,000 轮时能力覆盖达到 67.0%，高于原停止策略下的 32.4%，也高于 ExploitBench 上 GPT-5.5 在同样任务、300 轮参考结果算出的 58.6%。这说明停止不必等于利用能力的上限，配合上下文管理继续执行还能挖出不少能力。",
+      "abstractEn": "Vulnerability exploitation tests whether language model agents can develop working exploits from known software flaws. Sequential test-time scaling can improve exploitation performance, but larger budgets do not ensure sustained exploration: agents often stop with budget remaining. Yet what happens when execution continues beyond stopping remains underexplored. We investigate this gap on ExploitBench using DeepSeek-V4-Flash-0731 and MiMo-V2.6-Pro. We find additional verified gains after the first stop response, but gains diminish over longer execution. We identify two patterns associated with less productive continuation: an increasing proportion of stop responses within the same context and earlier stopping associated with summaries retaining impossibility judgments about unachieved capabilities. To test whether context management can elicit further capability, we propose SCoRe, which compacts context at stop bursts and marks these judgments as unproven. SCoRe improves verified capability over summary-based continuation and other evaluated context-management baselines. With SCoRe, MiMo reaches a capability coverage score of 67.0% at 2,000 turns, exceeding both 32.4% under the original stopping policy and the 58.6% computed for GPT-5.5 from ExploitBench's 300-turn reference results on the same tasks. These findings show that stopping need not mark an agent's exploitation limit, and that continued execution with context management can elicit substantial further capability.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞利用",
+        "大模型 agent",
+        "ExploitBench",
+        "上下文管理"
+      ],
+      "url": "https://arxiv.org/abs/2611.22888",
+      "pdf": "https://arxiv.org/pdf/2611.22888.pdf"
+    },
+    {
+      "id": "2611.20671",
+      "title": "MASTA: A Feedback-Scheduled Multi-Agent System for End-to-End Tamarin Modeling and Analysis",
+      "authors": [
+        "Yongkang Xiao",
+        "Qiyi Deng",
+        "Jing Chen",
+        "Min Shi",
+        "Ju Ma",
+        "Ruiying Du"
+      ],
+      "year": 2026,
+      "venue": "NeurIPS 2026",
+      "abstractOneWord": "用多 agent 和大模型把自然语言协议描述写成 Tamarin 模型并完成形式化验证。",
+      "abstract": "用 Tamarin 做安全协议形式化验证，需要专家手写多重集重写规则和时序逻辑引理。把自然语言协议描述一次翻译成完整形式模型很难：句法、可达性和性质层的错误会在多步建模里叠加；同一个 agent 既写模型又自己打分，也很难把错误定位清楚。本文提出 MASTA，用三个设计应对这些问题。第一，把操作和评估角色拆开：Architect 负责规则建模，Auditor 负责性质建模，Arbiter 只做调度、不写模型。第二，Arbiter 按 Tamarin 最新判定调度下一个 agent，并把带问题标签的修改放进修改列表；六类问题分类加上大模型去重，用来避免调度死锁。第三，作者构造了 10 个协议、139 个变异体的基准，以及五项细粒度指标，分别衡量模型正确性（M1–M3）和完整性（M4–M5）。在该基准上，MASTA 配 Qwen 3.5-plus 比同一骨干上的 OpenCode 单项最多高 0.27，正确性和完整性均值都排第一，超过 Codex（GPT-5.5）和 Claude Code（Opus 4.7），尽管用的大模型更弱。在五个协议上的消融表明，去掉 Arbiter 后，性质和验证分数会掉到零。",
+      "abstractEn": "Tamarin-based formal verification of security protocols requires expert-authored multiset rewriting rules and temporal-logic lemmas. Translating a natural-language protocol description into a complete formal model with an LLM is hard because syntactic, reachability, and property-level errors compound across the multi-step modeling process, and a single agent that both authors and self-evaluates cannot reliably localize them. We present MASTA, a multi-agent system that addresses these difficulties through three innovations. First, an operational--evaluative role decomposition assigns rule modeling to an Architect, property modeling to an Auditor, and pure dispatch to a dedicated Arbiter that holds no authoring duties. Second, the Arbiter implements a Tamarin-anchored scheduler that dispatches the next agent based on the latest verifier verdict and routes problem-tagged fixes through a modification list, with a six-class problem taxonomy and an LLM deduplication check preventing routing deadlock. Third, we construct a benchmark of 10 protocols paired with 139 mutation variants and five fine-grained metrics that jointly assess model correctness (M1--M3) and completeness (M4--M5). On this benchmark, MASTA on Qwen 3.5-plus improves over OpenCode on the same backbone by up to +0.27 on individual metrics and ranks first on both the correctness and completeness averages, surpassing Codex (GPT-5.5) and Claude Code (Opus 4.7) despite using a weaker LLM. Ablations on five protocols confirm that removing the Arbiter collapses property and verification scores to zero.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "协议验证",
+        "Tamarin",
+        "多 agent",
+        "形式化"
+      ],
+      "url": "https://arxiv.org/abs/2611.20671",
+      "pdf": "https://arxiv.org/pdf/2611.20671.pdf"
+    },
+    {
+      "id": "2611.20699",
+      "title": "A First Look at System One Decision Models for Malware Detection",
+      "authors": [
+        "Pier Mattia Basciano",
+        "Giovanni Farina",
+        "Salvatore Monteleone"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把 System One 决策模型和大模型用在 Windows PE 恶意软件检测，并给出可校准、可解释的集成。",
+      "abstract": "恶意软件检测既需要在固定假阳性率下校准的分数，也需要分析员能读懂的判定：基于特征的检测器提供前者，对反编译代码调用大模型提供后者，但后者的置信度通常没有校准。System One 决策模型对一段文本回答一个有类型的问题，一次前向传播就给出各声明答案上的概率。本文第一次把这类模型用到 Windows PE 恶意软件检测，分析它们如何做决定，并提出 S1Mal：用类型化答案和 CLM-8B 的嵌入做集成。实验在隔离虚拟机里用 Ghidra 和 capa 拆开每个二进制，主机再把记录渲染成规范文本状态，即头信息、导入、MITRE ATT&CK 能力和字符串的摘要，可选带上反编译函数，不走类别捷径。每个模型对同一状态有三种读出：A0 是单一裁决问题的概率；A1 是 32 个原子行为问题，再用梯度提升树加权；A2 是打在模型状态嵌入上的头。S1Mal 把原子答案和 CLM-8B 的 A2 分数送进梯度提升树。评测覆盖 CLM-8B、十个开放决策模型和两个通过 logits 读取的大模型，数据包括 BODMAS 时间划分、SOREL-20M 分布外恶意软件，以及 14,534 个匹配的良性文件。在 BODMAS 上，A0 浪费了静态证据：13 个模型的 AUROC 只有 0.4025–0.8590。A1 把它找回来，平均把每个模型的 AUROC 提高 54.61%；A2 把 CLM-8B 提高 0.2749 到 0.9943，高于摘要事实组合器的 0.9901，九个开放模型达到 0.9853–0.9948。S1Mal 达到 0.9946，在实现假阳性率 1.45% 时检出 93.47% 的恶意软件，在测试 ROC 曲线 0.1% 假阳性率时检出 59.15%，对照 A2 的 46.59%。S1Mal 给分析员的是校准过的判定，并且能看到背后的原子答案。",
+      "abstractEn": "Malware detection needs scores calibrated at a fixed false positive rate (FPR) and decisions an analyst can read: feature-based detectors give the first, large language models (LLMs) on decompiled code the second, through generated text of uncalibrated confidence. System One decision models answer a typed question about a text with a probability over its declared answers in one forward pass. We present the first evaluation of these models for Windows Portable Executable malware detection, analyze how they decide, and propose S1Mal, an ensemble on the typed answers and the embedding of CLM-8B. In an isolated virtual machine, Ghidra and capa decompose each binary, and the host renders the records into a canonical textual state, a digest of headers, imports, MITRE ATT&CK capabilities and strings, optionally with decompiled functions, without class shortcuts. Three readouts score each model on the state: A0, the probability of one verdict question; A1, 32 atomic behavioral questions weighed by gradient-boosted trees; A2, heads on the model's state embedding. S1Mal feeds gradient-boosted trees with the atomic answers and the A2 score of CLM-8B. We evaluate CLM-8B, ten open decision models and two LLMs read through logits on BODMAS temporal splits, SOREL-20M out-of-distribution malware and 14,534 matched benign files. On BODMAS, A0 wastes the static evidence: its area under the receiver operating characteristic curve (AUROC) spans 0.4025-0.8590 across 13 models. A1 recovers it, raising every model's AUROC by +54.61% on average; A2 lifts CLM-8B by +0.2749 to 0.9943, above a combiner on digest facts (0.9901), and reaches 0.9853-0.9948 on nine open models. S1Mal reaches 0.9946 and detects 93.47% of the malware at a realized FPR of 1.45%, and 59.15% at 0.1% FPR on the test ROC curve, against 46.59% with A2. S1Mal gives analysts calibrated decisions, each with the atomic answers behind it.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "恶意软件检测",
+        "Windows PE",
+        "大模型",
+        "可解释判定"
+      ],
+      "url": "https://arxiv.org/abs/2611.20699",
+      "pdf": "https://arxiv.org/pdf/2611.20699.pdf"
+    },
+    {
+      "id": "2611.22589",
+      "title": "Adaptive LLM-Driven Honeypots vs. LLM-Driven Attackers: Does Narrative Coherence Improve Deception?",
+      "authors": [
+        "Pedro Beltrán-López",
+        "Raul Gonzalez Jimenez",
+        "Dario Maddaloni",
+        "Manuel Gil Pérez",
+        "Pantaleone Nespoli"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在仿真 Ubuntu 主机上用大模型蜜罐按叙事一致性部署诱饵，对抗大模型攻击 agent。",
+      "abstract": "大模型可以让蜜罐按需生成回复和欺骗性制品，但已有方法多半一次只评一条回复，没有回答：如果多件制品共同描述同一件事，会不会比互不相关的制品更能留住攻击者。随着自主的大模型攻击 agent 成为现实对手，这个问题更要紧。本文提出叙事欺骗：防御方把观察到的每条攻击命令映射到 MITRE ATT&CK 技术，再从基于 MITRE Engage 整理的目录里选兼容场景，并在入侵进行时，在仿真 Ubuntu 主机上部署彼此引用的制品（文件、进程、服务和日志）。大模型防御方和自主大模型攻击方通过真实 SSH 会话交互；攻击方的终止策略区分“怀疑被骗而放弃”和“失去兴趣而放弃”。1,150 场会话比较了四种复杂度递增的条件（Static、Same-TTP、Multi-TTP 和 Chain），覆盖四个开源权重攻击模型、四个防御模型和三种攻击技能等级。每升一级，交战时长都显著增加。每次反应的制品预算相同，连贯场景把高级攻击者的会话长度中位数从 40 条命令提高到 165 条，放弃率从 86% 降到 52%。效果随攻击技能增强，在全部十六对模型上都成立，推理成本相当。几乎所有会话都因失去兴趣结束，而不是因为识破欺骗，说明欺骗应维持有意义的发现，而不只是仿真器保真度。",
+      "abstractEn": "Large Language Models (LLMs) enable honeypots to generate responses and deceptive artefacts on demand, yet existing approaches evaluate generated content one reply at a time and leave open whether artefacts that jointly describe a coherent event retain an attacker better than unrelated ones. This question becomes pressing as autonomous LLM-driven offensive agents emerge as realistic adversaries. This paper proposes narrative deception, a reactive strategy in which the defender maps each observed attacker command to a MITRE ATT&CK technique, selects a compatible scenario from a curated catalogue based on MITRE Engage, and deploys mutually referential artefacts (files, processes, services, and logs) on an emulated Ubuntu host while the intrusion is under way. An LLM-powered defender and an autonomous LLM attacker interact through a real SSH session, and the attacker's termination policy distinguishes abandonment due to suspected deception from abandonment due to loss of interest. A campaign of 1,150 sessions compares four conditions of increasing sophistication (Static, Same-TTP, Multi-TTP, and Chain) across four open-weight attacker models, four defender models, and three attacker skill levels. Engagement increases significantly at every step. With the same artefact budget per reaction, coherent scenarios raise the median session length of advanced attackers from 40 to 165 commands and reduce their abandonment from 86% to 52%. The effect grows with attacker skill, holds across all sixteen model pairs, and comes at comparable inference cost. Nearly all sessions ended through loss of interest rather than detection, which suggests that deception should sustain meaningful findings, not only emulator fidelity.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "蜜罐",
+        "大模型",
+        "Linux",
+        "欺骗防御"
+      ],
+      "url": "https://arxiv.org/abs/2611.22589",
+      "pdf": "https://arxiv.org/pdf/2611.22589.pdf"
+    },
+    {
+      "id": "2611.21822",
+      "title": "Threat Landscape of Vibe Coding and the Road to Secure Autonomy",
+      "authors": [
+        "Devki Nandan Jha",
+        "Shubh Anand",
+        "Karthick Keeranagere Krishnaiah",
+        "Roman Ahearn",
+        "Suhas Nale"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "梳理 vibe coding 工作流里 AI agent 写代码、跑命令带来的软件安全威胁与现有防御缺口。",
+      "abstract": "Vibe coding 正在改变软件开发：实现更快，编程经验不多的人也能用自然语言描述需求，由 AI agent 写代码、测试并部署。随着这些 agent 变成会执行命令、管理依赖、访问云资源和与其他 agent 交互的自主系统，安全风险不再只是代码写错，而是会直接作用于软件系统的动作。相关研究会增加，但分散在提示注入、不安全代码生成、供应链攻击和人因等方面，术语、威胁假设和评测还缺少共识。本文从 vibe coding 工作流出发汇总现有研究：给出参考架构，刻画 agent 自主性的六个等级，并建立以五条信任边界为中心的威胁模型，覆盖开发者、AI 模型、工具、云基础设施和更广的软件生态。在此基础上提出九类共二十一种威胁；对每种威胁回顾已有证据、评估已有防御并指出局限。分析表明，风险随 agent 操作权限上升，而多数防御依赖模型自身判断，且往往只针对孤立威胁。最后列出十一项研究挑战，包括对 agent 权限的可强制限制，以及评估 vibe coding 安全的共用基准和方法。",
+      "abstractEn": "Vibe coding is reshaping software development, enabling faster implementation and allowing individuals with limited programming experience to describe requirements in natural language while AI agents write, test, and deploy the code. As these agents evolve into autonomous systems that execute commands, manage dependencies, access cloud resources, and interact with other agents, their security risks extend beyond incorrect code to actions with direct consequences for software systems. Although research on these risks is expanding, it remains fragmented across areas including prompt injection, insecure code generation, supply-chain attacks, and human factors, with limited consensus on terminology, threat assumptions, and evaluation. This paper consolidates emerging research through the lens of the vibe coding workflow. We establish a reference architecture, characterise six levels of agent autonomy, and develop a threat model centred on five trust boundaries spanning developers, AI models, tools, cloud infrastructure, and the wider software ecosystem. Building on this foundation, we propose a taxonomy of twenty-one threats across nine classes. For each threat, we review the available evidence, assess proposed defences, and identify limitations. Our analysis highlights that risks increase with agents' operational authority, while most defences rely on model judgement and address isolated threats. Finally, we identify eleven research challenges, including enforceable limits on agent authority and shared benchmarks and methodologies for assessing vibe coding security.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "vibe coding",
+        "不安全代码生成",
+        "agent 安全",
+        "威胁模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.21822",
+      "pdf": "https://arxiv.org/pdf/2611.21822.pdf"
+    },
+    {
+      "id": "2611.21777",
+      "title": "LLMs as Validators for Cross-Chain Bridges: Evaluating Source-Level and Transaction-Level Attack Detection on Solana",
+      "authors": [
+        "Yasir Rahman",
+        "Ishraq Samiha",
+        "Shahnewaz Karim Sakib",
+        "Anindya Bijoy Das"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评估大模型能否从 Solana 跨链桥源码或交易里正确诊断漏洞，而不是只报警。",
+      "abstract": "跨链桥因链上程序漏洞已造成大量资产损失。在 Solana 上，即使底层链运行正常，缺少校验也可能被利用。大模型能否从源代码或交易记录里诊断这些缺陷，而不只是报警，目前还不清楚。作者在本地 Solana 验证节点上实现了一个原生 Rust 锁铸桥，并构造四种可利用变体：两种分别对应 Cashio 和 Wormhole 事件中的模型缺陷，另外两种来自 Solana 安全审计中记录的漏洞类别。成对的脆弱与安全程序，再加上成功攻击、良性会话和被挡住的尝试，用来区分正确诊断和没有依据的报警。他们在五种开源权重模型的六种配置上评了 16,800 条回复，比较带注释和不带注释的源码输入，并用两名盲评大模型对 7,200 条脆弱输入答案打分。结果差异很大：没有注释时，模型只正确诊断 24% 的脆弱源码输入，却经常把安全桥标成有问题。交易层诊断在缺签名者场景上较高，其余三个场景平均只有 6%。原文注释（有的直接描述了缺陷）把源码诊断提高到 60%。这些发现说明，在桥安全审查里必须把正确的漏洞诊断和没有依据的报警分开。",
+      "abstractEn": "Cross-chain bridges have suffered substantial asset losses due to vulnerabilities in their on-chain programs. On Solana, missing validation checks can enable exploits even when the underlying blockchain operates correctly. The ability of large language models (LLMs) to diagnose these flaws from source code or transaction records, rather than merely raise alarms, remains insufficiently understood. We implement a native Rust lock-and-mint bridge on a local Solana validator with four exploitable variants: two model flaws from the Cashio and Wormhole incidents, while the other two represent vulnerability classes documented in Solana security audits. Paired vulnerable and secure programs, together with successful attacks, benign sessions, and blocked attempts, allow us to distinguish correct diagnoses from unsupported alarms. We evaluate six configurations of five open-weight models across 16,800 responses, compare source inputs with and without comments, and grade 7,200 answers on vulnerable inputs using two blinded LLM graders. The results reveal substantial differences across conditions: without comments, models diagnose 24% of vulnerable source inputs while frequently flagging the secure bridge. Transaction diagnosis is high for the missing-signer scenario but averages 6% across the other three scenarios. Original comments, some of which describe the flaw, increase source diagnosis to 60%. These findings highlight the importance of distinguishing correct vulnerability diagnoses from unsupported alarms in bridge security review.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "跨链桥",
+        "漏洞诊断",
+        "Solana",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.21777",
+      "pdf": "https://arxiv.org/pdf/2611.21777.pdf"
+    },
+    {
+      "id": "2611.22430",
+      "title": "Adaptive Budget Allocation for Smart-Contract Fuzzing: Why Online Feedback Fails to Improve Vulnerability Triage",
+      "authors": [
+        "Yanzi Liu",
+        "Jiachi Tong"
+      ],
+      "year": 2026,
+      "venue": "MSN 2026",
+      "abstractOneWord": "研究智能合约模糊测试如何分配有限预算，发现在线反馈帮不上漏洞分诊，离线概率曲线更好。",
+      "abstract": "智能合约模糊测试活动共享有限预算，而第一次正确类别的漏洞报告所需执行代价差得很大。作者在 143 个带标注合约和 350 个注入漏洞的合约上做轨迹回放，检验在线反馈能否改进分诊。每个合约平均预算 100 次执行时，均匀分配分别达到对应全知最优的 72% 和 70%。八种在线策略在总体分诊上都落后于均匀分配；在注入漏洞语料上重复的七种同样如此。五个在线信号对即将出现的报告，排序 AUC 只有 0.32–0.51。合成预言机实验表明，足够准的检测代价估计比可检测性排序更能补上缺口。这促使作者提出离线概率曲线分配器：预测各预算下首次报告概率，再按每次执行的预期收益分配。在每个语料四个新种子的冻结评测中，检测–预算 AUC 相对均匀分配，在两个源语料上分别提高 5.38% 和 4.81%，在另外三个公开基准子集上提高 1.99%–6.54%。",
+      "abstractEn": "Smart-contract fuzzing campaigns share a finite budget and vary widely in the execution cost of a first correct-class vulnerability report. Using trace replay on 143 annotated and 350 bug-injected contracts, we test whether online feedback improves triage. At a mean budget of 100 executions per contract, uniform allocation reaches 72% and 70% of the respective clairvoyant optima. All eight online policies trail uniform on aggregate triage, as do the seven repeated on the bug-injected corpus. Five online signals yield ranking AUCs of 0.32-0.51 for imminent reports. Synthetic-oracle experiments show that sufficiently accurate detection-cost estimates recover more of the gap than detectability rankings. This motivates an offline probability-curve allocator that predicts first-report probabilities across budgets and allocates by predicted gain per execution. In a frozen evaluation on four fresh seeds per corpus, detection-budget AUC improves over uniform by 5.38% and 4.81% on the two source corpora and by 1.99-6.54% on three additional public benchmark subsets.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "模糊测试",
+        "预算分配",
+        "漏洞分诊"
+      ],
+      "url": "https://arxiv.org/abs/2611.22430",
+      "pdf": "https://arxiv.org/pdf/2611.22430.pdf"
+    },
+    {
+      "id": "2611.20298",
+      "title": "Type-Confusion Security",
+      "authors": [
+        "Silei Ren",
+        "Hanxi Chen",
+        "Suraaj Kanniwadi",
+        "Andrew C. Myers"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用类型系统和 Lean 形式化智能合约等去中心化系统中的类型混淆安全，覆盖重入等攻击。",
+      "abstract": "类型系统是一种轻量办法，用来形式地保证代码满足安全性质。但智能合约和 Model Context Protocol 这类去中心化系统，很难约束不信任代码的行为。攻击者可能向受信任代码提供并不符合其宣称类型的值，作者把这类攻击叫做类型混淆。混淆副官、重入和控制流劫持等常见攻击都可以看成类型混淆的实例。他们把类型混淆安全定义成：不必遵守类型系统的无限制攻击者，并不比完全遵守类型系统的受限攻击者更强。形式定义采用 real–ideal 模拟；在一个用信息流类型、静态对抗良类型攻击者的核心演算里，他们证明运行时检查同样能对抗不良类型攻击者。于是程序员可以只按良类型攻击者来推理安全，类型系统保证的性质仍然成立。类型混淆安全的证明已在 Lean 中机械化。",
+      "abstractEn": "Type systems are a lightweight way to obtain formal assurance that code upholds security properties. However, decentralized systems, such as smart contracts and Model Context Protocol ecosystems, have limited ability to constrain the behavior of untrusted code. In such systems, attackers may attempt to confuse trusted code by supplying values that do not behave according to their advertised types, an attack that we call type confusion. Well-known attacks such as confused deputy attacks, reentrancy attacks, and control-flow hijacking can be understood as instances of type confusion. We define type confusion security as the property that unrestricted attackers who need not follow the type system have no more power than limited attackers who fully obey it. We formally define type confusion security as a real--ideal emulation, and in the context of an information-flow-typed core calculus that statically enforces security against well-typed attackers, prove that its run-time checks also enforce security against ill-typed attackers. In this system, programmers can write code while reasoning about security only against well-typed attackers; the security guarantees enforced by the type system still hold. We mechanize a proof of type confusion security in Lean.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "类型混淆",
+        "智能合约",
+        "重入",
+        "形式化验证"
+      ],
+      "url": "https://arxiv.org/abs/2611.20298",
+      "pdf": "https://arxiv.org/pdf/2611.20298.pdf"
+    }
+  ]
+}
