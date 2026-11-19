@@ -1,0 +1,298 @@
+{
+  "date": "2026-11-19",
+  "papers": [
+    {
+      "id": "2611.22457",
+      "title": "From Ideal to Real: Integrating Language Models into Smart Home for Human-Centric IoT Safety and Security Fuzzing",
+      "authors": [
+        "Lin Li",
+        "Xinbo Ban",
+        "Chao Chen",
+        "Lei Pan",
+        "Ming Ding",
+        "Kok-Leong Ong",
+        "Jun Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型模拟真人决策，对智能家居规则交互做安全模糊测试。",
+      "abstract": "把物联网设备接入家庭系统，可以更好地控制居住环境。但这些设备已经进入医疗、交通和家庭自动化等关键场景，规则之间的冲突可能带来隐私泄露、数据被盗和人身伤害。传统模糊测试多在模拟环境里运行，并假定人会做出理想决策，很难覆盖真人互动对智能家居设备操作的影响，因而可能漏掉意外后果。为了看清真实决策的影响并发现意料之外的规则间漏洞，作者在面向智能家居的 IoT Fuzz 上接入大模型，用来模拟人的决策过程。这样测试环境更接近真实、也更难预测，更能反映智能家居中多样化、动态的真人互动。",
+      "abstractEn": "Integrating IoT devices into household systems offers enhanced control over living environments. However, as these devices become pervasive in critical sectors such as healthcare, transportation, and home automation, they expose inter-rule vulnerabilities that may lead to privacy breaches, data theft, and physical harm. Traditional fuzz testing methods, which often operate in simulated environments assuming ideal human decisions, fail to account for the complexities of human interactions that can influence device operations in smart homes, potentially leading to unforeseen consequences. To reveal the impact of real human decisions and discover unexpected inter-rule vulnerabilities, we introduce an enhanced version of IoT Fuzz for smart homes by integrating large language models to emulate human decision-making processes. Our novel approach adds a layer of realism and unpredictability to the testing environment, more accurately capturing the diverse and dynamic nature of human interactions in smart home settings.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能家居",
+        "模糊测试",
+        "大模型",
+        "规则漏洞"
+      ],
+      "url": "https://arxiv.org/abs/2611.22457",
+      "pdf": "https://arxiv.org/pdf/2611.22457.pdf"
+    },
+    {
+      "id": "2611.20528",
+      "title": "ReconPotBench: Evaluating LLM Honeypots in Multi-Round Linux Reconnaissance",
+      "authors": [
+        "Qianli Wang",
+        "Junchao Wu",
+        "Binkai Ou",
+        "Lidia S. Chao",
+        "Derek F. Wong"
+      ],
+      "year": 2026,
+      "venue": "EACL 2027 Findings",
+      "abstractOneWord": "用多轮 Linux 侦察基准评测大模型蜜罐在后续命令依赖前文时是否仍然可信。",
+      "abstract": "大模型越来越多地用来搭建交互式蜜罐，但现有评测多看单条命令输出，无法判断后续命令依赖前面结果时系统是否仍然可信。本文提出 ReconPotBench，这是一个面向 Linux 侦察蜜罐的多轮基准。它包含 1032 组三轮侦察交互，覆盖八类侦察任务，参考输出采集自真实 Linux 环境。在统一测试协议下，作者从单轮真实性、跨轮上下文一致性，以及面向攻击者的侦察价值三个维度比较 Cowrie、开源大模型和闭源大模型。结果表明，多轮评测能暴露单轮测试看不到的失败：真实性随交互加深而下降，开源和闭源大模型都难以跨轮保持一致状态。大模型蜜罐在真实性和侦察价值上仍优于 Cowrie，而 Cowrie 因模板化行为更稳定。分类结果显示，需要跨轮保持网络关系的任务，难于以端口等显式实体为中心的任务。该基准可复现地评测大模型蜜罐在多轮依赖交互中的真实性、实体一致性和攻击者视角效用。数据集见 https://github.com/qianli-wang/ReconPotBench。",
+      "abstractEn": "Large language models (LLMs) are increasingly used to build interactive honeypots, yet existing evaluations mainly assess isolated command outputs and cannot determine whether a system remains believable when later commands depend on earlier results. We present ReconPotBench, a multi-round benchmark for Linux reconnaissance honeypots. It contains 1,032 three-round reconnaissance interactions across eight reconnaissance categories, with reference outputs collected from a real Linux environment. Under a unified testing protocol, we compare Cowrie, open-source LLMs, and closed-source LLMs along three dimensions: round-level authenticity, cross-round contextual consistency, and hacker-oriented reconnaissance value. Results show that multi-round evaluation exposes failures hidden by single-round testing, as authenticity declines with interaction depth and both open-source and closed-source LLMs struggle to maintain coherent state across rounds. LLM-based honeypots nevertheless outperform Cowrie in authenticity and reconnaissance value, while Cowrie remains more consistent because of its rigid templated behavior. Category-level analysis further shows that tasks requiring systems to preserve network relationships across rounds are harder than tasks centered on explicit entities such as ports. ReconPotBench enables reproducible evaluation of LLM honeypots across authenticity, entity consistency, and hacker-perspective utility in dependent multi-round interactions. The dataset is available at: https://github.com/qianli-wang/ReconPotBench",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "蜜罐",
+        "Linux",
+        "大模型",
+        "侦察"
+      ],
+      "url": "https://arxiv.org/abs/2611.20528",
+      "pdf": "https://arxiv.org/pdf/2611.20528.pdf"
+    },
+    {
+      "id": "2611.19764",
+      "title": "Compositional Exploits in Autonomous Coding Agents: Attack Mechanics and Ephemeral Defense",
+      "authors": [
+        "Deep Shah",
+        "Nehal Kathrotia"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "指出编程 agent 会把单独无害的工具串成未授权攻击，并在 Linux 内核侧拦截。",
+      "abstract": "Antigravity、Claude Code、Cursor、OpenHands 这类自主编程 agent 依赖第三方工具来查看文件、执行命令和调用外部 API。现有安全审计几乎只单独检查每个工具：静态 linter 和 AST 检查器在安装时确认单个工具不含恶意代码。本文说明这种孤立审计是不够的。作者揭示了自主编程 agent 中的组合利用：agent 把各自无害的工具串起来，完成未授权攻击。这类似二进制利用里的代码复用，不需要恶意软件；agent 可以跨轮次、借助共享工作区文件、环境变量和对话记忆，把合法工具操作拼在一起。在包含 560 个任务的基准（8 类危害共 360 个利用任务，以及 200 个良性开发和云工作流）上，未加防护的前沿模型（Gemini 3.5、3.7 和 3.8 Flash）完成组合利用链的成功率为 72.9% 到 84.5%，而五种主流单工具分发前扫描器对所有组成工具的检出率为 0%。为消除这类利用，作者提出 CompGuard，它在操作系统层把两个平面合在一起：认知控制平面发放单技能能力租约并跟踪数据流来源；内核强制层使用 Linux Landlock LSM v4、seccomp-BPF 套接字过滤和临时回环代理，堵住调用缺口。CompGuard 的防御拦截率为 100%（拆除前净攻击成功率 0.0% 到 0.8%），介入开销 61.4 微秒，良性开发工作流求解率保持 98.0%，在 615 次真实云诊断调用上没有误报。",
+      "abstractEn": "Autonomous coding agents (such as Antigravity, Claude Code, Cursor, and OpenHands) rely on third-party tools to inspect files, run commands, and call external APIs. Today's security auditors evaluate these tools almost entirely in isolation: static linters and AST checkers verify that each individual tool contains no malicious code at installation time. In this paper, we show that isolated tool auditing is fundamentally flawed. We expose compositional exploits in autonomous coding agents, an emergent vulnerability class where an agent chains individually harmless tools to execute an unauthorized attack. Much like code-reuse attacks in binary exploitation, this threat requires no malware; instead, the agent stitches together legitimate tool operations across turns over shared workspace files, environment variables, and chat memory. Across a 560-task benchmark suite (360 exploit tasks across 8 hazard classes and 200 benign developer and cloud workflows), unprotected frontier models (Gemini 3.5, 3.7, and 3.8 Flash) execute compositional exploit chains with a 72.9% to 84.5% success rate, while five leading single-tool pre-distribution scanners exhibit a 0% detection rate across all constituent tools. To eliminate compositional exploits, we present CompGuard, an OS-grounded defense uniting two planes: (1) a Cognitive Control Plane that issues single-skill capability leases and tracks dataflow provenance, and (2) an OS Kernel Enforcement Layer using Linux Landlock LSM v4, seccomp-BPF socket filters, and an ephemeral loopback proxy to close the invocation gap. CompGuard achieves a 100% Defense Block Rate (0.0% to 0.8% pre-teardown Net ASR) at 61.4 microseconds interposition overhead, preserves a 98.0% solve rate on benign developer workflows, and triggers zero false alarms across 615 real cloud diagnostic calls.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编程 agent",
+        "工具链攻击",
+        "Linux",
+        "能力控制"
+      ],
+      "url": "https://arxiv.org/abs/2611.19764",
+      "pdf": "https://arxiv.org/pdf/2611.19764.pdf"
+    },
+    {
+      "id": "2611.19886",
+      "title": "Recovery Gone Too Far: Understanding and Repairing Risky Fallback in LLM Agents",
+      "authors": [
+        "Liwen Wang",
+        "Jiangrong Wu",
+        "Zongjie Li",
+        "Zongyi Lyu",
+        "Shuai Wang",
+        "Shing-Chi Cheung"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析大模型编程 agent 在工具失败后换用危险替代操作，并给出监控拦截。",
+      "abstract": "大模型 agent 通过工具与环境交互，例如读取仓库、运行构建和推送代码。当工具因限流或超时等普通错误失败时，agent 可以改用替代工具继续完成任务。但同一套回退在一种环境里能完成任务，在另一种环境里可能越过操作边界。例如推送被拒绝后，强制推送在一个仓库里只覆盖 agent 自己的提交，在另一个仓库里还会删掉其他作者的提交。作者把这种回退叫做危险回退。为理解这一现象，他们对覆盖 8 个领域、包含 55 个真实 CVE 的 304 个场景做了实证研究。评测的四种主流模型都会出现危险回退，危险场景中越界比例最高达到 96.8%。三种常见缓解手段对此都无效。随后作者提出 nrepair：每次调用替代工具时，监视器根据仅在正常运行上标定的阈值给当前上下文打分；触发后先扣住这次调用一次，把决定交回 agent。nrepair 在四种模型上都降低了越界，最高从 67.5% 降到 16.2%，降幅 76.0%，运行开销可忽略。多数模型上正常成功率下降不到 7%。在 Claude Code 和 Codex 两个生产级 agent 上同样有效。",
+      "abstractEn": "Large Language Model (LLM) agents interact with their environments through tools, reading repositories, running builds, and pushing code. When a tool fails with an ordinary error, such as a rate limit or a timeout, the agent can fall back to a substitute tool and still complete the task. However, the same fallback that completes a task in one environment can cross an action boundary in another. For example, after a push is rejected, a forced push in one repository replaces only the agent's own commits, while in a different repository it also removes another author's commits. We call such a fallback a risky fallback. To understand this phenomenon, we conduct an empirical study on 304 scenarios that span eight domains and cover 55 real CVEs. All four mainstream models we evaluate exhibit risky fallback, with action-boundary violations in up to 96.8% of risky scenarios. We further evaluate three mainstream mitigations and find that none of them is effective against risky fallback. We then present nrepair. At each call to the substitute tool, nrepair scores the agent's context with a monitor whose threshold is calibrated on normal runs alone; when the monitor triggers, it withholds the call once and returns the decision to the agent. nrepair reduces action-boundary violations on all four models, by up to 76.0% (from 67.5% to 16.2%), at a negligible runtime cost. On most models, the normal success rate drops by less than 7%. We also evaluate nrepair on two production agents, Claude Code and Codex, and find that it is equally effective on both.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编程 agent",
+        "危险回退",
+        "工具调用",
+        "CVE"
+      ],
+      "url": "https://arxiv.org/abs/2611.19886",
+      "pdf": "https://arxiv.org/pdf/2611.19886.pdf"
+    },
+    {
+      "id": "2611.24185",
+      "title": "Guarding the Kingdom of Skill-Based Agents in the AI Dynasty of Computation: Control-Flow Integrity for Agent Skills",
+      "authors": [
+        "Bonan Ruan",
+        "Yuhao Sun",
+        "Jiahao Liu",
+        "Qixiao Lin",
+        "Jian Mao",
+        "Zhenkai Liang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把控制流完整性用到基于 skill 的大模型 agent，在编译期约束工具调用。",
+      "abstract": "控制流完整性（CFI）把程序限制在事先固定的控制流图上。过程式 agent skill 把控制流写进提示词，由大模型 agent 在运行时决定每一步走推理、工具调用还是脚本。过程骨架还在，但能否强制执行取决于步骤实际跑在哪里。很多违规只用了 skill 本身需要的操作，例如校验前就覆盖文件，权限白名单会放行。偏离或被提示注入的模型还可能用体制迁移躲开监视器，例如声称检查已经通过。本文提出 SkillCFI，把 CFI 用到基于 skill 的 agent。编译器把大模型解释限制在编译期，从同一份 skill 导出 agent 指令和可执行契约。按形式化可强制准则，它强制那些证据要跨过工具边界的义务，并拒绝强制义务没有任何可检查点的 skill。确定性运行时强制器只在有可信证据时才放行工具请求，并拒绝内联脚本这类无中介通道，因此无论模型提议什么，被接受的轨迹都遵循契约。在 8 个自写 skill 上，24 种源码变异下编译出的契约都不比源 skill 更宽。在 770 次 agent 会话中，SkillCFI 在派发前挡住全部 240 次白名单会放行的违规，正常任务完成率与不加防护接近。拒绝时列出下一步合法操作，恢复率从 21% 升到 65%。检查约占任务时间的 2%；紧凑命令形式把会话变慢从 1.32 倍降到 1.08 倍。53 个公开 skill 按原文都不能直接接受。编译器诊断指向接口而不是工作流，并引导其中 7 个改成可强制契约。",
+      "abstractEn": "Control-flow integrity (CFI) confines a program to a control-flow graph fixed ahead of time. Procedural agent skills move this control flow into prompt text, and a large language model (LLM) agent decides at runtime whether each step runs in its reasoning, a tool call, or a script. The procedure's control skeleton survives, but its enforceability depends on where each step runs. Many violations, such as overwriting a file before validation, use only operations the skill requires, so permission allowlists admit them. A deviating or prompt-injected model can also evade a monitor by regime migration, for example by claiming that a check passed. We present SkillCFI, which carries CFI over to skill-based agents. Its compiler confines LLM interpretation to compile time and derives the agent's instructions and an executable contract from one skill. By a formal enforceability criterion, it enforces obligations whose evidence crosses the tool boundary and rejects a skill whose mandatory obligation leaves nothing to check. A deterministic runtime enforcer admits a tool request only on trusted evidence and refuses unmediated channels such as inline scripts, so admitted traces follow the contract whatever the model proposes. On eight self-written skills, no compiled contract permits more than its source under 24 source mutations. In 770 agent sessions, SkillCFI blocks before dispatch all 240 such violations, which an allowlist admits, and normal tasks complete nearly as often as without it. Listing the next legal steps in a refusal raises recovery from 21% to 65%. Checking takes about 2% of task time, and a compact command form cuts session slowdown from 1.32 times to 1.08 times. None of 53 public skills is accepted as written. The compiler's diagnostics point to interfaces rather than workflows and guided seven into enforceable contracts.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "控制流完整性",
+        "agent skill",
+        "工具调用",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.24185",
+      "pdf": "https://arxiv.org/pdf/2611.24185.pdf"
+    },
+    {
+      "id": "2611.23507",
+      "title": "ACaM: Automated Capability Modeling for Agentic AI Security",
+      "authors": [
+        "Monika Santra",
+        "Dhilung Kirat",
+        "Qiushi Wu",
+        "Kevin Eykholt",
+        "Xiaokui Shu",
+        "Ian Molloy"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "从工具代码而不是描述出发，用静态分析加大模型建模 agent 能力并挖漏洞。",
+      "abstract": "在 agent 系统里，大模型会调用持有凭证、私有数据、文件系统和外部服务长期权限的工具。这类 agent 越来越多地被部署，却回答不了一个基本问题：不论它被设计成做什么、实际观察到做什么，它到底能访问、外泄和传播什么？现有做法把工具的自然语言描述当成行为代理，但描述和实现并不被强制一致。这个缺口叫做描述–代码不一致（DCI），会带来能力洗白：实现里有描述未写明的危险行为，可能来自无意漂移或供应链被改，只要大模型按表面无害的用途调用工具，危险行为就会静默执行。本文提出 ACaM，这是一种神经符号能力建模方法，从代码推导每个工具的能力，洗白后的能力无法躲在无害描述后面。静态分析用代码事实约束大模型，大模型输出不能覆盖静态分析已经确定的事实，只补充这些事实表达不了的行为含义。ACaM 把 agent 源码编译成 Agent Capability Property Graph（ACPG），用来重建跨越多次工具调用的威胁链。在 43 个真实 agent（含 9 个多智能体系统）上评测：24 个人工标注 agent 上，能力属性宏 F1 为 98.3%，注入威胁链重建得分 0.980，比最强基线高 8 分。应用到全部 43 个未改动 agent 时，发现数百个结构性漏洞，其中 10 个用概念验证利用确认。",
+      "abstractEn": "In agentic AI systems, an LLM invokes tools that hold standing access to credentials, private data, filesystems, and external services. Such agents are increasingly deployed without an answer to a basic question: what can an agent access, exfiltrate, and propagate, independent of what it is designed for or is observed to do? The question goes unanswered because existing approaches trust a tool's natural-language description as a proxy for its behavior. But nothing enforces that the description and its implementation agree. This gap is known as Description-Code Inconsistency (DCI). DCI enables a threat class called capability laundering, in which a tool's implementation contains dangerous behavior that its description omits. The behavior may come from incidental drift or a supply-chain compromise. It runs silently whenever an LLM invokes the tool for its stated, benign purpose. We present ACaM, a neurosymbolic approach to capability modeling that derives each tool's capabilities from its code, so a laundered capability cannot hide behind a benign description. In ACaM, static analysis grounds an LLM in code-derived facts, and no LLM output can override a fact that static analysis has established. The LLM supplies only the behavioral meaning that those facts cannot express. ACaM compiles agent source code into the Agent Capability Property Graph (ACPG) and uses it to reconstruct threat chains that span multiple tool calls. We evaluate ACaM on 43 real-world agents, including 9 multi-agent systems. On 24 manually annotated agents, it recovers capability properties with 98.3% macro-F1 and reconstructs injected threat chains with a score of 0.980, 8 points above the strongest baseline. Applied to all 43 unmodified agents, it discovers hundreds of structural vulnerabilities, ten of which we confirm with proof-of-concept exploits.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "能力建模",
+        "静态分析",
+        "工具安全",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.23507",
+      "pdf": "https://arxiv.org/pdf/2611.23507.pdf"
+    },
+    {
+      "id": "2611.24833",
+      "title": "DispersedBFT: Bottleneck-Free Primary-Backup Consensus using Dispersed Replication",
+      "authors": [
+        "Nancy Kansal",
+        "Celine Sana",
+        "Jelle Hellings"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用信息分散减轻区块链 PBFT 主节点瓶颈，把请求复制分给备份节点。",
+      "abstract": "区块链推动了新型弹性数据管理系统（RDS）的发展。这类系统通常采用主备设计，用 PBFT 等共识协议管理。主节点独自协调请求的复制和执行，因而成为性能瓶颈。本文提出 DispersedBFT，这是一种高性能、类似 PBFT 的共识协议，用信息分散复制消除主节点瓶颈，把复制请求的工作从主节点分到备份节点。作者给出若干变体，分别用消息认证码和 Merkle 证明降低 CPU 开销，或用数字签名降低通信开销。实际性能测试表明 DispersedBFT 明显优于 PBFT 和 HotStuff：43 个副本时吞吐达到每秒 340 万笔交易，比 PBFT 快最多 6.2 倍，比 HotStuff 快 2.6 倍。",
+      "abstractEn": "The advent of blockchains is fueling the development of novel resilient data management systems (RDSs). Typically, these RDSs are managed using a primary-backup design using a consensus protocol such as PBFT. In these primary-backup designs, a single participant, the primary, is responsible for coordinating the replication and execution of requests. Unfortunately, the central role of the primary makes it a bottleneck that drastically limits performance. In this paper, we propose DispersedBFT, a high performance PBFT-like consensus protocol that utilizes dispersed replication to eliminate the primary bottleneck of PBFT-like consensus. In specific, DispersedBFT uses information dispersal to distribute the task of replicating request from the primary to the backups. We propose several variants of DispersedBFT with either low CPU cost (by using Message Authentication Codes and Merkle proofs) or communication cost (by using digital signatures). We practically analyze the performance of DispersedBFT and show it greatly outperforms PBFT and HotStuff: DispersedBFT supports a throughput of 3.4Mtxn/sec with 43 replicas and is up-to 6.2x faster than PBFT and 2.6x faster than HotStuff.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "PBFT",
+        "区块链",
+        "信息分散"
+      ],
+      "url": "https://arxiv.org/abs/2611.24833",
+      "pdf": "https://arxiv.org/pdf/2611.24833.pdf"
+    },
+    {
+      "id": "2611.23811",
+      "title": "Stephen: Verifying Sequencer-Aided Coordination Systems with Cross-View Prophecy",
+      "authors": [
+        "Jinkun Geng",
+        "Muhammad Haseeb",
+        "Daniel Qian",
+        "Joseph Tassarotti",
+        "Shuai Mu",
+        "Anirudh Sivaraman"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "形式化验证带 sequencer 的协调协议，处理视图切换后不能提前固定的线性化点。",
+      "abstract": "许多分布式系统靠专用 sequencer 给请求排序，副本再按该顺序提交，以换取高性能。从 Corfu、NOPaxos 到 LazyLog、SwitchBFT，这类 sequencer 辅助协调（SAC）系统已有十多年，正确性论证却仍停留在纸面证明或协议层有界模型检测。本文形式化验证 SAC 协议的实现。看起来 sequencer 让证明变容易：它决定全部请求顺序，证明可以用预言变量把每个请求的线性化点放在 sequencer。但这个线性化点并不耐久，因为 sequencer 排序发生在任何副本提交之前。崩溃等少见事件可能触发视图切换并丢弃该请求，使先前决定和依赖它的证明失效。作者提出框架 Stephen，扩展预言变量以处理视图切换。贡献有三点。第一，跨视图预言窥视，让证明跟随请求穿过视图切换，直到提交或永久丢弃。第二，验证发现了现有 SAC 实现中的缺陷，包括会丢失已提交请求的问题；作者修复并证明修复正确。第三，把 Stephen 用到 NOPaxos、Corfu 和 LazyLog，得到带机器检查线性化证明的验证实现，性能与开源未验证实现相差不超过 17%。验证实现和证明将开源。",
+      "abstractEn": "Many distributed systems achieve high performance by relying on dedicated sequencers to order requests, leaving replicas to commit them in that order. Despite more than a decade of such sequencer-aided coordination (SAC) systems, from Corfu and NOPaxos to LazyLog and SwitchBFT, their correctness has been argued only with pen-and-paper proofs or bounded model checking at the protocol level. In this paper, we formally verify implementations of SAC protocols. The sequencer seems to make this easy: it decides the order of all requests, so the proof can place each request's linearization point at the sequencer using a well-known technique, prophecy variables. Yet a linearization point placed at the sequencer is not durable, because the sequencer orders a request before any replica commits it. Crashes and other rare events may trigger a view change that discards the request, nullifying the earlier decision and the proof that rests on it. Our framework, Stephen, extends prophecy variables to handle view changes, and we make three contributions. (1) We develop cross-view prophecy peek, which lets the proof follow a request across view changes until it is either committed or permanently discarded. (2) Our verification uncovered bugs in existing SAC implementations, including one that can lose committed requests. We fix them and prove the fixes correct. (3) We apply Stephen to NOPaxos, Corfu and LazyLog. We build verified implementations with machine-checked proofs of linearizability. They perform within 17% of their open-source, unverified counterparts. The verified implementations and proofs will be open-sourced.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "形式化验证",
+        "sequencer",
+        "视图切换"
+      ],
+      "url": "https://arxiv.org/abs/2611.23811",
+      "pdf": "https://arxiv.org/pdf/2611.23811.pdf"
+    },
+    {
+      "id": "2026-2899",
+      "title": "Aker: Efficient Two-Party SLH-DSA",
+      "authors": [
+        "Yaron Salman",
+        "Ben Riva",
+        "Dmitry Kogan"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出抗恶意攻击的两方门限 SLH-DSA 签名协议，面向密钥保护与钱包部署。",
+      "abstract": "门限签名已广泛用于保护密码学密钥，但把它扩展到后量子签名仍然困难。NIST 的格签名已有较高效的门限协议；而 SLH-DSA（FIPS 205）作为无状态哈希签名标准，缺少这些协议常利用的代数结构，分布式签名一直被认为开销过大。本文提出 Aker，这是一个抗恶意攻击的两方签名协议，可与未修改的 FIPS 205 验证器兼容。方法把通用秘密共享多方计算与四项针对 SLH-DSA 超树结构的优化结合起来。并发评估活动层，把顺序哈希深度压到单链水平；缓存公钥使认证路径可本地计算，多方计算只评估签名叶；固定路径前缀让签名者跨消息复用整段上层签名；一次性子树在本地采样下层签名分量，而不是从密钥派生，进一步减少多方计算。部分收益以签名者有状态、以及每把密钥可签次数上限更低为代价。作者用基于 SHAKE 的 SLH-DSA 在两种部署里实现并评测。服务器到服务器场景结合新的 GPU 引擎做抗恶意布尔 GMW：两台单 GPU 服务器分属不同云厂商、经公网通信时，SLH-DSA-128f 在线签名约 2.09 秒，降低签名次数上限后约 0.76 秒；与输入无关的 Beaver 三元组离线生成，并可在无密钥 CPU 工作节点上横向扩展。客户端到服务器场景通过周期性离线会话准备一百多个签名储备，之后在线签名只需四轮低带宽通信和本地哈希。结果表明，两方场景下抗恶意的 SLH-DSA 分布式签名已经可行，这些优化也可直接扩展到更多参与方。",
+      "abstractEn": "Threshold signing is widely deployed to protect cryptographic keys, but extending these deployments to post-quantum signatures remains challenging. While NIST's lattice-based signatures now have efficient threshold protocols, distributed signing for SLH-DSA (FIPS 205), NIST's stateless hash-based signature standard, has been considered prohibitively expensive because it lacks the algebraic structure those protocols typically exploit. We present Aker, a maliciously secure two-party signing protocol compatible with an unmodified FIPS 205 verifier. Our approach combines generic secret-sharing MPC with four optimizations that leverage the structure of the SLH-DSA hypertree. Evaluating active layers concurrently collapses sequential hashing depth to that of a single chain. Caching public keys allows authentication paths to be computed locally, so that only the signing leaf is evaluated in MPC. Fixing path prefixes lets signers reuse entire upper-layer signatures across messages. Finally, one-time subtrees sample lower-layer signature components locally rather than deriving them from the secret key, further reducing MPC work. Some of these gains come at the cost of stateful signers and a lower limit on the total number of signatures per key. We implement and evaluate our protocols using SHAKE-based SLH-DSA in two deployment settings. For server--server deployments, we combine these techniques with a new GPU engine for maliciously secure Boolean GMW. Between two single-GPU servers in separate cloud providers over the public Internet, online signing for SLH-DSA-128f takes 2.09 seconds, or 0.76 seconds with a lower signature limit, while input-independent Beaver triple generation runs offline and scales horizontally across keyless CPU workers. For client--server deployments, a periodic offline session prepares a reserve of over a hundred signatures, after which online signing requires only four low-bandwidth communication rounds and local hashing. These results show that maliciously secure distributed signing for SLH-DSA is within reach today in the two-party setting, while our optimizations extend directly to more parties.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "后量子",
+        "MPC",
+        "SLH-DSA"
+      ],
+      "url": "https://eprint.iacr.org/2026/2899",
+      "pdf": "https://eprint.iacr.org/2026/2899.pdf"
+    },
+    {
+      "id": "2026-2898",
+      "title": "LEASH: When LaBRADOR's Guarantees Go Astray",
+      "authors": [
+        "Xiang Wang",
+        "Ji Xiang"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "指出格证明系统 LaBRADOR 的完备性和知识提取分析有漏洞，并给出参数修补。",
+      "abstract": "简洁论证可以高效验证大规模计算，基于格的构造则提供后量子安全的一条路。LaBRADOR 通过知识的递归归约得到紧凑证明，但这些归约必须仔细控制见证范数、关系保持和知识提取，才能维持所声称的保证。本文重新审视 LaBRADOR 的正确性和安全分析。作者构造显式反例，说明其具体参数选择策略即使对合法的二元 R1CS 见证也可能无法保持完备性；还指出递归关系变换中的不一致，以及知识提取分析中概率界的不准确。随后给出针对性修补和相应数学分析，考察范数界、分解参数和挑战分布的改动如何影响安全与效率。结果说明，格上简洁证明系统需要严格的参数化和组合推理。",
+      "abstractEn": "Succinct arguments enable efficient verification of large computations, while lattice-based constructions offer a promising path toward post-quantum security. LaBRADOR advances this direction through recursive reductions of knowledge that achieve compact proofs. However, these reductions require careful control of witness norms, relation preservation, and knowledge extraction to maintain their claimed guarantees. In this paper, we revisit the correctness and security analysis of LaBRADOR. We construct explicit counterexamples showing that its concrete parameter-selection strategy can fail to preserve completeness, even for valid binary R1CS witnesses. We further identify inconsistencies in recursive relation transformations and inaccuracies in the probability bounds underlying its knowledge extraction analysis. We develop targeted repairs and provide corresponding mathematical analyses, examining how changes to norm bounds, decomposition parameters, and challenge distributions affect the resulting security and efficiency guarantees. Our results highlight the importance of rigorous parameterization and compositional reasoning in lattice-based succinct proof systems.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "零知识证明",
+        "格密码",
+        "LaBRADOR",
+        "证明系统"
+      ],
+      "url": "https://eprint.iacr.org/2026/2898",
+      "pdf": "https://eprint.iacr.org/2026/2898.pdf"
+    },
+    {
+      "id": "2026-2894",
+      "title": "BMuSig-L: Blind Multi-Signature from Lattice",
+      "authors": [
+        "Anirban Chakraborty",
+        "Mriganka Dey",
+        "Nikita Dey",
+        "Avijit Dutta",
+        "Subhabrata Samajder"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "提出格上两轮并发安全的盲多重签名，用于保护隐私的去中心化协议。",
+      "abstract": "盲签名和多重签名是保护隐私的去中心化协议里两类基本原语。盲签名让用户在对签名者隐藏消息的前提下获得签名，签名者也无法把最终签名关联回这次签名会话。多重签名则让一组签名者共同生成一条消息上的单个签名。Karantaidou 等人（AsiaCCS 2024）提出的盲多重签名结合了二者：用户从一组签名者获得联合签名，消息对每个签名者保密，合谋签名者也无法把最终签名关联回会话。Bisht 等人随后提出与 Schnorr 兼容的 BMuSig2（AsiaCCS 2026），安全性基于离散对数困难性。本文提出 BMuSig-L，这是一个基于格、两轮、并发安全的盲多重签名方案。构造建立在格多重签名 MuSig-L（CRYPTO 2022）、Fuchsbauer 与 Wolf（CRYPTO 2024）的并发安全盲签名（使用非交互零知识论证和公钥加密），以及一个知识可靠的非交互论证系统之上。作者证明 BMuSig-L 在 MuSig-L 不可伪造、底层非交互零知识证明计算可靠、以及所用知识论证知识可靠的假设下是 one-more 不可伪造的。最后给出原型实现，并按签名大小和验证时间评测性能。",
+      "abstractEn": "Blind signatures and multi-signatures are two fundamental cryptographic primitives for privacy-preserving decentralized protocols. A blind signature enables a user to obtain a signature on a message from a signer while keeping the message hidden from the signer. Moreover, the signer cannot subsequently link the resulting signature to the corresponding signing session. In contrast, a multi-signature scheme allows a group of signers to jointly generate a single signature on a message. Blind multi-signatures, a primitive recently introduced by Karantaidou et al. (AsiaCCS 2024), combine the advantages of both techniques. They enable a user to obtain a joint signature from a group of signers while ensuring that the message remains hidden from every signer and that colluding signers cannot later link the final signature to the corresponding signing session. Recently, Bisht et al. proposed BMuSig2 (AsiaCCS 2026), a Schnorr-compatible blind multi-signature scheme whose security is based on the hardness of the discrete logarithm problem. In this paper, we present BMuSig-L, a lattice-based, two-round, concurrently secure blind multi-signature scheme. Our construction builds upon the lattice-based multi-signature scheme MuSig-L (CRYPTO 2022), the concurrently secure blind signature scheme of Fuchsbauer and Wolf (CRYPTO 2024), which employs non-interactive zero-knowledge arguments and public-key encryption, and a knowledge-sound non-interactive argument system. We prove that BMuSig-L is one-more unforgeable under the assumptions of the unforgeability of MuSig-L, the computational soundness of the underlying non-interactive zero-knowledge proof system, and the knowledge soundness of the employed non-interactive argument of knowledge. Finally, we present a prototype implementation of BMuSig-L and evaluate its performance in terms of signature size and verification time.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "盲签名",
+        "多重签名",
+        "格密码",
+        "去中心化协议"
+      ],
+      "url": "https://eprint.iacr.org/2026/2894",
+      "pdf": "https://eprint.iacr.org/2026/2894.pdf"
+    }
+  ]
+}
