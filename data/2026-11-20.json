@@ -1,0 +1,333 @@
+{
+  "date": "2026-11-20",
+  "papers": [
+    {
+      "id": "10.1109-tdsc.2026.3753410",
+      "title": "ForkSentry: LLM-enhanced Multi-agent Framework for Smart Contract Auditing in Forked Projects",
+      "authors": [
+        "Longxiang Wang",
+        "Yufeng Hu",
+        "Lei Wu",
+        "Yajin Zhou",
+        "Wei-Bin Lee",
+        "Cong Wang"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用大模型增强的多智能体框架，审计分叉项目里的智能合约。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文提出 ForkSentry：用大模型增强的多智能体框架，对分叉项目中的智能合约做安全审计。论文于 2026-11-19 进入 TDSC early access。",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "审计",
+        "多智能体",
+        "分叉项目"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3753410"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3755913",
+      "title": "Akaverse: Boosting Sharded Blockchain via Multi-Leader Parallel Pipelines",
+      "authors": [
+        "Xinlei Sheng",
+        "Jian Shen",
+        "Lei Xie",
+        "Haoyu Ma",
+        "Chen Wang",
+        "Q. M. Jonathan Wu"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用多领导者并行流水线提升分片区块链，无大模型。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文提出 Akaverse：通过多领导者并行流水线提升分片区块链。论文于 2026-11-19 进入 TDSC early access。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "分片",
+        "共识",
+        "多领导者",
+        "流水线"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3755913"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3755118",
+      "title": "DSRA-GPF: Auditable Defense-Risk Semantic Alignment for Reducing Near-Miss False Positives in Smart Contract Vulnerability Detection",
+      "authors": [
+        "Hanyu Shi",
+        "Guangshun Li",
+        "Junhua Wu",
+        "Tielin Wang",
+        "Ting Chen"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用可审计的防御-风险语义对齐降低智能合约漏洞检测近误报，标题未写使用大模型。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文提出 DSRA-GPF：用可审计的防御-风险语义对齐，降低智能合约漏洞检测中的近误报。论文于 2026-11-19 进入 TDSC early access。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "漏洞检测",
+        "误报",
+        "语义对齐"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3755118"
+    },
+    {
+      "id": "2611.26601",
+      "title": "SoK: Assessing the Evolution of LLM Capability in Software Vulnerability Research",
+      "authors": [
+        "Amine Lbath",
+        "Manan Suri",
+        "Aurelien Delaitre",
+        "Vadim Okun",
+        "Massih-Reza Amini",
+        "Dinesh Manocha"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "系统整理大模型智能体在真实软件上发现、验证和修补漏洞的能力证据。",
+      "abstract": "基于大模型的智能体在真实软件上发现、验证和修补漏洞的能力越来越强，厂商和研究人员也报告这已经在改变漏洞的发现和修复方式。但这些说法散落在论文、厂商报告和披露里，很难直接比较。本文提出一套框架：按类似驾驶自动化等级的自主程度给这些能力打分，并按正确性、可获得性和证据强度给每条主张定性。作者用这套框架系统整理已发表的大模型漏洞研究证据。他们发现：在 2026 年受限的前沿模型出现之前，智能体已经能在无人介入的情况下发现、验证并修补真实软件中的漏洞；随后开源权重模型在发现和验证上也达到了相近的自主程度。接着，作者用十年的公开漏洞记录、通告和利用数据，衡量大模型安全能力变化带来的后果。2026 年披露的漏洞数量翻倍以上，其中严重或高危占比上升，在广泛使用的代码里存活十年以上的严重缺陷被报告的次数也明显高于以往。但漏洞生命周期各阶段之间的间隔——从报告到修复、从披露到被攻击——目前还没有明显变化。作者用明确量表给文献中的缓解措施打分，并据此给各类相关方整理出证据更充分的建议。",
+      "abstractEn": "LLM-based agents are becoming increasingly capable at discovering, validating and patching vulnerabilities in real software, and vendors and researchers report that this is already changing how vulnerabilities are found and fixed. These claims, however, are scattered across papers, vendor reports and disclosures and are rarely comparable. We introduce a framework that rates these capabilities on an autonomy scale modeled on the levels of driving automation, and qualifies each claim by its correctness, its availability and the strength of its evidence. We use this framework to systematize the published evidence on LLM capability in vulnerability research. We find that agents discovered, validated, and patched vulnerabilities in real-world software without human intervention before the restricted frontier models of 2026, and that open-weight models subsequently attained comparable autonomy for discovery and validation. We then measure the consequences of evolving LLM security capabilities in a decade of public vulnerability records, advisories and exploitation data. In 2026 the number of disclosed vulnerabilities more than doubled, with an increasing share rated critical or high, and severe bugs that had survived a decade or more in widely used code were reported several times more often than before. Yet the time between the stages of a vulnerability's life, from report to fix and from disclosure to attack, has not shifted noticeably so far. We grade the mitigations proposed in the literature with an explicit rubric and draw guidance for each group of stakeholders from the best-supported ones.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞研究",
+        "智能体",
+        "系统化综述",
+        "软件安全"
+      ],
+      "url": "https://arxiv.org/abs/2611.26601",
+      "pdf": "https://arxiv.org/pdf/2611.26601.pdf"
+    },
+    {
+      "id": "2611.25412",
+      "title": "ChainAgent: Automated Chainable Vulnerability Discovery in PHP Web Applications",
+      "authors": [
+        "Xinyi Wang",
+        "Yeting Li",
+        "Shizhe Cui",
+        "Jiaming Guo",
+        "Qin Mai",
+        "Yecheng Sun",
+        "Hengyu Yang",
+        "Yujie Sun",
+        "Huina Chao",
+        "Yang Xiao",
+        "Feng Li",
+        "Wei Huo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用目标导向的大模型智能体在 PHP Web 应用里发现可串联的漏洞链。",
+      "abstract": "针对 PHP Web 应用的高影响攻击，常常把能力有限的漏洞和其他缺陷或本就允许的行为串起来。发现这类攻击链，既要找出缺陷，也要找出让能力可以组合的依赖关系。现有漏洞发现技术往往孤立地分析缺陷，攻击规划则假定组件已知。这种拆分很难发现那些单独看起来不显眼、只有放进利用链才显出安全含义的未知组件。本文提出 ChainAgent：一个目标导向的大模型智能体框架，在源码里同时发现利用链组件及其能力依赖。作者先对 386 条真实 Web 利用链做实证研究，把漏洞和功能 gadget（可被攻击复用的预期程序行为）表示成安全相关对象上的前置条件和能力。ChainAgent 不是先找漏洞再拼路径，而是用不断演化的利用图引导源码检查：从尚未满足的前置条件向前找能力生产者，从已发现的能力向后找会消费或放大这些能力的功能 gadget。实证研究得到的、以对象为中心的串联知识，把搜索引向更有希望的漏洞类别、功能操作和对象访问。作者在 15 个 PHP 应用、三种共用大模型后端上，把 ChainAgent 与通用编程智能体 Codex 对比。ChainAgent 对能到达目标的组件召回率为 42.02%–44.63%，正确的目标到达依赖边最多是 Codex 的 4.4 倍。另在 30 个真实 PHP 应用上发现 20 个漏洞和 13 条利用链，其中 9 条能做到远程代码执行。",
+      "abstractEn": "High-impact attacks on PHP Web applications often chain limited-capability vulnerabilities with other flaws or intended behaviors. Discovering these chains requires identifying flaws and the dependencies enabling capability composition. Existing vulnerability discovery techniques analyze flaws in isolation, while attack planning assumes known components. This separation makes it difficult to discover previously unknown components whose security relevance becomes apparent only through their potential roles in an exploit chain. We present ChainAgent, a goal-directed LLM-agent framework that jointly discovers exploit-chain components and their capability dependencies in source code. Guided by an empirical study of 386 real-world web exploit chains, ChainAgent represents vulnerabilities and functional gadgets--intended program behaviors that can be repurposed in attacks--through preconditions and capabilities over security-relevant objects. Instead of discovering vulnerabilities first and constructing attack paths afterward, ChainAgent uses an evolving exploit graph to guide source-code inspection. It searches backward from unmet preconditions for capability producers and forward from discovered capabilities for functional gadgets that consume or amplify them. Object-centered chaining knowledge from our empirical study directs searches toward promising vulnerability classes, functional operations, and object accesses. We evaluate ChainAgent against Codex, a general-purpose coding agent, on 15 PHP applications across three shared LLM backends. ChainAgent achieves 42.02%--44.63% recall for goal-reaching components and recovers up to 4.4 times as many correct goal-reaching dependency edges as Codex. An additional evaluation of 30 real-world PHP applications identifies 20 vulnerabilities and 13 exploit chains, nine of which achieve remote code execution (RCE).",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PHP",
+        "漏洞链",
+        "智能体",
+        "Web 应用"
+      ],
+      "url": "https://arxiv.org/abs/2611.25412",
+      "pdf": "https://arxiv.org/pdf/2611.25412.pdf"
+    },
+    {
+      "id": "2611.25718",
+      "title": "Hardening JavaScript Programs against LLM-Based Vulnerability Detection",
+      "authors": [
+        "Zhenhao Tian",
+        "Jintong Yu",
+        "Jingwei Feng",
+        "Jianwei Zhuge",
+        "Penghui Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在发布前变换 JavaScript 程序，降低大模型漏洞检测智能体的检出。",
+      "abstract": "JavaScript 程序常常以源码形式分发，攻击者可以直接分析其中的漏洞。基于大模型的漏洞检测智能体让这种分析容易得多。为应对这一新威胁，本文提出 AntiAgent，让开发者在发布前加固程序，阻碍这类检测智能体。AntiAgent 在发布前变换程序，使智能体更难完成分析。为找到有效变换，它在一组已知漏洞的程序语料上做演化，并跟踪检测智能体如何分析每个演化版本；保留智能体漏报或误报的版本，把其中的变换抽成可复用规则。保护新程序时，AntiAgent 把任务分给大模型和这些规则，使变换既能适应程序、又能保持语义。作者在真实 JavaScript 应用上，对包括 Claude Code 和 Codex 在内的四种检测智能体做评估。AntiAgent 把每种智能体检出的漏洞数量降低 52.0%–60.7%，在所有智能体上都优于传统混淆器 JS-Obfuscator 和基于大模型的变换方法 FPA。变换后的程序通过全部项目测试，说明语义得以保留。这些变换规则对语料中没有的漏洞类型、以及对 Python 等其他语言的程序仍然有效。",
+      "abstractEn": "JavaScript programs are often distributed as source code, so attackers can analyze them for vulnerabilities. LLM-based vulnerability detection agents now make this analysis much easier. To mitigate this emerging threat, we present AntiAgent, a defense that lets developers harden their programs against such detection agents. AntiAgent transforms a program before release to impede an agent's analysis. To find effective transformations, AntiAgent evolves a corpus of programs with known vulnerabilities and traces how a detection agent analyzes each evolved version. It keeps the versions on which the agent misses or misreports the vulnerability and extracts their transformations into reusable rules. To protect a new program, AntiAgent carefully divides the task between an LLM and the rules, so that the transformations adapt to the program while preserving its semantics. We evaluate AntiAgent on real-world JavaScript applications against four detection agents, including Claude Code and Codex. AntiAgent reduces the number of vulnerabilities that each agent detects by 52.0-60.7%, outperforming the conventional obfuscator JS-Obfuscator and the LLM-based transformation method FPA on every agent. The transformed programs pass all project tests, indicating that AntiAgent preserves the original program semantics. The transformation rules also remain effective on vulnerability types absent from the corpus and on programs written in another language like Python.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "JavaScript",
+        "漏洞检测",
+        "程序变换",
+        "智能体"
+      ],
+      "url": "https://arxiv.org/abs/2611.25718",
+      "pdf": "https://arxiv.org/pdf/2611.25718.pdf"
+    },
+    {
+      "id": "2611.25809",
+      "title": "ALIoTh: Orchestrating Multi-Agent LLMs for Autonomous IoT Penetration Testing",
+      "authors": [
+        "Pironti Francesco Aurelio",
+        "Arena Luigi",
+        "Blefari Francesco",
+        "Lupinacci Matteo",
+        "Romeo Francesco",
+        "Maresca Alessio"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多智能体大模型对物联网和工业物联网设备做自主渗透测试。",
+      "abstract": "物联网环境里的渗透测试，尤其是智能插座、摄像头、门锁等异构设备组成的环境，在信息收集、攻击面枚举、提权和横向移动各阶段都很难。本文提出 ALIoTh：一个由工作流驱动的多智能体渗透测试框架，把大模型智能体放进 Self-RAG 架构里，自动发现并利用物联网和工业物联网中的漏洞。作者用当前大模型，并通过 LangGraph 调度专门智能体，动态规划并执行完整攻击流程，包括网络、设备和服务枚举、漏洞评估、payload 生成、反向 shell 部署，以及在每台设备上提权。Self-RAG 让专家智能体能按上下文取用物联网安全知识，例如相关文档、工具手册和已知攻击手法，从而更好地处理多设备利用和组策略操纵等场景。",
+      "abstractEn": "Penetration testing in Internet of Things (IoT) environments, especially those composed of various different devices, e.g., smart plugs, smart cameras, and smart doors, presents great challenges across the phases of information gathering, attack surface enumeration, privilege escalation, and lateral movement. This paper introduces ALIoTh, a multi-agent, workflow-driven penetration testing framework that integrates Large Language Models agents within a Self-Retrieval-Augmented Generation (Self-RAG) architecture to autonomously identify and exploit vulnerabilities in IoT and Industrial-IoT (IIoT) environments. By leveraging state-of-the-art language models and orchestrating specialized agents via the LangGraph framework, ALIoTh dynamically plans and executes a full-spectrum offensive pipeline. This includes network, devices, and service enumeration, vulnerability assessment, payload generation, reverse shell deployment, and privilege escalation on each device. The Self-RAG mechanism equips expert agents with contextual access to IoT security knowledge, e.g., related documentation, tool manuals, and known attack techniques, enhancing their reasoning capabilities in scenarios involving multiple device exploitation and group policy manipulation.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "物联网",
+        "渗透测试",
+        "多智能体",
+        "漏洞利用"
+      ],
+      "url": "https://arxiv.org/abs/2611.25809",
+      "pdf": "https://arxiv.org/pdf/2611.25809.pdf"
+    },
+    {
+      "id": "2611.26312",
+      "title": "Static Analysis Guidance for Secure LLM Code Generation",
+      "authors": [
+        "Daniele Lunghi",
+        "Alberick Euraste Djiré",
+        "Zacharie Chenail-Larcher",
+        "Mélissa Tessa",
+        "Quentin Stiévenart",
+        "Jacques Klein",
+        "Florent Avellaneda",
+        "Naouel Moha",
+        "Tegawendé F. Bissyandé"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在生成过程中把静态分析告警交给大模型，用来生成更安全的 Python 代码。",
+      "abstract": "静态分析器便宜、部署面广，其报告适合作为安全代码生成的反馈信号。已有做法把分析器放进带中间步骤的迭代修复循环，成本高，也很难单独看清报告对模型的影响。本文提出两种在生成过程中就把发现交给模型的策略：分析器告警时回滚生成，再把发现写成代码注释（Comment）或写进用户消息（Steering）。作者在三个模型和三个 Python 基准上，把它们与两种迭代方法和无分析器对照比较，并用各基准的判定器衡量安全性。生成期引导便宜且可以有效：输出 token 约为基线的 0.9 到 1.9 倍，而迭代方法最高到 24.1 倍。在 RiskyPy 上，用 DeepSeek-V4.1-flash 时，Steering 把既正确又安全的程序比例从 52.5% 提到 64.4%，接近最好的迭代方法（66.2%），token 用量不到其五分之一。按规则看，能局部修复的规则收益最大；替换 XML 解析器在三个模型中的两个上净收益为正。研究也指出何时不该用引导：在 SecEvalPlus 上，分析器最多只标出 5.6% 功能正确但不安全的程序，几乎没有可作用的引导；当静态分析告警与任务冲突时，模型往往跟着分析器走，把程序弄坏。两个 Qwen2.5 模型在修复需要重构代码时经常失败。结论是：在模型够强、规则可局部修复、并过滤与任务冲突的告警之后，静态分析引导才值得用。",
+      "abstractEn": "Static analyzers are cheap and widely deployed, which makes their reports a candidate feedback signal for secure LLM code generation. Existing approaches place the analyzer inside an iterative repair loop with intermediate steps, which is costly and makes it hard to isolate the report's effect on the model. We introduce two strategies that give the finding to the model during generation. When the analyzer raises an alert, generation is rolled back, and the finding is inserted either as a code comment (Comment) or in the user message (Steering). We compare them with two iterative approaches and a control without the analyzer, across three models and three Python benchmarks, and we measure security using each benchmark's oracle. Guidance during generation is cheap and can be effective, at 0.9 to 1.9 times the baseline's output tokens against up to 24.1 times for iterative approaches. With DeepSeek-V4.1-flash on RiskyPy, Steering raises the share of functional and secure programs from 52.5% to 64.4%, close to the best iterative approach (66.2%) while using less than a fifth of the tokens. A per-rule analysis shows that rules with a local fix benefit most, and replacing the XML parser is net-positive on two of the three models. The study also identifies when guidance should not be applied. Analyzers flag at most 5.6% of the functional but insecure programs on SecEvalPlus, leaving little guidance to act on. When a static analysis alert (warning or error) contradicts the task, models tend to follow the analyzer and break the program. The two Qwen2.5 models often fail when the fix requires restructuring the code. These results indicate that static-analysis guidance is worth applying with a capable model, on rules with a local fix, and after filtering alerts that conflict with the task specification.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "静态分析",
+        "安全代码生成",
+        "Python",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.26312",
+      "pdf": "https://arxiv.org/pdf/2611.26312.pdf"
+    },
+    {
+      "id": "2611.25339",
+      "title": "From FIPS to FPGA with LLM Agents: Measuring What Tests and Reviews Miss in Post-Quantum Cryptographic Hardware",
+      "authors": [
+        "Jungmin Park",
+        "Eunha Kim",
+        "Wooseop Kim",
+        "Seongjoon Cho",
+        "Byungho Cha"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型智能体移植并审查后量子密码 FPGA 硬件，衡量测试和评审会漏掉什么。",
+      "abstract": "大模型智能体越来越多地同时生成 RTL 以及用来验证它的测试和评审，这种自产自证很难支撑可信硬件。作者给出一套七阶段、带验证门控的工作流，是在一次后量子设计移植中逐步形成的：一个门只有在负对照和故障变异体上被证明能失败才算数，评审智能体在提交前审计工作。随后用工具选出的网表变异体、缺陷回放和形式化检查来审计这些证据。该流程把 ML-KEM-768/ML-DSA-65 加速器移植到 300 MHz 的 Zynq UltraScale+ 密钥托管卡：板上六种操作都与字节精确一致，通过全部 85 个适用接口的 NIST ACVP 用例（共 285 个）以及 484 个 ML-DSA 已知答案。但模块测试通过会高估验证强度。在三个 RTL 模块上，现有仿真门只能杀死 399 个工具选出的网表变异体中的 76%；按存活者指导、从规格导出的测试，把新抽取的解封装杀死率从 48% 提到 74%。在预先登记的、对已知答案测试看不见的缺陷做单模型回放时，无方向的整设计评审对两处验证器缺陷分别只在 3/6 和 1/6 次会话中抓住，而限定到模块的评审在全部 54 次会话中抓住每一个已知缺陷。即便是限定范围的评审，对植入的密钥托管缺陷也只在 3/20 次会话中检出，而形式化检查（回放时新增一条）全部标出。本研究表明：可信的智能体硬件需要与作者无关的变异体来做测试门、模块级范围来做大模型评审，以及形式化检查来守托管不变量。",
+      "abstractEn": "As LLM agents increasingly generate RTL alongside the tests and reviews that validate it, self-generated evidence is a weak foundation for trustworthy hardware. We present our seven-stage verification-gated workflow, evolved during a post-quantum design port, in which a gate counts only if shown able to fail on negative controls and fault mutants, and reviewer agents audit work before commit. We then audit this evidence with tool-selected netlist mutants, flaw replays, and formal checks. The flow ported an ML-KEM-768/ML-DSA-65 accelerator to a 300 MHz Zynq UltraScale+ key-custody card: all six operations are byte-exact on the board, and it passes all 85 interface-applicable NIST ACVP cases (of 285) and 484 ML-DSA known answers. However, passing module tests overstate the verification strength. Across three RTL modules, existing simulation gates kill only 76% of 399 tool-selected netlist mutants; specification-derived tests guided by the survivors raise the fresh-draw decapsulation kill rate from 48% to 74%. In pre-registered single-model replays on flaws invisible to known-answer tests, undirected whole-design review catches two verifier flaws in only 3/6 and 1/6 sessions, whereas module-scoped review catches every known flaw in all 54 sessions. Even scoped review detects planted key-custody flaws in only 3/20 sessions, whereas formal checks (one added for the replay) flag every one. In this study, trustworthy agentic hardware needed author-independent mutants for test gates, module-level scoping for LLM review, and formal checks for custody invariants.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "后量子",
+        "FPGA",
+        "硬件验证",
+        "智能体"
+      ],
+      "url": "https://arxiv.org/abs/2611.25339",
+      "pdf": "https://arxiv.org/pdf/2611.25339.pdf"
+    },
+    {
+      "id": "2611.25790",
+      "title": "On the Reliability of CyberGym Evaluation: Task Material Consistency and Reference-Target Identity",
+      "authors": [
+        "Yule Ding",
+        "Hongzhen Wu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "审计 CyberGym 任务材料和 PoC 是否对准目标缺陷，评估大模型漏洞复现分数是否可靠。",
+      "abstract": "CyberGym 用概念验证输入（PoC）是否让有漏洞版本崩溃、却不让修复版本崩溃，来评估漏洞复现。把这种差分通过解释成复现成功，需要任务材料一致，并且有证据表明 PoC 触发的是预定缺陷。作者对全部 1507 个 CyberGym 任务做材料审计，并对一次完整的 Level-1 GLM-5.3 运行的最终 PoC 做身份评估。以每条参考崩溃报告对应的缺陷为目标，审计在分层盲审纠正两个标签后，给 338 个任务（22.4%）打上不一致标签。最大两类是覆盖不一致（205 个任务），以及描述和补丁共同指向另一个缺陷（110 个任务）。PoC 身份用执行检查、崩溃签名匹配和大模型辅助的根因审查来评估。在 1286 次差分通过中，该流程判定 89 次非目标和 10 次证据不足；要求命中目标后，通过率从 85.3% 降到 78.8%。即使材料审计未发现不一致的任务里，非目标判定也会出现：1052 次差分通过中有 39 次（3.7%）。尽管身份判定还需要独立验证，这些结果说明：解释漏洞复现分数时，应分开检查任务材料一致性和提交身份。",
+      "abstractEn": "CyberGym evaluates vulnerability reproduction by checking whether a proof-of-concept input (PoC) crashes a vulnerable program version but not a fixed version. Interpreting this differential pass as successful reproduction requires consistent task materials and evidence that the PoC triggers the intended defect. We examine these requirements through a material audit of all 1,507 CyberGym tasks and an identity assessment of the final PoCs from one complete Level-1 GLM-5.3 run. Taking the defect associated with each reference crash report as the target, the audit assigns inconsistency labels to 338 tasks (22.4%) after correcting two labels identified by stratified blind review. The largest categories are coverage inconsistency (205 tasks) and descriptions and patches that jointly point to another defect (110 tasks). We assess PoC identity using an execution check, crash-signature matching, and LLM-assisted root-cause review. Of the 1,286 differential passes, the procedure assigns 89 non-target and 10 insufficient-evidence verdicts; requiring a target hit lowers the pass rate from 85.3% to 78.8%. Non-target verdicts also occur in tasks with no material inconsistency found: 39 of 1,052 differential passes (3.7%). Although the identity verdicts require independent validation, these findings motivate separate checks of task-material consistency and submission identity when interpreting vulnerability-reproduction scores.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "CyberGym",
+        "漏洞复现",
+        "评测可靠性",
+        "PoC"
+      ],
+      "url": "https://arxiv.org/abs/2611.25790",
+      "pdf": "https://arxiv.org/pdf/2611.25790.pdf"
+    },
+    {
+      "id": "2611.25663",
+      "title": "Correctable Enrollment and One-Transaction Seed Proofs for Ethereum's Post-Quantum Transition",
+      "authors": [
+        "Xin Jin",
+        "Maximillian Liao",
+        "Handong Chen",
+        "Yi Nancy Li",
+        "Junyu Liu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可纠正登记和单笔助记词零知识证明，把以太坊账户迁到后量子密钥，无大模型。",
+      "abstract": "能跑 Shor 算法的量子计算机可以抽出每个已公布公钥的以太坊账户私钥；因自身交易而暴露公钥的账户持有执行层 ETH 的 54.6%。第一台这样的机器可能保密运行，迁移不能等到可见盗窃发生；一旦密钥可被抽出，旧签名也无法区分账户所有者和攻击者。本文设计一种迁移：所有者在预定时间退役 ECDSA 之前，用现有签名低成本登记后量子密钥；之后到统一截止日前，可用钱包 BIP-39 助记词的零知识证明纠正任何登记；从未登记的账户冻结，并可无限期用助记词证明恢复。每份证明绑定新密钥、nonce 和费用上限，付费赞助者和重排交易的出块者都无法改向或重放。验证者先在已最终确定的检查点换成基于哈希的密钥，并对攻击者投票权给出明确上界。作者在明确假设下证明账户保证，对规则做模型检测，并在 go-ethereum 和 Lean 共识客户端中实现。三层递归的基于哈希的 STARK 给出约 190 KB 的助记词证明，可放进一笔交易，验证 38 毫秒，笔记本上生成中位数 111 秒；四份证明可聚成一份。在十节点、按主网账户和费用需求的模拟里，决定时长的是区块空间而不是证明：至少持有 0.1 ETH 的 445 万账户，若都在 ECDSA 退役前登记，需 29.4 天；若都在之后按四笔一批恢复，需 235 天。大规模登记时，一笔登记在公开内存池里等待的中位数是 19.1 分钟，长于已公布的快速量子计算机抽钥估计，因此持有助记词且密钥未暴露的所有者应通过助记词证明迁移。",
+      "abstractEn": "A quantum computer running Shor's algorithm can extract the private key of every Ethereum account whose public key is published, and accounts exposed by their own transactions hold 54.6% of execution-layer ETH. As the first such machine may stay secret, a migration cannot wait for visible thefts, and once keys are extractable, legacy signatures no longer tell owners from attackers. We design a migration in which owners enroll post-quantum keys cheaply with their existing signatures before ECDSA is retired at a scheduled time, while a zero-knowledge proof of the wallet's BIP-39 seed can correct any such enrollment until a common deadline afterward; an account nobody enrolled stays frozen and recoverable by seed proof without a deadline. Each proof binds the new key, a nonce and a fee cap, so neither a paying sponsor nor a reordering block builder can redirect or replay it. Validators switch to hash-based keys first, at a finalized checkpoint and under a stated bound on the attacker's voting power. We prove the account guarantees under explicit assumptions, model-check the rules, and implement the design in go-ethereum and a Lean consensus client. A three-layer recursive hash-based STARK yields a seed proof of about 190 KB that fits one transaction, verifies in 38 ms and takes a median of 111 s to generate on a laptop; four proofs aggregate into one. In a ten-node simulation with mainnet-derived accounts and fee demand, block space rather than proving sets the duration: the 4.45 million accounts with at least 0.1 ETH would migrate in 29.4 days if all enroll before ECDSA is retired and in 235 days if all recover after it in batches of four. In a mass enrollment, an enrollment waits a median of 19.1 minutes in the public mempool, longer than published estimates for a fast quantum computer to extract its key, so owners with a seed and an unexposed key should migrate by seed proof.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "以太坊",
+        "后量子",
+        "钱包",
+        "零知识证明"
+      ],
+      "url": "https://arxiv.org/abs/2611.25663",
+      "pdf": "https://arxiv.org/pdf/2611.25663.pdf"
+    },
+    {
+      "id": "2611.25231",
+      "title": "Release-Bound Withdrawal Authorization for Bitcoin Custody",
+      "authors": [
+        "Jian Cui",
+        "Rui Zhu",
+        "Haixu Tang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "约束比特币托管提现许可与暂停、重组的关系，降低被攻破后端的未授权付款，无大模型。",
+      "abstract": "被攻破的加密货币提现后端可以请求对未授权付款签名。此前已签名的交易在暂停后仍可能被花费，或在链重组后重新可花费。Release-Bound Withdrawal Authorization（RBWA）在复制日志里按暂停对许可排序，并在其结束证据从比特币活跃链上消失时恢复暴露。可选路径会推迟大额付款，并允许独立冷恢复。直接付款在 regtest 上一个区块确认，分阶段付款在延迟 2 或 6 个区块时分别于 3 或 7 个区块确认。回滚之后，重放的恢复可能赢过或输给已经导出且成熟的付款。带认证的回执可以撤销共享钱包里的一份签名租约。在匹配的合成调度里，探测把经被攻破租约发出的许可从 33 次中的 20 次降到 9 次，并有一次误拦。两个留出的 HTTP 工作负载上，增强审计和加探测的检测器在固定阈值精度上相同。审计字段已经暴露探测认证结果。线上测试验证了一条精确的维护例外，并加入文件标记作为独立来源。该标记能拦住只靠 RPC 的审计漏掉的被攻破租约。用同一份文件读取证据的审计，也能拦住绕过探测的读取者。结果把主动探测的收益和运营者能拿到哪些证据绑在一起。",
+      "abstractEn": "A compromised cryptocurrency withdrawal backend can request signatures on unauthorized payments. Previously signed transactions may remain spendable after pause or become spendable again after a reorganization. Release-Bound Withdrawal Authorization (RBWA) orders permits against pause in a replicated journal and restores exposure when its closing evidence disappears from Bitcoin's active chain. An optional route delays large payouts and permits independent cold recovery. Direct payments confirm in one block on regtest, and staged payments confirm in three or seven at delays of two or six. After rollback, a replayed recovery can win or lose to an already exported mature payout. Authenticated receipts can revoke one signing lease in a shared wallet. In matched synthetic schedules, probes reduce permits through compromised leases from 20 to 9 out of 33, with one false fence. Two held-out HTTP workloads find equal fixed-threshold precision for boosted audit and probe-augmented detectors. The audit fields already expose the probe authentication outcome. Live tests verify an exact maintenance exception and add a file marker as a distinct source. The marker fences a compromised lease that RPC-only audit misses. Audit with the same file-read evidence also fences a reader who bypasses the probe. The results tie the benefit of active probing to which evidence the operator can obtain.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "比特币",
+        "托管",
+        "提现授权",
+        "钱包"
+      ],
+      "url": "https://arxiv.org/abs/2611.25231",
+      "pdf": "https://arxiv.org/pdf/2611.25231.pdf"
+    }
+  ]
+}
