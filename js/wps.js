@@ -74,9 +74,10 @@ function publishedDate(item) {
   return /^\d{4}-\d{2}-\d{2}$/.test(added) ? added : "";
 }
 
-function paperToWpsPayload(paper) {
+function paperToWpsPayload(paper, options) {
   const item = paper || {};
-  return {
+  const settings = options || {};
+  const payload = {
     title: item.title || "",
     source: item.venue || "",
     ref_bib: refBib(item),
@@ -85,6 +86,23 @@ function paperToWpsPayload(paper) {
     abstract: item.abstract || item.abstractEn || "",
     published_date: publishedDate(item),
   };
+  const fullText = String(settings.fullText || "").trim();
+  if (fullText) {
+    payload.full_text = fullText.length > 15000 ? `${fullText.slice(0, 15000)}\n\n（原文过长，已截断）` : fullText;
+  }
+  return payload;
+}
+
+function unmarkPaperImported(paperId, sheetId, storage) {
+  const store = importStore(storage);
+  const map = readImportMap(store);
+  const ids = importedSheets(paperId, store)
+    .map((sheet) => sheet.id)
+    .filter((id) => id !== sheetId);
+  if (ids.length) map[paperId] = ids;
+  else delete map[paperId];
+  if (store) store.setItem(WPS_IMPORT_KEY, JSON.stringify(map));
+  return importedSheets(paperId, store);
 }
 
 async function postPaperToWps(paper, options) {
@@ -93,17 +111,18 @@ async function postPaperToWps(paper, options) {
   if (!sheet) throw new Error("unknown sheet");
   const fetchImpl = settings.fetch || fetch;
   const url = settings.webhookUrl || sheet.webhookUrl;
-  const body = JSON.stringify(paperToWpsPayload(paper));
+  const body = JSON.stringify(paperToWpsPayload(paper, { fullText: settings.fullText }));
   const retries = settings.retries == null ? 3 : settings.retries;
   let lastError = null;
   for (let attempt = 1; attempt <= retries; attempt += 1) {
     try {
-      const response = await fetchImpl(url, {
+      const init = {
         method: "POST",
-        mode: "no-cors",
         headers: { "Content-Type": "text/plain;charset=UTF-8" },
         body,
-      });
+      };
+      if (settings.server !== true) init.mode = "no-cors";
+      const response = await fetchImpl(url, init);
       if (response && typeof response.text === "function" && response.type !== "opaque") {
         const text = await response.text();
         let data = null;
@@ -112,6 +131,7 @@ async function postPaperToWps(paper, options) {
         } catch (error) {
           data = null;
         }
+        if (response) response.wpsData = data;
         if (data && data.code !== 0) {
           const failure = new Error(data.message || "导入失败");
           failure.wps = data;
@@ -135,6 +155,7 @@ const PaperWps = {
   sheetById,
   importedSheets,
   markPaperImported,
+  unmarkPaperImported,
   paperToWpsPayload,
   postPaperToWps,
 };

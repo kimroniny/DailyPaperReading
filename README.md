@@ -4,6 +4,9 @@
 
 - GitHub：https://github.com/kimroniny/DailyPaperReading
 - 在线阅读：https://kimroniny.github.io/DailyPaperReading/
+- 带后台的站点：http://47.94.40.243:10029
+
+打开一篇论文后可以：查看本服务有没有把它写进现在这两张 WPS 表、再次导入、从本服务的保存记录里去掉、按需下载原文、下载不了时上传原文，以及点「解读」让 Cursor 读完整篇。解读读取名为 `dailypaperreading-parse` 的密钥，这个值只放在服务器的 `service.env`，不要写进仓库。原文会尽量跟论文信息一起交给原来的导入地址；表格不收这段原文时，仍会写入原来的 7 个字段。现在的导入地址只会新增一行，不能删掉表里已经存在的行。
 
 Filters (宁缺毋滥):
 

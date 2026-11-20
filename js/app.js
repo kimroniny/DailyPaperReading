@@ -1,8 +1,9 @@
 (function () {
   const { filterPapers, sortPapers, uniqueTopics, uniqueYears, uniqueVenues } = window.PaperFilter;
   const { mergeDayFiles, groupPapersByDate, groupDaysByMonth, pickVisibleDay } = window.PaperCatalog;
-  const { postPaperToWps, WPS_SHEETS, importedSheets, markPaperImported } = window.PaperWps;
+  const { WPS_SHEETS, importedSheets, markPaperImported, unmarkPaperImported } = window.PaperWps;
   let papers = [];
+  let actionPoll = 0;
 
   const state = {
     query: "",
@@ -252,6 +253,244 @@
     renderDay(days, day);
   }
 
+  async function api(path, options) {
+    const response = await fetch(path, options);
+    let data = {};
+    try {
+      data = await response.json();
+    } catch (error) {
+      data = {};
+    }
+    if (!response.ok) {
+      const failure = new Error((data && data.error) || "后台没有响应");
+      failure.reason = data && data.reason;
+      throw failure;
+    }
+    return data;
+  }
+
+  function renderActions(paper) {
+    clearTimeout(actionPoll);
+    const box = document.createElement("div");
+    box.className = "tool-box";
+    const note = document.createElement("p");
+    note.className = "tool-note";
+    note.textContent = "正在核对保存状态…";
+    const actions = document.createElement("div");
+    actions.className = "tool-actions";
+    const download = document.createElement("button");
+    download.type = "button";
+    download.className = "ghost";
+    download.textContent = "下载原文";
+    const uploadLabel = document.createElement("label");
+    uploadLabel.className = "ghost file-pick";
+    uploadLabel.textContent = "上传原文";
+    const upload = document.createElement("input");
+    upload.type = "file";
+    upload.accept = ".pdf,.txt,.md,application/pdf,text/plain";
+    uploadLabel.appendChild(upload);
+    const interpret = document.createElement("button");
+    interpret.type = "button";
+    interpret.className = "ghost";
+    interpret.textContent = "解读";
+    actions.append(download, uploadLabel, interpret);
+
+    const reading = document.createElement("div");
+    reading.className = "interpret-body";
+    reading.hidden = true;
+
+    const wpsBox = document.createElement("div");
+    wpsBox.className = "wps-box";
+
+    let savedSignature = "";
+
+    function remember(saved) {
+      const ids = new Set((saved || []).map((sheet) => sheet.id));
+      WPS_SHEETS.forEach((sheet) => {
+        if (ids.has(sheet.id)) markPaperImported(paper.id, sheet.id);
+      });
+      const signature = [...ids].join(",");
+      if (signature !== savedSignature) {
+        savedSignature = signature;
+        renderGrid();
+      }
+    }
+
+    function paint(data) {
+      const saved = data.saved || [];
+      remember(saved);
+      const source = data.source;
+      const job = data.interpretation || {};
+      if (source && source.chars) {
+        note.textContent = `原文已准备好（${source.chars} 字）。导入时会尽量把原文一并写入表格。`;
+      } else {
+        note.textContent = "还没有原文。可以下载，下载不了就上传。";
+      }
+      reading.hidden = !(job.text || job.error || job.status === "running");
+      if (job.status === "running") reading.textContent = "正在解读整篇论文…";
+      else if (job.error) reading.textContent = job.error;
+      else if (job.text) reading.textContent = job.text;
+      interpret.textContent = job.text ? "重新解读" : "解读";
+
+      wpsBox.replaceChildren();
+      if (saved.length) {
+        saved.forEach((sheet) => {
+          const done = document.createElement("span");
+          done.className = "wps-done";
+          done.textContent = sheet.withFullText ? `已保存到「${sheet.label}」，原文已提交` : `已保存到「${sheet.label}」`;
+          const remove = document.createElement("button");
+          remove.type = "button";
+          remove.className = "ghost";
+          remove.textContent = "从保存记录移除";
+          remove.addEventListener("click", () => removeSheet(sheet, remove));
+          wpsBox.append(done, remove);
+        });
+      } else {
+        const local = importedSheets(paper.id);
+        if (local.length) {
+          const hint = document.createElement("span");
+          hint.className = "wps-hint";
+          hint.textContent = `这台浏览器记过已导入 ${local.map((sheet) => sheet.label).join("、")}，服务器没有这条记录`;
+          wpsBox.appendChild(hint);
+        }
+      }
+      const importWps = document.createElement("button");
+      importWps.type = "button";
+      importWps.className = "ghost wps-import";
+      importWps.textContent = saved.length ? "再次导入" : "导入 WPS";
+      importWps.addEventListener("click", () => showSheetChoices(saved));
+      wpsBox.appendChild(importWps);
+      if (job.status === "running") actionPoll = setTimeout(refresh, 2000);
+    }
+
+    function showSheetChoices(saved) {
+      const done = new Set((saved || []).map((sheet) => sheet.id));
+      wpsBox.replaceChildren();
+      const hint = document.createElement("span");
+      hint.className = "wps-hint";
+      hint.textContent = "导入到";
+      wpsBox.appendChild(hint);
+      WPS_SHEETS.forEach((sheet) => {
+        const choice = document.createElement("button");
+        choice.type = "button";
+        choice.className = "ghost wps-choice" + (done.has(sheet.id) ? " is-imported" : "");
+        choice.textContent = done.has(sheet.id) ? `已保存 · ${sheet.label}` : sheet.label;
+        choice.addEventListener("click", () => sendToSheet(sheet, choice));
+        wpsBox.appendChild(choice);
+      });
+    }
+
+    async function sendToSheet(sheet, choice) {
+      const buttons = [...wpsBox.querySelectorAll("button")];
+      buttons.forEach((button) => {
+        button.disabled = true;
+      });
+      choice.textContent = "导入中…";
+      try {
+        const result = await api(`/api/papers/${encodeURIComponent(paper.id)}/wps`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sheetId: sheet.id }),
+        });
+        paint(result.paper);
+        note.textContent = result.withFullText ? "已写入表格，并带上了原文。" : "已写入表格。这次没有带上原文。";
+      } catch (error) {
+        buttons.forEach((button) => {
+          button.disabled = false;
+        });
+        note.textContent = error.message || "导入失败，重试";
+      }
+    }
+
+    async function removeSheet(sheet, button) {
+      button.disabled = true;
+      try {
+        const result = await api(`/api/papers/${encodeURIComponent(paper.id)}/wps/remove`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sheetId: sheet.id }),
+        });
+        unmarkPaperImported(paper.id, sheet.id);
+        paint(result.paper);
+        note.textContent = result.message || "已从保存记录里去掉";
+      } catch (error) {
+        button.disabled = false;
+        note.textContent = error.message || "移除失败";
+      }
+    }
+
+    async function refresh() {
+      try {
+        paint(await api(`/api/papers/${encodeURIComponent(paper.id)}`));
+      } catch (error) {
+        note.textContent = error.message || "后台没有响应";
+        if (!wpsBox.childNodes.length) {
+          const fallback = document.createElement("span");
+          fallback.className = "wps-hint";
+          fallback.textContent = "后台没有响应，暂时不能核对表格";
+          wpsBox.appendChild(fallback);
+        }
+      }
+    }
+
+    download.addEventListener("click", async () => {
+      download.disabled = true;
+      download.textContent = "下载中…";
+      try {
+        const result = await api(`/api/papers/${encodeURIComponent(paper.id)}/source`, { method: "POST" });
+        download.textContent = "下载原文";
+        paint(result.paper);
+      } catch (error) {
+        download.textContent = "下载原文";
+        note.textContent = error.reason === "paywall" || /上传/.test(error.message) ? "原文下载不了，请手动上传" : error.message;
+      } finally {
+        download.disabled = false;
+      }
+    });
+
+    upload.addEventListener("change", async () => {
+      const file = upload.files && upload.files[0];
+      upload.value = "";
+      if (!file) return;
+      note.textContent = "正在读取上传的文件…";
+      try {
+        const bytes = new Uint8Array(await file.arrayBuffer());
+        let binary = "";
+        for (let index = 0; index < bytes.length; index += 0x8000) {
+          binary += String.fromCharCode.apply(null, bytes.subarray(index, index + 0x8000));
+        }
+        const result = await api(`/api/papers/${encodeURIComponent(paper.id)}/upload`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            filename: file.name,
+            mime: file.type,
+            dataBase64: btoa(binary),
+          }),
+        });
+        paint(result.paper);
+      } catch (error) {
+        note.textContent = error.message || "上传失败";
+      }
+    });
+
+    interpret.addEventListener("click", async () => {
+      interpret.disabled = true;
+      try {
+        const result = await api(`/api/papers/${encodeURIComponent(paper.id)}/interpret`, { method: "POST" });
+        paint(result.paper);
+      } catch (error) {
+        note.textContent = error.message || "解读失败";
+      } finally {
+        interpret.disabled = false;
+      }
+    });
+
+    box.append(note, actions, reading, wpsBox);
+    refresh();
+    return box;
+  }
+
   function openPaper(id) {
     const paper = papers.find((item) => item.id === id);
     if (!paper) return;
@@ -322,75 +561,13 @@
       links.appendChild(anchor);
     });
 
-    const wpsBox = document.createElement("div");
-    wpsBox.className = "wps-box";
-
-    function showSheetChoices() {
-      const done = new Set(importedSheets(paper.id).map((sheet) => sheet.id));
-      wpsBox.replaceChildren();
-      const hint = document.createElement("span");
-      hint.className = "wps-hint";
-      hint.textContent = "导入到";
-      wpsBox.appendChild(hint);
-      WPS_SHEETS.forEach((sheet) => {
-        const choice = document.createElement("button");
-        choice.type = "button";
-        choice.className = "ghost wps-choice" + (done.has(sheet.id) ? " is-imported" : "");
-        choice.textContent = done.has(sheet.id) ? `已导入 · ${sheet.label}` : sheet.label;
-        choice.addEventListener("click", () => sendToSheet(sheet, choice));
-        wpsBox.appendChild(choice);
-      });
-    }
-
-    async function sendToSheet(sheet, choice) {
-      const buttons = [...wpsBox.querySelectorAll("button")];
-      buttons.forEach((button) => {
-        button.disabled = true;
-      });
-      const original = choice.textContent;
-      choice.textContent = "导入中…";
-      try {
-        await postPaperToWps(paper, { sheetId: sheet.id });
-        const saved = markPaperImported(paper.id, sheet.id);
-        wpsBox.replaceChildren();
-        const done = document.createElement("p");
-        done.className = "wps-done";
-        done.textContent = `已导入到 ${saved.map((item) => item.label).join("、")}`;
-        wpsBox.appendChild(done);
-        renderGrid();
-      } catch (error) {
-        buttons.forEach((button) => {
-          button.disabled = false;
-        });
-        choice.textContent = original;
-        wpsBox.querySelectorAll(".wps-failed").forEach((node) => node.remove());
-        const failed = document.createElement("span");
-        failed.className = "wps-hint wps-failed";
-        failed.textContent = error && error.wps ? error.message : "导入失败，重试";
-        wpsBox.appendChild(failed);
-      }
-    }
-
-    const already = importedSheets(paper.id);
-    if (already.length) {
-      const done = document.createElement("p");
-      done.className = "wps-done";
-      done.textContent = `已导入到 ${already.map((sheet) => sheet.label).join("、")}`;
-      wpsBox.appendChild(done);
-    }
-    const importWps = document.createElement("button");
-    importWps.type = "button";
-    importWps.className = "ghost wps-import";
-    importWps.textContent = already.length ? "再次导入" : "导入 WPS";
-    importWps.addEventListener("click", showSheetChoices);
-    wpsBox.appendChild(importWps);
-
-    els.dialogBody.replaceChildren(meta, title, authors, oneLabel, oneBody, label, body, toggle, tags, links, wpsBox);
+    els.dialogBody.replaceChildren(meta, title, authors, oneLabel, oneBody, label, body, toggle, tags, links, renderActions(paper));
     els.dialog.showModal();
     els.dialogClose.focus();
   }
 
   function closeDialog() {
+    clearTimeout(actionPoll);
     if (els.dialog.open) els.dialog.close();
   }
 

@@ -1,6 +1,6 @@
 const { describe, it } = require("node:test");
 const assert = require("node:assert/strict");
-const { paperToWpsPayload, postPaperToWps, WPS_SHEETS, importedSheets, markPaperImported } = require("../js/wps.js");
+const { paperToWpsPayload, postPaperToWps, WPS_SHEETS, importedSheets, markPaperImported, unmarkPaperImported } = require("../js/wps.js");
 
 describe("WPS webhook payload", () => {
   it("maps a reading card onto the seven WPS columns", () => {
@@ -81,6 +81,17 @@ describe("WPS webhook payload", () => {
       ["区块链安全防控", "区块链机制设计"]
     );
     assert.deepEqual(importedSheets("other", memory), []);
+    unmarkPaperImported("2611.04196", "security", memory);
+    assert.deepEqual(
+      importedSheets("2611.04196", memory).map((sheet) => sheet.id),
+      ["mechanism"]
+    );
+  });
+
+  it("adds the original text only when it is present", () => {
+    const payload = paperToWpsPayload({ title: "With text", abstract: "摘要" }, { fullText: "正文" });
+    assert.equal(payload.full_text, "正文");
+    assert.equal(paperToWpsPayload({ title: "No text" }).full_text, undefined);
   });
 
   it("posts the JSON body without a browser preflight", async () => {
@@ -99,6 +110,18 @@ describe("WPS webhook payload", () => {
     assert.equal(calls[0].url, WPS_SHEETS.find((sheet) => sheet.id === "mechanism").webhookUrl);
     assert.equal(calls[0].init.method, "POST");
     assert.equal(calls[0].init.mode, "no-cors");
+    const serverCalls = [];
+    await postPaperToWps(paper, {
+      sheetId: "mechanism",
+      server: true,
+      fullText: "全文",
+      fetch: async (url, init) => {
+        serverCalls.push({ url, init });
+        return { status: 200, text: async () => JSON.stringify({ code: 0, data: { task_id: "task-1" } }) };
+      },
+    });
+    assert.equal(serverCalls[0].init.mode, undefined);
+    assert.equal(JSON.parse(serverCalls[0].init.body).full_text, "全文");
     assert.equal(calls[0].init.headers["Content-Type"], "text/plain;charset=UTF-8");
     assert.equal(calls[0].url.includes("?"), false);
     const body = JSON.parse(calls[0].init.body);
