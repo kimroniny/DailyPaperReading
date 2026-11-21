@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-21",
+  "papers": [
+    {
+      "id": "2611.26131",
+      "title": "SCARVA: Interpretable Agentic Reasoning in Software Supply-Chain Analysis",
+      "authors": [
+        "Tim Barsch",
+        "Bruno Nogueira",
+        "Tobias Wienand",
+        "Jan Fopma",
+        "Flavio Toffalini"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型智能体评估依赖漏洞是否真能打到应用，并用独立评判智能体核对证据。",
+      "abstract": "复杂应用可能从依赖里继承安全漏洞，但依赖有漏洞并不等于应用一定会被打到。现有工具会标出带公开漏洞的依赖，更进一步的会分析调用图，判断漏洞代码是否可达。这些方法往往只覆盖特定语言和生态。大模型智能体看起来适合做这件事，但会幻觉、抄近路、刷奖励；这些行为不透明，结论不好直接信。本文提出 SCARVA，用来产出可解释报告。它把智能体推理和证据收集结合起来：分析智能体做安全评估时，系统记录每次工具调用、文件访问和网络请求；再由一个或多个独立的评判智能体检查分析结果，写出有证据支撑的报告。作者在 54 个手工整理的案例上评估，覆盖可利用、不可利用、无漏洞三类项目，并用了开源权重模型和前沿模型。最好的分析模型 Qwen 3.8 达到 82% 平衡准确率，超过所评的商业模型。人工标注验证了评判结果：Claude Opus 5.5 最好，与标注者在 94% 的断言检查上一致。文中还讨论了智能体在供应链漏洞评估上的常见失败方式。",
+      "abstractEn": "Complex applications may inherit security vulnerabilities from their dependencies, though a vulnerable dependency does not necessarily endanger the application. Existing tools flag dependencies associated with public vulnerabilities, and more advanced ones analyze the call graph to assess whether the vulnerable code is reachable. However, these approaches are limited to specific programming languages and ecosystems. LLM agents are promising candidates for this task, yet they hallucinate, take shortcuts, and reward hack. As these behaviors are opaque, the agents' conclusions may not be trusted. We present SCARVA a framework designed to produce interpretable reports. SCARVA combines advanced agent reasoning with an evidence-collection methodology that assesses the agent's analysis and improves its trustworthiness. Specifically, the ANALYST performs a software security assessment while SCARVA records every tool call, file access, and web request. Then, one or more independent JUDGE agents inspect the ANALYST's result and produce an evidence-backed report. We evaluate SCARVA on 54 manually curated cases, balanced across exploitable, non-exploitable, and vulnerability-free projects, using both open-weight and frontier models. The best ANALYST model, Qwen 3.8, reaches 82% balanced accuracy and surpasses the evaluated proprietary models. Human annotation validates the JUDGE findings: Claude Opus 5.5 performs best, agreeing with annotators in 94% of claim checks. Finally, we discuss the most common failure modes of agents on supply-chain vulnerability assessment.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "供应链",
+        "漏洞可达性",
+        "智能体",
+        "依赖分析"
+      ],
+      "url": "https://arxiv.org/abs/2611.26131",
+      "pdf": "https://arxiv.org/pdf/2611.26131.pdf"
+    },
+    {
+      "id": "2611.26553",
+      "title": "Replication of Agentic Security Events: Audit and Investigation (ROGUE-AI)",
+      "authors": [
+        "Mengxiao Wang",
+        "Mahbub Alam",
+        "Kalyan Nakka",
+        "Nitesh Saxena"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用多智能体框架离线复现并对照验证编程智能体安全事故报告。",
+      "abstract": "基于大模型的智能体已经能替用户删文件、付款。媒体常报道这类失败（例如 Replit 的编程智能体删掉生产数据库），但报道往往只说出了什么事，很少核实事故或找出原因。事故目录收集报道，基准测试记录智能体是否失败，两者都不会复现事故，也不会检验报道所指出的原因。本文提出 ROGUE-AI：离线重建每起报道事故，同时做一个只去掉被指责原因的对照，再在两边运行智能体。结果显示，108 次尝试里有 89% 复现了报道中的危害。基于 GPT、Claude、Gemini 和 DeepSeek 的五种现有模型，在 18% 到 33% 的运行中犯了报道中的错误；去掉被指责原因后最多只有 1%。72 起造成真实危害的事故里，62 起没有攻击者；这些情况下，智能体按任务去做，却没注意到普通风险，例如测试库和生产库共用。对全部五种模型，无攻击者的复现造成的危害都高于提示注入复现。针对提示注入的防御在找注入指令，而这些复现里并没有。另外，在每次工具输出后加上点明风险及其后果的警告，五种模型的危害都下降；同样长度但不提风险的说明，则大多留着原有危害。这些复现可复用，厂商可在每次发新版本前再跑一遍。",
+      "abstractEn": "Agents based on large language models (LLMs) can now delete files and send payments on behalf of their users. News media reports routinely describe failures of these agents (e.g., Replit's coding agent deleting a production database), but a report often only says what went wrong and rarely (in)validates the incident or finds its root cause. Incident catalogs collect these reports, and benchmarks record whether agents fail, but neither replicates an incident nor tests the cause its report might identify. In this paper, we present ROGUE-AI (Replication of Agentic Security Events: Audit and Investigation), a multi-agent framework that closes the above gap and rebuilds each reported incident offline together with a matched control that lacks only the blamed cause, and runs agents on both. Our results suggest that ROGUE-AI is able to reproduce the reported harm in 89% of its 108 attempted replications. Agents built on five current GPT, Claude, Gemini and DeepSeek models made the reported mistake in 18% to 33% of runs, against at most 1% without the blamed cause. Of the 72 incidents with real-world harm, 62 had no underlying attacker, and in these, agents did what their task asked for but missed an ordinary hazard, such as a database shared with the live site. Replications without an attacker caused more harm than replications of prompt injection for all five models. Defenses against prompt injection look for injected instructions, but these replications contain none. Further, a warning after each tool output that names the hazard and its consequence lowered harm for all five models, whereas a note of the same length that does not mention the hazard left most of the harm in place. Built from real incidents, the ROGUE-AI replications form a reusable audit framework that vendors can rerun before each new release.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能体",
+        "事故复现",
+        "安全审计",
+        "编程智能体"
+      ],
+      "url": "https://arxiv.org/abs/2611.26553",
+      "pdf": "https://arxiv.org/pdf/2611.26553.pdf"
+    },
+    {
+      "id": "2611.25821",
+      "title": "Signed but Unbound: The Authority Gap Between Agent Commerce Mandates and Crypto Wallet Signatures",
+      "authors": [
+        "Shengwei You",
+        "Aditya Joshi",
+        "Andrey Kuehlkamp",
+        "Jarek Nabrzyski"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析智能体稳定币支付里，商务授权与钱包签名在链上约束不一致的问题，无大模型做检测方法。",
+      "abstract": "智能体用稳定币付款时，商务协议可以写明商户、订单、金额和协助方，代币合约却只检查钱包签过的字段。作者把二者之差称为权限缺口，定义了九类约束，并针对 12 种授权配置做了推导，其中包括 Coinbase 已部署的 Commerce Payments Protocol。在已部署合约代码的本地副本上，31800 次试验都与推导一致。对照实验表明：把条款承诺写进签名 nonce，可以绑定订单。协助方把付款提交到没有代码的商户账户时，要绑定协助方，还需要单独的收款合约。在 Base 上抽样的 26653 笔 USD Coin 授权兑换里，98.7% 走的是任何持有该签名的人都能兑换的路径。作者证明了在签名方可信时，收款合约足以强制执行已签授权，并说明钱包会显示哪个收款方。MandateLock 是面向即时付款的最小实现：在已部署代币代码上拒绝全部 10800 份被改过的授权，并接受两个独立签名方的签名；燃气比仅收款方能提交的转账大约多 25%。",
+      "abstractEn": "When an artificial intelligence agent pays with a stablecoin, the commerce protocol can specify the merchant, order, amount, and facilitator. The token contract enforces the fields the wallet signs. We call the difference the authority gap, define nine constraint classes, and derive them for 12 authorization configurations, including Coinbase's deployed Commerce Payments Protocol. All 31,800 trials on local copies of deployed contract code match the derivation. A controlled comparison shows that committing the terms in the signed nonce binds the order. When the facilitator submits a payment to a merchant account without code, binding the facilitator requires a separate recipient contract. Of 26,653 sampled USD Coin authorizations redeemed on Base, 98.7% followed a path that any holder of the signature could redeem. We prove sufficient conditions for a recipient contract to enforce the signed mandate under a trusted signer and show which recipient a wallet displays. MandateLock, a minimal implementation for immediate payments, rejects all 10,800 modified mandates on deployed token code and accepts signatures from two independent signers. It uses 25% more gas than a transfer that only the recipient can submit.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "钱包",
+        "稳定币",
+        "授权",
+        "账户抽象"
+      ],
+      "url": "https://arxiv.org/abs/2611.25821",
+      "pdf": "https://arxiv.org/pdf/2611.25821.pdf"
+    },
+    {
+      "id": "2611.24989",
+      "title": "Signed, Valid, and Unauthorized: Authority Closure at the Trust Boundary Between Agent Commerce Protocols and Crypto Wallets",
+      "authors": [
+        "Shengwei You",
+        "Aditya Joshi",
+        "Andrey Kuehlkamp",
+        "Jarek Nabrzyski"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "在钱包侧检查智能体稳定币签名对象的权限闭包，避免展示字段正确但仍越权，无大模型做检测方法。",
+      "abstract": "智能体商务协议允许软件智能体用稳定币付款。买家可以批准收款方、资产、额度上限和时间窗口，但钱包签下的对象，其效果取决于随后消费它的合约。只核对展示字段或只模拟一笔付款，可能漏掉该签名对象仍然允许的转账。作者把持有该签名对象所能促成的转账序列集合定义为权限闭包：当其中每条序列都满足买家约束时，钱包对象才符合授权。文中刻画了钱包对象何时能满足这一性质，并实现了 Closure，一个覆盖 13 类签名对象的钱包侧检查器。在 2130 个生成对象和 62979 个执行程序上，有 265 个实际越权的对象同时通过了字段加过期检查和地址白名单。在测试模型下，Closure 拒绝了全部 1680 个有观察到越权的对象，并接受了其余 450 个。用 x402 参考客户端做的两次本地结账里，已批准付款完成结算，Closure 在签名前拒绝了超出授权的请求。每类对象的判定中位时间不超过 12 微秒。",
+      "abstractEn": "Agent commerce protocols let software agents pay with stablecoins. A buyer approves a payee, asset, spending cap and time window, but the wallet signs an object whose effects depend on the contracts that consume it. Matching the displayed fields or simulating one payment can miss transfers that the signed object still permits. We define authority closure as the set of transfer sequences that holding the signed object can enable. A wallet object respects the mandate when every such sequence meets the buyer's constraints. We characterize when wallet objects can satisfy this property and implement Closure, a wallet-side checker covering 13 families of signed objects. In an evaluation of 2,130 generated objects and 62,979 execution programs, 265 objects with an observed violation passed both a field-and-expiry check and an address allow-list. Under the test model, Closure rejected all 1,680 objects with an observed violation and accepted the remaining 450. In two local checkouts using the x402 reference client, approved payments settled and Closure refused requests outside the mandate before signing. The median decision time was at most 12 microseconds per family.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "钱包",
+        "稳定币",
+        "授权闭包",
+        "智能体支付"
+      ],
+      "url": "https://arxiv.org/abs/2611.24989",
+      "pdf": "https://arxiv.org/pdf/2611.24989.pdf"
+    }
+  ]
+}
