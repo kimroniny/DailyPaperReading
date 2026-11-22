@@ -1,0 +1,312 @@
+{
+  "date": "2026-11-22",
+  "papers": [
+    {
+      "id": "2611.26588",
+      "title": "Verify the Verifier: Specification-Grounded LLM Cross-Checking for Bugs That Escape UVM Scoreboards",
+      "authors": [
+        "Ana E. Sanchez Villalobos",
+        "Michael D. Quinn",
+        "Aakash Tyagi",
+        "Minh D. Luu",
+        "David Kebo Houngninou"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型对照规格检查已通过的 UVM 回归轨迹，找出逃过记分板的 OpenTitan 硬件缺陷。",
+      "abstract": "UVM 回归通过，只说明设计和参考模型在记分板检查的那些点上一致，并不等于满足规格。有一类缺陷每项测试都过、却违反规格，称为记分板逃逸，会在成熟测试台里留下来。本文提出 Verify the Verifier：据作者所知，这是第一个用大模型异常交叉检查器，对照规格去看已经通过的回归轨迹的框架。作者向四个 OpenTitan IP 注入 564 个缺陷，其中 68 个是候选记分板逃逸：与原设计不等价、测试覆盖到了、回归却仍通过。框架确认了 41 个：在有缺陷设计上断言失败，在原设计上断言成立。",
+      "abstractEn": "A passing UVM regression shows the design agrees with the reference model on what the scoreboard checks, not that it meets the specification. Bugs that pass every test yet violate the specification, termed scoreboard escapes, survive mature testbenches. We present Verify the Verifier, to our knowledge the first framework whose LLM-based Anomaly Cross-Checker examines a passing regression's traces against the specification. Of 564 bugs inserted into four OpenTitan IPs, 68 are candidate scoreboard escapes: non-equivalent, exercised by the tests, yet passing. The framework confirmed 41 as scoreboard escapes with assertions failing on the buggy design and proven on the original.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "硬件验证",
+        "大模型",
+        "UVM",
+        "OpenTitan"
+      ],
+      "url": "https://arxiv.org/abs/2611.26588",
+      "pdf": "https://arxiv.org/pdf/2611.26588.pdf"
+    },
+    {
+      "id": "2611.25599",
+      "title": "Tether: Verified Stateful Policy Engine for System-Level Monitoring of Agents",
+      "authors": [
+        "Meghana Aparna Sistla",
+        "Alaia Solko-Breslin",
+        "Somesh Jha",
+        "Aditya Kanade",
+        "Krishnamurthy Dj Dvijotham"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用沙箱系统调用和 Lean 有状态策略约束编程智能体的系统级副作用，而不是只靠大模型监控。",
+      "abstract": "自主智能体越来越多地执行长时间任务，会跑任意 shell 命令或程序。这些动作可能发出未授权网络请求，或对用户的文件系统、进程、权限做持久的恶意改动。现有防御要么靠大模型监控，没有可证明的安全保证；要么靠无状态策略层，会漏掉多步数据流，以及策略语言没建模的执行副作用（例如 Python 脚本内部发起的网络调用）。本文提出 Tether：在观察到的智能体动作副作用上，运行时强制执行有状态安全策略。Tether 把每个拟议动作放到短暂隔离沙箱里执行，从系统调用推断抽象动作语义，再在这些语义上执行有状态策略，只有合规才放行。策略和动作语义用 Lean 4 的嵌入式 DSL 定义，可表达信息流控制、访问控制和网络安全等约束。因为动作可以把标签从源传到目的，一条规则就能在任意长度的多步执行流上做细粒度信息流控制。策略写在 Lean 里，还可以形式化验证它们满足全局安全不变量（例如读过敏感文件后禁止访问网络）。作者在真实编程智能体基准上评估良性轨迹和对抗轨迹：同一条策略挡住了范围内全部攻击，良性误报率低于 5%。",
+      "abstractEn": "Autonomous AI agents are increasingly deployed for long-running tasks that execute arbitrary shell commands or programs. However, these actions can result in unauthorized network requests or persistent, malicious changes to the user's file system, processes, or privileges. Existing defense mechanisms rely on either LLM-based monitors, which lack provable safety guarantees, or stateless policy enforcement layers, which miss multi-step data flows and execution side-effects unmodeled by the policy language (e.g., network calls initiated inside a Python script). We introduce Tether, a framework for runtime enforcement of stateful security policies over the observed side-effects of an agent's actions. Tether executes each proposed action in an ephemeral, isolated sandbox, inferring abstract action semantics from observed system calls. Tether then enforces stateful policies over these inferred semantics, permitting actions to proceed only if they comply with the policy. Policies and action semantics are defined in an embedded DSL in Lean 4 capable of expressing diverse constraints, including information flow control (IFC), access control, and network security policies. Because actions can propagate labels from sources to destinations, a single rule can enforce fine-grained IFC policies across multi-step execution flows of arbitrary length. Expressing policies in Lean enables formal verification that they satisfy global security invariants (e.g., preventing network access after reading a sensitive file). We evaluate Tether on realistic coding-agent benchmarks across both benign and adversarial trajectories. With a single policy shared across all tasks, Tether blocks 100% of in-scope attacks while maintaining a benign false-positive rate under 5%.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能体",
+        "策略强制",
+        "沙箱",
+        "信息流"
+      ],
+      "url": "https://arxiv.org/abs/2611.25599",
+      "pdf": "https://arxiv.org/pdf/2611.25599.pdf"
+    },
+    {
+      "id": "2611.25324",
+      "title": "Verified Netlist-to-RTL Recovery with LLM Agents",
+      "authors": [
+        "Ahmet Efe",
+        "Recep Bugra Uludag",
+        "Ulya R. Karpuzcu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型智能体按逻辑锥把门级网表恢复成可证明等价的 RTL，做芯片逆向。",
+      "abstract": "门级网表会在 IP 集成方和晶圆厂之间流转，也可以从芯片里提取。把网表逆向成可读的寄存器传输级（RTL）代码，有助于攻击者理解并改设计，但这很难：字级运算散落在大量门上。大模型能写和优化 RTL，但对整份网表往往恢复不出来。本文提出 LOCA（LOgic Cone Attack）：把匿名网表划成逻辑锥，并行智能体重写，再拼成紧凑 RTL。每个锥包含一组相关寄存器的完整次态逻辑，给智能体的是小而有意义的任务。五种划分方法里，只有分组逻辑锥能恢复。LOCA 只保留与网表证明等价的 RTL，并用压缩程度衡量质量。功能保持的混淆挡不住它对测试设计的恢复；未知密钥或隐藏单元功能则使它无法证明恢复了原设计。在 21 个模型-设计对上，LOCA 恢复了 17 个，整网表提示只恢复了 6 个。各模型每次运行的恢复率从 5% 升到 74%，低成本模型的中位费用低于一美元。",
+      "abstractEn": "Gate-level netlists circulate among IP integrators and foundries and can be extracted from chips. Reverse engineering them into readable register-transfer-level (RTL) code would help an adversary understand and modify a design, but remains difficult because word-level operations are scattered across many gates. Large language models (LLMs) can write and optimize RTL, but often fail to recover it from a whole netlist. We propose LOCA (LOgic Cone Attack), an LLM-based attack that divides an anonymized netlist into logic cones, has parallel agents rewrite them, and assembles compact RTL. Each cone contains the complete next-state logic of a group of related registers, giving an agent a small, meaningful task. Of five partitioning methods tested, only grouped cones lead to recovery. LOCA keeps only RTL proven equivalent to the netlist and measures its quality by compression. Function-preserving obfuscation does not stop LOCA on the tested designs, whereas unknown keys or hidden cell functions prevent it from proving recovery of the original design. Across 21 model-design pairs, LOCA recovers 17, versus 6 with whole-netlist prompting. Per-run recovery across models rises from 5% to 74%, at a median cost below one dollar with a low-cost model.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "硬件逆向",
+        "大模型智能体",
+        "网表",
+        "RTL"
+      ],
+      "url": "https://arxiv.org/abs/2611.25324",
+      "pdf": "https://arxiv.org/pdf/2611.25324.pdf"
+    },
+    {
+      "id": "2611.24765",
+      "title": "LLM-Guided Cyber-Physical Attack Path Identification in Smart Grids",
+      "authors": [
+        "Amr Elshazly",
+        "Jesse Roberts",
+        "Rachad Atat",
+        "Muhammad Ismail"
+      ],
+      "year": 2026,
+      "venue": "IECON 2026",
+      "abstractOneWord": "用大模型结合 STRIDE 和 ATT&CK，在电网拓扑上识别有物理影响的网络攻击路径。",
+      "abstract": "找出高影响攻击路径，对提高电网韧性很重要。现有方法要么做结构拓扑分析，要么做基于仿真的级联故障模型。拓扑方法能抓住连通性，但缺少对抗推理；仿真方法更适合离线分析，对快速评估不断变化的攻击场景效果较差。因此，同时抓住拓扑、威胁语义和物理影响的现实攻击路径仍然难找。本文提出一个有物理依据的框架：用大模型识别网络物理攻击路径，并把级联故障得到的影响排序当作物理依据。框架结合系统拓扑、大模型引导的 STRIDE 与 MITRE ATT&CK 威胁建模，以及三种对照策略：拓扑驱动、威胁驱动和融合方法。评估包括：（一）大模型推断的 top-K 与级联故障真值的关键节点重合；（二）推断路径与参考路径的节点相似度；（三）完整攻击序列的路径级对齐。结果显示，有结构的大模型威胁建模明显更接近物理依据。在网络层，关键节点 overlap@3 从约 33% 升到最高 100%，节点相似度最高 65%，路径级对齐最高 48%。在 IEEE 14 节点系统上，相对融合基线，运行时间大约减少 75% 到 85%。这些结果表明，大模型引导的攻击路径识别有希望用于高效、考虑影响的网络物理安全分析。",
+      "abstractEn": "Identifying high-impact attack paths in cyber-physical power systems is critical for improving grid resilience. Existing methods typically rely on either structural topology analysis or simulation-based cascading-failure models. Topology-based approaches capture connectivity but lack adversarial reasoning, while simulation-driven methods are primarily suited for offline analysis and are less effective for rapid evaluation of evolving attack scenarios. As a result, identifying realistic attack paths that jointly capture topology, threat semantics, and physical impact remains challenging. This paper presents a physics-grounded framework for identifying cyber-physical attack paths using large language models (LLMs), with cascading-failure-derived impact rankings used as physics-grounded references. The framework integrates system topology, LLM-guided STRIDE and MITRE ATT&CK threat modeling, and three baseline strategies for comparison: topology-driven, threat-driven, and fusion-based. Evaluation is performed using (i) critical-node overlap between LLM-inferred top-K rankings and cascading-failure-based ground truth; (ii) node-level similarity between LLM-inferred and reference paths; and (iii) path-level alignment capturing agreement in complete attack sequences. Results show that structured LLM-based threat modeling substantially improves alignment with physics-grounded references. In the cyber layer, critical-node overlap@3 increases from approximately 33% to as high as 100%, while node-level similarity reaches up to 65% and path-level alignment reaches up to 48%. In addition, the proposed framework reduces runtime by approximately 75--85% compared to the fusion-based baseline in the IEEE 14-bus system. These results suggest that LLM-guided attack path identification is a promising approach for efficient and impact-aware cyber-physical security analysis.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能电网",
+        "攻击路径",
+        "大模型",
+        "威胁建模"
+      ],
+      "url": "https://arxiv.org/abs/2611.24765",
+      "pdf": "https://arxiv.org/pdf/2611.24765.pdf"
+    },
+    {
+      "id": "2611.25832",
+      "title": "RAVEN: A Self-RAG Based Agent for Threat Classification and Response",
+      "authors": [
+        "Pironti Francesco Aurelio",
+        "Arena Luigi",
+        "Blefari Francesco",
+        "Lupinacci Matteo",
+        "Romeo Francesco",
+        "Furfaro Angelo"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用 Self-RAG 智能体给企业 SOC 告警做初步分类，并结合基础设施知识给出处置建议。",
+      "abstract": "大型企业里安全事件分析负担很重，每条告警通常要人工查看。这既耗时，在告警量大的安全运营中心（SOC）里也容易不一致。本文是进行中的工作，提出 RAVEN（Retrieval-Augmented Vulnerability & Event aNalysis）：一个智能体框架，用来自动完成告警调查的前几步，协助 SOC 分析员。系统用带自我反思的检索增强生成，给安全事件做初步分类，并允许分析员通过交互查询继续细化。与只给通用缓解建议的传统做法不同，RAVEN 会结合目标企业基础设施的知识，生成有上下文的修复建议。作者实现了早期原型，并在三个各 400 条整理过的 Web 载荷测试集（SQLi、XSS、SSTI）上报告了初步结果，还做了缓解生成的定性案例研究；基于入侵检测系统告警的评估和用户研究仍在进行。",
+      "abstractEn": "Security event analysis in large enterprises can be overwhelming, as each alert typically requires manual inspection by human operators. This process is time-consuming and prone to inconsistencies, especially in high-volume Security Operations Center (SOC) environments. In this work-in-progress paper, we present RAVEN: Retrieval-Augmented Vulnerability & Event aNalysis, an agentic framework designed to support SOC analysts by automating the initial stages of alert investigation. The proposed system leverages a Self-Reflective Retrieval-Augmented Generation-based approach to provide an initial classification of security events and enables interactive refinement through analyst-in-the-loop queries. Unlike traditional approaches that rely on generic mitigation strategies, RAVEN generates context-aware remediation suggestions by incorporating knowledge of the target enterprise infrastructure. We implement an early-stage prototype and report preliminary results on three balanced test sets of 400 curated web payloads each (SQLi, XSS, SSTI) and a qualitative case study of mitigation generation; an evaluation on IDS-generated alerts and a user study are ongoing and outlined as remaining work.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "SOC",
+        "告警研判",
+        "智能体",
+        "检索增强"
+      ],
+      "url": "https://arxiv.org/abs/2611.25832",
+      "pdf": "https://arxiv.org/pdf/2611.25832.pdf"
+    },
+    {
+      "id": "2611.23947",
+      "title": "When Do Decision Models Help LLM-Driven Network Discovery?",
+      "authors": [
+        "Alperen Örsdemir",
+        "Rochelle Xenia Mendoza Santos",
+        "Wen Shei Ong",
+        "Matthew Caesar",
+        "Ertem Esiner"
+      ],
+      "year": 2026,
+      "venue": "PCDS 2026",
+      "abstractOneWord": "评估非生成式决策模型，能否提高大模型驱动的渗透测试网络发现，并挡住不安全命令。",
+      "abstract": "网络发现是渗透测试的第一阶段，用来找出存活主机和开放服务，现在越来越多由大模型驱动的执行框架自动完成。为了减轻幻觉或不安全命令，近期工作主张在执行前插入快速、非生成式的决策模型来校验动作。本文在按 30 节点容器测试床标定的仿真里，量化这种校验在三种网络规模（n=10、100、1000）上是否真能改进发现。结果表明，分块批量下发在大规模网络上能找回 92% 到 100% 的开放端口；单主机下发会因上下文饱和和扫描延迟掉到 6% 以下。此外，以本地模型测到的提议质量为准，决策门控把小网络上的端口召回从 75.5% 提到 89.0%，并能截住代价很高的诱饵陷阱；但对前沿模型，在早期主机发现阶段会增加额外延迟。",
+      "abstractEn": "Network discovery, the identification of live hosts and their exposed services, is the first phase of every penetration test, and it is increasingly automated by harnesses driven by large language models (LLMs). To mitigate hallucinated or unsafe commands, recent work proposes inserting fast, non-generative decision models to validate actions prior to execution. This paper quantifies whether such validation improves discovery across three network scales (n = 10, 100, and 1,000) in a simulation calibrated on a 30-node containerized testbed. Our findings show that chunked batch dispatch recovers 92% to 100% of open ports in large-scale networks, whereas single-host dispatch collapses to under 6% due to context saturation and scan latency. Furthermore, at the measured proposal quality of the local model, decision gating increases its port recall from 75.5% to 89.0% on small networks and intercepts costly decoy tarpits, but it imposes additional latency on frontier models during early host discovery.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "渗透测试",
+        "网络发现",
+        "大模型",
+        "决策模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.23947",
+      "pdf": "https://arxiv.org/pdf/2611.23947.pdf"
+    },
+    {
+      "id": "2611.20514",
+      "title": "Beyond the Patch: Reconstructing an Incomplete-Fix Patch Bypass in LLM Agent Frameworks with Control-Gated, Benign Probes",
+      "authors": [
+        "Chaitanya Garware"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用受控良性探测复现大模型智能体框架里补丁不完整、原 PoC 过不去但旁路仍能破坏不变量的情况。",
+      "abstract": "补丁之后重放漏洞原来的概念验证，只能测试所报告的触发路径是否还能复现，并不能说明安全不变量在其他代码路径上仍然成立。本文提出一种受控、良性的重建方法，并在四个大模型智能体框架和四类不变量上做了试探。对 PraisonAI，作者比较原触发重放（B0）和另一条旁路探测（M）；还在 Langroid、Agno 和 CrewAI 上做了五组修复前后重建。每次运行在授权对照通过后，给出 VIOLATION、NO_VIOLATION_OBSERVED 或 INCONCLUSIVE。探测使用惰性标记或 builtins 可达性检查。在 PraisonAI 4.6.31 上，原来的工具加载触发被挡住，但 tool_override 路径仍破坏不变量。这复现了公开记录的 CVE-2026-44334 对 CVE-2026-40287 的绕过；在 4.6.32 上两条路径都未观察到破坏。对 CrewAI，在 1.11.0 观察到破坏，在 1.11.1 观察到隔离，但不声称那是最早修复版本。十四个框架校验场景给出了预期结论。只证明了一次同版本 B0 与 M 的分歧。PraisonAI 探测直接调用加载函数，说明的是给定设置下的边界行为，不是完整端到端利用。未观察到破坏只适用于所测探测、版本和配置，不是安全证明。这次试探重建的是已知的不完整修复，没有提出新的测试技术，也没有估计漏洞普遍程度。",
+      "abstractEn": "Replaying a vulnerability's original proof-of-concept after patching tests whether its reported trigger remains reproducible, but does not establish that the underlying security invariant holds on other code paths. We present a benign, control-gated reconstruction method and a pilot study across four LLM agent frameworks and four invariant classes. For PraisonAI, we compare original-trigger replay (B0) with a distinct sibling-path probe (M). We also perform five before/after reconstructions across Langroid, Agno, and CrewAI. Each run reports VIOLATION, NO_VIOLATION_OBSERVED, or INCONCLUSIVE, gated by a positive authorized control. Probes use inert markers or builtins-reachability checks. At PraisonAI 4.6.31, the original tool-loading trigger is blocked while the tool_override path still violates the invariant. This reproduces the publicly documented CVE-2026-44334 bypass of CVE-2026-40287; neither tested path shows a violation at 4.6.32. For CrewAI, we observe a violation in tested release 1.11.0 and confinement in 1.11.1, without claiming the earliest fixed release. Fourteen harness-validation scenarios produced their expected verdicts. Only one same-version B0-versus-M divergence is demonstrated. The PraisonAI probes invoke loader functions directly and establish boundary behavior under the supplied setup, not a full end-to-end exploit. A non-violation verdict applies only to the tested probe, version, and configuration and is not a proof of safety. This pilot reconstructs a known incomplete fix; it neither introduces a new testing technique nor estimates vulnerability prevalence.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "补丁绕过",
+        "智能体框架",
+        "不完整修复",
+        "不变量"
+      ],
+      "url": "https://arxiv.org/abs/2611.20514",
+      "pdf": "https://arxiv.org/pdf/2611.20514.pdf"
+    },
+    {
+      "id": "2026-2912",
+      "title": "Intergalactic Consensus: Asynchronous Bitcoin Clients",
+      "authors": [
+        "Odysseas Sofikitis",
+        "Dionysis Zindros"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "证明比特币客户端不必假设消息准时到达或至少有一个诚实对等节点，也能在异步连接上安全确认。",
+      "abstract": "比特币是同步工作量证明共识协议。它对少数对手的安全性依赖验证者之间的同步，而这一假设已知是必要的。比特币客户端沿用了它：已有构造都假定消息按时到达，并且至少一个对等节点是诚实的。本文说明客户端这两条都不需要。验证者仍保持同步，客户端到验证者的连接可以是异步的：对手可以延迟或丢弃任意消息，也可以自己作答。客户端只持有时钟。比特币在区块埋深达到常数 k 后确认；本文的客户端则按当前轮次和它收到的链高来决定埋深是否足够。作者在 bitcoin backbone 模型里证明该规则安全且活跃：客户端确认的是每条诚实链的前缀，且该前缀以常数速率增长。异步会增加延迟。若客户端在第 r 轮收到一条诚实链，它会丢掉其中 ρ² 比例的区块，其中 ρ 是对手相对诚实验证者的算力上界。它丢掉 Θ(r) 个区块，而同步客户端只丢掉常数个，确认也比诚实验证者晚 Θ(r) 轮。作者证明这是紧的：面对私下挖矿的对手，任何只读轮次和高度的安全规则，渐近上都会丢掉同样多的区块，常数埋深并不安全。",
+      "abstractEn": "Bitcoin is a synchronous proof of work consensus protocol. Its security against a minority adversary rests on the synchrony among the validators, and that assumption is known to be necessary. Bitcoin clients have inherited it: every client construction to date assumes that messages arrive on time and that at least one of its peers is honest. We show that a client needs neither. We keep the validators synchronous and give the client an asynchronous connection to them, over which the adversary may delay or drop any message and may herself answer. The client holds a clock and nothing else. Bitcoin confirms a block once it is k blocks deep in the chain, for a constant k. Our client confirms a block once it is deep enough for the current round and for the height of the chain it received. We prove the rule safe and live in the bitcoin backbone model: the client confirms a prefix of every honest chain, and the confirmed prefix grows at a constant rate. Asynchrony costs latency. A client that receives an honest chain at round r discards a ρ² fraction of it, where ρ bounds the mining power of the adversary relative to the honest validators. It discards Θ(r) blocks where a synchronous client discards a constant, and it confirms a block Θ(r) rounds after the honest validators do. We prove this tight: against a private mining adversary, every safe rule that reads only the round and the height discards asymptotically as much, and no constant depth is safe.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "比特币",
+        "轻客户端",
+        "异步",
+        "共识"
+      ],
+      "url": "https://eprint.iacr.org/2026/2912",
+      "pdf": "https://eprint.iacr.org/2026/2912.pdf"
+    },
+    {
+      "id": "2026-2946",
+      "title": "BOCCHI: Compact Blind SNARK via Malformation-Tolerant Ciphertext Aggregation",
+      "authors": [
+        "Ye Yu",
+        "Kexi Huang"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "提出紧凑盲 SNARK：对密文做原生承诺和聚合打开，即使密文畸形也能保持可靠性。",
+      "abstract": "盲 SNARK 把全同态加密和密码学证明结合起来，可以在加密数据上做可验证计算，效率上往往明显好过 SNARK-over-FHE。但现有构造里，密文打开会把证明胀到几十到上百兆字节。本文提出 BOCCHI：一种紧凑、高效的盲 SNARK，通过原生承诺密文、再用少量聚合打开，来解决这个瓶颈。为了即使面对畸形密文也保持可靠性，作者引入规范绑定，以及以最优误差达到它的轻量噪声过滤器，这两个工具本身也可能有用。进一步把该变换写成 Commit-Aggregate-Check（CAC）编译器，并在两套不同 PIOP（GKR 和 Fractal）的系统上验证。在 2^22 约束下，BOCCHI 在 115.3 秒内产出 6.57 MB 证明，比 Phalanx 小 9.3 倍、快 2.54 倍，证明大小在五个基线里最小。实现见 https://anonymous.4open.science/r/BOCCHI-Artifacts。",
+      "abstractEn": "Blind SNARKs combine fully homomorphic encryption (FHE) with cryptographic proofs to enable verifiable computation over encrypted data, and can substantially outperform SNARK-over-FHE approaches in efficiency. However, ciphertext openings in existing constructions can inflate proofs to tens or hundreds of megabytes. We present BOCCHI, a compact and efficient blind SNARK that addresses this bottleneck by committing to ciphertexts natively and opening them through a few aggregates. To establish soundness even for malformed ciphertexts, we introduce canonical binding and a lightweight noise filter that achieves it with optimal error, tools that may be of independent interest. We further formulate this transformation as a Commit-Aggregate-Check (CAC) compiler and show its effectiveness on two systems with different PIOPs (GKR and Fractal). At 2^22 constraints, BOCCHI produces a 6.57 MB proof in 115.3 seconds, 9.3x smaller and 2.54x faster than Phalanx. Its proof is the smallest among five baselines. Our implementation is available at https://anonymous.4open.science/r/BOCCHI-Artifacts.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "SNARK",
+        "同态加密",
+        "零知识",
+        "证明系统"
+      ],
+      "url": "https://eprint.iacr.org/2026/2946",
+      "pdf": "https://eprint.iacr.org/2026/2946.pdf"
+    },
+    {
+      "id": "2026-2943",
+      "title": "A Transparent Post-Quantum Zero-Knowledge Argument for R1CS",
+      "authors": [
+        "Vu Hung Tung"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "构造透明、抗量子的 R1CS 零知识知识论证，证明大小对约束数是多对数。",
+      "abstract": "本文构造一个透明、抗量子的 R1CS 知识零知识论证。n 个约束的可满足性经过两次带掩码的 sumcheck，化成对已承诺短向量的线性声明；证明者揭示的每个域元素都是均匀的。见证按行用 Module-SIS（Ajtai）承诺；求值声明通过对行做单项式挑战折叠来证明，差分有短的缩放逆，因此提取范数只随折叠深度单指数增长。行承诺和部分求值再送入 LaBRADOR 证明的见证，并换成两个短的外层承诺，于是证明大小对 n 是多对数。验证者时间为 Õ(√n)·poly(λ) 加上 T_circ（约束矩阵多线性扩展的求值时间），作者对数据并行电路给出了界。论文证明了交互协议的完备性、知识可靠性，以及在可编程随机预言机模型下的经典零知识，并给出基于 Core-SVP 估计的参数。在 n=2^20 时，具体验证代价超过直接检查电路，收益是渐近的。Fiat-Shamir 编译后协议的可靠性，以及量子预言机下的零知识界，文中未证明。",
+      "abstractEn": "We construct a transparent, post-quantum zero-knowledge argument of knowledge for R1CS. Satisfiability of n constraints is reduced by two masked sumchecks to linear claims on a committed short vector; every field element the prover reveals is uniform. The witness is committed row-wise with Module-SIS (Ajtai) commitments; evaluation claims are proven by folding the rows with monomial challenges, whose differences have short scaled inverses, so that the extraction norm grows only singly exponentially in the folding depth. The row commitments and partial evaluations are moved into the witness of a LaBRADOR proof and replaced by two short outer commitments, so the proof has size polylogarithmic in n. The verifier runs in time Õ(√n)·poly(λ) plus T_circ, the time to evaluate the multilinear extensions of the constraint matrices, which we bound for data-parallel circuits. We prove completeness, knowledge soundness of the interactive protocol, and classical zero-knowledge in the programmable random-oracle model, and give parameters from a Core-SVP estimate. The concrete verifier cost at n=2^20 exceeds that of checking the circuit directly; the gain is asymptotic. Soundness of the Fiat-Shamir compiled protocol and a quantum-oracle zero-knowledge bound are not proven.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "零知识",
+        "R1CS",
+        "抗量子",
+        "透明证明"
+      ],
+      "url": "https://eprint.iacr.org/2026/2943",
+      "pdf": "https://eprint.iacr.org/2026/2943.pdf"
+    },
+    {
+      "id": "2026-2948",
+      "title": "LaTSEC: Lattice-Based Threshold Signatures with Native Non-Interactive Identifiable Abort and Compact Per-Party Storage",
+      "authors": [
+        "Muhammad Arzaki",
+        "Muhammed F. Esgin",
+        "Markku-Juhani O. Saarinen",
+        "Amin Sakzad",
+        "Ron Steinfeld"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出三轮格基门限签名，各方只存一份短份额，并能非交互地认出中止的作恶方。",
+      "abstract": "本文提出 LaTSEC：三轮格基门限签名，原生支持非交互可识别中止。每方持有一份短范数签名份额，并对应一把公开中止密钥，部分签名直接对这把密钥验证，不需要零知识证明，也不需要额外交互协议。先前能认出作恶方的格基门限签名，依赖三种机制之一：零知识证明、额外交互协议，或处处短的秘密分享（每方持有多份签名份额，各有一把公开中止密钥）。与第三种相比，LaTSEC 明显减少每方存储。构造使用 SEC：一种基于无损扩展器的斜坡处处短秘密分享，让每方只有一份短份额。作者在标准 MLWE 和 MSIS 假设下证明正确性、可识别中止安全和门限不可伪造。不可伪造证明引入 Repeated-A Matrix Hint-MLWE，这是带提示的 MLWE 新变体，用来刻画整组相关的公开中止密钥，并严格证明它可归约到标准 MLWE。在 128 比特安全、60 方时，LaTSEC 可容忍最多 6 个被腐蚀方；经验上，随机选取至少 46 方能以至少 0.99 的概率完成签名。每方持有约 14.3 KiB 的一份签名份额，并对应一把 24 KiB 的公开中止密钥。",
+      "abstractEn": "We present LaTSEC, a three-round lattice-based threshold signature scheme with native non-interactive identifiable abort. Each party holds one small-norm signing share and is associated with one public abort key, against which its partial signature is verified directly, without zero-knowledge proofs or an additional interactive protocol. Prior lattice-based threshold signatures that identify misbehaving parties rely on one of three mechanisms: zero-knowledge proofs, an additional interactive protocol, or an everywhere-short secret sharing scheme in which each party holds multiple signing shares, each with its own public abort key. Compared with schemes that use the third mechanism, LaTSEC substantially reduces per-party storage. The construction uses SEC, a recent ramp everywhere-short secret sharing scheme based on lossless expanders that gives each party a single short share. We prove correctness, identifiable-abort security, and threshold unforgeability under the standard MLWE and MSIS assumptions. The unforgeability proof introduces the Repeated-A Matrix Hint-MLWE problem, a new variant of MLWE with hints that captures the complete tuple of correlated public abort keys. We rigorously prove that this new variant admits a reduction from the standard MLWE problem. For 60 parties at 128-bit security, LaTSEC tolerates up to 6 corrupted parties, and, empirically, a randomly chosen set of at least 46 parties can sign with probability at least 0.99. Each party holds one signing share of about 14.3 KiB and is associated with one 24-KiB public abort key.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "格密码",
+        "可识别中止",
+        "MPC"
+      ],
+      "url": "https://eprint.iacr.org/2026/2948",
+      "pdf": "https://eprint.iacr.org/2026/2948.pdf"
+    },
+    {
+      "id": "2026-2954",
+      "title": "Concretely Efficient Byzantine Agreement and Interactive Consistency for Honest Majority",
+      "authors": [
+        "Michele Ciampi",
+        "Pouyan Forghani",
+        "Yun Lu",
+        "Vassilis Zikas"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给出诚实多数下具体更高效的拜占庭协议：期望 18 轮，最坏 8f+18 轮，并可扩展到广播和交互一致性。",
+      "abstract": "轮次高效的拜占庭协议（BA）主要有两类：期望常数轮，以及早停。随机化协议可以在期望常数轮终止；早停协议的轮数只取决于实际被腐蚀方数量 f≤t。近期工作能同时满足两者，但具体代价高：在有 PKI、最优阈值 t<n/2 时，先前期望轮数最小的协议期望 37 轮，最坏 15f+29 轮。本文给出 t<n/2、在 PKI 下抗自适应对手的 BA：期望 18 轮，最坏至多 8f+18 轮。还有乐观性质：若无人被腐蚀且输入一致，每方一轮即可输出。协议原生支持多值，不依赖随机预言机。核心是一个新的随机化 BA：一次成功的领导者选举就能在同一阶段达成一致。作者把结果扩展到拜占庭广播，得到期望 19 轮、最坏 8f+19 轮；再扩展到交互一致性（IC），保持同样轮复杂度，并在全诚实时提供 2 轮乐观快路径。做法是直接并行化拜占庭广播，而不是用通用 IC 编译器；对 t<n/2，已知最好的通用编译界超过期望 4000 轮和最坏 184f+730 轮。",
+      "abstractEn": "We consider two of the main notions of round-efficient Byzantine agreement (BA): expected constant rounds and early stopping. Randomized protocols can terminate in an expected constant number of rounds, while early-stopping protocols terminate in a number of rounds that depends only on the actual number f≤t of corrupted parties. Recent works achieve both guarantees at once, but at a high concrete cost: assuming PKI, for the optimal threshold t<n/2, the previous protocol with the smallest expected round complexity needs 37 rounds in expectation and 15f+29 in the worst case. In this work, we present a BA protocol for t<n/2, secure against an adaptive adversary assuming a PKI, that terminates in 18 rounds in expectation and in at most 8f+18 rounds in the worst case. Moreover, our protocol has the following optimistic feature: if no party is corrupted and all inputs agree, every party outputs after a single round. Our protocol is natively multi-valued and does not rely on random oracles. At the core of our result is a new randomized BA protocol in which a successful leader election leads to agreement within the same phase. We extend our results to Byzantine broadcast, obtaining a protocol that has 19 rounds in expectation and 8f+19 in the worst case, and to interactive consistency (IC), retaining the same round complexity while providing an optimistic fast path in which all parties output after only 2 rounds when everyone is honest. We do so by directly parallelizing our BB protocol, instead of using a generic IC compiler, for which, at t<n/2, the best known bounds are more than 4000 rounds in expectation and 184f+730 in the worst case.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "拜占庭协议",
+        "共识",
+        "早停",
+        "广播"
+      ],
+      "url": "https://eprint.iacr.org/2026/2954",
+      "pdf": "https://eprint.iacr.org/2026/2954.pdf"
+    }
+  ]
+}
