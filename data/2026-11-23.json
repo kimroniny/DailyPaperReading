@@ -1,0 +1,244 @@
+{
+  "date": "2026-11-23",
+  "papers": [
+    {
+      "id": "2611.27270",
+      "title": "Suspected Until Inspected: Neuro-Symbolic Detection of Broken Access Control in Server-Side Web Applications",
+      "authors": [
+        "Chengyao Yang",
+        "Zifeng Kang",
+        "Dongqi Han",
+        "Shihong Zou"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型提出候选、再用符号分析裁定，在服务端 Web 应用里查失效访问控制。",
+      "abstract": "失效访问控制（BAC）从 2021 年起一直排在 OWASP Top 10 第一位。现有检测手段各有缺口：静态分析绑死语言或框架，动态测试只能覆盖跑到的接口，纯大模型审计又把最终判定交给容易出错的模型。本文提出 FLINT：面向服务端 Web 应用的神经符号框架，不依赖特定语言或框架规则。核心做法是把提议和裁定分开——大模型可以标出任何数据访问都需要守卫，但只有通过符号验证的检查才能放行。神经部分枚举全部接口，按需切片代码，写成授权证书，证书里的断言都要能指回源码。符号部分用来源追踪和基于格的过程间数据流分析核对这些检查，避免按模型口头结论放行。作者在 Gitea、Grafana、Strapi 等开源应用上找到 112 个此前未知、可利用的 BAC 漏洞，其中 30 个出现在超过 2 万星的项目里，均已负责任披露；Mattermost 已确认并在分配 CVE。",
+      "abstractEn": "Broken access control (BAC) has topped the OWASP Top 10 since 2021. Unfortunately, a decade of detectors still leaves a gap on every front. Static analyzers are tied to one language or framework, dynamic testers cover only the endpoints they manage to exercise, and LLM-based auditors leave the final verdict to an error-prone model. In this paper, we design and implement FLINT, a neuro-symbolic framework that detects BAC in server-side web applications without language- or framework-specific rules. Our key insight is to separate the proposal from the verdict -- an LLM may flag any data access as needing a guard, but only a symbolically verified check can clear it. The neural component enumerates every endpoint and distills each, via demand-driven code slicing, into an authorization certificate whose claims are all grounded in cited code. The symbolic component verifies each claimed check through origin tracing and a lattice-based interprocedural dataflow analysis, so that no access is cleared on the model's word. When applied to popular real-world open-source applications, including Gitea, Grafana, and Strapi, FLINT detected 112 zero-day, exploitable BAC vulnerabilities, 30 of them in projects with over 20,000 GitHub stars. We have responsibly disclosed all of them to the developers. Mattermost, for example, has already confirmed our report and is assigning a CVE identifier.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "访问控制",
+        "大模型",
+        "符号分析",
+        "Web应用"
+      ],
+      "url": "https://arxiv.org/abs/2611.27270",
+      "pdf": "https://arxiv.org/pdf/2611.27270.pdf"
+    },
+    {
+      "id": "2611.27567",
+      "title": "Mjolnir: Finding and Reproducing Vulnerabilities in Root-of-Trust Firmware and RTL with Project-Grounded Agents",
+      "authors": [
+        "Collin MacDonald",
+        "Carl Lundin",
+        "Stephen Herwig",
+        "Miguel Osorio",
+        "Timothy Trippel"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用项目威胁模型约束的大模型智能体，在 Root-of-Trust 固件和 RTL 上找漏洞并写成可复现测试。",
+      "abstract": "Root of Trust（RoT）给上层系统做安全启动和证明，固件或硬件里的缺陷会把信任链整层打穿。大模型智能体已经能在通用软件里找到真实漏洞，但 RoT 代码有两处难点：很多安全相关缺陷取决于项目自己的信任边界和抗故障注入对策，不一定会崩溃；没有真机时，智能体只能走该项目的硬件模型、桩或 RTL 测试台。本文提出 Mjolnir：把各项目的威胁模型和设计惯例交给发现智能体和持怀疑态度的复核智能体，并把留下来的发现写成该项目工具链里的概念验证测试。作者在 Caliptra、OpenTitan、OpenPRoT 的六个固件和 RTL 目标上评估。在 Caliptra 运行时固件上，三种模型在盲评专家标注下精确率 83.3%–100%，其中 Gemini 3.8 Flash 达到 100%，同模型的四个单智能体基线是 66.7%–78.6%。在训练截止之后才修复的 34 个已知安全相关缺陷上，Flash 找到 10 个、Gemini 4 Argon 找到 17 个，分别高于最好基线的 7 个和 12 个。维护者已确认 64 个此前未知的安全相关缺陷。",
+      "abstractEn": "A root of trust (RoT) anchors secure boot and attestation for the system above it, so a bug in RoT firmware or hardware undermines every layer that trusts it. LLM agents now find real vulnerabilities in general-purpose software, but RoT code presents two challenges. First, many security-relevant bugs depend on project-specific trust boundaries and fault-injection countermeasures rather than generic vulnerability patterns, and may cause no crash. Second, without RoT hardware, agents must exercise RoT inputs through the project's own hardware model, mocks, or RTL testbenches. We present Mjolnir, an agentic pipeline that supplies each project's threat model and design conventions to discovery and skeptical review agents, and reproduces surviving findings as proof-of-concept tests in the project's own toolchain. We evaluate Mjolnir on six firmware and RTL targets in Caliptra, OpenTitan, and OpenPRoT. On Caliptra's runtime firmware, it reaches 83.3%–100% precision across three models under blind expert labeling, including 100% on Gemini 3.8 Flash versus 66.7%–78.6% for four single-agent baselines on the same model. On 34 known security-relevant bugs in Caliptra's core firmware fixed after the models' training cutoffs, it finds 10 with Gemini 3.8 Flash versus 7 for the best baseline, and 17 with Gemini 4 Argon versus 12. Across our evaluation scans, maintainers have confirmed 64 of Mjolnir's findings as previously unknown security-relevant bugs: 37 across three models on Caliptra's runtime firmware and 27 across single scans of the other five targets.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "固件",
+        "智能体",
+        "漏洞检测",
+        "OpenTitan"
+      ],
+      "url": "https://arxiv.org/abs/2611.27567",
+      "pdf": "https://arxiv.org/pdf/2611.27567.pdf"
+    },
+    {
+      "id": "2611.24979",
+      "title": "Trace2ST: Recovering PLC Structured Text from I/O Traces with LLM Generation and Verification",
+      "authors": [
+        "Hsi Chang",
+        "Irfan Khan"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型从输入输出轨迹恢复 PLC 结构化文本，并在水处理测试台上对照发现执行器攻击。",
+      "abstract": "可编程逻辑控制器（PLC）常年跑在电厂和工艺装置上，源码经常已经找不到，但控制器的每一路输入输出都会被持续记录。本文问：大模型能否只凭这些 I/O 轨迹，恢复出 IEC 61131-3 的 Structured Text 可执行程序，以及如何验证恢复结果。作者做了生成–回放–反馈流水线：先根据压缩后的轨迹摘要让大模型写候选程序（始终看不到原程序），再按控制周期回放并与记录对比，不匹配的片段最多送回修改三次。执行候选程序的解释器对照两套独立开源 PLC 运行时校验，没有无法解释的差异。在两个公开基准的 47 个第三方程序上，43 个能精确复现记录轨迹，对未见过的输入有 94% 的扫描周期一致；剩下的错误多半出在轨迹没走到的分支。无大模型的自动机学习基线能拟合记录，但在未见输入上掉到 0.40。在公开水处理测试台的真实数据上，恢复出的控制律与未见测量吻合（R²>0.99），并暴露了数据集里唯一一次执行器攻击。",
+      "abstractEn": "Programmable logic controllers (PLCs), the industrial computers that operate power and process plants, often run programs whose source code is no longer available; however, every input and output of the controller is logged continuously. This paper therefore asks whether a large language model (LLM) can recover an executable program in Structured Text (ST), the standard PLC language of IEC 61131-3, from such input/output records (traces) alone and, equally important, how the recovered program can be verified. To answer this question, we build a generate–replay–feedback pipeline. First, the LLM writes a candidate program from a compressed summary of the trace, without ever seeing the original program. The candidate is then executed one control cycle (scan) at a time and compared with the recording, and whenever a mismatch occurs the corresponding part of the trace is returned to the LLM, for at most three revisions. Because every result depends on the software that executes the candidates, we first validate it against two independent open-source PLC runtimes and find no unexplained difference. On this basis, we evaluate 47 third-party programs from two public benchmarks. The recovered programs reproduce the recorded trace exactly in 43 cases and agree with the original on 94 % of scans for unseen inputs. The remaining errors, however, lie mostly in program branches that the trace never exercised; once a trace that targets these branches is added, agreement on unseen adversarial inputs rises from 0.80 to 0.98. By contrast, a classical automata-learning baseline without an LLM fits the recording but falls to 0.40 on unseen inputs, which indicates that recovering program structure is the hard part. Finally, on real data from a public water-treatment testbed, the recovered control laws match unseen measurements closely (R²>0.99) and expose the only actuator attack in the dataset.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PLC",
+        "大模型",
+        "工控",
+        "入侵检测"
+      ],
+      "url": "https://arxiv.org/abs/2611.24979",
+      "pdf": "https://arxiv.org/pdf/2611.24979.pdf"
+    },
+    {
+      "id": "2026-2909",
+      "title": "Kairos: Efficient High-Threshold Asynchronous Distributed Key Generation from Lightweight Cryptography",
+      "authors": [
+        "Xinxin Xing",
+        "Yizhong Liu",
+        "Zifan Li",
+        "Jianwei Liu",
+        "Yudi Yang",
+        "Yuan Lu",
+        "Song Bian",
+        "Zhenyu Guan",
+        "Tianwei Zhang"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstractOneWord": "用轻量哈希秘密分享做高门限异步分布式密钥生成，无大模型，对象是门限密码系统。",
+      "abstract": "异步分布式密钥生成（ADKG）要稳健地生成门限公私钥对，是随机信标、门限签名、门限解密和分布式密钥管理的基础。现有构造在高门限重建时计算开销仍大，原因是和基于同态承诺的可验证秘密分享绑得太紧。本文提出 Kairos：用基于哈希的轻量异步完整秘密分享（ACSS）导出离散对数公私钥分享，每把钥匙的通信是渐进最优的二次开销，从而避开同态承诺。在 n=3f+1 下可容忍 f 个恶意节点，并给出无偏公钥分享，重建门限 t≥f。核心技术是私钥分享的非交互门限提升，以及 lock-then-verify 下的轻量高门限公钥分享验证脚本聚合，也可用于异步动态主动秘密分享（ADPSS）或安全多方计算。在 AWS EC2 分布式评测中，相对 DXKR23（USENIX Security'23）和 HARTS（ASIACRYPT'24），在 t=2f 下运行时间减少 63.7%–99.4%，n=16 时吞吐约每分钟 3000 把钥匙。用于 ADPSS 时，相对 LongLive（USENIX Security'23）在 t=2f 下运行时间减少 91.0%–98.7%。",
+      "abstractEn": "Asynchronous distributed key generation (ADKG) bootstraps threshold cryptosystems by robustly generating threshold public and private key pairs. This primitive is a fundamental building block for distributed algorithms such as random beacons, threshold signatures, threshold decryption, and general distributed key management services (DKM). While significant progress has been made, ADKG constructions still exhibit computation inefficiency, especially in high-threshold reconstruction, due to their tight coupling to homomorphic-commitment-based verifiable secret sharing. We fill in this research gap by presenting Kairos, a concretely and asymptotically efficient ADKG protocol. For efficiency, Kairos avoids homomorphic commitments by deriving dLog-based public-private key sharings from the lightweight hash-based asynchronous complete secret sharing (ACSS), with an asymptotically optimal, quadratic per-key communication. For secrecy, Kairos tolerates up to f malicious nodes among n=3f+1 parties, and produces unbiased public key shares with a high reconstruction threshold of t≥f. The core techniques in Kairos are a non-interactive threshold lifting for private key shares, and a lightweight high-threshold verification script aggregator for public key shares under a lock-then-verify paradigm, which may be of independent interest and applied in asynchronous dynamic proactive secret sharing (ADPSS) or multi-party computation. Evaluations conducted on distributed AWS EC2 servers demonstrate that Kairos reduces 63.7-99.4% runtime compared to the baselines DXKR23 (Usenix Security'23) and HARTS (ASIACRYPT'24) under t=2f, achieving a throughput of 3k keys/min at n=16. When applied in ADPSS, our solution reduces 91.0-98.7% runtime compared to LongLive (Usenix Security'23) at t=2f, resharing 2.3k secrets/min across 16-node committees.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "分布式密钥生成",
+        "共识",
+        "MPC"
+      ],
+      "url": "https://eprint.iacr.org/2026/2909",
+      "pdf": "https://eprint.iacr.org/2026/2909.pdf"
+    },
+    {
+      "id": "2026-2986",
+      "title": "Threshold Hardened Derivation for BIP32-Style Wallets from the Hydra PRF",
+      "authors": [
+        "Cemre Özdoğan",
+        "Oğuz Yayla"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "把门限 BIP32 钱包的硬化派生从 HMAC-SHA512 换成 Hydra PRF，无大模型。",
+      "abstract": "BIP32 硬化密钥派生要对父私钥和链码做 HMAC-SHA512。在门限钱包里这两项都是秘密分享，哈希必须放进多方计算。本文给出一种硬化派生：用面向算术化的 PRF Hydra 替换 HMAC-SHA512。PRF 输出序列化之后，其余步骤仍按 BIP32；派生出的密钥和标准 BIP32 不同，因此是 BIP32 的兄弟方案，不能直接互通。两个父秘密构成 PRF 密钥，只有公开数据进入输入，每个硬化子密钥仍保持秘密分享，并可继续派生。作者用一条路径混合证明父–子隐藏、兄弟独立和硬化子密钥不可关联。因为父密钥既是 PRF 密钥的一部分，又是 BIP32 的加法偏移，证明需要 offset-PRF 假设，而 Hydra 已发表的 PRF 声明并不蕴含它。门限协议在算术黑盒模型下对静态半诚实敌手 UC 安全，对静态恶意敌手带中止安全，且不对 PRF 做额外假设。五方、MP-SPDZ 恶意 Shamir 协议下，一次派生 243 轮、0.33 秒，对照 HMAC-SHA512 的 15226 轮、3.3 秒；往返 10ms 时分别约 1.9 秒和 91 秒。",
+      "abstractEn": "BIP32 hardened key derivation computes HMAC-SHA512 on the parent private key and chain code. In a threshold wallet these are secret-shared, so the hash must be evaluated inside a multi-party computation. We present a hardened derivation that replaces HMAC-SHA512 by the arithmetization-oriented PRF Hydra. Once the PRF output is serialized, every remaining step is BIP32's; the derived keys still differ from BIP32's, so the scheme is a sibling of BIP32 and not wire-compatible with it. Both parent secrets form the PRF key, only public data enters its input, and every hardened child stays secret-shared and can derive further. We prove parent--child hiding, sibling independence, and hardened-child unlinkability by one path hybrid. Because the parent key is both part of the PRF key and BIP32's additive offset, the proofs need an offset-PRF assumption, which the published PRF claim of Hydra does not imply. The threshold protocol is proved UC-secure in the arithmetic-black-box model against static semi-honest adversaries, and with abort against static malicious ones, with no assumption on the PRF. With five parties under MP-SPDZ's malicious Shamir protocol, which our proofs do not cover, one derivation needs 243 rounds and 0.33s, against 15226 rounds and 3.3s for HMAC-SHA512; at 10ms round-trip time, this becomes 1.9s against 91s.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "钱包",
+        "门限签名",
+        "MPC",
+        "BIP32"
+      ],
+      "url": "https://eprint.iacr.org/2026/2986",
+      "pdf": "https://eprint.iacr.org/2026/2986.pdf"
+    },
+    {
+      "id": "2026-2982",
+      "title": "Pethoa: Dynamic Proofs of Assets for Hidden Address Sets on Account-Based Blockchains",
+      "authors": [
+        "Yangrui Zhou",
+        "Dongliang Cai",
+        "Yuxuan Chen",
+        "Liang Zhang",
+        "Haibin Kan"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在账户模型链上为隐藏储备地址做可按区块增量更新的资产证明，无大模型。",
+      "abstract": "偿付能力证明要求托管方证明资产覆盖负债，但常见的资产证明（PoA）会公开储备地址，暴露资金活动和长期交易追踪。零知识证明可以隐藏地址，并对照公开链状态证明所有权和余额，但链状态一直在变，尤其是证明不友好的状态结构，整份证明重做代价很高。本文提出动态私有资产证明（DPoA），在隐藏的链上地址集合上高效更新资产证明。生成分成昂贵的初始化和轻量增量：初始化证明储备地址的所有权和状态成员关系；之后每个纪元，证明者根据新敲定区块在本地更新证明状态，并给出更新正确的零知识证明，不必从头再生成整份资产证明。实验表明：在 NVIDIA RTX 5090 上，对上千个地址做一次常规静态证明要几分钟；动态更新每个区块只需数秒，并可完全跑在 14 核 CPU 上。",
+      "abstractEn": "Proofs of solvency allow custodians to demonstrate that their assets cover their liabilities, but conventional Proofs of Assets (PoA) often require publicly disclosing reserve addresses, exposing financial activities and enabling long-term transaction tracing. While zero-knowledge proofs can hide reserve addresses and prove asset ownership and balances against a public blockchain state, generating proofs for evolving blockchain states remains computationally expensive, particularly for chains with proof-unfriendly state structures. We introduce Dynamic Private Proof of Assets (DPoA), a framework for efficiently updating proofs of assets over hidden sets of on-chain addresses. Our construction separates asset-proof generation into an expensive initialization phase and lightweight incremental updates. During initialization, the prover establishes ownership and state membership for the reserve addresses. Subsequently, for each epoch, the prover locally updates its proof state based on newly finalized blocks and generates a zero-knowledge proof to demonstrate the correctness of the update, avoiding the need to regenerate the entire asset proof from scratch. Experimental results demonstrate the efficiency of our approach: generating a conventional static proof for thousands of addresses takes several minutes on an NVIDIA RTX 5090 GPU, whereas our dynamic update requires only a few seconds per block and runs entirely on a 14-core CPU.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "资产证明",
+        "零知识证明",
+        "账户模型",
+        "托管"
+      ],
+      "url": "https://eprint.iacr.org/2026/2982",
+      "pdf": "https://eprint.iacr.org/2026/2982.pdf"
+    },
+    {
+      "id": "2026-2978",
+      "title": "SPAN: Privacy-Preserving Proofs of Sustained Aggregate Holdings in UTXO Privacy Pools",
+      "authors": [
+        "Zonglun Li",
+        "Xue Liu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在 UTXO 隐私池里用可增量验证计算证明一段时间内合计持仓不低于门槛，无大模型。",
+      "abstract": "隐私池正在从私密转账扩到代币化实物资产和与持仓挂钩的奖励，这些应用需要在票据替换过程中证明持续持有。本文定义保护隐私的区间持仓证明（PP-IPoH），并给出面向任意金额 UTXO 池的 SPAN。两套可增量验证计算（IVC）分别认证选中的记录并建立花费完备性，从而在每笔敲定交易后给出余额下界。另有独立的简洁零知识论证，证明该下界在整个区间都达到门槛，并支持在同一份已认证历史上继续查询。作者在所述组件和账本条件下证明完备性、知识可靠性和隐私。实验显示证明时间随交易线性增长，每多一笔大约增加 2.9 秒，峰值内存基本恒定，约 3.8 GB。",
+      "abstractEn": "Privacy pools are expanding from private transfers to tokenized real-world assets and holding-dependent rewards. These applications motivate evidence of sustained holdings across note replacements. We define a privacy-preserving interval proof of holding (PP-IPoH) scheme and present SPAN for arbitrary-value unspent transaction output (UTXO) pools. Two incrementally verifiable computations (IVCs) authenticate selected records and establish spend completeness, certifying a balance lower bound after every finalized transaction. An independent zero-knowledge succinct argument proves that this bound meets a threshold throughout an interval and supports subsequent queries over the same certified history. We prove completeness, knowledge soundness, and privacy under the stated component and ledger conditions. Experiments show linear proving time, adding about 2.9 seconds per additional transaction, and essentially constant maximum memory usage near 3.8 GB.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "隐私池",
+        "UTXO",
+        "零知识证明",
+        "持仓证明"
+      ],
+      "url": "https://eprint.iacr.org/2026/2978",
+      "pdf": "https://eprint.iacr.org/2026/2978.pdf"
+    },
+    {
+      "id": "2026-2976",
+      "title": "Authority Without Priority: The Revocation Trilemma and the Price of Stablecoin Freezes",
+      "authors": [
+        "Di Wu",
+        "Yuman Bai",
+        "Shoupeng Ren",
+        "Xinyu Zhang",
+        "Yiyue Cao",
+        "Yuheng Wang",
+        "Xuechao Wang",
+        "Huan Huo",
+        "Wu Wen",
+        "Jian Liu"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "分析稳定币冻结作为普通交易没有排序优先权时的三难，以及发行方为抢顺序付出的代价，无大模型。",
+      "abstract": "稳定币合约允许发行方冻结地址，但冻结是普通交易，由出块者和其他交易一样排序，因此后提交的转账仍可能先执行。作者把缺的那条保证叫做撤销优先权：限制一旦提交，之后提交的被禁操作不能抢在它前面生效。他们证明三难：在收入最大化的出块者下，平台不能同时提供撤销优先权、即时性（交易一上链效果就能用）和中立性（不对任何发送方优待打包或排序）。以太坊保留即时性和中立性，放弃撤销优先权。作者用 2017–2026 年以太坊上 USDT 和 USDC 的冻结，观察发行方和目标如何争执行顺序。有一例冻结长期挂起时，后提交的转账先执行。竞争从加费、到私下提交、再到通过意图订单委托执行。总体发行方为顺序付的钱比目标多。这些现象可用双方激励的 Tullock 竞赛解释：均衡里发行方出价更高，但买不到确定性。更严的冻结义务会加强它接入排序基础设施的动机，代价是中立性。",
+      "abstractEn": "Stablecoin contracts let issuers freeze an address, but a freeze is an ordinary transaction that block producers order like any other, so a transfer submitted after it can still execute first. We define the missing guarantee as revocation priority: once a restriction is submitted, no prohibited operation submitted later takes effect before it. We prove a trilemma: with revenue-maximizing block producers, no blockchain platform can provide revocation priority together with immediacy, which makes a transfer's effects usable upon inclusion, and neutrality, which rules out preferential inclusion or ordering for any sender. Ethereum keeps immediacy and neutrality and gives up revocation priority. Using USDT and USDC freezes on Ethereum from 2017 to 2026, we examine how issuers and their targets compete for execution order. In one case, a freeze had long been pending when a transfer submitted after it executed first. The competition has escalated from fee bidding to private submission to execution delegated through intent-based orders. Overall, the issuer pays more for order than its target. These patterns follow from the two sides' incentives, which we model as a Tullock contest. In equilibrium the issuer outbids its target but cannot buy certainty. Stricter freeze obligations thus strengthen its incentive to integrate into ordering infrastructure, at the expense of neutrality.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "稳定币",
+        "MEV",
+        "排序",
+        "治理"
+      ],
+      "url": "https://eprint.iacr.org/2026/2976",
+      "pdf": "https://eprint.iacr.org/2026/2976.pdf"
+    },
+    {
+      "id": "2026-2987",
+      "title": "A Two-Party Threshold Signature Scheme for Aigis-sig",
+      "authors": [
+        "Li Wang",
+        "Tihong Qin"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "为 Aigis-sig 做两方门限签名，输出能被未改动的验证器接受，无大模型。",
+      "abstract": "Aigis-sig 使用带中止的 Fiat–Shamir，拒绝步骤依赖完整响应，门限签名因此不好做。本文提出 ThAigis-2P：两方门限签名，输出可被未改动的 Aigis-sig 验证器接受。双方独立从 Aigis-sig 密钥分布采样秘密份额，并满足谱筛选条件。每方从缩放超球采样掩码，在本地做拒绝采样。协议每次尝试跑 K 个候选。谱筛选给每个挑战的秘密偏移上界，安全归约大约损失 1 bit 的条件化。协议有三轮交互模式，以及预处理模式：线下交换承诺，每次尝试线上一个往返，使用已承诺盐和一次性记录。随机预言机模型下，不可伪造性归约到 Aigis-sig 密钥分布上的 AMLWE、超球分布上的 MLWE，以及原生 Aigis-sig 的不可伪造性；预处理模式还假设抗回滚的状态服务。基于 PQMagic 的单进程 C 参考实现中，每个候选成功概率 0.22–0.25，K=10 时每次尝试高于 0.92。39000 个门限签名全部通过 Aigis-sig 验证。",
+      "abstractEn": "Aigis-sig uses Fiat--Shamir with aborts. Its rejection step depends on the full response, which complicates threshold signing. We present ThAigis-2P, a two-party threshold signature scheme whose outputs are accepted by the unmodified Aigis-sig verifier. The parties sample their secret shares independently from the Aigis-sig key distribution, subject to a spectral screening condition. Each party samples masks from a scaled hyperball and performs rejection sampling locally. The protocol runs K candidates per attempt. The spectral screening condition bounds the secret shift for every challenge and contributes approximately one bit of conditioning loss to the security reduction. The protocol has a three-round interactive mode and a preprocessing mode that exchanges commitments offline and requires one online round trip per attempt using committed salts and single-use records. In the random oracle model, the security analysis relates unforgeability to AMLWE under the Aigis-sig key distribution, MLWE under hyperball distributions, and the unforgeability of native Aigis-sig. The preprocessing mode also assumes a rollback-resistant state service. Experiments with a single-process C reference implementation based on PQMagic yield success probabilities of 0.22--0.25 per candidate and above 0.92 per attempt with K = 10. All 39,000 generated threshold signatures pass Aigis-sig verification.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "后量子",
+        "钱包",
+        "Aigis-sig"
+      ],
+      "url": "https://eprint.iacr.org/2026/2987",
+      "pdf": "https://eprint.iacr.org/2026/2987.pdf"
+    }
+  ]
+}
