@@ -1,0 +1,261 @@
+{
+  "date": "2026-11-24",
+  "papers": [
+    {
+      "id": "2611.29260",
+      "title": "Revealing Semantic Gaps in Zero-Knowledge Virtual Machines via Obligation-Targeted Semantic Fuzzing",
+      "authors": [
+        "Hongbo Wen",
+        "Jingyu Ke",
+        "Hanzhi Liu",
+        "Yanju Chen",
+        "Yu Feng"
+      ],
+      "year": 2026,
+      "venue": "NDSS 2027",
+      "abstractOneWord": "用约束义务引导的强化学习模糊测试，找 zkVM 指令集与约束系统之间的语义缺口，无大模型，对象是零知识虚拟机。",
+      "abstract": "零知识虚拟机（zkVM）证明程序执行正确，支撑着保护数十亿美元数字资产的系统。其安全性取决于程序所针对的指令集（如 RISC-V）与约束系统之间是否对齐；约束系统是检查证明者对每一步中间值（witness）记录的多项式方程。错位即语义缺口，分两类：欠约束缺陷让恶意证明者伪造指令集禁止的执行证明（破坏可靠性）；发散缺陷让 zkVM 偏离指令集或崩溃，使诚实证明者无法证明合法执行（破坏完备性）。两者都集中在除零等边角情形，常规模糊测试几乎走不到，欠约束缺陷还不改变程序输出。作者的关键观察是：这些边角情形对应从指令集规范和证明系统代数结构导出的约束义务。他们实现 Beak：一种强化学习模糊测试器，用义务替换三处随机决策——提供触发各义务的输入、奖励触发新义务组合的执行、并在义务被触发的步骤上篡改 witness。Beak 用参考 RISC-V 模拟器比对寄存器来标出发散缺陷，并检查约束是否接受被篡改的 witness 来标出欠约束缺陷。在六个主流生产级 RISC-V zkVM 上，Beak 检出 37 个已知缺陷中的 25 个（67.6%），对照此前最好方法的 5 个（13.5%），并发现 14 个此前未知缺陷，均已负责任披露并得到修复。",
+      "abstractEn": "Zero-knowledge virtual machines (zkVMs) prove correct execution of programs and underpin systems securing billions of dollars in digital assets. Their security depends on alignment between the instruction set architecture (ISA) that programs target, such as RISC-V, and the constraint system, polynomial equations that check the prover's record of every intermediate value (the witness). Mismatches, or semantic gaps, come in two kinds: underconstraint bugs let a malicious prover forge a proof of an execution the ISA forbids (a soundness violation), and divergence bugs make the zkVM itself deviate from the ISA or crash, so an honest prover cannot prove a legitimate execution (a completeness violation). Both cluster at corner cases such as division by zero that conventional fuzzing almost never reaches, and underconstraint bugs leave program output unchanged. Our key insight is that these corner cases correspond to constraint obligations derived from the ISA specification and the proof system's algebraic structure. We build Beak, a reinforcement-learning fuzzer in which obligations replace three random decisions: they supply inputs that trigger each obligation, reward executions that trigger new combinations of obligations, and direct witness tampering to the step where an obligation is triggered. Beak flags divergence bugs by comparing registers against a reference RISC-V emulator, and underconstraint bugs by checking whether the constraints accept a tampered witness. On six leading production RISC-V zkVMs, Beak detects 25 of 37 known bugs (67.6%) versus 5 (13.5%) for the prior state of the art, and discovers 14 previously unknown bugs, all responsibly disclosed and patched.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "zkVM",
+        "模糊测试",
+        "证明系统",
+        "RISC-V"
+      ],
+      "url": "https://arxiv.org/abs/2611.29260",
+      "pdf": "https://arxiv.org/pdf/2611.29260.pdf"
+    },
+    {
+      "id": "2611.30590",
+      "title": "POMA: Beyond Final Flags -- Process-Level Evaluation of Base LLMs in Vulnerability Exploitation",
+      "authors": [
+        "Gufeng Zhang",
+        "Yiru Zhao",
+        "Shengyu Liu",
+        "Weichen Yan",
+        "Xingwang Xiang",
+        "Yiran Ma",
+        "Benxiao Tang",
+        "Lei Zhao",
+        "Jinxin Ma"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用过程级评测隔离基座大模型，衡量漏洞利用链条上的能力衰减，对象是 CTF Pwn 和真实软件漏洞。",
+      "abstract": "大模型正从文本生成走向自主软件工程执行，自动验证漏洞是否可利用成为软件质量保障和安全验证的前沿。现有安全基准多半只看二进制通过/失败，或粗粒度阶段里程碑。这种结果导向打分会掩盖长程执行中的细粒度失败过程，也把基座大模型的固有能力与外部智能体脚手架混在一起。本文提出 POMA（面向 Pwn 的模型评估）：在统一执行基线下隔离基座大模型——固定任务输入、工具接口、目标环境、反馈格式和执行预算——并根据运行时证据测量中间状态与转移。作者在 55 道 CTF Pwn 题和 10 个真实漏洞复现任务上评估四个前沿基座大模型，发现利用链条上持续的能力衰减：从漏洞知识到可执行实现，从客户端动作到已验证的目标状态，从失败定位到精确修复，以及跨迭代修改。在真实软件上，模型更难同时满足格式、语义、差分和崩溃身份等约束。通过标出执行链在何处断开，POMA 为可信能力评估和有原则的漏洞智能体设计提供经验基础。基准目录、过程测量评估器和示例测试架已公开。",
+      "abstractEn": "As large language models (LLMs) evolve from text generation to autonomous software-engineering execution, automated vulnerability exploitability verification has emerged as a vital frontier in software quality assurance and security validation. Existing security benchmarks, however, largely judge models by binary pass/fail outcomes or coarse stage milestones. Such outcome-centric scoring obscures fine-grained failure dynamics across long-horizon execution and conflates the intrinsic capability of a base LLM with external agent scaffolding. We present POMA (Pwn-Oriented Model Assessment), a process-level evaluation methodology and platform that isolates base LLMs under a unified execution baseline -- fixing task inputs, tool interfaces, target environments, feedback formats, and execution budgets -- while measuring intermediate states and transitions from runtime evidence. Evaluating four frontier base LLMs across 55 CTF Pwn challenges and 10 real-world vulnerability reproduction tasks exposes persistent capability attrition along the exploitation chain: from vulnerability knowledge to executable implementation, from client-side actions to verified target states, from failure localization to precise repair, and across iterative revisions. In real-world software, models further struggle to satisfy format, semantic, differential, and crash-identity constraints simultaneously. By pinpointing where execution chains break down, POMA provides an empirical foundation for trustworthy capability assessment and principled vulnerability-agent design. Our benchmark catalogs, process-measurement evaluator, and sample harness are publicly available at https://github.com/maple-pwn/poma-release .",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞利用",
+        "大模型",
+        "评测",
+        "Pwn"
+      ],
+      "url": "https://arxiv.org/abs/2611.30590",
+      "pdf": "https://arxiv.org/pdf/2611.30590.pdf"
+    },
+    {
+      "id": "2611.28584",
+      "title": "Right Verdict, Right Reason? An Execution-Grounded Study of Whether LLM Vulnerability Detectors Understand Vulnerabilities",
+      "authors": [
+        "Leizhen Zhang",
+        "Sheng Chen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可执行证据检验大模型漏洞检测器是否真懂漏洞，对象是 C/C++ 函数。",
+      "abstract": "大模型越来越多被用来检测漏洞，基准分数常被读成它们理解了所报告的漏洞。本文用程序执行来检验这种读法。作者从 BigVul 和 PrimeVul 中取出 515 个已用概念验证复现漏洞的 C/C++ 函数，标出故障发生的行以及故障运行所依赖的语句。这些事实支撑五级测试：从区分漏洞函数与已修复版本，到定位故障、对删除故障证据作出反应，再到判断经执行确认的修改，以及预测一次具体运行的结果。每级测试都配有不需要理解的基线，例如挑选含危险调用的行的规则；并在模型训练截止之后才公布的 195 个漏洞上重复实验。四点发现：第一，区分漏洞函数与已修复版本很难，开源权重模型分开的对数不高于随机，其中五个对修复只有弱敏感，商业模型仍把许多已筛过的修复版本标成有漏洞。第二，商业模型定位故障强于关键词规则，但去掉该证据后，最强模型的判定只在较新漏洞上发生变化。第三，给定程序输入，商业模型预测运行是否故障优于寻找新增检查的规则，且预测跟随输入。第四，在较新漏洞上这一优势消失，最强模型的领先缩小，定位能力仍在。作者公开框架、逐函数证据和经执行确认的反事实基准。",
+      "abstractEn": "Large language models (LLMs) are increasingly used to detect vulnerabilities, and their benchmark scores are often read as evidence that they understand the vulnerabilities they report. We test this reading against program execution. For 515 C and C++ functions from BigVul and PrimeVul whose vulnerability we reproduce with a proof of concept, we identify the line at which the fault occurs and the statements on which the faulting run depended. These facts ground a ladder of five tests, from telling a vulnerable function from its fixed version, through locating the fault and reacting to its removal, to judging execution-confirmed edits and predicting the outcome of a concrete run. Each test is paired with a baseline that needs no understanding, such as a rule that picks lines with risky calls, and we repeat the study on 195 vulnerabilities published after the training cutoffs of the models. Four findings emerge. First, telling a vulnerable function from its fixed version is hard. The open-weight models separate no more pairs than chance, although five of them show a weak sensitivity to the fix, and the commercial models still label many screened fixed versions vulnerable. Second, the commercial models locate the fault beyond a keyword rule, while removing that evidence changes the verdicts of the strongest model only on the newer vulnerabilities. Third, given the program input, the commercial models predict whether a run faults better than a rule that looks for added checks, and the prediction follows the input. Fourth, on the newer vulnerabilities this advantage disappears and the lead of the strongest model narrows, while localization persists. We release the framework, the per-function evidence, and an execution-confirmed counterfactual benchmark.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞检测",
+        "大模型",
+        "C/C++",
+        "评测"
+      ],
+      "url": "https://arxiv.org/abs/2611.28584",
+      "pdf": "https://arxiv.org/pdf/2611.28584.pdf"
+    },
+    {
+      "id": "2611.31110",
+      "title": "Preflight: Agentic Last-Mile Verification for AI Software Supply Chains",
+      "authors": [
+        "Yaman Jandali",
+        "Nojan Sheybani",
+        "Farinaz Koushanfar",
+        "Tara Javidi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用智能体按下游程序合成函数级测试，核验 Python 依赖在真实调用面上的行为，对象是软件供应链。",
+      "abstract": "软件依赖运行在下游应用的信任边界内，但来源证明、静态分析和包级行为方法并不能直接判断一份已发布产物对某个具体程序会怎样表现。本文提出 Preflight：面向程序范围的执行前核验器，抽取应用实际引用的符号，迭代合成并验证函数级测试架，在受限环境中执行解析到的产物，记录行为指纹，并在有合适基线时与先前版本对比。作者在四个真实软件供应链事件的五种应用上下文、100 个良性包语料，以及函数级相对仅导入探测的对照上评估。Preflight 在四个事件上下文给出恶意判定，在 LiteLLM 客户端上下文给出干净判定，因为受影响的代理服务路径未被走到。100 个良性包全部干净，未观察到假阳性。在 Ultralytics 和 ctx 上的对照中，函数级测试架能暴露两起事件的恶意行为，仅导入探测则两起都看不到。结果表明：把行为核验限定在下游程序实际用到的面上，既能暴露与安全相关的依赖行为，又能在良性负载上保持克制。",
+      "abstractEn": "Software dependencies execute within the trust boundary of downstream applications, yet provenance, static analysis, and package-level behavioral approaches do not directly determine how a released artifact behaves for a specific program. We present Preflight, a program-scoped pre-execution verifier for Python dependencies that extracts application-referenced symbols, iteratively synthesizes and validates function-level harnesses, executes resolved artifacts in a restricted environment, records behavioral fingerprints, and compares target behavior against prior versions when suitable baselines exist. We evaluate Preflight on four real software-supply-chain incidents under five application contexts, a 100-package benign corpus, and a controlled function-level versus import-only ablation. Preflight returns malicious verdicts in four incident contexts and a clean verdict in the LiteLLM client context, where the affected proxy-server path is not exercised. All 100 evaluated benign packages receive clean verdicts, with zero observed false positives. In a controlled ablation on Ultralytics and ctx, function-level harnesses expose malicious behavior in both incidents, whereas import-only probing exposes neither. Together, these results show that conditioning behavioral verification on the downstream program can expose security-relevant dependency behavior while remaining selective on benign workloads.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "供应链",
+        "智能体",
+        "Python",
+        "依赖核验"
+      ],
+      "url": "https://arxiv.org/abs/2611.31110",
+      "pdf": "https://arxiv.org/pdf/2611.31110.pdf"
+    },
+    {
+      "id": "2611.29745",
+      "title": "Agentic Root Cause Reasoning and Localization of Unsoundness in Static Call Graph Analysis",
+      "authors": [
+        "Mohammad Rafieian",
+        "Michael Hicks",
+        "Shiyi Wei"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型智能体定位静态调用图工具的不健全原因，对象是 Java 字节码分析器（WALA、OPAL、Soot）。",
+      "abstract": "静态调用图工具无法健全地建模每一种动态语言特性，却很少说明结果何时、何处、为何不健全。本文提出 CGRizz：面向开发者诊断不健全、并向用户发出警告的智能体框架。训练时，CGRizz 对比静态与动态调用图，找出边界边：运行时观察到、但静态图缺失的调用。对每条边，大模型智能体提出根因，包括未建模的程序模式和工具中的责任位置。CGRizz 用三种独立证据验证每个提议：检测该模式的运行时插桩、复现缺失边的测试用例，以及插在被指认工具位置上的警告。通过验证的报告帮助开发者诊断局限；这些警告组成带插桩的构建，可在新程序上标出潜在不健全，而无需动态分析。作者在 WALA、OPAL 和 Soot 上用三套基准评估。1459 条边界边中，CGRizz 直接推理 10.3%，全部经人工审核确认，并靠已验证根因归组再解决 84.1%。工具维护者确认了若干局限，部分已修复。警告能标出留出程序中 74%–92% 的不健全。在 CGRizz 报告引导下，编码智能体在保持功能的同时去掉了 64% 的目标根因模式。",
+      "abstractEn": "Static call graph tools cannot soundly model every dynamic language feature, yet rarely reveal when, where, or why their results are unsound. We present CGRizz, an agentic framework that diagnoses unsoundness for developers and warns users about it. During training, CGRizz compares static and dynamic call graphs to identify boundary edges: calls observed at runtime but missing from the static graph. For each edge, an LLM agent proposes a root cause, including the unmodeled program pattern and responsible tool location. CGRizz validates each proposal using three independent forms of evidence: runtime instrumentation detecting the pattern, a test case reproducing the missing edge, and a warning inserted at the implicated tool location. Validated reports help developers diagnose limitations, while the warnings form an instrumented build that flags potential unsoundness in new programs without dynamic analysis. We evaluate CGRizz on three benchmark suites using WALA, OPAL, and Soot. Of 1,459 boundary edges, CGRizz reasons about 10.3% directly, all confirmed by manual audit, and resolves another 84.1% by grouping edges with validated root causes. Tool maintainers confirmed several limitations, some of which have been fixed. The warnings flag 74%-92% of unsoundness in held-out programs. Guided by CGRizz reports, a coding agent refactored programs to remove 64% of targeted root-cause patterns while preserving functionality.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "静态分析",
+        "智能体",
+        "调用图",
+        "Java"
+      ],
+      "url": "https://arxiv.org/abs/2611.29745",
+      "pdf": "https://arxiv.org/pdf/2611.29745.pdf"
+    },
+    {
+      "id": "2611.30932",
+      "title": "Carried-Over and Agent-Native Threats in the Supply Chain of LLM Agent Skills",
+      "authors": [
+        "Kaixuan Li",
+        "Wenbo Guo",
+        "Sen Chen",
+        "Yang Liu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "登记库规模统计智能体技能包里的无意漏洞，并用静态分析和在线大模型智能体验证可达性，对象是 LLM agent skills。",
+      "abstract": "智能体技能是可复用的软件包，用脚本、第三方依赖和自然语言说明扩展大模型智能体。智能体会根据用户请求和不可信外部内容构造技能参数，因此良性作者留下的缺陷可以把提示注入升级成代码执行。现有工作针对恶意技能或单一攻击面，也没有测试智能体能否走到这些缺陷。本文对 ClawHub 全部 48682 个技能做了登记库规模的实证研究，覆盖技能供应链上因无意漏洞形成的攻击面。研究包含两类带过来的风险（依赖和第一方代码）和两类智能体原生风险（安装说明、凭证打到标准输出）。作者用静态分析筛完全部技能，人工复核四个主检测器标出的 3428 个案例，并在沙箱以及间接提示注入下的在线大模型智能体上测试抽样技能的可达性。第一，依赖风险换了一种形态：可解析依赖的技能中 49.6% 依赖带已知 CVE 的版本；与多半发布后才变脆弱的 npm 包不同，其中 78.3% 一上架就已经暴露。第二，这些 CVE 很少真正可达：智能体输入能走到脆弱函数的只占受影响技能的 3.0%，而抽样的 22 个第一方缺陷中有 21 个能在沙箱里端到端利用。第三，在线智能体在 48.5% 的抽样标出技能上执行了注入载荷，但几乎总是在技能运行之前就在自己的 shell 里执行，载荷真正走到技能缺陷的只有 5.0%。因此登记库应优先处理第一方缺陷而不是依赖告警，智能体运行时也不应把技能参数经 shell 传递。",
+      "abstractEn": "Agent skills are reusable packages that extend a large language model (LLM) agent with scripts, third-party dependencies, and natural-language instructions. An agent builds a skill's arguments from user requests and untrusted external content, so a flaw left by a benign author can escalate a prompt injection to code execution. Existing studies target malicious skills or a single attack vector, and none tests whether an agent can reach such flaws. We present the first registry-scale empirical study of the supply chain attack surface arising from unintentional vulnerabilities in agent skills, over all 48,682 skills in ClawHub. The study covers two carried-over risks, dependencies and first-party code, and two agent-native ones, install instructions and credentials printed to stdout. We screen all skills by static analysis, manually review all 3,428 cases flagged by the four main detectors, and test reachability by running sampled flagged skills in a sandbox and with a live LLM agent under indirect prompt injection. First, dependency risk carries over in a different form: 49.6% of the skills with resolvable dependencies depend on a version with a known CVE, and unlike npm packages, which mostly become vulnerable after release, 78.3% of them are born vulnerable, already exposed at publication. Second, few of these CVEs are reachable: agent input reaches the vulnerable function in only 3.0% of the affected skills, whereas 21 of 22 sampled first-party flaws are exploited end to end in the sandbox. Third, a live agent executes the injected payload in 48.5% of the sampled flagged skills, but almost always in its own shell before the skill runs, and the payload reaches a flaw in the skill itself in only 5.0%. Hence, registries should prioritize first-party flaws over dependency alerts, and agent runtimes should not pass skill arguments through a shell.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "供应链",
+        "智能体",
+        "漏洞",
+        "提示注入"
+      ],
+      "url": "https://arxiv.org/abs/2611.30932",
+      "pdf": "https://arxiv.org/pdf/2611.30932.pdf"
+    },
+    {
+      "id": "2611.27473",
+      "title": "Dugong: Composing Uncertified DAG Consensus",
+      "authors": [
+        "George Danezis",
+        "Lefteris Kokoris-Kogias",
+        "Alberto Sonnino"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "把多种未经认证的 DAG 共识收成可调参协议，无大模型，对象是 DAG 共识。",
+      "abstract": "未经认证的 DAG 共识协议覆盖部分同步与异步、崩溃、拜占庭和混合故障模型，但每个协议都是从零设计、证明和实现的。本文提出 Dugong：一个参数化协议，统一这类未经认证的 DAG 共识。其核心算法 Decider 只需调参就能实现八个已有协议，并得到四个新协议。DAG 把吞吐与延迟解耦，Dugong 因此给出延迟与网络/节点故障韧性之间的简单权衡。运维可以按纪元调整参数以改变韧性，而不必开发新协议或担心吞吐。在 Decider 周围，Dugong 叠加上线所需的机制（自适应领导者调度、检查点、响应式活性、崩溃恢复），并证明它们彼此以及与 Decider 的各配置可组合。作者在 Lean 4 中形式化 Dugong，按拜占庭原子广播的既有定义证明安全性和活性，并找出、修补了已发表证明中的缺口。最后把 Dugong 做成可复用的 Rust 库，配离散事件网络模拟器，以便在不同网络和故障模型下直接比较延迟。",
+      "abstractEn": "There is a significant number of uncertified DAG consensus protocols spanning partial synchrony and asynchrony as well as crash, Byzantine, and hybrid fault models, yet each protocol is designed, proved, and implemented from scratch. We introduce Dugong, a single parameterized protocol that unifies uncertified DAG consensus protocols. Its core algorithm, the Decider can implement eight existing protocols and yields four new ones by just tuning its parameters. Given the property that DAGs decouple throughput from latency Dugong presents a simple trade-off between latency and resilience to network and node faults. An operator can adapt the parameters of their protocol epoch-by-epoch to adjust the resilience without needing to develop a new protocol or worry about throughput. Around the Decider, Dugong layers production feature mechanisms (adaptive leader scheduling, checkpoints, responsive liveness, and crash recovery) that provably compose with each other and with the Decider's configurations. We formalize Dugong in Lean 4, proving safety and liveness under the established definitions of Byzantine atomic broadcast, and identify and repair gaps in published proofs. Finally, we implement Dugong as a reusable Rust library paired with a discrete-event network simulator, enabling direct latency comparisons across network and fault models.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "DAG",
+        "拜占庭容错",
+        "形式化验证"
+      ],
+      "url": "https://arxiv.org/abs/2611.27473",
+      "pdf": "https://arxiv.org/pdf/2611.27473.pdf"
+    },
+    {
+      "id": "2611.28928",
+      "title": "Intrinsic Value Modules: Trusted-Hardware Support for Locally Final Offline Asset Transfer",
+      "authors": [
+        "AmirReza Fathi",
+        "Ali Rahimi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用可信硬件把数字资产的唯一性放进不可克隆状态，支持离线转账，无大模型。",
+      "abstract": "共识让分布式参与者对共同状态达成一致，但也让货币有效性依赖网络连通和集体接受。本文探讨让有效性内在于数字硬币。作者提出内在价值模块（IVM）：用可信硬件给硬币提供可本地验证的真实性和可花费性，类似于验证签名。在所述硬件和密码假设下，IVM 抽象和离线转账协议把货币唯一性从复制账本移入不可克隆的受保护状态。协议阻止真实、未被攻破的 IVM 发生伪造、重放、双重入账和双花；通信失败可能锁住价值，但不能复制价值。作者区分协议能够建立的本地转账原子性和资产唯一性，以及它并不保证的、跨断连设备的全局状态一致。IVM 并不消除信任，而是把信任迁到经认证的硬件、发行方根和不可回滚状态。文中给出架构、协议和安全分析，并讨论未决问题。",
+      "abstractEn": "Consensus lets distributed participants agree on a common state, but it makes monetary validity depend on network connectivity and collective acceptance. We explore making validity intrinsic to a digital coin. We propose an Intrinsic Value Module (IVM): trusted hardware that gives a coin locally verifiable authenticity and spendability, analogous to verifying a signature. Under stated hardware and cryptographic assumptions, the IVM abstraction and our offline transfer protocol move monetary uniqueness from a replicated ledger into non-clonable protected state. The protocol prevents forgery, replay, double credit, and double spending by genuine, uncompromised IVMs; communication failures may lock value but cannot duplicate it. We distinguish local transfer atomicity and asset uniqueness, which the protocol establishes, from global state consistency across disconnected devices, which it does not. The IVM does not eliminate trust; it relocates trust to certified hardware, issuer roots, and non-rollback state. We present the architecture, protocol, and security analysis, and discuss open challenges.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "钱包",
+        "可信硬件",
+        "双花",
+        "离线支付"
+      ],
+      "url": "https://arxiv.org/abs/2611.28928",
+      "pdf": "https://arxiv.org/pdf/2611.28928.pdf"
+    },
+    {
+      "id": "2026-2955",
+      "title": "A Note on the Unforgeability Hierarchy of Non-Interactive Threshold Signatures, with a Mechanisation in EasyCrypt",
+      "authors": [
+        "João Diogo Duarte"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用 EasyCrypt 机器证明非交互门限签名的不可伪造层次，无大模型。",
+      "abstract": "Bellare 等人（CRYPTO 2022）为非交互门限签名定义了不可伪造层次 TS-UF-0 到 TS-UF-4 以及 TS-SUF-2 到 TS-SUF-4。他们证明较强概念蕴含较弱概念，且 TS-UF-0 蕴含 TS-UF-1 时损失为服务器数 ns、门限 t 下的二项式系数 C(ns, t-1)，并分离了其余每一对概念。Cremers、Peltonen 和 Zhao（2024）证明 TS-UF-4 并不蕴含 TS-UF-3，Bellare、Tessaro 和 Zhu 据此修订了定义。本文用 EasyCrypt 给出修订后层次的机器检验证明，包括 TS-UF-0 到 TS-UF-1 的松弛蕴含，以及支撑分离的攻击。作者还证明：对所有方案都成立的蕴含而言，C(ns, t-1) 的损失是最优的，只差一个签名方案的安全性。",
+      "abstractEn": "Bellare et al. (CRYPTO 2022) define a hierarchy of unforgeability notions for non-interactive threshold signatures, TS-UF-0 to TS-UF-4 and TS-SUF-2 to TS-SUF-4. They prove that each notion implies the weaker ones and that TS-UF-0 implies TS-UF-1 with a loss of $\\binom{ns}{t-1}$ for $ns$ servers and threshold $t$, and they separate every other pair of notions. Cremers, Peltonen and Zhao (2024) showed that TS-UF-4 does not imply TS-UF-3, and Bellare, Tessaro and Zhu revised the definitions in response. We give machine-checked proofs in EasyCrypt of the revised hierarchy, of the loose implication from TS-UF-0 to TS-UF-1, and of the attacks behind the separations. We also prove that the loss of $\\binom{ns}{t-1}$ is optimal for an implication that holds for every scheme, up to the security of a signature scheme.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "门限签名",
+        "形式化验证",
+        "不可伪造",
+        "EasyCrypt"
+      ],
+      "url": "https://eprint.iacr.org/2026/2955",
+      "pdf": "https://eprint.iacr.org/2026/2955.pdf"
+    },
+    {
+      "id": "2026-2937",
+      "title": "Any Friend of Yours: Asynchronous Consensus with Unknown Participants from Local Trust",
+      "authors": [
+        "Ignacio Amores-Sesar",
+        "Simon Holmgaard Kamp",
+        "Juan Villacis"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "只凭本地信任做异步共识和状态机复制，无大模型，对象是开放网络共识。",
+      "abstract": "拜占庭协议通常假定各方已经就谁参与、必须容忍哪些故障达成一致。在开放系统里，就这些信息达成一致本身就是一个共识问题。本文给出异步协议，让每个进程只按自己的本地信任行动，从而避开这种循环。每个进程对自己认识的身份声明法定人数，并用认证组播通信。进程不必知道参与者数量或他人的信任假设，也不假设可信发牌方、公共参考串，或对身份数量（含女巫身份）的上界。与 Stellar 和先前非对称信任协议不同，这里不要求存在一组彼此信任的正确进程闭包。保证由深度刻画：一种细粒度、依赖故障的度量，衡量每个进程的信任与真实故障的匹配程度。作者在该模型下构造带验证的可靠广播、拜占庭协议、核心集合协议和状态机复制。随机终止的主要技术是只基于本地信任的近似公共硬币。",
+      "abstractEn": "Byzantine agreement protocols typically assume that all processes already agree on who participates and which failures must be tolerated. In an open system, reaching agreement on this information is itself a consensus problem. We avoid this circularity by presenting asynchronous protocols in which each process acts only on its own local trust. Each process declares quorums over the identities it knows and communicates by authenticated multicast. Processes need not know the number of participants or the trust assumptions of others, and we assume no trusted dealer, common reference string, or bound on the number of identities, including Sybil identities. Unlike Stellar and prior asymmetric-trust protocols, our protocols do not require a closed set of mutually trusting correct processes. Instead, their guarantees are characterized by depth, a fine-grained, failure-dependent measure of how well each process's trust matches the actual failures. We construct validated reliable broadcast, Byzantine agreement, agreement on a core set, and state machine replication in this model. The main technical ingredient for randomized termination is an approximate common coin based only on local trust.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "异步",
+        "本地信任",
+        "状态机复制"
+      ],
+      "url": "https://eprint.iacr.org/2026/2937",
+      "pdf": "https://eprint.iacr.org/2026/2937.pdf"
+    }
+  ]
+}
