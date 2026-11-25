@@ -1,0 +1,316 @@
+{
+  "date": "2026-11-25",
+  "papers": [
+    {
+      "id": "10.1109-tdsc.2026.3756757",
+      "title": "JellyFish: Practical Asynchronous BFT From More Efficient MVBA",
+      "authors": [
+        "Baohan Huang",
+        "Haibin Zhang",
+        "Sisi Duan",
+        "An Wang"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用更高效的 MVBA 构造实用异步拜占庭容错共识，无大模型，对象是 BFT 协议。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文提出 JellyFish：基于更高效 MVBA 的实用异步 BFT。论文于 2026-11-23 进入 TDSC early access。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "异步BFT",
+        "MVBA",
+        "共识",
+        "容错"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3756757"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3756528",
+      "title": "Multi-Modal and Multi-Scale Vulnerability Detection for Deployed Smart Contract Bytecode",
+      "authors": [
+        "Chi Jiang",
+        "Hongbo Yin",
+        "Shuai Wang",
+        "Tianqing Zhu",
+        "Ming Tao",
+        "Yin Zhang",
+        "Yan Zhang"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "对已部署智能合约字节码做多模态、多尺度漏洞检测，无大模型，对象是 EVM 合约。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文针对已部署智能合约字节码，提出多模态、多尺度漏洞检测方法。论文于 2026-11-23 进入 TDSC early access。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "智能合约",
+        "字节码",
+        "漏洞检测",
+        "多模态"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3756528"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3756849",
+      "title": "A Multidimensional Interference Sample Generation Framework for Robustness Evaluation of Reentrancy Vulnerability Detection in Smart Contracts",
+      "authors": [
+        "Fei Tong",
+        "Yifan Qi",
+        "Yujian Zhang",
+        "Guang Cheng",
+        "Yuyang Peng"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "生成多维干扰样本，评估重入漏洞检测器的稳健性，无大模型，对象是智能合约。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文提出多维干扰样本生成框架，用于评估智能合约重入漏洞检测的稳健性。论文于 2026-11-23 进入 TDSC early access。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "重入",
+        "智能合约",
+        "稳健性",
+        "样本生成"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3756849"
+    },
+    {
+      "id": "2611.31547",
+      "title": "Aftershock: Yesterday's Linux Kernel Bugs, Tomorrow's Android Exploits",
+      "authors": [
+        "Kareem Shehada",
+        "Zhiyun Qian"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型智能体把上游 Linux 补丁变成 Android 本地提权利用，对象是内核。",
+      "abstract": "Android 内核长期落后于 Linux 上游补丁，修复到设备的时间远晚于常规 Linux 发行版。直到最近，这主要是补丁管理问题。随着大模型智能体迅速变强，它正在变成利用问题：公开的上游补丁可以当作蓝图，在下游设备修好之前做出可用的 n-day 利用。作者端到端验证这一威胁：搭建自动流水线，筛选上游 Linux 补丁，在 Android 目标上复现内存安全漏洞，并驱动大模型智能体从未信任应用构造本地提权利用。在 33 个月内报告的 152 个候选 CVE 中，复现 38 个漏洞，并在生产级防护下生成 17 个经独立验证的利用。利用中位耗时 14.3 个智能体小时、API 费用 321 美元，中位成功率 90%；在 Pixel 9 和 Pixel 10 上 14 次试验中有 12 次成功。流水线只用公开的现成模型。17 个被利用的 CVE 里只有 3 个出现在 Android 安全公告中，说明哪些上游修复真正影响 Android 内核，可见性仍然有限。这 17 个 CVE 对应的上游补丁到达 Pixel 设备的中位延迟是 181 天。结果揭示明显不对称：攻击方可在数小时内越来越多地自动利用，防御方识别和部署修复仍以月计。",
+      "abstractEn": "Android kernels have long suffered from slow patch propagation from Linux upstream, with fixes often reaching devices far later than conventional Linux distributions. Until recently, this lag was largely a patch-management problem. With rapidly improving LLM agents, it is becoming an exploitation problem: public upstream patches can now serve as blueprints for building working n-day exploits before downstream devices are fixed. We test this threat end to end by building an automated pipeline that screens upstream Linux patches, reproduces memory-safety vulnerabilities on Android targets, and drives an LLM agent to construct local privilege escalation exploits from an untrusted application. Across 152 candidate CVEs reported over 33 months, we reproduce 38 vulnerabilities and generate 17 independently verified exploits under production defenses. Exploitation takes a median of 14.3 agent-hours and $321 in API cost, with 90% median reliability; 12 of 14 trials succeed on Pixel 9 and Pixel 10 devices. Notably, the pipeline relies only on publicly available, off-the-shelf models. Surprisingly, only 3 of the 17 exploited CVEs appear in Android Security Bulletins, suggesting limited visibility into which upstream fixes address vulnerabilities that affect Android kernels. For these 17 CVEs, the corresponding upstream patches reach Pixel devices with a median delay of 181 days. Together, these results reveal a stark asymmetry: attackers can increasingly automate exploitation in hours, while defenders still identify and deploy fixes on the timescale of months.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "内核",
+        "Android",
+        "大模型智能体",
+        "漏洞利用"
+      ],
+      "url": "https://arxiv.org/abs/2611.31547",
+      "pdf": "https://arxiv.org/pdf/2611.31547.pdf"
+    },
+    {
+      "id": "2611.31993",
+      "title": "Not Just Any Example: Security Requirements and Fix Patterns for Guiding LLM Vulnerability Repair",
+      "authors": [
+        "Zichen Liu",
+        "Liangyi Huang",
+        "Stanley Nguyen",
+        "Kha Tu Nguyen",
+        "Xinda Wang",
+        "Xusheng Xiao"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用安全影响类别和修复模式给大模型选例子，引导漏洞补丁生成，对象是开源软件。",
+      "abstract": "软件漏洞会让系统暴露在攻击之下，修复又常常滞后。大模型推动了自动补丁生成，但通过功能测试并不等于补丁落实了漏洞所破坏的安全要求。现有漏洞修复技术依赖覆盖有限的模式或模板，哪些修复策略能跨漏洞复用、又如何引导大模型，仍不清楚。本文做大规模经验研究，把反复出现的修复模式与漏洞的安全影响联系起来，并考察这些知识如何引导基于大模型的修复。作者在人工研究安全补丁的基础上，对来自 348 个开源仓库的 3816 个安全补丁聚类，分析编辑及其上下文，得到从局部防护到多处协同修改的具体修复模式。按漏洞破坏的安全要求定义 12 类安全影响，并映射到修复类别和修复模式，揭示各类的典型修法、类内替代策略以及跨类共享模式。随后用这些模式及影响–模式关联，为四个大模型在不同复杂度的修复任务上挑选修复例子。有引导的例子选择把四模型平均 pass@3 从零样本的 37.9% 提到最高 49.2%，随机选例子只有 36.9%。结果把漏洞刻画与补丁生成连起来，并支持按安全要求组织修复知识。",
+      "abstractEn": "Software vulnerabilities leave systems open to attack, and their remediation is often delayed. Large language models (LLMs) have advanced automated patch generation, yet passing functionality tests does not ensure that a patch enforces the security requirement the vulnerability violated. Existing vulnerability repair techniques rely on curated patterns or templates with limited coverage, leaving unclear which repair strategies carry over across vulnerabilities and how they can steer LLMs. We present a large-scale empirical study that relates recurring fix patterns to the security impacts of vulnerabilities and examines how this knowledge can guide LLM-based repair. Building on a manual study of security patches, we cluster 3,816 security patches from 348 open-source repositories and analyze the edits and their context to derive concrete fix patterns, ranging from local safeguards to coordinated changes across multiple locations. We define 12 security impact classes by the security requirements that vulnerabilities violate and map them to repair categories and fix patterns, revealing characteristic repairs, alternative strategies within a class, and patterns shared across classes. We then use these patterns and impact-pattern associations to select repair examples for four LLMs on repair tasks of varying complexity. Guided example selection raises the four-model mean pass@3 from 37.9% under zero-shot prompting to up to 49.2%, whereas randomly selected examples reach only 36.9%. Our findings connect vulnerability characterization with patch generation and support organizing repair knowledge around security requirements.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "漏洞修复",
+        "大模型",
+        "修复模式",
+        "安全补丁"
+      ],
+      "url": "https://arxiv.org/abs/2611.31993",
+      "pdf": "https://arxiv.org/pdf/2611.31993.pdf"
+    },
+    {
+      "id": "2611.31606",
+      "title": "Evaluating LLM Security Review Agents with Operationally Sourced Ground Truth",
+      "authors": [
+        "Mudita Khurana",
+        "Karim Liman-Tinguiri"
+      ],
+      "year": 2026,
+      "venue": "CAMLIS 2026",
+      "abstractOneWord": "用机构自身漏洞数据评测大模型安全评审智能体，对象是生产代码仓库。",
+      "abstract": "基于大模型的安全评审智能体，能推理确定性工具漏掉的漏洞，但负责任地部署需要知道它们是否真的有效。现有基准用合成数据或公开 CVE 构造真值，看不到某个生产代码库特有的漏洞模式。本文给出一套扎根于机构自身漏洞的评测框架，有三点贡献。第一，从运营安全数据（漏洞赏金报告、渗透测试发现和内部报告的漏洞）构造真值：已确认漏洞在修复合并前必须存在、合并后必须消失。第二，两种互补评测策略：一是评审引入漏洞的 pull request，二是在漏洞已存在的仓库里搜索。两者都走双智能体流水线：Security Engineer 智能体在不知漏洞的情况下审代码，Judge 智能体判断其发现是否足以缓解已知问题。第三，对前沿模型如何推理这些漏洞做轨迹级行为刻画。在 GPT-5.5、Sonnet 4.6 和 Opus 4.7 上，经一轮 OPRO 式改进后，GPT-5.5 在 pull request 策略上发现率更高（57%，95% CI [42%, 72%]），Sonnet 4.6 在仓库策略上更高（69%，95% CI [56%, 81%]）。轨迹分析显示模型各有所长，也能解释上述差异；只看结果的打分会误判它们在生产中的行为。方法只依赖漏洞管理工作流里常见的产物，但全部结果来自单一机构代码库，泛化尚未验证。",
+      "abstractEn": "LLM-based security review agents can reason about vulnerabilities that deterministic tools miss, but deploying them responsibly requires knowing whether they actually work. Existing benchmarks construct ground truth synthetically or from public CVE databases and are blind to the vulnerability patterns specific to a given production codebase. We present an evaluation framework grounded in an organisation's own vulnerabilities, with three contributions. First, a dataset construction methodology that derives ground truth from operational security data (bug bounty reports, penetration test findings and internally reported vulnerabilities), exploiting the property that a confirmed vulnerability must exist immediately before its fix is merged and be absent immediately after. Second, two complementary evaluation strategies: one reviewing the pull request that introduced a vulnerability and one searching a repository where it already exists. Both run through a two-agent pipeline pairing a Security Engineer agent, which reviews code without knowledge of the vulnerability, with a Judge agent that decides whether its findings would have mitigated the known issue. Third, a trace-level behavioural characterisation of how frontier models reason about these vulnerabilities. Across GPT-5.5, Sonnet 4.6 and Opus 4.7, GPT-5.5 shows higher discovery rates on the pull-request strategy (57%, 95% CI [42%, 72%]) after a round of OPRO-style improvements, and Sonnet 4.6 on the repository strategy (69%, 95% CI [56%, 81%]). Trace analysis shows the models have complementary strengths that explain these differences, and that outcome-only scoring can mischaracterise their production behaviour. The methodology relies only on artefacts that vulnerability management workflows commonly produce, though all results come from a single organisation's codebase and we have not tested how well they generalise.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全评审",
+        "大模型智能体",
+        "评测",
+        "运营真值"
+      ],
+      "url": "https://arxiv.org/abs/2611.31606",
+      "pdf": "https://arxiv.org/pdf/2611.31606.pdf"
+    },
+    {
+      "id": "2611.31744",
+      "title": "Mixed-Initiative Mining of Root-Cause Analyses into Audit Priors for C/C++ Vulnerability Hunting",
+      "authors": [
+        "Yuhei Kawakoya",
+        "Eitaro Shioji",
+        "Yuto Otsuki",
+        "Makoto Iwamura"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "从根因分析挖出审计先验，给人和大模型智能体指引 C/C++ 漏洞狩猎。",
+      "abstract": "大型 C/C++ 代码库的漏洞审计受审查精力限制。人类审计员和基于大模型的智能体都需要可操作的先验：先看哪里、怀疑什么，但这类先验很少能直接用。本文不提出新的漏洞检测器，而是从有证据支撑的根因分析（RCA）报告中提炼审计导向产物。作者给出两种互补表示：出现上下文（OC），按文件角色、函数角色和数据结构类别给出位置先验；以及诱导漏洞的结构模式（VISP），可复用的失效机制先验。OC 指引去哪里看，VISP 指引怀疑什么。在 Vul4C 的 108 个 CVE 上，OC 基于解析器的优先级排序（不做大模型推理）优于通用优先级基线，效应量为中到大。把 OC 和 VISP 打成可执行 SKILL 后，双 SKILL 工作流提升与审计相关的宽覆盖：由三个大模型评委判定，在与补丁失效机制相同的真值函数内命中或部分命中。108 个 CVE 上，函数级宽匹配提高 5.3 个百分点；中等规模项目达 7.2 点，1500–4999 行的大型漏洞文件达 15.0 点。结果表明，从 RCA 得到的先验有助于把有限的审计注意力导向有漏洞的代码。智能体覆盖评测是单次运行的操作探测，每个提交跑一次，刻画效应方向和量级，而不是精确大小。",
+      "abstractEn": "Vulnerability auditing of large C/C++ codebases is constrained by limited review attention. Human auditors and LLM-based agents need operational priors that indicate where to look first and what to suspect, but such priors are rarely available in directly usable form. Rather than proposing a new vulnerability detector, we derive audit-steering artifacts from evidence-backed root-cause analysis (RCA) reports. We introduce two complementary representations: Occurrence Context (OC), a location prior based on file role, function role, and data-structure class; and Vulnerability-Inducing Structural Patterns (VISP), reusable failure-mechanism priors. OC guides where to inspect, while VISP guides what to suspect. On 108 CVEs from Vul4C, OC's parser-based priority ranking, without LLM inference, outperforms generic prioritization baselines with moderate-to-large effect sizes. Packaged as executable SKILLs, OC and VISP form a dual-SKILL workflow that improves audit-relevant broad coverage, defined as match-or-partial findings within ground-truth functions that share the patch's failure mechanism, as assessed by three LLM judges. Across the 108-CVE cohort, dual-SKILL improves function-level broad matches by 5.3 percentage points; gains reach 7.2 points on mid-size projects and 15.0 points on large (1500-4999-line) vulnerable files. These results suggest that RCA-derived priors help direct limited audit attention toward vulnerable code. The agent-coverage evaluation is a single-run operational probe, with one run per commit, characterizing the direction and scale of the effect rather than its precise magnitude.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "C/C++",
+        "漏洞狩猎",
+        "审计先验",
+        "大模型智能体"
+      ],
+      "url": "https://arxiv.org/abs/2611.31744",
+      "pdf": "https://arxiv.org/pdf/2611.31744.pdf"
+    },
+    {
+      "id": "2611.31813",
+      "title": "Agentic Discovery of Soundness Bugs in Safe Rust Bindings",
+      "authors": [
+        "Marius Momeu",
+        "Koushik Sen"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型智能体审计 Rust 安全封装接口中的可靠性缺陷，对象是 C/C++ 绑定和内核抽象。",
+      "abstract": "Rust crate 把对 C/C++ 库或系统调用等 unsafe 代码藏在必须维持 Rust 不变量的安全接口后面。若接口把底层规则编码得过弱，纯安全 Rust 程序也会造成未定义行为。静态分析和模糊测试受限于固定模式或实际跑到的路径。作者把大模型智能体当作这些接口的审计员，并衡量它们做得怎样。先定义接口缺陷分类：未定义行为、与被封装库的行为偏离、以及不完整的 unsafe 契约。再在真实 crate 上用闭源模型 Claude Opus 5.5 和开源权重模型 DeepSeek V4.1 Flash 反复审计，看智能体能发现哪些类、分诊如何、什么条件能多找出缺陷。前两类无需提示也能找到，即使被要求也很少找到不完整契约。即使没有独立审阅者，发现几乎都是真的，但分诊纪律差：很少用 sanitizer 确认，并且过早停手。同样指导下，开源权重模型找出的缺陷与闭源相当，成本约四分之一。作者把这些观察集成进面向 C 转 Rust 任务的智能体系统 Crustify，并做规模化运行。在 16 个常用 crate（含 OpenSSL、SQLite、libgit2、libcurl 的 C 绑定和 C++ 引擎 V8）中，Crustify 发现 225 个未定义行为缺陷、23 个行为偏离和 36 个不完整 unsafe 契约，每个 crate 3 到 61 个，单次审计中位费用低于 50 美元。在 Linux 内核的 Rust 抽象里又发现 11 个未定义行为缺陷和 4 个不完整契约。已报告的 83 个发现中，维护者已修复 26 个。",
+      "abstractEn": "Rust crates confine unsafe code, such as calls into C or C++ libraries or system calls, behind safe interfaces that must uphold Rust's invariants. If an interface encodes one rule of the code beneath it too weakly, a program written in purely safe Rust can cause undefined behavior. Static analyzers and fuzzers are bound to fixed patterns or to the paths they execute. We propose LLM agents as auditors of these interfaces, and study how well they do it. We first define a taxonomy of the defects of such interfaces, including undefined behavior, divergences from the wrapped library, and incomplete unsafe contracts. We then measure, in repeated audits of a real-world crate by a closed and an open model, Claude Opus 5.5 and DeepSeek V4.1 Flash, which defect classes agents find, how well they triage them, and what makes them find more. Agents find the first two classes unprompted, but find few incomplete contracts even when asked. Their findings are almost always real, even without an independent reviewer, yet they lack triage discipline: they seldom confirm with a sanitizer, and they stop early. With the same guidance, the open model finds as many defects as the closed one at a quarter of the cost. We integrate these insights in Crustify, an agentic system for automating C-to-Rust tasks, and run it at scale. In 16 widely used crates, including the bindings to the C libraries OpenSSL, SQLite, libgit2, and libcurl and to the C++ engine V8, Crustify found 225 undefined-behavior bugs, 23 behavioral divergences, and 36 incomplete unsafe contracts, between 3 and 61 per crate at a median cost under $50 per audit. In the Linux kernel's Rust abstractions, it found 11 more undefined-behavior bugs and 4 incomplete contracts. Maintainers have fixed 26 of the 83 findings that we reported.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Rust",
+        "可靠性",
+        "大模型智能体",
+        "接口审计"
+      ],
+      "url": "https://arxiv.org/abs/2611.31813",
+      "pdf": "https://arxiv.org/pdf/2611.31813.pdf"
+    },
+    {
+      "id": "2611.31929",
+      "title": "Shuttle: Dependency-Attributed Workflow Evolution for Smart Contract Auditing",
+      "authors": [
+        "Yue Xue",
+        "Yi Rong",
+        "Ziqiao Kong",
+        "Ronghui Gu",
+        "Dan She",
+        "Yuannan Yang",
+        "Zhiju Yang",
+        "Yuqiang Sun"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用依赖图归因约束工作流演化，改进大模型智能合约审计，对象是 Solidity 合约。",
+      "abstract": "在基于大模型的智能合约审计里，检测质量既取决于模型能力，也取决于工作流设计。编码智能体可以根据执行反馈改写工作流，但不受约束的重写很少带来稳定收益。跨函数漏洞需要多步状态跟踪和边界推理，粗粒度流水线会漏掉。端到端结果掩盖是哪一步丢掉线索，直接重写会回退已有命中，或在粗糙的汇总分数下丢掉有效修改。反复在一小批项目上迭代还会堆出针对个案的启发式，撑大提示并损害泛化。本文提出受约束的工作流演化系统 Shuttle，以及由它演化出的审计框架 LucidScan。Shuttle 以来源图归因为核心：把每次运行展开成实例级依赖图，用前向搜索定位丢掉线索的节点，再把已有命中反向追溯成受保护集合。合并一批修改并评估后，Shuttle 按节点级来源账本丢掉拖后腿的修改；仅当早期轮次的修改落在同一节点上时，才回退到复用缓存的局部重跑。对局部瓶颈，Shuttle 在任务分解、逐步细化和泛化盲审约束下生成修改。在 10 个训练项目上，Shuttle 把 LucidScan 从 G0（每项目平均 C/H/M 召回 28.7%）演化到 G8（82.1%）。在同样模型的 13 个留出验证项目上，平均召回从 28.6%（G0）升到 70.3%（G8），高于 Pashov 和 Codex Security。在 2026 年 11 月一场有 896 名研究者参加的匿名公开审计竞赛中，演化后的扫描器在高危召回并列第一（6/8，75.0%），在计分的 H/M 簇上排第二（34/72，47.2%），有效率 92.9%（78/84），总排名第三。",
+      "abstractEn": "In LLM-based smart contract auditing, detection quality depends on both model capability and workflow design. While coding agents can revise workflows from execution feedback, unconstrained rewrites rarely yield stable gains. Cross-function vulnerabilities require multi-step state tracking and boundary reasoning that coarse pipelines miss. End-to-end outcomes hide which step lost a clue, so direct rewrites regress existing hits or discard valid edits under coarse aggregate scoring. Repeatedly iterating on a small project set also adds case-specific heuristics that bloat prompts and hurt generalization. We present Shuttle, a constrained workflow-evolution system, and LucidScan, the auditing framework it evolves. Shuttle centers on provenance-graph attribution: it expands each run into an instance-level dependency graph, locates the node where a clue was lost via forward search, and traces existing hits backward into a protected set. After evaluating a merged batch, Shuttle drops dragging edits via a node-level provenance ledger, falling back to cache-reusing local re-runs only when early-round edits overlap on the same node. For localized bottlenecks, Shuttle generates edits under task decomposition, progressive refinement, and generality blind review. On 10 training projects, Shuttle evolves LucidScan from $G_0$ (28.7% per-project average C/H/M recall) to $G_8$ (82.1%). On 13 held-out validation projects under the same model, average recall rises from 28.6% ($G_0$) to 70.3% ($G_8$), above Pashov and Codex Security. In an anonymized live public audit contest with 896 researchers (Nov. 2026), the evolved scanner tied for #1 in High-severity recall (6/8, 75.0%), ranked #2 in scored H/M clusters (34/72, 47.2%) with 92.9% validity (78/84), and finished #3 overall.",
+      "topics": [
+        "C-chain"
+      ],
+      "aliases": [
+        "智能合约",
+        "审计",
+        "工作流演化",
+        "大模型"
+      ],
+      "url": "https://arxiv.org/abs/2611.31929",
+      "pdf": "https://arxiv.org/pdf/2611.31929.pdf"
+    },
+    {
+      "id": "2611.31468",
+      "title": "Pearl: TEE-Enabled Fair Ordering with Minimal Replication",
+      "authors": [
+        "Vian Robotin",
+        "Jérémie Decouchant",
+        "Shaokang Xie",
+        "Dakai Kang",
+        "Mohammad Sadoghi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "分析可信执行环境下公平交易排序的可行性，并给出少副本实现，无大模型，对象是区块链共识。",
+      "abstract": "近期研究关注区块链共识中的公平交易排序。另一条线表明，给副本配备可信执行环境（TEE）后，只需 2f+1 个副本就能做更高效的共识。本文把这两条线连起来，证明两个关键公平排序性质——排序线性化，以及带最小批处理的 γ-批次顺序公平——在部分同步网络里即使用 TEE，也无法用 2f+1 个副本实现。拜占庭副本可以通过操纵向飞地提交交易的时机来绕过 TEE 保护，从而偏向排序指标。但作者证明：假定同步网络后，这两个性质都可以在更少副本下实现。文中给出两种机制：一种用 TEE 证明的绝对时间戳，在 n ≥ 2f+1 时保证排序线性化；另一种用 TEE 维护的相对序号，在 n > 2γf/(2γ-1) 时保证 γ-批次顺序公平。最后把这些机制接入同步的分车道共识算法，在副本数少于有代表性的现有基线的同时，获得更强的公平排序性质和更好的性能。",
+      "abstractEn": "Recent research has investigated fair transaction ordering in blockchain consensus. An orthogonal line of work has demonstrated that equipping replicas with trusted execution environments (TEEs) enables more efficient consensus protocols with only $2f{+}1$ replicas. In this work, we bridge these two areas and demonstrate that two key fair-ordering properties, ordering linearizability and $γ$-batch-order fairness with minimal batching, cannot be implemented in partially synchronous networks with $2f{+}1$ replicas, even when the replicas are equipped with TEEs. We show that Byzantine replicas can circumvent TEE protections by manipulating the timing of transaction submissions to the enclave, thereby biasing the resulting ordering indicators. However, we prove that assuming a synchronous network allows both properties to be implemented with a reduced replica count. We propose two mechanisms: one uses absolute TEE-attested timestamps to guarantee ordering linearizability in a system of $n \\ge 2f{+}1$ replicas, and the other uses TEE-maintained relative sequence numbers to guarantee $γ$-batch-order fairness when $n > \\frac{2γf}{2γ-1}$. Ultimately, we integrate these mechanisms into a synchronous lane-based consensus algorithm, achieving strong fair-ordering properties and superior performance while requiring fewer replicas than representative state-of-the-art baselines.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "公平排序",
+        "TEE",
+        "共识",
+        "MEV"
+      ],
+      "url": "https://arxiv.org/abs/2611.31468",
+      "pdf": "https://arxiv.org/pdf/2611.31468.pdf"
+    },
+    {
+      "id": "2026-2952",
+      "title": "Beyond Leaderless: Randomized Consensus Against Mobile Crashes",
+      "authors": [
+        "Ittai Abraham",
+        "Kaya Alpturer",
+        "Pranav Garimidi",
+        "Joachim Neu",
+        "Tim Roughgarden",
+        "Ertem Nusret Tas"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "给 Simplex 共识加多领导者和隐藏信标，抵御移动崩溃，无大模型。",
+      "abstract": "许多共识协议在同步网络里也会失败：对手可以在副本之间移动，反复弄崩溃其中一台。本文提出 Multi-Leader Fixed-View Simplex（ML-FVS），在抵御这类对手的同时保留 Simplex 共识的简单结构和好情况下的延迟。协议在固定视图 Simplex 上加入多个领导者，每个都可以广播提案。投票截止时，每个副本对自己已看到的提案集合投票。投票之后揭示的隐藏门限信标给出多领导者的优先级，把每张票解析成其中优先级最高的提案。模型把永久自适应拜占庭故障与移动崩溃合在一起。在崩溃预算为常数、拜占庭腐化有 Δ 延迟时，在领导者起始为诚实的重复视图上得到期望 O(Δ) 延迟。即使拜占庭腐化立即发生，协议仍能保证活性。作者还在随机网络延迟和随机故障下评估协议，发现多个领导者即使在理性领导者为提高奖励而推迟提案时，也能减少视图失败。",
+      "abstractEn": "Many consensus protocols fail to terminate under attack from an adversary that has the power to move between replicas and repeatedly crash one of them, even in synchrony. We present Multi-Leader Fixed-View Simplex (ML-FVS) to defend against such an adversary while keeping the simple structure and good-case latency of Simplex consensus. Our protocol extends fixed-view Simplex with multiple leaders, each of which may broadcast a proposal. At the voting deadline, each replica votes on the set of proposals it has seen so far. A hidden threshold beacon revealed after the votes gives a priority order on the multiple leaders, resolving each vote to its highest-priority proposal. Our model combines permanent adaptive Byzantine faults with mobile crashes. For a constant crash budget and Δ-delayed Byzantine corruption, we obtain O(Δ) expected latency over repeated views whose leaders start honest. With immediate Byzantine corruptions, the protocol still achieves liveness. We also evaluate the protocol under random network delays and stochastic faults, finding that multiple leaders reduce view failures even when rational leaders delay their proposals to increase rewards.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "共识",
+        "Simplex",
+        "移动崩溃",
+        "多领导者"
+      ],
+      "url": "https://eprint.iacr.org/2026/2952",
+      "pdf": "https://eprint.iacr.org/2026/2952.pdf"
+    },
+    {
+      "id": "2026-2930",
+      "title": "BEEP: IOPPs from List Decoding with Better Elimination of Pretenders",
+      "authors": [
+        "Remco Bloemen",
+        "Albert Garreta"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "改进 DEEP 采样的可靠性分析，用于基于编码的交互预言证明，无大模型，对象是证明系统。",
+      "abstract": "本文给出线性码上 DEEP 技术（稍作修改）的改进可靠性分析；与此前不同，它在实践常用参数下能得到可忽略的误差界。修改只是做 m 次 DEEP 采样而不是一次。DEEP 采样误差随 m 指数下降，实践中 m=2–5 就已很小。随后的折叠误差为 (δ·n+1)/|F|，其中 δ 是接近参数、n 是码长。作者把该技术用于 WHIR、Ligerito、Basefold 等常见基于编码的交互预言证明（IOPP）。由此得到的 IOPP 只要求底层码可列表译码，而不再要求互相关协议（MCA），可靠性误差也更小。因为可靠性不依赖 MCA，改进后的 DEEP 允许在 δ 达到 Johnson 界时对任意线性码使用 IOPP。这还为在码（例如或许 Reed-Solomon 码）可 δ-列表译码、即使没有 δ-MCA 时，把 δ 推到 Johnson 界之外打开了门。最后给出改进 DEEP 分析的仿射版本：折叠挑战是仿射多项式而不是域元素，沿用 [FS26, CWYZ26]。作者给出简单证明：做完 DEEP 采样后，仿射折叠挑战的折叠误差为 2/|F|，小于 CWYZ26 的仿射-MCA 误差。",
+      "abstractEn": "We present an improved soundness analysis of the DEEP technique for linear codes (after a minor modification), which, unlike its predecessor, results in negligible error bounds for parameters typically used in practice. The modification consists simply in performing m DEEP samples, instead of one. The resulting DEEP sampling error decreases exponentially with m, and in practice m=2-5 makes it tiny. The subsequent folding error is of (δ · n +1)/|F|, for δ a proximity parameter and n the code length. We modify typical code-based IOPPs with this technique, such as WHIR, Ligerito, Basefold, etc. As a result, we obtain code-based IOPPs that only require list decodability of the underlying codes, instead of Mutual Correlated Agreement (MCA), with smaller soundness errors than their counterparts. Since it does not rely on MCA for its soundness, this improved DEEP technique allows to use arbitrary linear codes in IOPPs with δ up to the Johnson bound. Additionally, this opens the door to using codes (e.g. perhaps Reed-Solomon codes) with δ beyond the Johnson bound, assuming the code is δ-list decodable, even if it does not have the δ-MCA property. Finally, we also provide an affine version of our improved DEEP analysis, where the folding challenges are affine polynomials instead of field elements, following [FS26,CWYZ26]. We provide a simple proof showing that, after the DEEP samples are done, the folding error with affine folding challenges is 2/|F|, which is smaller than the affine-MCA error from CWYZ26.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "IOPP",
+        "可靠性",
+        "证明系统",
+        "列表译码"
+      ],
+      "url": "https://eprint.iacr.org/2026/2930",
+      "pdf": "https://eprint.iacr.org/2026/2930.pdf"
+    }
+  ]
+}
