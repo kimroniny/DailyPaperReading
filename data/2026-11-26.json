@@ -1,0 +1,316 @@
+{
+  "date": "2026-11-26",
+  "papers": [
+    {
+      "id": "2026-3008",
+      "title": "Neon-HTLC: Collateral-Free HTLCs with Logarithmic Timeout",
+      "authors": [
+        "Sebastian Faust",
+        "Noemi Glaeser",
+        "Marius Hagemann",
+        "Ziyan Qu"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstractOneWord": "构造无抵押、超时随金额对数增长的激励相容 HTLC，抗矿工贿赂审查，无大模型，对象是比特币跨链兑换与支付通道。",
+      "abstract": "哈希时间锁合约（HTLC）是去中心化金融的基础构件，用于无信任跨链资产兑换和链下支付网络。标准 HTLC 会受到贿赂攻击：恶意方可以激励矿工审查诚实交易。近期工作提出激励相容的 HTLC 来缓解这类攻击，但可扩展性很差：要保护给定支付金额，要么需要与金额成线性的抵押，要么需要超线性的超时。作者把这一瓶颈形式化，证明它对一类称为「两阶段」的广义 HTLC 成立，并给出两阶段 HTLC 的最优参数设置，改进了此前最优的 He-HTLC（NDSS'23）。随后提出 Neon-HTLC：一种无需抵押、并大幅缩短协议超时的激励相容 HTLC。它依靠随时间指数增长的惩罚机制，使超时只随支付金额对数增长。该超时不仅渐近更优，而且具体可用：即使覆盖比特币全部存量，所需超时也只是一个小常数（最多 51 个区块，约 8.5 小时）。评估表明，对一笔 10 万美元的支付，Neon-HTLC 用 26 个区块、零抵押即可完成保护，而 He-HTLC 需要 496 个区块超时和 5000 美元抵押。",
+      "abstractEn": "Hashed time-lock contracts (HTLCs) are fundamental building blocks for decentralized finance, enabling trustless cross-chain asset exchanges and off-chain payment networks. However, standard HTLCs are vulnerable to bribery attacks, where malicious actors incentivize miners to censor honest transactions. While recent works propose incentive-compatible HTLCs to mitigate these attacks, they suffer from a severe scalability bottleneck: to secure a given payment amount, they require either a linear collateral or superlinear timelock (both in the payment amount). We formalize this barrier by showing that the above tradeoff holds for a generalized class of HTLCs that we call \"two-phase\". Our analysis also identifies optimal parameter settings for two-phase HTLCs, improving on the previous state-of-the-art, He-HTLC (NDSS'23). We then present Neon-HTLC, a novel incentive-compatible HTLC protocol that eliminates the need for collateral while drastically reducing protocol timeout. Neon-HTLC overcomes prior limitations by leveraging a novel punishment mechanism that increases exponentially over time. Consequently, Neon-HTLC achieves a timeout that scales only logarithmically with the payment amount. This timeout is not only asymptotically but also concretely practical: even for the total amount of Bitcoin, the required timeout is a small constant (max 51 blocks, or ≈ 8.5 hours). Our evaluation demonstrates that Neon-HTLC outperforms the state-of-the-art He-HTLC by several orders of magnitude: for a $100,000 USD payment, Neon-HTLC safeguards the transfer in just 26 blocks with zero collateral, whereas He-HTLC requires a 496-block timeout and $5,000 USD collateral.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "HTLC",
+        "贿赂攻击",
+        "跨链",
+        "支付通道"
+      ],
+      "url": "https://eprint.iacr.org/2026/3008",
+      "pdf": "https://eprint.iacr.org/2026/3008.pdf"
+    },
+    {
+      "id": "10.1109-tifs.2026.3757536",
+      "title": "Robust and Redactable Blockchain From Pre-Constrained Threshold Chameleon Hash",
+      "authors": [
+        "Chenhao Wang",
+        "Yang Ming",
+        "Hang Liu",
+        "Yutong Deng",
+        "Yi Zhao",
+        "Jianting Ning"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "用预约束门限变色龙哈希构造稳健可编辑区块链，无大模型，对象是可编辑账本。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文提出基于预约束门限变色龙哈希的稳健可编辑区块链。论文于 2026-11-25 进入 TIFS early access。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "可编辑区块链",
+        "变色龙哈希",
+        "门限",
+        "账本"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3757536"
+    },
+    {
+      "id": "2611.34380",
+      "title": "AgentLens: Graph-guided Security Auditing for LLM-based Agents",
+      "authors": [
+        "Peizhuo Lv",
+        "Tao Chen",
+        "Mengya Shi",
+        "Ziyu Lin",
+        "Yuxuan Chen",
+        "Ruigang Liang",
+        "Tianwei Zhang",
+        "Wei Dong",
+        "XiaoFeng Wang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用审计知识图引导、在真实工作流中验证大模型智能体实现与工具交互中的漏洞，有 LLM，对象是智能体应用。",
+      "abstract": "基于大模型的智能体正在成为软件工程自动化的重要形态：它们把大模型决策与外部工具、文件、API 和执行环境连在一起。智能体实现上的弱点，以及智能体与外部资源之间的不安全交互，可能导致远程代码执行、任意文件访问、SQL 注入和数据泄漏。因此，上线前需要系统审计：既找出实现弱点，又验证这些弱点能否在真实工作流中变成具体安全风险。现有方法要么只覆盖特定漏洞类别，要么无法验证静态弱点是否对应可执行利用。本文提出 AgentLens，对基于大模型的智能体做系统审计。它分析目标智能体的实现、组件交互和内置防御，整理成审计知识图，刻画这些因素如何共同暴露安全风险；再据此导出候选攻击路径、生成路径相关的验证载荷，并构造贴近任务的多轮审计场景，在执行中验证怀疑的风险是否表现为违规行为。在五个 GitHub 星标均超过 2.4 万的常用智能体应用上，AgentLens 发现 44 个漏洞，且全部在执行中被触发。与当前最好方法 AgentFuzz 相比，检出漏洞数为后者的 3.67 倍。截至目前，已有 12 个报告问题获得 CVE 编号。",
+      "abstractEn": "LLM-based agents are emerging as a key paradigm for automating software engineering by coupling LLM-driven decision-making with external tools, files, APIs, and execution environments. However, weaknesses in agent implementations and insecure interactions between the agent and external resources can lead to severe consequences, including remote code execution, arbitrary file access, SQL injection, and data leakage. This makes pre-deployment auditing essential for systematically identifying implementation weaknesses and validating whether they can manifest as concrete security risks in realistic agent workflows. Existing approaches either focus on specific vulnerability classes or lack the capability to validate whether identified static weaknesses correspond to executable exploits. In this paper, we propose AgentLens, a systematic auditing framework for LLM-based agents. AgentLens analyzes the target agent's implementation, component interactions, and built-in defenses, and organizes them into an Audit Knowledge Graph that captures how these factors interact to expose potential security risks. Based on this graph, AgentLens derives candidate attack paths, generates path-specific validation payloads, and constructs realistic multi-turn audit scenarios that place these payloads in task-relevant contexts to validate whether suspected risks manifest as security-violating behaviors during execution. Across five widely-used agent applications, each with over 24,000 GitHub stars, AgentLens identifies 44 vulnerabilities, and every vulnerability is validated by being triggered during execution. Compared with the state-of-the-art approach (AgentFuzz), AgentLens detects 3.67× more vulnerabilities. To date, 12 reported issues have been assigned CVE IDs.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能体审计",
+        "知识图",
+        "漏洞验证",
+        "CVE"
+      ],
+      "url": "https://arxiv.org/abs/2611.34380",
+      "pdf": "https://arxiv.org/pdf/2611.34380.pdf"
+    },
+    {
+      "id": "2611.34142",
+      "title": "Reproducer Synthesis for AI-Reported Bugs in the Linux Kernel",
+      "authors": [
+        "Xiao Wu",
+        "Yunbo Ni",
+        "Hao Sun",
+        "Yuanyuan Yuan",
+        "Shaohua Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为 Linux 内核上大模型审查报告自动合成可运行复现程序，有 LLM，对象是 Linux 内核。",
+      "abstract": "智能体审查系统越来越多地把 Linux 内核补丁上的可疑缺陷标成文字报告。维护者收到后还需要进一步判断报告是否属实：缺陷能否被触发，必要时还要手工构造复现。结果是，尽管文字解释很长，很多报告没有人回复。本文认为，对这类由大模型生成的内核审查报告，可运行的概念验证（PoC）才是关键信息，但自动合成合法、可运行的 PoC 并不容易。作者提出 ReproCue：为这类审查生成 PoC。它回放历史内核缺陷，按子系统从成功运行中学到一个复现有限状态机（FSM）；FSM 记录复现经过的步骤以及每一步观察到的条件。面对新审查时，ReproCue 沿该子系统的 FSM 走，根据执行中缺什么来调整 PoC 和环境。在 100 份近期大模型审查上，ReproCue 为 49 份写出了 PoC，对照当前智能体复现器的 10 份和当前最好定向模糊测试的 9 份。带上这些 PoC 后，Linux 内核维护者确认了其中 69.4%，远高于只给文字说明的 Sashiko 的 9.3%，让大模型审查在实践中更容易被处理。",
+      "abstractEn": "Agentic review systems are increasingly flagging suspected bugs in Linux kernel patches as textual reports. A maintainer who receives such reports needs further inspection to determine whether the report is true. The inspection requires understanding whether the bug can be triggered and, if necessary, manually constructing one. As a consequence, despite the excessive textual explanation, many reports go unanswered. In this paper, we argue that a runnable proof-of-concept (PoC) is the key information in such AI-generated kernel review reports. It is, however, challenging to automatically synthesize a valid and runnable PoC. We present ReproCue, a framework that generates PoCs for AI-generated Linux kernel reviews. ReproCue replays the historical kernel bugs and learns one reproduction finite-state-machine (FSM) per subsystem from successful runs. An FSM records the steps a reproduction goes through, together with the requirements observed at each step. Given a new review, ReproCue follows the FSM of that subsystem, adjusting the PoC and the environment as execution shows what is missing. In 100 recent AI-generated reviews, ReproCue writes PoCs for 49 of them, compared with 10 for the current agentic reproducer and 9 for the state-of-the-art directed fuzzing. Excitingly, with our generated PoCs, Linux kernel maintainers confirmed 69.4% of them, much higher than 9.3% from Sashiko where only textual explanations are included, making AI reviews more actionable in practice.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Linux内核",
+        "PoC合成",
+        "智能体审查",
+        "缺陷复现"
+      ],
+      "url": "https://arxiv.org/abs/2611.34142",
+      "pdf": "https://arxiv.org/pdf/2611.34142.pdf"
+    },
+    {
+      "id": "2611.33486",
+      "title": "Benchmarking Open-Ended Vulnerability Discovery in Windows Kernel Binaries",
+      "authors": [
+        "Jongseong Kim",
+        "Hwiwon Lee",
+        "Dongjun Kim",
+        "Lingming Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "评测前沿模型在 Windows 内核二进制上做开放式漏洞发现，有 LLM，对象是 Windows 内核。",
+      "abstract": "前沿模型越来越多被用来发现真实安全漏洞，因此需要系统评测它们的网络安全能力。现有安全基准主要针对开源项目中的已知漏洞，很少覆盖支撑大量工业软件的闭源二进制。本文问：前沿模型在生产二进制里挖深层漏洞有多有效？作者提出 DeepBinary，这是面向 Windows 内核二进制、开放式漏洞发现的首个综合基准。给定目标二进制，智能体在断网虚拟机中用反汇编器和内核调试器分析，并报告每个漏洞及其崩溃概念验证。与现有基准不同，DeepBinary 在全新虚拟机上回放每份报告，并用基于大模型的评判器评估有效性、唯一性和影响（按漏洞赏金估计）。除已知漏洞外，它还能发现并验证此前未知的 0-day。作者在 12 个目标二进制上评测了代表性开源与闭源权重模型（包括 GPT-6 Sol、Claude Opus 5、DeepSeek V4.1 Flash）以及多种编程智能体（包括 Codex 和 Claude Code）。合计发现超过 200 个漏洞，估计赏金合计 66.1 万美元，其中跨实验去重后有 146 个此前未知漏洞。结果还显示，模型在分析二进制、做实验、以及在长程任务中持续挖洞的能力差异很大。DeepBinary 让复杂二进制上的长程、开放式漏洞发现变得可度量。",
+      "abstractEn": "Frontier models are increasingly used to discover real-world security vulnerabilities, making it critical to systematically evaluate their cybersecurity capabilities. However, existing security benchmarks primarily focus on known vulnerabilities in open-source projects, largely overlooking closed-source binaries, which underpin much of the software industry. In this paper, we ask: how effective are frontier models at uncovering deep vulnerabilities in production binaries? To answer this question, we present DeepBinary, the first comprehensive benchmark for open-ended vulnerability discovery in Windows kernel binaries. Given a target binary, an agent analyzes it using a disassembler and kernel debugger in network-isolated VMs and reports each vulnerability with a crashing proof of concept (PoC). Unlike existing benchmarks, DeepBinary replays every report on fresh VMs and employs an LLM-based judge to assess its validity, uniqueness, and impact (estimated by bug bounty values). Beyond known vulnerabilities, DeepBinary also enables the discovery and validation of previously unknown (0-day) vulnerabilities. We conduct a comprehensive evaluation of representative open- and closed-weight models (including GPT-6 Sol, Claude Opus 5, and DeepSeek V4.1 Flash) across diverse coding agents (including Codex and Claude Code) on 12 target binaries. In total, they discover over 200 vulnerabilities with an estimated aggregate bounty of $661,000, including 146 distinct previously unknown vulnerabilities across all experiments. Our results further reveal substantial differences in models' ability to analyze binaries, conduct experiments, and sustain vulnerability discovery over long horizons. Overall, DeepBinary makes long-horizon, open-ended vulnerability discovery in complex binaries measurable, revealing fundamental differences in how frontier models analyze and explore such systems.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "Windows内核",
+        "漏洞发现",
+        "二进制",
+        "评测基准"
+      ],
+      "url": "https://arxiv.org/abs/2611.33486",
+      "pdf": "https://arxiv.org/pdf/2611.33486.pdf"
+    },
+    {
+      "id": "2611.33519",
+      "title": "PRECEPT: Security Self-Improvement of Coding Agents via Evolving Principles",
+      "authors": [
+        "Keyan Guo",
+        "Rupam Patir",
+        "Haipeng Cai",
+        "Hongxin Hu"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "让编程智能体从自身安全失败中演化原则，避免修过的漏洞类再次出现，有 LLM，对象是编程智能体生成的代码。",
+      "abstract": "人工智能编程智能体越来越多地在缺少人工审查的情况下写代码并提交，其中不少能通过功能测试，但仍不安全。作者表明这类失败会持续出现。在 14 组任务序列上，Codex、Claude Code 和 Qwen Code 在看到失败的安全测试后，有 85.7% 的次数能修好漏洞，但在新会话中又以 26.7% 的频率重新引入同一类漏洞，与从未见过该类漏洞的智能体（27.5%）几乎一样。能力在，留存不在。把修复记进智能体的持久上下文，或提供已发表的安全编码原则，都没能补上缺口：记下的修复仍绑在来源任务族上，为人写的原则又太泛，套不到手头代码。知识在，但没被激活。作者把缺失的能力称为安全自我改进：智能体从自己的安全失败中学习，使每条教训跨会话保留、能用到新代码、且不破坏已有功能。PRECEPT 用一个演化中的原则库来装备编程智能体：从权威安全编码原则出发，对照智能体自身失败不断修订，使每条原则最终能打到该智能体真正出错的代码上。只有新执行表明代码更安全、且功能成功率相对无原则库智能体仍在小容差内时，才保留该修订。改进会随演化步数继续，而不是第一步后就饱和。在演化时未见过的任务族上，PRECEPT 最弱的智能体达到 97.1% 的安全可运行代码，高于最强无辅助智能体的 81.9% 和最强基线的 87.7%。",
+      "abstractEn": "AI coding agents increasingly write and submit code with limited human review, and much of it passes functional tests while remaining insecure. We show that these failures persist. Across 14 task sequences, Codex, Claude Code, and Qwen Code fixed a vulnerability 85.7% of the time when shown the failing security test, then reintroduced the same vulnerability class in a new session 26.7% of the time, about as often as agents that had never seen it (27.5%). The capability is present; the retention is not. Neither recording the repair in the agent's persistent context nor supplying published secure coding principles closed the gap: the recorded fix stayed tied to the family of the task it came from, and the principles, written for human developers, remained too general to apply to the code at hand. The knowledge exists; it is not activated. We call the missing ability security self-improvement: an agent learns from its own security failures so that each lesson persists across sessions, applies to new code, and does not break what works. We present PRECEPT, which equips coding agents with this ability through an evolving library that starts from authoritative secure coding principles and revises them against the agent's own failures, so that each principle comes to fire on the code where that agent actually goes wrong. A revision is kept only if fresh executions show it makes code more secure while keeping functional success within a small tolerance of the agent without the library. Improvement continues across evolution steps rather than saturating after the first. On task families never seen during evolution, PRECEPT's weakest agent reaches 97.1% secure working code, above the strongest unaided agent at 81.9% and the strongest baseline at 87.7%.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编程智能体",
+        "安全原则",
+        "漏洞复发",
+        "自我改进"
+      ],
+      "url": "https://arxiv.org/abs/2611.33519",
+      "pdf": "https://arxiv.org/pdf/2611.33519.pdf"
+    },
+    {
+      "id": "2611.29546",
+      "title": "ParseGap: Testing What Coding Agents Authorize and What Shells Execute",
+      "authors": [
+        "Jieyu Li"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "差分测试编程智能体批准的命令与 shell 实际执行是否一致，有 LLM，对象是编程智能体与系统 shell。",
+      "abstract": "大模型编程智能体批准 shell 命令的方式是：按策略解析命令字符串，再把原始字符串交给系统 shell。于是门控按一种读法裁决，shell 按另一种读法执行。本文提出差分测试框架 ParseGap：把每条命令同时送入未改动的厂商检查器和隔离容器中的 GNU Bash 5.2，只要被批准的命令在运行时产生违反策略的效果，就记一次违规。在八个生产级编程智能体上，ParseGap 找出 17 个根因，落在三道分界：解析层，上游 tree-sitter-bash 缺陷让第二条命令躲过 Mistral Vibe 和 Gemini CLI；工具层，所有检查器都允许所谓只读二进制通过参数写文件或启动程序（55 例中有 9–47 例）；隔离层，OpenAI Codex CLI 的一条允许规则会关掉只读操作系统沙箱。用两个前沿模型做现场试验时，16 组智能体–模型组合全部触发策略违规（其中 14 组在已配置限制下仍触发）。为去掉第二种读法，作者设计 ShellPlan：把严格的 Bash 子集一次编译成带类型的执行计划，按正向能力规格校验工具参数，再经 execve 直接派发，不再经过 shell。在形式操作模型上，他们证明了单解释派发，并在已审计假设下给出触及的程序和文件上界。ShellPlan 在六个静态套件的 4174 次主动攻击中放行 0 次，在十模型智能体基准的 90 次命中中放行 0 次（无防护时为 62/90），门控中位延迟 1.28 毫秒，同时保住前沿标准开发任务 36/36 完成（总体 74/100），在建模例外之外对外部过允许为 0/348。",
+      "abstractEn": "LLM coding agents authorize shell commands by parsing a command string against a policy and passing the raw string to a system shell, so the gate adjudicates one reading while the shell executes another. We present ParseGap, a differential testing framework that runs each command through an unmodified vendor checker and GNU Bash 5.2 in an isolated container, flagging a violation whenever an approved command produces policy-violating runtime effects. Across eight production coding agents, ParseGap identifies 17 root causes across three divergence boundaries: at the parse, where an upstream tree-sitter-bash defect hides a second command from Mistral Vibe and Gemini CLI; at the utility, where every checker permits read-only binaries whose arguments write files or launch programs (9-47 of 55 cases); and at confinement, where an allow rule in OpenAI Codex CLI disables its read-only OS sandbox. Live trials across two frontier models triggered policy violations in all 16 agent-model pairs (14 under configured restrictions). To eliminate the second reading, we design ShellPlan, which compiles a strict Bash subset once into a typed execution plan, validates utility arguments against positive capability specifications, and dispatches approved plans directly via execve without a shell. Over a formal operational model, we prove single-interpretation dispatch and bound touched programs and files under audited assumptions. ShellPlan admitted 0/4,174 active attacks across six static suites and 0/90 hits in a ten-model agent benchmark (62/90 unguarded) at 1.28 ms median gate latency, preserving 36/36 (100%) frontier standard-dev completion (74/100 overall) and 0/348 external over-allows outside modeled exceptions.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "命令注入",
+        "差分测试",
+        "编程智能体",
+        "shell"
+      ],
+      "url": "https://arxiv.org/abs/2611.29546",
+      "pdf": "https://arxiv.org/pdf/2611.29546.pdf"
+    },
+    {
+      "id": "2611.28408",
+      "title": "The Effect of Security-Focused Prompts on Reported Findings: A Controlled Experiment on 400 AI-Generated Web Applications",
+      "authors": [
+        "Darko Andročec"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "对照实验看安全提示词能否降低智能体生成 Web 应用的漏洞，有 LLM，对象是 Web 应用。",
+      "abstract": "智能体编程工具会把一份规格做成可运行的 Web 应用，因此它们在认证、会话、输入校验和依赖上的默认选择，就决定了应用的安全态势。本研究问：在提示词后追加一段固定的、与 OWASP 对齐的安全要求，会不会改变这些工具的产出、改变多少、以及有何副作用。100 份冻结规格各实现四次：两个智能体工具（Claude Code、Codex CLI）交叉两种提示词，功能核心字节级相同，一种无安全块（A），一种有安全块（B）。固定的静态与动态流水线扫描这 400 个应用，得到 6721 条经分拣的发现，再用计数与逻辑混合模型以及依赖差异来分析。安全块把每个应用的发现数减少约三分之一（发生率比 0.65，95% 置信区间 0.60–0.71），两个工具效果相当，同时大约把声明的依赖面扩大一倍，因此 B 变体带有更多高危依赖公告。按依赖面调整后，公告率按应用计没有上升（合计低 18%），而第一方源码中的高危发现下降近一半。面向安全的提示因此是成本低、可移植的改进，但它会扩大随后必须审计的依赖面；这来自库选择，而不是安全要求条文本身。",
+      "abstractEn": "Agentic coding tools turn a specification into a running web application, so their defaults for authentication, sessions, input validation, and dependencies become its security posture. This study asks whether appending a fixed block of OWASP-aligned security requirements to the prompt changes what such tools produce, by how much, and with what side effects. Each of 100 frozen specifications was realized four times: two agentic tools (Claude Code, Codex CLI) crossed with two prompts sharing a byte-identical functional core, without (A) and with (B) the security block. A fixed static and dynamic pipeline scanned the 400 applications, yielding 6,721 triaged findings, analyzed with count and logistic mixed models and with a dependency diff. The block cut findings per application by a third (incidence-rate ratio 0.65, 95% CI 0.60-0.71), equally through both tools, and roughly doubled the declared dependency surface, so variant-B applications carried more high-severity dependency advisories. Adjusted for that surface the advisory rate did not rise (flat per application, 18% lower in aggregate), while high-severity findings in first-party source fell by nearly half. Security-focused prompting is therefore an inexpensive and portable improvement, but it enlarges the dependency surface that has to be audited against it, an effect of library selection rather than of the security requirements themselves.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "安全提示词",
+        "Web应用",
+        "对照实验",
+        "依赖审计"
+      ],
+      "url": "https://arxiv.org/abs/2611.28408",
+      "pdf": "https://arxiv.org/pdf/2611.28408.pdf"
+    },
+    {
+      "id": "2611.33227",
+      "title": "Real Package, Wrong Controller: Static Auditing of Vendor--Protocol Mismatches in LLM-Generated PLC Code",
+      "authors": [
+        "S M Zia Ur Rashid",
+        "Sazidul Islam Hira",
+        "Suman Rath"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "静态审计大模型生成的 PLC 控制代码是否用了错误厂商协议库，有 LLM，对象是工控 PLC。",
+      "abstract": "语言模型可以生成驱动可编程逻辑控制器上工业协议的 Python，但现有代码落地检查往往只问导入的包或符号是否存在，而不问它是否适合所声明的工业目标。作者定义「由元数据条件化的、导入级厂商–协议不兼容」，并构建无标签静态验证器 Proteus-OT，它建立在一份按版本钉死的、有文档绑定关系的图上。在 883 份生成脚本中，180 份相对声明目标存在导入级错配（20.4%）；限定到单厂商目标为 16.3%；再要求出错库实际到达协议通信调用则为 14.2%。作者把这些比例读成对语料元数据的条件结果，而不是已核实意图上的普遍率。28 份可裁决的人工对照文件中没有一份带此类错配，样本量太小，不足以估计普遍率。在平衡子集里，96.6% 的错配脚本导入的包和调用的方法都真实存在，因此「是否存在」这一基线代表不了它们，且每个阳性都带有可检查的证据。作者还在同一语料上审计了机器与人工分类：字符 n-gram 在按任务、模型和厂商划分的不相交划分上宏观 F1 达到 1.000，去掉注释、AST 往返和标识符匿名化后仍然成立。95.2% 的人工文件带尾随换行，生成文件全部没有，仅这一特征就能分开两类。厂商–协议一致性是有用的静态审计目标，而在带仓库标签的语料上做来源分类，并不是作者身份检测。",
+      "abstractEn": "Language models can generate Python that drives industrial protocols on programmable logic controllers, yet existing code-grounding checks ask whether an imported package or symbol exists rather than whether it suits the declared industrial target. We define metadata-conditioned, import-level vendor-protocol incompatibility and build Proteus-OT, a label-free static verifier over a version-pinned graph of documented bindings. Across 883 generated scripts, 180 carry an import-level mismatch against the declared target (20.4%); restricting to single-vendor targets gives 16.3%, and additionally requiring the offending library to reach a protocol communication call gives 14.2%, which we read as conditional on the corpus metadata rather than on verified intent. None of the 28 adjudicable human control files carries one, a sample too small to estimate a prevalence. Within the balanced subset, 96.6% of mismatching scripts import packages and call methods that exist, so an existence baseline does not represent them, and every positive ships with an inspectable witness. We also audit machine-versus-human classification on the same corpus, where character n-grams reach macro-F1 1.000 under task, model and vendor-disjoint partitions and survive comment removal, an AST round trip and identifier anonymisation. The trailing newline present in 95.2% of human files and in none of the generated ones separates the classes on its own. Vendor-protocol consistency is a useful static audit target, whereas provenance classification on repository-labelled corpora is not authorship detection.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "PLC",
+        "静态审计",
+        "工控协议",
+        "代码生成"
+      ],
+      "url": "https://arxiv.org/abs/2611.33227",
+      "pdf": "https://arxiv.org/pdf/2611.33227.pdf"
+    },
+    {
+      "id": "2611.34417",
+      "title": "Northstar: Efficient Verifiable Negacyclic Polynomial Arithmetic with Applications to Encrypted Lattice-based Multi-Asset ERC-20 and Verifiable FHE",
+      "authors": [
+        "Yeoh Wei Zhu",
+        "Shaltiel Eloul",
+        "Yash Satsangi",
+        "Rob Otter"
+      ],
+      "year": 2026,
+      "venue": "FC 2027",
+      "abstractOneWord": "为格上负循环多项式运算做可验证证明，用于链上加密多资产 ERC-20 与可验证 FHE，无大模型，对象是智能合约与全同态加密。",
+      "abstract": "基于格的密码学可以构造多种抗量子方案，从数字签名、加密等标准原语，到全同态加密（FHE）。但正确验证格上计算仍然相对昂贵，尤其是计算量大的 FHE 运算，以及智能合约链上验证这类资源受限环境。本文提出 Northstar，一种原生证明负循环算术的高效技术。与现有 STARK 证明框架结合后，Northstar 在证明时间、验证时间和证明大小上，相对此前可验证 FHE 构造的最好结果总体最优。作者还用它构造了首个可被智能合约高效验证的加密多资产（约 1000 种资产）ERC-20 变体，并认为在当前区块链环境中可以实际部署。",
+      "abstractEn": "Lattice-based cryptography can be used to construct a variety of post-quantum cryptographic schemes, ranging from standard cryptographic primitives such as digital signatures and encryption, to fully homomorphic encryption (FHE). However, the verification of correct lattice computations remains relatively expensive, particularly for computationally intensive FHE operations and for resource-constrained environments such as on-chain verification via smart contracts. We propose Northstar, an efficient technique for proving negacyclic arithmetic natively. When integrated with existing STARK proving frameworks, Northstar achieves the best overall performance across prover time, verifier time, and proof size compared to prior state-of-the-art approaches for verifiable FHE constructions. Furthermore, Northstar is used to construct the first verifiable encrypted multi-asset (~ 1000 assets) variant of ERC-20 that is efficiently verifiable by a smart contract, and is practically deployable in the current blockchain ecosystem.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "STARK",
+        "可验证FHE",
+        "ERC-20",
+        "链上验证"
+      ],
+      "url": "https://arxiv.org/abs/2611.34417",
+      "pdf": "https://arxiv.org/pdf/2611.34417.pdf"
+    },
+    {
+      "id": "2611.30453",
+      "title": "PLATRS: A Lattice-Based Linkable Accountable Ring Signature for Permissioned Blockchains",
+      "authors": [
+        "Jie Zhang",
+        "Xiaohong Li",
+        "Honglin Mao",
+        "Ruitao Feng",
+        "Lingyun Yuan",
+        "Guangdong Bai"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "为许可链设计格上可链接、可追责的环签名，无大模型，对象是许可链背书。",
+      "abstract": "许可账本上的跨域数据共享需要匿名与可追责并存：背书要藏住作者，但监管方必须在授权被复用时识别作者。现有格方案只能分开给出这些性质：公开可追踪会把签名者暴露给碰撞检测器；可链接但不可追踪的方案无法打开；门限方案解决的是另一类问题。还没有方案同时给出抗量子安全、签名者自选环、公开可比较的按事件标签，以及单权威打开。本文提出 PLATRS，一种面向许可链的模格可链接可追责环签名。联盟 CA 注册把打开返回的密钥绑定到登记身份。签名者自选环；验证不依赖下标；每个签名带有任意验证者都可比较的按事件标签。标签噪声来自签名者的追踪秘密和事件，诚实签名的链接只需一次比较，而没有秘密时标签仍是 M-LWE。检测分两层：标签不一致立即发现；同一事件上两个被接受签名带不同标签则触发打开；权威公布恢复出的公开打开分量，任意成员可相对环重新计算结果。作者在随机预言机模型下证明了基于 M-LWE 的 CPA 匿名性、可链接性、仅权威可追踪，以及基于 M-SIS 与 M-LWE 的不可伪造性。在 N=1024 时，开源实现签名 9.886 毫秒、验证 3.919 毫秒、链接 0.7 微秒、打开 480 微秒；签名 107.3 KiB（随环大小对数增长）；裁决 4.867 毫秒。在 Hyperledger Fabric 上，16 MiB 区块下每秒 60.5 次签名提交、7.87 MB/s，受提交带宽限制。在同一测试台上，它是 5 个方案中签名/验证最快、体积第二小的；相对 FLLL+21，签名快 3188 倍，签名短 133 倍。",
+      "abstractEn": "Permissioned-ledger cross-domain data sharing needs anonymity and accountability: an endorsement hides its author, but a regulator must identify it on authorization reuse. Existing lattice-based schemes give these only separately: public traceability exposes signers to collision detectors; linkable non-tracing schemes cannot open; threshold schemes solve another problem. None gives post-quantum security, a signer-chosen ring, a publicly comparable per-event tag, and one-authority opening together. We propose PLATRS, a module-lattice linkable accountable ring signature for permissioned blockchains. Consortium-CA enrollment binds the key returned by an opening to a registered identity. The signer chooses the ring; verification is index-free; each signature has a per-event tag any verifier can compare. Tag noise derives from the signer's tracing secret and event, so linking is one comparison for honest signatures while the tag remains M-LWE without the secret. Detection is two-tier: tag mismatch is immediate; different tags on two accepted signatures for one event trigger an opening; the authority publishes the recovered public opening component, and any member recomputes the verdict against the ring. We prove CPA anonymity from M-LWE, linkability, authority-only traceability, and unforgeability from M-SIS with M-LWE in the random oracle model. At N=1024, our open-source implementation: sign 9.886 ms, verify 3.919 ms, link 0.7 μs, open 480 μs; signature 107.3 KiB (log in ring size); adjudication 4.867 ms. Hyperledger Fabric: 60.5 signature submissions/s at 7.87 MB/s with 16 MiB blocks, commit-bandwidth limited. Common-harness: fastest of 5 schemes to sign/verify, second in size; vs FLLL+21, signing is 3188× faster and signatures 133× shorter.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "环签名",
+        "许可链",
+        "可链接",
+        "格密码"
+      ],
+      "url": "https://arxiv.org/abs/2611.30453",
+      "pdf": "https://arxiv.org/pdf/2611.30453.pdf"
+    },
+    {
+      "id": "2611.34229",
+      "title": "Evaluating Post-Quantum and Hybrid Signatures for Blockchains: Performance, Storage and Ledger Growth",
+      "authors": [
+        "Anthony Mikhaiel",
+        "Essam Ghadafi"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "实测后量子与混合签名上链后的性能、存储与账本增长，无大模型，对象是公链签名方案。",
+      "abstract": "量子计算的进展对依赖 ECDSA 等经典数字签名的区块链构成长期威胁。迁到后量子密码学带来的实际代价不只是密码安全，还包括更大的交易、更高的计算开销和更快的账本增长。作者在同一模拟区块链框架里评测 13 种签名配置：ECDSA、ML-DSA-44/65/87、Falcon-512/1024、SLH-DSA-SHA2-128s，以及 ECDSA 与各后量子方案组成的六种混合。他们测量签名与验证开销、交易处理吞吐、签名和公钥大小，并把测得的额外开销投影到比特币、以太坊、Solana、BNB Smart Chain 和 TRON 五条公链。对所评测的格方案，验证仍然便宜，Falcon-512 的验证时间与 ECDSA 相当（30.1 对 32.8 微秒）。存储开销则很大。按建模假设，若历史交易改用所评测中最紧凑的后量子方案 Falcon-512，账本会增大 79%–229%，视链而定。混合配置相对单独后量子方案只增加不多的额外存储，而 ECDSA+Falcon-512 的验证开销大约是单独 Falcon-512 的两倍。比特币和 Solana 现有的交易与脚本大小限制，也阻碍直接迁移。总体来看，迁到后量子密码时，存储开销可能比签名验证开销更难处理。",
+      "abstractEn": "Advances in quantum computing pose a long-term threat to blockchain systems that rely on classical digital signature schemes such as ECDSA. Migrating these systems to post-quantum cryptography introduces practical costs beyond cryptographic security, including larger transactions, higher computational costs and faster ledger growth. We present an empirical evaluation of 13 signature configurations in a common simulated blockchain framework: ECDSA, ML-DSA-44/65/87, Falcon-512/1024, SLH-DSA-SHA2-128s, and six hybrids combining ECDSA with each post-quantum scheme. We measure signing and verification costs, transaction-processing throughput, and signature and public-key sizes, and project the measured overheads onto five public blockchains: Bitcoin, Ethereum, Solana, BNB Smart Chain and TRON. Verification remains inexpensive for the evaluated lattice-based schemes, with Falcon-512 achieving a verification time comparable to ECDSA (30.1 versus 32.8 μs). Storage overheads, however, are substantial. Under our modelling assumptions, had the recorded transaction histories used Falcon-512, the most compact post-quantum scheme evaluated, ledger sizes would have been 79--229% larger, depending on the blockchain. Hybrid configurations introduce relatively modest additional storage overhead compared with their standalone post-quantum counterparts, while ECDSA+Falcon-512 approximately doubles the verification cost of standalone Falcon-512. Existing transaction- and script-size limits also present obstacles to straightforward migration in Bitcoin and Solana. Overall, our findings suggest that storage overhead may pose a greater challenge than signature verification costs when migrating blockchain systems to post-quantum cryptography.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "后量子签名",
+        "账本增长",
+        "混合签名",
+        "公链"
+      ],
+      "url": "https://arxiv.org/abs/2611.34229",
+      "pdf": "https://arxiv.org/pdf/2611.34229.pdf"
+    }
+  ]
+}
