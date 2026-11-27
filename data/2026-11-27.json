@@ -1,0 +1,319 @@
+{
+  "date": "2026-11-27",
+  "papers": [
+    {
+      "id": "2611.33015",
+      "title": "PORTA: Systematic Discovery of Vulnerabilities in Identity Brokers",
+      "authors": [
+        "Zixu Zhou",
+        "Xiangyu Guo",
+        "Ilya Grishchenko",
+        "David Lie"
+      ],
+      "year": 2026,
+      "venue": "CCS 2026",
+      "abstractOneWord": "用大模型生成 API 调用序列，对照身份代理不变量找漏洞，有 LLM，对象是 Keycloak、Vault、Dex 等身份代理。",
+      "abstract": "身份代理（如 Keycloak、Vault、Dex）把上游身份提供方的认证证明转成下游服务的会话。因为它处在认证和信任中介的中心位置，代理上的一个漏洞会连累后面所有服务。近期事件也说明，即便广泛使用的平台也难以幸免，因此需要系统分析。本文先为代理运行定义不变量。现有认证规范并不能完全覆盖这些不变量，主要因为代理具有双重身份：既是依赖方，又是身份提供方。不变量刻画代理在整个工作流中必须保持的性质；作者考察的 60 个既有 CVE 都至少违反其中一条。在这些工作流里，他们再定义高层动作类别。工具 PORTA 用大模型生成对应这些动作类别的 API 调用序列，并生成与不变量对齐的判定断言。PORTA 在 7 个常用开源代理中发现 33 个此前未报告的安全漏洞，并归纳为 8 种反复出现的模式。作者负责任披露：29 个已确认，14 个已修补，19 个获得 CVE 编号，其中 10 个被评为严重。",
+      "abstractEn": "Identity brokers such as Keycloak, Vault, and Dex translate authentication proofs from an upstream identity provider into sessions for downstream services. Due to their central role in authentication and trust mediation, a single vulnerability in a broker compromises every downstream service behind it. In fact, recent incidents have demonstrated that even widely adopted platforms are not immune to such issues, highlighting the critical need for systematic analysis. To build such an analysis, this work first defines invariants for broker operation. These invariants are not completely covered by existing authentication specifications, primarily because brokers are unique in their duality, i.e., acting simultaneously as a relying party and an identity provider. The invariants capture the properties that identity brokers must uphold throughout their workflows, as all 60 previous CVEs we consider violate at least one invariant. Within these workflows, we further define high-level action categories. Equipped with this information, our automated tool PORTA leverages a large language model (LLM) to generate API invocation sequences corresponding to the high-level action categories, and oracle assertions aligned with the specified invariants. PORTA identifies 33 previously unreported security vulnerabilities in seven popular open-source brokers. We study these novel vulnerabilities and trace them to eight recurring patterns. We responsibly disclosed all discovered vulnerabilities: 29 have been confirmed, 14 patched, and 19 assigned CVE numbers, with 10 CVEs rated as critical.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "身份代理",
+        "漏洞发现",
+        "不变量",
+        "CVE"
+      ],
+      "url": "https://arxiv.org/abs/2611.33015",
+      "pdf": "https://arxiv.org/pdf/2611.33015.pdf"
+    },
+    {
+      "id": "10.1109-tifs.2026.3757648",
+      "title": "The Illusion of Security: On the Semantic Unsoundness of LLM-Generated Models for BLE Vulnerability Detection",
+      "authors": [
+        "Biwei Yan",
+        "Yue Zhang",
+        "Minghui Xu",
+        "Jinku Li",
+        "Zhen Yang",
+        "Xiuzhen Cheng"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "分析大模型生成的 BLE 漏洞检测模型在语义上是否健全，有 LLM，对象是蓝牙低功耗协议。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文讨论用大模型生成的 BLE 漏洞检测模型在语义上不健全，这类模型给出的安全结论可能并不可靠。论文于 2026-11-26 进入 TIFS early access。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "BLE",
+        "漏洞检测",
+        "模型健全性",
+        "大模型"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3757648"
+    },
+    {
+      "id": "10.1109-tdsc.2026.3756222",
+      "title": "P³GPT: A Dynamic Penetration Path Planning Framework for Cybersecurity Assessment Driven by LLMs",
+      "authors": [
+        "Zhuocheng Yu",
+        "Jiawei Zhang",
+        "Weihong Han",
+        "Yangyang Mei",
+        "Fengwei Zhang"
+      ],
+      "year": 2026,
+      "venue": "TDSC",
+      "abstractOneWord": "用大模型做动态渗透路径规划，服务网络安全评估，有 LLM，对象是渗透测试。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文提出 P³GPT：由大模型驱动、用于网络安全评估的动态渗透路径规划框架。论文于 2026-11-26 进入 TDSC early access。",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "渗透测试",
+        "路径规划",
+        "安全评估",
+        "大模型"
+      ],
+      "url": "https://doi.org/10.1109/tdsc.2026.3756222"
+    },
+    {
+      "id": "10.1109-tifs.2026.3757591",
+      "title": "DataGuard: Transparent Runtime Auditing and Control of WebAssembly Binaries Within an Off-Chain TEE",
+      "authors": [
+        "Zhaoyu Chen",
+        "Qingni Shen",
+        "Jiarui She",
+        "Daqi Hu",
+        "Yang Luo",
+        "Chuntao Dong",
+        "Xiaolei Zhang",
+        "Cong Li",
+        "Zhonghai Wu"
+      ],
+      "year": 2026,
+      "venue": "TIFS",
+      "abstractOneWord": "在链下可信执行环境中对 WebAssembly 二进制做透明运行时审计与控制，无大模型，对象是链下 WASM 运行时。",
+      "abstract": "IEEE Xplore 上目前读不到英文摘要。根据标题，本文提出 DataGuard：在链下可信执行环境里对 WebAssembly 二进制做透明运行时审计与控制。论文于 2026-11-26 进入 TIFS early access。",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "WebAssembly",
+        "TEE",
+        "链下",
+        "运行时审计"
+      ],
+      "url": "https://doi.org/10.1109/tifs.2026.3757591"
+    },
+    {
+      "id": "2611.33453",
+      "title": "SecID: An LLM-Guided Framework for Threat-Aware Secondary Asset Identification with Quantitative RTL Analysis",
+      "authors": [
+        "Md Ajoad Hasan",
+        "Dipayan Saha",
+        "Upoma Das",
+        "Sujan Kumar Saha",
+        "Mark Tehranipoor",
+        "Farimah Farahmandi"
+      ],
+      "year": 2026,
+      "venue": "DATE 2027",
+      "abstractOneWord": "用多智能体结合 RTL 分析，按威胁识别次级安全资产，有 LLM，对象是 SoC 与 IP 硬件。",
+      "abstract": "硬件设计越来越复杂，安全保证也更难。硅前安全验证的基础一步是识别安全资产。主资产往往能从功能看出来，但那些能帮助攻击者拿下主资产的内部信号却不明显。复杂的数据流和控制流依赖会产生许多内部安全关键位置，能否被利用取决于具体威胁的攻击机制，这些位置就是次级资产。本文提出 SecID：一个多智能体框架，把确定性 RTL 分析、有界动态评估和大模型推理结合起来，按威胁识别次级资产。每个资产判定都有功能影响、威胁特征和明确攻击机制作为依据。作者在 7 个开源 SoC/IP 上演示，包括 openMSP430、NEORV32 和 CV32E40P。结果与已有工作、故障仿真和形式化分析对照，并做了流水线与末级消融、阈值敏感性和末级可重复性评估。总体表明，SecID 能相对给定主资产找出与威胁高度相关的次级资产，为硬件安全验证提供一条可扩展路径。",
+      "abstractEn": "The growing complexity of modern hardware designs is making security assurance increasingly difficult. One of the foundational steps in pre-silicon security verification is identifying security assets. While primary assets are often evident from design functionality, the internal signals that can facilitate their compromise are much less apparent. Complex data- and control-flow dependencies create many such internal security-critical locations, whose exploitation depends on the threat-specific attack mechanism---these are the secondary assets. To precisely identify these, we propose SecID, a multi-agent framework that combines deterministic RTL analysis with bounded dynamic evaluation and LLM reasoning to identify threat-specific secondary assets. Each asset decision is supported by functional influence, threat features, and explicit attack mechanisms. We demonstrate SecID on seven open-source SoC and IP designs, including openMSP430, NEORV32, and CV32E40P. The experimental results are corroborated through comparison with prior work, fault simulation, and formal analysis, and further evaluated through pipeline- and final-stage ablation, threshold-sensitivity studies, and final-stage repeatability analysis. Together, these evaluations show that SecID can identify highly threat-relevant secondary assets with respect to a given primary asset, providing a scalable path toward hardware-security verification.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "硬件安全",
+        "RTL",
+        "资产识别",
+        "多智能体"
+      ],
+      "url": "https://arxiv.org/abs/2611.33453",
+      "pdf": "https://arxiv.org/pdf/2611.33453.pdf"
+    },
+    {
+      "id": "2611.30621",
+      "title": "AgentBouncer: Defending Software Engineering Agents via Dynamic System-Call Mediation",
+      "authors": [
+        "Pascal Joos",
+        "Michael Pradel"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "用大模型仲裁系统调用，拦住软件工程智能体的恶意动作，有 LLM，对象是编程智能体与开发环境。",
+      "abstract": "软件工程智能体通过访问文件、执行命令、下载资源等工具与开发环境交互，从而完成各类工程任务。同一能力也使它们容易在提示注入、恶意工具或供应链攻击下做出非预期的恶意动作。只分析智能体轨迹的现有防御可能失败：它们往往只看初始提示和工具调用序列，看不到环境里真正执行的动作。本文提出 AgentBouncer，一种运行时强制系统：它中介、必要时拒绝智能体经工具调用触发的系统调用，从而阻止恶意动作。核心是一个大模型仲裁器，沿必要性和对当前任务的安全性两轴判断系统调用。不安全的调用会被拒绝；调用看起来越不必要，仲裁器越必须对其安全性有把握才放行。为控制运行时开销，预置策略规则和按层次缓存保证大模型只在关键决策上被调用。作者在覆盖四种攻击向量、共 340 次针对开发环境的攻击上评估，并与 SWE-bench Verified 上的良性问题修复任务结合。AgentBouncer 把无监督智能体 99.41% 的攻击成功率降到 10.59%，比当前有竞争力的最好防御低 18.23 到 73.53 个百分点，同时几乎保住任务成功率，良性工具调用失败率仅 0.25%。每个良性任务相对无监督智能体增加 47 秒和 0.0036 美元大模型费用，而最接近的现有运行时防御时间和费用分别约为它的 4.5 倍和 9.6 倍。",
+      "abstractEn": "Software engineering (SE) agents can complete diverse engineering tasks by interacting with the development environment via tools that access files, run commands, and download resources. Unfortunately, the same ability that makes SE agents useful also makes them prone to performing unintended malicious actions through prompt injections, malicious tools, or supply-chain attacks. Existing defenses that analyze the agent trajectory may fail to detect such attacks, as they inspect only the initial prompt and the sequence of tool calls, but not the actual actions that are executed in the environment. This paper presents AgentBouncer, a novel runtime enforcement system that prevents SE agents from performing malicious actions by mediating, and if necessary denying, system calls that agents trigger via tool calls. The core of AgentBouncer is an LLM arbiter that judges system calls along two axes, necessity and safety for the current task. It denies unsafe system calls, and the less necessary a system call appears, the more certain the arbiter has to be about its safety to allow it. To manage runtime overhead, preseeded policy rules and hierarchy-aware caching ensure that the LLM arbiter is only invoked for key decisions. We evaluate AgentBouncer on a dataset of 340 attacks on the development environment, covering four attack vectors, combined with benign issue resolution tasks from SWE-bench Verified. AgentBouncer reduces the attack success rate from 99.41% for an unsupervised agent to 10.59%, which is 18.23-73.53 percentage points lower than competitive state-of-the-art defenses. At the same time, AgentBouncer preserves the task success rate of the agent, with only 0.25% failed benign tool calls. Per benign task, AgentBouncer adds 47 seconds and USD 0.0036 in LLM costs to an unsupervised agent, whereas the closest existing runtime defense adds 4.5x as much time and 9.6x as much cost.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "编程智能体",
+        "系统调用",
+        "运行时强制",
+        "提示注入"
+      ],
+      "url": "https://arxiv.org/abs/2611.30621",
+      "pdf": "https://arxiv.org/pdf/2611.30621.pdf"
+    },
+    {
+      "id": "2611.33605",
+      "title": "The Detour Is the Danger: Preserving Security During LLM Agent Recovery",
+      "authors": [
+        "Boyang Ma",
+        "Jinku Li",
+        "Hao Wu",
+        "Sheng Gao",
+        "Man Zhou",
+        "Minghui Xu",
+        "Yue Zhang"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "研究智能体故障恢复时丢掉原工作流安全保护的问题，有 LLM，对象是带工具的智能体工作流。",
+      "abstract": "大模型智能体越来越依赖外部工具和可复用 Skill 执行复杂工作流，并在操作失败时自主重规划。这种恢复可能保住任务功能，却悄悄丢掉原工作流要求的安全保护。本文研究工作流安全降级：一种由故障引发的威胁，智能体在未满足原保护要求的情况下执行敏感操作。它不同于提示注入：不改指令、不改工具定义，而是利用执行失败触发的自主恢复决策。作者在可执行的 MCP/Skill 环境里用故障注入系统评估该行为，覆盖 7 个大模型、12 类任务模板和 3 个安全敏感领域。为此提出 ARGUS，一种保持义务的恢复框架，结合绑定资源的安全证据、隔离的恢复计划校验，以及执行时强制。在另外 864 次运行中，强制模式下 ARGUS 阻止了所有观察到的保护丢失；恢复辅助相对单纯阻断，在受保护任务完成率上因模型而异有所提高。结论是：安全的智能体恢复必须在工作流变化中保住安全义务，而不能只恢复任务功能。",
+      "abstractEn": "LLM agents increasingly rely on external tools and reusable Skills to execute complex workflows, autonomously replanning when operations fail. However, such recovery may preserve task functionality while silently discarding the security protections required by the original workflow. In this paper, we investigate workflow security downgrade, a failure-induced security threat in which agents execute sensitive operations without satisfying their original protection requirements. Unlike prompt injection, this threat exploits autonomous recovery decisions triggered by execution failures, without modifying instructions or tool definitions. We systematically evaluate this behavior through fault injection in an executable MCP/Skill environment spanning seven LLMs, twelve task templates, and three security-sensitive domains. To address this threat, we propose ARGUS, an obligation-preserving recovery framework that combines resource-bound security evidence, isolated recovery-plan validation, and execution-time enforcement. In a separate 864-run evaluation, ARGUS prevents all observed protection-loss events under enforcement, while recovery assistance yields model-dependent improvements in protected task completion over blocking alone. Our findings demonstrate that secure agent recovery requires preserving security obligations across workflow changes, rather than merely restoring task functionality.",
+      "topics": [
+        "C"
+      ],
+      "aliases": [
+        "智能体恢复",
+        "安全降级",
+        "MCP",
+        "义务保持"
+      ],
+      "url": "https://arxiv.org/abs/2611.33605",
+      "pdf": "https://arxiv.org/pdf/2611.33605.pdf"
+    },
+    {
+      "id": "2026-3028",
+      "title": "Improving Lindell's Two-Party ECDSA: Faster Key Generation and UC Security Without Global Abort",
+      "authors": [
+        "Yehuda Lindell",
+        "Gil Segev"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "改进区块链业界常用的两方 ECDSA：加快密钥生成并去掉全局中止，无大模型，对象是钱包阈值签名。",
+      "abstract": "Lindell（CRYPTO '17）的两方 ECDSA 签名协议在区块链业界有大量实现。它的优点是状态完全静态，但有两个主要限制：（1）密钥生成阶段因零知识证明较慢而计算开销大；（2）安全性依赖「全局中止」机制（一旦检测到某类错误，当前及以后所有执行都必须停掉），这在高吞吐环境里很难运维。本文表明这些限制并非固有，给出保持协议结构的可替换改进，同时提升效率和安全性。更快的密钥生成：针对 Paillier-椭圆曲线离散对数（PDL）关系构造大幅改进的零知识证明。利用聚合内积论证（Bulletproofs），用「承诺桥」把 Paillier 密文连到椭圆曲线上的一组 Pedersen 承诺，从而把计算从 Paillier 转到更快的椭圆曲线运算。无需全局中止的 UC 安全：在协议第二条消息中加入高效的非交互零知识证明。作者证明这不再需要全局中止，并把安全性从原来的基于游戏定义提升为随机预言机模型下、基于 Paillier 与 Strong RSA 假设、对抗恶意敌手的 UC 安全。他们给出严格证明，并报告生产级实现的性能：密钥生成时间大约降到原来的四分之一；达到无全局中止的 UC 安全时，签名额外开销很小：每方额外计算不到 22 毫秒，额外通信仅 3.5 KB。",
+      "abstractEn": "The two-party ECDSA signing protocol constructed by Lindell (CRYPTO '17) has a substantial implementation footprint across the blockchain industry. Despite its advantage of completely static state management, the protocol admits two main limitations: (1) its key generation phase is computationally intensive due to the usage of somewhat inefficient zero-knowledge proofs, and (2) its security relies on a \"global abort\" mechanism (requiring that if a certain error is detected then all current and future executions must halt), which poses significant operational challenges in high-throughput environments. In this work we demonstrate that these limitations are not inherent, presenting \"drop-in\" improvements that preserve the protocol's structure while delivering substantial gains in both efficiency and security: -- Faster key generation. We overcome the main bottleneck in the protocol's key generation by constructing a drastically improved zero-knowledge proof for the Paillier-EC discrete logarithm (PDL) relation. Utilizing aggregated inner-product arguments (Bulletproofs), we address the algebraic mismatch between Paillier encryption and elliptic curves by constructing a \"commitment bridge\" that links a Paillier ciphertext to a set of Pedersen commitments over an elliptic curve. This allows us to minimize Paillier operations by shifting the computational cost to significantly faster elliptic-curve operations. -- UC security without global abort. We augment the protocol with a highly efficient non-interactive zero-knowledge proof (integrated into the protocol's second message). We prove that this addition eliminates the need for a global abort mechanism, upgrading the protocol's security from its original game-based definition to UC security against malicious adversaries (under the Paillier and Strong RSA assumptions in the random oracle model). We provide rigorous security proofs and report on the performance of a production-grade implementation, demonstrating that our approach reduces the estimated key-generation time by a factor of approximately four and achieves UC security without global abort with minimal signing overhead: less than $22$ms of additional computation per party and only $3.5$KB of additional communication.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "两方ECDSA",
+        "钱包",
+        "UC安全",
+        "阈值签名"
+      ],
+      "url": "https://eprint.iacr.org/2026/3028",
+      "pdf": "https://eprint.iacr.org/2026/3028.pdf"
+    },
+    {
+      "id": "2026-3044",
+      "title": "Quorus 2.0: Practical and Scalable Threshold Signature Scheme for NIST-Standardized ML-DSA",
+      "authors": [
+        "Alexander Bienstock",
+        "Leo de Castro",
+        "Antigoni Polychroniadou",
+        "Akash Shah",
+        "Akira Takahashi"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "为 NIST ML-DSA 构造可扩展的恶意安全门限签名，相对前作减少在线轮次，无大模型，对象是钱包门限签名。",
+      "abstract": "ML-DSA 是 NIST 标准化（FIPS 204）的后量子签名算法，应用很广。ML-DSA 的门限签名让一组签名者在谁都不持有完整密钥的情况下，产出能通过未修改、标准化验证的签名。现有做法各有限制：最多 6 方，或需要门限全同态加密，或能扩到多方但在线要几十轮，预处理还要把算术和布尔计算混在一起。此外，为避免在安全多方计算里评估密码哈希，它们会泄露被拒绝签名尝试的抄本；为使这些抄本可模拟，要么给底层 ML-DSA 签名加噪声，要么依赖 ML-DSA 之外的计算假设。作者先证明：被拒绝的 ML-DSA 抄本可以统计模拟，不必加噪声、也不必加额外假设，从而使输出签名恰好服从标准化分布。据此，他们只用 ML-DSA 原生模数 q 上的算术构造高效门限协议，首次同时做到：（i）可扩到任意 n 方，并容忍 t<n/2 的恶意破坏；（ii）在线签名仅 4 轮，在线通信量比最接近的前作 Quorus（USENIX Security '26）的轮次优化实例少 3.3 倍，后者要 16 轮；（iii）预处理轻得多，不到 20 轮，而 Quorus 为 81 到 108 轮，且随参与方增多通信量低一个数量级以上；（iv）除 ML-DSA 本身依赖外不再引入额外原语或假设。在跨洲、数十方的广域部署中，在线阶段可在一秒内完成。",
+      "abstractEn": "ML-DSA is a widely adopted post-quantum signature algorithm, standardized by NIST as FIPS 204. A threshold signature scheme for ML-DSA lets a group of signers, none of whom holds the key, produce signatures that verify under the unmodified, standardized verification. Existing approaches are limited in different ways: they are bound to at most 6 parties, require threshold fully homomorphic encryption, or scale to many parties but spend tens of online rounds and a heavy preprocessing phase involving mixed arithmetic--Boolean computation. Moreover, to avoid evaluating a cryptographic hash function inside multi-party computation (MPC), they reveal the transcripts of rejected signing attempts. To make these transcripts simulatable, they either modify the underlying ML-DSA signing algorithm by adding noise, or rely on a computational assumption beyond those underlying ML-DSA. We first prove that rejected ML-DSA transcripts can be simulated statistically, with no added noise and no additional assumption, so that output signatures follow exactly the standardized distribution. Building on this result, we construct an efficient threshold protocol using only arithmetic modulo ML-DSA's native modulus $q$ that, for the first time, simultaneously (i) scales to any number of parties $n$ with $t<n/2$ malicious corruptions, (ii) has only 4 online signing rounds and $3.3\\times$ less online communication than the round-optimized instantiation of the closest previous protocol, Quorus (USENIX Security~'26), which takes 16 rounds, (iii) has a far lighter preprocessing phase, with fewer than 20 rounds against 81 to 108 for Quorus, and over an order of magnitude less communication as the number of parties grows, and (iv) avoids any extra primitive or assumption beyond those underlying ML-DSA. In a wide-area deployment with tens of parties spread over different continents worldwide, the online phase of our protocol completes in under a second.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "修订",
+        "门限签名",
+        "ML-DSA",
+        "MPC"
+      ],
+      "url": "https://eprint.iacr.org/2026/3044",
+      "pdf": "https://eprint.iacr.org/2026/3044.pdf"
+    },
+    {
+      "id": "2026-2992",
+      "title": "PCC: Proof-Carrying Credentials for Enhanced Anonymity and Post-Quantum Delegation",
+      "authors": [
+        "Zixuan Wang",
+        "ZHENG Tianyu",
+        "Yuan Lu",
+        "Bin Xiao"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "用递归可验证计算替换显式委托链，隐藏 DeFi 信用委托拓扑，无大模型，对象是可委托匿名凭证。",
+      "abstract": "可委托匿名凭证（DAC）允许权威经一串中介委托出去，持有者再匿名行使，例如 DeFi 信用委托。出示是持有者每次使用都要做的操作，其代价才是实践中真正要紧的；而现有 DAC 把出示建在委托链本身上。作者称这一限制为证明者感知：出示时，持有者必须持有并处理形状与链相同的委托谱系材料。它有两面：体积使出示代价随委托深度增长；内容则把委托拓扑元数据暴露给持有者，在有激励和合规约束的场景里，可被用来按谱系做策略否决、策略性去中介，以及在本应无需许可的网络中形成事实上的审查。他们把隐私这一面形式化为增强委托匿名性（EDA）：一种带泄漏参数的双观察者概念，把验证者侧匿名与持有者侧拓扑无感知合在一起；后者既有模拟定义，也有在允许泄漏相同的路径上的不可区分博弈。两面同源，都来自链状凭证，因此改表示就能一起去掉：框架 Proof-Carrying Credentials（PCC）用非均匀增量可验证计算（NIVC）把显式链换成一份递归更新的带证明状态，使出示与委托深度无关并同时隐藏拓扑，同时保留受限委托和有表达力的出示。与依赖双线性对的既有常数大小 DAC 不同，PCC 不绑定具体困难问题，并给出量子随机预言机模型下、由透明 FRI 递归和基于哈希的签名组成的显式后量子兼容实例。在消费级硬件上，Halo2（非后量子）实例的面向验证者证明固定为 7.344 KB，各测试深度验证 35–36 毫秒；128 比特 Plonky2（后量子）实例证明固定 157.9 KB，深度 L 取 1、2、4、8、16 时验证 3.8 毫秒，每步委托 1.03 秒。因此，持有者侧隐藏拓扑、出示与深度无关，可以在可接受的递归证明代价下做到。",
+      "abstractEn": "Delegatable Anonymous Credentials (DACs) let an authority be delegated through a chain of intermediaries and later exercised anonymously, as in DeFi credit delegation. Because presentation is the operation a holder repeats at every use, its cost is what matters in practice; yet existing DACs build this presentation from the delegation chain itself. We call this limitation prover awareness: to present, a holder must possess and process delegation-lineage material whose shape mirrors the chain. It has two faces: its size makes the presentation cost grow with the delegation depth, and its content exposes the holder to delegation-topology metadata that, in incentive-driven and compliance-aware settings, enables lineage-based policy vetoes, strategic disintermediation, and de facto censorship in otherwise permissionless networks. We formalize the privacy face as Enhanced Delegation Anonymity (EDA), a leakage-parametrized two-observer notion combining verifier-side anonymity with holder-side topology obliviousness, the latter given both as a simulation definition and as an indistinguishability game over paths with identical allowed holder leakage. Because both faces share one cause, the chain-structured credential, a single change of representation removes them together: our framework Proof-Carrying Credentials (PCC) replaces the explicit chain with a single recursively updated proof-carrying state via Non-Uniform Incrementally Verifiable Computation (NIVC), making the presentation independent of the delegation depth and hiding the topology at once, while preserving restricted delegation and expressive presentation. Unlike prior constant-size DACs tied to bilinear pairings, PCC is hardness-agnostic and admits an explicit post-quantum-compatible instantiation in the QROM from transparent FRI-based recursion and hash-based signatures. On consumer-grade hardware, the Halo2 (non-post-quantum) instantiation keeps the verifier-facing proof constant at 7.344KB with 35-36ms verification across all tested depths, and a 128-bit Plonky2 (post-quantum) instantiation keeps a constant 157.9KB proof and 3.8ms verification across depths $L\\in\\{1,2,4,8,16\\}$, at 1.03s per delegation step. Holder-side topology hiding and depth-independent presentation are thus achievable at practical recursive-proving cost.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "匿名凭证",
+        "DeFi",
+        "递归证明",
+        "后量子"
+      ],
+      "url": "https://eprint.iacr.org/2026/2992",
+      "pdf": "https://eprint.iacr.org/2026/2992.pdf"
+    },
+    {
+      "id": "2611.34662",
+      "title": "Multi-Party Authorization of Maintenance Prescriptions on a Permissioned Blockchain",
+      "authors": [
+        "Siyuan Chen",
+        "Ebru Turanoglu Bekar",
+        "Anders Skoogh"
+      ],
+      "year": 2026,
+      "venue": "arXiv",
+      "abstractOneWord": "让许可链背书人先验证处方计算的简洁证明再放行工单，无大模型，对象是 Hyperledger Fabric。",
+      "abstract": "工业处方式维护中，设备供应商的模型可能建议一次干预，由工厂排程、承包商执行、质量或安全职能批准。共享账本能记录谁提交了处方，却无法检查它是否由约定模型和决策规则算出。作者要求许可链上的背书人在放行工单前验证该计算的一份简洁证明。在四组织 Hyperledger Fabric 试验床上，用公开发动机基准测试时，这一做法拦住了全部 9 份有争议或误操作的处方；而哈希检查放行了其中 4 份，它们要么提高了模拟维护成本，要么重新引入了迟到故障。",
+      "abstractEn": "In industrial prescriptive maintenance, an equipment supplier's model may recommend an intervention that a plant schedules, a contractor executes, and a quality or safety function approves. A shared ledger records who submitted the prescription, yet cannot check whether the agreed model and decision rule produced it. We require permissioned-blockchain endorsers to verify a succinct proof of that calculation before releasing a work order. On a four-organization Hyperledger Fabric testbed using a public engine benchmark, this stopped all nine contested or mis-operated prescriptions, whereas hash checks accepted four that either raised simulated maintenance cost or reintroduced late failures.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "许可链",
+        "背书",
+        "工单授权",
+        "Fabric"
+      ],
+      "url": "https://arxiv.org/abs/2611.34662",
+      "pdf": "https://arxiv.org/pdf/2611.34662.pdf"
+    },
+    {
+      "id": "2026-2990",
+      "title": "Probabilistic Polynomial Time is a healer: Consensus with Mobile-Omission Faults",
+      "authors": [
+        "Julian Loss",
+        "Kartik Nayak",
+        "Kecheng Shi"
+      ],
+      "year": 2026,
+      "venue": "ePrint",
+      "abstractOneWord": "在移动遗漏故障与拜占庭混合模型下给出随机化拜占庭协议，无大模型，对象是共识协议。",
+      "abstract": "本文研究同步拜占庭协议（BA）：敌手可做 t 个自适应拜占庭破坏，并每轮选择大小为 s 和 r、可任意重叠的发送/接收遗漏集合。发送遗漏选择性地丢掉出站消息，接收遗漏丢掉入站消息；移动是指每轮都可以换一批新的遗漏集合。Santoro 与 Widmayer（STACS 1989）的下界表明，时间本身不能修复：即使只有一个移动故障，任意 c 轮协议的错误率也至少是 1/[2(2n)^c]。这排除了确定性协议，但迄今连随机化协议（哪怕错误率更高）也没有。把移动遗漏与 t 个永久拜占庭故障混在一起时更是如此。在 2t+s+r<n 的假设下，作者为带移动遗漏的混合模型给出首批协议和清晰的形式化模型，弹性与该领域只考虑非移动遗漏的已有工作相当。在更强假设 2t+s+r≤(1-ε)n 下，他们再构造通信量亚二次的可替换参与方 BA 协议。",
+      "abstractEn": "We study synchronous Byzantine agreement (BA) with $t$ adaptive Byzantine corruptions and mobile, arbitrarily overlapping send and receive omission sets of per-round sizes $s$ and $r$. The adversary can selectively drop outgoing (respectively, incoming) messages for send omissions (respectively, receive omissions). Mobile means the adversary can choose a set of fresh send/receive omissions for each round. A well-known lower bound of Santoro and Widmayer (STACS 1989) establishes that time, by itself, is not a healer: any $c$-round agreement protocol with even a single mobile fault must incur an error of $1/[2(2n)^c]$. Yet, while this rules out deterministic protocols, to date, no \\emph{randomized} protocol (even with higher probability of error) is known. This is all the more true when considering a model in which mobile omission faults are mixed with $t$ (permanent) Byzantine faults. Assuming $2t+s+r<n$, we provide the first protocols for and clean formal models for the mixed model with mobile omission faults. This matches the resilience of existing works in this area which consider non-mobile omission faults. We then build a player-replaceable BA protocol with subquadratic communication complexity, under the stronger assumption that $2t+s+r\\leq (1-\\varepsilon)n$.",
+      "topics": [
+        "A"
+      ],
+      "aliases": [
+        "拜占庭协议",
+        "移动故障",
+        "遗漏",
+        "共识"
+      ],
+      "url": "https://eprint.iacr.org/2026/2990",
+      "pdf": "https://eprint.iacr.org/2026/2990.pdf"
+    }
+  ]
+}
